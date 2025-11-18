@@ -12,20 +12,21 @@
 
 无论是编程入门、框架使用、工具技巧还是底层原理，我们都希望通过“迷你书”的形式，让复杂的技术变得清晰直白——每本书聚焦一个具体知识点，篇幅精炼，阅读门槛低，让你能利用碎片时间快速吸收。
 
-## 已完成的书籍
-
-### 前端
+## 正在进行中
 
 **规范解读系列**
 
 - [ ] [ECMAScript2025 标准核心揭秘]
 
-**mini 实战书籍系列**
+## 已完成的书籍
 
-- <a href="./mini-hammerjs/book_zh/toc.md" target="_blank">mini-hammer.js 实战：从零构建自己的手势库</a>
-- <a href="./mini-acornjs/book_zh/toc.md" target="_blank">JavaScript 解析器实战：从零构建 mini-acorn</a>
-- <a href="./mini-ramdajs/book_zh/toc.md" target="_blank">Ramda 设计与实现：深入 JavaScript 函数式编程</a>
+### 前端
 
+**Mini 实战书籍系列**
+
+- [x] [JavaScript 解析器实战：从零构建 mini-acorn](./mini-acornjs/book_zh/toc.md)
+- [x] [Ramda 设计与实现：深入 JavaScript 函数式编程](./mini-ramdajs/book_zh/toc.md)
+- [x] [mini-hammer.js 实战：从零构建自己的手势库](./mini-hammerjs/book_zh/toc.md)
 
 一起用简单的方式传递技术知识！
 
