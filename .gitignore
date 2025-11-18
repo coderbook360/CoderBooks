@@ -1,0 +1,23 @@
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.codebuddy
+.trae
+.vscode
+
+memory.jsonl
+
+# Node.js
+node_modules/
+
+.book_guide/
+.book_refe/
+src/
