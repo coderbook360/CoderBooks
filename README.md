@@ -22,9 +22,10 @@
 
 **mini 实战书籍系列**
 
-- [x] [JavaScript 解析器实战：从零构建 mini-acorn](./mini-acornjs/book_zh/toc.md){:target="\_blank"}
-- [x] [Ramda 设计与实现：深入 JavaScript 函数式编程](./mini-ramdajs/book_zh/toc.md){:target="\_blank"}
-- [x] [mini-hammer.js 实战：从零构建自己的手势库](./mini-hammerjs/book_zh/toc.md){:target="\_blank"}
+- <a href="./mini-hammerjs/book_zh/toc.md" target="_blank">mini-hammer.js 实战：从零构建自己的手势库</a>
+- <a href="./mini-acornjs/book_zh/toc.md" target="_blank">JavaScript 解析器实战：从零构建 mini-acorn</a>
+- <a href="./mini-ramdajs/book_zh/toc.md" target="_blank">Ramda 设计与实现：深入 JavaScript 函数式编程</a>
+
 
 一起用简单的方式传递技术知识！
 
