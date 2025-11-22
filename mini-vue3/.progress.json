@@ -1,0 +1,100 @@
+{
+  "projectName": "mini-vue3",
+  "description": "Vue 3 源码深度学习与完整实现",
+  "startDate": "2025-11-22",
+  "currentDay": 0,
+  "totalDays": 168,
+  "completedDays": [],
+  "generatedDocs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 50, 85],
+  "currentPhase": "基础夯实",
+  "learningSchedule": {
+    "weekdayHours": 1,
+    "weekendHours": 2,
+    "totalWeeks": 24,
+    "totalMonths": 6
+  },
+  "phases": {
+    "基础夯实": {
+      "weeks": "1-3",
+      "days": { "start": 1, "end": 21 },
+      "status": "not-started",
+      "description": "掌握 Proxy/Reflect、响应式原理基础、TDD 开发模式"
+    },
+    "响应式系统": {
+      "weeks": "4-7",
+      "days": { "start": 22, "end": 49 },
+      "status": "not-started",
+      "description": "实现完整的 reactive、ref、computed、watch 系统"
+    },
+    "运行时核心": {
+      "weeks": "8-12",
+      "days": { "start": 50, "end": 84 },
+      "status": "not-started",
+      "description": "实现虚拟 DOM、diff 算法、组件系统、生命周期"
+    },
+    "编译器系统": {
+      "weeks": "13-16",
+      "days": { "start": 85, "end": 112 },
+      "status": "not-started",
+      "description": "实现模板编译器、AST 转换、代码生成"
+    },
+    "高级特性": {
+      "weeks": "17-20",
+      "days": { "start": 113, "end": 140 },
+      "status": "not-started",
+      "description": "实现 Teleport、Suspense、KeepAlive、Transition"
+    },
+    "性能优化与工程化": {
+      "weeks": "21-24",
+      "days": { "start": 141, "end": 168 },
+      "status": "not-started",
+      "description": "性能优化、Tree-shaking、SSR、构建系统"
+    }
+  },
+  "milestones": [
+    {
+      "day": 21,
+      "title": "完成响应式基础",
+      "description": "掌握 Proxy/Reflect，理解依赖收集原理",
+      "completed": false
+    },
+    {
+      "day": 49,
+      "title": "响应式系统完成",
+      "description": "完整实现 reactive、ref、computed、watch，通过 100+ 测试用例",
+      "completed": false
+    },
+    {
+      "day": 84,
+      "title": "运行时核心完成",
+      "description": "实现虚拟 DOM、组件系统、生命周期，可运行简单应用",
+      "completed": false
+    },
+    {
+      "day": 112,
+      "title": "编译器系统完成",
+      "description": "实现完整的模板编译器，支持模板语法编译",
+      "completed": false
+    },
+    {
+      "day": 140,
+      "title": "高级特性完成",
+      "description": "实现所有高级组件和特性",
+      "completed": false
+    },
+    {
+      "day": 168,
+      "title": "项目完成",
+      "description": "完成 mini-vue3 全部功能，性能优化和工程化",
+      "completed": false
+    }
+  ],
+  "statistics": {
+    "totalTestCases": 0,
+    "passedTestCases": 0,
+    "codeLines": 0,
+    "completionPercentage": 0
+  },
+  "lastUpdateDate": "2025-11-22",
+  "notes": "6 个月深度学习 Vue 3 源码，从零实现完整的 mini-vue3 框架"
+}
