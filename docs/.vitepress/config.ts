@@ -6,6 +6,10 @@ export default defineConfig({
   title: "CoderBooks",
   description: "程序员的进阶技术迷你书 / Mini Tech Books for Programmers",
   
+  // GitHub Pages 部署时使用仓库名作为 base
+  // 如果部署到 https://<username>.github.io/CoderBooks/
+  base: process.env.GITHUB_ACTIONS ? '/CoderBooks/' : '/',
+  
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
@@ -60,7 +64,7 @@ export default defineConfig({
     logo: '/logo.png',
     
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/user/CoderBooks' }
+      { icon: 'github', link: 'https://github.com/coderbook360/CoderBooks' }
     ],
 
     footer: {

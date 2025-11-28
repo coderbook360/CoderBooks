@@ -18,9 +18,17 @@ memory.jsonl
 # Node.js
 node_modules/
 
+# 书籍内部隐藏目录
 .book_guide/
 .book_refe/
 
 src/
 
-sourcebooks/
+# 生成的文件（由 CI 自动生成）
+docs/.vitepress/generated/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+
+# 同步的文档目录（由脚本自动生成）
+docs/zh/
+docs/en/

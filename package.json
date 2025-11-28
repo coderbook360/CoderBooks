@@ -6,6 +6,7 @@
   "scripts": {
     "generate": "node scripts/generate-config.js",
     "generate:watch": "node scripts/generate-config.js --watch",
+    "docs:prebuild": "node scripts/generate-config.js",
     "docs:dev": "npm run generate && concurrently \"npm run generate:watch\" \"vitepress dev docs\"",
     "docs:build": "npm run generate && vitepress build docs",
     "docs:preview": "vitepress preview docs"

@@ -1049,7 +1049,7 @@ export default defineConfig({
     logo: '/logo.png',
     
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/user/CoderBooks' }
+      { icon: 'github', link: 'https://github.com/coderbook360/CoderBooks' }
     ],
 
     footer: {
