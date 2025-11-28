@@ -1,0 +1,635 @@
+﻿# 算法通关手册: LeetCode 高频题精讲
+
+本书采用"理论+实战"深度融合模式，系统覆盖从基础到高级的所有算法知识点。每个主题先讲解核心原理与方法论，紧接着通过精选 LeetCode 题目进行实战训练，理论与实践无缝衔接。涵盖 ACM-ICPC、Google、Meta、Microsoft 等顶级竞赛和公司的所有核心考点，助你成为算法专家，斩获顶级 Offer。
+
+- [序言](preface.md)
+
+---
+
+### 第一部分：算法与复杂度基础
+
+1. [算法基础理论](foundations/algorithm-basics-theory.md)
+2. [时间复杂度与空间复杂度分析](foundations/complexity-analysis-theory.md)
+3. [实战：有效的括号](foundations/practice-valid-parentheses.md)
+4. [实战：两数之和](foundations/practice-two-sum.md)
+5. [实战：合并两个有序链表](foundations/practice-merge-sorted-lists.md)
+6. [实战：判断字符串是否为回文](foundations/practice-is-palindrome-string.md)
+7. [实战：实现strStr()](foundations/practice-implement-strstr.md)
+8. [实战：最长公共前缀](foundations/practice-longest-common-prefix.md)
+9. [实战：罗马数字转整数](foundations/practice-roman-to-integer.md)
+10. [实战：有效的数独](foundations/practice-valid-sudoku.md)
+11. [实战：外观数列](foundations/practice-count-and-say.md)
+12. [实战：报数序列](foundations/practice-report-sequence.md)
+
+---
+
+### 第二部分：数组基础操作
+
+13. [数组基础理论](foundations/array-basics-theory.md)
+14. [数组遍历与访问模式](foundations/array-traversal-theory.md)
+15. [实战：删除排序数组中的重复项](foundations/practice-remove-duplicates.md)
+16. [实战：移动零](foundations/practice-move-zeroes.md)
+17. [实战：合并两个有序数组](foundations/practice-merge-sorted-array.md)
+18. [实战：旋转数组](foundations/practice-rotate-array.md)
+19. [实战：加一](foundations/practice-plus-one.md)
+20. [实战：搜索二维矩阵](foundations/practice-search-matrix.md)
+21. [实战：找到所有数组中消失的数字](foundations/practice-find-disappeared-numbers.md)
+22. [实战：第三大的数](foundations/practice-third-maximum.md)
+23. [实战：数组的度](foundations/practice-degree-of-array.md)
+24. [实战：最大连续1的个数](foundations/practice-max-consecutive-ones.md)
+25. [实战：种花问题](foundations/practice-can-place-flowers.md)
+26. [实战：数组拆分](foundations/practice-array-partition.md)
+
+---
+
+### 第三部分：链表基础操作
+
+27. [链表基础理论](foundations/linked-list-basics-theory.md)
+28. [链表操作技巧](foundations/linked-list-operations-theory.md)
+29. [实战：反转链表](foundations/practice-reverse-linked-list.md)
+30. [实战：删除链表的倒数第N个节点](foundations/practice-remove-nth-node.md)
+31. [实战：环形链表](foundations/practice-linked-list-cycle.md)
+32. [实战：相交链表](foundations/practice-intersection-of-lists.md)
+33. [实战：回文链表](foundations/practice-palindrome-linked-list.md)
+34. [实战：移除链表元素](foundations/practice-remove-elements.md)
+35. [实战：奇偶链表](foundations/practice-odd-even-linked-list.md)
+36. [实战：删除链表中的节点](foundations/practice-delete-node.md)
+37. [实战：合并K个升序链表（链表版）](foundations/practice-merge-k-lists.md)
+38. [实战：两数相加](foundations/practice-add-two-numbers.md)
+39. [实战：链表排序](foundations/practice-sort-list.md)
+40. [实战：重排链表](foundations/practice-reorder-list.md)
+
+---
+
+### 第四部分：栈与队列
+
+41. [栈与队列基础理论](stack-queue/stack-queue-basics-theory.md)
+42. [栈与队列的应用场景](stack-queue/applications-theory.md)
+43. [实战：用栈实现队列](stack-queue/practice-implement-queue-using-stacks.md)
+44. [实战：用队列实现栈](stack-queue/practice-implement-stack-using-queues.md)
+45. [实战：最小栈](stack-queue/practice-min-stack.md)
+46. [实战：有效的括号（进阶）](stack-queue/practice-valid-parentheses-advanced.md)
+47. [实战：每日温度](stack-queue/practice-daily-temperatures.md)
+48. [实战：下一个更大元素](stack-queue/practice-next-greater-element.md)
+49. [实战：滑动窗口最大值](stack-queue/practice-sliding-window-maximum.md)
+50. [实战：柱状图中最大的矩形](stack-queue/practice-largest-rectangle.md)
+51. [实战：最大矩形](stack-queue/practice-maximal-rectangle.md)
+52. [实战：字符串解码](stack-queue/practice-decode-string.md)
+53. [实战：去除重复字母](stack-queue/practice-remove-duplicate-letters.md)
+
+---
+
+### 第五部分：哈希表与哈希映射
+
+54. [哈希表基础理论](hash-table/hash-table-basics-theory.md)
+55. [哈希碰撞与解决方案](hash-table/collision-resolution-theory.md)
+56. [实战：两数之和（哈希优化）](hash-table/practice-two-sum-hash.md)
+57. [实战：字母异位词分组](hash-table/practice-group-anagrams.md)
+58. [实战：最长连续序列](hash-table/practice-longest-consecutive.md)
+59. [实战：无重复字符的最长子串](hash-table/practice-longest-substring.md)
+60. [实战：四数相加II](hash-table/practice-four-sum-ii.md)
+61. [实战：两个数组的交集](hash-table/practice-intersection-of-arrays.md)
+62. [实战：快乐数](hash-table/practice-happy-number.md)
+63. [实战：同构字符串](hash-table/practice-isomorphic-strings.md)
+64. [实战：存在重复元素](hash-table/practice-contains-duplicate.md)
+65. [实战：单词规律](hash-table/practice-word-pattern.md)
+
+---
+
+### 第六部分：堆与优先队列
+
+66. [堆的基础理论](heap/heap-basics-theory.md)
+67. [堆的插入与删除操作](heap/heap-operations-theory.md)
+68. [实战：数组中的第K个最大元素](heap/practice-kth-largest-element.md)
+69. [实战：前K个高频元素](heap/practice-top-k-frequent.md)
+70. [实战：合并K个升序链表](heap/practice-merge-k-sorted-lists.md)
+71. [实战：数据流的中位数](heap/practice-median-from-stream.md)
+72. [实战：丑数II](heap/practice-ugly-number-ii.md)
+73. [实战：超级丑数](heap/practice-super-ugly-number.md)
+74. [实战：最小的K个数](heap/practice-smallest-k-numbers.md)
+75. [实战：查找和最小的K对数字](heap/practice-find-k-pairs.md)
+76. [实战：IPO问题](heap/practice-ipo.md)
+
+---
+
+### 第七部分：二叉树基础
+
+77. [二叉树基础理论](binary-tree/binary-tree-basics-theory.md)
+78. [二叉树遍历方法](binary-tree/traversal-methods-theory.md)
+79. [实战：前序遍历](binary-tree/practice-preorder-traversal.md)
+80. [实战：中序遍历](binary-tree/practice-inorder-traversal.md)
+81. [实战：后序遍历](binary-tree/practice-postorder-traversal.md)
+82. [实战：层序遍历](binary-tree/practice-level-order-traversal.md)
+83. [实战：二叉树的最大深度](binary-tree/practice-max-depth.md)
+84. [实战：对称二叉树](binary-tree/practice-symmetric-tree.md)
+85. [实战：翻转二叉树](binary-tree/practice-invert-tree.md)
+86. [实战：相同的树](binary-tree/practice-same-tree.md)
+87. [实战：二叉树的最小深度](binary-tree/practice-min-depth.md)
+88. [实战：路径总和](binary-tree/practice-path-sum.md)
+89. [实战：平衡二叉树](binary-tree/practice-balanced-tree.md)
+90. [实战：二叉树的右视图](binary-tree/practice-right-side-view.md)
+
+---
+
+### 第八部分：二叉搜索树
+
+91. [二叉搜索树理论](binary-tree/bst-theory.md)
+92. [BST的插入与删除](binary-tree/bst-operations-theory.md)
+93. [实战：验证二叉搜索树](binary-tree/practice-validate-bst.md)
+94. [实战：二叉搜索树的最近公共祖先](binary-tree/practice-bst-lca.md)
+95. [实战：二叉搜索树中第K小的元素](binary-tree/practice-kth-smallest-bst.md)
+96. [实战：把二叉搜索树转换为累加树](binary-tree/practice-bst-to-gst.md)
+97. [实战：二叉搜索树中的搜索](binary-tree/practice-search-bst.md)
+98. [实战：二叉搜索树中的插入操作](binary-tree/practice-insert-bst.md)
+99. [实战：删除二叉搜索树中的节点](binary-tree/practice-delete-node-bst.md)
+100. [实战：二叉搜索树的最小绝对差](binary-tree/practice-min-diff-bst.md)
+101. [实战：二叉搜索树中的众数](binary-tree/practice-find-mode-bst.md)
+
+---
+
+### 第九部分：字典树（Trie）
+
+102. [字典树基础理论](trie/trie-basics-theory.md)
+103. [字典树的应用场景](trie/trie-applications-theory.md)
+104. [实战：实现Trie（前缀树）](trie/practice-implement-trie.md)
+105. [实战：添加与搜索单词](trie/practice-add-search-word.md)
+106. [实战：单词搜索II](trie/practice-word-search-ii.md)
+107. [实战：键值映射](trie/practice-map-sum-pairs.md)
+108. [实战：替换单词](trie/practice-replace-words.md)
+109. [实战：单词拆分](trie/practice-word-break.md)
+110. [实战：连接词](trie/practice-concatenated-words.md)
+
+---
+
+### 第十部分：双指针技巧
+
+111. [双指针基础理论](two-pointers/two-pointers-basics-theory.md)
+112. [快慢指针与对撞指针](two-pointers/fast-slow-pointers-theory.md)
+113. [实战：反转字符串](two-pointers/practice-reverse-string.md)
+114. [实战：回文串判断](two-pointers/practice-valid-palindrome.md)
+115. [实战：盛最多水的容器](two-pointers/practice-container-with-most-water.md)
+116. [实战：三数之和](two-pointers/practice-three-sum.md)
+117. [实战：接雨水](two-pointers/practice-trapping-rain-water.md)
+118. [实战：四数之和](two-pointers/practice-four-sum.md)
+119. [实战：最接近的三数之和](two-pointers/practice-three-sum-closest.md)
+120. [实战：颜色分类](two-pointers/practice-sort-colors.md)
+121. [实战：删除有序数组中的重复项II](two-pointers/practice-remove-duplicates-ii.md)
+122. [实战：长度最小的子数组](two-pointers/practice-min-subarray-len.md)
+123. [实战：比较含退格的字符串](two-pointers/practice-backspace-compare.md)
+
+---
+
+### 第十一部分：前缀和与差分数组
+
+124. [前缀和基础理论](prefix-sum/prefix-sum-basics-theory.md)
+125. [差分数组技巧](prefix-sum/difference-array-theory.md)
+126. [实战：区域和检索（不可变）](prefix-sum/practice-range-sum-immutable.md)
+127. [实战：子数组和为K](prefix-sum/practice-subarray-sum-k.md)
+128. [实战：和为K的子数组个数](prefix-sum/practice-subarray-count-k.md)
+129. [实战：区间加法](prefix-sum/practice-range-addition.md)
+130. [实战：二维区域和检索](prefix-sum/practice-range-sum-2d.md)
+131. [实战：和可被K整除的子数组](prefix-sum/practice-subarray-div-k.md)
+132. [实战：连续的子数组和](prefix-sum/practice-continuous-subarray-sum.md)
+133. [实战：航班预订统计](prefix-sum/practice-corpflight-bookings.md)
+134. [实战：拼车](prefix-sum/practice-carpool.md)
+
+---
+
+### 第十二部分：二分查找
+
+135. [二分查找基础理论](binary-search/binary-search-basics-theory.md)
+136. [二分查找变体](binary-search/binary-search-variants-theory.md)
+137. [实战：基础二分查找](binary-search/practice-basic-binary-search.md)
+138. [实战：搜索插入位置](binary-search/practice-search-insert-position.md)
+139. [实战：在排序数组中查找元素的第一个和最后一个位置](binary-search/practice-find-first-last.md)
+140. [实战：搜索旋转排序数组](binary-search/practice-search-rotated-array.md)
+141. [实战：寻找峰值](binary-search/practice-find-peak-element.md)
+142. [实战：寻找两个正序数组的中位数](binary-search/practice-median-of-arrays.md)
+143. [实战：x的平方根](binary-search/practice-sqrt-x.md)
+144. [实战：有效的完全平方数](binary-search/practice-perfect-square.md)
+145. [实战：搜索二维矩阵](binary-search/practice-search-2d-matrix.md)
+146. [实战：搜索二维矩阵II](binary-search/practice-search-2d-matrix-ii.md)
+147. [实战：在D天内送达包裹的能力](binary-search/practice-ship-within-days.md)
+148. [实战：分割数组的最大值](binary-search/practice-split-array-largest-sum.md)
+
+---
+
+### 第十三部分：贪心算法
+
+149. [贪心算法基础理论](greedy/greedy-basics-theory.md)
+150. [贪心选择性质与最优子结构](greedy/greedy-properties-theory.md)
+151. [实战：分发饼干](greedy/practice-assign-cookies.md)
+152. [实战：买卖股票的最佳时机II](greedy/practice-stock-ii.md)
+153. [实战：跳跃游戏](greedy/practice-jump-game.md)
+154. [实战：跳跃游戏II](greedy/practice-jump-game-ii.md)
+155. [实战：加油站](greedy/practice-gas-station.md)
+156. [实战：无重叠区间](greedy/practice-non-overlapping-intervals.md)
+157. [实战：用最少数量的箭引爆气球](greedy/practice-min-arrows.md)
+158. [实战：根据身高重建队列](greedy/practice-reconstruct-queue.md)
+159. [实战：分发糖果](greedy/practice-candy.md)
+160. [实战：摆动序列](greedy/practice-wiggle-subsequence.md)
+161. [实战：最少需要的会议室数量](greedy/practice-min-meeting-rooms.md)
+162. [实战：划分字母区间](greedy/practice-partition-labels.md)
+163. [实战：单调递增的数字](greedy/practice-monotone-increasing.md)
+
+---
+
+### 第十四部分：分治算法
+
+164. [分治算法基础理论](divide-conquer/divide-conquer-basics-theory.md)
+165. [分治算法的时间复杂度分析](divide-conquer/complexity-analysis-theory.md)
+166. [实战：归并排序](divide-conquer/practice-merge-sort.md)
+167. [实战：快速排序](divide-conquer/practice-quick-sort.md)
+168. [实战：最大子数组和](divide-conquer/practice-max-subarray.md)
+169. [实战：数组中的逆序对](divide-conquer/practice-reverse-pairs.md)
+170. [实战：计算右侧小于当前元素的个数](divide-conquer/practice-count-smaller.md)
+171. [实战：排序链表](divide-conquer/practice-sort-list-dc.md)
+172. [实战：不同的二叉搜索树II](divide-conquer/practice-unique-bst-ii.md)
+173. [实战：为运算表达式设计优先级](divide-conquer/practice-diff-ways-compute.md)
+174. [实战：多数元素](divide-conquer/practice-majority-element.md)
+
+---
+
+### 第十五部分：回溯算法
+
+175. [回溯算法基础理论](backtracking/backtracking-basics-theory.md)
+176. [剪枝优化技巧](backtracking/pruning-theory.md)
+177. [实战：全排列](backtracking/practice-permutations.md)
+178. [实战：全排列II](backtracking/practice-permutations-ii.md)
+179. [实战：组合](backtracking/practice-combinations.md)
+180. [实战：组合总和](backtracking/practice-combination-sum.md)
+181. [实战：组合总和II](backtracking/practice-combination-sum-ii.md)
+182. [实战：组合总和III](backtracking/practice-combination-sum-iii.md)
+183. [实战：子集](backtracking/practice-subsets.md)
+184. [实战：子集II](backtracking/practice-subsets-ii.md)
+185. [实战：N皇后](backtracking/practice-n-queens.md)
+186. [实战：N皇后II](backtracking/practice-n-queens-ii.md)
+187. [实战：解数独](backtracking/practice-sudoku-solver.md)
+188. [实战：单词搜索](backtracking/practice-word-search.md)
+189. [实战：分割回文串](backtracking/practice-partition-palindrome.md)
+190. [实战：复原IP地址](backtracking/practice-restore-ip.md)
+191. [实战：电话号码的字母组合](backtracking/practice-letter-combinations.md)
+
+---
+
+### 第十六部分：动态规划基础
+
+192. [动态规划基础理论](dynamic-programming/dp-basics-theory.md)
+193. [状态定义与状态转移](dynamic-programming/state-transition-theory.md)
+194. [实战：爬楼梯](dynamic-programming/practice-climbing-stairs.md)
+195. [实战：打家劫舍](dynamic-programming/practice-house-robber.md)
+196. [实战：打家劫舍II](dynamic-programming/practice-house-robber-ii.md)
+197. [实战：最大正方形](dynamic-programming/practice-maximal-square.md)
+198. [实战：完全平方数](dynamic-programming/practice-perfect-squares.md)
+199. [实战：不同路径](dynamic-programming/practice-unique-paths.md)
+200. [实战：不同路径II](dynamic-programming/practice-unique-paths-ii.md)
+201. [实战：最小路径和](dynamic-programming/practice-min-path-sum.md)
+202. [实战：三角形最小路径和](dynamic-programming/practice-triangle.md)
+203. [实战：解码方法](dynamic-programming/practice-decode-ways.md)
+204. [实战：不同的二叉搜索树](dynamic-programming/practice-unique-bst.md)
+205. [实战：整数拆分](dynamic-programming/practice-integer-break.md)
+
+---
+
+### 第十七部分：背包问题专题
+
+206. [背包问题理论](dynamic-programming/knapsack-theory.md)
+207. [01背包与完全背包](dynamic-programming/knapsack-variants-theory.md)
+208. [实战：分割等和子集](dynamic-programming/practice-partition-equal-subset.md)
+209. [实战：目标和](dynamic-programming/practice-target-sum.md)
+210. [实战：零钱兑换](dynamic-programming/practice-coin-change.md)
+211. [实战：零钱兑换II](dynamic-programming/practice-coin-change-ii.md)
+212. [实战：一和零](dynamic-programming/practice-ones-and-zeroes.md)
+213. [实战：最后一块石头的重量II](dynamic-programming/practice-last-stone-weight-ii.md)
+214. [实战：盈利计划](dynamic-programming/practice-profitable-schemes.md)
+215. [实战：买卖股票的最佳时机含冷冻期](dynamic-programming/practice-stock-cooldown.md)
+216. [实战：买卖股票的最佳时机含手续费](dynamic-programming/practice-stock-fee.md)
+217. [实战：买卖股票的最佳时机IV](dynamic-programming/practice-stock-iv.md)
+218. [实战：背包问题九讲](dynamic-programming/practice-knapsack-nine.md)
+
+---
+
+### 第十八部分：序列型动态规划
+
+219. [序列DP理论](dynamic-programming/sequence-dp-theory.md)
+220. [最长递增子序列变体](dynamic-programming/lis-variants-theory.md)
+221. [实战：最长递增子序列](dynamic-programming/practice-lis.md)
+222. [实战：最长公共子序列](dynamic-programming/practice-lcs.md)
+223. [实战：编辑距离](dynamic-programming/practice-edit-distance.md)
+224. [实战：不同的子序列](dynamic-programming/practice-distinct-subsequences.md)
+225. [实战：最长重复子数组](dynamic-programming/practice-longest-repeated-subarray.md)
+226. [实战：最大子数组乘积](dynamic-programming/practice-max-product-subarray.md)
+227. [实战：最长数字串链](dynamic-programming/practice-longest-string-chain.md)
+228. [实战：俄罗斯套娃信封](dynamic-programming/practice-russian-doll.md)
+229. [实战：删除与获得点数](dynamic-programming/practice-remove-boxes.md)
+230. [实战：通配符匹配](dynamic-programming/practice-wildcard-matching-dp.md)
+231. [实战：交错字符串](dynamic-programming/practice-interleaving-string.md)
+
+---
+
+### 第十九部分：区间型动态规划
+
+232. [区间DP理论](dynamic-programming/interval-dp-theory.md)
+233. [区间合并策略](dynamic-programming/interval-merge-theory.md)
+234. [实战：最长回文子串](dynamic-programming/practice-longest-palindrome.md)
+235. [实战：回文子串计数](dynamic-programming/practice-palindromic-substrings.md)
+236. [实战：戳气球](dynamic-programming/practice-burst-balloons.md)
+237. [实战：合并石头的最低成本](dynamic-programming/practice-merge-stones.md)
+238. [实战：移除盒子](dynamic-programming/practice-remove-boxes-interval.md)
+239. [实战：奇怪的打印机](dynamic-programming/practice-strange-printer.md)
+240. [实战：最长回文子序列](dynamic-programming/practice-longest-palindrome-subseq.md)
+241. [实战：分割回文串II](dynamic-programming/practice-palindrome-partition-ii.md)
+242. [实战：矩阵链乘法](dynamic-programming/practice-matrix-chain.md)
+
+---
+
+### 第二十部分：图的基础与遍历
+
+130. [图的基础理论](graph/graph-basics-theory.md)
+131. [图的存储与遍历](graph/graph-storage-traversal-theory.md)
+132. [实战：岛屿数量](graph/practice-number-of-islands.md)
+133. [实战：岛屿的最大面积](graph/practice-max-area-of-island.md)
+134. [实战：腐烂的橘子](graph/practice-rotting-oranges.md)
+135. [实战：课程表](graph/practice-course-schedule.md)
+136. [实战：课程表II](graph/practice-course-schedule-ii.md)
+
+---
+
+### 第二十一部分：并查集
+
+137. [并查集基础理论](union-find/union-find-basics-theory.md)
+138. [路径压缩与按秩合并](union-find/path-compression-theory.md)
+139. [实战：朋友圈](union-find/practice-friend-circles.md)
+140. [实战：冗余连接](union-find/practice-redundant-connection.md)
+141. [实战：账户合并](union-find/practice-accounts-merge.md)
+142. [实战：岛屿数量（并查集解法）](union-find/practice-islands-uf.md)
+
+---
+
+### 第二十二部分：位运算
+
+143. [位运算基础理论](bit-manipulation/bit-basics-theory.md)
+144. [位掩码与位运算技巧](bit-manipulation/bitmask-tricks-theory.md)
+145. [实战：位1的个数](bit-manipulation/practice-number-of-bits.md)
+146. [实战：只出现一次的数字](bit-manipulation/practice-single-number.md)
+147. [实战：只出现一次的数字II](bit-manipulation/practice-single-number-ii.md)
+148. [实战：比特位计数](bit-manipulation/practice-counting-bits.md)
+
+---
+
+### 第二十三部分：数学问题
+
+149. [算法中的数学理论](math/math-basics-theory.md)
+150. [快速幂与矩阵快速幂](math/fast-power-theory.md)
+151. [实战：Pow(x, n)](math/practice-pow.md)
+152. [实战：x的平方根](math/practice-sqrt.md)
+153. [实战：整数反转](math/practice-reverse-integer.md)
+154. [实战：回文数](math/practice-palindrome-number.md)
+
+---
+
+### 第二十四部分：线段树基础
+
+155. [线段树基础理论](segment-tree/segment-tree-basics-theory.md)
+156. [线段树的懒惰传播](segment-tree/lazy-propagation-theory.md)
+157. [实战：区域和检索（可修改）](segment-tree/practice-range-sum-mutable.md)
+158. [实战：区间最值查询](segment-tree/practice-range-min-max.md)
+159. [实战：天际线问题](segment-tree/practice-skyline-problem.md)
+
+---
+
+### 第二十五部分：字符串高级算法
+
+160. [字符串匹配算法理论](string-advanced/string-matching-theory.md)
+161. [KMP算法详解](string-advanced/kmp-algorithm-theory.md)
+162. [实战：实现strStr()](string-advanced/practice-implement-strstr.md)
+163. [实战：重复的子字符串](string-advanced/practice-repeated-substring.md)
+164. [实战：最短回文串](string-advanced/practice-shortest-palindrome.md)
+
+---
+
+### 第二十六部分：后缀数组与后缀自动机
+
+165. [后缀数组理论](string-suffix/suffix-array-theory.md)
+166. [后缀自动机理论](string-suffix/suffix-automaton-theory.md)
+167. [实战：最长重复子串](string-suffix/practice-longest-duplicate.md)
+168. [实战：不同子字符串个数](string-suffix/practice-distinct-substrings.md)
+
+---
+
+### 第二十七部分：最短路径算法
+
+169. [最短路径算法理论](graph-advanced/shortest-path-theory.md)
+170. [Dijkstra与Bellman-Ford算法](graph-advanced/dijkstra-bellman-theory.md)
+171. [实战：网络延迟时间](graph-advanced/practice-network-delay.md)
+172. [实战：最便宜的航班](graph-advanced/practice-cheapest-flights.md)
+173. [实战：K站中转内最便宜的航班](graph-advanced/practice-cheapest-k-stops.md)
+
+---
+
+### 第二十八部分：最小生成树
+
+174. [最小生成树理论](graph-advanced/mst-theory.md)
+175. [Kruskal与Prim算法](graph-advanced/kruskal-prim-theory.md)
+176. [实战：连接所有点的最小费用](graph-advanced/practice-min-cost-connect-points.md)
+177. [实战：最低成本连通所有城市](graph-advanced/practice-min-cost-connect-cities.md)
+
+---
+
+### 第二十九部分：网络流算法
+
+178. [网络流基础理论](graph-advanced/network-flow-basics-theory.md)
+179. [最大流算法](graph-advanced/max-flow-theory.md)
+180. [实战：最大流问题](graph-advanced/practice-max-flow.md)
+181. [实战：最小割问题](graph-advanced/practice-min-cut.md)
+182. [实战：二分图最大匹配](graph-advanced/practice-bipartite-matching.md)
+
+---
+
+### 第三十部分：数论算法
+
+183. [数论基础理论](number-theory/number-theory-basics-theory.md)
+184. [素数与质因数分解](number-theory/prime-factorization-theory.md)
+185. [实战：计数质数](number-theory/practice-count-primes.md)
+186. [实战：丑数](number-theory/practice-ugly-number.md)
+187. [实战：完全平方数](number-theory/practice-perfect-squares.md)
+
+---
+
+### 第三十一部分：高级动态规划
+
+188. [状态压缩DP](dp-advanced/state-compression-theory.md)
+189. [数位DP](dp-advanced/digit-dp-theory.md)
+190. [实战：旅行商问题](dp-advanced/practice-tsp.md)
+191. [实战：数字计数](dp-advanced/practice-digit-counting.md)
+192. [实战：统计特殊数字](dp-advanced/practice-count-special-numbers.md)
+
+---
+
+### 第三十二部分：树形DP
+
+193. [树形DP理论](dp-advanced/tree-dp-theory.md)
+194. [树上路径与子树统计](dp-advanced/tree-path-theory.md)
+195. [实战：打家劫舍III](dp-advanced/practice-house-robber-iii.md)
+196. [实战：树的直径](dp-advanced/practice-tree-diameter.md)
+197. [实战：二叉树中的最大路径和](dp-advanced/practice-max-path-sum.md)
+
+---
+
+### 第三十三部分：计算几何基础
+
+198. [计算几何基础理论](computational-geometry/geometry-basics-theory.md)
+199. [点、线、面的表示与运算](computational-geometry/point-line-plane-theory.md)
+200. [实战：矩形重叠](computational-geometry/practice-rectangle-overlap.md)
+201. [实战：直线上的最多点数](computational-geometry/practice-max-points-on-line.md)
+202. [实战：凸包问题](computational-geometry/practice-convex-hull.md)
+
+---
+
+### 第三十四部分：平衡树
+
+203. [平衡树理论](balanced-tree/balanced-tree-theory.md)
+204. [AVL树与红黑树](balanced-tree/avl-rbtree-theory.md)
+205. [实战：平衡二叉树验证](balanced-tree/practice-validate-balanced.md)
+206. [实战：将有序数组转换为二叉搜索树](balanced-tree/practice-sorted-array-to-bst.md)
+
+---
+
+### 第三十五部分：高级数据结构
+
+207. [Treap与Splay树](advanced-structures/treap-splay-theory.md)
+208. [跳表与B树](advanced-structures/skiplist-btree-theory.md)
+209. [实战：LRU缓存](advanced-structures/practice-lru-cache.md)
+210. [实战：LFU缓存](advanced-structures/practice-lfu-cache.md)
+
+---
+
+### 第三十六部分：高级搜索技巧
+
+211. [双向BFS](search-advanced/bidirectional-bfs-theory.md)
+212. [启发式搜索与A*算法](search-advanced/heuristic-search-theory.md)
+213. [实战：单词接龙](search-advanced/practice-word-ladder.md)
+214. [实战：滑动谜题](search-advanced/practice-sliding-puzzle.md)
+
+---
+
+### 第三十七部分：随机化算法
+
+215. [随机化算法理论](randomized/randomized-basics-theory.md)
+216. [蒙特卡洛与拉斯维加斯算法](randomized/monte-carlo-theory.md)
+217. [实战：打乱数组](randomized/practice-shuffle-array.md)
+218. [实战：水塘抽样](randomized/practice-reservoir-sampling.md)
+
+---
+
+### 第三十八部分：近似算法
+
+219. [近似算法理论](approximation/approximation-basics-theory.md)
+220. [TSP与背包的近似解](approximation/tsp-knapsack-approx-theory.md)
+221. [实战：近似TSP](approximation/practice-approx-tsp.md)
+
+---
+
+### 第三十九部分：分数规划
+
+222. [分数规划理论](fractional/fractional-programming-theory.md)
+223. [01分数规划与最优比率生成树](fractional/fractional-variants-theory.md)
+224. [实战：最优比率问题](fractional/practice-optimal-ratio.md)
+
+---
+
+### 第四十部分：自动机理论
+
+225. [有限自动机理论](automaton/finite-automaton-theory.md)
+226. [正则表达式匹配](automaton/regex-matching-theory.md)
+227. [实战：正则表达式匹配](automaton/practice-regex-matching.md)
+228. [实战：通配符匹配](automaton/practice-wildcard-matching.md)
+
+---
+
+### 第四十一部分：在线算法
+
+229. [在线算法理论](online/online-algorithm-theory.md)
+230. [竞争比分析](online/competitive-ratio-theory.md)
+231. [实战：股票买卖在线问题](online/practice-stock-online.md)
+
+---
+
+### 第四十二部分：矩阵运算
+
+232. [矩阵基础理论](matrix/matrix-basics-theory.md)
+233. [矩阵快速幂与矩阵乘法优化](matrix/matrix-fast-power-theory.md)
+234. [实战：矩阵置零](matrix/practice-set-matrix-zeroes.md)
+235. [实战：旋转图像](matrix/practice-rotate-image.md)
+236. [实战：螺旋矩阵](matrix/practice-spiral-matrix.md)
+
+---
+
+### 第四十三部分：容斥原理
+
+237. [容斥原理理论](inclusion-exclusion/inclusion-exclusion-theory.md)
+238. [容斥原理在组合计数中的应用](inclusion-exclusion/combinatorial-applications-theory.md)
+239. [实战：素数计数问题](inclusion-exclusion/practice-prime-counting.md)
+
+---
+
+### 第四十四部分：可持久化数据结构
+
+240. [可持久化数据结构理论](persistent/persistent-structures-theory.md)
+241. [主席树与可持久化线段树](persistent/chairman-tree-theory.md)
+242. [实战：区间第K小](persistent/practice-kth-smallest-range.md)
+
+---
+
+### 第四十五部分：并发与多线程算法
+
+243. [并发算法基础理论](concurrency/concurrency-basics-theory.md)
+244. [锁与无锁数据结构](concurrency/lock-free-theory.md)
+245. [实战：打印零与奇偶数](concurrency/practice-print-zero-even-odd.md)
+246. [实战：哲学家进餐](concurrency/practice-dining-philosophers.md)
+
+---
+
+### 第四十六部分：系统设计算法
+
+247. [系统设计基础](system-design/system-design-basics-theory.md)
+248. [分布式算法与一致性哈希](system-design/distributed-algorithms-theory.md)
+249. [实战：设计Twitter](system-design/practice-design-twitter.md)
+250. [实战：设计TinyURL](system-design/practice-design-tinyurl.md)
+
+---
+
+### 第四十七部分：算法正确性证明
+
+251. [算法正确性证明方法](proof/correctness-proof-theory.md)
+252. [归纳法与不变式](proof/induction-invariant-theory.md)
+
+---
+
+### 第四十八部分：算法优化技巧
+
+253. [常数优化与卡常技巧](optimization/constant-optimization-theory.md)
+254. [SIMD与并行优化](optimization/simd-parallel-theory.md)
+
+---
+
+### 第四十九部分：算法设计方法论
+
+255. [算法设计范式总结](methodology/design-paradigms-theory.md)
+256. [问题转化与建模技巧](methodology/problem-modeling-theory.md)
+
+---
+
+### 第五十部分：竞赛技巧与策略
+
+257. [算法竞赛策略](competitive/competitive-strategy-theory.md)
+258. [调试与对拍技巧](competitive/debugging-testing-theory.md)
+
+---
+
+### 第五十一部分：终极挑战
+
+259. [综合实战：超难题精选（1-10）](ultimate/practice-ultimate-1-10.md)
+260. [综合实战：超难题精选（11-20）](ultimate/practice-ultimate-11-20.md)
+261. [综合实战：超难题精选（21-30）](ultimate/practice-ultimate-21-30.md)
+262. [综合实战：超难题精选（31-40）](ultimate/practice-ultimate-31-40.md)
