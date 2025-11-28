@@ -10,6 +10,9 @@ export default defineConfig({
   // 如果部署到 https://<username>.github.io/CoderBooks/
   base: process.env.GITHUB_ACTIONS ? '/CoderBooks/' : '/',
   
+  // 忽略死链接（部分章节可能尚未完成）
+  ignoreDeadLinks: true,
+  
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
