@@ -1,0 +1,29 @@
+{
+  "name": "coder-books",
+  "version": "1.0.0",
+  "description": "程序员的进阶技术迷你书",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-config.js",
+    "generate:watch": "node scripts/generate-config.js --watch",
+    "docs:dev": "npm run generate && concurrently \"npm run generate:watch\" \"vitepress dev docs\"",
+    "docs:build": "npm run generate && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0",
+    "concurrently": "^8.2.2",
+    "vitepress": "^1.3.4"
+  },
+  "keywords": [
+    "programming",
+    "books",
+    "frontend",
+    "tutorial"
+  ],
+  "author": "CoderBooks",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  }
+}

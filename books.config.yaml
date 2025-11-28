@@ -1,0 +1,80 @@
+# 书籍元信息配置
+# 定义每本书的分类、分组、排序等信息
+# toc 目录结构会在运行时自动从 toc.md 解析
+
+books:
+  # AI 与效率
+  ai-prompt:
+    category: ai
+    categoryName: AI 与效率
+    categoryNameEn: AI & Productivity
+    group: 提示词工程
+    groupEn: Prompt Engineering
+    order: 1
+
+  # 编译原理
+  mini-acornjs-book:
+    category: compiler
+    categoryName: 编译原理
+    categoryNameEn: Compiler Theory
+    group: 解析器实现
+    groupEn: Parser Implementation
+    order: 1
+
+  v8-book:
+    category: compiler
+    categoryName: 编译原理
+    categoryNameEn: Compiler Theory
+    group: 引擎原理
+    groupEn: Engine Internals
+    order: 2
+
+  # 框架原理
+  mini-vite:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: 构建工具
+    groupEn: Build Tools
+    order: 1
+
+  mini-ramdajs-book:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: 函数式编程
+    groupEn: Functional Programming
+    order: 2
+
+  mini-hammerjs-book:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: 交互库
+    groupEn: Interaction Libraries
+    order: 3
+
+  mini-path-to-regexp:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: 路由与工具
+    groupEn: Routing & Utils
+    order: 4
+
+  # CSS 工具
+  quick-unocss:
+    category: css
+    categoryName: CSS 工具
+    categoryNameEn: CSS Tools
+    group: 原子化 CSS
+    groupEn: Atomic CSS
+    order: 1
+
+# 分类排序
+categoryOrder:
+  - compiler
+  - framework
+  - css
+  - ai
+  - other

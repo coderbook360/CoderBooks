@@ -20,4 +20,7 @@ node_modules/
 
 .book_guide/
 .book_refe/
+
 src/
+
+sourcebooks/
