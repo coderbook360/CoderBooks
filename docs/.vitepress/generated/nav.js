@@ -1,5 +1,5 @@
 // 自动生成，请勿手动编辑
-// 生成时间: 2025-11-29T04:39:56.964Z
+// 生成时间: 2025-11-29T04:42:26.420Z
 
 export const zhNav = [
   {
@@ -14,7 +14,7 @@ export const zhNav = [
         "items": [
           {
             "text": "JavaScript解析器实战：从零构建mini-acorn",
-            "link": "/zh/mini-acornjs-book/"
+            "link": "/zh/mini-acornjs/"
           }
         ]
       },
@@ -23,7 +23,7 @@ export const zhNav = [
         "items": [
           {
             "text": "V8 引擎深度解析：理解 JavaScript 底层运行机制",
-            "link": "/zh/v8-book/"
+            "link": "/zh/v8/"
           }
         ]
       }
@@ -37,7 +37,7 @@ export const zhNav = [
         "items": [
           {
             "text": "mini-hammer.js 实战：从零构建自己的手势库",
-            "link": "/zh/mini-hammerjs-book/"
+            "link": "/zh/mini-hammerjs/"
           }
         ]
       },
@@ -55,7 +55,7 @@ export const zhNav = [
         "items": [
           {
             "text": "Ramda 设计与实现：深入 JavaScript 函数式编程",
-            "link": "/zh/mini-ramdajs-book/"
+            "link": "/zh/mini-ramdajs/"
           }
         ]
       },
@@ -87,6 +87,15 @@ export const zhNav = [
         "link": "/zh/ai-prompt/"
       }
     ]
+  },
+  {
+    "text": "其他",
+    "items": [
+      {
+        "text": "Leetcode",
+        "link": "/zh/leetcode/"
+      }
+    ]
   }
 ]
 
@@ -100,7 +109,7 @@ export const enNav = [
     "items": [
       {
         "text": "JavaScript Parser in Practice: Building mini-acorn from Scratch",
-        "link": "/en/mini-acornjs-book/"
+        "link": "/en/mini-acornjs/"
       }
     ]
   },
@@ -112,7 +121,7 @@ export const enNav = [
         "items": [
           {
             "text": "Hands-on mini-hammer.js: Build Your Own Gesture Library from Scratch",
-            "link": "/en/mini-hammerjs-book/"
+            "link": "/en/mini-hammerjs/"
           }
         ]
       },
@@ -130,7 +139,7 @@ export const enNav = [
         "items": [
           {
             "text": "Ramda Design and Implementation: A Deep Dive into JavaScript Functional Programming",
-            "link": "/en/mini-ramdajs-book/"
+            "link": "/en/mini-ramdajs/"
           }
         ]
       }
