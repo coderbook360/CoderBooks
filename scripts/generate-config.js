@@ -113,7 +113,8 @@ function scanBooks(booksConfig) {
   for (const dir of dirs) {
     const bookName = dir.name
     const bookPath = path.join(SOURCEBOOKS_DIR, bookName)
-    const docsName = bookName.replace(/-book$/, '')
+    // 保持原目录名，不做转换
+    const docsName = bookName
     const meta = booksConfig.books[bookName] || {}
 
     // 中文版
