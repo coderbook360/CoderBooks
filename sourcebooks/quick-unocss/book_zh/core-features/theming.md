@@ -1,202 +1,648 @@
 # 主题化定制：深入 `theme` 配置
 
-在构建任何有一定规模的前端应用时，我们都无法回避一个核心问题：如何保证设计语言的一致性？颜色、字体、间- 距、断点……这些构成我们视觉系统的基本元素，如果散落在代码的各个角落，将成为一场维护的噩梦。
+每个项目都有独特的设计需求。默认的颜色、间距、断点可能无法完全满足你的设计稿要求。UnoCSS 的主题系统让你能够定制这些设计令牌，创建专属于你项目的样式系统。
 
-想象一下，如果你的项目主色调是蓝色，你在几十个地方都写了 `bg-blue-500` 或 `text-blue-500`。当需要将主色调更换为紫色时，你将不得不进行一场“查找-替换”的冒险，祈祷不会遗漏任何一处。
+本章将深入探讨 `theme` 配置的方方面面，帮助你构建一套完整的设计系统。
 
-这正是主题化（Theming）要解决的问题。UnoCSS 提供了强大而灵活的 `theme` 配置对象，让你能够将这些设计规范集中定义为“设计令牌”（Design Tokens），然后在整个应用中复用它们。这不仅极大地提升了可维护性，也为实现动态换肤等高级功能奠定了基础。
+---
 
-## 1. `theme` 对象：你的设计系统核心
+## 1. 主题系统概述
 
-`theme` 对象是 `uno.config.ts` 配置文件的核心部分之一。你可以在这里定义所有你希望在项目中重复使用的值。
+UnoCSS 的主题系统控制着工具类生成时使用的设计令牌（Design Tokens）。这些令牌包括颜色、间距、字体大小、断点等基础值。
 
-让我们从一个基础的配置开始：
+### 1.1 主题的作用
 
-```typescript
-// uno.config.ts
-import { defineConfig } from 'unocss'
+当你使用 `text-blue-500` 时，UnoCSS 需要知道 `blue-500` 对应什么颜色值。这个映射关系就存储在主题配置中。通过修改主题，你可以改变整个项目中 `blue-500` 的含义，而不需要修改任何类名。
 
+主题配置是集中管理设计令牌的地方。设计师修改了品牌色？只需要改一处主题配置。需要支持新的断点？添加到主题中即可。
+
+### 1.2 预设与主题
+
+`preset-uno` 和 `preset-wind` 等预设已经提供了完整的默认主题。你的自定义主题会与预设主题合并，可以选择性地覆盖或扩展特定的值。
+
+```ts
 export default defineConfig({
   theme: {
-    // 1. 定义颜色
-    colors: {
-      primary: '#3B82F6', // 我们的主色调
-      secondary: '#6B7280',
-      success: '#10B981',
-      danger: '#EF4444',
-    },
-
-    // 2. 定义字体家族
-    fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
-      serif: ['Georgia', 'serif'],
-    },
-
-    // 3. 定义响应式断点
-    breakpoints: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-    },
+    // 你的自定义主题配置
+    // 会与预设的默认主题合并
   },
 })
 ```
 
-通过上面的配置，我们做了三件事：
-- **定义了一组品牌颜色**：`primary`, `secondary` 等。
-- **指定了两种字体**：无衬线的 `sans` 和衬线 `serif`。
-- **设置了标准的响应式断点**。
+---
 
-## 2. 使用主题值：与工具类的无缝集成
+## 2. 颜色定制
 
-定义好 `theme` 后，最美妙的部分来了：这些值会自动与 UnoCSS 的核心工具类进行集成。UnoCSS 会智能地将你的主题令牌“注入”到对应的工具类中。
+颜色是最常需要定制的设计令牌。
 
-### 使用颜色
+### 2.1 添加新颜色
 
-你可以像使用内置颜色一样，直接通过你定义的名字来使用它们：
+在 `theme.colors` 中添加新的颜色定义：
 
-```html
-<!-- 使用我们定义的 'primary' 颜色 -->
-<button class="bg-primary text-white px-4 py-2 rounded">
-  Primary Button
-</button>
-
-<!-- UnoCSS 甚至能处理透明度 -->
-<div class="bg-primary/50">
-  一个半透明的背景
-</div>
-
-<!-- 边框颜色也一样 -->
-<input class="border-secondary focus:border-primary" />
-```
-
-UnoCSS 会自动生成如下的 CSS 规则（或类似规则）：
-```css
-.bg-primary {
-  --un-bg-opacity: 1;
-  background-color: rgba(59, 130, 246, var(--un-bg-opacity));
-}
-.border-secondary {
-  --un-border-opacity: 1;
-  border-color: rgba(107, 114, 128, var(--un-border-opacity));
-}
-```
-
-### 使用字体
-
-同样，`font-` 工具类现在也认识了我们定义的 `sans` 和 `serif`：
-
-```html
-<h1 class="font-sans">这是一个无衬线标题</h1>
-<p class="font-serif">这是一个衬线段落。</p>
-```
-
-### 使用响应式断点
-
-我们定义的断点 `sm`, `md`, `lg`, `xl` 会直接生效，用于所有支持响应式的工具类。
-
-```html
-<!-- 在中等屏幕（md）及以上，文字居中 -->
-<div class="text-left md:text-center">
-  响应式文本对齐
-</div>
-```
-
-## 3. 扩展与覆盖默认主题
-
-UnoCSS 的预设（如 `preset-uno`）已经内置了一套非常完整的主题。在大多数情况下，你不需要从零开始。`theme` 对象的行为是**合并与覆盖**，而不是替换。
-
-- **覆盖**：如果你定义的键与默认主题中的键相同（例如 `colors.blue`），你的值会覆盖默认值。
-- **扩展**：如果你定义了新的键（例如 `colors.primary`），它会被添加到默认主题中。
-
-假设我们想在 `preset-uno` 的基础上，只修改 `red` 色系，并增加我们的品牌色：
-
-```typescript
-// uno.config.ts
-import { defineConfig, presetUno } from 'unocss'
-
-export default defineConfig({
-  presets: [
-    presetUno(),
-  ],
-  theme: {
-    colors: {
-      // 覆盖默认的 red-500
-      'red-500': '#DE3618', 
-      // 添加新的品牌色，这属于扩展
-      primary: 'var(--color-primary)', // 也可以使用 CSS 变量
-    },
-    // 扩展间距
-    spacing: {
-      '128': '32rem',
-    }
-  },
-})
-```
-
-在这个例子中：
-- `red-500` 的色值会被更新。
-- 其他所有 `preset-uno` 的默认颜色（如 `blue-500`, `green-500`）保持不变。
-- 新的 `primary` 颜色被添加进去。
-- `spacing` 工具类（如 `p-`, `m-`, `w-`, `h-`）现在也认识了 `128` 这个尺寸。
-
-```html
-<div class="p-128">一个超大的内边距</div>
-```
-
-## 4. 嵌套与闭包：更高级的组织方式
-
-当主题变得复杂时，你可以使用嵌套对象来组织你的颜色，甚至使用函数来动态生成主题。
-
-### 嵌套颜色
-
-```typescript
-// uno.config.ts
+```ts
 theme: {
   colors: {
     brand: {
-      primary: '#3B82F6',
-      secondary: '#6B7280',
+      50: '#f0f9ff',
+      100: '#e0f2fe',
+      200: '#bae6fd',
+      300: '#7dd3fc',
+      400: '#38bdf8',
+      500: '#0ea5e9',
+      600: '#0284c7',
+      700: '#0369a1',
+      800: '#075985',
+      900: '#0c4a6e',
+      950: '#082f49',
     },
   },
-},
+}
 ```
 
-使用时，UnoCSS 会将它们用 `-` 连接起来：
+现在可以使用 `bg-brand-500`、`text-brand-700` 等类名。
 
-```html
-<div class="bg-brand-primary">
-  品牌主色背景
-</div>
-```
+### 2.2 覆盖默认颜色
 
-### 使用函数动态生成主题
+可以覆盖预设的颜色值：
 
-如果你需要基于某些基础值生成一系列变体，可以使用函数。这在处理颜色梯度或尺寸比例时非常有用。
-
-```typescript
-// uno.config.ts
+```ts
 theme: {
   colors: {
-    primary: (theme) => theme.colors.blue, // 引用其他颜色
+    blue: {
+      500: '#1e40af',  // 将 blue-500 改为更深的蓝色
+    },
   },
-  spacing: {
-    // 动态创建一个从 1 到 10 的尺寸系列
-    ...Object.fromEntries(
-      Array.from({ length: 10 }).map((_, i) => [`dyn-${i + 1}`, `${(i + 1) * 0.25}rem`])
-    ),
-  }
-},
+}
 ```
 
-## 总结
+### 2.3 简单颜色值
 
-`theme` 对象是 UnoCSS 从一个“工具集”升级为“设计系统”的关键。通过将设计令牌集中化管理，你获得了：
+如果颜色不需要深浅变体，可以直接使用字符串：
 
-- **一致性**：确保整个应用的视觉风格统一。
-- **可维护性**：修改一个地方，全局生效。
-- **灵活性**：轻松扩展和覆盖默认值，以匹配你的品牌。
-- **可读性**：`bg-primary` 比 `bg-[#3B82F6]` 更具语义，代码更易理解。
+```ts
+theme: {
+  colors: {
+    primary: '#3b82f6',
+    secondary: '#64748b',
+    accent: '#f59e0b',
+  },
+}
+```
 
-掌握 `theme` 的使用，是高效运用 UnoCSS、构建高质量、可维护界面的核心技能。现在，就开始为你的项目定义一套专属的主题吧！
+使用：`bg-primary`、`text-secondary`。
+
+### 2.4 CSS 变量颜色
+
+使用 CSS 变量可以实现运行时主题切换：
+
+```ts
+theme: {
+  colors: {
+    primary: 'var(--color-primary)',
+    surface: 'var(--color-surface)',
+  },
+}
+```
+
+然后在 CSS 中定义变量：
+
+```css
+:root {
+  --color-primary: #3b82f6;
+  --color-surface: #ffffff;
+}
+
+.dark {
+  --color-primary: #60a5fa;
+  --color-surface: #1f2937;
+}
+```
+
+### 2.5 使用颜色函数
+
+可以使用颜色函数来定义支持透明度的颜色：
+
+```ts
+import { parseColor } from '@unocss/preset-mini/utils'
+
+theme: {
+  colors: {
+    primary: 'rgba(59, 130, 246, <alpha-value>)',
+  },
+}
+```
+
+这样 `bg-primary/50` 就能正确生成 50% 透明度的颜色。
+
+---
+
+## 3. 间距定制
+
+间距系统控制着 padding、margin、gap 等属性的可用值。
+
+### 3.1 扩展间距
+
+添加新的间距值：
+
+```ts
+theme: {
+  spacing: {
+    '4.5': '1.125rem',
+    '18': '4.5rem',
+    '128': '32rem',
+  },
+}
+```
+
+现在可以使用 `p-4.5`、`m-18`、`w-128` 等类名。
+
+### 3.2 语义化间距
+
+可以使用语义化的名称：
+
+```ts
+theme: {
+  spacing: {
+    'page': '2rem',
+    'section': '4rem',
+    'card': '1.5rem',
+  },
+}
+```
+
+使用：`p-card`、`my-section`。
+
+### 3.3 间距与尺寸
+
+间距值同时用于 `w-*`、`h-*`、`size-*` 等尺寸类。自定义间距也会自动应用到这些类。
+
+---
+
+## 4. 断点定制
+
+响应式断点定义了不同屏幕尺寸的分界点。
+
+### 4.1 覆盖断点
+
+完全替换默认断点：
+
+```ts
+theme: {
+  breakpoints: {
+    sm: '480px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+}
+```
+
+### 4.2 添加断点
+
+添加新的断点：
+
+```ts
+theme: {
+  breakpoints: {
+    xs: '320px',
+    '2xl': '1536px',
+    '3xl': '1920px',
+  },
+}
+```
+
+现在可以使用 `xs:`、`3xl:` 等变体。
+
+### 4.3 使用场景
+
+断点应该根据你的设计需求设置。如果设计稿的分界点是 600px 而非默认的 640px，就应该调整 `sm` 断点。如果需要支持超大屏幕，可以添加更大的断点。
+
+---
+
+## 5. 字体定制
+
+字体配置包括字体家族、字体大小、行高等。
+
+### 5.1 字体家族
+
+定义自定义字体栈：
+
+```ts
+theme: {
+  fontFamily: {
+    sans: ['Inter', 'system-ui', 'sans-serif'],
+    serif: ['Georgia', 'serif'],
+    mono: ['Fira Code', 'monospace'],
+    display: ['Lexend', 'sans-serif'],
+    body: ['Open Sans', 'sans-serif'],
+  },
+}
+```
+
+使用：`font-display`、`font-body`。
+
+### 5.2 字体大小
+
+自定义字体大小及其默认行高：
+
+```ts
+theme: {
+  fontSize: {
+    xs: ['0.75rem', { lineHeight: '1rem' }],
+    sm: ['0.875rem', { lineHeight: '1.25rem' }],
+    base: ['1rem', { lineHeight: '1.5rem' }],
+    lg: ['1.125rem', { lineHeight: '1.75rem' }],
+    xl: ['1.25rem', { lineHeight: '1.75rem' }],
+    '2xl': ['1.5rem', { lineHeight: '2rem' }],
+    '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+    '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+    '5xl': ['3rem', { lineHeight: '1' }],
+  },
+}
+```
+
+数组的第一个元素是字体大小，第二个元素可以包含行高、字间距等默认值。
+
+### 5.3 字体粗细
+
+自定义字重值：
+
+```ts
+theme: {
+  fontWeight: {
+    hairline: '100',
+    thin: '200',
+    light: '300',
+    normal: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+}
+```
+
+---
+
+## 6. 阴影与圆角
+
+### 6.1 盒阴影
+
+定义阴影级别：
+
+```ts
+theme: {
+  boxShadow: {
+    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+    DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+    md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+    '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+    inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+    none: 'none',
+  },
+}
+```
+
+`DEFAULT` 键对应不带后缀的 `shadow` 类。
+
+### 6.2 圆角
+
+定义圆角级别：
+
+```ts
+theme: {
+  borderRadius: {
+    none: '0',
+    sm: '0.125rem',
+    DEFAULT: '0.25rem',
+    md: '0.375rem',
+    lg: '0.5rem',
+    xl: '0.75rem',
+    '2xl': '1rem',
+    '3xl': '1.5rem',
+    full: '9999px',
+  },
+}
+```
+
+---
+
+## 7. 动画与过渡
+
+### 7.1 过渡时长
+
+定义过渡持续时间：
+
+```ts
+theme: {
+  duration: {
+    75: '75ms',
+    100: '100ms',
+    150: '150ms',
+    200: '200ms',
+    300: '300ms',
+    500: '500ms',
+    700: '700ms',
+    1000: '1000ms',
+  },
+}
+```
+
+### 7.2 缓动函数
+
+定义缓动曲线：
+
+```ts
+theme: {
+  easing: {
+    DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    linear: 'linear',
+    in: 'cubic-bezier(0.4, 0, 1, 1)',
+    out: 'cubic-bezier(0, 0, 0.2, 1)',
+    'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+}
+```
+
+### 7.3 自定义动画
+
+定义关键帧动画：
+
+```ts
+theme: {
+  animation: {
+    keyframes: {
+      'fade-in': '{from{opacity:0}to{opacity:1}}',
+      'fade-out': '{from{opacity:1}to{opacity:0}}',
+      'slide-up': '{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}',
+    },
+    durations: {
+      'fade-in': '300ms',
+      'fade-out': '300ms',
+      'slide-up': '400ms',
+    },
+    timingFns: {
+      'fade-in': 'ease-out',
+      'fade-out': 'ease-in',
+      'slide-up': 'ease-out',
+    },
+  },
+}
+```
+
+使用：`animate-fade-in`、`animate-slide-up`。
+
+---
+
+## 8. 层级与 z-index
+
+定义 z-index 层级：
+
+```ts
+theme: {
+  zIndex: {
+    0: '0',
+    10: '10',
+    20: '20',
+    30: '30',
+    40: '40',
+    50: '50',
+    dropdown: '1000',
+    sticky: '1100',
+    fixed: '1200',
+    modal: '1300',
+    popover: '1400',
+    tooltip: '1500',
+  },
+}
+```
+
+使用：`z-dropdown`、`z-modal`。语义化的层级名称比数字更易理解和维护。
+
+---
+
+## 9. 主题扩展与覆盖
+
+### 9.1 扩展机制
+
+UnoCSS 会深度合并你的主题配置和预设的默认主题。这意味着你只需要定义想要改变或添加的部分：
+
+```ts
+theme: {
+  colors: {
+    brand: '#3b82f6',  // 添加新颜色
+    // 其他颜色保持默认
+  },
+}
+```
+
+### 9.2 完全覆盖
+
+如果想完全替换某个类别（而不是合并），可以使用特殊的语法或在预设中配置。但通常情况下，合并行为是更好的选择。
+
+### 9.3 访问其他主题值
+
+在某些场景下，你可能需要引用主题中的其他值。UnoCSS 支持通过函数访问主题：
+
+```ts
+rules: [
+  [/^custom-(.+)$/, ([, name], { theme }) => {
+    const color = theme.colors[name]
+    if (color) {
+      return { color }
+    }
+  }],
+]
+```
+
+---
+
+## 10. 实战：构建设计系统
+
+让我们创建一个完整的主题配置示例。
+
+### 10.1 品牌色系统
+
+```ts
+const brandColors = {
+  primary: {
+    50: '#f0f9ff',
+    100: '#e0f2fe',
+    200: '#bae6fd',
+    300: '#7dd3fc',
+    400: '#38bdf8',
+    500: '#0ea5e9',
+    600: '#0284c7',
+    700: '#0369a1',
+    800: '#075985',
+    900: '#0c4a6e',
+  },
+  secondary: {
+    50: '#f8fafc',
+    100: '#f1f5f9',
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',
+    600: '#475569',
+    700: '#334155',
+    800: '#1e293b',
+    900: '#0f172a',
+  },
+  accent: {
+    50: '#fffbeb',
+    100: '#fef3c7',
+    200: '#fde68a',
+    300: '#fcd34d',
+    400: '#fbbf24',
+    500: '#f59e0b',
+    600: '#d97706',
+    700: '#b45309',
+    800: '#92400e',
+    900: '#78350f',
+  },
+}
+```
+
+### 10.2 语义化颜色
+
+```ts
+const semanticColors = {
+  success: {
+    light: '#dcfce7',
+    DEFAULT: '#22c55e',
+    dark: '#15803d',
+  },
+  warning: {
+    light: '#fef3c7',
+    DEFAULT: '#f59e0b',
+    dark: '#b45309',
+  },
+  error: {
+    light: '#fee2e2',
+    DEFAULT: '#ef4444',
+    dark: '#b91c1c',
+  },
+  info: {
+    light: '#dbeafe',
+    DEFAULT: '#3b82f6',
+    dark: '#1d4ed8',
+  },
+}
+```
+
+### 10.3 完整主题配置
+
+```ts
+export default defineConfig({
+  theme: {
+    colors: {
+      ...brandColors,
+      ...semanticColors,
+      
+      // 界面颜色
+      surface: {
+        DEFAULT: '#ffffff',
+        muted: '#f9fafb',
+        elevated: '#ffffff',
+      },
+      
+      // 文本颜色
+      content: {
+        DEFAULT: '#1f2937',
+        muted: '#6b7280',
+        subtle: '#9ca3af',
+      },
+      
+      // 边框颜色
+      border: {
+        DEFAULT: '#e5e7eb',
+        muted: '#f3f4f6',
+      },
+    },
+    
+    fontFamily: {
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+      mono: ['JetBrains Mono', 'monospace'],
+    },
+    
+    fontSize: {
+      xs: ['0.75rem', { lineHeight: '1rem' }],
+      sm: ['0.875rem', { lineHeight: '1.25rem' }],
+      base: ['1rem', { lineHeight: '1.5rem' }],
+      lg: ['1.125rem', { lineHeight: '1.75rem' }],
+      xl: ['1.25rem', { lineHeight: '1.75rem' }],
+      '2xl': ['1.5rem', { lineHeight: '2rem' }],
+      '3xl': ['2rem', { lineHeight: '2.25rem' }],
+      '4xl': ['2.5rem', { lineHeight: '2.5rem' }],
+      '5xl': ['3rem', { lineHeight: '1' }],
+    },
+    
+    spacing: {
+      'page': '1rem',
+      'page-md': '1.5rem',
+      'page-lg': '2rem',
+    },
+    
+    borderRadius: {
+      DEFAULT: '0.5rem',
+      sm: '0.25rem',
+      lg: '0.75rem',
+      xl: '1rem',
+    },
+    
+    boxShadow: {
+      sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
+      DEFAULT: '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
+      md: '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
+      lg: '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
+      xl: '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)',
+    },
+  },
+})
+```
+
+### 10.4 配合快捷方式
+
+```ts
+shortcuts: {
+  // 使用主题颜色的组件
+  'btn-primary': 'bg-primary-500 text-white hover:bg-primary-600',
+  'btn-secondary': 'bg-secondary-200 text-secondary-800 hover:bg-secondary-300',
+  'btn-accent': 'bg-accent-500 text-white hover:bg-accent-600',
+  
+  // 使用语义化颜色
+  'alert-success': 'bg-success-light text-success-dark border-l-4 border-success',
+  'alert-warning': 'bg-warning-light text-warning-dark border-l-4 border-warning',
+  'alert-error': 'bg-error-light text-error-dark border-l-4 border-error',
+  
+  // 使用界面颜色
+  'card': 'bg-surface rounded shadow p-6',
+  'card-elevated': 'bg-surface-elevated rounded-lg shadow-lg p-6',
+}
+```
+
+---
+
+## 11. 小结
+
+本章深入探讨了 UnoCSS 的主题系统。
+
+主题是设计令牌的集中管理处，控制着颜色、间距、断点、字体等基础值。通过修改主题，可以全局影响所有使用这些令牌的工具类。
+
+颜色定制支持添加新颜色、覆盖默认颜色、使用简单值或深浅变体、使用 CSS 变量实现运行时主题切换。
+
+间距定制可以添加新的间距值，支持数字和语义化名称，间距同时应用于 padding、margin、width、height 等类。
+
+断点定制可以添加或修改响应式断点，应该根据实际设计需求调整。
+
+字体定制包括字体家族、字体大小（可以带默认行高）、字重等。
+
+阴影与圆角、动画与过渡、z-index 层级都可以通过主题自定义，使用语义化名称能提高代码可读性。
+
+主题扩展是深度合并的，只需定义想要改变或添加的部分。完整的设计系统应该包括品牌色、语义化颜色、界面颜色、排版设置等，配合快捷方式使用效果更佳。
+
+下一章我们将进入高级技巧部分，学习转换器（Transformers）的深入用法。

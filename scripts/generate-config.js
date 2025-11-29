@@ -189,8 +189,37 @@ function remove(targetPath) {
   fs.rmSync(targetPath, { recursive: true, force: true })
 }
 
+/**
+ * 清空 docs/zh 和 docs/en 目录（保留 index.md）
+ */
+function cleanDocsDir() {
+  const zhDir = path.join(DOCS_DIR, 'zh')
+  const enDir = path.join(DOCS_DIR, 'en')
+  
+  // 清空中文目录
+  if (fs.existsSync(zhDir)) {
+    const items = fs.readdirSync(zhDir)
+    for (const item of items) {
+      if (item === 'index.md') continue // 保留首页
+      remove(path.join(zhDir, item))
+    }
+  }
+  
+  // 清空英文目录
+  if (fs.existsSync(enDir)) {
+    const items = fs.readdirSync(enDir)
+    for (const item of items) {
+      if (item === 'index.md') continue // 保留首页
+      remove(path.join(enDir, item))
+    }
+  }
+}
+
 function syncAllBooks(zhBooks, enBooks) {
   console.log('📚 同步书籍内容...')
+  
+  // 先清空目录
+  cleanDocsDir()
 
   for (const book of zhBooks) {
     const dest = path.join(DOCS_DIR, 'zh', book.docsName)
