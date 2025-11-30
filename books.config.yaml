@@ -3,16 +3,56 @@
 # toc 目录结构会在运行时自动从 toc.md 解析
 
 books:
-  # AI 与效率
-  ai-prompt:
-    category: ai
-    categoryName: AI 与效率
-    categoryNameEn: AI & Productivity
-    group: 提示词工程
-    groupEn: Prompt Engineering
+  # ========== 算法与数据结构 ==========
+  leetcode-ds-foundations:
+    category: algorithm
+    categoryName: 算法与数据结构
+    categoryNameEn: Algorithm & Data Structure
+    group: 数据结构基础
+    groupEn: Data Structure Foundations
     order: 1
 
-  # 编译原理
+  leetcode-algo-techniques:
+    category: algorithm
+    categoryName: 算法与数据结构
+    categoryNameEn: Algorithm & Data Structure
+    group: 算法技巧
+    groupEn: Algorithm Techniques
+    order: 2
+
+  leetcode-dp-mastery:
+    category: algorithm
+    categoryName: 算法与数据结构
+    categoryNameEn: Algorithm & Data Structure
+    group: 动态规划
+    groupEn: Dynamic Programming
+    order: 3
+
+  leetcode-graph-search:
+    category: algorithm
+    categoryName: 算法与数据结构
+    categoryNameEn: Algorithm & Data Structure
+    group: 图与搜索
+    groupEn: Graph & Search
+    order: 4
+
+  leetcode-advanced-ds:
+    category: algorithm
+    categoryName: 算法与数据结构
+    categoryNameEn: Algorithm & Data Structure
+    group: 高级数据结构
+    groupEn: Advanced Data Structures
+    order: 5
+
+  leetcode-competitive:
+    category: algorithm
+    categoryName: 算法与数据结构
+    categoryNameEn: Algorithm & Data Structure
+    group: 竞赛进阶
+    groupEn: Competitive Programming
+    order: 6
+
+  # ========== 编译原理 ==========
   mini-acornjs-book:
     category: compiler
     categoryName: 编译原理
@@ -29,14 +69,54 @@ books:
     groupEn: Engine Internals
     order: 2
 
-  # 框架原理
+  # ========== 框架原理 ==========
+  mini-vue3:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: Vue 生态
+    groupEn: Vue Ecosystem
+    order: 1
+
+  mini-vue2:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: Vue 生态
+    groupEn: Vue Ecosystem
+    order: 2
+
+  mini-react:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: React 生态
+    groupEn: React Ecosystem
+    order: 3
+
+  mini-preact:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: React 生态
+    groupEn: React Ecosystem
+    order: 4
+
   mini-vite:
     category: framework
     categoryName: 框架原理
     categoryNameEn: Framework Internals
     group: 构建工具
     groupEn: Build Tools
-    order: 1
+    order: 5
+
+  mini-webpack5:
+    category: framework
+    categoryName: 框架原理
+    categoryNameEn: Framework Internals
+    group: 构建工具
+    groupEn: Build Tools
+    order: 6
 
   mini-ramdajs-book:
     category: framework
@@ -44,7 +124,7 @@ books:
     categoryNameEn: Framework Internals
     group: 函数式编程
     groupEn: Functional Programming
-    order: 2
+    order: 7
 
   mini-hammerjs-book:
     category: framework
@@ -52,7 +132,7 @@ books:
     categoryNameEn: Framework Internals
     group: 交互库
     groupEn: Interaction Libraries
-    order: 3
+    order: 8
 
   mini-path-to-regexp:
     category: framework
@@ -60,9 +140,9 @@ books:
     categoryNameEn: Framework Internals
     group: 路由与工具
     groupEn: Routing & Utils
-    order: 4
+    order: 9
 
-  # CSS 工具
+  # ========== CSS 工具 ==========
   quick-unocss:
     category: css
     categoryName: CSS 工具
@@ -71,10 +151,30 @@ books:
     groupEn: Atomic CSS
     order: 1
 
+  # ========== AI 与效率 ==========
+  ai-prompt:
+    category: ai
+    categoryName: AI 与效率
+    categoryNameEn: AI & Productivity
+    group: 提示词工程
+    groupEn: Prompt Engineering
+    order: 1
+
+  # ========== 思维与方法 ==========
+  clear-thinking-book:
+    category: thinking
+    categoryName: 思维与方法
+    categoryNameEn: Thinking & Methodology
+    group: 清晰思考
+    groupEn: Clear Thinking
+    order: 1
+
 # 分类排序
 categoryOrder:
+  - algorithm
   - compiler
   - framework
   - css
   - ai
+  - thinking
   - other
