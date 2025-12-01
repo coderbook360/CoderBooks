@@ -172,6 +172,40 @@ longestCommonPrefix(["abc"]);      // "abc"
 longestCommonPrefix(["", "abc"]);  // ""
 ```
 
+## 常见错误
+
+1. **忘记空数组边界**：
+
+```javascript
+// ❌ 错误：空数组访问 strs[0] 会出错
+let prefix = strs[0];  // undefined
+
+// ✅ 正确：先检查边界
+if (strs.length === 0) return '';
+```
+
+2. **忘记空字符串边界**：数组中可能包含空字符串
+
+```javascript
+// 输入 ["", "abc"] 应返回 ""
+```
+
+3. **indexOf 的陷阱**：`indexOf` 返回 -1 表示不存在，返回 0 才是前缀
+
+```javascript
+// ❌ 错误：把 indexOf 结果当布尔值用
+if (strs[i].indexOf(prefix)) { ... }  // 0 被当作 false
+
+// ✅ 正确：明确判断是否等于 0
+if (strs[i].indexOf(prefix) !== 0) { ... }
+```
+
+## 相关题目
+
+- **1071. 字符串的最大公因子**：找多个字符串的最大公共重复单元
+- **524. 通过删除字母匹配到字典里最长单词**：字符串匹配问题
+- **720. 词典中最长的单词**：前缀树的应用场景
+
 ## 本章小结
 
 这道题展示了同一个问题的多种解法：

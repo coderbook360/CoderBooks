@@ -11,8 +11,38 @@
       "focus": "技术准确性 + 逻辑完整性",
       "status": "in-progress",
       "p0_count": 0,
-      "p1_count": 8,
+      "p1_count": 13,
       "issues_fixed": [
+        {
+          "chapter": "string/practice-valid-anagram.md",
+          "severity": "P1",
+          "description": "内容深度不足，缺乏对排序法'Canonical Form'概念的引入，数组计数法未采用最优的'Early Exit'策略，以及对海量数据处理场景的缺失。",
+          "fix_status": "fixed"
+        },
+        {
+          "chapter": "string/practice-is-palindrome.md",
+          "severity": "P1",
+          "description": "内容深度不足，缺乏对工程思维（正则清洗）与算法思维（双指针）的深度对比，以及对空间复杂度的详细分析。",
+          "fix_status": "fixed"
+        },
+        {
+          "chapter": "string/practice-reverse-string.md",
+          "severity": "P1",
+          "description": "内容过于简单，缺乏对原地算法工程价值的探讨，以及交换机制的深度分析（解构赋值 vs 临时变量）。",
+          "fix_status": "fixed"
+        },
+        {
+          "chapter": "string/string-patterns.md",
+          "severity": "P1",
+          "description": "缺少中心扩散法（回文子串核心）、滑动窗口复杂度分析（为什么是O(N)）、以及辅助栈模式的介绍。",
+          "fix_status": "fixed"
+        },
+        {
+          "chapter": "string/string-basics.md",
+          "severity": "P1",
+          "description": "内容深度不足，缺乏底层存储原理（V8 Rope/Slicing）、不可变性的深层原因（Hash缓存/安全性）以及现代引擎对拼接的优化讨论。",
+          "fix_status": "fixed"
+        },
         {
           "chapter": "binary-tree/binary-tree-basics.md",
           "severity": "P1",
