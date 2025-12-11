@@ -1,0 +1,242 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：函数式编程基石",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "foundations/intro-to-fp",
+          "label": "1. 初识函数式编程：从前端开发视角"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/pure-functions-and-side-effects",
+          "label": "2. 纯函数与副作用：构建可靠代码的基石"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/immutability",
+          "label": "3. 不可变性：Ramda 的数据操作哲学"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/ramda-overview",
+          "label": "4. Ramda 概览：函数优先与数据置后"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第二部分：核心机制：柯里化与函数组合",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "core-mechanics/currying",
+          "label": "5. 柯里化：Ramda 的“魔法”核心"
+        },
+        {
+          "type": "doc",
+          "id": "core-mechanics/curry-implementation",
+          "label": "6. 深入 `curry` 实现：从 `_curry1` 到 `_curryN`"
+        },
+        {
+          "type": "doc",
+          "id": "core-mechanics/function-composition",
+          "label": "7. 函数组合：构建声明式数据流"
+        },
+        {
+          "type": "doc",
+          "id": "core-mechanics/compose-pipe-implementation",
+          "label": "8. 剖析 `compose` 与 `pipe`：组合函数的实现"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第三部分：列表操作：基础",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "list-operations/map-and-foreach",
+          "label": "9. 遍历与转换：`map` 与 `forEach` 的实现"
+        },
+        {
+          "type": "doc",
+          "id": "list-operations/filter-and-find",
+          "label": "10. 筛选与查找：`filter`、`find` 与 `reject`"
+        },
+        {
+          "type": "doc",
+          "id": "list-operations/reduce",
+          "label": "11. 数据规约：`reduce` 的力量与实现"
+        },
+        {
+          "type": "doc",
+          "id": "list-operations/slicing",
+          "label": "12. 列表切片：`slice`、`take` 与 `drop`"
+        },
+        {
+          "type": "doc",
+          "id": "list-operations/transforming",
+          "label": "13. 列表变换：`adjust`、`update` 与 `insert`"
+        },
+        {
+          "type": "doc",
+          "id": "list-operations/sorting-and-deduping",
+          "label": "14. 排序与去重：`sort` 与 `uniq`"
+        },
+        {
+          "type": "doc",
+          "id": "list-operations/grouping",
+          "label": "15. 分组与聚合：`groupBy` 与 `countBy`"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第四部分：对象操作",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "object-operations/property-access",
+          "label": "16. 属性访问：`prop`、`path` 与 `pick`"
+        },
+        {
+          "type": "doc",
+          "id": "object-operations/updating-objects",
+          "label": "17. 对象更新与演进：`assoc`、`dissoc` 与 `evolve`"
+        },
+        {
+          "type": "doc",
+          "id": "object-operations/merging",
+          "label": "18. 对象合并：`merge` 与 `mergeDeep`"
+        },
+        {
+          "type": "doc",
+          "id": "object-operations/structure-conversion",
+          "label": "19. 结构转换：`toPairs` 与 `fromPairs`"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第五部分：逻辑与流程控制",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "logic-flow/conditional-logic",
+          "label": "20. 条件逻辑：`ifElse` 与 `cond` 的函数式表达"
+        },
+        {
+          "type": "doc",
+          "id": "logic-flow/predicate-composition",
+          "label": "21. 断言组合：构建复杂的逻辑过滤器"
+        },
+        {
+          "type": "doc",
+          "id": "logic-flow/boolean-and-comparison",
+          "label": "22. 布尔运算与比较：`and`、`or`、`not` 与 `equals`"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第六部分：Transducer 协议：高性能组合的秘密",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "transducers/intro-to-transducers",
+          "label": "23. Transducer 思想：从数据流到操作流"
+        },
+        {
+          "type": "doc",
+          "id": "transducers/map-transducer",
+          "label": "24. 实现 `map` Transducer：改造 `map` 函数"
+        },
+        {
+          "type": "doc",
+          "id": "transducers/composition-and-sequence",
+          "label": "25. Transducer 的组合与 `sequence` 实现"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第七部分：Lenses：聚焦数据结构的任意部分",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "lenses/intro-to-lenses",
+          "label": "26. Lenses 思想：函数式的 Getter/Setter"
+        },
+        {
+          "type": "doc",
+          "id": "lenses/lens-implementation",
+          "label": "27. 深入 `lens`、`view`、`set` 与 `over` 的实现"
+        },
+        {
+          "type": "doc",
+          "id": "lenses/lens-composition",
+          "label": "28. Lenses 的组合：深入嵌套数据"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第八部分：Ramda 内部架构揭秘",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "internal-architecture/overview",
+          "label": "29. 架构概览：`internal` 目录的核心作用"
+        },
+        {
+          "type": "doc",
+          "id": "internal-architecture/core-helpers",
+          "label": "30. 核心工具剖析：`_curryN`, `_dispatchable`, `_xfrm`"
+        },
+        {
+          "type": "doc",
+          "id": "internal-architecture/building-a-public-api",
+          "label": "31. 从内部函数到公共 API：`map` 的完整构建过程"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第九部分：总结与展望",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "summary/fp-thinking-recap",
+          "label": "32. 函数式编程思维复盘"
+        },
+        {
+          "type": "doc",
+          "id": "summary/building-your-own-library",
+          "label": "33. 从 Ramda 到你的函数式工具库"
+        }
+      ]
+    }
+  ]
+}

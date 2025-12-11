@@ -1,0 +1,149 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：基础与核心",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "foundations/why-unocss",
+          "label": "1. 启程：为什么选择 UnoCSS"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/getting-started",
+          "label": "2. 快速上手：安装、配置与样式重置"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/core-concepts",
+          "label": "3. 核心概念：规则、预设与变体"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/mastering-rules",
+          "label": "4. 深入规则：静态与动态规则的艺术"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/leveraging-presets",
+          "label": "5. 玩转预设：`preset-wind` 与其他预设"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/advanced-variants",
+          "label": "6. 精通变体：响应式、伪类与逻辑组合"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第二部分：核心工具类实战",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "core-utilities/layout-sizing-spacing",
+          "label": "7. 构建骨架：布局、尺寸与间距"
+        },
+        {
+          "type": "doc",
+          "id": "core-utilities/colors-borders-gradients",
+          "label": "8. 填充色彩：背景、边框与渐变"
+        },
+        {
+          "type": "doc",
+          "id": "core-utilities/typography",
+          "label": "9. 注入灵魂：文本、字体与排版"
+        },
+        {
+          "type": "doc",
+          "id": "core-utilities/effects-filters-transitions",
+          "label": "10. 增添质感：阴影、滤镜与过渡"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第三部分：核心功能实战",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "core-features/shortcuts",
+          "label": "11. 效率提升：快捷方式 (Shortcuts)"
+        },
+        {
+          "type": "doc",
+          "id": "core-features/attributify-and-variant-groups",
+          "label": "12. 代码风格：属性化模式与变体组"
+        },
+        {
+          "type": "doc",
+          "id": "core-features/preset-icons",
+          "label": "13. 图标系统：开箱即用的图标方案"
+        },
+        {
+          "type": "doc",
+          "id": "core-features/theming",
+          "label": "14. 主题化定制：深入 `theme` 配置"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第四部分：高级技巧与定制",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "advanced/transformers",
+          "label": "15. 功能扩展：深入理解 `Transformers`"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/practical-configuration",
+          "label": "16. 实战配置：安全列表、层与提取器"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/creating-presets",
+          "label": "17. 终极玩法：创建你自己的预设"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第五部分：生态与工具链",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "ecosystem/framework-integration",
+          "label": "18. 主流框架集成指南"
+        },
+        {
+          "type": "doc",
+          "id": "ecosystem/inspector",
+          "label": "19. 调试利器：Inspector"
+        },
+        {
+          "type": "doc",
+          "id": "ecosystem/vscode-extension",
+          "label": "20. 编辑器赋能：VS Code 插件详解"
+        }
+      ]
+    }
+  ]
+}
