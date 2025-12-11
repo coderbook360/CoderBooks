@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://coderbooks.io',
+  url: 'https://coderbook360.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: process.env.GITHUB_ACTIONS ? '/CoderBooks/' : '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'coderbooks', // Usually your GitHub org/user name.
-  projectName: 'coderbooks', // Usually your repo name.
+  organizationName: 'coderbook360', // GitHub org/user name
+  projectName: 'CoderBooks', // repo name
+  trailingSlash: false,
 
   onBrokenLinks: 'warn',
 
