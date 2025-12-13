@@ -4,62 +4,77 @@
       "id": "source-code",
       "label": "🔧 源码解读",
       "description": "深入知名开源项目源码，理解核心实现原理",
-      "books": [
+      "groups": [
         {
-          "id": "mini-vite",
-          "title": "Mini-Vite",
-          "subtitle": "Vite 内核实现与实践",
-          "folder": "mini-vite",
-          "path": "source-code/mini-vite",
-          "route": "mini-vite"
+          "label": "Vue 生态",
+          "books": [
+            {
+              "id": "mini-vue3",
+              "title": "Mini-Vue3",
+              "subtitle": "Vue3 核心原理解析",
+              "folder": "mini-vue3",
+              "path": "source-code/mini-vue3",
+              "route": "mini-vue3"
+            },
+            {
+              "id": "mini-vite",
+              "title": "Mini-Vite",
+              "subtitle": "Vite 内核实现与实践",
+              "folder": "mini-vite",
+              "path": "source-code/mini-vite",
+              "route": "mini-vite"
+            }
+          ]
         },
         {
-          "id": "mini-vue3",
-          "title": "Mini-Vue3",
-          "subtitle": "Vue3 核心原理解析",
-          "folder": "mini-vue3",
-          "path": "source-code/mini-vue3",
-          "route": "mini-vue3"
+          "label": "解析器 & 引擎",
+          "books": [
+            {
+              "id": "mini-acornjs",
+              "title": "Mini-Acorn.js",
+              "subtitle": "JavaScript 解析器实现",
+              "folder": "mini-acornjs-book",
+              "path": "source-code/mini-acornjs",
+              "route": "mini-acornjs"
+            },
+            {
+              "id": "v8-book",
+              "title": "V8 引擎",
+              "subtitle": "Chrome V8 引擎深入解析",
+              "folder": "v8-book",
+              "path": "source-code/v8",
+              "route": "v8"
+            }
+          ]
         },
         {
-          "id": "mini-acornjs",
-          "title": "Mini-Acorn.js",
-          "subtitle": "JavaScript 解析器实现",
-          "folder": "mini-acornjs-book",
-          "path": "source-code/mini-acornjs",
-          "route": "mini-acornjs"
-        },
-        {
-          "id": "mini-hammerjs",
-          "title": "Mini-Hammer.js",
-          "subtitle": "手势识别库源码解析",
-          "folder": "mini-hammerjs-book",
-          "path": "source-code/mini-hammerjs",
-          "route": "mini-hammerjs"
-        },
-        {
-          "id": "mini-ramdajs",
-          "title": "Mini-Ramda.js",
-          "subtitle": "函数式编程库实现",
-          "folder": "mini-ramdajs-book",
-          "path": "source-code/mini-ramdajs",
-          "route": "mini-ramdajs"
-        },
-        {
-          "id": "mini-path-to-regexp",
-          "title": "Mini-Path-to-RegExp",
-          "subtitle": "路径匹配库源码解析",
-          "folder": "mini-path-to-regexp",
-          "path": "source-code/mini-path-to-regexp",
-          "route": "mini-path-to-regexp"
-        },
-        {
-          "id": "v8-book",
-          "title": "V8 引擎",
-          "subtitle": "Chrome V8 引擎深入解析",
-          "folder": "v8-book",
-          "path": "source-code/v8",
-          "route": "v8"
+          "label": "工具库",
+          "books": [
+            {
+              "id": "mini-hammerjs",
+              "title": "Mini-Hammer.js",
+              "subtitle": "手势识别库源码解析",
+              "folder": "mini-hammerjs-book",
+              "path": "source-code/mini-hammerjs",
+              "route": "mini-hammerjs"
+            },
+            {
+              "id": "mini-ramdajs",
+              "title": "Mini-Ramda.js",
+              "subtitle": "函数式编程库实现",
+              "folder": "mini-ramdajs-book",
+              "path": "source-code/mini-ramdajs",
+              "route": "mini-ramdajs"
+            },
+            {
+              "id": "mini-path-to-regexp",
+              "title": "Mini-Path-to-RegExp",
+              "subtitle": "路径匹配库源码解析",
+              "folder": "mini-path-to-regexp",
+              "path": "source-code/mini-path-to-regexp",
+              "route": "mini-path-to-regexp"
+            }
+          ]
         }
       ]
     },

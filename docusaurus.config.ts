@@ -16,11 +16,17 @@ interface BookConfig {
   route?: string; // 可选的自定义路由
 }
 
+interface GroupConfig {
+  label: string;
+  books: BookConfig[];
+}
+
 interface CategoryConfig {
   id: string;
   label: string;
   description: string;
-  books: BookConfig[];
+  books?: BookConfig[];  // 可选，如果有 groups 则为空
+  groups?: GroupConfig[]; // 可选，支持分组
 }
 
 interface BooksConfig {
@@ -36,9 +42,21 @@ function generateDocPlugins() {
   const plugins: Array<[string, Record<string, string>]> = [];
   
   for (const category of booksConfig.categories) {
-    for (const book of category.books) {
+    // 获取所有书籍（支持分组和不分组）
+    const allBooks: BookConfig[] = [];
+    if (category.groups) {
+      // 如果有分组，从所有分组中收集书籍
+      for (const group of category.groups) {
+        allBooks.push(...group.books);
+      }
+    } else if (category.books) {
+      // 如果没有分组，直接使用 books
+      allBooks.push(...category.books);
+    }
+    
+    // 为每本书创建插件配置
+    for (const book of allBooks) {
       const bookPath = `docs/${book.path}/book_zh`;
-      // 使用 book.route（如果有）或从 path 最后一段推导
       const routeSegment = book.route || book.path.split('/').pop() || book.id;
       
       plugins.push(['@docusaurus/plugin-content-docs', {
@@ -58,10 +76,29 @@ function generateNavbarItems() {
   const items: Array<Record<string, unknown>> = [];
   
   for (const category of booksConfig.categories) {
-    const dropdownItems = category.books.map(book => ({
-      to: `/books/${book.route || book.path.split('/').pop()}`,
-      label: book.title,
-    }));
+    let dropdownItems: Array<Record<string, unknown>> = [];
+    
+    if (category.groups) {
+      // 如果有分组，渲染分组标题和书籍
+      for (const group of category.groups) {
+        // 添加分组标题（不可点击）
+        dropdownItems.push({
+          type: 'html',
+          value: `<div style="padding: 0.5rem 1rem; font-weight: 600; color: var(--ifm-color-emphasis-700); font-size: 0.85rem;">${group.label}</div>`,
+        });
+        // 添加分组下的书籍
+        dropdownItems.push(...group.books.map(book => ({
+          to: `/books/${book.route || book.path.split('/').pop()}`,
+          label: book.title,
+        })));
+      }
+    } else if (category.books) {
+      // 如果没有分组，直接渲染书籍列表
+      dropdownItems = category.books.map(book => ({
+        to: `/books/${book.route || book.path.split('/').pop()}`,
+        label: book.title,
+      }));
+    }
     
     items.push({
       type: 'dropdown',
@@ -83,18 +120,30 @@ function generateNavbarItems() {
 
 // 动态生成页脚链接（每个分类取前3本书）
 function generateFooterLinks() {
-  return booksConfig.categories.map(category => ({
-    title: category.label.replace(/^[^\s]+\s/, ''), // 移除 emoji
-    items: category.books.slice(0, 3).map(book => ({
-      label: book.title,
-      to: `/books/${book.route || book.path.split('/').pop()}`,
-    })),
-  }));
+  return booksConfig.categories.map(category => {
+    // 获取所有书籍（支持分组和不分组）
+    let allBooks: BookConfig[] = [];
+    if (category.groups) {
+      for (const group of category.groups) {
+        allBooks.push(...group.books);
+      }
+    } else if (category.books) {
+      allBooks = category.books;
+    }
+    
+    return {
+      title: category.label.replace(/^[^\s]+\s/, ''), // 移除 emoji
+      items: allBooks.slice(0, 3).map(book => ({
+        label: book.title,
+        to: `/books/${book.route || book.path.split('/').pop()}`,
+      })),
+    };
+  });
 }
 
 const config: Config = {
   title: 'CoderBooks',
-  tagline: '深入源码，掌握本质 | 程序员的技术书籍库',
+  tagline: '深入源码，掌握本质 | 前端工程师的技术书籍库',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
