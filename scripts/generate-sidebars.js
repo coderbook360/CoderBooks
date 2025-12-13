@@ -179,7 +179,13 @@ function main() {
     
     for (const book of books) {
       const bookPath = path.join(categoryPath, book);
-      processBook(bookPath);
+      // 检查是否有 book_zh 子目录
+      const bookZhPath = path.join(bookPath, 'book_zh');
+      if (fs.existsSync(bookZhPath)) {
+        processBook(bookZhPath);
+      } else {
+        processBook(bookPath);
+      }
     }
   }
   

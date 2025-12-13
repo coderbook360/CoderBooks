@@ -1,8 +1,96 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import * as fs from 'fs';
+import * as path from 'path';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+// ========== 动态读取书籍配置 ==========
+interface BookConfig {
+  id: string;
+  title: string;
+  subtitle: string;
+  folder: string;
+  path: string;
+  route?: string; // 可选的自定义路由
+}
+
+interface CategoryConfig {
+  id: string;
+  label: string;
+  description: string;
+  books: BookConfig[];
+}
+
+interface BooksConfig {
+  categories: CategoryConfig[];
+}
+
+// 读取 books-config.json
+const booksConfigPath = path.resolve(__dirname, 'books-config.json');
+const booksConfig: BooksConfig = JSON.parse(fs.readFileSync(booksConfigPath, 'utf-8'));
+
+// 动态生成文档插件配置
+function generateDocPlugins() {
+  const plugins: Array<[string, Record<string, string>]> = [];
+  
+  for (const category of booksConfig.categories) {
+    for (const book of category.books) {
+      const bookPath = `docs/${book.path}/book_zh`;
+      // 使用 book.route（如果有）或从 path 最后一段推导
+      const routeSegment = book.route || book.path.split('/').pop() || book.id;
+      
+      plugins.push(['@docusaurus/plugin-content-docs', {
+        id: book.id,
+        path: bookPath,
+        routeBasePath: `books/${routeSegment}`,
+        sidebarPath: `./${bookPath}/sidebar.json`,
+      }]);
+    }
+  }
+  
+  return plugins;
+}
+
+// 动态生成导航栏下拉菜单
+function generateNavbarItems() {
+  const items: Array<Record<string, unknown>> = [];
+  
+  for (const category of booksConfig.categories) {
+    const dropdownItems = category.books.map(book => ({
+      to: `/books/${book.route || book.path.split('/').pop()}`,
+      label: book.title,
+    }));
+    
+    items.push({
+      type: 'dropdown',
+      label: category.label,
+      position: 'left',
+      items: dropdownItems,
+    });
+  }
+  
+  // 添加 GitHub 链接
+  items.push({
+    href: 'https://github.com/coderbook360/CoderBooks',
+    label: 'GitHub',
+    position: 'right',
+  });
+  
+  return items;
+}
+
+// 动态生成页脚链接（每个分类取前3本书）
+function generateFooterLinks() {
+  return booksConfig.categories.map(category => ({
+    title: category.label.replace(/^[^\s]+\s/, ''), // 移除 emoji
+    items: category.books.slice(0, 3).map(book => ({
+      label: book.title,
+      to: `/books/${book.route || book.path.split('/').pop()}`,
+    })),
+  }));
+}
 
 const config: Config = {
   title: 'CoderBooks',
@@ -35,112 +123,8 @@ const config: Config = {
     locales: ['zh-Hans'],
   },
 
-  // 多文档实例插件 - 每本书一个实例
-  plugins: [
-    // ========== 源码解读系列 ==========
-    ['@docusaurus/plugin-content-docs', {
-      id: 'mini-vite',
-      path: 'docs/source-code/mini-vite',
-      routeBasePath: 'books/mini-vite',
-      sidebarPath: './docs/source-code/mini-vite/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'mini-vue3',
-      path: 'docs/source-code/mini-vue3',
-      routeBasePath: 'books/mini-vue3',
-      sidebarPath: './docs/source-code/mini-vue3/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'mini-acornjs',
-      path: 'docs/source-code/mini-acornjs',
-      routeBasePath: 'books/mini-acornjs',
-      sidebarPath: './docs/source-code/mini-acornjs/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'mini-hammerjs',
-      path: 'docs/source-code/mini-hammerjs',
-      routeBasePath: 'books/mini-hammerjs',
-      sidebarPath: './docs/source-code/mini-hammerjs/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'mini-ramdajs',
-      path: 'docs/source-code/mini-ramdajs',
-      routeBasePath: 'books/mini-ramdajs',
-      sidebarPath: './docs/source-code/mini-ramdajs/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'mini-path-to-regexp',
-      path: 'docs/source-code/mini-path-to-regexp',
-      routeBasePath: 'books/mini-path-to-regexp',
-      sidebarPath: './docs/source-code/mini-path-to-regexp/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'v8-book',
-      path: 'docs/source-code/v8',
-      routeBasePath: 'books/v8',
-      sidebarPath: './docs/source-code/v8/sidebar.json',
-    }],
-
-    // ========== AI 与思维系列 ==========
-    ['@docusaurus/plugin-content-docs', {
-      id: 'ai-prompt',
-      path: 'docs/ai-thinking/ai-prompt',
-      routeBasePath: 'books/ai-prompt',
-      sidebarPath: './docs/ai-thinking/ai-prompt/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'clear-thinking',
-      path: 'docs/ai-thinking/clear-thinking',
-      routeBasePath: 'books/clear-thinking',
-      sidebarPath: './docs/ai-thinking/clear-thinking/sidebar.json',
-    }],
-
-    // ========== 前端工具系列 ==========
-    ['@docusaurus/plugin-content-docs', {
-      id: 'quick-unocss',
-      path: 'docs/frontend-tools/unocss',
-      routeBasePath: 'books/unocss',
-      sidebarPath: './docs/frontend-tools/unocss/sidebar.json',
-    }],
-
-    // ========== LeetCode 算法系列 ==========
-    ['@docusaurus/plugin-content-docs', {
-      id: 'leetcode-ds',
-      path: 'docs/leetcode/ds-foundations',
-      routeBasePath: 'books/leetcode-ds',
-      sidebarPath: './docs/leetcode/ds-foundations/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'leetcode-algo',
-      path: 'docs/leetcode/algo-techniques',
-      routeBasePath: 'books/leetcode-algo',
-      sidebarPath: './docs/leetcode/algo-techniques/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'leetcode-dp',
-      path: 'docs/leetcode/dp-mastery',
-      routeBasePath: 'books/leetcode-dp',
-      sidebarPath: './docs/leetcode/dp-mastery/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'leetcode-graph',
-      path: 'docs/leetcode/graph-search',
-      routeBasePath: 'books/leetcode-graph',
-      sidebarPath: './docs/leetcode/graph-search/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'leetcode-advanced',
-      path: 'docs/leetcode/advanced-ds',
-      routeBasePath: 'books/leetcode-advanced',
-      sidebarPath: './docs/leetcode/advanced-ds/sidebar.json',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'leetcode-competitive',
-      path: 'docs/leetcode/competitive',
-      routeBasePath: 'books/leetcode-competitive',
-      sidebarPath: './docs/leetcode/competitive/sidebar.json',
-    }],
-  ],
+  // 多文档实例插件 - 从 books-config.json 动态生成
+  plugins: generateDocPlugins(),
 
   // Markdown 配置 - 使用宽松模式处理非标准语法
   markdown: {
@@ -177,89 +161,11 @@ const config: Config = {
         alt: 'CoderBooks Logo',
         src: 'img/logo.svg',
       },
-      items: [
-        // 源码解读系列
-        {
-          type: 'dropdown',
-          label: '🔧 源码解读',
-          position: 'left',
-          items: [
-            { to: '/books/mini-vite', label: 'Mini-Vite 源码解读' },
-            { to: '/books/mini-vue3', label: 'Mini-Vue3 源码解读' },
-            { to: '/books/mini-acornjs', label: 'Mini-Acorn.js 解析器' },
-            { to: '/books/mini-hammerjs', label: 'Mini-Hammer.js 手势库' },
-            { to: '/books/mini-ramdajs', label: 'Mini-Ramda.js 函数式' },
-            { to: '/books/mini-path-to-regexp', label: 'Path-to-RegExp 路由' },
-            { to: '/books/v8', label: 'V8 引擎深度剖析' },
-          ],
-        },
-        // LeetCode 算法系列
-        {
-          type: 'dropdown',
-          label: '📊 LeetCode',
-          position: 'left',
-          items: [
-            { to: '/books/leetcode-ds', label: '① 数据结构基础' },
-            { to: '/books/leetcode-algo', label: '② 算法技巧篇' },
-            { to: '/books/leetcode-dp', label: '③ 动态规划精通' },
-            { to: '/books/leetcode-graph', label: '④ 图论与搜索' },
-            { to: '/books/leetcode-advanced', label: '⑤ 高级数据结构' },
-            { to: '/books/leetcode-competitive', label: '⑥ 算法竞赛实战' },
-          ],
-        },
-        // AI 与思维系列
-        {
-          type: 'dropdown',
-          label: '🤖 AI & 思维',
-          position: 'left',
-          items: [
-            { to: '/books/ai-prompt', label: 'AI 提示词工程' },
-            { to: '/books/clear-thinking', label: '清晰思考' },
-          ],
-        },
-        // 前端工具
-        {
-          type: 'dropdown',
-          label: '🛠️ 前端工具',
-          position: 'left',
-          items: [
-            { to: '/books/unocss', label: 'UnoCSS 实战指南' },
-          ],
-        },
-        {
-          href: 'https://github.com/user/coderbooks',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      items: generateNavbarItems(),
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: '源码解读',
-          items: [
-            { label: 'Mini-Vite', to: '/books/mini-vite' },
-            { label: 'Mini-Vue3', to: '/books/mini-vue3' },
-            { label: 'V8 引擎', to: '/books/v8' },
-          ],
-        },
-        {
-          title: 'LeetCode 系列',
-          items: [
-            { label: '数据结构基础', to: '/books/leetcode-ds' },
-            { label: '算法技巧篇', to: '/books/leetcode-algo' },
-            { label: '动态规划精通', to: '/books/leetcode-dp' },
-          ],
-        },
-        {
-          title: 'AI & 工具',
-          items: [
-            { label: 'AI 提示词工程', to: '/books/ai-prompt' },
-            { label: 'UnoCSS 指南', to: '/books/unocss' },
-          ],
-        },
-      ],
+      links: generateFooterLinks(),
       copyright: `Copyright © ${new Date().getFullYear()} CoderBooks. 深入源码，掌握本质。`,
     },
     prism: {

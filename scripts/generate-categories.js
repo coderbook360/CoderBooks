@@ -2,7 +2,7 @@
  * 自动生成 _category_.json 脚本
  * 
  * 功能：
- * 1. 扫描 sourcebooks 下所有书籍的 book_zh 目录
+ * 1. 扫描 docs 下所有书籍目录
  * 2. 解析 toc.md 获取章节标题和顺序
  * 3. 为每个子目录生成 _category_.json
  * 
@@ -12,7 +12,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const SOURCEBOOKS_DIR = path.join(__dirname, '..', 'sourcebooks');
+const DOCS_DIR = path.join(__dirname, '..', 'docs');
+const CONFIG_PATH = path.join(__dirname, '..', 'books-config.json');
 
 // 目录名称到中文标签的映射（作为备用）
 const FOLDER_LABELS = {
@@ -192,10 +193,10 @@ function generateCategoryJson(dirPath, label, position) {
 
 /**
  * 处理单本书
- * @param {string} bookPath book_zh 目录路径
+ * @param {string} bookPath 书籍目录路径（docs/{分类}/{书名}）
  */
 function processBook(bookPath) {
-  const bookName = path.basename(path.dirname(bookPath));
+  const bookName = path.basename(bookPath);
   console.log(`\n📖 处理书籍: ${bookName}`);
   
   // 解析 toc.md
@@ -239,20 +240,31 @@ function processBook(bookPath) {
  */
 function main() {
   console.log('🚀 开始生成 _category_.json 文件...\n');
-  console.log(`📁 源目录: ${SOURCEBOOKS_DIR}`);
+  console.log(`📁 文档目录: ${DOCS_DIR}`);
   
-  // 获取所有书籍目录
-  const books = fs.readdirSync(SOURCEBOOKS_DIR, { withFileTypes: true })
-    .filter(item => item.isDirectory())
-    .map(item => item.name);
+  // 读取 books-config.json 获取所有书籍路径
+  if (!fs.existsSync(CONFIG_PATH)) {
+    console.error('❌ books-config.json 不存在');
+    process.exit(1);
+  }
   
-  for (const book of books) {
-    const bookZhPath = path.join(SOURCEBOOKS_DIR, book, 'book_zh');
+  const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  
+  for (const category of config.categories) {
+    console.log(`\n📂 分类: ${category.label}`);
     
-    if (fs.existsSync(bookZhPath)) {
-      processBook(bookZhPath);
-    } else {
-      console.log(`\n⏭️ 跳过 ${book}: book_zh 目录不存在`);
+    for (const book of category.books) {
+      const bookPath = path.join(DOCS_DIR, book.path);
+      // 优先使用 book_zh 子目录
+      const bookZhPath = path.join(bookPath, 'book_zh');
+      
+      if (fs.existsSync(bookZhPath)) {
+        processBook(bookZhPath);
+      } else if (fs.existsSync(bookPath)) {
+        processBook(bookPath);
+      } else {
+        console.log(`\n⏭️ 跳过 ${book.title}: 目录不存在 (${book.path})`);
+      }
     }
   }
   

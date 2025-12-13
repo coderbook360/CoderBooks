@@ -10,49 +10,56 @@
           "title": "Mini-Vite",
           "subtitle": "Vite 内核实现与实践",
           "folder": "mini-vite",
-          "path": "source-code/mini-vite"
+          "path": "source-code/mini-vite",
+          "route": "mini-vite"
         },
         {
           "id": "mini-vue3",
           "title": "Mini-Vue3",
           "subtitle": "Vue3 核心原理解析",
           "folder": "mini-vue3",
-          "path": "source-code/mini-vue3"
+          "path": "source-code/mini-vue3",
+          "route": "mini-vue3"
         },
         {
           "id": "mini-acornjs",
           "title": "Mini-Acorn.js",
           "subtitle": "JavaScript 解析器实现",
           "folder": "mini-acornjs-book",
-          "path": "source-code/mini-acornjs"
+          "path": "source-code/mini-acornjs",
+          "route": "mini-acornjs"
         },
         {
           "id": "mini-hammerjs",
           "title": "Mini-Hammer.js",
           "subtitle": "手势识别库源码解析",
           "folder": "mini-hammerjs-book",
-          "path": "source-code/mini-hammerjs"
+          "path": "source-code/mini-hammerjs",
+          "route": "mini-hammerjs"
         },
         {
           "id": "mini-ramdajs",
           "title": "Mini-Ramda.js",
           "subtitle": "函数式编程库实现",
           "folder": "mini-ramdajs-book",
-          "path": "source-code/mini-ramdajs"
+          "path": "source-code/mini-ramdajs",
+          "route": "mini-ramdajs"
         },
         {
           "id": "mini-path-to-regexp",
           "title": "Mini-Path-to-RegExp",
           "subtitle": "路径匹配库源码解析",
           "folder": "mini-path-to-regexp",
-          "path": "source-code/mini-path-to-regexp"
+          "path": "source-code/mini-path-to-regexp",
+          "route": "mini-path-to-regexp"
         },
         {
           "id": "v8-book",
           "title": "V8 引擎",
           "subtitle": "Chrome V8 引擎深入解析",
           "folder": "v8-book",
-          "path": "source-code/v8"
+          "path": "source-code/v8",
+          "route": "v8"
         }
       ]
     },
@@ -63,45 +70,51 @@
       "books": [
         {
           "id": "leetcode-ds",
-          "title": "数据结构基础",
+          "title": "①数据结构基础",
           "subtitle": "LeetCode 数据结构入门",
           "folder": "leetcode-ds-foundations",
-          "path": "leetcode/ds-foundations"
+          "path": "leetcode/ds-foundations",
+          "route": "leetcode-ds"
         },
         {
           "id": "leetcode-algo",
-          "title": "算法技巧篇",
+          "title": "②算法技巧篇",
           "subtitle": "LeetCode 算法技巧精讲",
           "folder": "leetcode-algo-techniques",
-          "path": "leetcode/algo-techniques"
+          "path": "leetcode/algo-techniques",
+          "route": "leetcode-algo"
         },
         {
           "id": "leetcode-dp",
-          "title": "动态规划精通",
+          "title": "③动态规划精通",
           "subtitle": "LeetCode 动态规划专题",
           "folder": "leetcode-dp-mastery",
-          "path": "leetcode/dp-mastery"
+          "path": "leetcode/dp-mastery",
+          "route": "leetcode-dp"
         },
         {
           "id": "leetcode-graph",
-          "title": "图与搜索",
+          "title": "④图与搜索",
           "subtitle": "LeetCode 图论与搜索",
           "folder": "leetcode-graph-search",
-          "path": "leetcode/graph-search"
+          "path": "leetcode/graph-search",
+          "route": "leetcode-graph"
         },
         {
           "id": "leetcode-advanced-ds",
-          "title": "高级数据结构",
+          "title": "⑤高级数据结构",
           "subtitle": "LeetCode 进阶数据结构",
           "folder": "leetcode-advanced-ds",
-          "path": "leetcode/advanced-ds"
+          "path": "leetcode/advanced-ds",
+          "route": "leetcode-advanced"
         },
         {
           "id": "leetcode-competitive",
-          "title": "竞赛专题",
+          "title": "⑥竞赛专题",
           "subtitle": "LeetCode 竞赛技巧",
           "folder": "leetcode-competitive",
-          "path": "leetcode/competitive"
+          "path": "leetcode/competitive",
+          "route": "leetcode-competitive"
         }
       ]
     },
@@ -115,14 +128,16 @@
           "title": "AI 提示词工程",
           "subtitle": "Prompt Engineering 实战指南",
           "folder": "ai-prompt",
-          "path": "ai-thinking/ai-prompt"
+          "path": "ai-thinking/ai-prompt",
+          "route": "ai-prompt"
         },
         {
           "id": "clear-thinking",
           "title": "清晰思考",
           "subtitle": "思维方法与决策框架",
           "folder": "clear-thinking-book",
-          "path": "ai-thinking/clear-thinking"
+          "path": "ai-thinking/clear-thinking",
+          "route": "clear-thinking"
         }
       ]
     },
@@ -136,7 +151,8 @@
           "title": "UnoCSS 快速入门",
           "subtitle": "原子化 CSS 框架指南",
           "folder": "quick-unocss",
-          "path": "frontend-tools/unocss"
+          "path": "frontend-tools/unocss",
+          "route": "unocss"
         }
       ]
     }

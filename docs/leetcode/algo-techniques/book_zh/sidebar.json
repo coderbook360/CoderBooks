@@ -1,0 +1,719 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：递归思维训练",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "recursion/recursion-fundamentals",
+          "label": "1. 递归的本质与设计方法"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/three-elements",
+          "label": "2. 递归的三要素"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/recursion-vs-iteration",
+          "label": "3. 递归与迭代的转换"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-fibonacci",
+          "label": "4. 实战：斐波那契数列"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-climbing-stairs",
+          "label": "5. 实战：爬楼梯"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-hanoi",
+          "label": "6. 实战：汉诺塔问题"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-reverse-list-recursive",
+          "label": "7. 实战：翻转链表（递归解法）"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-tree-depth",
+          "label": "8. 实战：二叉树的深度（递归思维）"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-generate-parentheses",
+          "label": "9. 实战：括号生成"
+        },
+        {
+          "type": "doc",
+          "id": "recursion/practice-pow",
+          "label": "10. 实战：幂运算"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第二部分：双指针技巧",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "two-pointers/two-pointers-methodology",
+          "label": "11. 双指针方法论"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/collision-pointers",
+          "label": "12. 对撞指针模式"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/fast-slow-pointers",
+          "label": "13. 快慢指针模式"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-reverse-string",
+          "label": "14. 实战：反转字符串"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-valid-palindrome",
+          "label": "15. 实战：回文串判断"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-container-with-most-water",
+          "label": "16. 实战：盛最多水的容器"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-three-sum",
+          "label": "17. 实战：三数之和"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-four-sum",
+          "label": "18. 实战：四数之和"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-three-sum-closest",
+          "label": "19. 实战：最接近的三数之和"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-trapping-rain-water",
+          "label": "20. 实战：接雨水（双指针解法）"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-sort-colors",
+          "label": "21. 实战：颜色分类"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-remove-duplicates-ii",
+          "label": "22. 实战：删除有序数组中的重复项 II"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-backspace-compare",
+          "label": "23. 实战：比较含退格的字符串"
+        },
+        {
+          "type": "doc",
+          "id": "two-pointers/practice-sorted-squares",
+          "label": "24. 实战：有序数组的平方"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第三部分：滑动窗口",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "sliding-window/sliding-window-methodology",
+          "label": "25. 滑动窗口方法论"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/window-types",
+          "label": "26. 固定窗口与可变窗口"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/sliding-window-template",
+          "label": "27. 滑动窗口模板"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-longest-substring",
+          "label": "28. 实战：无重复字符的最长子串"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-min-window-substring",
+          "label": "29. 实战：最小覆盖子串"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-permutation-in-string",
+          "label": "30. 实战：字符串的排列"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-find-anagrams",
+          "label": "31. 实战：找到字符串中所有字母异位词"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-min-size-subarray",
+          "label": "32. 实战：长度最小的子数组"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-fruit-baskets",
+          "label": "33. 实战：水果成篮"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-k-distinct-integers",
+          "label": "34. 实战：K 个不同整数的子数组"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-longest-repeating-char",
+          "label": "35. 实战：替换后的最长重复字符"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-max-consecutive-ones-iii",
+          "label": "36. 实战：最大连续 1 的个数 III"
+        },
+        {
+          "type": "doc",
+          "id": "sliding-window/practice-sliding-window-median",
+          "label": "37. 实战：滑动窗口中位数"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第四部分：前缀和与差分数组",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "prefix-sum/prefix-sum-theory",
+          "label": "38. 前缀和原理与应用"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/difference-array-theory",
+          "label": "39. 差分数组原理与应用"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-range-sum-immutable",
+          "label": "40. 实战：区域和检索（不可变）"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-subarray-sum-k",
+          "label": "41. 实战：子数组和为 K"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-subarray-count-k",
+          "label": "42. 实战：和为 K 的子数组个数"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-range-addition",
+          "label": "43. 实战：区间加法"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-range-sum-2d",
+          "label": "44. 实战：二维区域和检索"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-subarray-div-k",
+          "label": "45. 实战：和可被 K 整除的子数组"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-continuous-subarray-sum",
+          "label": "46. 实战：连续的子数组和"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-corpflight-bookings",
+          "label": "47. 实战：航班预订统计"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-carpool",
+          "label": "48. 实战：拼车"
+        },
+        {
+          "type": "doc",
+          "id": "prefix-sum/practice-product-except-self",
+          "label": "49. 实战：除自身以外数组的乘积"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第五部分：二分查找",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "binary-search/binary-search-fundamentals",
+          "label": "50. 二分查找原理与边界处理"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/binary-search-templates",
+          "label": "51. 二分查找的三种模板"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/binary-search-variants",
+          "label": "52. 二分查找的变体问题"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-basic-binary-search",
+          "label": "53. 实战：基础二分查找"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-search-insert-position",
+          "label": "54. 实战：搜索插入位置"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-find-first-last",
+          "label": "55. 实战：在排序数组中查找元素的第一个和最后一个位置"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-search-rotated-array",
+          "label": "56. 实战：搜索旋转排序数组"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-search-rotated-array-ii",
+          "label": "57. 实战：搜索旋转排序数组 II"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-find-peak-element",
+          "label": "58. 实战：寻找峰值"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-median-of-arrays",
+          "label": "59. 实战：寻找两个正序数组的中位数"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-sqrt-x",
+          "label": "60. 实战：x 的平方根"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-search-2d-matrix",
+          "label": "61. 实战：搜索二维矩阵"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-search-2d-matrix-ii",
+          "label": "62. 实战：搜索二维矩阵 II"
+        },
+        {
+          "type": "doc",
+          "id": "binary-search/practice-find-minimum-rotated",
+          "label": "63. 实战：寻找旋转排序数组中的最小值"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第六部分：二分答案",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "binary-answer/binary-answer-methodology",
+          "label": "64. 二分答案方法论"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/check-function-design",
+          "label": "65. 判定函数的设计"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-koko-eating-bananas",
+          "label": "66. 实战：爱吃香蕉的珂珂"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-ship-within-days",
+          "label": "67. 实战：在 D 天内送达包裹的能力"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-split-array-largest-sum",
+          "label": "68. 实战：分割数组的最大值"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-minimum-days-bouquets",
+          "label": "69. 实战：制作 m 束花所需的最少天数"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-kth-smallest-distance",
+          "label": "70. 实战：找出第 K 小的距离对"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-minimize-max",
+          "label": "71. 实战：最小化最大值"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-cutting-wood",
+          "label": "72. 实战：切割木头"
+        },
+        {
+          "type": "doc",
+          "id": "binary-answer/practice-book-allocation",
+          "label": "73. 实战：书籍分配"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第七部分：贪心算法",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "greedy/greedy-methodology",
+          "label": "74. 贪心算法方法论"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/greedy-properties",
+          "label": "75. 贪心选择性质与最优子结构"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/greedy-vs-dp",
+          "label": "76. 贪心 vs 动态规划"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-assign-cookies",
+          "label": "77. 实战：分发饼干"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-stock-ii",
+          "label": "78. 实战：买卖股票的最佳时机 II"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-jump-game",
+          "label": "79. 实战：跳跃游戏"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-jump-game-ii",
+          "label": "80. 实战：跳跃游戏 II"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-gas-station",
+          "label": "81. 实战：加油站"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-non-overlapping-intervals",
+          "label": "82. 实战：无重叠区间"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-min-arrows",
+          "label": "83. 实战：用最少数量的箭引爆气球"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-candy",
+          "label": "85. 实战：分发糖果"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-partition-labels",
+          "label": "88. 实战：划分字母区间"
+        },
+        {
+          "type": "doc",
+          "id": "greedy/practice-task-scheduler",
+          "label": "90. 实战：任务调度器"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第八部分：分治算法",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "divide-conquer/divide-conquer-methodology",
+          "label": "91. 分治算法方法论"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/complexity-analysis",
+          "label": "92. 分治算法的时间复杂度分析"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-merge-sort",
+          "label": "93. 实战：归并排序"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-quick-sort",
+          "label": "94. 实战：快速排序"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-max-subarray",
+          "label": "95. 实战：最大子数组和（分治解法）"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-reverse-pairs",
+          "label": "96. 实战：数组中的逆序对"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-count-smaller",
+          "label": "97. 实战：计算右侧小于当前元素的个数"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-unique-bst-ii",
+          "label": "99. 实战：不同的二叉搜索树 II"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-diff-ways-compute",
+          "label": "100. 实战：为运算表达式设计优先级"
+        },
+        {
+          "type": "doc",
+          "id": "divide-conquer/practice-majority-element",
+          "label": "101. 实战：多数元素"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第九部分：排序算法专题",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "sorting/sorting-overview",
+          "label": "102. 排序算法概览与分类"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/comparison-sort-bound",
+          "label": "103. 比较排序的下界"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-bubble-sort",
+          "label": "104. 实战：冒泡排序实现与优化"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-selection-sort",
+          "label": "105. 实战：选择排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-insertion-sort",
+          "label": "106. 实战：插入排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-shell-sort",
+          "label": "107. 实战：希尔排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-heap-sort",
+          "label": "108. 实战：堆排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-counting-sort",
+          "label": "109. 实战：计数排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-bucket-sort",
+          "label": "110. 实战：桶排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-radix-sort",
+          "label": "111. 实战：基数排序实现"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-sort-array",
+          "label": "112. 实战：排序数组"
+        },
+        {
+          "type": "doc",
+          "id": "sorting/practice-sort-linked-list",
+          "label": "113. 实战：排序链表"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第十部分：回溯算法",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "backtracking/backtracking-methodology",
+          "label": "114. 回溯算法方法论"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/backtracking-template",
+          "label": "115. 回溯算法模板"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/pruning-techniques",
+          "label": "116. 剪枝优化技巧"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-permutations",
+          "label": "117. 实战：全排列"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-permutations-ii",
+          "label": "118. 实战：全排列 II"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-combinations",
+          "label": "119. 实战：组合"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-combination-sum",
+          "label": "120. 实战：组合总和"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-combination-sum-ii",
+          "label": "121. 实战：组合总和 II"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-combination-sum-iii",
+          "label": "122. 实战：组合总和 III"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-subsets",
+          "label": "123. 实战：子集"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-subsets-ii",
+          "label": "124. 实战：子集 II"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-n-queens",
+          "label": "125. 实战：N 皇后"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-n-queens-ii",
+          "label": "126. 实战：N 皇后 II"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-sudoku-solver",
+          "label": "127. 实战：解数独"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-word-search",
+          "label": "128. 实战：单词搜索"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-partition-palindrome",
+          "label": "129. 实战：分割回文串"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-restore-ip",
+          "label": "130. 实战：复原 IP 地址"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-letter-combinations",
+          "label": "131. 实战：电话号码的字母组合"
+        },
+        {
+          "type": "doc",
+          "id": "backtracking/practice-generate-parentheses",
+          "label": "132. 实战：括号生成（回溯解法）"
+        }
+      ]
+    }
+  ]
+}

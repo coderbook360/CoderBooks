@@ -46,7 +46,8 @@
   color: var(--ifm-color-primary);
 }
 
-.categoryTabActive {
+.categoryTabActive,
+.categoryTabActive:hover {
   background: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
   color: white;
