@@ -1,0 +1,243 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：向量运算",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "vectors/vector-basics",
+          "label": "1. 向量的概念与表示"
+        },
+        {
+          "type": "doc",
+          "id": "vectors/vector-arithmetic",
+          "label": "2. 向量的加减与数乘"
+        },
+        {
+          "type": "doc",
+          "id": "vectors/vector-length",
+          "label": "3. 向量的长度与归一化"
+        },
+        {
+          "type": "doc",
+          "id": "vectors/dot-cross-product",
+          "label": "4. 点积与叉积"
+        },
+        {
+          "type": "doc",
+          "id": "vectors/vector-applications",
+          "label": "5. 向量在图形学中的应用"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第二部分：矩阵运算",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "matrices/matrix-basics",
+          "label": "6. 矩阵的概念与表示"
+        },
+        {
+          "type": "doc",
+          "id": "matrices/matrix-arithmetic",
+          "label": "7. 矩阵的加减与数乘"
+        },
+        {
+          "type": "doc",
+          "id": "matrices/matrix-multiplication",
+          "label": "8. 矩阵乘法详解"
+        },
+        {
+          "type": "doc",
+          "id": "matrices/special-matrices",
+          "label": "9. 特殊矩阵：单位矩阵与逆矩阵"
+        },
+        {
+          "type": "doc",
+          "id": "matrices/matrix-transpose",
+          "label": "10. 转置矩阵与矩阵属性"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第三部分：3D 变换",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "transforms/homogeneous-coordinates",
+          "label": "11. 齐次坐标系统"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/translation-matrix",
+          "label": "12. 平移变换矩阵"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/rotation-matrix",
+          "label": "13. 旋转变换矩阵"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/euler-angles",
+          "label": "14. 欧拉角与万向节死锁"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/scale-mirror",
+          "label": "15. 缩放与镜像变换"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/composite-transforms",
+          "label": "16. 复合变换与变换顺序"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/normal-transform",
+          "label": "17. 法线变换与逆转置矩阵"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/lookat-matrix",
+          "label": "18. Look-At 矩阵构建详解"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第四部分：坐标系统",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "coordinates/model-world-space",
+          "label": "19. 模型空间与世界空间"
+        },
+        {
+          "type": "doc",
+          "id": "coordinates/view-space",
+          "label": "20. 观察空间与相机变换"
+        },
+        {
+          "type": "doc",
+          "id": "coordinates/screen-space",
+          "label": "22. 屏幕空间与视口变换"
+        },
+        {
+          "type": "doc",
+          "id": "coordinates/tangent-space",
+          "label": "23. 切线空间与 TBN 矩阵"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第五部分：投影变换",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "projection/projection-overview",
+          "label": "24. 投影变换概述"
+        },
+        {
+          "type": "doc",
+          "id": "projection/orthographic",
+          "label": "25. 正交投影矩阵推导"
+        },
+        {
+          "type": "doc",
+          "id": "projection/perspective",
+          "label": "26. 透视投影矩阵推导"
+        },
+        {
+          "type": "doc",
+          "id": "projection/frustum-culling",
+          "label": "27. 视锥体与裁剪"
+        },
+        {
+          "type": "doc",
+          "id": "projection/depth-buffer",
+          "label": "28. 深度缓冲与深度精度"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第六部分：四元数",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "quaternions/why-quaternions",
+          "label": "29. 为什么需要四元数"
+        },
+        {
+          "type": "doc",
+          "id": "quaternions/quaternion-basics",
+          "label": "30. 四元数的定义与表示"
+        },
+        {
+          "type": "doc",
+          "id": "quaternions/quaternion-operations",
+          "label": "31. 四元数的运算"
+        },
+        {
+          "type": "doc",
+          "id": "quaternions/rotation-quaternion",
+          "label": "32. 用四元数表示旋转"
+        },
+        {
+          "type": "doc",
+          "id": "quaternions/euler-quaternion",
+          "label": "33. 四元数与欧拉角的转换"
+        },
+        {
+          "type": "doc",
+          "id": "quaternions/slerp",
+          "label": "34. 四元数插值：Slerp"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第七部分：几何运算与应用",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "geometry/ray-plane",
+          "label": "35. 射线与平面的交点"
+        },
+        {
+          "type": "doc",
+          "id": "geometry/aabb",
+          "label": "36. 轴对齐包围盒 AABB"
+        },
+        {
+          "type": "doc",
+          "id": "geometry/bounding-sphere",
+          "label": "37. 球体包围盒与碰撞检测"
+        },
+        {
+          "type": "doc",
+          "id": "geometry/obb",
+          "label": "38. OBB 有向包围盒"
+        }
+      ]
+    }
+  ]
+}

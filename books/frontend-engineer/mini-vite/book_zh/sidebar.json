@@ -1,0 +1,264 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第 1 部分: 设计概览",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "overview/goals-and-architecture",
+          "label": "1. 目标与架构总览"
+        },
+        {
+          "type": "doc",
+          "id": "overview/dataflow-and-module-graph",
+          "label": "2. 核心数据流与模块图"
+        },
+        {
+          "type": "doc",
+          "id": "overview/dev-vs-build",
+          "label": "3. 开发与构建的边界"
+        },
+        {
+          "type": "doc",
+          "id": "overview/config-resolution-and-defaults",
+          "label": "4. 配置解析与默认值"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 2 部分: 开发服务器",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "dev-server/startup-and-environments",
+          "label": "5. 启动流程与环境初始化"
+        },
+        {
+          "type": "doc",
+          "id": "dev-server/middleware-pipeline",
+          "label": "6. 中间件管线与请求处理"
+        },
+        {
+          "type": "doc",
+          "id": "dev-server/path-resolution-and-static",
+          "label": "7. 路径解析与静态资源"
+        },
+        {
+          "type": "doc",
+          "id": "dev-server/file-watching-and-events",
+          "label": "8. 文件监听与变更事件"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 3 部分: 插件系统",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "plugins/plugin-model-and-hooks",
+          "label": "9. 插件模型与钩子"
+        },
+        {
+          "type": "doc",
+          "id": "plugins/plugin-container-and-context",
+          "label": "10. 插件容器与执行上下文"
+        },
+        {
+          "type": "doc",
+          "id": "plugins/index-html-transform",
+          "label": "11. 索引 HTML 变换"
+        },
+        {
+          "type": "doc",
+          "id": "plugins/builtin-plugins-and-patterns",
+          "label": "12. 内置插件与常用模式"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 4 部分: 依赖优化",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "dep-optimization/scan-and-entry-analysis",
+          "label": "13. 扫描与入口分析"
+        },
+        {
+          "type": "doc",
+          "id": "dep-optimization/prebundle-and-cache",
+          "label": "14. 预构建与缓存目录"
+        },
+        {
+          "type": "doc",
+          "id": "dep-optimization/strategies-and-edge-cases",
+          "label": "15. 优化策略与边界"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 5 部分: 环境与变量",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "env-mode/env-files-and-mode",
+          "label": "16. 环境文件与模式"
+        },
+        {
+          "type": "doc",
+          "id": "env-mode/import-meta-env-and-exposure",
+          "label": "17. import.meta.env 与前端暴露"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 6 部分: 模块图与转换",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "module-graph/graph-structure-and-nodes",
+          "label": "18. 模块图结构与节点状态"
+        },
+        {
+          "type": "doc",
+          "id": "module-graph/url-resolution-and-entry",
+          "label": "19. URL 解析与入口建立"
+        },
+        {
+          "type": "doc",
+          "id": "module-graph/transform-cache-and-invalidation",
+          "label": "20. 转换缓存与失效"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 7 部分: HMR 通道",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "hmr/ws-channel-and-handshake",
+          "label": "21. WebSocket 通道与握手"
+        },
+        {
+          "type": "doc",
+          "id": "hmr/update-propagation-and-boundary",
+          "label": "22. 更新传播与边界"
+        },
+        {
+          "type": "doc",
+          "id": "hmr/client-handling-and-accept",
+          "label": "23. 客户端处理与热替换"
+        },
+        {
+          "type": "doc",
+          "id": "hmr/module-runner-and-transport",
+          "label": "24. 模块运行器与传输"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 8 部分: 构建与预览",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "build/options-and-rollup-integration",
+          "label": "25. 构建选项与 Rollup 集成"
+        },
+        {
+          "type": "doc",
+          "id": "build/plugin-chain-and-output",
+          "label": "26. 插件链与产物输出"
+        },
+        {
+          "type": "doc",
+          "id": "build/preview-server-and-deploy",
+          "label": "27. 预览服务器与静态部署"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 9 部分: SSR 基础",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "ssr/environment-and-module-loader",
+          "label": "28. 环境与模块加载"
+        },
+        {
+          "type": "doc",
+          "id": "ssr/stacktrace-and-errors",
+          "label": "29. 堆栈重写与错误处理"
+        },
+        {
+          "type": "doc",
+          "id": "ssr/manifest-and-preload",
+          "label": "30. SSR 清单与样式预加载"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第 10 部分: 实践：mini-vite",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "project/scope-and-requirements",
+          "label": "31. 范围与需求定义"
+        },
+        {
+          "type": "doc",
+          "id": "project/minimal-dev-server",
+          "label": "32. 实现最小开发服务器"
+        },
+        {
+          "type": "doc",
+          "id": "project/module-graph-and-basic-hmr",
+          "label": "33. 实现模块图与基本 HMR"
+        },
+        {
+          "type": "doc",
+          "id": "project/minimal-plugin-system",
+          "label": "34. 实现简化插件系统"
+        },
+        {
+          "type": "doc",
+          "id": "project/minimal-build-and-preview",
+          "label": "35. 构建与预览的简化版"
+        },
+        {
+          "type": "doc",
+          "id": "project/integration-and-testing",
+          "label": "36. 项目整合与测试验证"
+        }
+      ]
+    }
+  ]
+}

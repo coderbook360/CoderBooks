@@ -1,0 +1,372 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：Canvas 基础入门",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "foundations/canvas-overview",
+          "label": "1. Canvas 概述与开发环境"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/coordinate-system",
+          "label": "2. Canvas 坐标系统"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/context-basics",
+          "label": "3. 绘制上下文与状态基础"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/context-state-stack",
+          "label": "4. save/restore与状态栈"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/context-state-patterns",
+          "label": "5. 状态管理最佳实践"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/pixel-basics",
+          "label": "6. 像素操作基础"
+        },
+        {
+          "type": "doc",
+          "id": "foundations/image-filters",
+          "label": "7. 图像处理算法"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第二部分：图形绘制详解",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "drawing/basic-shapes",
+          "label": "8. 基础图形：矩形、圆、椭圆"
+        },
+        {
+          "type": "doc",
+          "id": "drawing/path-system",
+          "label": "9. 路径系统：直线、曲线与贝塞尔"
+        },
+        {
+          "type": "doc",
+          "id": "drawing/path-advanced-basics",
+          "label": "10. 路径高级操作基础"
+        },
+        {
+          "type": "doc",
+          "id": "drawing/path-advanced-optimization",
+          "label": "11. 路径性能优化与企业实践"
+        },
+        {
+          "type": "doc",
+          "id": "drawing/text-rendering",
+          "label": "12. 文本渲染与测量"
+        },
+        {
+          "type": "doc",
+          "id": "drawing/image-drawing",
+          "label": "13. 图像绘制与处理"
+        },
+        {
+          "type": "doc",
+          "id": "drawing/image-processing",
+          "label": "14. 图像处理算法：滤镜与卷积"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第三部分：样式与视觉效果",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "styles/fill-stroke",
+          "label": "15. 填充与描边样式"
+        },
+        {
+          "type": "doc",
+          "id": "styles/gradients-patterns",
+          "label": "16. 渐变与图案"
+        },
+        {
+          "type": "doc",
+          "id": "styles/shadow-composite",
+          "label": "17. 阴影与合成操作"
+        },
+        {
+          "type": "doc",
+          "id": "styles/alpha-blending",
+          "label": "18. 透明度与混合模式"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第四部分：坐标变换与矩阵",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "transforms/basic-transforms",
+          "label": "19. 变换基础：平移、旋转、缩放"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/matrix-theory",
+          "label": "20. 变换矩阵原理"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/matrix-operations",
+          "label": "21. 矩阵运算与自定义变换"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/transform-stack",
+          "label": "22. 变换堆栈与状态保存"
+        },
+        {
+          "type": "doc",
+          "id": "transforms/coordinate-conversion",
+          "label": "23. 坐标系转换：屏幕坐标与 Canvas 坐标"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第五部分：事件与交互",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "interaction/event-binding",
+          "label": "24. 事件绑定与坐标计算"
+        },
+        {
+          "type": "doc",
+          "id": "interaction/hit-testing",
+          "label": "25. 点击检测：几何方法与路径方法"
+        },
+        {
+          "type": "doc",
+          "id": "interaction/drag-interaction",
+          "label": "26. 拖拽交互实现"
+        },
+        {
+          "type": "doc",
+          "id": "interaction/zoom-pan",
+          "label": "27. 缩放与平移交互"
+        },
+        {
+          "type": "doc",
+          "id": "interaction/keyboard-events",
+          "label": "28. 键盘事件与快捷键"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第六部分：动画与渲染优化",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "animation/raf-basics",
+          "label": "29. 动画基础：requestAnimationFrame"
+        },
+        {
+          "type": "doc",
+          "id": "animation/easing-functions",
+          "label": "30. 缓动函数与动画曲线"
+        },
+        {
+          "type": "doc",
+          "id": "animation/frame-control",
+          "label": "31. 帧率控制与时间管理"
+        },
+        {
+          "type": "doc",
+          "id": "animation/dirty-rect-basics",
+          "label": "32. 脏矩形渲染基础"
+        },
+        {
+          "type": "doc",
+          "id": "animation/dirty-rect-advanced",
+          "label": "33. 脏矩形渲染进阶"
+        },
+        {
+          "type": "doc",
+          "id": "animation/layered-canvas-basics",
+          "label": "34. 分层 Canvas 基础"
+        },
+        {
+          "type": "doc",
+          "id": "animation/layered-canvas-advanced",
+          "label": "35. 分层 Canvas 进阶优化"
+        },
+        {
+          "type": "doc",
+          "id": "animation/offscreen-basics",
+          "label": "36. 离屏 Canvas 基础与缓存"
+        },
+        {
+          "type": "doc",
+          "id": "animation/offscreen-advanced",
+          "label": "37. OffscreenCanvas API与缓存管理"
+        },
+        {
+          "type": "doc",
+          "id": "animation/particle-system-advanced",
+          "label": "38. 粒子系统深度实现：力场与发射器"
+        },
+        {
+          "type": "doc",
+          "id": "animation/performance-best-practices",
+          "label": "39. Canvas 绘制性能最佳实践"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第七部分：对象模型设计",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "object-model/why-object-model",
+          "label": "40. 为什么需要对象模型"
+        },
+        {
+          "type": "doc",
+          "id": "object-model/base-object",
+          "label": "41. 图形对象基类设计"
+        },
+        {
+          "type": "doc",
+          "id": "object-model/property-system",
+          "label": "42. 属性系统与观察者模式"
+        },
+        {
+          "type": "doc",
+          "id": "object-model/serialization",
+          "label": "43. 对象序列化与反序列化"
+        },
+        {
+          "type": "doc",
+          "id": "object-model/object-collection",
+          "label": "44. 对象集合与容器"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第八部分：图形编辑器核心功能",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "editor/canvas-viewport",
+          "label": "45. 画布管理与视口控制"
+        },
+        {
+          "type": "doc",
+          "id": "editor/object-selection",
+          "label": "46. 对象选择机制"
+        },
+        {
+          "type": "doc",
+          "id": "editor/bounding-box-controls-basics",
+          "label": "47. 选择框与控制点基础"
+        },
+        {
+          "type": "doc",
+          "id": "editor/bounding-box-controls-advanced",
+          "label": "48. 选择框与控制点进阶"
+        },
+        {
+          "type": "doc",
+          "id": "editor/object-transform",
+          "label": "49. 对象变换：移动、旋转、缩放"
+        },
+        {
+          "type": "doc",
+          "id": "editor/group-ungroup",
+          "label": "50. 对象分组与取消分组"
+        },
+        {
+          "type": "doc",
+          "id": "editor/layer-management",
+          "label": "51. 图层管理：层级与排序"
+        },
+        {
+          "type": "doc",
+          "id": "editor/undo-redo",
+          "label": "52. 撤销重做系统"
+        },
+        {
+          "type": "doc",
+          "id": "editor/clipboard",
+          "label": "53. 剪贴板操作"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第九部分：高级主题",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "advanced/high-dpi",
+          "label": "54. 高 DPI 屏幕适配"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/performance",
+          "label": "55. 性能分析与问题排查"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/canvas-vs-svg",
+          "label": "56. Canvas 与 SVG 对比选择"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/export",
+          "label": "57. 导出功能：图片与 SVG"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/webworker-basics",
+          "label": "58. WebWorker 基础：多线程通信与 OffscreenCanvas"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/webworker-advanced",
+          "label": "59. WebWorker 高级：分片渲染与生产实践"
+        }
+      ]
+    }
+  ]
+}

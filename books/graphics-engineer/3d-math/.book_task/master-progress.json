@@ -1,0 +1,90 @@
+{
+  "agent_name": "book-creator-master",
+  "version": "2.0",
+  "last_updated": "2025-12-16T00:00:00Z",
+  "auto_mode": true,
+  "workflow_stage": "writing",
+  
+  "book_project": {
+    "title": "3D 图形学数学基础",
+    "subtitle": "从向量到四元数的完整实现",
+    "series": "快速入门",
+    "target_reader": "1年经验，有 Canvas 2D 基础",
+    "theme": "3D 图形学核心数学知识",
+    "unique_selling_point": "可视化 + 代码实现 + 渐进式学习"
+  },
+  
+  "planning": {
+    "status": "completed",
+    "progress": 100,
+    "start_time": "2025-12-16T00:00:00Z",
+    "end_time": "2025-12-16T09:51:00Z",
+    "tasks": {
+      "needs_analysis": "completed",
+      "preface_creation": "completed",
+      "toc_initial": "completed",
+      "toc_optimization": "completed",
+      "guide_generation": "partial"
+    },
+    "outputs": {
+      "preface": "book_zh/preface.md",
+      "toc": "book_zh/toc.md",
+      "guides": ".book_guide/",
+      "report": ".book_task/toc-optimization-report.md"
+    }
+  },
+  
+  "writing": {
+    "status": "in_progress",
+    "progress": 0,
+    "start_time": "2025-12-16T09:51:00Z",
+    "end_time": null,
+    "total_chapters": 45,
+    "chapters_completed": 0,
+    "current_chapter": {
+      "order": 1,
+      "title": "向量的概念与表示",
+      "file": "vectors/vector-basics.md"
+    },
+    "chapter_list": []
+  },
+  
+  "optimization": {
+    "status": "not_started",
+    "progress": 0,
+    "start_time": null,
+    "end_time": null,
+    "rounds": []
+  },
+  
+  "quality_metrics": {
+    "chapters_planned": 45,
+    "chapters_written": 0,
+    "chapters_optimized": 0,
+    "total_words": 0,
+    "avg_quality_score": 0.0,
+    "quality_distribution": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0
+    }
+  },
+  
+  "milestones": [
+    {
+      "name": "规划阶段启动",
+      "achieved_at": "2025-12-16T00:00:00Z",
+      "stage": "planning"
+    }
+  ],
+  
+  "history": [
+    {
+      "timestamp": "2025-12-16T00:00:00Z",
+      "stage": "planning",
+      "action": "检测到已有序言和目录",
+      "details": "book_zh/preface.md 和 book_zh/toc.md 已存在"
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：快速上手与环境配置",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "setup/installation",
+          "label": "1. VSCode Vim 安装与核心配置"
+        },
+        {
+          "type": "doc",
+          "id": "setup/key-conflicts",
+          "label": "2. 快捷键冲突解决与自定义键位"
+        },
+        {
+          "type": "doc",
+          "id": "setup/mode-switching",
+          "label": "3. 模式切换与 IME 优化"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第二部分：Vim 核心操作精通",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "vim-core/vim-mindset",
+          "label": "4. Vim 思维模式与基础移动"
+        },
+        {
+          "type": "doc",
+          "id": "vim-core/operators-text-objects",
+          "label": "5. 操作符与文本对象组合"
+        },
+        {
+          "type": "doc",
+          "id": "vim-core/repeat-and-undo",
+          "label": "6. 重复、撤销与寄存器"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第三部分：文件与项目管理",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "file-management/explorer-keyboard",
+          "label": "7. 文件树与 Tab 管理"
+        },
+        {
+          "type": "doc",
+          "id": "file-management/file-switching",
+          "label": "8. 文件快速切换与重命名"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第四部分：代码导航与定位",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "navigation/code-jumping",
+          "label": "9. 代码跳转与定义查找"
+        },
+        {
+          "type": "doc",
+          "id": "navigation/symbol-navigation",
+          "label": "10. Symbol 导航与跳转历史"
+        },
+        {
+          "type": "doc",
+          "id": "navigation/peek-references",
+          "label": "11. Peek 定义与引用查看"
+        },
+        {
+          "type": "doc",
+          "id": "navigation/breadcrumb-outline",
+          "label": "12. 面包屑、大纲与标记系统"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第五部分：快速移动技巧",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "motion/easymotion",
+          "label": "13. EasyMotion 与 Sneak 精确跳转"
+        },
+        {
+          "type": "doc",
+          "id": "motion/search-movement",
+          "label": "14. 搜索驱动的移动与选择"
+        },
+        {
+          "type": "doc",
+          "id": "motion/visual-mode",
+          "label": "15. Visual 模式与 Vim Surround"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第六部分：VSCode 集成功能",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "vscode-integration/intellisense",
+          "label": "16. 智能提示与代码补全"
+        },
+        {
+          "type": "doc",
+          "id": "vscode-integration/quick-fix",
+          "label": "17. 快速修复与重构"
+        },
+        {
+          "type": "doc",
+          "id": "vscode-integration/snippets",
+          "label": "18. 代码片段与选择扩展"
+        },
+        {
+          "type": "doc",
+          "id": "vscode-integration/command-palette",
+          "label": "19. 命令面板与搜索替换"
+        },
+        {
+          "type": "doc",
+          "id": "vscode-integration/debugging",
+          "label": "20. 调试与 Terminal 集成"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第七部分：问题诊断与修复",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "diagnostics/problem-navigation",
+          "label": "21. 问题面板与错误导航"
+        },
+        {
+          "type": "doc",
+          "id": "diagnostics/lint-errors",
+          "label": "22. Lint、TypeScript 诊断与格式化"
+        },
+        {
+          "type": "doc",
+          "id": "diagnostics/git-changes",
+          "label": "23. Git 变更审查与调试"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第八部分：侧边栏与视图管理",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "sidebar/sidebar-keyboard",
+          "label": "24. 侧边栏完全键盘操作"
+        },
+        {
+          "type": "doc",
+          "id": "sidebar/extensions-keyboard",
+          "label": "25. 扩展与源码管理视图"
+        },
+        {
+          "type": "doc",
+          "id": "sidebar/terminal-keyboard",
+          "label": "26. Terminal 与底部面板"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第九部分：窗口与分屏管理",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "windows/split-management",
+          "label": "27. 分屏策略与布局管理"
+        },
+        {
+          "type": "doc",
+          "id": "windows/zen-mode",
+          "label": "28. Zen 模式与专注编辑"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第十部分：批量操作与重构",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "batch/search-replace",
+          "label": "29. 搜索替换与正则表达式"
+        },
+        {
+          "type": "doc",
+          "id": "batch/multi-cursor",
+          "label": "30. 多光标与 Visual Block"
+        },
+        {
+          "type": "doc",
+          "id": "batch/dot-command",
+          "label": "31. 点命令与宏录制"
+        },
+        {
+          "type": "doc",
+          "id": "batch/registers",
+          "label": "32. 寄存器系统与批量重构"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第十一部分：前端开发实战",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "frontend/html-jsx",
+          "label": "33. HTML/JSX 与 Emmet 高效编码"
+        },
+        {
+          "type": "doc",
+          "id": "frontend/css-editing",
+          "label": "34. CSS/SCSS 编辑技巧"
+        },
+        {
+          "type": "doc",
+          "id": "frontend/js-ts-refactoring",
+          "label": "35. JavaScript/TypeScript 重构"
+        },
+        {
+          "type": "doc",
+          "id": "frontend/react-workflow",
+          "label": "36. React 组件开发工作流"
+        },
+        {
+          "type": "doc",
+          "id": "frontend/import-management",
+          "label": "37. 导入管理与测试文件跳转"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第十二部分：Git 键盘工作流",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "git/git-keyboard-workflow",
+          "label": "38. Git 基础操作与 Stage/Commit"
+        },
+        {
+          "type": "doc",
+          "id": "git/branch-management",
+          "label": "39. 分支管理与合并冲突"
+        },
+        {
+          "type": "doc",
+          "id": "git/diff-blame",
+          "label": "40. Diff、Blame 与差异导航"
+        },
+        {
+          "type": "doc",
+          "id": "git/advanced-git",
+          "label": "41. Git 高级操作技巧"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第十三部分：效率提升策略",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "efficiency/optimal-keybindings",
+          "label": "42. 最优键位组合与击键优化"
+        },
+        {
+          "type": "doc",
+          "id": "efficiency/mouse-to-keyboard",
+          "label": "43. 从鼠标到键盘的迁移路线"
+        },
+        {
+          "type": "doc",
+          "id": "efficiency/common-pitfalls",
+          "label": "44. 常见陷阱与效率测量"
+        },
+        {
+          "type": "doc",
+          "id": "efficiency/custom-commands",
+          "label": "45. 自定义命令与工作区配置"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "第十四部分：进阶配置与最佳实践",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "advanced/leader-key-system",
+          "label": "46. Leader 键与条件映射"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/performance-tuning",
+          "label": "47. 性能调优与配置同步"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/expert-config",
+          "label": "48. 专家级配置与故障排除"
+        }
+      ]
+    }
+  ]
+}

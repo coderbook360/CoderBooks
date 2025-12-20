@@ -1,0 +1,46 @@
+{
+  "mainSidebar": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "📚 书籍首页"
+    },
+    {
+      "type": "doc",
+      "id": "preface",
+      "label": "序言"
+    },
+    {
+      "type": "category",
+      "label": "第一部分：布局与适配",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "layout-adaptation/responsive-design-principles",
+          "label": "1. 响应式设计原理与实现策略"
+        },
+        {
+          "type": "doc",
+          "id": "layout-adaptation/viewport-and-mobile-adaptation",
+          "label": "2. Viewport 机制与移动端适配方案"
+        },
+        {
+          "type": "doc",
+          "id": "layout-adaptation/rem-vw-modern-solutions",
+          "label": "3. rem、vw 与现代适配方案对比"
+        },
+        {
+          "type": "doc",
+          "id": "layout-adaptation/one-pixel-problem",
+          "label": "4. 1px 问题的本质与解决方案"
+        },
+        {
+          "type": "doc",
+          "id": "layout-adaptation/safe-area-and-notch",
+          "label": "5. 安全区域与刘海屏适配"
+        }
+      ]
+    }
+  ]
+}
