@@ -5,3 +5,16 @@
 @import "./utilities.css";
 @import "./style-guide.css";
 @import "./vars.css";
+
+/* 隐藏顶部导航菜单中的图标 */
+.VPNavBarMenu .VPFlyout .VPNavDropdownMenuGroup::before,
+.VPNavBarMenu .VPNavDropdownMenuGroup .icon,
+.VPNavBarMenu a::before,
+.VPNavBarMenuGroup::before,
+.VPMenu .group-title::before,
+.VPFlyout .items .item a::before,
+.VPNavBar .VPFlyout .icon-wrapper,
+.VPNavBar .menu-icon,
+nav.VPNavBar .icon {
+  display: none !important;
+}

@@ -1,0 +1,209 @@
+- text: 序言
+  link: preface
+- text: 第一部分：Web 框架基础
+  collapsed: false
+  items:
+    - text: Web 框架的本质与价值
+      link: foundations/framework-essence
+    - text: HTTP 服务器基础回顾
+      link: foundations/http-server-basics
+    - text: 请求-响应生命周期
+      link: foundations/request-response-lifecycle
+    - text: Web 框架核心职责
+      link: foundations/framework-responsibilities
+    - text: Node.js Web 框架发展史
+      link: foundations/framework-history
+    - text: 框架选型考量因素
+      link: foundations/framework-selection
+- text: 第二部分：中间件模式
+  collapsed: false
+  items:
+    - text: 中间件模式概述
+      link: middleware/middleware-overview
+    - text: 中间件的本质与设计理念
+      link: middleware/middleware-essence
+    - text: 线性中间件模型
+      link: middleware/linear-model
+    - text: 洋葱模型详解
+      link: middleware/onion-model
+    - text: 中间件组合与执行顺序
+      link: middleware/composition
+    - text: 错误处理中间件
+      link: middleware/error-middleware
+    - text: 异步中间件处理
+      link: middleware/async-middleware
+    - text: 中间件最佳实践
+      link: middleware/best-practices
+    - text: 实现简单中间件引擎
+      link: middleware/implement-engine
+- text: 第三部分：路由系统设计
+  collapsed: false
+  items:
+    - text: 路由系统概述
+      link: routing/routing-overview
+    - text: 路由匹配算法
+      link: routing/matching-algorithms
+    - text: 路径参数提取
+      link: routing/path-parameters
+    - text: 正则路由与通配符
+      link: routing/regex-wildcards
+    - text: 路由优先级与冲突
+      link: routing/priority-conflicts
+    - text: 路由分组与嵌套
+      link: routing/grouping-nesting
+    - text: 路由中间件
+      link: routing/route-middleware
+    - text: 路由树(Radix Tree)实现
+      link: routing/radix-tree
+    - text: find-my-way 路由库分析
+      link: routing/find-my-way
+    - text: 实现简单路由系统
+      link: routing/implement-router
+- text: 第四部分：请求与响应处理
+  collapsed: false
+  items:
+    - text: 请求对象增强设计
+      link: request-response/request-enhancement
+    - text: 响应对象增强设计
+      link: request-response/response-enhancement
+    - text: Context 对象设计
+      link: request-response/context-design
+    - text: 请求体解析策略
+      link: request-response/body-parsing
+    - text: 文件上传处理设计
+      link: request-response/file-upload
+    - text: 响应格式化与内容协商
+      link: request-response/content-negotiation
+    - text: 视图渲染引擎集成
+      link: request-response/view-engines
+    - text: 静态资源服务
+      link: request-response/static-files
+- text: 第五部分：Express 深度剖析
+  collapsed: false
+  items:
+    - text: Express 架构概览
+      link: express/architecture-overview
+    - text: express() 应用创建
+      link: express/app-creation
+    - text: Express 中间件实现
+      link: express/middleware-impl
+    - text: Express Router 实现
+      link: express/router-impl
+    - text: express.Request 增强
+      link: express/request-enhancement
+    - text: express.Response 增强
+      link: express/response-enhancement
+    - text: Express 错误处理机制
+      link: express/error-handling
+    - text: Express 子应用(Sub-apps)
+      link: express/sub-apps
+    - text: Express 性能考量
+      link: express/performance
+    - text: Express 常用中间件源码
+      link: express/common-middleware
+- text: 第六部分：Koa 源码分析
+  collapsed: false
+  items:
+    - text: Koa 设计哲学
+      link: koa/design-philosophy
+    - text: Koa 核心架构
+      link: koa/core-architecture
+    - text: Koa Application 类
+      link: koa/application-class
+    - text: Koa Context 设计
+      link: koa/context-design
+    - text: koa-compose 中间件组合
+      link: koa/koa-compose
+    - text: Koa 错误处理
+      link: koa/error-handling
+    - text: Koa vs Express 对比
+      link: koa/koa-vs-express
+    - text: Koa 常用中间件源码
+      link: koa/common-middleware
+    - text: Koa 最佳实践
+      link: koa/best-practices
+- text: 第七部分：Fastify 分析
+  collapsed: false
+  items:
+    - text: Fastify 设计目标
+      link: fastify/design-goals
+    - text: Fastify 架构概览
+      link: fastify/architecture
+    - text: Fastify 插件系统
+      link: fastify/plugin-system
+    - text: avvio 插件加载器
+      link: fastify/avvio
+    - text: Fastify 路由性能优化
+      link: fastify/routing-performance
+    - text: JSON Schema 验证集成
+      link: fastify/json-schema
+    - text: Fastify 序列化优化
+      link: fastify/serialization
+    - text: Fastify Hooks 机制
+      link: fastify/hooks
+    - text: Fastify 装饰器(Decorators)
+      link: fastify/decorators
+    - text: Fastify 性能对比分析
+      link: fastify/performance-comparison
+- text: 第八部分：NestJS 架构
+  collapsed: false
+  items:
+    - text: NestJS 设计理念
+      link: nestjs/design-philosophy
+    - text: NestJS 架构概览
+      link: nestjs/architecture-overview
+    - text: 模块系统(Modules)
+      link: nestjs/modules
+    - text: 依赖注入(DI)原理
+      link: nestjs/dependency-injection
+    - text: IoC 容器实现
+      link: nestjs/ioc-container
+    - text: 控制器(Controllers)
+      link: nestjs/controllers
+    - text: 提供者(Providers)
+      link: nestjs/providers
+    - text: 装饰器与元数据
+      link: nestjs/decorators-metadata
+    - text: 管道(Pipes)与验证
+      link: nestjs/pipes
+    - text: 守卫(Guards)
+      link: nestjs/guards
+    - text: 拦截器(Interceptors)
+      link: nestjs/interceptors
+    - text: 异常过滤器(Exception Filters)
+      link: nestjs/exception-filters
+    - text: NestJS 生命周期
+      link: nestjs/lifecycle
+    - text: NestJS 与底层框架适配
+      link: nestjs/platform-adapters
+- text: 第九部分：实现 Mini 框架
+  collapsed: false
+  items:
+    - text: Mini 框架设计目标
+      link: mini-framework/design-goals
+    - text: 项目结构与初始化
+      link: mini-framework/project-setup
+    - text: 实现核心 Application 类
+      link: mini-framework/application
+    - text: 实现中间件引擎
+      link: mini-framework/middleware-engine
+    - text: 实现路由系统
+      link: mini-framework/router
+    - text: 实现 Context 对象
+      link: mini-framework/context
+    - text: 实现请求体解析
+      link: mini-framework/body-parser
+    - text: 实现静态文件服务
+      link: mini-framework/static-serve
+    - text: 实现错误处理
+      link: mini-framework/error-handling
+    - text: 添加 TypeScript 支持
+      link: mini-framework/typescript-support
+    - text: 编写测试
+      link: mini-framework/testing
+    - text: 性能优化
+      link: mini-framework/performance
+    - text: 发布到 npm
+      link: mini-framework/publish
+    - text: 框架设计总结
+      link: mini-framework/summary

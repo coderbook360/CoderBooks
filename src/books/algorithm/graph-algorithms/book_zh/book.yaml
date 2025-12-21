@@ -1,0 +1,213 @@
+title: LeetCode 图论与搜索篇：连通世界的算法
+description: 本书系统讲解图论与搜索算法，包括 DFS、BFS、图的遍历、拓扑排序、并查集、最短路径与最小生成树。每个主题先讲解核心算法原理，再通过精选 LeetCode 题目进行实战训练，帮助读者掌握图论问题的建模与解决方法。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：图的基础知识
+    items:
+      - text: 1. 图的基本概念与术语
+        link: graph-basics/graph-concepts
+      - text: 2. 图的存储方式：邻接表与邻接矩阵
+        link: graph-basics/graph-storage
+      - text: 3. 有向图与无向图的特性
+        link: graph-basics/directed-undirected
+      - text: 4. 图论问题建模思维
+        link: graph-basics/graph-modeling
+  - text: 第二部分：深度优先搜索（DFS）
+    items:
+      - text: 5. DFS 原理与实现
+        link: dfs/dfs-fundamentals
+      - text: 6. DFS 的递归与迭代写法
+        link: dfs/dfs-recursive-iterative
+      - text: 7. DFS 状态管理与回溯
+        link: dfs/dfs-state-management
+      - text: 8. 实战：岛屿数量
+        link: dfs/practice-number-of-islands
+      - text: 9. 实战：岛屿的最大面积
+        link: dfs/practice-max-area-of-island
+      - text: 10. 实战：被围绕的区域
+        link: dfs/practice-surrounded-regions
+      - text: 11. 实战：太平洋大西洋水流问题
+        link: dfs/practice-pacific-atlantic
+      - text: 12. 实战：飞地的数量
+        link: dfs/practice-number-of-enclaves
+      - text: 13. 实战：统计封闭岛屿的数目
+        link: dfs/practice-closed-islands
+      - text: 14. 实战：矩阵中的最长递增路径
+        link: dfs/practice-longest-increasing-path
+      - text: 15. 实战：钥匙和房间
+        link: dfs/practice-keys-rooms
+      - text: 16. 实战：克隆图
+        link: dfs/practice-clone-graph
+      - text: 17. 实战：所有可能的路径
+        link: dfs/practice-all-paths
+  - text: 第三部分：广度优先搜索（BFS）
+    items:
+      - text: 18. BFS 原理与实现
+        link: bfs/bfs-fundamentals
+      - text: 19. BFS 的层次遍历特性
+        link: bfs/bfs-level-traversal
+      - text: 20. 多源 BFS
+        link: bfs/multi-source-bfs
+      - text: 21. 实战：二叉树的层序遍历
+        link: bfs/practice-level-order-traversal
+      - text: 22. 实战：腐烂的橘子
+        link: bfs/practice-rotting-oranges
+      - text: 23. 实战：完全平方数（BFS 解法）
+        link: bfs/practice-perfect-squares-bfs
+      - text: 24. 实战：打开转盘锁
+        link: bfs/practice-open-the-lock
+      - text: 25. 实战：单词接龙
+        link: bfs/practice-word-ladder
+      - text: 26. 实战：单词接龙 II
+        link: bfs/practice-word-ladder-ii
+      - text: 27. 实战：地图分析
+        link: bfs/practice-as-far-from-land
+      - text: 28. 实战：01 矩阵
+        link: bfs/practice-01-matrix
+      - text: 29. 实战：最短的桥
+        link: bfs/practice-shortest-bridge
+      - text: 30. 实战：迷宫中离入口最近的出口
+        link: bfs/practice-nearest-exit
+  - text: 第四部分：图的遍历综合
+    items:
+      - text: 31. 图遍历的选择：DFS vs BFS
+        link: graph-traversal/dfs-vs-bfs
+      - text: 32. 连通分量的计算
+        link: graph-traversal/connected-components
+      - text: 33. 实战：课程表
+        link: graph-traversal/practice-course-schedule
+      - text: 34. 实战：课程表 II
+        link: graph-traversal/practice-course-schedule-ii
+      - text: 35. 实战：冗余连接
+        link: graph-traversal/practice-redundant-connection
+      - text: 36. 实战：找到最终的安全状态
+        link: graph-traversal/practice-eventual-safe-states
+      - text: 37. 实战：判断二分图
+        link: graph-traversal/practice-is-bipartite
+      - text: 38. 实战：可能的二分法
+        link: graph-traversal/practice-possible-bipartition
+  - text: 第五部分：拓扑排序
+    items:
+      - text: 39. 拓扑排序原理
+        link: topological-sort/topological-sort-theory
+      - text: 40. Kahn 算法（BFS 实现）
+        link: topological-sort/kahn-algorithm
+      - text: 41. DFS 实现拓扑排序
+        link: topological-sort/dfs-topological-sort
+      - text: 42. 实战：课程表（拓扑排序）
+        link: topological-sort/practice-course-schedule-topo
+      - text: 43. 实战：课程表 II（拓扑排序）
+        link: topological-sort/practice-course-schedule-ii-topo
+      - text: 44. 实战：课程表 IV
+        link: topological-sort/practice-course-schedule-iv
+      - text: 45. 实战：火星词典
+        link: topological-sort/practice-alien-dictionary
+      - text: 46. 实战：序列重建
+        link: topological-sort/practice-sequence-reconstruction
+      - text: 47. 实战：最小高度树
+        link: topological-sort/practice-minimum-height-trees
+      - text: 48. 实战：并行课程
+        link: topological-sort/practice-parallel-courses
+      - text: 49. 实战：项目管理
+        link: topological-sort/practice-sort-items-by-groups
+  - text: 第六部分：并查集
+    items:
+      - text: 50. 并查集原理与实现
+        link: union-find/union-find-fundamentals
+      - text: 51. 路径压缩优化
+        link: union-find/path-compression
+      - text: 52. 按秩合并优化
+        link: union-find/union-by-rank
+      - text: 53. 实战：省份数量
+        link: union-find/practice-number-of-provinces
+      - text: 54. 实战：冗余连接（并查集）
+        link: union-find/practice-redundant-connection-uf
+      - text: 55. 实战：账户合并
+        link: union-find/practice-accounts-merge
+      - text: 56. 实战：岛屿数量（并查集）
+        link: union-find/practice-islands-uf
+      - text: 57. 实战：最长连续序列（并查集）
+        link: union-find/practice-longest-consecutive-uf
+      - text: 58. 实战：情侣牵手
+        link: union-find/practice-couples-holding-hands
+      - text: 59. 实战：连通网络的操作次数
+        link: union-find/practice-connect-network
+      - text: 60. 实战：按字典序排列最小的等效字符串
+        link: union-find/practice-smallest-equivalent-string
+      - text: 61. 实战：交换字符串中的元素
+        link: union-find/practice-smallest-string-with-swaps
+      - text: 62. 实战：等式方程的可满足性
+        link: union-find/practice-equations-possible
+  - text: 第七部分：最短路径算法
+    items:
+      - text: 63. 最短路径问题概述
+        link: shortest-path/shortest-path-overview
+      - text: 64. Dijkstra 算法详解
+        link: shortest-path/dijkstra-algorithm
+      - text: 65. Bellman-Ford 算法详解
+        link: shortest-path/bellman-ford-algorithm
+      - text: 66. Floyd 算法详解
+        link: shortest-path/floyd-algorithm
+      - text: 67. SPFA 算法详解
+        link: shortest-path/spfa-algorithm
+      - text: 68. 实战：网络延迟时间
+        link: shortest-path/practice-network-delay
+      - text: 69. 实战：最便宜的航班
+        link: shortest-path/practice-cheapest-flights
+      - text: 70. 实战：K 站中转内最便宜的航班
+        link: shortest-path/practice-cheapest-k-stops
+      - text: 71. 实战：概率最大的路径
+        link: shortest-path/practice-max-probability-path
+      - text: 72. 实战：从第一个节点出发到最后一个节点的受限路径数
+        link: shortest-path/practice-restricted-paths
+      - text: 73. 实战：阈值距离内邻居最少的城市
+        link: shortest-path/practice-city-smallest-neighbors
+  - text: 第八部分：最小生成树
+    items:
+      - text: 74. 最小生成树概述
+        link: mst/mst-overview
+      - text: 75. Kruskal 算法详解
+        link: mst/kruskal-algorithm
+      - text: 76. Prim 算法详解
+        link: mst/prim-algorithm
+      - text: 77. 实战：连接所有点的最小费用
+        link: mst/practice-min-cost-connect-points
+      - text: 78. 实战：最低成本连通所有城市
+        link: mst/practice-min-cost-connect-cities
+      - text: 79. 实战：找到最小生成树里的关键边和伪关键边
+        link: mst/practice-critical-pseudo-critical-edges
+      - text: 80. 实战：检查边长度限制的路径是否存在
+        link: mst/practice-checking-existence-of-edge-length
+  - text: 第九部分：高级搜索技巧
+    items:
+      - text: 81. 双向 BFS
+        link: search-advanced/bidirectional-bfs
+      - text: 82. 启发式搜索与 A* 算法
+        link: search-advanced/heuristic-search
+      - text: 83. IDA* 算法
+        link: search-advanced/ida-star
+      - text: 84. 实战：单词接龙（双向 BFS）
+        link: search-advanced/practice-word-ladder-bidirectional
+      - text: 85. 实战：滑动谜题
+        link: search-advanced/practice-sliding-puzzle
+      - text: 86. 实战：八数码问题
+        link: search-advanced/practice-8-puzzle
+      - text: 87. 实战：推箱子
+        link: search-advanced/practice-minimum-moves-to-move-a-box
+      - text: 88. 实战：跳跃游戏 III
+        link: search-advanced/practice-jump-game-iii
+      - text: 89. 实战：跳跃游戏 IV
+        link: search-advanced/practice-jump-game-iv
+  - text: 第十部分：二分图与匹配
+    items:
+      - text: 90. 二分图的判定与性质
+        link: bipartite/bipartite-properties
+      - text: 91. 匈牙利算法（最大匹配）
+        link: bipartite/hungarian-algorithm
+      - text: 92. 实战：判断二分图
+        link: bipartite/practice-is-bipartite
+      - text: 93. 实战：可能的二分法
+        link: bipartite/practice-possible-bipartition
+      - text: 94. 实战：二分图最大匹配应用
+        link: bipartite/practice-max-bipartite-matching

@@ -1,0 +1,213 @@
+- text: 序言
+  link: preface
+- text: 第一部分：网络编程基础
+  collapsed: false
+  items:
+    - text: 网络协议层次概述
+      link: foundations/protocol-layers
+    - text: TCP/IP 协议族
+      link: foundations/tcp-ip
+    - text: Socket 编程基本概念
+      link: foundations/socket-concepts
+    - text: IP 地址与端口
+      link: foundations/ip-ports
+    - text: 字节序与网络字节序
+      link: foundations/byte-order
+    - text: Node.js 网络模块概览
+      link: foundations/nodejs-network-modules
+- text: 第二部分：TCP 编程
+  collapsed: false
+  items:
+    - text: net 模块概览
+      link: tcp/net-overview
+    - text: 创建 TCP 服务器
+      link: tcp/tcp-server
+    - text: TCP 连接生命周期
+      link: tcp/connection-lifecycle
+    - text: 处理多个客户端连接
+      link: tcp/multiple-clients
+    - text: 创建 TCP 客户端
+      link: tcp/tcp-client
+    - text: 数据帧与消息边界
+      link: tcp/message-framing
+    - text: TCP 粘包问题与解决方案
+      link: tcp/packet-sticking
+    - text: 自定义协议设计
+      link: tcp/custom-protocol
+    - text: TCP 连接池实现
+      link: tcp/connection-pool
+    - text: TCP Keep-Alive 机制
+      link: tcp/keep-alive
+    - text: TCP 性能优化
+      link: tcp/tcp-performance
+    - text: TCP 错误处理与重连
+      link: tcp/error-reconnection
+    - text: Unix Domain Socket
+      link: tcp/unix-socket
+- text: 第三部分：UDP 编程
+  collapsed: false
+  items:
+    - text: dgram 模块概览
+      link: udp/dgram-overview
+    - text: UDP 服务器与客户端
+      link: udp/udp-server-client
+    - text: UDP vs TCP：选择指南
+      link: udp/udp-vs-tcp
+    - text: UDP 广播
+      link: udp/broadcast
+    - text: UDP 组播(Multicast)
+      link: udp/multicast
+    - text: UDP 应用场景
+      link: udp/use-cases
+    - text: UDP 可靠性保证
+      link: udp/reliability
+- text: 第四部分：HTTP 协议深度解析
+  collapsed: false
+  items:
+    - text: HTTP 协议基础回顾
+      link: http/http-basics
+    - text: http 模块架构
+      link: http/module-architecture
+    - text: 创建 HTTP 服务器
+      link: http/http-server
+    - text: IncomingMessage 详解
+      link: http/incoming-message
+    - text: ServerResponse 详解
+      link: http/server-response
+    - text: 请求方法与路由
+      link: http/methods-routing
+    - text: 请求头解析与处理
+      link: http/request-headers
+    - text: 响应头设置最佳实践
+      link: http/response-headers
+    - text: 请求体解析策略
+      link: http/body-parsing
+    - text: 表单数据处理
+      link: http/form-data
+    - text: 文件上传处理
+      link: http/file-upload
+    - text: JSON 请求与响应
+      link: http/json-handling
+    - text: 流式响应
+      link: http/streaming-response
+    - text: HTTP 状态码使用指南
+      link: http/status-codes
+    - text: HTTP 缓存机制
+      link: http/caching
+    - text: HTTP 压缩
+      link: http/compression
+    - text: Cookie 处理
+      link: http/cookies
+    - text: HTTP 认证
+      link: http/authentication
+    - text: HTTP 代理实现
+      link: http/http-proxy
+- text: 第五部分：HTTP 客户端
+  collapsed: false
+  items:
+    - text: http.request 详解
+      link: http-client/http-request
+    - text: 发起 GET 请求
+      link: http-client/get-request
+    - text: 发起 POST 请求
+      link: http-client/post-request
+    - text: 请求超时与重试
+      link: http-client/timeout-retry
+    - text: HTTP Agent 与连接复用
+      link: http-client/http-agent
+    - text: 跟随重定向
+      link: http-client/redirects
+    - text: 下载文件
+      link: http-client/file-download
+    - text: 现代 HTTP 客户端库对比
+      link: http-client/client-libraries
+- text: 第六部分：HTTPS 与 TLS
+  collapsed: false
+  items:
+    - text: TLS/SSL 原理概述
+      link: https/tls-overview
+    - text: 证书与密钥
+      link: https/certificates
+    - text: 创建 HTTPS 服务器
+      link: https/https-server
+    - text: 自签名证书开发使用
+      link: https/self-signed
+    - text: Let's Encrypt 证书获取
+      link: https/lets-encrypt
+    - text: TLS 配置最佳实践
+      link: https/tls-best-practices
+    - text: 客户端证书验证(mTLS)
+      link: https/mutual-tls
+    - text: HTTPS 性能优化
+      link: https/https-performance
+    - text: HTTP 到 HTTPS 重定向
+      link: https/redirect-to-https
+- text: 第七部分：HTTP/2
+  collapsed: false
+  items:
+    - text: HTTP/2 协议特性
+      link: http2/http2-features
+    - text: http2 模块概览
+      link: http2/module-overview
+    - text: 创建 HTTP/2 服务器
+      link: http2/http2-server
+    - text: HTTP/2 流与多路复用
+      link: http2/streams-multiplexing
+    - text: 服务器推送(Server Push)
+      link: http2/server-push
+    - text: HTTP/2 客户端
+      link: http2/http2-client
+    - text: HTTP/1.1 与 HTTP/2 兼容
+      link: http2/compatibility
+    - text: HTTP/2 性能分析
+      link: http2/performance-analysis
+- text: 第八部分：WebSocket
+  collapsed: false
+  items:
+    - text: WebSocket 协议概述
+      link: websocket/protocol-overview
+    - text: WebSocket 握手过程
+      link: websocket/handshake
+    - text: ws 库入门
+      link: websocket/ws-library
+    - text: WebSocket 服务器实现
+      link: websocket/ws-server
+    - text: WebSocket 客户端实现
+      link: websocket/ws-client
+    - text: 消息格式设计
+      link: websocket/message-format
+    - text: 心跳与连接保活
+      link: websocket/heartbeat
+    - text: 广播与房间管理
+      link: websocket/broadcast-rooms
+    - text: WebSocket 认证
+      link: websocket/authentication
+    - text: WebSocket 与 HTTP 共存
+      link: websocket/with-http
+    - text: WebSocket 负载均衡
+      link: websocket/load-balancing
+    - text: Socket.io 入门
+      link: websocket/socket-io
+- text: 第九部分：高级网络主题
+  collapsed: false
+  items:
+    - text: DNS 解析：dns 模块
+      link: advanced/dns-module
+    - text: 自定义 DNS 解析
+      link: advanced/custom-dns
+    - text: 网络接口信息：os.networkInterfaces
+      link: advanced/network-interfaces
+    - text: HTTP/HTTPS 代理配置
+      link: advanced/proxy-configuration
+    - text: SOCKS 代理支持
+      link: advanced/socks-proxy
+    - text: 网络调试与抓包
+      link: advanced/network-debugging
+    - text: 网络性能测试
+      link: advanced/performance-testing
+    - text: 网络安全最佳实践
+      link: advanced/security-practices
+    - text: IPv6 支持
+      link: advanced/ipv6
+    - text: 网络编程总结与展望
+      link: advanced/summary

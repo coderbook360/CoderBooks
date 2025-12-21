@@ -1,0 +1,199 @@
+{
+  "categories": [
+    {
+      "id": "web-frontend",
+      "label": "Web 前端",
+      "groups": [
+        {
+          "label": "🚀 进阶实战",
+          "books": [
+            { "title": "浏览器工作原理", "dirName": "browser-principles" },
+            { "title": "设计模式与架构", "dirName": "design-patterns" },
+            { "title": "前端性能优化", "dirName": "performance" }
+          ]
+        },
+        {
+          "label": "📦 源码解读",
+          "books": [
+            { "title": "jQuery 源码", "dirName": "jquery" },
+            { "title": "V8 引擎", "dirName": "v8-engine" }
+          ]
+        },
+        {
+          "label": "🔧 工程化",
+          "books": [
+            { "title": "前端工程体系", "dirName": "engineering" },
+            { "title": "前端解决方案", "dirName": "solutions" },
+            { "title": "UnoCSS 快速入门", "dirName": "unocss" },
+            { "title": "VSCode Vim 指南", "dirName": "vscode-vim" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列 - 构建工具",
+          "books": [
+            { "title": "Mini-Acorn.js", "dirName": "mini-acornjs" },
+            { "title": "Mini-Rollup", "dirName": "mini-rollup" },
+            { "title": "Mini-Vite", "dirName": "mini-vite" },
+            { "title": "Mini-Webpack", "dirName": "mini-webpack" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列 - 工具库",
+          "books": [
+            { "title": "Mini-Axios", "dirName": "mini-axios" },
+            { "title": "Mini-Day.js", "dirName": "mini-dayjs" },
+            { "title": "Mini-Lodash", "dirName": "mini-lodash" },
+            { "title": "Mini-Path-to-RegExp", "dirName": "mini-path-to-regexp" },
+            { "title": "Mini-Ramda.js", "dirName": "mini-ramda" },
+            { "title": "Mini-RxJS", "dirName": "mini-rxjs" },
+            { "title": "Mini-Zod", "dirName": "mini-zod" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列 - DOM & 动画",
+          "books": [
+            { "title": "Mini-GSAP", "dirName": "mini-gsap" },
+            { "title": "Mini-Hammer.js", "dirName": "mini-hammer" },
+            { "title": "Mini-Zepto.js", "dirName": "mini-zepto" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列 - Vue 生态",
+          "books": [
+            { "title": "Mini-Pinia", "dirName": "mini-pinia" },
+            { "title": "Mini-Vue-Router", "dirName": "mini-vue-router" },
+            { "title": "Mini-Vue3", "dirName": "mini-vue3" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列 - React 生态",
+          "books": [
+            { "title": "Mini-React", "dirName": "mini-react" },
+            { "title": "Mini-Redux", "dirName": "mini-redux" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nodejs",
+      "label": "Node.js",
+      "groups": [
+        {
+          "label": "📖 入门基础",
+          "books": [
+            { "title": "前端转 Node 指南", "dirName": "getting-started" }
+          ]
+        },
+        {
+          "label": "🚀 进阶实战",
+          "books": [
+            { "title": "API 设计", "dirName": "api-design" },
+            { "title": "核心原理", "dirName": "core-principles" },
+            { "title": "数据库与 ORM", "dirName": "database-orm" },
+            { "title": "文件系统与流", "dirName": "filesystem-stream" },
+            { "title": "网络编程", "dirName": "network" },
+            { "title": "安全与认证", "dirName": "security" },
+            { "title": "Web 框架设计", "dirName": "web-framework" }
+          ]
+        },
+        {
+          "label": "💼 实战项目",
+          "books": [
+            { "title": "实战项目", "dirName": "projects" }
+          ]
+        },
+        {
+          "label": "📦 源码解读",
+          "books": [
+            { "title": "Node.js 源码", "dirName": "nodejs-source" }
+          ]
+        },
+        {
+          "label": "🔧 工程化",
+          "books": [
+            { "title": "工程化实践", "dirName": "engineering" },
+            { "title": "微服务架构", "dirName": "microservices" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列",
+          "books": [
+            { "title": "Mini-NPM", "dirName": "mini-npm" },
+            { "title": "Mini-Sentry", "dirName": "mini-sentry" },
+            { "title": "Mini-Vitest", "dirName": "mini-vitest" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "algorithm",
+      "label": "数据结构与算法",
+      "groups": [
+        {
+          "label": "📚 数据结构",
+          "books": [
+            { "title": "数据结构基础", "dirName": "data-structures" },
+            { "title": "高级数据结构", "dirName": "advanced-ds" }
+          ]
+        },
+        {
+          "label": "🧮 算法技巧",
+          "books": [
+            { "title": "算法技巧", "dirName": "algorithms" },
+            { "title": "动态规划", "dirName": "dynamic-programming" },
+            { "title": "图与搜索", "dirName": "graph-algorithms" },
+            { "title": "竞赛编程", "dirName": "competitive-programming" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graphics",
+      "label": "图形学",
+      "groups": [
+        {
+          "label": "📖 入门基础",
+          "books": [
+            { "title": "WebGL 基础", "dirName": "webgl" },
+            { "title": "Canvas 实战", "dirName": "canvas" }
+          ]
+        },
+        {
+          "label": "🚀 进阶实战",
+          "books": [
+            { "title": "Three.js", "dirName": "threejs" },
+            { "title": "3D 数学", "dirName": "3d-math" },
+            { "title": "高级渲染", "dirName": "advanced-rendering" }
+          ]
+        },
+        {
+          "label": "🎯 Mini 系列",
+          "books": [
+            { "title": "Mini-PixiJS", "dirName": "mini-pixi" },
+            { "title": "Mini-FabricJS", "dirName": "mini-fabric" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "label": "通用技能",
+      "groups": [
+        {
+          "label": "🤖 AI 工具",
+          "books": [
+            { "title": "AI 工具应用", "dirName": "ai-tools" },
+            { "title": "AI 提示词工程", "dirName": "ai-prompt" }
+          ]
+        },
+        {
+          "label": "🧠 思维方法",
+          "books": [
+            { "title": "思维方法", "dirName": "thinking-methods" },
+            { "title": "清晰思考", "dirName": "clear-thinking" }
+          ]
+        }
+      ]
+    }
+  ]
+}

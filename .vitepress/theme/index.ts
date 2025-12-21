@@ -8,7 +8,6 @@ import {
   preferSFC,
   filterHeadersByPreference
 } from './components/preferences'
-import SponsorsAside from './components/SponsorsAside.vue'
 import VueSchoolLink from './components/VueSchoolLink.vue'
 import ScrimbaLink from './components/ScrimbaLink.vue'
 // import Banner from './components/Banner.vue'
@@ -23,8 +22,8 @@ export default Object.assign({}, VPTheme, {
     return h(VPTheme.Layout, null, {
       // banner: () => h(Banner),
       'sidebar-top': () => h(PreferenceSwitch),
-      'sidebar-bottom': () => h(SecurityUpdateBtn),
-      'aside-mid': () => h(SponsorsAside)
+      'sidebar-bottom': () => h(SecurityUpdateBtn)
+      // 'aside-mid': () => h(SponsorsAside) // 已移除赞助商广告
     })
   },
   enhanceApp({ app }: { app: App }) {

@@ -1,0 +1,196 @@
+- text: 序言
+  link: preface
+- text: 第一部分：源码阅读准备
+  collapsed: false
+  items:
+    - text: Node.js 源码结构概览
+      link: preparation/source-structure
+    - text: 编译 Node.js 源码
+      link: preparation/build-from-source
+    - text: 搭建源码调试环境
+      link: preparation/debug-environment
+    - text: VS Code 调试配置
+      link: preparation/vscode-setup
+    - text: C++ 代码阅读入门
+      link: preparation/cpp-primer
+    - text: V8 API 基础
+      link: preparation/v8-api-basics
+    - text: 源码阅读方法论
+      link: preparation/reading-methodology
+    - text: 如何追踪代码变更
+      link: preparation/tracking-changes
+- text: 第二部分：Node.js 启动过程
+  collapsed: false
+  items:
+    - text: main() 函数：一切的起点
+      link: bootstrap/main-function
+    - text: Node.js 初始化流程
+      link: bootstrap/initialization
+    - text: V8 平台与 Isolate 创建
+      link: bootstrap/v8-platform
+    - text: libuv 事件循环初始化
+      link: bootstrap/libuv-init
+    - text: 内部模块加载
+      link: bootstrap/internal-modules
+    - text: bootstrap 脚本执行
+      link: bootstrap/bootstrap-scripts
+    - text: 用户代码入口
+      link: bootstrap/user-code-entry
+    - text: REPL 启动流程
+      link: bootstrap/repl-start
+- text: 第三部分：libuv 深度解析
+  collapsed: false
+  items:
+    - text: libuv 架构与设计理念
+      link: libuv/architecture
+    - text: 事件循环核心：uv_run()
+      link: libuv/uv-run
+    - text: 句柄(Handle)体系
+      link: libuv/handles
+    - text: 请求(Request)体系
+      link: libuv/requests
+    - text: 定时器实现：最小堆
+      link: libuv/timers-heap
+    - text: I/O 观察者与 epoll/kqueue
+      link: libuv/io-watchers
+    - text: 线程池实现
+      link: libuv/thread-pool
+    - text: 异步 DNS 解析
+      link: libuv/async-dns
+    - text: 文件系统异步操作
+      link: libuv/fs-async
+    - text: 网络 I/O 实现
+      link: libuv/network-io
+    - text: 信号处理实现
+      link: libuv/signals
+    - text: 子进程管理
+      link: libuv/child-processes
+- text: 第四部分：V8 集成与绑定
+  collapsed: false
+  items:
+    - text: V8 与 Node.js 的关系
+      link: v8-binding/v8-nodejs-relationship
+    - text: C++ Binding 机制
+      link: v8-binding/cpp-binding
+    - text: node::ObjectWrap 类
+      link: v8-binding/object-wrap
+    - text: N-API 设计与实现
+      link: v8-binding/n-api
+    - text: 内置模块注册机制
+      link: v8-binding/builtin-registration
+    - text: 环境对象(Environment)
+      link: v8-binding/environment
+    - text: 上下文(Context)管理
+      link: v8-binding/context
+    - text: JavaScript 与 C++ 的数据传递
+      link: v8-binding/data-passing
+    - text: 异步操作的 C++ 实现
+      link: v8-binding/async-cpp
+- text: 第五部分：核心模块源码分析
+  collapsed: false
+  items:
+    - text: fs 模块架构
+      link: core-modules/fs-architecture
+    - text: fs 同步操作实现
+      link: core-modules/fs-sync
+    - text: fs 异步操作实现
+      link: core-modules/fs-async
+    - text: fs.promises 实现
+      link: core-modules/fs-promises
+    - text: Buffer 内存管理
+      link: core-modules/buffer-memory
+    - text: Buffer 与 TypedArray
+      link: core-modules/buffer-typedarray
+    - text: Stream 基类设计
+      link: core-modules/stream-base
+    - text: Readable Stream 实现
+      link: core-modules/readable-stream
+    - text: Writable Stream 实现
+      link: core-modules/writable-stream
+    - text: Duplex 与 Transform
+      link: core-modules/duplex-transform
+    - text: net 模块：TCP 实现
+      link: core-modules/net-tcp
+    - text: dns 模块实现
+      link: core-modules/dns
+    - text: http 解析器：llhttp
+      link: core-modules/llhttp-parser
+    - text: http 模块架构
+      link: core-modules/http-architecture
+    - text: http.Server 实现
+      link: core-modules/http-server
+    - text: http.request 实现
+      link: core-modules/http-request
+- text: 第六部分：模块系统源码
+  collapsed: false
+  items:
+    - text: 模块系统架构概览
+      link: modules/architecture
+    - text: Module 类设计
+      link: modules/module-class
+    - text: require() 函数实现
+      link: modules/require-impl
+    - text: 模块路径解析算法
+      link: modules/path-resolution
+    - text: 模块编译与执行
+      link: modules/compilation
+    - text: 模块缓存机制
+      link: modules/caching
+    - text: JSON 模块加载
+      link: modules/json-loading
+    - text: 原生模块加载
+      link: modules/native-modules
+    - text: ESM Loader 设计
+      link: modules/esm-loader
+    - text: ESM 解析与实例化
+      link: modules/esm-resolution
+    - text: ESM 与 CJS 互操作
+      link: modules/esm-cjs-interop
+    - text: 自定义 Loader 实现
+      link: modules/custom-loaders
+- text: 第七部分：进程与线程源码
+  collapsed: false
+  items:
+    - text: process 对象构建
+      link: process/process-object
+    - text: process.nextTick 实现
+      link: process/nexttick
+    - text: child_process.spawn 实现
+      link: process/spawn-impl
+    - text: 进程间通信(IPC)实现
+      link: process/ipc-impl
+    - text: Worker Threads 架构
+      link: process/worker-threads-arch
+    - text: MessageChannel 实现
+      link: process/message-channel
+    - text: SharedArrayBuffer 处理
+      link: process/shared-array-buffer
+    - text: Cluster 模块实现
+      link: process/cluster-impl
+    - text: 负载均衡算法
+      link: process/load-balancing
+- text: 第八部分：进阶主题
+  collapsed: false
+  items:
+    - text: async_hooks 实现
+      link: advanced/async-hooks
+    - text: 诊断报告生成
+      link: advanced/diagnostic-reports
+    - text: Heap Snapshot 实现
+      link: advanced/heap-snapshot
+    - text: CPU Profiler 集成
+      link: advanced/cpu-profiler
+    - text: Trace Events 系统
+      link: advanced/trace-events
+    - text: Inspector 协议实现
+      link: advanced/inspector
+    - text: WASI 支持实现
+      link: advanced/wasi
+    - text: Permission Model 实现
+      link: advanced/permission-model
+    - text: 性能优化案例分析
+      link: advanced/optimization-cases
+    - text: 参与 Node.js 贡献
+      link: advanced/contributing
+    - text: 源码分析总结与展望
+      link: advanced/summary

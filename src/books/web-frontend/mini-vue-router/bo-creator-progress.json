@@ -1,0 +1,42 @@
+{
+  "agent_name": "bo-creator",
+  "file_name": "bo-creator-progress.json",
+  "version": "1.0.0",
+  "last_updated": "2025-12-20T00:00:00Z",
+  "book_project": {
+    "id": "mini-vue-router",
+    "title": "Mini-Vue-Router: Vue Router 4 源码深度解析",
+    "language": "zh",
+    "total_chapters": 42,
+    "completed_chapters": 21
+  },
+  "tasks": {
+    "tasks_todo": [
+      "创作第7章：createWebHashHistory 实现",
+      "创作第8章：createMemoryHistory 实现",
+      "创作第9章：History 抽象层设计",
+      "继续后续章节"
+    ],
+    "task_in_progress": "创作第6章：createWebHistory 实现",
+    "tasks_completed": [
+      "优化序言与 toc.md 保持一致",
+      "创作第1章：前端路由的前世今生",
+      "创作第2章：Vue Router 4 架构设计解析",
+      "创作第3章：核心概念与术语定义",
+      "创作第4章：搭建 Mini Vue Router 开发环境",
+      "创作第5章：History API 深度剖析"
+    ]
+  },
+  "history": [
+    {
+      "timestamp": "2025-12-20T00:00:00Z",
+      "action": "初始化项目",
+      "description": "检查项目结构，优化序言内容"
+    },
+    {
+      "timestamp": "2025-12-20T01:00:00Z",
+      "action": "完成第一部分",
+      "description": "完成第1-4章：路由基础与架构概览"
+    }
+  ]
+}

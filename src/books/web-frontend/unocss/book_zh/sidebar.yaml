@@ -1,0 +1,57 @@
+- text: 序言
+  link: preface
+- text: 第一部分：基础与核心 (Foundations & Core Concepts)
+  collapsed: false
+  items:
+    - text: 启程：为什么选择 UnoCSS
+      link: foundations/why-unocss
+    - text: 快速上手：安装、配置与样式重置
+      link: foundations/getting-started
+    - text: 核心概念：规则、预设与变体
+      link: foundations/core-concepts
+    - text: 深入规则：静态与动态规则的艺术
+      link: foundations/mastering-rules
+    - text: 玩转预设：`preset-wind` 与其他预设
+      link: foundations/leveraging-presets
+    - text: 精通变体：响应式、伪类与逻辑组合
+      link: foundations/advanced-variants
+- text: 第二部分：核心工具类实战 (Mastering Core Utilities)
+  collapsed: false
+  items:
+    - text: 构建骨架：布局、尺寸与间距
+      link: core-utilities/layout-sizing-spacing
+    - text: 填充色彩：背景、边框与渐变
+      link: core-utilities/colors-borders-gradients
+    - text: 注入灵魂：文本、字体与排版
+      link: core-utilities/typography
+    - text: 增添质感：阴影、滤镜与过渡
+      link: core-utilities/effects-filters-transitions
+- text: 第三部分：核心功能实战 (Core Features in Practice)
+  collapsed: false
+  items:
+    - text: 效率提升：快捷方式 (Shortcuts)
+      link: core-features/shortcuts
+    - text: 代码风格：属性化模式与变体组
+      link: core-features/attributify-and-variant-groups
+    - text: 图标系统：开箱即用的图标方案
+      link: core-features/preset-icons
+    - text: 主题化定制：深入 `theme` 配置
+      link: core-features/theming
+- text: 第四部分：高级技巧与定制 (Advanced Techniques & Customization)
+  collapsed: false
+  items:
+    - text: 功能扩展：深入理解 `Transformers`
+      link: advanced/transformers
+    - text: 实战配置：安全列表、层与提取器
+      link: advanced/practical-configuration
+    - text: 终极玩法：创建你自己的预设
+      link: advanced/creating-presets
+- text: 第五部分：生态与工具链 (Ecosystem & Tooling)
+  collapsed: false
+  items:
+    - text: 主流框架集成指南
+      link: ecosystem/framework-integration
+    - text: 调试利器：Inspector
+      link: ecosystem/inspector
+    - text: 编辑器赋能：VS Code 插件详解
+      link: ecosystem/vscode-extension

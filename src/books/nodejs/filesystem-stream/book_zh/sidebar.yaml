@@ -1,0 +1,172 @@
+- text: 序言
+  link: preface
+- text: 第一部分：文件系统基础
+  collapsed: false
+  items:
+    - text: fs 模块概览与 API 设计
+      link: fs-basics/overview
+    - text: 三套 API 对比：回调、同步、Promise
+      link: fs-basics/api-styles
+    - text: 文件读取：readFile 与 read
+      link: fs-basics/reading-files
+    - text: 文件写入：writeFile 与 write
+      link: fs-basics/writing-files
+    - text: 文件追加与截断
+      link: fs-basics/append-truncate
+    - text: 文件描述符与低级操作
+      link: fs-basics/file-descriptors
+    - text: 文件信息：stat 与 lstat
+      link: fs-basics/file-stats
+    - text: 文件存在性检查
+      link: fs-basics/file-existence
+    - text: 文件重命名与移动
+      link: fs-basics/rename-move
+    - text: 文件复制策略
+      link: fs-basics/copy-strategies
+    - text: 文件删除：unlink 与 rm
+      link: fs-basics/delete-files
+- text: 第二部分：目录操作
+  collapsed: false
+  items:
+    - text: 目录创建：mkdir 与 mkdtemp
+      link: directories/create-directories
+    - text: 目录读取：readdir 与 opendir
+      link: directories/read-directories
+    - text: 目录遍历策略
+      link: directories/traversal
+    - text: 递归目录操作
+      link: directories/recursive-operations
+    - text: 目录删除：rmdir 与 rm
+      link: directories/remove-directories
+    - text: 临时目录管理
+      link: directories/temp-directories
+    - text: glob 模式匹配
+      link: directories/glob-patterns
+- text: 第三部分：高级文件操作
+  collapsed: false
+  items:
+    - text: 文件监听：watch 与 watchFile
+      link: advanced-fs/file-watching
+    - text: chokidar 文件监听库
+      link: advanced-fs/chokidar
+    - text: 符号链接与硬链接
+      link: advanced-fs/links
+    - text: 文件权限与 chmod
+      link: advanced-fs/permissions
+    - text: 文件所有者与 chown
+      link: advanced-fs/ownership
+    - text: 文件时间戳操作
+      link: advanced-fs/timestamps
+    - text: 文件锁定机制
+      link: advanced-fs/file-locking
+    - text: fs.constants 与标志位
+      link: advanced-fs/constants-flags
+    - text: 跨平台路径处理
+      link: advanced-fs/cross-platform
+- text: 第四部分：Stream 基础
+  collapsed: false
+  items:
+    - text: Stream 设计理念与优势
+      link: stream-basics/stream-philosophy
+    - text: 四种 Stream 类型概览
+      link: stream-basics/stream-types
+    - text: Readable Stream 详解
+      link: stream-basics/readable-stream
+    - text: Readable 的两种模式：flowing 与 paused
+      link: stream-basics/readable-modes
+    - text: Writable Stream 详解
+      link: stream-basics/writable-stream
+    - text: Duplex Stream 详解
+      link: stream-basics/duplex-stream
+    - text: Transform Stream 详解
+      link: stream-basics/transform-stream
+    - text: PassThrough Stream
+      link: stream-basics/passthrough
+    - text: Stream 事件体系
+      link: stream-basics/stream-events
+    - text: pipe 与 pipeline
+      link: stream-basics/pipe-pipeline
+- text: 第五部分：Stream 进阶
+  collapsed: false
+  items:
+    - text: 背压(Backpressure)原理
+      link: stream-advanced/backpressure
+    - text: 背压处理最佳实践
+      link: stream-advanced/backpressure-handling
+    - text: Stream 错误处理
+      link: stream-advanced/error-handling
+    - text: Stream 生命周期管理
+      link: stream-advanced/lifecycle
+    - text: Stream 销毁与清理
+      link: stream-advanced/destroy-cleanup
+    - text: highWaterMark 与缓冲区
+      link: stream-advanced/buffer-management
+    - text: 对象模式(Object Mode)
+      link: stream-advanced/object-mode
+    - text: 异步迭代器与 Stream
+      link: stream-advanced/async-iteration
+    - text: Stream 性能优化
+      link: stream-advanced/performance
+    - text: Stream 调试技巧
+      link: stream-advanced/debugging
+- text: 第六部分：自定义 Stream
+  collapsed: false
+  items:
+    - text: 实现自定义 Readable
+      link: custom-streams/custom-readable
+    - text: 实现自定义 Writable
+      link: custom-streams/custom-writable
+    - text: 实现自定义 Duplex
+      link: custom-streams/custom-duplex
+    - text: 实现自定义 Transform
+      link: custom-streams/custom-transform
+    - text: Stream 组合模式
+      link: custom-streams/composition
+    - text: Stream 工厂函数
+      link: custom-streams/factory-functions
+- text: 第七部分：常用 Stream 工具
+  collapsed: false
+  items:
+    - text: zlib：压缩与解压
+      link: stream-utils/zlib
+    - text: crypto Stream：加密与解密
+      link: stream-utils/crypto-streams
+    - text: readline：逐行读取
+      link: stream-utils/readline
+    - text: CSV 流式解析
+      link: stream-utils/csv-parsing
+    - text: JSON 流式解析
+      link: stream-utils/json-streaming
+    - text: HTTP 请求响应流
+      link: stream-utils/http-streams
+    - text: process.stdin 与 process.stdout
+      link: stream-utils/process-streams
+- text: 第八部分：实战应用
+  collapsed: false
+  items:
+    - text: 大文件读取与处理
+      link: practice/large-file-processing
+    - text: 文件上传处理
+      link: practice/file-upload
+    - text: 文件下载服务
+      link: practice/file-download
+    - text: 日志文件轮转
+      link: practice/log-rotation
+    - text: 实时日志追踪(tail -f)
+      link: practice/log-tailing
+    - text: 文件压缩与解压服务
+      link: practice/compression-service
+    - text: 数据导入导出
+      link: practice/data-import-export
+    - text: 图片处理流水线
+      link: practice/image-pipeline
+    - text: 视频流处理基础
+      link: practice/video-streaming
+    - text: Stream 与数据库
+      link: practice/database-streams
+    - text: 多文件合并
+      link: practice/file-merging
+    - text: 文件分片处理
+      link: practice/file-chunking
+    - text: 文件系统与流总结
+      link: practice/summary

@@ -1,0 +1,255 @@
+- text: 序言
+  link: preface
+- text: 第一部分：数论与数学基础
+  collapsed: false
+  items:
+    - text: 质数筛法（埃氏筛、欧拉筛）
+      link: number-theory/prime-sieve
+    - text: 质因数分解
+      link: number-theory/prime-factorization
+    - text: 最大公约数与最小公倍数
+      link: number-theory/gcd-lcm
+    - text: 扩展欧几里得算法
+      link: number-theory/extended-gcd
+    - text: 模运算与同余
+      link: number-theory/modular-arithmetic
+    - text: 快速幂与矩阵快速幂
+      link: number-theory/fast-power
+    - text: 乘法逆元
+      link: number-theory/modular-inverse
+    - text: 中国剩余定理
+      link: number-theory/chinese-remainder-theorem
+    - text: 欧拉函数
+      link: number-theory/euler-totient
+    - text: 费马小定理与威尔逊定理
+      link: number-theory/fermat-wilson
+- text: 第二部分：组合数学
+  collapsed: false
+  items:
+    - text: 排列与组合基础
+      link: combinatorics/permutation-combination
+    - text: 组合数计算与 Lucas 定理
+      link: combinatorics/lucas-theorem
+    - text: 卡特兰数
+      link: combinatorics/catalan-number
+    - text: 斯特林数
+      link: combinatorics/stirling-number
+    - text: 贝尔数与划分数
+      link: combinatorics/bell-partition
+    - text: 容斥原理
+      link: combinatorics/inclusion-exclusion
+    - text: 鸽巢原理
+      link: combinatorics/pigeonhole-principle
+    - text: 生成函数入门
+      link: combinatorics/generating-functions
+    - text: Burnside 引理与 Polya 定理
+      link: combinatorics/burnside-polya
+    - text: 概率与期望
+      link: combinatorics/probability-expectation
+- text: 第三部分：高级博弈论
+  collapsed: false
+  items:
+    - text: 博弈论进阶概述
+      link: game-theory/advanced-game-overview
+    - text: SG 函数与 Sprague-Grundy 定理
+      link: game-theory/sg-function
+    - text: Nim 游戏变种
+      link: game-theory/nim-variants
+    - text: 组合博弈的 SG 值计算
+      link: game-theory/sg-value-calculation
+    - text: 多堆博弈问题
+      link: game-theory/multi-pile-games
+    - text: 有向图博弈
+      link: game-theory/directed-graph-games
+    - text: 博弈 DP 进阶
+      link: game-theory/advanced-game-dp
+    - text: Anti-Nim 与反常博弈
+      link: game-theory/anti-nim
+    - text: 博弈论综合题
+      link: game-theory/comprehensive-problems
+    - text: 博弈论竞赛真题
+      link: game-theory/competition-problems
+- text: 第四部分：网络流
+  collapsed: false
+  items:
+    - text: 网络流基础概念
+      link: network-flow/network-flow-basics
+    - text: 最大流问题
+      link: network-flow/maximum-flow
+    - text: Ford-Fulkerson 方法
+      link: network-flow/ford-fulkerson
+    - text: Edmonds-Karp 算法
+      link: network-flow/edmonds-karp
+    - text: Dinic 算法
+      link: network-flow/dinic
+    - text: ISAP 算法
+      link: network-flow/isap
+    - text: 最小割与最大流最小割定理
+      link: network-flow/min-cut
+    - text: 二分图最大匹配（网络流解法）
+      link: network-flow/bipartite-matching-flow
+    - text: 最小费用最大流
+      link: network-flow/min-cost-max-flow
+    - text: SPFA 费用流
+      link: network-flow/spfa-cost-flow
+- text: 第五部分：网络流应用
+  collapsed: false
+  items:
+    - text: 上下界网络流
+      link: network-flow-applications/bounded-flow
+    - text: 有源汇上下界最大流
+      link: network-flow-applications/bounded-max-flow
+    - text: 有源汇上下界最小流
+      link: network-flow-applications/bounded-min-flow
+    - text: 最大权闭合子图
+      link: network-flow-applications/max-weight-closure
+    - text: 最小路径覆盖
+      link: network-flow-applications/min-path-cover
+    - text: 最大独立集（二分图）
+      link: network-flow-applications/max-independent-set
+    - text: 方格取数问题
+      link: network-flow-applications/grid-selection
+    - text: 餐巾计划问题
+      link: network-flow-applications/napkin-planning
+    - text: 网络流建模技巧
+      link: network-flow-applications/flow-modeling
+    - text: 网络流综合题
+      link: network-flow-applications/comprehensive-problems
+- text: 第六部分：计算几何基础
+  collapsed: false
+  items:
+    - text: 计算几何概述
+      link: computational-geometry/geometry-overview
+    - text: 点、向量与坐标运算
+      link: computational-geometry/point-vector
+    - text: 叉积与点积应用
+      link: computational-geometry/cross-dot-product
+    - text: 直线与线段
+      link: computational-geometry/line-segment
+    - text: 线段相交判定
+      link: computational-geometry/segment-intersection
+    - text: 多边形面积
+      link: computational-geometry/polygon-area
+    - text: 点与多边形关系
+      link: computational-geometry/point-in-polygon
+    - text: 凸包算法
+      link: computational-geometry/convex-hull
+    - text: 旋转卡壳
+      link: computational-geometry/rotating-calipers
+    - text: 最近点对
+      link: computational-geometry/closest-pair
+- text: 第七部分：计算几何进阶
+  collapsed: false
+  items:
+    - text: 半平面交
+      link: advanced-geometry/half-plane-intersection
+    - text: Voronoi 图与 Delaunay 三角剖分
+      link: advanced-geometry/voronoi-delaunay
+    - text: 最小圆覆盖
+      link: advanced-geometry/minimum-enclosing-circle
+    - text: 扫描线在几何中的应用
+      link: advanced-geometry/sweep-line-geometry
+    - text: 三维几何基础
+      link: advanced-geometry/3d-geometry
+    - text: 凸包（三维）
+      link: advanced-geometry/3d-convex-hull
+    - text: 计算几何精度处理
+      link: advanced-geometry/precision-handling
+    - text: 几何变换
+      link: advanced-geometry/geometric-transformation
+    - text: 计算几何模板汇总
+      link: advanced-geometry/geometry-templates
+    - text: 计算几何竞赛真题
+      link: advanced-geometry/competition-problems
+- text: 第八部分：字符串高级算法
+  collapsed: false
+  items:
+    - text: AC 自动机原理
+      link: advanced-string/ac-automaton-basics
+    - text: AC 自动机实现
+      link: advanced-string/ac-automaton-implementation
+    - text: 多模式串匹配
+      link: advanced-string/multi-pattern-matching
+    - text: 后缀数组进阶应用
+      link: advanced-string/suffix-array-advanced
+    - text: 后缀自动机进阶应用
+      link: advanced-string/suffix-automaton-advanced
+    - text: 回文自动机（PAM）
+      link: advanced-string/palindrome-automaton
+    - text: Lyndon 分解
+      link: advanced-string/lyndon-factorization
+    - text: 最小表示法
+      link: advanced-string/minimum-representation
+    - text: 字符串哈希进阶
+      link: advanced-string/advanced-string-hash
+    - text: 字符串算法综合
+      link: advanced-string/comprehensive-problems
+- text: 第九部分：竞赛真题精选
+  collapsed: false
+  items:
+    - text: LeetCode 周赛精选（简单）
+      link: competition/leetcode-weekly-easy
+    - text: LeetCode 周赛精选（中等）
+      link: competition/leetcode-weekly-medium
+    - text: LeetCode 周赛精选（困难）
+      link: competition/leetcode-weekly-hard
+    - text: LeetCode 双周赛精选
+      link: competition/leetcode-biweekly
+    - text: Google Kick Start 精选
+      link: competition/google-kickstart
+    - text: Google Code Jam 精选
+      link: competition/google-codejam
+    - text: Codeforces Div.2 精选
+      link: competition/codeforces-div2
+    - text: Codeforces Div.1 精选
+      link: competition/codeforces-div1
+    - text: AtCoder 精选
+      link: competition/atcoder
+    - text: ACM-ICPC 区域赛精选
+      link: competition/acm-icpc-regional
+- text: 第十部分：大厂算法面试题精选
+  collapsed: false
+  items:
+    - text: 字节跳动算法面试精选
+      link: interview/bytedance
+    - text: 腾讯算法面试精选
+      link: interview/tencent
+    - text: 阿里巴巴算法面试精选
+      link: interview/alibaba
+    - text: 美团算法面试精选
+      link: interview/meituan
+    - text: Google 算法面试精选
+      link: interview/google
+    - text: Meta 算法面试精选
+      link: interview/meta
+    - text: Amazon 算法面试精选
+      link: interview/amazon
+    - text: Microsoft 算法面试精选
+      link: interview/microsoft
+    - text: Apple 算法面试精选
+      link: interview/apple
+    - text: 大厂面试综合模拟
+      link: interview/mock-interview
+- text: 第十一部分：竞赛策略与技巧
+  collapsed: false
+  items:
+    - text: 竞赛时间管理
+      link: strategy/time-management
+    - text: 题目分类与选择策略
+      link: strategy/problem-selection
+    - text: 调试与对拍技巧
+      link: strategy/debugging-techniques
+    - text: 常见错误与避坑指南
+      link: strategy/common-mistakes
+    - text: 代码模板管理
+      link: strategy/code-templates
+    - text: 赛后复盘方法
+      link: strategy/post-contest-review
+    - text: Rating 提升路径
+      link: strategy/rating-improvement
+    - text: 从 1600 到 2100 的进阶之路
+      link: strategy/intermediate-to-advanced
+    - text: 从 2100 到 2400 的突破之路
+      link: strategy/advanced-to-expert
+    - text: 算法竞赛终极指南
+      link: strategy/ultimate-guide

@@ -1,0 +1,173 @@
+title: "Node.js安全实践: 从防护到攻防"
+description: 系统掌握 Node.js 应用安全，构建坚不可摧的后端服务。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：安全基础与威胁模型
+    items:
+      - text: 1. Node.js 安全全景图
+        link: foundations/security-landscape
+      - text: 2. 威胁建模：识别你的攻击面
+        link: foundations/threat-modeling
+      - text: 3. OWASP Top 10 与 Node.js
+        link: foundations/owasp-top-10
+      - text: 4. 安全开发思维模式
+        link: foundations/security-mindset
+      - text: 5. Node.js 安全发布与漏洞响应
+        link: foundations/security-releases
+  - text: 第二部分：输入验证与注入防护
+    items:
+      - text: 6. 输入验证基本原则
+        link: input-validation/principles
+      - text: 7. 使用 Joi 和 Zod 进行数据验证
+        link: input-validation/joi-zod
+      - text: 8. SQL 注入原理与防护
+        link: injection/sql-injection
+      - text: 9. NoSQL 注入：MongoDB 安全实践
+        link: injection/nosql-injection
+      - text: 10. 命令注入与防护
+        link: injection/command-injection
+      - text: 11. 路径遍历攻击防护
+        link: injection/path-traversal
+      - text: 12. 正则表达式拒绝服务(ReDoS)
+        link: injection/redos
+      - text: 13. 原型污染攻击与防护
+        link: injection/prototype-pollution
+  - text: 第三部分：Web 安全防护
+    items:
+      - text: 14. XSS 跨站脚本攻击详解
+        link: web-security/xss
+      - text: 15. XSS 防护策略与实现
+        link: web-security/xss-prevention
+      - text: 16. CSRF 跨站请求伪造
+        link: web-security/csrf
+      - text: 17. CORS 跨域资源共享配置
+        link: web-security/cors
+      - text: 18. 安全 HTTP 头配置
+        link: web-security/security-headers
+      - text: 19. 使用 Helmet.js 加固 Express
+        link: web-security/helmet
+      - text: 20. 点击劫持与 Frame 安全
+        link: web-security/clickjacking
+      - text: 21. Cookie 安全配置
+        link: web-security/cookie-security
+  - text: 第四部分：认证与授权
+    items:
+      - text: 22. 认证机制概览
+        link: auth/authentication-overview
+      - text: 23. 密码安全：存储与验证
+        link: auth/password-security
+      - text: 24. Session 认证实现
+        link: auth/session-authentication
+      - text: 25. JWT 原理与实现
+        link: auth/jwt-fundamentals
+      - text: 26. JWT 安全最佳实践
+        link: auth/jwt-best-practices
+      - text: 27. 刷新令牌与令牌轮转
+        link: auth/refresh-tokens
+      - text: 28. OAuth 2.0 实现指南
+        link: auth/oauth2
+      - text: 29. OpenID Connect 集成
+        link: auth/openid-connect
+      - text: 30. 多因素认证(MFA)实现
+        link: auth/mfa
+      - text: 31. 基于角色的访问控制(RBAC)
+        link: auth/rbac
+      - text: 32. 基于属性的访问控制(ABAC)
+        link: auth/abac
+      - text: 33. API 密钥管理
+        link: auth/api-key-management
+  - text: 第五部分：数据安全
+    items:
+      - text: 34. 敏感数据分类与处理
+        link: data-security/sensitive-data
+      - text: 35. 加密基础：对称与非对称加密
+        link: data-security/encryption-basics
+      - text: 36. Node.js crypto 模块实战
+        link: data-security/crypto-module
+      - text: 37. 哈希与消息认证码
+        link: data-security/hashing-hmac
+      - text: 38. 数据脱敏与匿名化
+        link: data-security/data-masking
+      - text: 39. 密钥管理最佳实践
+        link: data-security/key-management
+      - text: 40. 环境变量与密钥安全
+        link: data-security/env-secrets
+      - text: 41. 数据库连接安全
+        link: data-security/database-connection
+  - text: 第六部分：TLS/HTTPS 安全
+    items:
+      - text: 42. TLS/SSL 基础原理
+        link: tls/tls-fundamentals
+      - text: 43. Node.js HTTPS 服务配置
+        link: tls/https-setup
+      - text: 44. 证书管理与自动更新
+        link: tls/certificate-management
+      - text: 45. TLS 版本与密码套件选择
+        link: tls/cipher-suites
+      - text: 46. mTLS 双向认证
+        link: tls/mutual-tls
+      - text: 47. HSTS 与证书透明度
+        link: tls/hsts-ct
+  - text: 第七部分：供应链安全
+    items:
+      - text: 48. npm 生态安全威胁
+        link: supply-chain/npm-threats
+      - text: 49. 依赖漏洞扫描：npm audit 与 Snyk
+        link: supply-chain/vulnerability-scanning
+      - text: 50. 依赖锁定与版本管理
+        link: supply-chain/dependency-locking
+      - text: 51. 识别恶意包的技巧
+        link: supply-chain/malicious-packages
+      - text: 52. 私有 npm 仓库安全
+        link: supply-chain/private-registry
+      - text: 53. 软件物料清单(SBOM)
+        link: supply-chain/sbom
+      - text: 54. 依赖更新策略
+        link: supply-chain/update-strategy
+  - text: 第八部分：运行时安全与加固
+    items:
+      - text: 55. Node.js 沙箱与隔离
+        link: runtime/sandbox-isolation
+      - text: 56. Node.js 权限模型(v20+)
+        link: runtime/permission-model
+      - text: 57. 资源限制与 DoS 防护
+        link: runtime/resource-limits
+      - text: 58. 速率限制实现
+        link: runtime/rate-limiting
+      - text: 59. 进程安全与权限降低
+        link: runtime/process-security
+      - text: 60. 容器化安全最佳实践
+        link: runtime/container-security
+      - text: 61. 生产环境安全配置清单
+        link: runtime/production-checklist
+  - text: 第九部分：日志、监控与响应
+    items:
+      - text: 62. 安全日志设计
+        link: monitoring/security-logging
+      - text: 63. 敏感信息日志脱敏
+        link: monitoring/log-sanitization
+      - text: 64. 入侵检测与告警
+        link: monitoring/intrusion-detection
+      - text: 65. 安全事件响应流程
+        link: monitoring/incident-response
+      - text: 66. 安全审计与合规
+        link: monitoring/audit-compliance
+  - text: 第十部分：安全开发生命周期
+    items:
+      - text: 67. 安全编码规范
+        link: sdlc/secure-coding-standards
+      - text: 68. 代码审查安全检查清单
+        link: sdlc/code-review-checklist
+      - text: 69. 静态分析工具(SAST)
+        link: sdlc/sast-tools
+      - text: 70. 动态分析工具(DAST)
+        link: sdlc/dast-tools
+      - text: 71. 安全测试实践
+        link: sdlc/security-testing
+      - text: 72. 渗透测试基础
+        link: sdlc/penetration-testing
+      - text: 73. 漏洞披露与响应
+        link: sdlc/vulnerability-disclosure
+      - text: 74. Node.js 安全总结与展望
+        link: sdlc/summary

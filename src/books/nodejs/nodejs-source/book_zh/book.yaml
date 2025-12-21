@@ -1,0 +1,191 @@
+title: "Node.js源码深度解析: 从V8到libuv"
+description: 深入 Node.js 内部实现，掌握源码级的理解与调试能力。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：源码阅读准备
+    items:
+      - text: 1. Node.js 源码结构概览
+        link: preparation/source-structure
+      - text: 2. 编译 Node.js 源码
+        link: preparation/build-from-source
+      - text: 3. 搭建源码调试环境
+        link: preparation/debug-environment
+      - text: 4. VS Code 调试配置
+        link: preparation/vscode-setup
+      - text: 5. C++ 代码阅读入门
+        link: preparation/cpp-primer
+      - text: 6. V8 API 基础
+        link: preparation/v8-api-basics
+      - text: 7. 源码阅读方法论
+        link: preparation/reading-methodology
+      - text: 8. 如何追踪代码变更
+        link: preparation/tracking-changes
+  - text: 第二部分：Node.js 启动过程
+    items:
+      - text: 9. main() 函数：一切的起点
+        link: bootstrap/main-function
+      - text: 10. Node.js 初始化流程
+        link: bootstrap/initialization
+      - text: 11. V8 平台与 Isolate 创建
+        link: bootstrap/v8-platform
+      - text: 12. libuv 事件循环初始化
+        link: bootstrap/libuv-init
+      - text: 13. 内部模块加载
+        link: bootstrap/internal-modules
+      - text: 14. bootstrap 脚本执行
+        link: bootstrap/bootstrap-scripts
+      - text: 15. 用户代码入口
+        link: bootstrap/user-code-entry
+      - text: 16. REPL 启动流程
+        link: bootstrap/repl-start
+  - text: 第三部分：libuv 深度解析
+    items:
+      - text: 17. libuv 架构与设计理念
+        link: libuv/architecture
+      - text: 18. 事件循环核心：uv_run()
+        link: libuv/uv-run
+      - text: 19. 句柄(Handle)体系
+        link: libuv/handles
+      - text: 20. 请求(Request)体系
+        link: libuv/requests
+      - text: 21. 定时器实现：最小堆
+        link: libuv/timers-heap
+      - text: 22. I/O 观察者与 epoll/kqueue
+        link: libuv/io-watchers
+      - text: 23. 线程池实现
+        link: libuv/thread-pool
+      - text: 24. 异步 DNS 解析
+        link: libuv/async-dns
+      - text: 25. 文件系统异步操作
+        link: libuv/fs-async
+      - text: 26. 网络 I/O 实现
+        link: libuv/network-io
+      - text: 27. 信号处理实现
+        link: libuv/signals
+      - text: 28. 子进程管理
+        link: libuv/child-processes
+  - text: 第四部分：V8 集成与绑定
+    items:
+      - text: 29. V8 与 Node.js 的关系
+        link: v8-binding/v8-nodejs-relationship
+      - text: 30. C++ Binding 机制
+        link: v8-binding/cpp-binding
+      - text: 31. node::ObjectWrap 类
+        link: v8-binding/object-wrap
+      - text: 32. N-API 设计与实现
+        link: v8-binding/n-api
+      - text: 33. 内置模块注册机制
+        link: v8-binding/builtin-registration
+      - text: 34. 环境对象(Environment)
+        link: v8-binding/environment
+      - text: 35. 上下文(Context)管理
+        link: v8-binding/context
+      - text: 36. JavaScript 与 C++ 的数据传递
+        link: v8-binding/data-passing
+      - text: 37. 异步操作的 C++ 实现
+        link: v8-binding/async-cpp
+  - text: 第五部分：核心模块源码分析
+    items:
+      - text: 38. fs 模块架构
+        link: core-modules/fs-architecture
+      - text: 39. fs 同步操作实现
+        link: core-modules/fs-sync
+      - text: 40. fs 异步操作实现
+        link: core-modules/fs-async
+      - text: 41. fs.promises 实现
+        link: core-modules/fs-promises
+      - text: 42. Buffer 内存管理
+        link: core-modules/buffer-memory
+      - text: 43. Buffer 与 TypedArray
+        link: core-modules/buffer-typedarray
+      - text: 44. Stream 基类设计
+        link: core-modules/stream-base
+      - text: 45. Readable Stream 实现
+        link: core-modules/readable-stream
+      - text: 46. Writable Stream 实现
+        link: core-modules/writable-stream
+      - text: 47. Duplex 与 Transform
+        link: core-modules/duplex-transform
+      - text: 48. net 模块：TCP 实现
+        link: core-modules/net-tcp
+      - text: 49. dns 模块实现
+        link: core-modules/dns
+      - text: 50. http 解析器：llhttp
+        link: core-modules/llhttp-parser
+      - text: 51. http 模块架构
+        link: core-modules/http-architecture
+      - text: 52. http.Server 实现
+        link: core-modules/http-server
+      - text: 53. http.request 实现
+        link: core-modules/http-request
+  - text: 第六部分：模块系统源码
+    items:
+      - text: 54. 模块系统架构概览
+        link: modules/architecture
+      - text: 55. Module 类设计
+        link: modules/module-class
+      - text: 56. require() 函数实现
+        link: modules/require-impl
+      - text: 57. 模块路径解析算法
+        link: modules/path-resolution
+      - text: 58. 模块编译与执行
+        link: modules/compilation
+      - text: 59. 模块缓存机制
+        link: modules/caching
+      - text: 60. JSON 模块加载
+        link: modules/json-loading
+      - text: 61. 原生模块加载
+        link: modules/native-modules
+      - text: 62. ESM Loader 设计
+        link: modules/esm-loader
+      - text: 63. ESM 解析与实例化
+        link: modules/esm-resolution
+      - text: 64. ESM 与 CJS 互操作
+        link: modules/esm-cjs-interop
+      - text: 65. 自定义 Loader 实现
+        link: modules/custom-loaders
+  - text: 第七部分：进程与线程源码
+    items:
+      - text: 66. process 对象构建
+        link: process/process-object
+      - text: 67. process.nextTick 实现
+        link: process/nexttick
+      - text: 68. child_process.spawn 实现
+        link: process/spawn-impl
+      - text: 69. 进程间通信(IPC)实现
+        link: process/ipc-impl
+      - text: 70. Worker Threads 架构
+        link: process/worker-threads-arch
+      - text: 71. MessageChannel 实现
+        link: process/message-channel
+      - text: 72. SharedArrayBuffer 处理
+        link: process/shared-array-buffer
+      - text: 73. Cluster 模块实现
+        link: process/cluster-impl
+      - text: 74. 负载均衡算法
+        link: process/load-balancing
+  - text: 第八部分：进阶主题
+    items:
+      - text: 75. async_hooks 实现
+        link: advanced/async-hooks
+      - text: 76. 诊断报告生成
+        link: advanced/diagnostic-reports
+      - text: 77. Heap Snapshot 实现
+        link: advanced/heap-snapshot
+      - text: 78. CPU Profiler 集成
+        link: advanced/cpu-profiler
+      - text: 79. Trace Events 系统
+        link: advanced/trace-events
+      - text: 80. Inspector 协议实现
+        link: advanced/inspector
+      - text: 81. WASI 支持实现
+        link: advanced/wasi
+      - text: 82. Permission Model 实现
+        link: advanced/permission-model
+      - text: 83. 性能优化案例分析
+        link: advanced/optimization-cases
+      - text: 84. 参与 Node.js 贡献
+        link: advanced/contributing
+      - text: 85. 源码分析总结与展望
+        link: advanced/summary

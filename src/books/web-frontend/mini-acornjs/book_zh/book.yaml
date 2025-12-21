@@ -1,0 +1,85 @@
+title: JavaScript解析器实战：从零构建mini-acorn
+description: 本书将带你从零开始，一步步构建一个功能完备的 JavaScript 解析器。我们不仅会深入 Acorn 的源码实现，更会结合编译原理的理论知识，让你知其然，更知其所以然。
+toc:
+  - text: 序言
+    link: preface
+  - text: 1. 启程：JavaScript 解析器概览
+    link: foundations/parsing-overview
+  - text: 2. 编译原理速成：文法、词法与语法
+    link: foundations/compiler-primer
+  - text: 3. 理解 ESTree 规范
+    link: foundations/estree-specification
+  - text: 4. Acorn 架构概览：核心模块与流程
+    link: foundations/acorn-architecture
+  - text: 5. 准备工作：搭建 mini-acorn 项目
+    link: foundations/project-setup
+  - text: 6. 词法分析概览：分词的实现思路
+    link: lexical-analysis/overview
+  - text: 7. Token 数据结构设计
+    link: lexical-analysis/token-data-structure
+  - text: 8. 实现 Tokenizer：处理空白、注释与 Token 读取
+    link: lexical-analysis/tokenizer-implementation
+  - text: 9. 解析标识符与关键字
+    link: lexical-analysis/identifiers-and-keywords
+  - text: 10. 解析字面量：字符串、数字与正则表达式
+    link: lexical-analysis/literals-and-regexp
+  - text: 11. 解析运算符与标点
+    link: lexical-analysis/operators-and-punctuators
+  - text: 12. 语法分析概览：递归下降法
+    link: syntactic-analysis/overview
+  - text: 13. Parser 核心：状态初始化与管理
+    link: syntactic-analysis/parser-state
+  - text: 14. 实现解析器辅助方法
+    link: syntactic-analysis/parser-helpers
+  - text: 15. 解析程序与顶层节点：实现 parse 方法
+    link: syntactic-analysis/program-parsing
+  - text: 16. 语句解析调度：parseStatement 实现
+    link: syntactic-analysis/statement-dispatcher
+  - text: 17. 解析两种基础语句：表达式语句与块级语句
+    link: syntactic-analysis/basic-statements
+  - text: 18. 表达式解析的挑战：运算符优先级与结合性
+    link: expressions/challenges
+  - text: 19. Pratt 解析法：算法核心
+    link: expressions/pratt-parser-core
+  - text: 20. 实现 Pratt 解析器：Token 的“绑定力”
+    link: expressions/pratt-parser-implementation
+  - text: 21. 解析原子与分组表达式：`this`, `super`, `( ... )`
+    link: expressions/atomic-and-grouping
+  - text: 22. 解析数组与对象字面量
+    link: expressions/array-and-object-literals
+  - text: 23. 解析前缀与更新表达式：`!x`, `++i`
+    link: expressions/prefix-and-update
+  - text: 24. 解析中缀表达式：二元运算与逻辑运算
+    link: expressions/infix-expressions
+  - text: "26. 解析条件与赋值表达式：`a ? b : c`, `a = b`"
+    link: expressions/conditional-and-assignment
+  - text: 27. 解析变量声明：`var`, `let`, `const`
+    link: semantics/variable-declarations
+  - text: 28. 解析条件语句：`if` 与 `switch`
+    link: semantics/conditional-statements
+  - text: 29. 解析循环语句：`while`, `do-while`, `for`
+    link: semantics/loop-statements
+  - text: 30. 解析控制转移语句：`return`, `break`, `continue`, `throw`
+    link: semantics/control-transfer
+  - text: 31. 解析函数：声明、表达式与箭头函数
+    link: semantics/function-parsing
+  - text: 32. 解析类：声明与表达式
+    link: semantics/class-parsing
+  - text: 33. 深入作用域：构建符号表与作用域链
+    link: semantics/scope-and-symbol-table
+  - text: 34. 解析 ES 模块：`import` 与 `export`
+    link: semantics/es-modules
+  - text: 35. AST 遍历与访问：Visitor 模式的应用
+    link: ast-manipulation/traversal-and-visitor-pattern
+  - text: 36. 代码生成：将 AST 转换回 JavaScript 代码
+    link: ast-manipulation/code-generation
+  - text: 37. 插件化架构：打造可扩展的解析器
+    link: advanced/plugin-architecture
+  - text: 38. 源码映射：实现 Source Map 生成
+    link: advanced/source-map-generation
+  - text: 39. 性能优化：解析器内存与速度考量
+    link: advanced/performance-optimization
+  - text: 40. 错误处理与容错：构建更健壮的解析器
+    link: advanced/error-handling-and-recovery
+  - text: 41. 整合实践：构建完整解析器
+    link: advanced/putting-it-all-together

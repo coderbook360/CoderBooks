@@ -1,0 +1,232 @@
+- text: 序言
+  link: preface
+- text: 第一部分：浏览器架构与进程模型
+  collapsed: false
+  items:
+    - text: 浏览器发展简史
+      link: architecture/history
+    - text: 现代浏览器架构概览
+      link: architecture/overview
+    - text: 多进程架构详解
+      link: architecture/multi-process
+    - text: 浏览器进程
+      link: architecture/browser-process
+    - text: 渲染进程
+      link: architecture/renderer-process
+    - text: GPU进程
+      link: architecture/gpu-process
+    - text: 网络进程
+      link: architecture/network-process
+    - text: 插件进程与扩展机制
+      link: architecture/plugin-process
+    - text: 进程间通信(IPC)
+      link: architecture/ipc
+    - text: 站点隔离与安全边界
+      link: architecture/site-isolation
+- text: 第二部分：网络与资源加载
+  collapsed: false
+  items:
+    - text: 从URL到页面：导航流程
+      link: network/navigation-flow
+    - text: DNS解析过程详解
+      link: network/dns-resolution
+    - text: TCP连接与TLS握手
+      link: network/tcp-tls
+    - text: HTTP请求与响应
+      link: network/http-request-response
+    - text: HTTP/2协议详解
+      link: network/http2-deep
+    - text: HTTP/3与QUIC详解
+      link: network/http3-quic-deep
+    - text: 缓存机制详解
+      link: network/caching
+    - text: Service Worker与网络代理
+      link: network/service-worker
+    - text: 资源优先级与预加载
+      link: network/resource-priority
+    - text: 跨域资源共享(CORS)
+      link: network/cors
+- text: 第三部分：HTML解析与DOM构建
+  collapsed: false
+  items:
+    - text: HTML解析器原理
+      link: parsing/html-parser
+    - text: 词法分析：Tokenization
+      link: parsing/tokenization
+    - text: 语法分析：树构建算法
+      link: parsing/tree-construction
+    - text: DOM树结构与节点类型
+      link: parsing/dom-tree
+    - text: 容错机制与异常处理
+      link: parsing/error-handling
+    - text: 解析阻塞与异步脚本
+      link: parsing/script-blocking
+    - text: 预解析与推测性加载
+      link: parsing/preload-scanner
+    - text: Document对象与DOM API
+      link: parsing/document-api
+    - text: MutationObserver原理
+      link: parsing/mutation-observer
+    - text: Shadow DOM与封装
+      link: parsing/shadow-dom
+- text: 第四部分：CSS解析与样式计算
+  collapsed: false
+  items:
+    - text: CSS解析器原理
+      link: css/css-parser
+    - text: CSSOM构建过程
+      link: css/cssom-construction
+    - text: 选择器匹配算法
+      link: css/selector-matching
+    - text: 样式级联与继承
+      link: css/cascade-inheritance
+    - text: 计算样式(Computed Style)
+      link: css/computed-style
+    - text: CSS变量与自定义属性
+      link: css/css-variables
+    - text: 媒体查询与响应式
+      link: css/media-queries
+    - text: CSS动画与过渡原理
+      link: css/animations-transitions
+    - text: CSS Houdini简介
+      link: css/houdini
+    - text: CSS性能优化原理
+      link: css/performance
+- text: 第五部分：布局与渲染树
+  collapsed: false
+  items:
+    - text: 渲染树构建
+      link: layout/render-tree
+    - text: 布局(Layout)过程详解
+      link: layout/layout-process
+    - text: 盒模型计算
+      link: layout/box-model
+    - text: 正常流布局
+      link: layout/normal-flow
+    - text: 浮动布局原理
+      link: layout/float
+    - text: 定位布局原理
+      link: layout/positioning
+    - text: Flexbox布局原理
+      link: layout/flexbox
+    - text: Grid布局原理
+      link: layout/grid
+    - text: BFC与格式化上下文
+      link: layout/formatting-context
+    - text: 布局优化与性能
+      link: layout/performance
+- text: 第六部分：绘制与合成
+  collapsed: false
+  items:
+    - text: 绘制(Paint)过程详解
+      link: painting/paint-process
+    - text: 绘制记录与显示列表
+      link: painting/display-list
+    - text: 分层(Layer)与合成
+      link: painting/layers-compositing
+    - text: 图层树与合成层
+      link: painting/layer-tree
+    - text: GPU光栅化
+      link: painting/gpu-rasterization
+    - text: 帧合成与显示
+      link: painting/frame-composition
+    - text: will-change与图层提升
+      link: painting/will-change
+    - text: 硬件加速原理
+      link: painting/hardware-acceleration
+    - text: 滚动与滚动优化
+      link: painting/scroll-optimization
+    - text: 绘制性能优化
+      link: painting/performance
+- text: 第七部分：JavaScript引擎
+  collapsed: false
+  items:
+    - text: JavaScript引擎概述
+      link: js-engine/overview
+    - text: V8引擎架构
+      link: js-engine/v8-architecture
+    - text: 解析与AST生成
+      link: js-engine/parsing-ast
+    - text: 字节码与Ignition
+      link: js-engine/bytecode-ignition
+    - text: JIT编译与TurboFan
+      link: js-engine/jit-turbofan
+    - text: 内联缓存(IC)
+      link: js-engine/inline-caching
+    - text: 隐藏类与对象表示
+      link: js-engine/hidden-classes
+    - text: 内存管理与堆结构
+      link: js-engine/memory-heap
+    - text: 垃圾回收机制详解
+      link: js-engine/garbage-collection
+    - text: V8性能优化技巧
+      link: js-engine/optimization-tips
+- text: 第八部分：事件循环与异步
+  collapsed: false
+  items:
+    - text: 事件循环(Event Loop)详解
+      link: event-loop/overview
+    - text: 调用栈(Call Stack)
+      link: event-loop/call-stack
+    - text: 宏任务(Macrotask)
+      link: event-loop/macrotasks
+    - text: 微任务(Microtask)
+      link: event-loop/microtasks
+    - text: requestAnimationFrame详解
+      link: event-loop/raf
+    - text: requestIdleCallback详解
+      link: event-loop/ric
+    - text: setTimeout/setInterval原理
+      link: event-loop/timers
+    - text: Promise与异步调度
+      link: event-loop/promise
+    - text: async/await原理
+      link: event-loop/async-await
+    - text: Web Worker原理
+      link: event-loop/web-worker
+- text: 第九部分：浏览器API原理
+  collapsed: false
+  items:
+    - text: DOM事件系统
+      link: browser-api/dom-events
+    - text: 事件捕获与冒泡
+      link: browser-api/event-propagation
+    - text: IntersectionObserver原理
+      link: browser-api/intersection-observer
+    - text: ResizeObserver原理
+      link: browser-api/resize-observer
+    - text: PerformanceObserver原理
+      link: browser-api/performance-observer
+    - text: History API与路由
+      link: browser-api/history-api
+    - text: Storage API原理
+      link: browser-api/storage
+    - text: IndexedDB原理
+      link: browser-api/indexeddb
+    - text: Fetch API原理
+      link: browser-api/fetch
+    - text: WebSocket原理
+      link: browser-api/websocket
+- text: 第十部分：安全与沙箱
+  collapsed: false
+  items:
+    - text: 浏览器安全模型
+      link: security/security-model
+    - text: 同源策略详解
+      link: security/same-origin-policy
+    - text: XSS攻击与防御
+      link: security/xss
+    - text: CSRF攻击与防御
+      link: security/csrf
+    - text: CSP内容安全策略
+      link: security/csp
+    - text: 沙箱机制
+      link: security/sandbox
+    - text: HTTPS与证书
+      link: security/https
+    - text: Cookie安全
+      link: security/cookie-security
+    - text: 浏览器指纹与隐私
+      link: security/fingerprinting
+    - text: 前端安全最佳实践
+      link: security/best-practices

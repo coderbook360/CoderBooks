@@ -1,0 +1,167 @@
+title: "Node.js API设计与实现: 从RESTful到GraphQL"
+description: 掌握现代 API 设计原则，构建开发者友好的后端服务接口。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：API 设计基础
+    items:
+      - text: 1. 什么是好的 API
+        link: foundations/good-api
+      - text: 2. API 设计原则与哲学
+        link: foundations/design-principles
+      - text: 3. HTTP 协议核心回顾
+        link: foundations/http-fundamentals
+      - text: 4. API 风格对比：REST vs GraphQL vs RPC
+        link: foundations/api-styles
+      - text: 5. API 优先设计方法论
+        link: foundations/api-first-design
+  - text: 第二部分：RESTful API 设计
+    items:
+      - text: 6. REST 核心约束与理念
+        link: rest/rest-constraints
+      - text: 7. 资源建模与命名规范
+        link: rest/resource-modeling
+      - text: 8. URL 设计最佳实践
+        link: rest/url-design
+      - text: 9. HTTP 方法语义详解
+        link: rest/http-methods
+      - text: 10. HTTP 状态码正确使用
+        link: rest/status-codes
+      - text: 11. 请求与响应格式设计
+        link: rest/request-response-format
+      - text: 12. 查询参数与过滤设计
+        link: rest/query-filtering
+      - text: 13. 分页设计：offset、cursor 与 keyset
+        link: rest/pagination
+      - text: 14. 排序与搜索接口设计
+        link: rest/sorting-searching
+      - text: 15. 字段选择与稀疏字段集
+        link: rest/sparse-fieldsets
+      - text: 16. 资源关系与嵌套资源
+        link: rest/resource-relationships
+      - text: 17. 批量操作接口设计
+        link: rest/batch-operations
+  - text: 第三部分：REST API 高级模式
+    items:
+      - text: 18. 错误处理与响应规范
+        link: advanced-rest/error-handling
+      - text: 19. 问题详情格式(RFC 7807)
+        link: advanced-rest/problem-details
+      - text: 20. HATEOAS 超媒体驱动
+        link: advanced-rest/hateoas
+      - text: 21. 长时间操作处理模式
+        link: advanced-rest/long-running-operations
+      - text: 22. 文件上传接口设计
+        link: advanced-rest/file-upload
+      - text: 23. Webhook 设计与实现
+        link: advanced-rest/webhooks
+      - text: 24. 幂等性设计与实现
+        link: advanced-rest/idempotency
+      - text: 25. 乐观锁与 ETag
+        link: advanced-rest/etag-caching
+      - text: 26. API 版本管理策略
+        link: advanced-rest/versioning
+      - text: 27. 向后兼容与废弃策略
+        link: advanced-rest/backward-compatibility
+  - text: 第四部分：RESTful API 实现
+    items:
+      - text: 28. Express 实现 REST API
+        link: rest-implementation/express-rest
+      - text: 29. Fastify 实现 REST API
+        link: rest-implementation/fastify-rest
+      - text: 30. NestJS 实现 REST API
+        link: rest-implementation/nestjs-rest
+      - text: 31. 请求验证与数据转换
+        link: rest-implementation/validation-transformation
+      - text: 32. 响应序列化与格式化
+        link: rest-implementation/serialization
+      - text: 33. 中间件设计模式
+        link: rest-implementation/middleware-patterns
+      - text: 34. 控制器组织与路由管理
+        link: rest-implementation/controller-routing
+  - text: 第五部分：GraphQL 设计与实现
+    items:
+      - text: 35. GraphQL 核心概念
+        link: graphql/core-concepts
+      - text: 36. Schema 设计基础
+        link: graphql/schema-basics
+      - text: 37. 类型系统详解
+        link: graphql/type-system
+      - text: 38. 查询与变更设计
+        link: graphql/queries-mutations
+      - text: 39. 输入类型与参数设计
+        link: graphql/input-types
+      - text: 40. 接口与联合类型
+        link: graphql/interfaces-unions
+      - text: 41. 枚举与标量类型
+        link: graphql/enums-scalars
+      - text: 42. Resolver 实现模式
+        link: graphql/resolvers
+      - text: 43. N+1 问题与 DataLoader
+        link: graphql/dataloader
+      - text: 44. 分页：Relay Cursor 连接规范
+        link: graphql/relay-pagination
+      - text: 45. 错误处理与错误格式
+        link: graphql/error-handling
+      - text: 46. 订阅与实时数据
+        link: graphql/subscriptions
+      - text: 47. 查询复杂度与深度限制
+        link: graphql/query-complexity
+      - text: 48. Apollo Server 实战
+        link: graphql/apollo-server
+      - text: 49. NestJS GraphQL 实战
+        link: graphql/nestjs-graphql
+  - text: 第六部分：API 文档与规范
+    items:
+      - text: 50. OpenAPI 3.0 规范详解
+        link: documentation/openapi-spec
+      - text: 51. 使用 Swagger 生成文档
+        link: documentation/swagger
+      - text: 52. 代码优先 vs 规范优先
+        link: documentation/code-first-vs-spec-first
+      - text: 53. API 文档最佳实践
+        link: documentation/documentation-best-practices
+      - text: 54. 交互式 API 文档：Swagger UI 与 Redoc
+        link: documentation/interactive-docs
+      - text: 55. API 示例与 Mock 服务
+        link: documentation/api-mocking
+      - text: 56. SDK 生成与客户端代码
+        link: documentation/sdk-generation
+      - text: 57. GraphQL 文档与 Playground
+        link: documentation/graphql-docs
+  - text: 第七部分：API 性能优化
+    items:
+      - text: 58. API 响应时间优化
+        link: performance/response-time
+      - text: 59. HTTP 缓存策略
+        link: performance/http-caching
+      - text: 60. 响应压缩与传输优化
+        link: performance/compression
+      - text: 61. 数据库查询优化
+        link: performance/database-optimization
+      - text: 62. N+1 查询问题解决
+        link: performance/n-plus-one
+      - text: 63. API 负载测试
+        link: performance/load-testing
+      - text: 64. 性能监控与 APM
+        link: performance/apm
+  - text: 第八部分：API 网关与治理
+    items:
+      - text: 65. API 网关概念与选型
+        link: gateway/api-gateway-intro
+      - text: 66. Kong 网关入门
+        link: gateway/kong
+      - text: 67. Node.js 实现简易 API 网关
+        link: gateway/nodejs-gateway
+      - text: 68. 限流设计与实现
+        link: gateway/rate-limiting
+      - text: 69. 熔断与降级策略
+        link: gateway/circuit-breaker
+      - text: 70. API 聚合与 BFF 模式
+        link: gateway/bff-pattern
+      - text: 71. API 监控与分析
+        link: gateway/monitoring-analytics
+      - text: 72. API 生命周期管理
+        link: gateway/lifecycle-management
+      - text: 73. API 设计总结与最佳实践
+        link: gateway/summary

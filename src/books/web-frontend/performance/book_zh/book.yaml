@@ -1,0 +1,205 @@
+title: "前端性能优化: 从感知到极致"
+description: 本书将帮助你系统掌握前端性能优化的方法论与实战技巧，让应用性能超越99%的竞品。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：性能优化思维与方法论
+    items:
+      - text: 1. 为什么性能如此重要
+        link: foundations/why-performance
+      - text: 2. 性能指标体系详解
+        link: foundations/metrics
+      - text: 3. Core Web Vitals深度解读
+        link: foundations/core-web-vitals
+      - text: 4. 性能优化方法论
+        link: foundations/methodology
+      - text: 5. 性能预算与目标设定
+        link: foundations/budget
+      - text: 6. 性能测量工具全景
+        link: foundations/tools-overview
+  - text: 第二部分：性能测量与分析
+    items:
+      - text: 7. Chrome DevTools性能面板
+        link: measurement/devtools-performance
+      - text: 8. Lighthouse深度使用
+        link: measurement/lighthouse
+      - text: 9. WebPageTest实战
+        link: measurement/webpagetest
+      - text: 10. 真实用户监控(RUM)
+        link: measurement/rum
+      - text: 11. Performance API详解
+        link: measurement/performance-api
+      - text: 12. 性能数据采集与上报
+        link: measurement/data-collection
+      - text: 13. 性能数据分析与可视化
+        link: measurement/data-analysis
+      - text: 14. 竞品性能对标分析
+        link: measurement/benchmarking
+  - text: 第三部分：网络性能优化
+    items:
+      - text: 15. HTTP协议与性能
+        link: network/http-performance
+      - text: 16. HTTP/2特性与优化
+        link: network/http2
+      - text: 17. HTTP/3与QUIC协议
+        link: network/http3-quic
+      - text: 18. DNS优化策略
+        link: network/dns-optimization
+      - text: 19. CDN原理与最佳实践
+        link: network/cdn
+      - text: 20. 资源预加载策略
+        link: network/preload-prefetch
+      - text: 21. Service Worker与离线缓存
+        link: network/service-worker
+      - text: 22. HTTP缓存策略设计
+        link: network/http-caching
+      - text: 23. 请求合并与优化
+        link: network/request-optimization
+      - text: 24. WebSocket性能优化
+        link: network/websocket
+  - text: 第四部分：资源加载优化
+    items:
+      - text: 25. 资源加载优先级
+        link: loading/resource-priority
+      - text: 26. JavaScript加载优化
+        link: loading/javascript
+      - text: 27. 代码分割策略
+        link: loading/code-splitting
+      - text: 28. 动态导入与懒加载
+        link: loading/dynamic-import
+      - text: 29. CSS加载优化
+        link: loading/css
+      - text: 30. Critical CSS提取
+        link: loading/critical-css
+      - text: 31. 字体加载优化
+        link: loading/fonts
+      - text: 32. 图片优化策略
+        link: loading/images
+      - text: 33. 响应式图片实现
+        link: loading/responsive-images
+      - text: 34. 新一代图片格式
+        link: loading/modern-image-formats
+      - text: 35. 视频加载优化
+        link: loading/video
+      - text: 36. 第三方资源优化
+        link: loading/third-party
+  - text: 第五部分：JavaScript性能优化
+    items:
+      - text: 37. JavaScript执行机制
+        link: javascript/execution
+      - text: 38. V8引擎优化原理
+        link: javascript/v8-optimization
+      - text: 39. 避免内存泄漏
+        link: javascript/memory-leaks
+      - text: 40. 内存管理与垃圾回收
+        link: javascript/garbage-collection
+      - text: 41. 长任务拆分策略
+        link: javascript/long-tasks
+      - text: 42. Web Worker多线程
+        link: javascript/web-worker
+      - text: 43. WebAssembly性能优化
+        link: javascript/webassembly
+      - text: 44. 算法与数据结构优化
+        link: javascript/algorithms
+      - text: 45. 防抖与节流
+        link: javascript/debounce-throttle
+      - text: 46. 虚拟列表实现
+        link: javascript/virtual-list
+  - text: 第六部分：渲染性能优化
+    items:
+      - text: 47. 浏览器渲染流程
+        link: rendering/browser-rendering
+      - text: 48. 关键渲染路径优化
+        link: rendering/critical-path
+      - text: 49. Layout与Reflow优化
+        link: rendering/layout-reflow
+      - text: 50. Paint与Composite优化
+        link: rendering/paint-composite
+      - text: 51. GPU加速与硬件加速
+        link: rendering/gpu-acceleration
+      - text: 52. will-change与图层优化
+        link: rendering/layers
+      - text: 53. requestAnimationFrame使用
+        link: rendering/raf
+      - text: 54. CSS动画性能
+        link: rendering/css-animations
+      - text: 55. 滚动性能优化
+        link: rendering/scroll-performance
+      - text: 56. Intersection Observer应用
+        link: rendering/intersection-observer
+  - text: 第七部分：框架性能优化
+    items:
+      - text: 57. React性能优化原理
+        link: frameworks/react-principles
+      - text: 58. React组件优化策略
+        link: frameworks/react-components
+      - text: 59. React状态管理优化
+        link: frameworks/react-state
+      - text: 60. React Concurrent特性
+        link: frameworks/react-concurrent
+      - text: 61. Vue性能优化原理
+        link: frameworks/vue-principles
+      - text: 62. Vue组件优化策略
+        link: frameworks/vue-components
+      - text: 63. Vue响应式优化
+        link: frameworks/vue-reactivity
+      - text: 64. SSR与SSG性能对比
+        link: frameworks/ssr-ssg
+      - text: 65. Islands架构与部分水合
+        link: frameworks/islands
+  - text: 第八部分：构建产物优化
+    items:
+      - text: 66. Tree Shaking原理与实践
+        link: build/tree-shaking
+      - text: 67. Scope Hoisting优化
+        link: build/scope-hoisting
+      - text: 68. 代码压缩与混淆
+        link: build/minification
+      - text: 69. Bundle分析与优化
+        link: build/bundle-analysis
+      - text: 70. 依赖优化策略
+        link: build/dependency-optimization
+      - text: 71. 构建缓存优化
+        link: build/build-cache
+      - text: 72. Source Map策略
+        link: build/sourcemaps
+  - text: 第九部分：用户体验优化
+    items:
+      - text: 73. 首屏加载优化策略
+        link: ux/first-screen
+      - text: 74. 骨架屏实现
+        link: ux/skeleton
+      - text: 75. 渐进式加载
+        link: ux/progressive-loading
+      - text: 76. 感知性能优化
+        link: ux/perceived-performance
+      - text: 77. 交互响应优化
+        link: ux/interaction-response
+      - text: 78. 表单性能优化
+        link: ux/form-performance
+      - text: 79. 离线体验设计
+        link: ux/offline-experience
+      - text: 80. 低端设备适配
+        link: ux/low-end-devices
+  - text: 第十部分：性能优化实战
+    items:
+      - text: 81. 电商首页性能优化
+        link: practice/ecommerce
+      - text: 82. 后台系统性能优化
+        link: practice/admin-system
+      - text: 83. 移动端H5优化
+        link: practice/mobile-h5
+      - text: 84. 大数据量表格优化
+        link: practice/large-table
+      - text: 85. 复杂表单优化
+        link: practice/complex-form
+      - text: 86. 长列表无限滚动
+        link: practice/infinite-scroll
+      - text: 87. 富文本编辑器优化
+        link: practice/rich-editor
+      - text: 88. 可视化大屏优化
+        link: practice/dashboard
+      - text: 89. 性能优化checklist
+        link: practice/checklist
+      - text: 90. 持续性能监控体系
+        link: practice/continuous-monitoring

@@ -1,0 +1,135 @@
+- text: 序言
+  link: preface
+- text: 第一部分：WebGL 基础 (WebGL Fundamentals)
+  collapsed: false
+  items:
+    - text: WebGL 概述与环境搭建
+      link: fundamentals/webgl-overview
+    - text: WebGL 上下文与状态机
+      link: fundamentals/context-state-machine
+    - text: 第一个 WebGL 程序：绘制三角形
+      link: fundamentals/first-triangle
+    - text: WebGL 坐标系统与视口
+      link: fundamentals/coordinate-viewport
+- text: 第二部分：着色器编程 (Shader Programming)
+  collapsed: false
+  items:
+    - text: 着色器概述与工作流程
+      link: shaders/shader-overview
+    - text: GLSL 语言基础：数据类型
+      link: shaders/glsl-datatypes
+    - text: GLSL 语言基础：运算符与控制流
+      link: shaders/glsl-operators
+    - text: 顶点着色器详解
+      link: shaders/vertex-shader
+    - text: 片元着色器详解
+      link: shaders/fragment-shader
+    - text: 着色器的编译、链接与调试
+      link: shaders/shader-compile-debug
+- text: 第三部分：渲染管线 (Rendering Pipeline)
+  collapsed: false
+  items:
+    - text: 渲染管线概述
+      link: pipeline/pipeline-overview
+    - text: 顶点处理阶段
+      link: pipeline/vertex-processing
+    - text: 图元装配与光栅化
+      link: pipeline/primitive-rasterization
+    - text: 片元处理阶段
+      link: pipeline/fragment-processing
+    - text: 帧缓冲与输出合并
+      link: pipeline/framebuffer-output
+- text: 第四部分：缓冲区系统 (Buffer System)
+  collapsed: false
+  items:
+    - text: 缓冲区对象概述
+      link: buffers/buffer-overview
+    - text: VBO：顶点缓冲对象
+      link: buffers/vbo
+    - text: IBO/EBO：索引缓冲对象
+      link: buffers/ibo-ebo
+    - text: VAO：顶点数组对象
+      link: buffers/vao
+    - text: Attribute：顶点属性
+      link: buffers/attributes
+    - text: Uniform：统一变量
+      link: buffers/uniforms
+    - text: UBO：统一缓冲对象
+      link: buffers/ubo
+    - text: Varying：变量传递
+      link: buffers/varyings
+- text: 第五部分：纹理系统 (Texture System)
+  collapsed: false
+  items:
+    - text: 纹理概述与工作原理
+      link: textures/texture-overview
+    - text: 纹理创建与数据加载
+      link: textures/texture-creation
+    - text: 纹理坐标与映射
+      link: textures/texture-coordinates
+    - text: 纹理采样与过滤
+      link: textures/texture-sampling
+    - text: Mipmap 与多级纹理
+      link: textures/mipmaps
+    - text: 立方体贴图与环境映射
+      link: textures/cubemap
+    - text: 3D 纹理与体积渲染
+      link: textures/3d-texture
+- text: 第六部分：深度测试与混合 (Depth Testing and Blending)
+  collapsed: false
+  items:
+    - text: 深度缓冲原理
+      link: depth-blending/depth-buffer
+    - text: 深度测试配置与应用
+      link: depth-blending/depth-testing
+    - text: Alpha 混合基础
+      link: depth-blending/alpha-blending
+    - text: 混合模式与混合函数
+      link: depth-blending/blend-modes
+    - text: 模板测试与应用
+      link: depth-blending/stencil-test
+- text: 第七部分：光照系统 (Lighting System)
+  collapsed: false
+  items:
+    - text: 光照模型概述
+      link: lighting/lighting-overview
+    - text: 环境光实现
+      link: lighting/ambient-light
+    - text: 漫反射光照
+      link: lighting/diffuse-light
+    - text: 镜面反射光照
+      link: lighting/specular-light
+    - text: Phong 光照模型实现
+      link: lighting/phong-lighting
+    - text: 法线贴图实现
+      link: lighting/normal-mapping
+    - text: 视差贴图 (Parallax Mapping)
+      link: lighting/parallax-mapping
+    - text: 多光源处理
+      link: lighting/multiple-lights
+- text: 第八部分：高级特性 (Advanced Features)
+  collapsed: false
+  items:
+    - text: 帧缓冲对象 FBO
+      link: advanced/framebuffer-object
+    - text: 渲染到纹理
+      link: advanced/render-to-texture
+    - text: 多重渲染目标 MRT
+      link: advanced/mrt
+    - text: 实例化渲染
+      link: advanced/instanced-rendering
+    - text: Transform Feedback
+      link: advanced/transform-feedback
+    - text: WebGL 性能优化策略
+      link: advanced/performance-optimization
+    - text: WebGL 调试技巧与工具
+      link: advanced/debugging-tools
+- text: 第九部分：综合实战 (Complete Project)
+  collapsed: false
+  items:
+    - text: 实战项目：手写 WebGL 渲染器
+      link: project/webgl-renderer
+    - text: 常见错误与排查技巧
+      link: project/error-troubleshooting
+    - text: 从 WebGL 到 Three.js
+      link: project/webgl-to-threejs

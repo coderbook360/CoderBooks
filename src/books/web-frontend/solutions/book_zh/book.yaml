@@ -1,0 +1,141 @@
+title: 前端架构实战：原理剖析与企业级解决方案
+description: 本书系统性地讲解前端工程中的核心问题域，深入剖析底层原理，提供可直接落地的企业级最佳实践。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：布局与适配 (Layout & Adaptation)
+    items:
+      - text: 1. 响应式设计原理与实现策略
+        link: layout-adaptation/responsive-design-principles
+      - text: 2. Viewport 机制与移动端适配方案
+        link: layout-adaptation/viewport-and-mobile-adaptation
+      - text: 3. rem、vw 与现代适配方案对比
+        link: layout-adaptation/rem-vw-modern-solutions
+      - text: 4. 1px 问题的本质与解决方案
+        link: layout-adaptation/one-pixel-problem
+      - text: 5. 安全区域与刘海屏适配
+        link: layout-adaptation/safe-area-and-notch
+      - text: 6. 暗黑模式的原理与实现
+        link: layout-adaptation/dark-mode-implementation
+      - text: 7. 多端统一适配架构设计
+        link: layout-adaptation/cross-platform-architecture
+  - text: 第二部分：错误处理与异常管理 (Error Handling)
+    items:
+      - text: 8. JavaScript 错误模型深度解析
+        link: error-handling/javascript-error-model
+      - text: 9. 同步错误与异步错误的捕获策略
+        link: error-handling/sync-async-error-capture
+      - text: 10. Promise 异常处理的陷阱与最佳实践
+        link: error-handling/promise-error-handling
+      - text: 11. 资源加载错误的监控与处理
+        link: error-handling/resource-loading-errors
+      - text: 12. 框架错误边界的设计与实现
+        link: error-handling/error-boundary-design
+      - text: 13. 优雅降级与容错机制
+        link: error-handling/graceful-degradation
+      - text: 14. 错误上报系统的架构设计
+        link: error-handling/error-reporting-architecture
+  - text: 第三部分：网络请求与数据通信 (Network & Communication)
+    items:
+      - text: 15. HTTP 请求封装的设计哲学
+        link: network-communication/http-request-design
+      - text: 16. 拦截器模式的原理与实现
+        link: network-communication/interceptor-pattern
+      - text: 17. 请求重试与超时控制策略
+        link: network-communication/retry-and-timeout
+      - text: 18. 并发请求控制与请求队列
+        link: network-communication/concurrent-request-control
+      - text: 19. 缓存策略的原理与实践
+        link: network-communication/caching-strategies
+      - text: 20. 离线优先与断网处理方案
+        link: network-communication/offline-first-strategy
+      - text: 21. 实时通信方案对比与选型
+        link: network-communication/realtime-communication
+  - text: 第四部分：性能监控与可观测性 (Performance Monitoring)
+    items:
+      - text: 22. Web Vitals 核心指标深度解析
+        link: performance-monitoring/web-vitals-deep-dive
+      - text: 23. Performance API 与性能数据采集
+        link: performance-monitoring/performance-api
+      - text: 24. Long Task 检测与优化
+        link: performance-monitoring/long-task-detection
+      - text: 25. 资源加载性能分析
+        link: performance-monitoring/resource-loading-analysis
+      - text: 26. 用户行为埋点方案设计
+        link: performance-monitoring/user-behavior-tracking
+      - text: 27. 无痕埋点的原理与实现
+        link: performance-monitoring/auto-tracking-implementation
+      - text: 28. 监控数据上报与采样策略
+        link: performance-monitoring/data-reporting-sampling
+      - text: 29. 前端监控 SDK 架构设计
+        link: performance-monitoring/monitoring-sdk-architecture
+  - text: 第五部分：性能优化实战 (Performance Optimization)
+    items:
+      - text: 30. 浏览器渲染管道与关键渲染路径
+        link: performance-optimization/rendering-pipeline
+      - text: 31. 资源优先级与预加载策略
+        link: performance-optimization/resource-priority-preload
+      - text: 32. 代码分割与懒加载最佳实践
+        link: performance-optimization/code-splitting-lazy-loading
+      - text: 33. 图片优化的完整方案
+        link: performance-optimization/image-optimization
+      - text: 34. 重排与重绘的优化策略
+        link: performance-optimization/reflow-repaint-optimization
+      - text: 35. 虚拟列表的原理与实现
+        link: performance-optimization/virtual-list-implementation
+      - text: 36. Web Worker 与多线程优化
+        link: performance-optimization/web-worker-multithreading
+      - text: 37. 内存泄漏检测与修复
+        link: performance-optimization/memory-leak-detection
+      - text: 38. 运行时性能分析与优化
+        link: performance-optimization/runtime-performance-analysis
+  - text: 第六部分：安全防护与攻防实战 (Security)
+    items:
+      - text: 39. 前端安全威胁全景图
+        link: security/frontend-security-overview
+      - text: 40. XSS 攻击原理与防御方案
+        link: security/xss-attack-defense
+      - text: 41. CSRF 攻击原理与防御方案
+        link: security/csrf-attack-defense
+      - text: 42. 内容安全策略 CSP 详解
+        link: security/content-security-policy
+      - text: 43. 敏感数据的前端处理策略
+        link: security/sensitive-data-handling
+      - text: 44. Token 管理与认证安全
+        link: security/token-authentication-security
+      - text: 45. HTTPS 与证书机制
+        link: security/https-and-certificates
+  - text: 第七部分：调试与诊断 (Debugging & Diagnostics)
+    items:
+      - text: 46. Chrome DevTools 核心功能精通
+        link: debugging-diagnostics/devtools-core-features
+      - text: 47. Performance 面板深度使用指南
+        link: debugging-diagnostics/performance-panel-guide
+      - text: 48. Memory 面板与内存分析
+        link: debugging-diagnostics/memory-panel-analysis
+      - text: 49. Network 面板与请求调试
+        link: debugging-diagnostics/network-panel-debugging
+      - text: 50. Source Map 原理与调试配置
+        link: debugging-diagnostics/source-map-debugging
+      - text: 51. 移动端远程调试方案
+        link: debugging-diagnostics/mobile-remote-debugging
+      - text: 52. 生产环境问题排查策略
+        link: debugging-diagnostics/production-debugging-strategy
+  - text: 第八部分：工程化最佳实践 (Engineering Practices)
+    items:
+      - text: 53. 前端工程化体系概览
+        link: engineering-practices/engineering-overview
+      - text: 54. 代码规范与自动化检查
+        link: engineering-practices/code-standards-automation
+      - text: 55. 单元测试策略与实践
+        link: engineering-practices/unit-testing-strategy
+      - text: 56. E2E 测试方案设计
+        link: engineering-practices/e2e-testing-design
+      - text: 57. 构建优化与增量构建
+        link: engineering-practices/build-optimization
+      - text: 58. CDN 部署与缓存策略
+        link: engineering-practices/cdn-deployment-caching
+      - text: 59. 灰度发布与回滚机制
+        link: engineering-practices/canary-release-rollback
+      - text: 60. 前端架构演进与技术选型
+        link: engineering-practices/architecture-evolution

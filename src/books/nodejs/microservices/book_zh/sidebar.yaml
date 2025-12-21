@@ -1,0 +1,196 @@
+- text: 序言
+  link: preface
+- text: 第一部分：微服务架构基础
+  collapsed: false
+  items:
+    - text: 微服务架构概述与演进
+      link: foundations/microservices-overview
+    - text: 单体 vs 微服务：权衡与选择
+      link: foundations/monolith-vs-microservices
+    - text: 服务拆分策略与原则
+      link: foundations/service-decomposition
+    - text: 领域驱动设计(DDD)与限界上下文
+      link: foundations/ddd-bounded-context
+    - text: 微服务设计模式概览
+      link: foundations/design-patterns-overview
+    - text: Node.js 微服务技术栈选型
+      link: foundations/tech-stack
+- text: 第二部分：服务通信
+  collapsed: false
+  items:
+    - text: 服务间通信模式概览
+      link: communication/communication-patterns
+    - text: 同步通信：REST 与 HTTP
+      link: communication/rest-http
+    - text: gRPC 基础与 Node.js 实现
+      link: communication/grpc-basics
+    - text: gRPC 高级特性：流式与拦截器
+      link: communication/grpc-advanced
+    - text: Protocol Buffers 详解
+      link: communication/protobuf
+    - text: 异步通信：消息队列概述
+      link: communication/message-queues-intro
+    - text: RabbitMQ 与 Node.js
+      link: communication/rabbitmq
+    - text: Redis 发布订阅与 Streams
+      link: communication/redis-pubsub
+    - text: Apache Kafka 基础
+      link: communication/kafka-basics
+    - text: 消息模式：点对点、发布订阅、请求响应
+      link: communication/messaging-patterns
+    - text: 事件驱动架构
+      link: communication/event-driven-architecture
+- text: 第三部分：服务发现与负载均衡
+  collapsed: false
+  items:
+    - text: 服务发现原理与模式
+      link: discovery/service-discovery-intro
+    - text: Consul 服务发现实战
+      link: discovery/consul
+    - text: etcd 服务发现实战
+      link: discovery/etcd
+    - text: Kubernetes 服务发现
+      link: discovery/kubernetes-discovery
+    - text: 客户端负载均衡
+      link: discovery/client-side-lb
+    - text: 服务端负载均衡
+      link: discovery/server-side-lb
+    - text: 健康检查机制设计
+      link: discovery/health-checks
+- text: 第四部分：弹性设计与容错
+  collapsed: false
+  items:
+    - text: 分布式系统的故障模式
+      link: resilience/failure-modes
+    - text: 超时设计与实现
+      link: resilience/timeouts
+    - text: 重试策略与退避算法
+      link: resilience/retry-backoff
+    - text: 熔断器模式详解
+      link: resilience/circuit-breaker
+    - text: 使用 opossum 实现熔断
+      link: resilience/opossum
+    - text: 舱壁模式与隔离设计
+      link: resilience/bulkhead
+    - text: 降级策略与优雅降级
+      link: resilience/graceful-degradation
+    - text: 限流算法与实现
+      link: resilience/rate-limiting-algorithms
+    - text: 混沌工程入门
+      link: resilience/chaos-engineering
+- text: 第五部分：分布式数据管理
+  collapsed: false
+  items:
+    - text: 微服务数据管理挑战
+      link: data/data-management-challenges
+    - text: 数据库每服务模式
+      link: data/database-per-service
+    - text: 分布式事务问题
+      link: data/distributed-transactions
+    - text: Saga 模式详解
+      link: data/saga-pattern
+    - text: 编排式 Saga 实现
+      link: data/orchestration-saga
+    - text: 协调式 Saga 实现
+      link: data/choreography-saga
+    - text: 事件溯源基础
+      link: data/event-sourcing-basics
+    - text: CQRS 命令查询职责分离
+      link: data/cqrs
+    - text: 最终一致性处理
+      link: data/eventual-consistency
+    - text: 跨服务数据查询
+      link: data/cross-service-queries
+- text: 第六部分：可观测性
+  collapsed: false
+  items:
+    - text: 可观测性三大支柱
+      link: observability/three-pillars
+    - text: 结构化日志设计
+      link: observability/structured-logging
+    - text: 日志聚合：ELK Stack
+      link: observability/elk-stack
+    - text: 分布式追踪原理
+      link: observability/distributed-tracing-intro
+    - text: OpenTelemetry 入门
+      link: observability/opentelemetry
+    - text: Jaeger 追踪实战
+      link: observability/jaeger
+    - text: 指标收集：Prometheus
+      link: observability/prometheus
+    - text: 可视化：Grafana 仪表盘
+      link: observability/grafana
+    - text: 告警设计与实现
+      link: observability/alerting
+    - text: SLI、SLO 与 SLA
+      link: observability/sli-slo-sla
+- text: 第七部分：API 网关与 BFF
+  collapsed: false
+  items:
+    - text: API 网关在微服务中的角色
+      link: gateway/api-gateway-role
+    - text: Kong 网关实战
+      link: gateway/kong-implementation
+    - text: 自建 Node.js API 网关
+      link: gateway/nodejs-api-gateway
+    - text: BFF 模式详解
+      link: gateway/bff-pattern
+    - text: GraphQL 作为 BFF
+      link: gateway/graphql-bff
+    - text: 网关限流与认证
+      link: gateway/gateway-rate-auth
+- text: 第八部分：容器化与编排
+  collapsed: false
+  items:
+    - text: Docker 基础回顾
+      link: containers/docker-basics
+    - text: Node.js Docker 最佳实践
+      link: containers/nodejs-docker-best-practices
+    - text: 多阶段构建优化
+      link: containers/multi-stage-build
+    - text: Docker Compose 本地开发
+      link: containers/docker-compose
+    - text: Kubernetes 核心概念
+      link: containers/kubernetes-concepts
+    - text: Kubernetes 部署 Node.js 服务
+      link: containers/kubernetes-nodejs
+    - text: ConfigMap 与 Secret 管理
+      link: containers/configmap-secrets
+    - text: Kubernetes 服务网格入门
+      link: containers/service-mesh-intro
+    - text: Istio 基础实战
+      link: containers/istio
+- text: 第九部分：CI/CD 与 DevOps
+  collapsed: false
+  items:
+    - text: 微服务 CI/CD 策略
+      link: devops/cicd-strategy
+    - text: GitHub Actions 流水线
+      link: devops/github-actions
+    - text: 容器镜像构建与推送
+      link: devops/container-build-push
+    - text: GitOps 与 ArgoCD
+      link: devops/gitops-argocd
+    - text: 蓝绿部署与金丝雀发布
+      link: devops/deployment-strategies
+    - text: 功能开关与特性标记
+      link: devops/feature-flags
+- text: 第十部分：综合实战
+  collapsed: false
+  items:
+    - text: 微服务项目架构设计
+      link: practice/project-architecture
+    - text: 用户服务实现
+      link: practice/user-service
+    - text: 订单服务实现
+      link: practice/order-service
+    - text: 支付服务实现
+      link: practice/payment-service
+    - text: 通知服务实现
+      link: practice/notification-service
+    - text: 服务集成与端到端测试
+      link: practice/integration-testing
+    - text: 生产环境部署
+      link: practice/production-deployment
+    - text: 微服务架构总结与展望
+      link: practice/summary

@@ -1,0 +1,195 @@
+title: "Node.js工程化实践: 从开发到生产"
+description: 构建专业的 Node.js 开发体系，实现持续集成与高质量交付。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：TypeScript 工程化
+    items:
+      - text: 1. TypeScript 与 Node.js 概述
+        link: typescript/overview
+      - text: 2. tsconfig.json 配置详解
+        link: typescript/tsconfig
+      - text: 3. 模块系统选择：CommonJS vs ESM
+        link: typescript/module-system
+      - text: 4. 路径别名与模块解析
+        link: typescript/path-aliases
+      - text: 5. 类型声明文件与 @types
+        link: typescript/type-declarations
+      - text: 6. Node.js 类型实践技巧
+        link: typescript/typing-practices
+      - text: 7. 编译策略与构建工具
+        link: typescript/build-tools
+      - text: 8. tsx 与开发时编译
+        link: typescript/tsx-development
+      - text: 9. TypeScript 严格模式最佳实践
+        link: typescript/strict-mode
+  - text: 第二部分：代码质量保障
+    items:
+      - text: 10. 代码规范的价值与实施
+        link: code-quality/code-standards-value
+      - text: 11. ESLint 配置详解
+        link: code-quality/eslint-config
+      - text: 12. Prettier 代码格式化
+        link: code-quality/prettier
+      - text: 13. ESLint 与 Prettier 协作
+        link: code-quality/eslint-prettier
+      - text: 14. 自定义 ESLint 规则
+        link: code-quality/custom-eslint-rules
+      - text: 15. Git Hooks 与 Husky
+        link: code-quality/husky-git-hooks
+      - text: 16. lint-staged 增量检查
+        link: code-quality/lint-staged
+      - text: 17. Commitlint 提交规范
+        link: code-quality/commitlint
+      - text: 18. 代码审查最佳实践
+        link: code-quality/code-review
+  - text: 第三部分：测试体系建设
+    items:
+      - text: 19. Node.js 测试策略概览
+        link: testing/testing-strategy
+      - text: 20. Vitest 入门与配置
+        link: testing/vitest-basics
+      - text: 21. Jest 入门与配置
+        link: testing/jest-basics
+      - text: 22. 单元测试编写技巧
+        link: testing/unit-testing
+      - text: 23. 异步代码测试
+        link: testing/async-testing
+      - text: 24. Mock 与 Stub 详解
+        link: testing/mocking
+      - text: 25. 数据库测试策略
+        link: testing/database-testing
+      - text: 26. HTTP 接口测试：Supertest
+        link: testing/api-testing
+      - text: 27. 集成测试设计
+        link: testing/integration-testing
+      - text: 28. E2E 测试入门
+        link: testing/e2e-testing
+      - text: 29. 测试覆盖率与质量门禁
+        link: testing/coverage
+      - text: 30. 测试驱动开发(TDD)实践
+        link: testing/tdd
+      - text: 31. 快照测试
+        link: testing/snapshot-testing
+      - text: 32. 性能测试与基准测试
+        link: testing/performance-testing
+  - text: 第四部分：CI/CD 实践
+    items:
+      - text: 33. CI/CD 概念与价值
+        link: cicd/cicd-concepts
+      - text: 34. GitHub Actions 入门
+        link: cicd/github-actions-intro
+      - text: 35. 工作流语法详解
+        link: cicd/workflow-syntax
+      - text: 36. Node.js 项目 CI 配置
+        link: cicd/nodejs-ci
+      - text: 37. 矩阵构建与多版本测试
+        link: cicd/matrix-build
+      - text: 38. 缓存优化构建速度
+        link: cicd/caching
+      - text: 39. 密钥与环境变量管理
+        link: cicd/secrets-management
+      - text: 40. 自动化发布到 npm
+        link: cicd/npm-publish
+      - text: 41. 自动化版本管理：semantic-release
+        link: cicd/semantic-release
+      - text: 42. Docker 镜像构建与推送
+        link: cicd/docker-build-push
+      - text: 43. 自动化部署流程
+        link: cicd/automated-deployment
+      - text: 44. 质量门禁与强制检查
+        link: cicd/quality-gates
+  - text: 第五部分：容器化与部署
+    items:
+      - text: 45. Docker 基础回顾
+        link: deployment/docker-basics
+      - text: 46. Node.js Dockerfile 最佳实践
+        link: deployment/dockerfile-best-practices
+      - text: 47. 多阶段构建优化镜像
+        link: deployment/multi-stage-build
+      - text: 48. Docker Compose 本地开发
+        link: deployment/docker-compose
+      - text: 49. PM2 进程管理详解
+        link: deployment/pm2-deep-dive
+      - text: 50. PM2 集群模式与负载均衡
+        link: deployment/pm2-cluster
+      - text: 51. 优雅启停与零停机部署
+        link: deployment/graceful-shutdown
+      - text: 52. 传统服务器部署指南
+        link: deployment/traditional-deployment
+      - text: 53. 云平台部署：AWS、GCP、Azure
+        link: deployment/cloud-deployment
+      - text: 54. Serverless 部署入门
+        link: deployment/serverless
+      - text: 55. Kubernetes 入门与实践
+        link: deployment/kubernetes-intro
+  - text: 第六部分：日志与监控
+    items:
+      - text: 56. 日志设计原则
+        link: logging/logging-principles
+      - text: 57. console 的局限性
+        link: logging/console-limitations
+      - text: 58. Winston 日志框架
+        link: logging/winston
+      - text: 59. Pino 高性能日志
+        link: logging/pino
+      - text: 60. 结构化日志与 JSON
+        link: logging/structured-logging
+      - text: 61. 日志级别与分类策略
+        link: logging/log-levels
+      - text: 62. 请求追踪与关联 ID
+        link: logging/correlation-id
+      - text: 63. 日志聚合与分析
+        link: logging/log-aggregation
+      - text: 64. 健康检查端点设计
+        link: monitoring/health-checks
+      - text: 65. 指标收集与 Prometheus
+        link: monitoring/prometheus
+      - text: 66. APM 接入：New Relic、Datadog
+        link: monitoring/apm
+      - text: 67. 告警设计与实现
+        link: monitoring/alerting
+      - text: 68. 生产环境问题诊断
+        link: monitoring/production-debugging
+  - text: 第七部分：配置与环境管理
+    items:
+      - text: 69. 配置管理原则
+        link: config/config-principles
+      - text: 70. 环境变量最佳实践
+        link: config/environment-variables
+      - text: 71. dotenv 与配置文件
+        link: config/dotenv
+      - text: 72. 多环境配置管理
+        link: config/multi-environment
+      - text: 73. 配置验证与类型安全
+        link: config/config-validation
+      - text: 74. 密钥管理策略
+        link: config/secrets-management
+      - text: 75. 功能开关与特性标记
+        link: config/feature-flags
+      - text: 76. 配置中心入门
+        link: config/config-center
+  - text: 第八部分：项目组织与协作
+    items:
+      - text: 77. 项目目录结构规范
+        link: organization/project-structure
+      - text: 78. Monorepo 概念与选型
+        link: organization/monorepo-intro
+      - text: 79. Turborepo 实战
+        link: organization/turborepo
+      - text: 80. Nx 工作区管理
+        link: organization/nx
+      - text: 81. pnpm Workspace
+        link: organization/pnpm-workspace
+      - text: 82. 共享代码与内部包
+        link: organization/internal-packages
+      - text: 83. 版本管理策略
+        link: organization/versioning
+      - text: 84. CHANGELOG 自动生成
+        link: organization/changelog
+      - text: 85. 发布流程规范
+        link: organization/release-process
+      - text: 86. 团队协作规范
+        link: organization/team-collaboration
+      - text: 87. 工程化总结与检查清单
+        link: organization/summary-checklist

@@ -1,0 +1,256 @@
+- text: 序言
+  link: preface
+- text: 第一部分：Node.js基础与架构
+  collapsed: false
+  items:
+    - text: Node.js发展历史与版本演进
+      link: foundations/history
+    - text: Node.js架构概览
+      link: foundations/architecture
+    - text: V8引擎在Node.js中的角色
+      link: foundations/v8-role
+    - text: libuv跨平台抽象层
+      link: foundations/libuv-overview
+    - text: Node.js与浏览器JavaScript的差异
+      link: foundations/node-vs-browser
+    - text: Node.js运行时启动流程
+      link: foundations/startup-process
+    - text: 搭建Node.js源码调试环境
+      link: foundations/debug-setup
+- text: 第二部分：事件循环与异步机制
+  collapsed: false
+  items:
+    - text: 事件循环整体架构
+      link: event-loop/architecture
+    - text: 事件循环六个阶段详解
+      link: event-loop/phases
+    - text: timers阶段：setTimeout与setInterval
+      link: event-loop/timers
+    - text: pending callbacks阶段
+      link: event-loop/pending-callbacks
+    - text: poll阶段：I/O事件处理
+      link: event-loop/poll
+    - text: check阶段：setImmediate
+      link: event-loop/check
+    - text: close callbacks阶段
+      link: event-loop/close-callbacks
+    - text: process.nextTick与微任务队列
+      link: event-loop/nexttick-microtask
+    - text: Promise与事件循环的交互
+      link: event-loop/promise-integration
+    - text: 事件循环可视化调试
+      link: event-loop/debugging
+    - text: 事件循环常见误区与陷阱
+      link: event-loop/common-pitfalls
+    - text: 事件循环性能优化
+      link: event-loop/performance
+- text: 第三部分：V8引擎深度解析
+  collapsed: false
+  items:
+    - text: V8引擎架构概览
+      link: v8/architecture
+    - text: JavaScript代码解析与AST
+      link: v8/parsing-ast
+    - text: Ignition解释器
+      link: v8/ignition
+    - text: TurboFan优化编译器
+      link: v8/turbofan
+    - text: 内联缓存与隐藏类
+      link: v8/inline-cache-hidden-class
+    - text: V8垃圾回收机制概述
+      link: v8/gc-overview
+    - text: 新生代垃圾回收：Scavenge
+      link: v8/scavenge
+    - text: 老生代垃圾回收：Mark-Sweep与Mark-Compact
+      link: v8/mark-sweep-compact
+    - text: 增量标记与并发垃圾回收
+      link: v8/incremental-concurrent-gc
+    - text: V8内存限制与配置
+      link: v8/memory-limits
+    - text: V8快照与启动优化
+      link: v8/snapshot-startup
+    - text: WebAssembly在Node.js中的集成
+      link: v8/wasm-integration
+    - text: V8性能分析工具
+      link: v8/profiling-tools
+    - text: Node.js中的V8优化技巧
+      link: v8/optimization-tips
+- text: 第四部分：libuv异步I/O
+  collapsed: false
+  items:
+    - text: libuv设计理念与架构
+      link: libuv/design-architecture
+    - text: libuv事件循环实现
+      link: libuv/event-loop-impl
+    - text: libuv句柄与请求
+      link: libuv/handles-requests
+    - text: 定时器实现原理
+      link: libuv/timer-impl
+    - text: 线程池工作原理
+      link: libuv/thread-pool
+    - text: 文件I/O的异步实现
+      link: libuv/file-io
+    - text: 网络I/O的异步实现
+      link: libuv/network-io
+    - text: DNS解析的异步实现
+      link: libuv/dns
+    - text: 信号处理
+      link: libuv/signals
+    - text: 子进程管理
+      link: libuv/child-processes
+    - text: libuv与操作系统交互
+      link: libuv/os-interaction
+    - text: libuv性能调优
+      link: libuv/performance-tuning
+- text: 第五部分：模块系统
+  collapsed: false
+  items:
+    - text: CommonJS模块规范
+      link: modules/commonjs-spec
+    - text: require函数实现原理
+      link: modules/require-impl
+    - text: 模块缓存机制
+      link: modules/caching
+    - text: 模块路径解析算法
+      link: modules/path-resolution
+    - text: 循环依赖处理
+      link: modules/circular-dependencies
+    - text: Node.js内置模块加载机制
+      link: modules/builtin-modules
+    - text: ES Modules规范
+      link: modules/esm-spec
+    - text: ESM与CommonJS互操作
+      link: modules/esm-cjs-interop
+    - text: import.meta特性详解
+      link: modules/import-meta
+    - text: 条件导出与子路径导出
+      link: modules/conditional-exports
+    - text: 模块加载器自定义
+      link: modules/custom-loaders
+    - text: package.json字段详解
+      link: modules/package-json
+- text: 第六部分：Buffer与二进制数据
+  collapsed: false
+  items:
+    - text: Buffer基础与创建方式
+      link: buffer/basics
+    - text: Buffer内存分配策略
+      link: buffer/memory-allocation
+    - text: Buffer与ArrayBuffer的关系
+      link: buffer/arraybuffer
+    - text: Buffer读写操作
+      link: buffer/read-write
+    - text: Buffer编码与解码
+      link: buffer/encoding
+    - text: Buffer池与性能优化
+      link: buffer/pooling
+    - text: TypedArray与DataView
+      link: buffer/typed-array
+    - text: Blob与File API
+      link: buffer/blob-file-api
+    - text: 二进制协议解析实战
+      link: buffer/binary-protocol
+- text: 第七部分：进程与线程
+  collapsed: false
+  items:
+    - text: process全局对象详解
+      link: process/process-object
+    - text: 进程生命周期与退出码
+      link: process/lifecycle
+    - text: 进程优雅退出实现
+      link: process/graceful-shutdown
+    - text: 环境变量与配置管理
+      link: process/env-config
+    - text: 标准输入输出流
+      link: process/stdio
+    - text: child_process模块概览
+      link: process/child-process-overview
+    - text: spawn、exec、fork的区别
+      link: process/spawn-exec-fork
+    - text: 进程间通信IPC
+      link: process/ipc
+    - text: Worker Threads工作线程
+      link: process/worker-threads
+    - text: Worker Threads性能调优
+      link: process/worker-threads-tuning
+    - text: SharedArrayBuffer与Atomics
+      link: process/shared-memory
+    - text: 多进程架构设计
+      link: process/multi-process-design
+    - text: Cluster集群模块
+      link: process/cluster
+    - text: 负载均衡策略
+      link: process/load-balancing
+- text: 第八部分：错误处理与调试
+  collapsed: false
+  items:
+    - text: Node.js错误类型体系
+      link: error/error-types
+    - text: 同步错误与异步错误
+      link: error/sync-async-errors
+    - text: Promise错误处理
+      link: error/promise-errors
+    - text: AbortController与可取消操作
+      link: error/abort-controller
+    - text: uncaughtException与unhandledRejection
+      link: error/uncaught-handlers
+    - text: Domain模块与错误边界
+      link: error/domain
+    - text: async_hooks异步跟踪
+      link: error/async-hooks
+    - text: 调试器使用指南
+      link: error/debugger
+    - text: Chrome DevTools调试Node.js
+      link: error/devtools
+    - text: 诊断报告与Core Dump
+      link: error/diagnostic-reports
+    - text: Tracing与APM集成
+      link: error/tracing-apm
+    - text: 生产环境错误追踪
+      link: error/production-tracking
+- text: 第九部分：性能分析与优化
+  collapsed: false
+  items:
+    - text: 性能分析方法论
+      link: performance/methodology
+    - text: CPU Profiling
+      link: performance/cpu-profiling
+    - text: 内存分析与堆快照
+      link: performance/heap-snapshot
+    - text: 内存泄漏检测与定位
+      link: performance/memory-leak
+    - text: 事件循环延迟监控
+      link: performance/event-loop-lag
+    - text: Node.js预热与JIT优化
+      link: performance/warmup-jit
+    - text: 性能计时API
+      link: performance/timing-api
+    - text: HTTP/2与HTTP/3性能特性
+      link: performance/http2-http3
+    - text: Node.js基准测试
+      link: performance/benchmarking
+    - text: 性能优化最佳实践
+      link: performance/best-practices
+- text: 第十部分：安全与最佳实践
+  collapsed: false
+  items:
+    - text: Node.js安全威胁模型
+      link: security/threat-model
+    - text: 依赖安全与供应链攻击
+      link: security/dependency-security
+    - text: 沙箱与权限模型
+      link: security/sandbox-permissions
+    - text: Node.js 20+权限模型详解
+      link: security/permission-model
+    - text: 加密模块crypto
+      link: security/crypto
+    - text: TLS/SSL配置最佳实践
+      link: security/tls-ssl
+    - text: HTTP安全头设置
+      link: security/http-security-headers
+    - text: 环境隔离与容器安全
+      link: security/container-security
+    - text: Node.js编码规范
+      link: security/coding-standards
+    - text: Node.js核心原理总结
+      link: security/summary

@@ -1,0 +1,212 @@
+- text: 序言
+  link: preface
+- text: 第一部分：性能优化思维与方法论
+  collapsed: false
+  items:
+    - text: 为什么性能如此重要
+      link: foundations/why-performance
+    - text: 性能指标体系详解
+      link: foundations/metrics
+    - text: Core Web Vitals深度解读
+      link: foundations/core-web-vitals
+    - text: 性能优化方法论
+      link: foundations/methodology
+    - text: 性能预算与目标设定
+      link: foundations/budget
+    - text: 性能测量工具全景
+      link: foundations/tools-overview
+- text: 第二部分：性能测量与分析
+  collapsed: false
+  items:
+    - text: Chrome DevTools性能面板
+      link: measurement/devtools-performance
+    - text: Lighthouse深度使用
+      link: measurement/lighthouse
+    - text: WebPageTest实战
+      link: measurement/webpagetest
+    - text: 真实用户监控(RUM)
+      link: measurement/rum
+    - text: Performance API详解
+      link: measurement/performance-api
+    - text: 性能数据采集与上报
+      link: measurement/data-collection
+    - text: 性能数据分析与可视化
+      link: measurement/data-analysis
+    - text: 竞品性能对标分析
+      link: measurement/benchmarking
+- text: 第三部分：网络性能优化
+  collapsed: false
+  items:
+    - text: HTTP协议与性能
+      link: network/http-performance
+    - text: HTTP/2特性与优化
+      link: network/http2
+    - text: HTTP/3与QUIC协议
+      link: network/http3-quic
+    - text: DNS优化策略
+      link: network/dns-optimization
+    - text: CDN原理与最佳实践
+      link: network/cdn
+    - text: 资源预加载策略
+      link: network/preload-prefetch
+    - text: Service Worker与离线缓存
+      link: network/service-worker
+    - text: HTTP缓存策略设计
+      link: network/http-caching
+    - text: 请求合并与优化
+      link: network/request-optimization
+    - text: WebSocket性能优化
+      link: network/websocket
+- text: 第四部分：资源加载优化
+  collapsed: false
+  items:
+    - text: 资源加载优先级
+      link: loading/resource-priority
+    - text: JavaScript加载优化
+      link: loading/javascript
+    - text: 代码分割策略
+      link: loading/code-splitting
+    - text: 动态导入与懒加载
+      link: loading/dynamic-import
+    - text: CSS加载优化
+      link: loading/css
+    - text: Critical CSS提取
+      link: loading/critical-css
+    - text: 字体加载优化
+      link: loading/fonts
+    - text: 图片优化策略
+      link: loading/images
+    - text: 响应式图片实现
+      link: loading/responsive-images
+    - text: 新一代图片格式
+      link: loading/modern-image-formats
+    - text: 视频加载优化
+      link: loading/video
+    - text: 第三方资源优化
+      link: loading/third-party
+- text: 第五部分：JavaScript性能优化
+  collapsed: false
+  items:
+    - text: JavaScript执行机制
+      link: javascript/execution
+    - text: V8引擎优化原理
+      link: javascript/v8-optimization
+    - text: 避免内存泄漏
+      link: javascript/memory-leaks
+    - text: 内存管理与垃圾回收
+      link: javascript/garbage-collection
+    - text: 长任务拆分策略
+      link: javascript/long-tasks
+    - text: Web Worker多线程
+      link: javascript/web-worker
+    - text: WebAssembly性能优化
+      link: javascript/webassembly
+    - text: 算法与数据结构优化
+      link: javascript/algorithms
+    - text: 防抖与节流
+      link: javascript/debounce-throttle
+    - text: 虚拟列表实现
+      link: javascript/virtual-list
+- text: 第六部分：渲染性能优化
+  collapsed: false
+  items:
+    - text: 浏览器渲染流程
+      link: rendering/browser-rendering
+    - text: 关键渲染路径优化
+      link: rendering/critical-path
+    - text: Layout与Reflow优化
+      link: rendering/layout-reflow
+    - text: Paint与Composite优化
+      link: rendering/paint-composite
+    - text: GPU加速与硬件加速
+      link: rendering/gpu-acceleration
+    - text: will-change与图层优化
+      link: rendering/layers
+    - text: requestAnimationFrame使用
+      link: rendering/raf
+    - text: CSS动画性能
+      link: rendering/css-animations
+    - text: 滚动性能优化
+      link: rendering/scroll-performance
+    - text: Intersection Observer应用
+      link: rendering/intersection-observer
+- text: 第七部分：框架性能优化
+  collapsed: false
+  items:
+    - text: React性能优化原理
+      link: frameworks/react-principles
+    - text: React组件优化策略
+      link: frameworks/react-components
+    - text: React状态管理优化
+      link: frameworks/react-state
+    - text: React Concurrent特性
+      link: frameworks/react-concurrent
+    - text: Vue性能优化原理
+      link: frameworks/vue-principles
+    - text: Vue组件优化策略
+      link: frameworks/vue-components
+    - text: Vue响应式优化
+      link: frameworks/vue-reactivity
+    - text: SSR与SSG性能对比
+      link: frameworks/ssr-ssg
+    - text: Islands架构与部分水合
+      link: frameworks/islands
+- text: 第八部分：构建产物优化
+  collapsed: false
+  items:
+    - text: Tree Shaking原理与实践
+      link: build/tree-shaking
+    - text: Scope Hoisting优化
+      link: build/scope-hoisting
+    - text: 代码压缩与混淆
+      link: build/minification
+    - text: Bundle分析与优化
+      link: build/bundle-analysis
+    - text: 依赖优化策略
+      link: build/dependency-optimization
+    - text: 构建缓存优化
+      link: build/build-cache
+    - text: Source Map策略
+      link: build/sourcemaps
+- text: 第九部分：用户体验优化
+  collapsed: false
+  items:
+    - text: 首屏加载优化策略
+      link: ux/first-screen
+    - text: 骨架屏实现
+      link: ux/skeleton
+    - text: 渐进式加载
+      link: ux/progressive-loading
+    - text: 感知性能优化
+      link: ux/perceived-performance
+    - text: 交互响应优化
+      link: ux/interaction-response
+    - text: 表单性能优化
+      link: ux/form-performance
+    - text: 离线体验设计
+      link: ux/offline-experience
+    - text: 低端设备适配
+      link: ux/low-end-devices
+- text: 第十部分：性能优化实战
+  collapsed: false
+  items:
+    - text: 电商首页性能优化
+      link: practice/ecommerce
+    - text: 后台系统性能优化
+      link: practice/admin-system
+    - text: 移动端H5优化
+      link: practice/mobile-h5
+    - text: 大数据量表格优化
+      link: practice/large-table
+    - text: 复杂表单优化
+      link: practice/complex-form
+    - text: 长列表无限滚动
+      link: practice/infinite-scroll
+    - text: 富文本编辑器优化
+      link: practice/rich-editor
+    - text: 可视化大屏优化
+      link: practice/dashboard
+    - text: 性能优化checklist
+      link: practice/checklist
+    - text: 持续性能监控体系
+      link: practice/continuous-monitoring

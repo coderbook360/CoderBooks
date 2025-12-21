@@ -1,0 +1,89 @@
+title: Ramda 设计与实现：深入 JavaScript 函数式编程
+description: 本书旨在为前端开发者打开函数式编程的大门。我们将从函数式编程的核心概念出发，深入剖析 Ramda 库中每个函数的实现细节，让你不仅能熟练运用 Ramda，更能深刻理解其背后的设计哲学与实现原理。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：函数式编程基石 (Foundations of Functional Programming)
+    items:
+      - text: 1. 初识函数式编程：从前端开发视角
+        link: foundations/intro-to-fp
+      - text: 2. 纯函数与副作用：构建可靠代码的基石
+        link: foundations/pure-functions-and-side-effects
+      - text: 3. 不可变性：Ramda 的数据操作哲学
+        link: foundations/immutability
+      - text: 4. Ramda 概览：函数优先与数据置后
+        link: foundations/ramda-overview
+  - text: "第二部分：核心机制：柯里化与函数组合 (Core Mechanics: Currying and Composition)"
+    items:
+      - text: 5. 柯里化：Ramda 的“魔法”核心
+        link: core-mechanics/currying
+      - text: 6. 深入 `curry` 实现：从 `_curry1` 到 `_curryN`
+        link: core-mechanics/curry-implementation
+      - text: 7. 函数组合：构建声明式数据流
+        link: core-mechanics/function-composition
+      - text: 8. 剖析 `compose` 与 `pipe`：组合函数的实现
+        link: core-mechanics/compose-pipe-implementation
+  - text: "第三部分：列表操作：基础 (List Operations: Basics)"
+    items:
+      - text: 9. 遍历与转换：`map` 与 `forEach` 的实现
+        link: list-operations/map-and-foreach
+      - text: 10. 筛选与查找：`filter`、`find` 与 `reject`
+        link: list-operations/filter-and-find
+      - text: 11. 数据规约：`reduce` 的力量与实现
+        link: list-operations/reduce
+      - text: 12. 列表切片：`slice`、`take` 与 `drop`
+        link: list-operations/slicing
+      - text: 13. 列表变换：`adjust`、`update` 与 `insert`
+        link: list-operations/transforming
+      - text: 14. 排序与去重：`sort` 与 `uniq`
+        link: list-operations/sorting-and-deduping
+      - text: 15. 分组与聚合：`groupBy` 与 `countBy`
+        link: list-operations/grouping
+  - text: 第四部分：对象操作 (Object Operations)
+    items:
+      - text: 16. 属性访问：`prop`、`path` 与 `pick`
+        link: object-operations/property-access
+      - text: 17. 对象更新与演进：`assoc`、`dissoc` 与 `evolve`
+        link: object-operations/updating-objects
+      - text: 18. 对象合并：`merge` 与 `mergeDeep`
+        link: object-operations/merging
+      - text: 19. 结构转换：`toPairs` 与 `fromPairs`
+        link: object-operations/structure-conversion
+  - text: 第五部分：逻辑与流程控制 (Logic and Control Flow)
+    items:
+      - text: 20. 条件逻辑：`ifElse` 与 `cond` 的函数式表达
+        link: logic-flow/conditional-logic
+      - text: 21. 断言组合：构建复杂的逻辑过滤器
+        link: logic-flow/predicate-composition
+      - text: 22. 布尔运算与比较：`and`、`or`、`not` 与 `equals`
+        link: logic-flow/boolean-and-comparison
+  - text: 第六部分：Transducer 协议：高性能组合的秘密
+    items:
+      - text: 23. Transducer 思想：从数据流到操作流
+        link: transducers/intro-to-transducers
+      - text: 24. 实现 `map` Transducer：改造 `map` 函数
+        link: transducers/map-transducer
+      - text: 25. Transducer 的组合与 `sequence` 实现
+        link: transducers/composition-and-sequence
+  - text: 第七部分：Lenses：聚焦数据结构的任意部分
+    items:
+      - text: 26. Lenses 思想：函数式的 Getter/Setter
+        link: lenses/intro-to-lenses
+      - text: 27. 深入 `lens`、`view`、`set` 与 `over` 的实现
+        link: lenses/lens-implementation
+      - text: 28. Lenses 的组合：深入嵌套数据
+        link: lenses/lens-composition
+  - text: 第八部分：Ramda 内部架构揭秘
+    items:
+      - text: 29. 架构概览：`internal` 目录的核心作用
+        link: internal-architecture/overview
+      - text: 30. 核心工具剖析：`_curryN`, `_dispatchable`, `_xfrm`
+        link: internal-architecture/core-helpers
+      - text: 31. 从内部函数到公共 API：`map` 的完整构建过程
+        link: internal-architecture/building-a-public-api
+  - text: 第九部分：总结与展望
+    items:
+      - text: 32. 函数式编程思维复盘
+        link: summary/fp-thinking-recap
+      - text: 33. 从 Ramda 到你的函数式工具库
+        link: summary/building-your-own-library

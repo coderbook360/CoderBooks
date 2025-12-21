@@ -1,0 +1,33 @@
+- text: 序言
+  link: preface
+- text: 第一部分：基础原理 (Foundational Principles)
+  collapsed: false
+  items:
+    - text: 概览：API 与核心流程
+      link: foundations/overview
+    - text: 核心概念：路径模式、参数与修饰符
+      link: foundations/core-concepts
+    - text: 设计思想：从路径字符串到正则表达式的转换之旅
+      link: foundations/design-philosophy
+- text: 第二部分：核心实现：路径解析与正则生成 (Path Parsing and RegExp Generation)
+  collapsed: false
+  items:
+    - text: 词法分析：将路径字符串分解为 Token
+      link: implementation/lexical-analysis
+    - text: Token 数据结构：解析结果的标准化表示
+      link: implementation/token-data-structure
+    - text: 语法解析：`parse` 函数实现详解
+      link: implementation/parse-function
+    - text: 正则生成：`pathToRegexp` 函数实现详解
+      link: implementation/pathtoregexp-function
+    - text: 高级模式解析：处理可选、重复与自定义参数
+      link: implementation/advanced-patterns
+- text: 第三部分：核心实现：路径编译与匹配 (Path Compilation and Matching)
+  collapsed: false
+  items:
+    - text: 路径编译：`compile` 函数实现详解
+      link: implementation/compile-function
+    - text: 路径匹配：`match` 函数实现详解
+      link: implementation/match-function
+    - text: 错误处理：构建健壮的解析与匹配机制
+      link: implementation/error-handling

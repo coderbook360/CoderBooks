@@ -1,0 +1,267 @@
+title: LeetCode 动态规划精通篇：从状态转移到最优解
+description: 本书系统讲解动态规划的核心思想与各类变体，包括记忆化搜索、基础 DP、背包问题、状态机 DP、序列 DP、区间 DP、博弈 DP、状态压缩 DP、数位 DP 与树形 DP。每个主题先讲解状态定义与转移方程的设计方法，再通过精选 LeetCode 题目进行实战训练，帮助读者彻底征服动态规划。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：动态规划基础
+    items:
+      - text: 1. 动态规划是什么
+        link: dp-basics/what-is-dp
+      - text: 2. 重叠子问题与最优子结构
+        link: dp-basics/overlapping-subproblems
+      - text: 3. 状态定义的艺术
+        link: dp-basics/state-definition
+      - text: 4. 状态转移方程的推导
+        link: dp-basics/state-transition
+      - text: 5. 边界条件与初始化
+        link: dp-basics/boundary-conditions
+      - text: 6. 计算顺序与空间优化
+        link: dp-basics/computation-order
+  - text: 第二部分：记忆化搜索与递推
+    items:
+      - text: 7. 从暴力递归到记忆化搜索
+        link: memoization/recursion-to-memoization
+      - text: 8. 从记忆化搜索到递推
+        link: memoization/memoization-to-tabulation
+      - text: 9. 两种方法的选择与权衡
+        link: memoization/choice-and-tradeoff
+      - text: 10. 实战：斐波那契数列（三种写法对比）
+        link: memoization/practice-fibonacci
+      - text: 11. 实战：爬楼梯
+        link: memoization/practice-climbing-stairs
+      - text: 12. 实战：最小路径和（两种方法）
+        link: memoization/practice-min-path-sum
+      - text: 13. 实战：三角形最小路径和
+        link: memoization/practice-triangle
+  - text: 第三部分：线性 DP 基础
+    items:
+      - text: 14. 线性 DP 概述
+        link: linear-dp/linear-dp-overview
+      - text: 15. 实战：打家劫舍
+        link: linear-dp/practice-house-robber
+      - text: 16. 实战：打家劫舍 II
+        link: linear-dp/practice-house-robber-ii
+      - text: 17. 实战：最大子数组和
+        link: linear-dp/practice-max-subarray
+      - text: 18. 实战：最大正方形
+        link: linear-dp/practice-maximal-square
+      - text: 19. 实战：不同路径
+        link: linear-dp/practice-unique-paths
+      - text: 20. 实战：不同路径 II
+        link: linear-dp/practice-unique-paths-ii
+      - text: 21. 实战：解码方法
+        link: linear-dp/practice-decode-ways
+      - text: 22. 实战：不同的二叉搜索树
+        link: linear-dp/practice-unique-bst
+      - text: 23. 实战：整数拆分
+        link: linear-dp/practice-integer-break
+      - text: 24. 实战：完全平方数
+        link: linear-dp/practice-perfect-squares
+      - text: 25. 实战：单词拆分
+        link: linear-dp/practice-word-break
+  - text: 第四部分：背包问题专题
+    items:
+      - text: 26. 01 背包问题详解
+        link: knapsack/01-knapsack
+      - text: 27. 完全背包问题详解
+        link: knapsack/unbounded-knapsack
+      - text: 28. 多重背包与混合背包
+        link: knapsack/multiple-knapsack
+      - text: 29. 背包问题的空间优化
+        link: knapsack/space-optimization
+      - text: 30. 实战：分割等和子集
+        link: knapsack/practice-partition-equal-subset
+      - text: 31. 实战：目标和
+        link: knapsack/practice-target-sum
+      - text: 32. 实战：零钱兑换
+        link: knapsack/practice-coin-change
+      - text: 33. 实战：零钱兑换 II
+        link: knapsack/practice-coin-change-ii
+      - text: 34. 实战：一和零
+        link: knapsack/practice-ones-and-zeroes
+      - text: 35. 实战：最后一块石头的重量 II
+        link: knapsack/practice-last-stone-weight-ii
+      - text: 36. 实战：盈利计划
+        link: knapsack/practice-profitable-schemes
+  - text: 第五部分：状态机 DP
+    items:
+      - text: 37. 状态机 DP 概述
+        link: state-machine/state-machine-overview
+      - text: 38. 状态机模型的建立
+        link: state-machine/state-machine-modeling
+      - text: 39. 实战：买卖股票的最佳时机
+        link: state-machine/practice-stock-i
+      - text: 40. 实战：买卖股票的最佳时机 II
+        link: state-machine/practice-stock-ii
+      - text: 41. 实战：买卖股票的最佳时机 III
+        link: state-machine/practice-stock-iii
+      - text: 42. 实战：买卖股票的最佳时机 IV
+        link: state-machine/practice-stock-iv
+      - text: 43. 实战：买卖股票含冷冻期
+        link: state-machine/practice-stock-cooldown
+      - text: 44. 实战：买卖股票含手续费
+        link: state-machine/practice-stock-fee
+      - text: 45. 实战：买卖股票系列总结
+        link: state-machine/stock-series-summary
+  - text: 第六部分：序列型 DP
+    items:
+      - text: 46. 序列 DP 概述
+        link: sequence-dp/sequence-dp-overview
+      - text: 47. 最长递增子序列模型
+        link: sequence-dp/lis-model
+      - text: 48. 最长公共子序列模型
+        link: sequence-dp/lcs-model
+      - text: 49. 实战：最长递增子序列
+        link: sequence-dp/practice-lis
+      - text: 50. 实战：最长递增子序列的个数
+        link: sequence-dp/practice-number-of-lis
+      - text: 51. 实战：最长公共子序列
+        link: sequence-dp/practice-lcs
+      - text: 52. 实战：编辑距离
+        link: sequence-dp/practice-edit-distance
+      - text: 53. 实战：不同的子序列
+        link: sequence-dp/practice-distinct-subsequences
+      - text: 54. 实战：最长重复子数组
+        link: sequence-dp/practice-longest-repeated-subarray
+      - text: 55. 实战：最大子数组乘积
+        link: sequence-dp/practice-max-product-subarray
+      - text: 56. 实战：最长数字串链
+        link: sequence-dp/practice-longest-string-chain
+      - text: 57. 实战：俄罗斯套娃信封
+        link: sequence-dp/practice-russian-doll
+      - text: 58. 实战：删除与获得点数
+        link: sequence-dp/practice-delete-and-earn
+      - text: 59. 实战：交错字符串
+        link: sequence-dp/practice-interleaving-string
+  - text: 第七部分：区间型 DP
+    items:
+      - text: 60. 区间 DP 概述
+        link: interval-dp/interval-dp-overview
+      - text: 61. 区间 DP 的枚举方式
+        link: interval-dp/enumeration-methods
+      - text: 62. 实战：最长回文子串
+        link: interval-dp/practice-longest-palindrome
+      - text: 63. 实战：回文子串计数
+        link: interval-dp/practice-palindromic-substrings
+      - text: 64. 实战：最长回文子序列
+        link: interval-dp/practice-longest-palindrome-subseq
+      - text: 65. 实战：戳气球
+        link: interval-dp/practice-burst-balloons
+      - text: 66. 实战：合并石头的最低成本
+        link: interval-dp/practice-merge-stones
+      - text: 67. 实战：移除盒子
+        link: interval-dp/practice-remove-boxes
+      - text: 68. 实战：奇怪的打印机
+        link: interval-dp/practice-strange-printer
+      - text: 69. 实战：分割回文串 II
+        link: interval-dp/practice-palindrome-partition-ii
+      - text: 70. 实战：矩阵链乘法
+        link: interval-dp/practice-matrix-chain
+  - text: 第八部分：博弈型 DP
+    items:
+      - text: 71. 博弈 DP 概述
+        link: game-dp/game-dp-overview
+      - text: 72. 极小化极大思想
+        link: game-dp/minimax
+      - text: 73. 实战：预测赢家
+        link: game-dp/practice-predict-winner
+      - text: 74. 实战：石子游戏
+        link: game-dp/practice-stone-game
+      - text: 75. 实战：石子游戏 II
+        link: game-dp/practice-stone-game-ii
+      - text: 76. 实战：石子游戏 III
+        link: game-dp/practice-stone-game-iii
+      - text: 77. 实战：翻转游戏 II
+        link: game-dp/practice-flip-game-ii
+      - text: 78. 实战：猜数字大小 II
+        link: game-dp/practice-guess-number-ii
+      - text: 79. 实战：我能赢吗
+        link: game-dp/practice-can-i-win
+  - text: 第九部分：状态压缩 DP
+    items:
+      - text: 80. 状态压缩 DP 概述
+        link: state-compression/state-compression-overview
+      - text: 81. 位运算基础回顾
+        link: state-compression/bit-manipulation-review
+      - text: 82. 状态压缩的设计技巧
+        link: state-compression/design-techniques
+      - text: 83. 实战：旅行商问题
+        link: state-compression/practice-tsp
+      - text: 84. 实战：最短超级串
+        link: state-compression/practice-shortest-superstring
+      - text: 85. 实战：参加会议的最多员工数
+        link: state-compression/practice-max-employees
+      - text: 86. 实战：并行课程 II
+        link: state-compression/practice-parallel-courses-ii
+      - text: 87. 实战：划分为 K 个相等的子集
+        link: state-compression/practice-partition-k-subsets
+      - text: 88. 实战：火柴拼正方形
+        link: state-compression/practice-matchsticks-to-square
+  - text: 第十部分：数位 DP
+    items:
+      - text: 89. 数位 DP 概述
+        link: digit-dp/digit-dp-overview
+      - text: 90. 数位 DP 模板详解
+        link: digit-dp/digit-dp-template
+      - text: 91. 实战：数字 1 的个数
+        link: digit-dp/practice-number-of-digit-one
+      - text: 92. 实战：统计特殊数字
+        link: digit-dp/practice-count-special-numbers
+      - text: 93. 实战：不含连续 1 的非负整数
+        link: digit-dp/practice-non-negative-without-consecutive-ones
+      - text: 94. 实战：至少有 1 位重复的数字
+        link: digit-dp/practice-at-least-one-repeated-digit
+      - text: 95. 实战：最大为 N 的数字组合
+        link: digit-dp/practice-max-n-digit-combinations
+      - text: 96. 实战：旋转数字
+        link: digit-dp/practice-rotated-digits
+  - text: 第十一部分：树形 DP
+    items:
+      - text: 97. 树形 DP 概述
+        link: tree-dp/tree-dp-overview
+      - text: 98. 树上 DFS 与状态转移
+        link: tree-dp/tree-dfs-transition
+      - text: 99. 实战：打家劫舍 III
+        link: tree-dp/practice-house-robber-iii
+      - text: 100. 实战：二叉树的直径
+        link: tree-dp/practice-binary-tree-diameter
+      - text: 101. 实战：二叉树中的最大路径和
+        link: tree-dp/practice-max-path-sum
+      - text: 102. 实战：监控二叉树
+        link: tree-dp/practice-binary-tree-cameras
+      - text: 103. 实战：树的最长路径
+        link: tree-dp/practice-tree-longest-path
+      - text: 104. 实战：树的中心
+        link: tree-dp/practice-tree-center
+      - text: 105. 实战：最大独立集
+        link: tree-dp/practice-max-independent-set
+      - text: 106. 实战：树上背包
+        link: tree-dp/practice-tree-knapsack
+  - text: 第十二部分：DP 优化技巧
+    items:
+      - text: 107. 空间优化：滚动数组
+        link: dp-optimization/rolling-array
+      - text: 108. 单调队列优化 DP
+        link: dp-optimization/monotonic-queue-optimization
+      - text: 109. 斜率优化 DP（凸包技巧）
+        link: dp-optimization/convex-hull-trick
+      - text: 110. 四边形不等式优化
+        link: dp-optimization/quadrangle-inequality
+      - text: 111. 实战：单调队列优化示例
+        link: dp-optimization/practice-monotonic-queue-dp
+      - text: 112. 实战：斜率优化示例
+        link: dp-optimization/practice-convex-hull-trick
+  - text: 第十三部分：综合实战
+    items:
+      - text: 113. 实战：正则表达式匹配
+        link: comprehensive/practice-regex-matching
+      - text: 114. 实战：通配符匹配
+        link: comprehensive/practice-wildcard-matching
+      - text: 115. 实战：扰乱字符串
+        link: comprehensive/practice-scramble-string
+      - text: 116. 实战：自由之路
+        link: comprehensive/practice-freedom-trail
+      - text: 117. 实战：鸡蛋掉落
+        link: comprehensive/practice-egg-drop
+      - text: 118. 实战：学生出勤记录 II
+        link: comprehensive/practice-student-attendance-ii

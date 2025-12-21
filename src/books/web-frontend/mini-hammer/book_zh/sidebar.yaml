@@ -1,0 +1,53 @@
+- text: 序言
+  link: ./preface
+- text: 第一部分：启程：从"用"到"懂"
+  collapsed: false
+  items:
+    - text: 手势库的世界
+      link: ./getting-started/introduction
+    - text: 为何要亲手构建一个手势库？
+      link: ./getting-started/why-build-gesture-library
+    - text: Hammer.js 快速上手
+      link: ./getting-started/hammerjs-quick-start
+- text: 第二部分：奠基：构建核心引擎
+  collapsed: false
+  items:
+    - text: 准备工作：常量与工具函数
+      link: ./building-core-engine/constants-and-utils
+    - text: 核心事件系统：EventEmitter
+      link: ./building-core-engine/event-emitter
+    - text: 输入适配层：兼容鼠标与触摸
+      link: ./building-core-engine/input-adapter
+    - text: 输入处理与 Touch Action
+      link: ./building-core-engine/input-processing-touch-action
+    - text: 识别的灵魂：深入手势识别状态机
+      link: ./building-core-engine/gesture-state-machine
+    - text: 手势管理器：Manager
+      link: ./building-core-engine/manager
+    - text: 识别器基类：Recognizer
+      link: ./building-core-engine/recognizer-base-class
+- text: 第三部分：生长：实现核心手势
+  collapsed: false
+  items:
+    - text: 实现 Tap（点击）
+      link: ./implementing-recognizers/tap
+    - text: 实现 Pan（拖拽）
+      link: ./implementing-recognizers/pan
+    - text: 实现 Swipe（滑动）
+      link: ./implementing-recognizers/swipe
+    - text: 实现 Press（长按）
+      link: ./implementing-recognizers/press
+- text: 第四部分：飞跃：高级手势与协同
+  collapsed: false
+  items:
+    - text: 实现 Pinch & Rotate：进入多点触控的世界
+      link: ./advanced-essence/pinch-rotate
+    - text: 手势的协同艺术：recognizeWith 与 requireFailure
+      link: ./advanced-essence/recognizewith-requirefailure
+    - text: 高级应用：解决手势冲突的艺术
+      link: ./advanced-essence/handling-gesture-conflicts
+- text: 第五部分：封装：从"作品"到"产品"
+  collapsed: false
+  items:
+    - text: 最终组装与展望
+      link: ./final-assembly/next-steps

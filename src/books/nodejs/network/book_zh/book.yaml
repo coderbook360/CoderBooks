@@ -1,0 +1,207 @@
+title: "Node.js网络编程实战: 从TCP到WebSocket"
+description: 深入掌握 Node.js 网络编程，构建高性能、可靠的网络应用。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：网络编程基础
+    items:
+      - text: 1. 网络协议层次概述
+        link: foundations/protocol-layers
+      - text: 2. TCP/IP 协议族
+        link: foundations/tcp-ip
+      - text: 3. Socket 编程基本概念
+        link: foundations/socket-concepts
+      - text: 4. IP 地址与端口
+        link: foundations/ip-ports
+      - text: 5. 字节序与网络字节序
+        link: foundations/byte-order
+      - text: 6. Node.js 网络模块概览
+        link: foundations/nodejs-network-modules
+  - text: 第二部分：TCP 编程
+    items:
+      - text: 7. net 模块概览
+        link: tcp/net-overview
+      - text: 8. 创建 TCP 服务器
+        link: tcp/tcp-server
+      - text: 9. TCP 连接生命周期
+        link: tcp/connection-lifecycle
+      - text: 10. 处理多个客户端连接
+        link: tcp/multiple-clients
+      - text: 11. 创建 TCP 客户端
+        link: tcp/tcp-client
+      - text: 12. 数据帧与消息边界
+        link: tcp/message-framing
+      - text: 13. TCP 粘包问题与解决方案
+        link: tcp/packet-sticking
+      - text: 14. 自定义协议设计
+        link: tcp/custom-protocol
+      - text: 15. TCP 连接池实现
+        link: tcp/connection-pool
+      - text: 16. TCP Keep-Alive 机制
+        link: tcp/keep-alive
+      - text: 17. TCP 性能优化
+        link: tcp/tcp-performance
+      - text: 18. TCP 错误处理与重连
+        link: tcp/error-reconnection
+      - text: 19. Unix Domain Socket
+        link: tcp/unix-socket
+  - text: 第三部分：UDP 编程
+    items:
+      - text: 20. dgram 模块概览
+        link: udp/dgram-overview
+      - text: 21. UDP 服务器与客户端
+        link: udp/udp-server-client
+      - text: 22. UDP vs TCP：选择指南
+        link: udp/udp-vs-tcp
+      - text: 23. UDP 广播
+        link: udp/broadcast
+      - text: 24. UDP 组播(Multicast)
+        link: udp/multicast
+      - text: 25. UDP 应用场景
+        link: udp/use-cases
+      - text: 26. UDP 可靠性保证
+        link: udp/reliability
+  - text: 第四部分：HTTP 协议深度解析
+    items:
+      - text: 27. HTTP 协议基础回顾
+        link: http/http-basics
+      - text: 28. http 模块架构
+        link: http/module-architecture
+      - text: 29. 创建 HTTP 服务器
+        link: http/http-server
+      - text: 30. IncomingMessage 详解
+        link: http/incoming-message
+      - text: 31. ServerResponse 详解
+        link: http/server-response
+      - text: 32. 请求方法与路由
+        link: http/methods-routing
+      - text: 33. 请求头解析与处理
+        link: http/request-headers
+      - text: 34. 响应头设置最佳实践
+        link: http/response-headers
+      - text: 35. 请求体解析策略
+        link: http/body-parsing
+      - text: 36. 表单数据处理
+        link: http/form-data
+      - text: 37. 文件上传处理
+        link: http/file-upload
+      - text: 38. JSON 请求与响应
+        link: http/json-handling
+      - text: 39. 流式响应
+        link: http/streaming-response
+      - text: 40. HTTP 状态码使用指南
+        link: http/status-codes
+      - text: 41. HTTP 缓存机制
+        link: http/caching
+      - text: 42. HTTP 压缩
+        link: http/compression
+      - text: 43. Cookie 处理
+        link: http/cookies
+      - text: 44. HTTP 认证
+        link: http/authentication
+      - text: 45. HTTP 代理实现
+        link: http/http-proxy
+  - text: 第五部分：HTTP 客户端
+    items:
+      - text: 46. http.request 详解
+        link: http-client/http-request
+      - text: 47. 发起 GET 请求
+        link: http-client/get-request
+      - text: 48. 发起 POST 请求
+        link: http-client/post-request
+      - text: 49. 请求超时与重试
+        link: http-client/timeout-retry
+      - text: 50. HTTP Agent 与连接复用
+        link: http-client/http-agent
+      - text: 51. 跟随重定向
+        link: http-client/redirects
+      - text: 52. 下载文件
+        link: http-client/file-download
+      - text: 53. 现代 HTTP 客户端库对比
+        link: http-client/client-libraries
+  - text: 第六部分：HTTPS 与 TLS
+    items:
+      - text: 54. TLS/SSL 原理概述
+        link: https/tls-overview
+      - text: 55. 证书与密钥
+        link: https/certificates
+      - text: 56. 创建 HTTPS 服务器
+        link: https/https-server
+      - text: 57. 自签名证书开发使用
+        link: https/self-signed
+      - text: 58. Let's Encrypt 证书获取
+        link: https/lets-encrypt
+      - text: 59. TLS 配置最佳实践
+        link: https/tls-best-practices
+      - text: 60. 客户端证书验证(mTLS)
+        link: https/mutual-tls
+      - text: 61. HTTPS 性能优化
+        link: https/https-performance
+      - text: 62. HTTP 到 HTTPS 重定向
+        link: https/redirect-to-https
+  - text: 第七部分：HTTP/2
+    items:
+      - text: 63. HTTP/2 协议特性
+        link: http2/http2-features
+      - text: 64. http2 模块概览
+        link: http2/module-overview
+      - text: 65. 创建 HTTP/2 服务器
+        link: http2/http2-server
+      - text: 66. HTTP/2 流与多路复用
+        link: http2/streams-multiplexing
+      - text: 67. 服务器推送(Server Push)
+        link: http2/server-push
+      - text: 68. HTTP/2 客户端
+        link: http2/http2-client
+      - text: 69. HTTP/1.1 与 HTTP/2 兼容
+        link: http2/compatibility
+      - text: 70. HTTP/2 性能分析
+        link: http2/performance-analysis
+  - text: 第八部分：WebSocket
+    items:
+      - text: 71. WebSocket 协议概述
+        link: websocket/protocol-overview
+      - text: 72. WebSocket 握手过程
+        link: websocket/handshake
+      - text: 73. ws 库入门
+        link: websocket/ws-library
+      - text: 74. WebSocket 服务器实现
+        link: websocket/ws-server
+      - text: 75. WebSocket 客户端实现
+        link: websocket/ws-client
+      - text: 76. 消息格式设计
+        link: websocket/message-format
+      - text: 77. 心跳与连接保活
+        link: websocket/heartbeat
+      - text: 78. 广播与房间管理
+        link: websocket/broadcast-rooms
+      - text: 79. WebSocket 认证
+        link: websocket/authentication
+      - text: 80. WebSocket 与 HTTP 共存
+        link: websocket/with-http
+      - text: 81. WebSocket 负载均衡
+        link: websocket/load-balancing
+      - text: 82. Socket.io 入门
+        link: websocket/socket-io
+  - text: 第九部分：高级网络主题
+    items:
+      - text: 83. DNS 解析：dns 模块
+        link: advanced/dns-module
+      - text: 84. 自定义 DNS 解析
+        link: advanced/custom-dns
+      - text: 85. 网络接口信息：os.networkInterfaces
+        link: advanced/network-interfaces
+      - text: 86. HTTP/HTTPS 代理配置
+        link: advanced/proxy-configuration
+      - text: 87. SOCKS 代理支持
+        link: advanced/socks-proxy
+      - text: 88. 网络调试与抓包
+        link: advanced/network-debugging
+      - text: 89. 网络性能测试
+        link: advanced/performance-testing
+      - text: 90. 网络安全最佳实践
+        link: advanced/security-practices
+      - text: 91. IPv6 支持
+        link: advanced/ipv6
+      - text: 92. 网络编程总结与展望
+        link: advanced/summary

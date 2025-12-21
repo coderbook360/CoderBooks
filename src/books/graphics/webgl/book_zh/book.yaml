@@ -1,0 +1,129 @@
+title: WebGL 基础与渲染管线
+description: 本书深入讲解 WebGL API 和 GPU 渲染原理，带你从零开始手写一个 WebGL 渲染器。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：WebGL 基础 (WebGL Fundamentals)
+    items:
+      - text: 1. WebGL 概述与环境搭建
+        link: fundamentals/webgl-overview
+      - text: 2. WebGL 上下文与状态机
+        link: fundamentals/context-state-machine
+      - text: 3. 第一个 WebGL 程序：绘制三角形
+        link: fundamentals/first-triangle
+      - text: 4. WebGL 坐标系统与视口
+        link: fundamentals/coordinate-viewport
+  - text: 第二部分：着色器编程 (Shader Programming)
+    items:
+      - text: 5. 着色器概述与工作流程
+        link: shaders/shader-overview
+      - text: 6. GLSL 语言基础：数据类型
+        link: shaders/glsl-datatypes
+      - text: 7. GLSL 语言基础：运算符与控制流
+        link: shaders/glsl-operators
+      - text: 8. 顶点着色器详解
+        link: shaders/vertex-shader
+      - text: 9. 片元着色器详解
+        link: shaders/fragment-shader
+      - text: 10. 着色器的编译、链接与调试
+        link: shaders/shader-compile-debug
+  - text: 第三部分：渲染管线 (Rendering Pipeline)
+    items:
+      - text: 11. 渲染管线概述
+        link: pipeline/pipeline-overview
+      - text: 12. 顶点处理阶段
+        link: pipeline/vertex-processing
+      - text: 13. 图元装配与光栅化
+        link: pipeline/primitive-rasterization
+      - text: 14. 片元处理阶段
+        link: pipeline/fragment-processing
+      - text: 15. 帧缓冲与输出合并
+        link: pipeline/framebuffer-output
+  - text: 第四部分：缓冲区系统 (Buffer System)
+    items:
+      - text: 16. 缓冲区对象概述
+        link: buffers/buffer-overview
+      - text: 17. VBO：顶点缓冲对象
+        link: buffers/vbo
+      - text: 18. IBO/EBO：索引缓冲对象
+        link: buffers/ibo-ebo
+      - text: 19. VAO：顶点数组对象
+        link: buffers/vao
+      - text: 20. Attribute：顶点属性
+        link: buffers/attributes
+      - text: 21. Uniform：统一变量
+        link: buffers/uniforms
+      - text: 22. UBO：统一缓冲对象
+        link: buffers/ubo
+      - text: 23. Varying：变量传递
+        link: buffers/varyings
+  - text: 第五部分：纹理系统 (Texture System)
+    items:
+      - text: 24. 纹理概述与工作原理
+        link: textures/texture-overview
+      - text: 25. 纹理创建与数据加载
+        link: textures/texture-creation
+      - text: 26. 纹理坐标与映射
+        link: textures/texture-coordinates
+      - text: 27. 纹理采样与过滤
+        link: textures/texture-sampling
+      - text: 28. Mipmap 与多级纹理
+        link: textures/mipmaps
+      - text: 29. 立方体贴图与环境映射
+        link: textures/cubemap
+      - text: 30. 3D 纹理与体积渲染
+        link: textures/3d-texture
+  - text: 第六部分：深度测试与混合 (Depth Testing and Blending)
+    items:
+      - text: 31. 深度缓冲原理
+        link: depth-blending/depth-buffer
+      - text: 32. 深度测试配置与应用
+        link: depth-blending/depth-testing
+      - text: 33. Alpha 混合基础
+        link: depth-blending/alpha-blending
+      - text: 34. 混合模式与混合函数
+        link: depth-blending/blend-modes
+      - text: 35. 模板测试与应用
+        link: depth-blending/stencil-test
+  - text: 第七部分：光照系统 (Lighting System)
+    items:
+      - text: 36. 光照模型概述
+        link: lighting/lighting-overview
+      - text: 37. 环境光实现
+        link: lighting/ambient-light
+      - text: 38. 漫反射光照
+        link: lighting/diffuse-light
+      - text: 39. 镜面反射光照
+        link: lighting/specular-light
+      - text: 40. Phong 光照模型实现
+        link: lighting/phong-lighting
+      - text: 41. 法线贴图实现
+        link: lighting/normal-mapping
+      - text: 42. 视差贴图 (Parallax Mapping)
+        link: lighting/parallax-mapping
+      - text: 43. 多光源处理
+        link: lighting/multiple-lights
+  - text: 第八部分：高级特性 (Advanced Features)
+    items:
+      - text: 44. 帧缓冲对象 FBO
+        link: advanced/framebuffer-object
+      - text: 45. 渲染到纹理
+        link: advanced/render-to-texture
+      - text: 46. 多重渲染目标 MRT
+        link: advanced/mrt
+      - text: 47. 实例化渲染
+        link: advanced/instanced-rendering
+      - text: 48. Transform Feedback
+        link: advanced/transform-feedback
+      - text: 49. WebGL 性能优化策略
+        link: advanced/performance-optimization
+      - text: 50. WebGL 调试技巧与工具
+        link: advanced/debugging-tools
+  - text: 第九部分：综合实战 (Complete Project)
+    items:
+      - text: 51. 实战项目：手写 WebGL 渲染器
+        link: project/webgl-renderer
+      - text: 52. 常见错误与排查技巧
+        link: project/error-troubleshooting
+      - text: 53. 从 WebGL 到 Three.js
+        link: project/webgl-to-threejs

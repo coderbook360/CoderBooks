@@ -1,0 +1,204 @@
+- text: 序言
+  link: preface
+- text: 第一部分：CLI 脚手架工具
+  collapsed: false
+  items:
+    - text: 项目概述与需求分析
+      link: cli-scaffold/overview
+    - text: 项目初始化与结构设计
+      link: cli-scaffold/project-setup
+    - text: Commander.js 命令定义
+      link: cli-scaffold/commander-setup
+    - text: Inquirer.js 交互式问询
+      link: cli-scaffold/inquirer-prompts
+    - text: 模板引擎与文件生成
+      link: cli-scaffold/template-engine
+    - text: 模板下载与仓库集成
+      link: cli-scaffold/template-download
+    - text: 配置文件读写
+      link: cli-scaffold/config-files
+    - text: 进度显示与美化输出
+      link: cli-scaffold/progress-styling
+    - text: 错误处理与用户提示
+      link: cli-scaffold/error-handling
+    - text: 插件系统设计
+      link: cli-scaffold/plugin-system
+    - text: 单元测试编写
+      link: cli-scaffold/unit-testing
+    - text: npm 包发布流程
+      link: cli-scaffold/npm-publish
+    - text: 项目总结与扩展方向
+      link: cli-scaffold/summary
+- text: 第二部分：RESTful API 认证服务
+  collapsed: false
+  items:
+    - text: 项目概述与 API 设计
+      link: rest-auth/overview
+    - text: Express + TypeScript 项目搭建
+      link: rest-auth/project-setup
+    - text: 数据库设计与 Prisma 集成
+      link: rest-auth/database-prisma
+    - text: 用户模型与密码加密
+      link: rest-auth/user-model
+    - text: 注册接口实现
+      link: rest-auth/registration
+    - text: 登录接口与 JWT 签发
+      link: rest-auth/login-jwt
+    - text: 认证中间件实现
+      link: rest-auth/auth-middleware
+    - text: 刷新令牌机制
+      link: rest-auth/refresh-token
+    - text: 密码重置流程
+      link: rest-auth/password-reset
+    - text: 邮件发送集成
+      link: rest-auth/email-integration
+    - text: RBAC 权限系统设计
+      link: rest-auth/rbac-design
+    - text: 权限中间件实现
+      link: rest-auth/permission-middleware
+    - text: 请求验证与错误处理
+      link: rest-auth/validation-errors
+    - text: API 文档生成
+      link: rest-auth/api-documentation
+    - text: 集成测试编写
+      link: rest-auth/integration-testing
+    - text: Docker 部署配置
+      link: rest-auth/docker-deployment
+    - text: 项目总结与最佳实践
+      link: rest-auth/summary
+- text: 第三部分：实时聊天应用
+  collapsed: false
+  items:
+    - text: 项目概述与功能设计
+      link: chat-app/overview
+    - text: Socket.io 服务端搭建
+      link: chat-app/socketio-setup
+    - text: 连接管理与用户状态
+      link: chat-app/connection-management
+    - text: 房间系统实现
+      link: chat-app/room-system
+    - text: 消息发送与接收
+      link: chat-app/message-handling
+    - text: 私聊功能实现
+      link: chat-app/private-messaging
+    - text: 消息持久化：MongoDB
+      link: chat-app/message-persistence
+    - text: 历史消息加载
+      link: chat-app/message-history
+    - text: 用户在线状态管理
+      link: chat-app/online-status
+    - text: 消息已读状态
+      link: chat-app/read-receipts
+    - text: 文件与图片发送
+      link: chat-app/file-sharing
+    - text: Redis 适配器：多节点支持
+      link: chat-app/redis-adapter
+    - text: 前端集成示例
+      link: chat-app/frontend-integration
+    - text: 性能优化与压测
+      link: chat-app/performance
+    - text: 项目总结
+      link: chat-app/summary
+- text: 第四部分：任务调度系统
+  collapsed: false
+  items:
+    - text: 项目概述与需求分析
+      link: task-scheduler/overview
+    - text: BullMQ 入门与配置
+      link: task-scheduler/bullmq-setup
+    - text: 任务定义与队列设计
+      link: task-scheduler/queue-design
+    - text: 即时任务处理
+      link: task-scheduler/immediate-tasks
+    - text: 延迟任务实现
+      link: task-scheduler/delayed-tasks
+    - text: 定时任务(Cron)配置
+      link: task-scheduler/cron-tasks
+    - text: 任务重试与退避策略
+      link: task-scheduler/retry-backoff
+    - text: 任务优先级
+      link: task-scheduler/task-priority
+    - text: 任务进度追踪
+      link: task-scheduler/progress-tracking
+    - text: 任务结果存储
+      link: task-scheduler/result-storage
+    - text: 死信队列处理
+      link: task-scheduler/dead-letter-queue
+    - text: 分布式锁实现
+      link: task-scheduler/distributed-lock
+    - text: 任务监控仪表盘
+      link: task-scheduler/monitoring-dashboard
+    - text: API 接口设计
+      link: task-scheduler/api-design
+    - text: 项目总结
+      link: task-scheduler/summary
+- text: 第五部分：文件服务
+  collapsed: false
+  items:
+    - text: 项目概述与功能规划
+      link: file-service/overview
+    - text: Fastify 项目搭建
+      link: file-service/fastify-setup
+    - text: 基础文件上传
+      link: file-service/basic-upload
+    - text: 大文件分片上传
+      link: file-service/chunked-upload
+    - text: 断点续传实现
+      link: file-service/resume-upload
+    - text: 文件合并与校验
+      link: file-service/merge-verify
+    - text: 文件下载与范围请求
+      link: file-service/download-range
+    - text: 图片处理：Sharp 集成
+      link: file-service/image-processing
+    - text: 缩略图生成
+      link: file-service/thumbnails
+    - text: 文件元数据管理
+      link: file-service/metadata
+    - text: 存储抽象：本地与云存储
+      link: file-service/storage-abstraction
+    - text: AWS S3 集成
+      link: file-service/aws-s3
+    - text: 阿里云 OSS 集成
+      link: file-service/aliyun-oss
+    - text: CDN 集成与缓存
+      link: file-service/cdn-caching
+    - text: 访问控制与签名 URL
+      link: file-service/access-control
+    - text: 项目总结
+      link: file-service/summary
+- text: 第六部分：博客内容管理系统
+  collapsed: false
+  items:
+    - text: 项目概述与系统设计
+      link: blog-cms/overview
+    - text: NestJS 项目架构
+      link: blog-cms/nestjs-architecture
+    - text: 用户模块实现
+      link: blog-cms/user-module
+    - text: 文章模块：CRUD 操作
+      link: blog-cms/article-crud
+    - text: Markdown 解析与渲染
+      link: blog-cms/markdown-rendering
+    - text: 分类与标签系统
+      link: blog-cms/categories-tags
+    - text: 评论系统实现
+      link: blog-cms/comments
+    - text: 全文搜索：Elasticsearch
+      link: blog-cms/elasticsearch
+    - text: 图片上传与管理
+      link: blog-cms/image-management
+    - text: 草稿与发布状态
+      link: blog-cms/draft-publish
+    - text: 访问统计与分析
+      link: blog-cms/analytics
+    - text: RSS 订阅生成
+      link: blog-cms/rss-feed
+    - text: SEO 优化实践
+      link: blog-cms/seo
+    - text: 管理后台 API
+      link: blog-cms/admin-api
+    - text: 部署与运维
+      link: blog-cms/deployment
+    - text: 项目总结与系列回顾
+      link: blog-cms/summary

@@ -1,0 +1,309 @@
+title: "Mini PixiJS v8 源码解析: 2D WebGL/WebGPU 渲染引擎核心实现"
+description: 本书将带你深入 PixiJS v8 源码，从渲染管线到场景图系统，全面理解现代 2D 渲染引擎的设计与实现。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：架构概览与基础设施
+    items:
+      - text: 1. PixiJS v8 架构全景
+        link: foundations/architecture-overview
+      - text: 2. 项目结构与模块组织
+        link: foundations/project-structure
+      - text: 3. 核心类型与接口设计
+        link: foundations/core-types
+      - text: 4. 扩展系统与插件机制
+        link: foundations/extensions-system
+      - text: 5. Environment 环境适配
+        link: foundations/environment
+  - text: 第二部分：渲染器架构
+    items:
+      - text: 6. 渲染器架构设计
+        link: rendering/renderer-architecture
+      - text: 7. System 系统模式与生命周期
+        link: rendering/system-pattern
+      - text: 8. 渲染器自动检测与选择
+        link: rendering/auto-detect
+      - text: 9. 渲染上下文与初始化
+        link: rendering/context-init
+      - text: 10. 渲染指令与绘制流程
+        link: rendering/instructions
+  - text: 第三部分：WebGL 渲染器
+    items:
+      - text: 11. WebGLRenderer 核心实现
+        link: webgl/webgl-renderer
+      - text: 12. GlContext 上下文管理
+        link: webgl/gl-context
+      - text: 13. GlState 状态机
+        link: webgl/gl-state
+      - text: 14. GlBuffer 缓冲区管理
+        link: webgl/gl-buffer
+      - text: 15. GlGeometry 几何体系统
+        link: webgl/gl-geometry
+      - text: 16. GlTexture 纹理管理
+        link: webgl/gl-texture
+      - text: 17. GlShader 着色器系统
+        link: webgl/gl-shader
+      - text: 18. GlRenderTarget 渲染目标
+        link: webgl/gl-render-target
+      - text: 19. GlUBO 统一缓冲区
+        link: webgl/gl-ubo
+  - text: 第四部分：WebGPU 渲染器
+    items:
+      - text: 20. WebGPURenderer 核心实现
+        link: webgpu/webgpu-renderer
+      - text: 21. GPUDevice 与适配器
+        link: webgpu/gpu-device
+      - text: 22. GPUBuffer 缓冲区管理
+        link: webgpu/gpu-buffer
+      - text: 23. GPUTexture 纹理管理
+        link: webgpu/gpu-texture
+      - text: 24. GPUShader 着色器与 WGSL
+        link: webgpu/gpu-shader
+      - text: 25. GPURenderPipeline 管线
+        link: webgpu/gpu-pipeline
+      - text: 26. GPURenderTarget 渲染目标
+        link: webgpu/gpu-render-target
+      - text: 27. WebGL vs WebGPU 对比
+        link: webgpu/comparison
+  - text: 第五部分：Shader 系统
+    items:
+      - text: 28. HighShader 高级着色器抽象
+        link: shader/high-shader
+      - text: 29. Shader 程序管理
+        link: shader/program
+      - text: 30. Uniform 与 UniformGroup
+        link: shader/uniforms
+      - text: 31. GLSL 到 WGSL 转换
+        link: shader/glsl-wgsl
+      - text: 32. 内置着色器分析
+        link: shader/builtin-shaders
+  - text: 第六部分：场景图核心
+    items:
+      - text: 33. 场景图与显示对象树
+        link: scene/display-tree
+      - text: 34. Container 容器实现
+        link: scene/container
+      - text: 35. 子节点管理与遍历
+        link: scene/children
+      - text: 36. View 渲染视图抽象
+        link: scene/view
+      - text: 37. Renderable 可渲染对象
+        link: scene/renderable
+  - text: 第七部分：Transform 与 Bounds
+    items:
+      - text: 38. Transform 变换系统
+        link: transform/transform
+      - text: 39. Matrix 矩阵运算
+        link: transform/matrix
+      - text: 40. Local 与 World 变换
+        link: transform/local-world
+      - text: 41. Bounds 边界计算
+        link: transform/bounds
+      - text: 42. 边界更新与缓存策略
+        link: transform/bounds-cache
+  - text: 第八部分：Culling 与 Mask
+    items:
+      - text: 43. Culling 视锥裁剪
+        link: culling/culling
+      - text: 44. RenderLayer 渲染层
+        link: culling/render-layer
+      - text: 45. Mask 遮罩系统
+        link: mask/mask-system
+      - text: 46. Stencil 模板遮罩
+        link: mask/stencil
+      - text: 47. Alpha 遮罩与颜色遮罩
+        link: mask/alpha-color
+  - text: 第九部分：Texture 纹理系统
+    items:
+      - text: 48. Texture 核心设计
+        link: texture/texture-core
+      - text: 49. TextureSource 纹理源
+        link: texture/texture-source
+      - text: 50. TextureStyle 采样配置
+        link: texture/texture-style
+      - text: 51. RenderTexture 渲染纹理
+        link: texture/render-texture
+      - text: 52. 纹理上传与 GPU 管理
+        link: texture/gpu-upload
+      - text: 53. 纹理 GC 垃圾回收
+        link: texture/texture-gc
+  - text: 第十部分：Sprite 精灵系统
+    items:
+      - text: 54. Sprite 核心实现
+        link: sprite/sprite
+      - text: 55. Anchor 与 Pivot
+        link: sprite/anchor-pivot
+      - text: 56. TilingSprite 平铺精灵
+        link: sprite/tiling-sprite
+      - text: 57. AnimatedSprite 帧动画
+        link: sprite/animated-sprite
+      - text: 58. NineSliceSprite 九宫格
+        link: sprite/nine-slice
+      - text: 59. Spritesheet 精灵图集
+        link: sprite/spritesheet
+  - text: 第十一部分：Graphics 矢量绘制
+    items:
+      - text: 60. Graphics 设计理念
+        link: graphics/overview
+      - text: 61. GraphicsContext 绘图上下文
+        link: graphics/context
+      - text: 62. 基本形状绘制
+        link: graphics/basic-shapes
+      - text: 63. 路径与贝塞尔曲线
+        link: graphics/path-bezier
+      - text: 64. 填充与描边样式
+        link: graphics/fill-stroke
+      - text: 65. FillGradient 渐变填充
+        link: graphics/gradient
+      - text: 66. FillPattern 图案填充
+        link: graphics/pattern
+      - text: 67. SVG 路径解析
+        link: graphics/svg-path
+      - text: 68. Graphics GPU 渲染
+        link: graphics/gpu-rendering
+  - text: 第十二部分：Text 文本渲染
+    items:
+      - text: 69. Text 文本渲染概览
+        link: text/overview
+      - text: 70. Canvas 文本渲染
+        link: text/canvas-text
+      - text: 71. TextStyle 样式系统
+        link: text/text-style
+      - text: 72. BitmapFont 位图字体
+        link: text/bitmap-font
+      - text: 73. BitmapText 位图文本
+        link: text/bitmap-text
+      - text: 74. HTMLText HTML 文本
+        link: text/html-text
+      - text: 75. 文本测量与布局
+        link: text/measurement
+  - text: 第十三部分：Mesh 网格系统
+    items:
+      - text: 76. Mesh 网格基础
+        link: mesh/overview
+      - text: 77. Geometry 几何体数据
+        link: mesh/geometry
+      - text: 78. MeshPlane 平面网格
+        link: mesh/mesh-plane
+      - text: 79. MeshRope 绳索网格
+        link: mesh/mesh-rope
+      - text: 80. PerspectiveMesh 透视网格
+        link: mesh/perspective
+      - text: 81. 自定义 Mesh 顶点
+        link: mesh/custom-mesh
+  - text: 第十四部分：Filter 滤镜系统
+    items:
+      - text: 82. Filter 滤镜架构
+        link: filters/architecture
+      - text: 83. 滤镜渲染管线
+        link: filters/render-pipeline
+      - text: 84. FilterEffect 滤镜效果
+        link: filters/filter-effect
+      - text: 85. BlurFilter 模糊滤镜
+        link: filters/blur
+      - text: 86. ColorMatrixFilter 颜色矩阵
+        link: filters/color-matrix
+      - text: 87. DisplacementFilter 置换滤镜
+        link: filters/displacement
+      - text: 88. NoiseFilter 噪声滤镜
+        link: filters/noise
+      - text: 89. 自定义滤镜开发
+        link: filters/custom-filter
+  - text: 第十五部分：Batch 批处理系统
+    items:
+      - text: 90. 批处理设计理念
+        link: batch/overview
+      - text: 91. Batcher 批处理器
+        link: batch/batcher
+      - text: 92. BatchGeometry 批次几何体
+        link: batch/batch-geometry
+      - text: 93. DefaultBatcher 默认批处理
+        link: batch/default-batcher
+      - text: 94. 纹理打包与 TexturePacker
+        link: batch/texture-packer
+  - text: 第十六部分：Assets 资源系统
+    items:
+      - text: 95. Assets 资源系统设计
+        link: assets/overview
+      - text: 96. Loader 加载器实现
+        link: assets/loader
+      - text: 97. Resolver 资源解析
+        link: assets/resolver
+      - text: 98. Cache 缓存管理
+        link: assets/cache
+      - text: 99. 资源 Bundle 与 Manifest
+        link: assets/manifest
+      - text: 100. 自定义 Loader 插件
+        link: assets/custom-loader
+  - text: 第十七部分：Events 事件系统
+    items:
+      - text: 101. EventSystem 事件系统
+        link: events/event-system
+      - text: 102. FederatedEvent 联合事件
+        link: events/federated-event
+      - text: 103. 事件冒泡与捕获
+        link: events/propagation
+      - text: 104. Hit Testing 命中测试
+        link: events/hit-testing
+      - text: 105. 触摸与多点触控
+        link: events/touch
+      - text: 106. EventMode 事件模式
+        link: events/event-mode
+  - text: 第十八部分：Ticker 动画系统
+    items:
+      - text: 107. Ticker 帧循环机制
+        link: ticker/ticker
+      - text: 108. UPDATE_PRIORITY 优先级
+        link: ticker/priority
+      - text: 109. DeltaTime 时间增量
+        link: ticker/delta-time
+      - text: 110. 帧率无关动画实现
+        link: ticker/frame-independent
+  - text: 第十九部分：Maths 数学库
+    items:
+      - text: 111. Point 与 ObservablePoint
+        link: maths/point
+      - text: 112. Matrix 矩阵变换
+        link: maths/matrix
+      - text: 113. Rectangle 矩形边界
+        link: maths/rectangle
+      - text: 114. Circle、Ellipse 几何形状
+        link: maths/shapes
+      - text: 115. Polygon 多边形
+        link: maths/polygon
+  - text: 第二十部分：Particle 粒子系统
+    items:
+      - text: 116. ParticleContainer 设计
+        link: particles/container
+      - text: 117. Particle 粒子对象
+        link: particles/particle
+      - text: 118. 粒子渲染优化
+        link: particles/optimization
+      - text: 119. 高性能粒子实现
+        link: particles/high-performance
+  - text: 第二十一部分：高级主题
+    items:
+      - text: 120. Blend Modes 混合模式
+        link: advanced/blend-modes
+      - text: 121. Advanced Blend Modes
+        link: advanced/advanced-blend
+      - text: 122. Compressed Textures 压缩纹理
+        link: advanced/compressed-textures
+      - text: 123. Prepare 资源预处理
+        link: advanced/prepare
+      - text: 124. Extract 提取系统
+        link: advanced/extract
+      - text: 125. Accessibility 无障碍支持
+        link: advanced/accessibility
+  - text: 第二十二部分：实战与进阶
+    items:
+      - text: 126. 构建迷你 2D 渲染器
+        link: practice/mini-renderer
+      - text: 127. 性能分析与优化
+        link: practice/performance
+      - text: 128. 内存管理与 GC
+        link: practice/memory-gc
+      - text: 129. 从 v7 迁移到 v8
+        link: practice/migration
+      - text: 130. 总结与学习路径
+        link: practice/summary

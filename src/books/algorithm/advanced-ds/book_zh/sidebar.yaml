@@ -1,0 +1,232 @@
+- text: 序言
+  link: preface
+- text: 第一部分：字典树（Trie）
+  collapsed: false
+  items:
+    - text: 字典树基础与实现
+      link: trie/trie-basics
+    - text: 实现 Trie（前缀树）
+      link: trie/implement-trie
+    - text: 添加与搜索单词
+      link: trie/add-search-word
+    - text: 单词搜索 II
+      link: trie/word-search-ii
+    - text: 词典中最长的单词
+      link: trie/longest-word-in-dictionary
+    - text: 前缀和后缀搜索
+      link: trie/prefix-suffix-search
+    - text: 键值映射
+      link: trie/map-sum-pairs
+    - text: 连接词
+      link: trie/concatenated-words
+    - text: 回文对
+      link: trie/palindrome-pairs
+    - text: 数组中两个数的最大异或值
+      link: trie/maximum-xor
+- text: 第二部分：线段树基础
+  collapsed: false
+  items:
+    - text: 线段树原理与实现
+      link: segment-tree/segment-tree-basics
+    - text: 区间求和问题
+      link: segment-tree/range-sum-query
+    - text: 区间最值问题
+      link: segment-tree/range-min-max-query
+    - text: 懒惰传播（Lazy Propagation）
+      link: segment-tree/lazy-propagation
+    - text: 区域和检索 - 数组可修改
+      link: segment-tree/range-sum-mutable
+    - text: 我的日程安排表 I
+      link: segment-tree/my-calendar-i
+    - text: 我的日程安排表 II
+      link: segment-tree/my-calendar-ii
+    - text: 我的日程安排表 III
+      link: segment-tree/my-calendar-iii
+    - text: 矩形面积 II
+      link: segment-tree/rectangle-area-ii
+    - text: 掉落的方块
+      link: segment-tree/falling-squares
+- text: 第三部分：线段树进阶
+  collapsed: false
+  items:
+    - text: 动态开点线段树
+      link: segment-tree-advanced/dynamic-segment-tree
+    - text: 线段树合并
+      link: segment-tree-advanced/segment-tree-merge
+    - text: 扫描线算法
+      link: segment-tree-advanced/sweep-line
+    - text: 天际线问题
+      link: segment-tree-advanced/skyline-problem
+    - text: 区间加区间求和
+      link: segment-tree-advanced/range-add-range-sum
+    - text: 区间乘区间求和
+      link: segment-tree-advanced/range-multiply-range-sum
+    - text: 区间覆盖问题
+      link: segment-tree-advanced/range-cover
+    - text: 最大子段和查询
+      link: segment-tree-advanced/max-subarray-query
+    - text: 逆序对计数
+      link: segment-tree-advanced/count-inversions
+    - text: 区间第 K 大
+      link: segment-tree-advanced/range-kth-largest
+- text: 第四部分：树状数组（BIT）
+  collapsed: false
+  items:
+    - text: 树状数组原理与实现
+      link: bit/bit-basics
+    - text: 单点修改区间查询
+      link: bit/point-update-range-query
+    - text: 区间修改单点查询
+      link: bit/range-update-point-query
+    - text: 区间修改区间查询
+      link: bit/range-update-range-query
+    - text: 二维树状数组
+      link: bit/2d-bit
+    - text: 计算右侧小于当前元素的个数
+      link: bit/count-smaller-after-self
+    - text: 翻转对
+      link: bit/reverse-pairs
+    - text: 区间和的个数
+      link: bit/count-range-sum
+    - text: 最长递增子序列的个数
+      link: bit/number-of-lis
+    - text: 统计作战单位数
+      link: bit/count-good-triplets
+- text: 第五部分：平衡树与有序集合
+  collapsed: false
+  items:
+    - text: 平衡树概述：AVL、红黑树、Treap
+      link: balanced-tree/balanced-tree-overview
+    - text: 有序集合的应用
+      link: balanced-tree/ordered-set-applications
+    - text: 数据流的中位数
+      link: balanced-tree/find-median-data-stream
+    - text: 滑动窗口中位数
+      link: balanced-tree/sliding-window-median
+    - text: 存在重复元素 III
+      link: balanced-tree/contains-duplicate-iii
+    - text: 最大频率栈
+      link: balanced-tree/max-frequency-stack
+    - text: 避免洪水泛滥
+      link: balanced-tree/avoid-flood-in-city
+    - text: 股票价格波动
+      link: balanced-tree/stock-price-fluctuation
+    - text: 设计跳表
+      link: balanced-tree/design-skiplist
+    - text: K 个最近的点
+      link: balanced-tree/k-closest-points
+- text: 第六部分：分块与莫队算法
+  collapsed: false
+  items:
+    - text: 分块思想与基础应用
+      link: block-algorithm/block-basics
+    - text: 分块求区间和
+      link: block-algorithm/block-range-sum
+    - text: 分块求区间最值
+      link: block-algorithm/block-range-min-max
+    - text: 莫队算法原理
+      link: block-algorithm/mo-algorithm-basics
+    - text: 普通莫队
+      link: block-algorithm/basic-mo
+    - text: 带修改莫队
+      link: block-algorithm/mo-with-modification
+    - text: 树上莫队
+      link: block-algorithm/mo-on-tree
+    - text: 回滚莫队
+      link: block-algorithm/rollback-mo
+    - text: 区间不同数个数
+      link: block-algorithm/distinct-count-in-range
+    - text: 区间众数查询
+      link: block-algorithm/range-mode-query
+- text: 第七部分：后缀数组与后缀自动机
+  collapsed: false
+  items:
+    - text: 后缀数组基础
+      link: suffix-structures/suffix-array-basics
+    - text: 后缀数组的构建（倍增法）
+      link: suffix-structures/suffix-array-doubling
+    - text: 后缀数组的构建（DC3/SA-IS）
+      link: suffix-structures/suffix-array-dc3
+    - text: LCP 数组与应用
+      link: suffix-structures/lcp-array
+    - text: 最长重复子串
+      link: suffix-structures/longest-duplicate-substring
+    - text: 不同的子序列 II
+      link: suffix-structures/distinct-subsequences-ii
+    - text: 后缀自动机原理
+      link: suffix-structures/suffix-automaton-basics
+    - text: 后缀自动机构建
+      link: suffix-structures/suffix-automaton-construction
+    - text: 本质不同子串计数
+      link: suffix-structures/count-distinct-substrings
+    - text: 最长公共子串
+      link: suffix-structures/longest-common-substring
+- text: 第八部分：可持久化数据结构
+  collapsed: false
+  items:
+    - text: 可持久化思想概述
+      link: persistent/persistent-overview
+    - text: 可持久化数组
+      link: persistent/persistent-array
+    - text: 可持久化线段树（主席树）
+      link: persistent/persistent-segment-tree
+    - text: 静态区间第 K 小
+      link: persistent/static-range-kth
+    - text: 动态区间第 K 小
+      link: persistent/dynamic-range-kth
+    - text: 可持久化并查集
+      link: persistent/persistent-union-find
+    - text: 可持久化字典树
+      link: persistent/persistent-trie
+    - text: 区间异或第 K 大
+      link: persistent/range-xor-kth
+    - text: 历史版本查询
+      link: persistent/version-query
+    - text: 可持久化平衡树
+      link: persistent/persistent-balanced-tree
+- text: 第九部分：树链剖分与 LCA
+  collapsed: false
+  items:
+    - text: 树链剖分原理
+      link: tree-decomposition/heavy-light-decomposition
+    - text: 轻重链剖分实现
+      link: tree-decomposition/hld-implementation
+    - text: 树上路径查询
+      link: tree-decomposition/tree-path-query
+    - text: 树上路径修改
+      link: tree-decomposition/tree-path-update
+    - text: 最近公共祖先（LCA）
+      link: tree-decomposition/lca-basics
+    - text: 倍增法求 LCA
+      link: tree-decomposition/lca-binary-lifting
+    - text: Tarjan 离线求 LCA
+      link: tree-decomposition/lca-tarjan
+    - text: 树上差分
+      link: tree-decomposition/tree-diff
+    - text: 树上启发式合并
+      link: tree-decomposition/dsu-on-tree
+    - text: 虚树
+      link: tree-decomposition/virtual-tree
+- text: 第十部分：高级数据结构综合应用
+  collapsed: false
+  items:
+    - text: CDQ 分治
+      link: advanced-applications/cdq-divide-conquer
+    - text: 整体二分
+      link: advanced-applications/parallel-binary-search
+    - text: K-D 树
+      link: advanced-applications/kd-tree
+    - text: 矩形区域查询
+      link: advanced-applications/rectangle-queries
+    - text: 离线查询优化
+      link: advanced-applications/offline-query-optimization
+    - text: 在线查询优化
+      link: advanced-applications/online-query-optimization
+    - text: 数据结构选型指南
+      link: advanced-applications/data-structure-selection
+    - text: 竞赛中的数据结构技巧
+      link: advanced-applications/competitive-ds-tricks
+    - text: LeetCode 困难题实战
+      link: advanced-applications/leetcode-hard-practice
+    - text: 高级数据结构总结
+      link: advanced-applications/advanced-ds-summary

@@ -114,3 +114,9 @@ draft.md
 
 # folders created by IDE
 .idea
+
+书籍计划/
+
+.book_guide/
+.book_task/
+.book_check/

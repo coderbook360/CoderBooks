@@ -1,0 +1,97 @@
+title: "Vite 内核实现与实践: 构建 mini-vite"
+description: 本书通过拆解 Vite 的核心运行机制，围绕开发服务器、插件系统、模块图与 HMR、构建与预览、SSR 等关键模块，规划一条从原理到实现的清晰路径。所有示例均与源码细节对齐，读者将循序搭建一个可运行的 mini-vite。
+toc:
+  - text: 序言
+    link: preface
+  - text: "第 1 部分: 设计概览 (Design Overview)"
+    items:
+      - text: 1. 目标与架构总览
+        link: overview/goals-and-architecture
+      - text: 2. 核心数据流与模块图
+        link: overview/dataflow-and-module-graph
+      - text: 3. 开发与构建的边界
+        link: overview/dev-vs-build
+      - text: 4. 配置解析与默认值
+        link: overview/config-resolution-and-defaults
+  - text: "第 2 部分: 开发服务器 (Dev Server)"
+    items:
+      - text: 5. 启动流程与环境初始化
+        link: dev-server/startup-and-environments
+      - text: 6. 中间件管线与请求处理
+        link: dev-server/middleware-pipeline
+      - text: 7. 路径解析与静态资源
+        link: dev-server/path-resolution-and-static
+      - text: 8. 文件监听与变更事件
+        link: dev-server/file-watching-and-events
+  - text: "第 3 部分: 插件系统 (Plugins)"
+    items:
+      - text: 9. 插件模型与钩子
+        link: plugins/plugin-model-and-hooks
+      - text: 10. 插件容器与执行上下文
+        link: plugins/plugin-container-and-context
+      - text: 11. 索引 HTML 变换
+        link: plugins/index-html-transform
+      - text: 12. 内置插件与常用模式
+        link: plugins/builtin-plugins-and-patterns
+  - text: "第 4 部分: 依赖优化 (Dependency Optimization)"
+    items:
+      - text: 13. 扫描与入口分析
+        link: dep-optimization/scan-and-entry-analysis
+      - text: 14. 预构建与缓存目录
+        link: dep-optimization/prebundle-and-cache
+      - text: 15. 优化策略与边界
+        link: dep-optimization/strategies-and-edge-cases
+  - text: "第 5 部分: 环境与变量 (Env & Mode)"
+    items:
+      - text: 16. 环境文件与模式
+        link: env-mode/env-files-and-mode
+      - text: 17. import.meta.env 与前端暴露
+        link: env-mode/import-meta-env-and-exposure
+  - text: "第 6 部分: 模块图与转换 (Module Graph & Transform)"
+    items:
+      - text: 18. 模块图结构与节点状态
+        link: module-graph/graph-structure-and-nodes
+      - text: 19. URL 解析与入口建立
+        link: module-graph/url-resolution-and-entry
+      - text: 20. 转换缓存与失效
+        link: module-graph/transform-cache-and-invalidation
+  - text: "第 7 部分: HMR 通道 (HMR Channel)"
+    items:
+      - text: 21. WebSocket 通道与握手
+        link: hmr/ws-channel-and-handshake
+      - text: 22. 更新传播与边界
+        link: hmr/update-propagation-and-boundary
+      - text: 23. 客户端处理与热替换
+        link: hmr/client-handling-and-accept
+      - text: 24. 模块运行器与传输
+        link: hmr/module-runner-and-transport
+  - text: "第 8 部分: 构建与预览 (Build & Preview)"
+    items:
+      - text: 25. 构建选项与 Rollup 集成
+        link: build/options-and-rollup-integration
+      - text: 26. 插件链与产物输出
+        link: build/plugin-chain-and-output
+      - text: 27. 预览服务器与静态部署
+        link: build/preview-server-and-deploy
+  - text: "第 9 部分: SSR 基础 (SSR Basics)"
+    items:
+      - text: 28. 环境与模块加载
+        link: ssr/environment-and-module-loader
+      - text: 29. 堆栈重写与错误处理
+        link: ssr/stacktrace-and-errors
+      - text: 30. SSR 清单与样式预加载
+        link: ssr/manifest-and-preload
+  - text: "第 10 部分: 实践：mini-vite (Project)"
+    items:
+      - text: 31. 范围与需求定义
+        link: project/scope-and-requirements
+      - text: 32. 实现最小开发服务器
+        link: project/minimal-dev-server
+      - text: 33. 实现模块图与基本 HMR
+        link: project/module-graph-and-basic-hmr
+      - text: 34. 实现简化插件系统
+        link: project/minimal-plugin-system
+      - text: 35. 构建与预览的简化版
+        link: project/minimal-build-and-preview
+      - text: 36. 项目整合与测试验证
+        link: project/integration-and-testing

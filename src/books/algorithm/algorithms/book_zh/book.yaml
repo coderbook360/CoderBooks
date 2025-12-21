@@ -1,0 +1,289 @@
+title: LeetCode 算法技巧篇：掌握核心解题方法
+description: 本书系统讲解算法面试中最常用的解题技巧，包括递归思维、双指针、滑动窗口、前缀和、二分查找、贪心算法与回溯算法。每个技巧先讲解核心思想与适用场景，再通过精选 LeetCode 题目进行实战训练，帮助读者掌握举一反三的解题能力。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：递归思维训练
+    items:
+      - text: 1. 递归的本质与设计方法
+        link: recursion/recursion-fundamentals
+      - text: 2. 递归的三要素
+        link: recursion/three-elements
+      - text: 3. 递归与迭代的转换
+        link: recursion/recursion-vs-iteration
+      - text: 4. 实战：斐波那契数列
+        link: recursion/practice-fibonacci
+      - text: 5. 实战：爬楼梯
+        link: recursion/practice-climbing-stairs
+      - text: 6. 实战：汉诺塔问题
+        link: recursion/practice-hanoi
+      - text: 7. 实战：翻转链表（递归解法）
+        link: recursion/practice-reverse-list-recursive
+      - text: 8. 实战：二叉树的深度（递归思维）
+        link: recursion/practice-tree-depth
+      - text: 9. 实战：括号生成
+        link: recursion/practice-generate-parentheses
+      - text: 10. 实战：幂运算
+        link: recursion/practice-pow
+  - text: 第二部分：双指针技巧
+    items:
+      - text: 11. 双指针方法论
+        link: two-pointers/two-pointers-methodology
+      - text: 12. 对撞指针模式
+        link: two-pointers/collision-pointers
+      - text: 13. 快慢指针模式
+        link: two-pointers/fast-slow-pointers
+      - text: 14. 实战：反转字符串
+        link: two-pointers/practice-reverse-string
+      - text: 15. 实战：回文串判断
+        link: two-pointers/practice-valid-palindrome
+      - text: 16. 实战：盛最多水的容器
+        link: two-pointers/practice-container-with-most-water
+      - text: 17. 实战：三数之和
+        link: two-pointers/practice-three-sum
+      - text: 18. 实战：四数之和
+        link: two-pointers/practice-four-sum
+      - text: 19. 实战：最接近的三数之和
+        link: two-pointers/practice-three-sum-closest
+      - text: 20. 实战：接雨水（双指针解法）
+        link: two-pointers/practice-trapping-rain-water
+      - text: 21. 实战：颜色分类
+        link: two-pointers/practice-sort-colors
+      - text: 22. 实战：删除有序数组中的重复项 II
+        link: two-pointers/practice-remove-duplicates-ii
+      - text: 23. 实战：比较含退格的字符串
+        link: two-pointers/practice-backspace-compare
+      - text: 24. 实战：有序数组的平方
+        link: two-pointers/practice-sorted-squares
+  - text: 第三部分：滑动窗口
+    items:
+      - text: 25. 滑动窗口方法论
+        link: sliding-window/sliding-window-methodology
+      - text: 26. 固定窗口与可变窗口
+        link: sliding-window/window-types
+      - text: 27. 滑动窗口模板
+        link: sliding-window/sliding-window-template
+      - text: 28. 实战：无重复字符的最长子串
+        link: sliding-window/practice-longest-substring
+      - text: 29. 实战：最小覆盖子串
+        link: sliding-window/practice-min-window-substring
+      - text: 30. 实战：字符串的排列
+        link: sliding-window/practice-permutation-in-string
+      - text: 31. 实战：找到字符串中所有字母异位词
+        link: sliding-window/practice-find-anagrams
+      - text: 32. 实战：长度最小的子数组
+        link: sliding-window/practice-min-size-subarray
+      - text: 33. 实战：水果成篮
+        link: sliding-window/practice-fruit-baskets
+      - text: 34. 实战：K 个不同整数的子数组
+        link: sliding-window/practice-k-distinct-integers
+      - text: 35. 实战：替换后的最长重复字符
+        link: sliding-window/practice-longest-repeating-char
+      - text: 36. 实战：最大连续 1 的个数 III
+        link: sliding-window/practice-max-consecutive-ones-iii
+      - text: 37. 实战：滑动窗口中位数
+        link: sliding-window/practice-sliding-window-median
+  - text: 第四部分：前缀和与差分数组
+    items:
+      - text: 38. 前缀和原理与应用
+        link: prefix-sum/prefix-sum-theory
+      - text: 39. 差分数组原理与应用
+        link: prefix-sum/difference-array-theory
+      - text: 40. 实战：区域和检索（不可变）
+        link: prefix-sum/practice-range-sum-immutable
+      - text: 41. 实战：子数组和为 K
+        link: prefix-sum/practice-subarray-sum-k
+      - text: 42. 实战：和为 K 的子数组个数
+        link: prefix-sum/practice-subarray-count-k
+      - text: 43. 实战：区间加法
+        link: prefix-sum/practice-range-addition
+      - text: 44. 实战：二维区域和检索
+        link: prefix-sum/practice-range-sum-2d
+      - text: 45. 实战：和可被 K 整除的子数组
+        link: prefix-sum/practice-subarray-div-k
+      - text: 46. 实战：连续的子数组和
+        link: prefix-sum/practice-continuous-subarray-sum
+      - text: 47. 实战：航班预订统计
+        link: prefix-sum/practice-corpflight-bookings
+      - text: 48. 实战：拼车
+        link: prefix-sum/practice-carpool
+      - text: 49. 实战：除自身以外数组的乘积
+        link: prefix-sum/practice-product-except-self
+  - text: 第五部分：二分查找
+    items:
+      - text: 50. 二分查找原理与边界处理
+        link: binary-search/binary-search-fundamentals
+      - text: 51. 二分查找的三种模板
+        link: binary-search/binary-search-templates
+      - text: 52. 二分查找的变体问题
+        link: binary-search/binary-search-variants
+      - text: 53. 实战：基础二分查找
+        link: binary-search/practice-basic-binary-search
+      - text: 54. 实战：搜索插入位置
+        link: binary-search/practice-search-insert-position
+      - text: 55. 实战：在排序数组中查找元素的第一个和最后一个位置
+        link: binary-search/practice-find-first-last
+      - text: 56. 实战：搜索旋转排序数组
+        link: binary-search/practice-search-rotated-array
+      - text: 57. 实战：搜索旋转排序数组 II
+        link: binary-search/practice-search-rotated-array-ii
+      - text: 58. 实战：寻找峰值
+        link: binary-search/practice-find-peak-element
+      - text: 59. 实战：寻找两个正序数组的中位数
+        link: binary-search/practice-median-of-arrays
+      - text: 60. 实战：x 的平方根
+        link: binary-search/practice-sqrt-x
+      - text: 61. 实战：搜索二维矩阵
+        link: binary-search/practice-search-2d-matrix
+      - text: 62. 实战：搜索二维矩阵 II
+        link: binary-search/practice-search-2d-matrix-ii
+      - text: 63. 实战：寻找旋转排序数组中的最小值
+        link: binary-search/practice-find-minimum-rotated
+  - text: 第六部分：二分答案
+    items:
+      - text: 64. 二分答案方法论
+        link: binary-answer/binary-answer-methodology
+      - text: 65. 判定函数的设计
+        link: binary-answer/check-function-design
+      - text: 66. 实战：爱吃香蕉的珂珂
+        link: binary-answer/practice-koko-eating-bananas
+      - text: 67. 实战：在 D 天内送达包裹的能力
+        link: binary-answer/practice-ship-within-days
+      - text: 68. 实战：分割数组的最大值
+        link: binary-answer/practice-split-array-largest-sum
+      - text: 69. 实战：制作 m 束花所需的最少天数
+        link: binary-answer/practice-minimum-days-bouquets
+      - text: 70. 实战：找出第 K 小的距离对
+        link: binary-answer/practice-kth-smallest-distance
+      - text: 71. 实战：最小化最大值
+        link: binary-answer/practice-minimize-max
+      - text: 72. 实战：切割木头
+        link: binary-answer/practice-cutting-wood
+      - text: 73. 实战：书籍分配
+        link: binary-answer/practice-book-allocation
+  - text: 第七部分：贪心算法
+    items:
+      - text: 74. 贪心算法方法论
+        link: greedy/greedy-methodology
+      - text: 75. 贪心选择性质与最优子结构
+        link: greedy/greedy-properties
+      - text: 76. 贪心 vs 动态规划
+        link: greedy/greedy-vs-dp
+      - text: 77. 实战：分发饼干
+        link: greedy/practice-assign-cookies
+      - text: 78. 实战：买卖股票的最佳时机 II
+        link: greedy/practice-stock-ii
+      - text: 79. 实战：跳跃游戏
+        link: greedy/practice-jump-game
+      - text: 80. 实战：跳跃游戏 II
+        link: greedy/practice-jump-game-ii
+      - text: 81. 实战：加油站
+        link: greedy/practice-gas-station
+      - text: 82. 实战：无重叠区间
+        link: greedy/practice-non-overlapping-intervals
+      - text: 83. 实战：用最少数量的箭引爆气球
+        link: greedy/practice-min-arrows
+      - text: 84. 实战：根据身高重建队列
+        link: greedy/practice-reconstruct-queue
+      - text: 85. 实战：分发糖果
+        link: greedy/practice-candy
+      - text: 86. 实战：摆动序列
+        link: greedy/practice-wiggle-subsequence
+      - text: 87. 实战：最少需要的会议室数量
+        link: greedy/practice-min-meeting-rooms
+      - text: 88. 实战：划分字母区间
+        link: greedy/practice-partition-labels
+      - text: 89. 实战：单调递增的数字
+        link: greedy/practice-monotone-increasing
+      - text: 90. 实战：任务调度器
+        link: greedy/practice-task-scheduler
+  - text: 第八部分：分治算法
+    items:
+      - text: 91. 分治算法方法论
+        link: divide-conquer/divide-conquer-methodology
+      - text: 92. 分治算法的时间复杂度分析
+        link: divide-conquer/complexity-analysis
+      - text: 93. 实战：归并排序
+        link: divide-conquer/practice-merge-sort
+      - text: 94. 实战：快速排序
+        link: divide-conquer/practice-quick-sort
+      - text: 95. 实战：最大子数组和（分治解法）
+        link: divide-conquer/practice-max-subarray
+      - text: 96. 实战：数组中的逆序对
+        link: divide-conquer/practice-reverse-pairs
+      - text: 97. 实战：计算右侧小于当前元素的个数
+        link: divide-conquer/practice-count-smaller
+      - text: 98. 实战：排序链表
+        link: divide-conquer/practice-sort-list-dc
+      - text: 99. 实战：不同的二叉搜索树 II
+        link: divide-conquer/practice-unique-bst-ii
+      - text: 100. 实战：为运算表达式设计优先级
+        link: divide-conquer/practice-diff-ways-compute
+      - text: 101. 实战：多数元素
+        link: divide-conquer/practice-majority-element
+  - text: 第九部分：排序算法专题
+    items:
+      - text: 102. 排序算法概览与分类
+        link: sorting/sorting-overview
+      - text: 103. 比较排序的下界
+        link: sorting/comparison-sort-bound
+      - text: 104. 实战：冒泡排序实现与优化
+        link: sorting/practice-bubble-sort
+      - text: 105. 实战：选择排序实现
+        link: sorting/practice-selection-sort
+      - text: 106. 实战：插入排序实现
+        link: sorting/practice-insertion-sort
+      - text: 107. 实战：希尔排序实现
+        link: sorting/practice-shell-sort
+      - text: 108. 实战：堆排序实现
+        link: sorting/practice-heap-sort
+      - text: 109. 实战：计数排序实现
+        link: sorting/practice-counting-sort
+      - text: 110. 实战：桶排序实现
+        link: sorting/practice-bucket-sort
+      - text: 111. 实战：基数排序实现
+        link: sorting/practice-radix-sort
+      - text: 112. 实战：排序数组
+        link: sorting/practice-sort-array
+      - text: 113. 实战：排序链表
+        link: sorting/practice-sort-linked-list
+  - text: 第十部分：回溯算法
+    items:
+      - text: 114. 回溯算法方法论
+        link: backtracking/backtracking-methodology
+      - text: 115. 回溯算法模板
+        link: backtracking/backtracking-template
+      - text: 116. 剪枝优化技巧
+        link: backtracking/pruning-techniques
+      - text: 117. 实战：全排列
+        link: backtracking/practice-permutations
+      - text: 118. 实战：全排列 II
+        link: backtracking/practice-permutations-ii
+      - text: 119. 实战：组合
+        link: backtracking/practice-combinations
+      - text: 120. 实战：组合总和
+        link: backtracking/practice-combination-sum
+      - text: 121. 实战：组合总和 II
+        link: backtracking/practice-combination-sum-ii
+      - text: 122. 实战：组合总和 III
+        link: backtracking/practice-combination-sum-iii
+      - text: 123. 实战：子集
+        link: backtracking/practice-subsets
+      - text: 124. 实战：子集 II
+        link: backtracking/practice-subsets-ii
+      - text: 125. 实战：N 皇后
+        link: backtracking/practice-n-queens
+      - text: 126. 实战：N 皇后 II
+        link: backtracking/practice-n-queens-ii
+      - text: 127. 实战：解数独
+        link: backtracking/practice-sudoku-solver
+      - text: 128. 实战：单词搜索
+        link: backtracking/practice-word-search
+      - text: 129. 实战：分割回文串
+        link: backtracking/practice-partition-palindrome
+      - text: 130. 实战：复原 IP 地址
+        link: backtracking/practice-restore-ip
+      - text: 131. 实战：电话号码的字母组合
+        link: backtracking/practice-letter-combinations
+      - text: 132. 实战：括号生成（回溯解法）
+        link: backtracking/practice-generate-parentheses

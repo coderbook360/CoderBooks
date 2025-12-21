@@ -1,0 +1,212 @@
+- text: 序言
+  link: preface
+- text: 第一部分：工程化思维与全局视野
+  collapsed: false
+  items:
+    - text: 什么是前端工程化
+      link: foundations/what-is-engineering
+    - text: 工程化的演进历程
+      link: foundations/evolution
+    - text: 现代前端工程化体系全景
+      link: foundations/landscape
+    - text: 工程化思维：从手工作坊到流水线
+      link: foundations/mindset
+    - text: 技术选型方法论
+      link: foundations/tech-selection
+- text: 第二部分：模块化与依赖管理
+  collapsed: false
+  items:
+    - text: JavaScript模块化演进史
+      link: modules/history
+    - text: CommonJS规范详解
+      link: modules/commonjs
+    - text: ES Modules规范详解
+      link: modules/esm
+    - text: ESM与CJS互操作
+      link: modules/esm-cjs-interop
+    - text: npm原理与最佳实践
+      link: modules/npm-deep-dive
+    - text: package.json全字段解析
+      link: modules/package-json
+    - text: pnpm原理与workspace
+      link: modules/pnpm
+    - text: 依赖版本管理策略
+      link: modules/version-strategy
+    - text: 依赖安全审计与治理
+      link: modules/security-audit
+    - text: 私有npm仓库搭建
+      link: modules/private-registry
+- text: 第三部分：构建工具深度剖析
+  collapsed: false
+  items:
+    - text: 构建工具演进与对比
+      link: build-tools/evolution
+    - text: Webpack核心概念
+      link: build-tools/webpack-core
+    - text: Webpack Loader原理与开发
+      link: build-tools/webpack-loader
+    - text: Webpack Plugin原理与开发
+      link: build-tools/webpack-plugin
+    - text: Webpack构建优化实战
+      link: build-tools/webpack-optimization
+    - text: Vite核心原理
+      link: build-tools/vite-core
+    - text: Vite插件开发
+      link: build-tools/vite-plugin
+    - text: Vite vs Webpack深度对比
+      link: build-tools/vite-vs-webpack
+    - text: Rollup原理与库打包
+      link: build-tools/rollup
+    - text: esbuild原理与应用
+      link: build-tools/esbuild
+    - text: SWC原理与应用
+      link: build-tools/swc
+    - text: Turbopack与新一代构建工具
+      link: build-tools/turbopack
+- text: 第四部分：代码质量与规范体系
+  collapsed: false
+  items:
+    - text: 代码规范设计原则
+      link: code-quality/principles
+    - text: ESLint深度配置与规则开发
+      link: code-quality/eslint-deep
+    - text: Prettier与代码格式化
+      link: code-quality/prettier
+    - text: TypeScript严格配置策略
+      link: code-quality/typescript-strict
+    - text: Stylelint与CSS规范
+      link: code-quality/stylelint
+    - text: Commitlint与提交规范
+      link: code-quality/commitlint
+    - text: Husky与Git Hooks
+      link: code-quality/husky
+    - text: lint-staged优化提交检查
+      link: code-quality/lint-staged
+    - text: 代码规范的落地与治理
+      link: code-quality/governance
+- text: 第五部分：自动化测试体系
+  collapsed: false
+  items:
+    - text: 测试策略与测试金字塔
+      link: testing/strategy
+    - text: 单元测试：Jest深度使用
+      link: testing/jest
+    - text: 单元测试：Vitest与现代方案
+      link: testing/vitest
+    - text: 组件测试：Testing Library
+      link: testing/testing-library
+    - text: E2E测试：Playwright实战
+      link: testing/playwright
+    - text: E2E测试：Cypress实战
+      link: testing/cypress
+    - text: 可视化回归测试
+      link: testing/visual-regression
+    - text: 测试覆盖率与质量门禁
+      link: testing/coverage
+    - text: Mock策略与实践
+      link: testing/mocking
+    - text: 测试驱动开发(TDD)实践
+      link: testing/tdd
+- text: 第六部分：CI/CD与自动化流水线
+  collapsed: false
+  items:
+    - text: CI/CD核心概念
+      link: cicd/concepts
+    - text: GitHub Actions实战
+      link: cicd/github-actions
+    - text: GitLab CI实战
+      link: cicd/gitlab-ci
+    - text: Jenkins与企业级CI
+      link: cicd/jenkins
+    - text: 自动化构建流水线设计
+      link: cicd/pipeline-design
+    - text: 自动化测试集成
+      link: cicd/test-integration
+    - text: 自动化部署策略
+      link: cicd/deployment-strategy
+    - text: 环境管理与配置
+      link: cicd/environment-management
+    - text: 灰度发布与蓝绿部署
+      link: cicd/gray-release
+    - text: 回滚机制设计
+      link: cicd/rollback
+- text: 第七部分：Monorepo架构
+  collapsed: false
+  items:
+    - text: Monorepo vs Multirepo
+      link: monorepo/comparison
+    - text: Monorepo工具选型
+      link: monorepo/tools
+    - text: pnpm workspace实战
+      link: monorepo/pnpm-workspace
+    - text: Turborepo原理与实战
+      link: monorepo/turborepo
+    - text: Nx原理与实战
+      link: monorepo/nx
+    - text: Lerna使用与迁移
+      link: monorepo/lerna
+    - text: Monorepo依赖管理
+      link: monorepo/dependency-management
+    - text: Monorepo构建优化
+      link: monorepo/build-optimization
+    - text: Monorepo版本发布策略
+      link: monorepo/versioning
+    - text: 大型Monorepo实践案例
+      link: monorepo/case-study
+- text: 第八部分：微前端架构
+  collapsed: false
+  items:
+    - text: 微前端概念与适用场景
+      link: micro-frontend/concepts
+    - text: 微前端技术方案对比
+      link: micro-frontend/solutions
+    - text: qiankun原理与实战
+      link: micro-frontend/qiankun
+    - text: Module Federation原理
+      link: micro-frontend/module-federation
+    - text: Module Federation实战
+      link: micro-frontend/mf-practice
+    - text: iframe方案与优化
+      link: micro-frontend/iframe
+    - text: 微前端通信机制
+      link: micro-frontend/communication
+    - text: 微前端样式隔离
+      link: micro-frontend/style-isolation
+    - text: 微前端JS沙箱
+      link: micro-frontend/js-sandbox
+    - text: 微前端部署与运维
+      link: micro-frontend/deployment
+- text: 第九部分：前端监控与可观测性
+  collapsed: false
+  items:
+    - text: 前端监控体系设计
+      link: monitoring/system-design
+    - text: 错误监控与上报
+      link: monitoring/error-tracking
+    - text: 性能监控指标设计
+      link: monitoring/performance-metrics
+    - text: 用户行为追踪
+      link: monitoring/user-tracking
+    - text: SourceMap与错误定位
+      link: monitoring/sourcemap
+    - text: Sentry实战与定制
+      link: monitoring/sentry
+    - text: 自研监控SDK设计
+      link: monitoring/custom-sdk
+    - text: 数据分析与告警
+      link: monitoring/alerting
+    - text: APM与全链路追踪
+      link: monitoring/apm
+- text: 第十部分：工程化实战与综合案例
+  collapsed: false
+  items:
+    - text: 从零搭建企业级工程化体系
+      link: practice/enterprise-setup
+    - text: 大型项目架构设计
+      link: practice/large-project
+    - text: 遗留项目工程化改造
+      link: practice/legacy-refactor
+    - text: 开源项目工程化实践
+      link: practice/open-source
+    - text: 工程化体系的持续演进
+      link: practice/continuous-evolution

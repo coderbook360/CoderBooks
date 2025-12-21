@@ -1,0 +1,101 @@
+title: VSCode Vim 10x 效率指南：完全键盘驱动的开发工作流
+description: 本书专为追求极致效率的开发者打造，聚焦 VSCode Vim 实战技巧，帮助你快速建立全键盘工作流，实现 10 倍效率提升。
+toc:
+  - text: 序言
+    link: preface
+  - text: 1. VSCode Vim 安装与核心配置
+    link: setup/installation
+  - text: 2. 快捷键冲突解决与自定义键位
+    link: setup/key-conflicts
+  - text: 3. 模式切换与 IME 优化
+    link: setup/mode-switching
+  - text: 4. Vim 思维模式与基础移动
+    link: vim-core/vim-mindset
+  - text: 5. 操作符与文本对象组合
+    link: vim-core/operators-text-objects
+  - text: 6. 重复、撤销与寄存器
+    link: vim-core/repeat-and-undo
+  - text: 7. 文件树与 Tab 管理
+    link: file-management/explorer-keyboard
+  - text: 8. 文件快速切换与重命名
+    link: file-management/file-switching
+  - text: 9. 代码跳转与定义查找
+    link: navigation/code-jumping
+  - text: 10. Symbol 导航与跳转历史
+    link: navigation/symbol-navigation
+  - text: 11. Peek 定义与引用查看
+    link: navigation/peek-references
+  - text: 12. 面包屑、大纲与标记系统
+    link: navigation/breadcrumb-outline
+  - text: 13. EasyMotion 与 Sneak 精确跳转
+    link: motion/easymotion
+  - text: 14. 搜索驱动的移动与选择
+    link: motion/search-movement
+  - text: 15. Visual 模式与 Vim Surround
+    link: motion/visual-mode
+  - text: 16. 智能提示与代码补全
+    link: vscode-integration/intellisense
+  - text: 17. 快速修复与重构
+    link: vscode-integration/quick-fix
+  - text: 18. 代码片段与选择扩展
+    link: vscode-integration/snippets
+  - text: 19. 命令面板与搜索替换
+    link: vscode-integration/command-palette
+  - text: 20. 调试与 Terminal 集成
+    link: vscode-integration/debugging
+  - text: 21. 问题面板与错误导航
+    link: diagnostics/problem-navigation
+  - text: 22. Lint、TypeScript 诊断与格式化
+    link: diagnostics/lint-errors
+  - text: 23. Git 变更审查与调试
+    link: diagnostics/git-changes
+  - text: 24. 侧边栏完全键盘操作
+    link: sidebar/sidebar-keyboard
+  - text: 25. 扩展与源码管理视图
+    link: sidebar/extensions-keyboard
+  - text: 26. Terminal 与底部面板
+    link: sidebar/terminal-keyboard
+  - text: 27. 分屏策略与布局管理
+    link: windows/split-management
+  - text: 28. Zen 模式与专注编辑
+    link: windows/zen-mode
+  - text: 29. 搜索替换与正则表达式
+    link: batch/search-replace
+  - text: 30. 多光标与 Visual Block
+    link: batch/multi-cursor
+  - text: 31. 点命令与宏录制
+    link: batch/dot-command
+  - text: 32. 寄存器系统与批量重构
+    link: batch/registers
+  - text: 33. HTML/JSX 与 Emmet 高效编码
+    link: frontend/html-jsx
+  - text: 34. CSS/SCSS 编辑技巧
+    link: frontend/css-editing
+  - text: 35. JavaScript/TypeScript 重构
+    link: frontend/js-ts-refactoring
+  - text: 36. React 组件开发工作流
+    link: frontend/react-workflow
+  - text: 37. 导入管理与测试文件跳转
+    link: frontend/import-management
+  - text: 38. Git 基础操作与 Stage/Commit
+    link: git/git-keyboard-workflow
+  - text: 39. 分支管理与合并冲突
+    link: git/branch-management
+  - text: 40. Diff、Blame 与差异导航
+    link: git/diff-blame
+  - text: 41. Git 高级操作技巧
+    link: git/advanced-git
+  - text: 42. 最优键位组合与击键优化
+    link: efficiency/optimal-keybindings
+  - text: 43. 从鼠标到键盘的迁移路线
+    link: efficiency/mouse-to-keyboard
+  - text: 44. 常见陷阱与效率测量
+    link: efficiency/common-pitfalls
+  - text: 45. 自定义命令与工作区配置
+    link: efficiency/custom-commands
+  - text: 46. Leader 键与条件映射
+    link: advanced/leader-key-system
+  - text: 47. 性能调优与配置同步
+    link: advanced/performance-tuning
+  - text: 48. 专家级配置与故障排除
+    link: advanced/expert-config

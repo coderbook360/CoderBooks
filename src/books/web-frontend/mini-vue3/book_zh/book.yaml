@@ -1,0 +1,215 @@
+title: Vue 3 源码解析：深入理解框架设计与实现
+description: 本书专注于 Vue 3 的核心源码原理，深入剖析响应式系统、调度器、渲染器、组件系统和编译器的完整实现。通过系统性的源码分析，帮助你真正理解 Vue 3 的设计哲学与实现细节。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：框架设计哲学 (Framework Design Philosophy)
+    items:
+      - text: 1. Vue 3 的设计目标与核心理念
+        link: overview/design-philosophy
+      - text: 2. 命令式与声明式：两种范式的权衡
+        link: overview/imperative-vs-declarative
+      - text: 3. 运行时与编译时：性能优化的关键抉择
+        link: overview/runtime-vs-compiletime
+      - text: 4. Vue 3 核心模块划分与数据流
+        link: overview/core-modules
+      - text: 5. Vue 3 与 Vue 2 的架构差异对比
+        link: overview/vue2-vs-vue3
+  - text: 第二部分：响应式系统核心 (Reactivity Core)
+    items:
+      - text: 6. 响应式系统概览：从 Object.defineProperty 到 Proxy
+        link: reactivity/overview
+      - text: 7. reactive 的实现：创建深层响应式对象
+        link: reactivity/reactive
+      - text: 8. effect 与依赖收集：track 和 trigger 的实现
+        link: reactivity/effect-track-trigger
+      - text: 9. 依赖清理与嵌套 effect 的处理
+        link: reactivity/effect-cleanup
+      - text: 10. ref 的实现：处理原始值的响应式包装
+        link: reactivity/ref
+      - text: 11. computed 的实现：惰性求值与缓存机制
+        link: reactivity/computed
+      - text: 12. watch 与 watchEffect：侦听器的完整实现
+        link: reactivity/watch
+  - text: 第三部分：响应式系统进阶 (Reactivity Advanced)
+    items:
+      - text: 13. shallowReactive 与 shallowRef：浅层响应式
+        link: reactivity-advanced/shallow
+      - text: 14. readonly 与 shallowReadonly：只读代理的实现
+        link: reactivity-advanced/readonly
+      - text: 15. toRaw 与 markRaw：逃离响应式
+        link: reactivity-advanced/raw
+      - text: 16. toRef 与 toRefs：响应式解构的秘密
+        link: reactivity-advanced/to-refs
+      - text: 17. effectScope：副作用作用域管理
+        link: reactivity-advanced/effect-scope
+      - text: 18. 响应式系统的边界处理与常见陷阱
+        link: reactivity-advanced/edge-cases
+  - text: 第四部分：调度器系统 (Scheduler System)
+    items:
+      - text: 19. 调度器概述：Vue 3 异步更新机制
+        link: scheduler/overview
+      - text: 20. queueJob：任务队列的管理与排序
+        link: scheduler/queue-job
+      - text: 21. Pre/Post FlushCbs：刷新回调的处理
+        link: scheduler/flush-cbs
+      - text: 22. nextTick 的实现原理
+        link: scheduler/next-tick
+      - text: 23. SchedulerJobFlags 与递归保护
+        link: scheduler/job-flags
+  - text: 第五部分：虚拟 DOM 与渲染器 (Virtual DOM & Renderer)
+    items:
+      - text: 24. 虚拟 DOM 概述：为什么需要 VNode
+        link: renderer/vdom-overview
+      - text: 25. VNode 的类型设计与创建函数
+        link: renderer/vnode-design
+      - text: 26. 渲染器架构：createRenderer 的设计
+        link: renderer/renderer-architecture
+      - text: 27. 元素的挂载流程：mountElement
+        link: renderer/mount-element
+      - text: 28. 属性与样式的处理：patchProp
+        link: renderer/patch-prop
+      - text: 29. 事件处理：invoker 模式的优化
+        link: renderer/event-handling
+      - text: 30. 元素的更新流程：patchElement
+        link: renderer/patch-element
+      - text: 31. 子节点的挂载与更新
+        link: renderer/children
+  - text: 第六部分：Diff 算法详解 (Diff Algorithm In-Depth)
+    items:
+      - text: 32. Diff 算法概述：最小化 DOM 操作的核心
+        link: diff/overview
+      - text: 33. 简单 Diff 算法：基础实现与局限性
+        link: diff/simple-diff
+      - text: 34. 双端 Diff 算法：优化比较策略
+        link: diff/double-ended-diff
+      - text: 35. 快速 Diff 算法：预处理与最长递增子序列
+        link: diff/fast-diff
+      - text: 36. 最长递增子序列算法详解
+        link: diff/lis-algorithm
+      - text: 37. key 的作用与 Diff 性能优化
+        link: diff/key-optimization
+  - text: 第七部分：组件系统基础 (Component Fundamentals)
+    items:
+      - text: 38. 组件的本质：状态与行为的封装
+        link: component/overview
+      - text: 39. 组件实例的创建与初始化
+        link: component/instance-creation
+      - text: 40. 组件公共实例代理：this 的实现
+        link: component/public-instance
+      - text: 41. 组件的挂载流程：mountComponent
+        link: component/mounting
+      - text: 42. 组件的更新流程：updateComponent
+        link: component/updating
+      - text: 43. Props 的声明、校验与传递
+        link: component/props
+      - text: 44. Emit 事件的实现机制
+        link: component/emit
+      - text: 45. Slots 插槽的实现与作用域插槽
+        link: component/slots
+  - text: 第八部分：组件系统进阶 (Component Advanced)
+    items:
+      - text: 46. setup 函数与 Composition API
+        link: component-advanced/setup-function
+      - text: 47. 生命周期钩子的注册与调用
+        link: component-advanced/lifecycle-hooks
+      - text: 48. provide 与 inject：跨层级通信
+        link: component-advanced/provide-inject
+      - text: 49. 异步组件与 defineAsyncComponent
+        link: component-advanced/async-component
+      - text: 50. 函数式组件的实现
+        link: component-advanced/functional-component
+      - text: 51. 自定义指令的完整实现
+        link: component-advanced/directives
+  - text: 第九部分：内置组件实现原理 (Built-in Components)
+    items:
+      - text: 52. KeepAlive：组件缓存与 LRU 策略
+        link: builtin/keep-alive
+      - text: 53. Teleport：跨 DOM 层级渲染
+        link: builtin/teleport
+      - text: 54. Transition：过渡动画的实现机制
+        link: builtin/transition
+      - text: 55. Suspense：异步依赖的协调与 fallback
+        link: builtin/suspense
+      - text: 56. Fragment：多根节点的处理
+        link: builtin/fragment
+  - text: 第十部分：编译器核心 (Compiler Core)
+    items:
+      - text: 57. 编译器概述：模板到渲染函数的完整流程
+        link: compiler/overview
+      - text: 58. 词法分析：有限状态机与 Token 化
+        link: compiler/tokenizer
+      - text: 59. 语法分析：递归下降解析模板 AST
+        link: compiler/parser
+      - text: 60. 模板 AST 的节点类型设计
+        link: compiler/ast-design
+      - text: 61. 插值表达式与指令的解析
+        link: compiler/interpolation-directive
+  - text: 第十一部分：编译器转换 (Compiler Transform)
+    items:
+      - text: 62. AST 转换概述：Transform 阶段的设计
+        link: transform/overview
+      - text: 63. 节点转换与上下文对象
+        link: transform/context
+      - text: 64. v-if 与 v-else 的转换实现
+        link: transform/v-if
+      - text: 65. v-for 的转换实现
+        link: transform/v-for
+      - text: 66. v-on 事件绑定的转换
+        link: transform/v-on
+      - text: 67. v-bind 与动态属性的转换
+        link: transform/v-bind
+      - text: 68. v-model 双向绑定的转换
+        link: transform/v-model
+  - text: 第十二部分：编译优化 (Compiler Optimization)
+    items:
+      - text: 69. 编译优化概述：静态分析与运行时提示
+        link: optimization/overview
+      - text: 70. PatchFlags：精确的更新提示
+        link: optimization/patch-flags
+      - text: 71. 静态提升：hoistStatic 的实现
+        link: optimization/hoist-static
+      - text: 72. 预字符串化：将静态内容转为字符串
+        link: optimization/stringify-static
+      - text: 73. Block Tree 与动态节点收集
+        link: optimization/block-tree
+      - text: 74. 缓存事件处理函数
+        link: optimization/cache-handlers
+      - text: 75. v-once 与 v-memo 的优化实现
+        link: optimization/v-once-v-memo
+  - text: 第十三部分：代码生成 (Code Generation)
+    items:
+      - text: 76. 代码生成器的架构设计
+        link: codegen/architecture
+      - text: 77. 生成 render 函数代码
+        link: codegen/render-function
+      - text: 78. 运行时辅助函数的调用生成
+        link: codegen/runtime-helpers
+      - text: 79. JavaScript AST 的代码生成
+        link: codegen/js-ast
+      - text: 80. Source Map 的生成原理
+        link: codegen/source-map
+  - text: 第十四部分：SFC 编译 (Single File Component)
+    items:
+      - text: 81. SFC 概述：.vue 文件的编译流程
+        link: sfc/overview
+      - text: 82. SFC 解析：分离 template/script/style
+        link: sfc/parsing
+      - text: 83. script setup 的编译处理
+        link: sfc/script-setup
+      - text: 84. CSS 作用域：scoped 样式的实现
+        link: sfc/scoped-css
+      - text: 85. CSS Modules 与 v-bind in CSS
+        link: sfc/css-modules
+  - text: 第十五部分：服务端渲染 (Server Side Rendering)
+    items:
+      - text: 86. SSR 概述：服务端渲染的原理与挑战
+        link: ssr/overview
+      - text: 87. SSR 渲染器：renderToString 的实现
+        link: ssr/render-to-string
+      - text: 88. SSR 编译模式：优化的服务端代码生成
+        link: ssr/compiler-mode
+      - text: 89. 客户端激活：hydration 的实现
+        link: ssr/hydration
+      - text: 90. 流式渲染：renderToStream
+        link: ssr/streaming

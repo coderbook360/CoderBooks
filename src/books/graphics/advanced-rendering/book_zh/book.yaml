@@ -1,0 +1,163 @@
+title: 3D 场景管理与高级渲染
+description: 本书讲解现代 3D 引擎的核心技术，从场景图到 PBR 材质，从阴影系统到性能优化。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：场景图系统 (Scene Graph)
+    items:
+      - text: 1. 场景图概述与设计原理
+        link: scene-graph/scene-graph-overview
+      - text: 2. 节点树结构实现
+        link: scene-graph/tree-structure
+      - text: 3. 变换继承与传播
+        link: scene-graph/transform-inheritance
+      - text: 4. 世界矩阵计算
+        link: scene-graph/world-matrix
+      - text: 5. 渲染遍历算法
+        link: scene-graph/render-traversal
+      - text: 6. 场景查询与过滤
+        link: scene-graph/scene-query
+  - text: 第二部分：相机系统 (Camera System)
+    items:
+      - text: 7. 相机概述与分类
+        link: camera/camera-overview
+      - text: 8. 透视相机实现
+        link: camera/perspective-camera
+      - text: 9. 正交相机实现
+        link: camera/orthographic-camera
+      - text: 10. 相机控制器：轨道控制
+        link: camera/orbit-controls
+      - text: 11. 相机控制器：第一人称
+        link: camera/first-person-controls
+      - text: 12. 视锥体剔除实现
+        link: camera/frustum-culling
+  - text: 第三部分：材质系统 (Material System)
+    items:
+      - text: 13. 材质系统架构设计
+        link: materials/material-architecture
+      - text: 14. 基础材质：MeshBasicMaterial
+        link: materials/mesh-basic-material
+      - text: 15. Lambert 材质实现
+        link: materials/lambert-material
+      - text: 16. Phong 材质实现
+        link: materials/phong-material
+      - text: 17. PBR 材质理论基础
+        link: materials/pbr-theory
+      - text: 18. PBR 材质实现：金属度与粗糙度
+        link: materials/pbr-implementation
+      - text: 19. 材质参数系统
+        link: materials/material-parameters
+  - text: 第四部分：光照与阴影 (Lighting and Shadows)
+    items:
+      - text: 20. 光源系统架构
+        link: lighting/light-system
+      - text: 21. 环境光实现
+        link: lighting/ambient-light
+      - text: 22. 平行光实现
+        link: lighting/directional-light
+      - text: 23. 点光源实现
+        link: lighting/point-light
+      - text: 24. 聚光灯实现
+        link: lighting/spot-light
+      - text: 25. IBL 基于图像的光照
+        link: lighting/ibl
+      - text: 26. HDR 与色调映射
+        link: lighting/hdr-tone-mapping
+      - text: 27. 阴影映射原理
+        link: lighting/shadow-mapping
+      - text: 28. PCF 软阴影
+        link: lighting/pcf-shadows
+      - text: 29. CSM 级联阴影贴图
+        link: lighting/csm
+      - text: 30. 球谐光照 (Spherical Harmonics)
+        link: lighting/spherical-harmonics
+      - text: 31. VSM 方差阴影映射
+        link: lighting/vsm-shadows
+      - text: 32. PCSS 百分比渐进软阴影
+        link: lighting/pcss-shadows
+  - text: 第五部分：几何体系统 (Geometry System)
+    items:
+      - text: 33. 几何体架构设计
+        link: geometry/geometry-architecture
+      - text: 34. BufferGeometry 实现
+        link: geometry/buffer-geometry
+      - text: 35. 内置几何体：立方体
+        link: geometry/box-geometry
+      - text: 36. 内置几何体：球体
+        link: geometry/sphere-geometry
+      - text: 37. 内置几何体：平面与圆柱
+        link: geometry/plane-cylinder
+      - text: 38. 自定义几何体
+        link: geometry/custom-geometry
+      - text: 39. 网格简化算法 (QEM)
+        link: geometry/mesh-simplification
+  - text: 第六部分：模型加载与后处理 (Loaders & Post-Processing)
+    items:
+      - text: 40. glTF 模型格式详解
+        link: loaders/gltf-format
+      - text: 41. glTF 加载器实现
+        link: loaders/gltf-loader
+      - text: 42. Draco 网格压缩
+        link: loaders/draco-compression
+      - text: 43. 后处理概述与框架
+        link: post-processing/overview
+      - text: 44. Bloom 辉光效果
+        link: post-processing/bloom
+      - text: 45. SSAO 环境光遮蔽
+        link: post-processing/ssao
+      - text: 46. HBAO+ 高级环境光遮蔽
+        link: post-processing/hbao-plus
+      - text: 47. SSR 屏幕空间反射
+        link: post-processing/ssr
+      - text: 48. SSGI 屏幕空间全局光照
+        link: post-processing/ssgi
+  - text: 第七部分：动画系统 (Animation System)
+    items:
+      - text: 49. 骨骼动画原理
+        link: animation/skeletal-animation-theory
+      - text: 50. 骨骼层级与绑定
+        link: animation/skeletal-hierarchy
+      - text: 51. 蒙皮权重计算
+        link: animation/skinning-weights
+      - text: 52. 动画关键帧插值
+        link: animation/keyframe-interpolation
+      - text: 53. 动画混合与状态机
+        link: animation/animation-blending
+      - text: 54. IK 反向动力学系统
+        link: animation/ik-system
+      - text: 55. IK 求解器算法
+        link: animation/ik-solvers
+  - text: 第八部分：性能优化 (Performance Optimization)
+    items:
+      - text: 56. 性能分析工具与方法
+        link: performance/profiling-tools
+      - text: 57. Draw Call 优化
+        link: performance/draw-call-optimization
+      - text: 58. 批量渲染实现
+        link: performance/batch-rendering
+      - text: 59. 实例化渲染
+        link: performance/instanced-rendering
+      - text: 60. LOD 系统实现
+        link: performance/lod-system
+      - text: 61. 视锥体剔除优化
+        link: performance/frustum-culling
+      - text: 62. 遮挡剔除技术
+        link: performance/occlusion-culling
+      - text: 63. KD-Tree 空间分割
+        link: performance/kd-tree
+      - text: 64. PVS 预计算可见性
+        link: performance/pvs
+      - text: 65. 八叉树空间分割
+        link: performance/octree
+      - text: 66. BVH 层次包围盒
+        link: performance/bvh
+      - text: 67. 渲染队列优化
+        link: performance/render-queue
+  - text: 第九部分：综合实战 (Final Project)
+    items:
+      - text: 68. 实战：3D 游戏场景渲染器
+        link: project/game-scene-renderer
+      - text: 69. 性能监控与调试
+        link: project/performance-monitoring
+      - text: 70. 从引擎到 Three.js 源码
+        link: project/to-threejs-source

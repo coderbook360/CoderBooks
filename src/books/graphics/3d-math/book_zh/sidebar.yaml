@@ -1,0 +1,116 @@
+- text: 序言
+  link: preface
+- text: 第一部分：向量运算 (Vector Operations)
+  collapsed: false
+  items:
+    - text: 向量的概念与表示
+      link: vectors/vector-basics
+    - text: 向量的加减与数乘
+      link: vectors/vector-arithmetic
+    - text: 向量的长度与归一化
+      link: vectors/vector-length
+    - text: 点积与叉积
+      link: vectors/dot-cross-product
+    - text: 向量在图形学中的应用
+      link: vectors/vector-applications
+- text: 第二部分：矩阵运算 (Matrix Operations)
+  collapsed: false
+  items:
+    - text: 矩阵的概念与表示
+      link: matrices/matrix-basics
+    - text: 矩阵的加减与数乘
+      link: matrices/matrix-arithmetic
+    - text: 矩阵乘法详解
+      link: matrices/matrix-multiplication
+    - text: 特殊矩阵：单位矩阵与逆矩阵
+      link: matrices/special-matrices
+    - text: 转置矩阵与矩阵属性
+      link: matrices/matrix-transpose
+- text: 第三部分：3D 变换 (3D Transformations)
+  collapsed: false
+  items:
+    - text: 齐次坐标系统
+      link: transforms/homogeneous-coordinates
+    - text: 平移变换矩阵
+      link: transforms/translation-matrix
+    - text: 旋转变换矩阵
+      link: transforms/rotation-matrix
+    - text: 欧拉角与万向节死锁
+      link: transforms/euler-angles
+    - text: 缩放与镜像变换
+      link: transforms/scale-mirror
+    - text: 复合变换与变换顺序
+      link: transforms/composite-transforms
+    - text: 法线变换与逆转置矩阵
+      link: transforms/normal-transform
+    - text: Look-At 矩阵构建详解
+      link: transforms/lookat-matrix
+- text: 第四部分：坐标系统 (Coordinate Systems)
+  collapsed: false
+  items:
+    - text: 模型空间与世界空间
+      link: coordinates/model-world-space
+    - text: 观察空间与相机变换
+      link: coordinates/view-space
+    - text: 裁剪空间与归一化设备坐标
+      link: coordinates/clip-ndc
+    - text: 屏幕空间与视口变换
+      link: coordinates/screen-space
+    - text: 切线空间与 TBN 矩阵
+      link: coordinates/tangent-space
+- text: 第五部分：投影变换 (Projection Transforms)
+  collapsed: false
+  items:
+    - text: 投影变换概述
+      link: projection/projection-overview
+    - text: 正交投影矩阵推导
+      link: projection/orthographic
+    - text: 透视投影矩阵推导
+      link: projection/perspective
+    - text: 视锥体与裁剪
+      link: projection/frustum-culling
+    - text: 深度缓冲与深度精度
+      link: projection/depth-buffer
+- text: 第六部分：四元数 (Quaternions)
+  collapsed: false
+  items:
+    - text: 为什么需要四元数
+      link: quaternions/why-quaternions
+    - text: 四元数的定义与表示
+      link: quaternions/quaternion-basics
+    - text: 四元数的运算
+      link: quaternions/quaternion-operations
+    - text: 用四元数表示旋转
+      link: quaternions/rotation-quaternion
+    - text: 四元数与欧拉角的转换
+      link: quaternions/euler-quaternion
+    - text: 四元数插值：Slerp
+      link: quaternions/slerp
+- text: 第七部分：几何运算与应用 (Geometry and Applications)
+  collapsed: false
+  items:
+    - text: 射线与平面的交点
+      link: geometry/ray-plane
+    - text: 轴对齐包围盒 AABB
+      link: geometry/aabb
+    - text: 球体包围盒与碰撞检测
+      link: geometry/bounding-sphere
+    - text: OBB 有向包围盒
+      link: geometry/obb
+    - text: 射线-三角形相交算法
+      link: geometry/ray-triangle
+    - text: 点与三角形的关系
+      link: geometry/point-triangle
+- text: 第八部分：综合实战 (Practical Implementation)
+  collapsed: false
+  items:
+    - text: 构建完整的 3D 数学库
+      link: practice/complete-math-library
+    - text: 矩阵分解与重组
+      link: practice/matrix-decomposition
+    - text: 性能优化：SIMD 与向量化
+      link: practice/performance-optimization
+    - text: 与 Three.js 数学库对比分析
+      link: practice/threejs-comparison
+    - text: 实战案例：相机控制器实现
+      link: practice/camera-controller

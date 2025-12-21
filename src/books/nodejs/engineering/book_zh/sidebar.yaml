@@ -1,0 +1,200 @@
+- text: 序言
+  link: preface
+- text: 第一部分：TypeScript 工程化
+  collapsed: false
+  items:
+    - text: TypeScript 与 Node.js 概述
+      link: typescript/overview
+    - text: tsconfig.json 配置详解
+      link: typescript/tsconfig
+    - text: 模块系统选择：CommonJS vs ESM
+      link: typescript/module-system
+    - text: 路径别名与模块解析
+      link: typescript/path-aliases
+    - text: 类型声明文件与 @types
+      link: typescript/type-declarations
+    - text: Node.js 类型实践技巧
+      link: typescript/typing-practices
+    - text: 编译策略与构建工具
+      link: typescript/build-tools
+    - text: tsx 与开发时编译
+      link: typescript/tsx-development
+    - text: TypeScript 严格模式最佳实践
+      link: typescript/strict-mode
+- text: 第二部分：代码质量保障
+  collapsed: false
+  items:
+    - text: 代码规范的价值与实施
+      link: code-quality/code-standards-value
+    - text: ESLint 配置详解
+      link: code-quality/eslint-config
+    - text: Prettier 代码格式化
+      link: code-quality/prettier
+    - text: ESLint 与 Prettier 协作
+      link: code-quality/eslint-prettier
+    - text: 自定义 ESLint 规则
+      link: code-quality/custom-eslint-rules
+    - text: Git Hooks 与 Husky
+      link: code-quality/husky-git-hooks
+    - text: lint-staged 增量检查
+      link: code-quality/lint-staged
+    - text: Commitlint 提交规范
+      link: code-quality/commitlint
+    - text: 代码审查最佳实践
+      link: code-quality/code-review
+- text: 第三部分：测试体系建设
+  collapsed: false
+  items:
+    - text: Node.js 测试策略概览
+      link: testing/testing-strategy
+    - text: Vitest 入门与配置
+      link: testing/vitest-basics
+    - text: Jest 入门与配置
+      link: testing/jest-basics
+    - text: 单元测试编写技巧
+      link: testing/unit-testing
+    - text: 异步代码测试
+      link: testing/async-testing
+    - text: Mock 与 Stub 详解
+      link: testing/mocking
+    - text: 数据库测试策略
+      link: testing/database-testing
+    - text: HTTP 接口测试：Supertest
+      link: testing/api-testing
+    - text: 集成测试设计
+      link: testing/integration-testing
+    - text: E2E 测试入门
+      link: testing/e2e-testing
+    - text: 测试覆盖率与质量门禁
+      link: testing/coverage
+    - text: 测试驱动开发(TDD)实践
+      link: testing/tdd
+    - text: 快照测试
+      link: testing/snapshot-testing
+    - text: 性能测试与基准测试
+      link: testing/performance-testing
+- text: 第四部分：CI/CD 实践
+  collapsed: false
+  items:
+    - text: CI/CD 概念与价值
+      link: cicd/cicd-concepts
+    - text: GitHub Actions 入门
+      link: cicd/github-actions-intro
+    - text: 工作流语法详解
+      link: cicd/workflow-syntax
+    - text: Node.js 项目 CI 配置
+      link: cicd/nodejs-ci
+    - text: 矩阵构建与多版本测试
+      link: cicd/matrix-build
+    - text: 缓存优化构建速度
+      link: cicd/caching
+    - text: 密钥与环境变量管理
+      link: cicd/secrets-management
+    - text: 自动化发布到 npm
+      link: cicd/npm-publish
+    - text: 自动化版本管理：semantic-release
+      link: cicd/semantic-release
+    - text: Docker 镜像构建与推送
+      link: cicd/docker-build-push
+    - text: 自动化部署流程
+      link: cicd/automated-deployment
+    - text: 质量门禁与强制检查
+      link: cicd/quality-gates
+- text: 第五部分：容器化与部署
+  collapsed: false
+  items:
+    - text: Docker 基础回顾
+      link: deployment/docker-basics
+    - text: Node.js Dockerfile 最佳实践
+      link: deployment/dockerfile-best-practices
+    - text: 多阶段构建优化镜像
+      link: deployment/multi-stage-build
+    - text: Docker Compose 本地开发
+      link: deployment/docker-compose
+    - text: PM2 进程管理详解
+      link: deployment/pm2-deep-dive
+    - text: PM2 集群模式与负载均衡
+      link: deployment/pm2-cluster
+    - text: 优雅启停与零停机部署
+      link: deployment/graceful-shutdown
+    - text: 传统服务器部署指南
+      link: deployment/traditional-deployment
+    - text: 云平台部署：AWS、GCP、Azure
+      link: deployment/cloud-deployment
+    - text: Serverless 部署入门
+      link: deployment/serverless
+    - text: Kubernetes 入门与实践
+      link: deployment/kubernetes-intro
+- text: 第六部分：日志与监控
+  collapsed: false
+  items:
+    - text: 日志设计原则
+      link: logging/logging-principles
+    - text: console 的局限性
+      link: logging/console-limitations
+    - text: Winston 日志框架
+      link: logging/winston
+    - text: Pino 高性能日志
+      link: logging/pino
+    - text: 结构化日志与 JSON
+      link: logging/structured-logging
+    - text: 日志级别与分类策略
+      link: logging/log-levels
+    - text: 请求追踪与关联 ID
+      link: logging/correlation-id
+    - text: 日志聚合与分析
+      link: logging/log-aggregation
+    - text: 健康检查端点设计
+      link: monitoring/health-checks
+    - text: 指标收集与 Prometheus
+      link: monitoring/prometheus
+    - text: APM 接入：New Relic、Datadog
+      link: monitoring/apm
+    - text: 告警设计与实现
+      link: monitoring/alerting
+    - text: 生产环境问题诊断
+      link: monitoring/production-debugging
+- text: 第七部分：配置与环境管理
+  collapsed: false
+  items:
+    - text: 配置管理原则
+      link: config/config-principles
+    - text: 环境变量最佳实践
+      link: config/environment-variables
+    - text: dotenv 与配置文件
+      link: config/dotenv
+    - text: 多环境配置管理
+      link: config/multi-environment
+    - text: 配置验证与类型安全
+      link: config/config-validation
+    - text: 密钥管理策略
+      link: config/secrets-management
+    - text: 功能开关与特性标记
+      link: config/feature-flags
+    - text: 配置中心入门
+      link: config/config-center
+- text: 第八部分：项目组织与协作
+  collapsed: false
+  items:
+    - text: 项目目录结构规范
+      link: organization/project-structure
+    - text: Monorepo 概念与选型
+      link: organization/monorepo-intro
+    - text: Turborepo 实战
+      link: organization/turborepo
+    - text: Nx 工作区管理
+      link: organization/nx
+    - text: pnpm Workspace
+      link: organization/pnpm-workspace
+    - text: 共享代码与内部包
+      link: organization/internal-packages
+    - text: 版本管理策略
+      link: organization/versioning
+    - text: CHANGELOG 自动生成
+      link: organization/changelog
+    - text: 发布流程规范
+      link: organization/release-process
+    - text: 团队协作规范
+      link: organization/team-collaboration
+    - text: 工程化总结与检查清单
+      link: organization/summary-checklist

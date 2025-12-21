@@ -1,0 +1,247 @@
+title: LeetCode 算法通关之路（六）：算法竞赛实战篇
+description: 本书面向有志于算法竞赛的选手和追求极致的算法爱好者，涵盖数论与数学、高级博弈论、网络流、计算几何、字符串高级算法以及竞赛真题实战等内容。这是算法进阶的最后一程，助你冲击 ACM-ICPC、Codeforces 等顶级赛事。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：数论与数学基础
+    items:
+      - text: 1. 质数筛法（埃氏筛、欧拉筛）
+        link: number-theory/prime-sieve
+      - text: 2. 质因数分解
+        link: number-theory/prime-factorization
+      - text: 3. 最大公约数与最小公倍数
+        link: number-theory/gcd-lcm
+      - text: 4. 扩展欧几里得算法
+        link: number-theory/extended-gcd
+      - text: 5. 模运算与同余
+        link: number-theory/modular-arithmetic
+      - text: 6. 快速幂与矩阵快速幂
+        link: number-theory/fast-power
+      - text: 7. 乘法逆元
+        link: number-theory/modular-inverse
+      - text: 8. 中国剩余定理
+        link: number-theory/chinese-remainder-theorem
+      - text: 9. 欧拉函数
+        link: number-theory/euler-totient
+      - text: 10. 费马小定理与威尔逊定理
+        link: number-theory/fermat-wilson
+  - text: 第二部分：组合数学
+    items:
+      - text: 11. 排列与组合基础
+        link: combinatorics/permutation-combination
+      - text: 12. 组合数计算与 Lucas 定理
+        link: combinatorics/lucas-theorem
+      - text: 13. 卡特兰数
+        link: combinatorics/catalan-number
+      - text: 14. 斯特林数
+        link: combinatorics/stirling-number
+      - text: 15. 贝尔数与划分数
+        link: combinatorics/bell-partition
+      - text: 16. 容斥原理
+        link: combinatorics/inclusion-exclusion
+      - text: 17. 鸽巢原理
+        link: combinatorics/pigeonhole-principle
+      - text: 18. 生成函数入门
+        link: combinatorics/generating-functions
+      - text: 19. Burnside 引理与 Polya 定理
+        link: combinatorics/burnside-polya
+      - text: 20. 概率与期望
+        link: combinatorics/probability-expectation
+  - text: 第三部分：高级博弈论
+    items:
+      - text: 21. 博弈论进阶概述
+        link: game-theory/advanced-game-overview
+      - text: 22. SG 函数与 Sprague-Grundy 定理
+        link: game-theory/sg-function
+      - text: 23. Nim 游戏变种
+        link: game-theory/nim-variants
+      - text: 24. 组合博弈的 SG 值计算
+        link: game-theory/sg-value-calculation
+      - text: 25. 多堆博弈问题
+        link: game-theory/multi-pile-games
+      - text: 26. 有向图博弈
+        link: game-theory/directed-graph-games
+      - text: 27. 博弈 DP 进阶
+        link: game-theory/advanced-game-dp
+      - text: 28. Anti-Nim 与反常博弈
+        link: game-theory/anti-nim
+      - text: 29. 博弈论综合题
+        link: game-theory/comprehensive-problems
+      - text: 30. 博弈论竞赛真题
+        link: game-theory/competition-problems
+  - text: 第四部分：网络流
+    items:
+      - text: 31. 网络流基础概念
+        link: network-flow/network-flow-basics
+      - text: 32. 最大流问题
+        link: network-flow/maximum-flow
+      - text: 33. Ford-Fulkerson 方法
+        link: network-flow/ford-fulkerson
+      - text: 34. Edmonds-Karp 算法
+        link: network-flow/edmonds-karp
+      - text: 35. Dinic 算法
+        link: network-flow/dinic
+      - text: 36. ISAP 算法
+        link: network-flow/isap
+      - text: 37. 最小割与最大流最小割定理
+        link: network-flow/min-cut
+      - text: 38. 二分图最大匹配（网络流解法）
+        link: network-flow/bipartite-matching-flow
+      - text: 39. 最小费用最大流
+        link: network-flow/min-cost-max-flow
+      - text: 40. SPFA 费用流
+        link: network-flow/spfa-cost-flow
+  - text: 第五部分：网络流应用
+    items:
+      - text: 41. 上下界网络流
+        link: network-flow-applications/bounded-flow
+      - text: 42. 有源汇上下界最大流
+        link: network-flow-applications/bounded-max-flow
+      - text: 43. 有源汇上下界最小流
+        link: network-flow-applications/bounded-min-flow
+      - text: 44. 最大权闭合子图
+        link: network-flow-applications/max-weight-closure
+      - text: 45. 最小路径覆盖
+        link: network-flow-applications/min-path-cover
+      - text: 46. 最大独立集（二分图）
+        link: network-flow-applications/max-independent-set
+      - text: 47. 方格取数问题
+        link: network-flow-applications/grid-selection
+      - text: 48. 餐巾计划问题
+        link: network-flow-applications/napkin-planning
+      - text: 49. 网络流建模技巧
+        link: network-flow-applications/flow-modeling
+      - text: 50. 网络流综合题
+        link: network-flow-applications/comprehensive-problems
+  - text: 第六部分：计算几何基础
+    items:
+      - text: 51. 计算几何概述
+        link: computational-geometry/geometry-overview
+      - text: 52. 点、向量与坐标运算
+        link: computational-geometry/point-vector
+      - text: 53. 叉积与点积应用
+        link: computational-geometry/cross-dot-product
+      - text: 54. 直线与线段
+        link: computational-geometry/line-segment
+      - text: 55. 线段相交判定
+        link: computational-geometry/segment-intersection
+      - text: 56. 多边形面积
+        link: computational-geometry/polygon-area
+      - text: 57. 点与多边形关系
+        link: computational-geometry/point-in-polygon
+      - text: 58. 凸包算法
+        link: computational-geometry/convex-hull
+      - text: 59. 旋转卡壳
+        link: computational-geometry/rotating-calipers
+      - text: 60. 最近点对
+        link: computational-geometry/closest-pair
+  - text: 第七部分：计算几何进阶
+    items:
+      - text: 61. 半平面交
+        link: advanced-geometry/half-plane-intersection
+      - text: 62. Voronoi 图与 Delaunay 三角剖分
+        link: advanced-geometry/voronoi-delaunay
+      - text: 63. 最小圆覆盖
+        link: advanced-geometry/minimum-enclosing-circle
+      - text: 64. 扫描线在几何中的应用
+        link: advanced-geometry/sweep-line-geometry
+      - text: 65. 三维几何基础
+        link: advanced-geometry/3d-geometry
+      - text: 66. 凸包（三维）
+        link: advanced-geometry/3d-convex-hull
+      - text: 67. 计算几何精度处理
+        link: advanced-geometry/precision-handling
+      - text: 68. 几何变换
+        link: advanced-geometry/geometric-transformation
+      - text: 69. 计算几何模板汇总
+        link: advanced-geometry/geometry-templates
+      - text: 70. 计算几何竞赛真题
+        link: advanced-geometry/competition-problems
+  - text: 第八部分：字符串高级算法
+    items:
+      - text: 71. AC 自动机原理
+        link: advanced-string/ac-automaton-basics
+      - text: 72. AC 自动机实现
+        link: advanced-string/ac-automaton-implementation
+      - text: 73. 多模式串匹配
+        link: advanced-string/multi-pattern-matching
+      - text: 74. 后缀数组进阶应用
+        link: advanced-string/suffix-array-advanced
+      - text: 75. 后缀自动机进阶应用
+        link: advanced-string/suffix-automaton-advanced
+      - text: 76. 回文自动机（PAM）
+        link: advanced-string/palindrome-automaton
+      - text: 77. Lyndon 分解
+        link: advanced-string/lyndon-factorization
+      - text: 78. 最小表示法
+        link: advanced-string/minimum-representation
+      - text: 79. 字符串哈希进阶
+        link: advanced-string/advanced-string-hash
+      - text: 80. 字符串算法综合
+        link: advanced-string/comprehensive-problems
+  - text: 第九部分：竞赛真题精选
+    items:
+      - text: 81. LeetCode 周赛精选（简单）
+        link: competition/leetcode-weekly-easy
+      - text: 82. LeetCode 周赛精选（中等）
+        link: competition/leetcode-weekly-medium
+      - text: 83. LeetCode 周赛精选（困难）
+        link: competition/leetcode-weekly-hard
+      - text: 84. LeetCode 双周赛精选
+        link: competition/leetcode-biweekly
+      - text: 85. Google Kick Start 精选
+        link: competition/google-kickstart
+      - text: 86. Google Code Jam 精选
+        link: competition/google-codejam
+      - text: 87. Codeforces Div.2 精选
+        link: competition/codeforces-div2
+      - text: 88. Codeforces Div.1 精选
+        link: competition/codeforces-div1
+      - text: 89. AtCoder 精选
+        link: competition/atcoder
+      - text: 90. ACM-ICPC 区域赛精选
+        link: competition/acm-icpc-regional
+  - text: 第十部分：大厂算法面试题精选
+    items:
+      - text: 91. 字节跳动算法面试精选
+        link: interview/bytedance
+      - text: 92. 腾讯算法面试精选
+        link: interview/tencent
+      - text: 93. 阿里巴巴算法面试精选
+        link: interview/alibaba
+      - text: 94. 美团算法面试精选
+        link: interview/meituan
+      - text: 95. Google 算法面试精选
+        link: interview/google
+      - text: 96. Meta 算法面试精选
+        link: interview/meta
+      - text: 97. Amazon 算法面试精选
+        link: interview/amazon
+      - text: 98. Microsoft 算法面试精选
+        link: interview/microsoft
+      - text: 99. Apple 算法面试精选
+        link: interview/apple
+      - text: 100. 大厂面试综合模拟
+        link: interview/mock-interview
+  - text: 第十一部分：竞赛策略与技巧
+    items:
+      - text: 101. 竞赛时间管理
+        link: strategy/time-management
+      - text: 102. 题目分类与选择策略
+        link: strategy/problem-selection
+      - text: 103. 调试与对拍技巧
+        link: strategy/debugging-techniques
+      - text: 104. 常见错误与避坑指南
+        link: strategy/common-mistakes
+      - text: 105. 代码模板管理
+        link: strategy/code-templates
+      - text: 106. 赛后复盘方法
+        link: strategy/post-contest-review
+      - text: 107. Rating 提升路径
+        link: strategy/rating-improvement
+      - text: 108. 从 1600 到 2100 的进阶之路
+        link: strategy/intermediate-to-advanced
+      - text: 109. 从 2100 到 2400 的突破之路
+        link: strategy/advanced-to-expert
+      - text: 110. 算法竞赛终极指南
+        link: strategy/ultimate-guide

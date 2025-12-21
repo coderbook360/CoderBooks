@@ -1,0 +1,130 @@
+- text: 序言
+  link: preface
+- text: 第一部分：认知升级 - 从浏览器到服务端
+  collapsed: false
+  items:
+    - text: JavaScript 运行时对比：浏览器 vs Node.js
+      link: foundations/runtime-comparison
+    - text: Node.js 架构快速概览
+      link: foundations/architecture-overview
+    - text: 从单线程理解异步思维模型
+      link: foundations/async-mental-model
+    - text: CommonJS 与 ES Modules：模块系统对比
+      link: foundations/module-systems
+    - text: Node.js 版本管理与 LTS 策略
+      link: foundations/version-management
+    - text: npm 深度使用指南
+      link: foundations/npm-deep-dive
+    - text: pnpm 与现代包管理
+      link: foundations/pnpm-modern-package
+    - text: 私有仓库与企业级 npm 管理
+      link: foundations/private-registry
+- text: 第二部分：异步编程系统化
+  collapsed: false
+  items:
+    - text: 回调模式的本质与问题
+      link: async/callback-patterns
+    - text: Promise 原理与高级模式
+      link: async/promise-advanced
+    - text: async/await 最佳实践与常见陷阱
+      link: async/async-await-practices
+    - text: 并发控制：Promise.all、race 与 allSettled
+      link: async/concurrency-control
+    - text: 异步迭代器与 for-await-of
+      link: async/async-iterators
+    - text: 异步错误处理统一策略
+      link: async/error-handling-strategy
+    - text: 常见异步编程误区与纠正
+      link: async/common-mistakes
+- text: 第三部分：核心模块精通
+  collapsed: false
+  items:
+    - text: path 模块：跨平台路径处理
+      link: core-modules/path
+    - text: fs 模块：同步、异步与 Promise API 对比
+      link: core-modules/fs-apis
+    - text: fs 进阶：文件监听与目录操作
+      link: core-modules/fs-advanced
+    - text: url 与 URLSearchParams：URL 解析全攻略
+      link: core-modules/url-parsing
+    - text: querystring 与现代替代方案
+      link: core-modules/querystring
+    - text: events：EventEmitter 模式精讲
+      link: core-modules/events
+    - text: crypto 基础：哈希、加密与安全随机数
+      link: core-modules/crypto-basics
+    - text: util：工具函数最佳实践
+      link: core-modules/util
+    - text: os 模块：系统信息获取
+      link: core-modules/os
+    - text: child_process 入门：执行外部命令
+      link: core-modules/child-process-intro
+    - text: Buffer 基础：二进制数据处理入门
+      link: core-modules/buffer-basics
+    - text: Stream 入门：流式处理思维
+      link: core-modules/stream-intro
+    - text: process 模块：环境变量与进程信息
+      link: core-modules/process
+- text: 第四部分：HTTP 服务快速入门
+  collapsed: false
+  items:
+    - text: http 模块基础：创建第一个服务器
+      link: http/first-server
+    - text: 请求对象 IncomingMessage 详解
+      link: http/request-object
+    - text: 响应对象 ServerResponse 详解
+      link: http/response-object
+    - text: 处理不同类型的请求体
+      link: http/request-body
+    - text: 路由基础实现
+      link: http/basic-routing
+    - text: 中间件模式的诞生
+      link: http/middleware-pattern
+    - text: 静态文件服务实现
+      link: http/static-files
+    - text: Express 快速入门
+      link: http/express-intro
+    - text: Koa 快速入门
+      link: http/koa-intro
+    - text: 从原生到框架的思维过渡
+      link: http/native-to-framework
+- text: 第五部分：命令行工具开发
+  collapsed: false
+  items:
+    - text: process.argv 与参数解析基础
+      link: cli/argv-parsing
+    - text: Commander.js 命令行框架
+      link: cli/commander
+    - text: 命令行交互：readline 模块
+      link: cli/readline
+    - text: Inquirer.js 交互式问询
+      link: cli/inquirer
+    - text: 命令行美化：chalk 与 ora
+      link: cli/cli-styling
+    - text: 文件操作批处理实战
+      link: cli/file-batch-processing
+    - text: 配置文件读取与管理
+      link: cli/config-management
+    - text: 完整 CLI 工具开发实战
+      link: cli/complete-cli-project
+    - text: CLI 工具发布到 npm
+      link: cli/publish-to-npm
+- text: 第六部分：调试与问题排查
+  collapsed: false
+  items:
+    - text: console 家族完整用法
+      link: debugging/console-methods
+    - text: Node.js 内置调试器使用
+      link: debugging/builtin-debugger
+    - text: VS Code 调试配置详解
+      link: debugging/vscode-debugging
+    - text: Chrome DevTools 调试 Node.js
+      link: debugging/chrome-devtools
+    - text: 常见错误类型与解决方案
+      link: debugging/common-errors
+    - text: 日志规范与最佳实践
+      link: debugging/logging-best-practices
+    - text: 性能问题初步诊断
+      link: debugging/performance-diagnosis
+    - text: 本书总结与后续学习路径
+      link: debugging/summary-next-steps

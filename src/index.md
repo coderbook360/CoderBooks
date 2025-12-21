@@ -1,10 +1,10 @@
 ---
 page: true
-title: Vue.js - The Progressive JavaScript Framework
+title: CoderBooks - 程序员书籍精选
 ---
 
 <script setup>
-import Home from '@theme/components/Home.vue'
+import CoderBooksHome from '@theme/components/CoderBooksHome.vue'
 </script>
 
-<Home />
+<CoderBooksHome />

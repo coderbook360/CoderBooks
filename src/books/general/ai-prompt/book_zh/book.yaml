@@ -1,0 +1,73 @@
+title: AI 提示词工程实战：从新手到架构师
+description: 本书系统介绍提示词工程的完整知识体系。从基础的 AI 概念开始，带你掌握构建高质量提示词的核心方法论（P.I.C.A.），学习高级提示技巧，并最终将提示词工程化，应用于真实的业务场景中。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：基础入门 (Foundations)
+    items:
+      - text: 1. 欢迎来到 AI 时代：基本概念入门
+        link: foundations/basic-concepts
+      - text: 2. 主流大型语言模型（LLM）概览
+        link: foundations/llm-overview
+      - text: 3. 你的第一个提示词：基础编写技巧
+        link: foundations/basic-prompting
+  - text: 第二部分：核心方法论 (Core Methodology)
+    items:
+      - text: 4. 从模糊到精确：智能体与 O.O.D.A. 框架
+        link: methodology/ooda-framework
+      - text: 5. P.I.C.A. 概览：构建高质量决策核心
+        link: methodology/pica-overview
+      - text: 6. P - 角色设定：召唤领域专家
+        link: methodology/persona
+      - text: 7. I - 指令下达：编写清晰有效的任务
+        link: methodology/instruction
+      - text: 8. C - 情境提供：为模型补充关键信息
+        link: methodology/context
+      - text: 9. A - 输出规范：让 AI 的产出直接可用
+        link: methodology/action
+  - text: 第三部分：高级提示技术 (Advanced Techniques)
+    items:
+      - text: 10. 思维链 (CoT)：引导模型进行深度思考
+        link: advanced-techniques/chain-of-thought
+      - text: 11. 自我一致性：通过投票提升准确性
+        link: advanced-techniques/self-consistency
+      - text: 12. 知识生成：让模型自己教自己
+        link: advanced-techniques/knowledge-generation
+      - text: 13. 检索增强生成 (RAG)：让模型拥有外部知识
+        link: advanced-techniques/rag
+  - text: 第四部分：评估与优化 (Evaluation and Optimization)
+    items:
+      - text: 14. 度量效果：如何评估提示词的质量
+        link: evaluation/evaluating-prompts
+      - text: 15. 迭代优化：A/B 测试与持续改进
+        link: evaluation/ab-testing
+      - text: 16. 调试艺术：错误分析与修正技巧
+        link: evaluation/debugging
+      - text: 17. AI 驱动的优化：构建自我完善的智能体
+        link: evaluation/ai-driven-optimization
+  - text: 第五部分：工程化实践 (Engineering Practices)
+    items:
+      - text: 18. 版本控制：像管理代码一样管理提示词
+        link: engineering/prompt-versioning
+      - text: 19. 团队协作：文档、规范与共享
+        link: engineering/collaboration
+      - text: 20. 成本与性能：优化你的 AI 调用
+        link: engineering/cost-performance
+  - text: 第六部分：综合实战 (Capstone Project)
+    items:
+      - text: 21. 项目概览：构建一个智能旅行规划助手
+        link: project/project-overview
+      - text: 22. 规划器模块：将旅行目标分解为任务
+        link: project/planner-module
+      - text: 23. 执行器模块：调用工具查询旅行信息
+        link: project/executor-module
+      - text: 24. 综合器模块：从原始信息中提炼行程
+        link: project/synthesizer-module
+      - text: 25. 报告生成器模块：创建图文并茂的旅行计划
+        link: project/reporter-module
+      - text: 26. 项目整合：运行完整的智能规划流程
+        link: project/integration
+  - text: 第七部分：未来展望 (Conclusion)
+    items:
+      - text: 27. 总结：成为智能体构建者的路径
+        link: conclusion/summary

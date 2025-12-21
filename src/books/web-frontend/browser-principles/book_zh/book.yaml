@@ -1,0 +1,225 @@
+title: "浏览器原理深度剖析: 理解前端运行的底层世界"
+description: 本书将带你深入浏览器内核，从底层原理角度理解前端技术，成为真正的前端专家。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：浏览器架构与进程模型
+    items:
+      - text: 1. 浏览器发展简史
+        link: architecture/history
+      - text: 2. 现代浏览器架构概览
+        link: architecture/overview
+      - text: 3. 多进程架构详解
+        link: architecture/multi-process
+      - text: 4. 浏览器进程
+        link: architecture/browser-process
+      - text: 5. 渲染进程
+        link: architecture/renderer-process
+      - text: 6. GPU进程
+        link: architecture/gpu-process
+      - text: 7. 网络进程
+        link: architecture/network-process
+      - text: 8. 插件进程与扩展机制
+        link: architecture/plugin-process
+      - text: 9. 进程间通信(IPC)
+        link: architecture/ipc
+      - text: 10. 站点隔离与安全边界
+        link: architecture/site-isolation
+  - text: 第二部分：网络与资源加载
+    items:
+      - text: 11. 从URL到页面：导航流程
+        link: network/navigation-flow
+      - text: 12. DNS解析过程详解
+        link: network/dns-resolution
+      - text: 13. TCP连接与TLS握手
+        link: network/tcp-tls
+      - text: 14. HTTP请求与响应
+        link: network/http-request-response
+      - text: 15. HTTP/2协议详解
+        link: network/http2-deep
+      - text: 16. HTTP/3与QUIC详解
+        link: network/http3-quic-deep
+      - text: 17. 缓存机制详解
+        link: network/caching
+      - text: 18. Service Worker与网络代理
+        link: network/service-worker
+      - text: 19. 资源优先级与预加载
+        link: network/resource-priority
+      - text: 20. 跨域资源共享(CORS)
+        link: network/cors
+  - text: 第三部分：HTML解析与DOM构建
+    items:
+      - text: 21. HTML解析器原理
+        link: parsing/html-parser
+      - text: 22. 词法分析：Tokenization
+        link: parsing/tokenization
+      - text: 23. 语法分析：树构建算法
+        link: parsing/tree-construction
+      - text: 24. DOM树结构与节点类型
+        link: parsing/dom-tree
+      - text: 25. 容错机制与异常处理
+        link: parsing/error-handling
+      - text: 26. 解析阻塞与异步脚本
+        link: parsing/script-blocking
+      - text: 27. 预解析与推测性加载
+        link: parsing/preload-scanner
+      - text: 28. Document对象与DOM API
+        link: parsing/document-api
+      - text: 29. MutationObserver原理
+        link: parsing/mutation-observer
+      - text: 30. Shadow DOM与封装
+        link: parsing/shadow-dom
+  - text: 第四部分：CSS解析与样式计算
+    items:
+      - text: 31. CSS解析器原理
+        link: css/css-parser
+      - text: 32. CSSOM构建过程
+        link: css/cssom-construction
+      - text: 33. 选择器匹配算法
+        link: css/selector-matching
+      - text: 34. 样式级联与继承
+        link: css/cascade-inheritance
+      - text: 35. 计算样式(Computed Style)
+        link: css/computed-style
+      - text: 36. CSS变量与自定义属性
+        link: css/css-variables
+      - text: 37. 媒体查询与响应式
+        link: css/media-queries
+      - text: 38. CSS动画与过渡原理
+        link: css/animations-transitions
+      - text: 39. CSS Houdini简介
+        link: css/houdini
+      - text: 40. CSS性能优化原理
+        link: css/performance
+  - text: 第五部分：布局与渲染树
+    items:
+      - text: 41. 渲染树构建
+        link: layout/render-tree
+      - text: 42. 布局(Layout)过程详解
+        link: layout/layout-process
+      - text: 43. 盒模型计算
+        link: layout/box-model
+      - text: 44. 正常流布局
+        link: layout/normal-flow
+      - text: 45. 浮动布局原理
+        link: layout/float
+      - text: 46. 定位布局原理
+        link: layout/positioning
+      - text: 47. Flexbox布局原理
+        link: layout/flexbox
+      - text: 48. Grid布局原理
+        link: layout/grid
+      - text: 49. BFC与格式化上下文
+        link: layout/formatting-context
+      - text: 50. 布局优化与性能
+        link: layout/performance
+  - text: 第六部分：绘制与合成
+    items:
+      - text: 51. 绘制(Paint)过程详解
+        link: painting/paint-process
+      - text: 52. 绘制记录与显示列表
+        link: painting/display-list
+      - text: 53. 分层(Layer)与合成
+        link: painting/layers-compositing
+      - text: 54. 图层树与合成层
+        link: painting/layer-tree
+      - text: 55. GPU光栅化
+        link: painting/gpu-rasterization
+      - text: 56. 帧合成与显示
+        link: painting/frame-composition
+      - text: 57. will-change与图层提升
+        link: painting/will-change
+      - text: 58. 硬件加速原理
+        link: painting/hardware-acceleration
+      - text: 59. 滚动与滚动优化
+        link: painting/scroll-optimization
+      - text: 60. 绘制性能优化
+        link: painting/performance
+  - text: 第七部分：JavaScript引擎
+    items:
+      - text: 61. JavaScript引擎概述
+        link: js-engine/overview
+      - text: 62. V8引擎架构
+        link: js-engine/v8-architecture
+      - text: 63. 解析与AST生成
+        link: js-engine/parsing-ast
+      - text: 64. 字节码与Ignition
+        link: js-engine/bytecode-ignition
+      - text: 65. JIT编译与TurboFan
+        link: js-engine/jit-turbofan
+      - text: 66. 内联缓存(IC)
+        link: js-engine/inline-caching
+      - text: 67. 隐藏类与对象表示
+        link: js-engine/hidden-classes
+      - text: 68. 内存管理与堆结构
+        link: js-engine/memory-heap
+      - text: 69. 垃圾回收机制详解
+        link: js-engine/garbage-collection
+      - text: 70. V8性能优化技巧
+        link: js-engine/optimization-tips
+  - text: 第八部分：事件循环与异步
+    items:
+      - text: 71. 事件循环(Event Loop)详解
+        link: event-loop/overview
+      - text: 72. 调用栈(Call Stack)
+        link: event-loop/call-stack
+      - text: 73. 宏任务(Macrotask)
+        link: event-loop/macrotasks
+      - text: 74. 微任务(Microtask)
+        link: event-loop/microtasks
+      - text: 75. requestAnimationFrame详解
+        link: event-loop/raf
+      - text: 76. requestIdleCallback详解
+        link: event-loop/ric
+      - text: 77. setTimeout/setInterval原理
+        link: event-loop/timers
+      - text: 78. Promise与异步调度
+        link: event-loop/promise
+      - text: 79. async/await原理
+        link: event-loop/async-await
+      - text: 80. Web Worker原理
+        link: event-loop/web-worker
+  - text: 第九部分：浏览器API原理
+    items:
+      - text: 81. DOM事件系统
+        link: browser-api/dom-events
+      - text: 82. 事件捕获与冒泡
+        link: browser-api/event-propagation
+      - text: 83. IntersectionObserver原理
+        link: browser-api/intersection-observer
+      - text: 84. ResizeObserver原理
+        link: browser-api/resize-observer
+      - text: 85. PerformanceObserver原理
+        link: browser-api/performance-observer
+      - text: 86. History API与路由
+        link: browser-api/history-api
+      - text: 87. Storage API原理
+        link: browser-api/storage
+      - text: 88. IndexedDB原理
+        link: browser-api/indexeddb
+      - text: 89. Fetch API原理
+        link: browser-api/fetch
+      - text: 90. WebSocket原理
+        link: browser-api/websocket
+  - text: 第十部分：安全与沙箱
+    items:
+      - text: 91. 浏览器安全模型
+        link: security/security-model
+      - text: 92. 同源策略详解
+        link: security/same-origin-policy
+      - text: 93. XSS攻击与防御
+        link: security/xss
+      - text: 94. CSRF攻击与防御
+        link: security/csrf
+      - text: 95. CSP内容安全策略
+        link: security/csp
+      - text: 96. 沙箱机制
+        link: security/sandbox
+      - text: 97. HTTPS与证书
+        link: security/https
+      - text: 98. Cookie安全
+        link: security/cookie-security
+      - text: 99. 浏览器指纹与隐私
+        link: security/fingerprinting
+      - text: 100. 前端安全最佳实践
+        link: security/best-practices

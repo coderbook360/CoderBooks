@@ -1,0 +1,172 @@
+- text: 序言
+  link: preface
+- text: 第一部分：API 设计基础
+  collapsed: false
+  items:
+    - text: 什么是好的 API
+      link: foundations/good-api
+    - text: API 设计原则与哲学
+      link: foundations/design-principles
+    - text: HTTP 协议核心回顾
+      link: foundations/http-fundamentals
+    - text: API 风格对比：REST vs GraphQL vs RPC
+      link: foundations/api-styles
+    - text: API 优先设计方法论
+      link: foundations/api-first-design
+- text: 第二部分：RESTful API 设计
+  collapsed: false
+  items:
+    - text: REST 核心约束与理念
+      link: rest/rest-constraints
+    - text: 资源建模与命名规范
+      link: rest/resource-modeling
+    - text: URL 设计最佳实践
+      link: rest/url-design
+    - text: HTTP 方法语义详解
+      link: rest/http-methods
+    - text: HTTP 状态码正确使用
+      link: rest/status-codes
+    - text: 请求与响应格式设计
+      link: rest/request-response-format
+    - text: 查询参数与过滤设计
+      link: rest/query-filtering
+    - text: 分页设计：offset、cursor 与 keyset
+      link: rest/pagination
+    - text: 排序与搜索接口设计
+      link: rest/sorting-searching
+    - text: 字段选择与稀疏字段集
+      link: rest/sparse-fieldsets
+    - text: 资源关系与嵌套资源
+      link: rest/resource-relationships
+    - text: 批量操作接口设计
+      link: rest/batch-operations
+- text: 第三部分：REST API 高级模式
+  collapsed: false
+  items:
+    - text: 错误处理与响应规范
+      link: advanced-rest/error-handling
+    - text: 问题详情格式(RFC 7807)
+      link: advanced-rest/problem-details
+    - text: HATEOAS 超媒体驱动
+      link: advanced-rest/hateoas
+    - text: 长时间操作处理模式
+      link: advanced-rest/long-running-operations
+    - text: 文件上传接口设计
+      link: advanced-rest/file-upload
+    - text: Webhook 设计与实现
+      link: advanced-rest/webhooks
+    - text: 幂等性设计与实现
+      link: advanced-rest/idempotency
+    - text: 乐观锁与 ETag
+      link: advanced-rest/etag-caching
+    - text: API 版本管理策略
+      link: advanced-rest/versioning
+    - text: 向后兼容与废弃策略
+      link: advanced-rest/backward-compatibility
+- text: 第四部分：RESTful API 实现
+  collapsed: false
+  items:
+    - text: Express 实现 REST API
+      link: rest-implementation/express-rest
+    - text: Fastify 实现 REST API
+      link: rest-implementation/fastify-rest
+    - text: NestJS 实现 REST API
+      link: rest-implementation/nestjs-rest
+    - text: 请求验证与数据转换
+      link: rest-implementation/validation-transformation
+    - text: 响应序列化与格式化
+      link: rest-implementation/serialization
+    - text: 中间件设计模式
+      link: rest-implementation/middleware-patterns
+    - text: 控制器组织与路由管理
+      link: rest-implementation/controller-routing
+- text: 第五部分：GraphQL 设计与实现
+  collapsed: false
+  items:
+    - text: GraphQL 核心概念
+      link: graphql/core-concepts
+    - text: Schema 设计基础
+      link: graphql/schema-basics
+    - text: 类型系统详解
+      link: graphql/type-system
+    - text: 查询与变更设计
+      link: graphql/queries-mutations
+    - text: 输入类型与参数设计
+      link: graphql/input-types
+    - text: 接口与联合类型
+      link: graphql/interfaces-unions
+    - text: 枚举与标量类型
+      link: graphql/enums-scalars
+    - text: Resolver 实现模式
+      link: graphql/resolvers
+    - text: N+1 问题与 DataLoader
+      link: graphql/dataloader
+    - text: 分页：Relay Cursor 连接规范
+      link: graphql/relay-pagination
+    - text: 错误处理与错误格式
+      link: graphql/error-handling
+    - text: 订阅与实时数据
+      link: graphql/subscriptions
+    - text: 查询复杂度与深度限制
+      link: graphql/query-complexity
+    - text: Apollo Server 实战
+      link: graphql/apollo-server
+    - text: NestJS GraphQL 实战
+      link: graphql/nestjs-graphql
+- text: 第六部分：API 文档与规范
+  collapsed: false
+  items:
+    - text: OpenAPI 3.0 规范详解
+      link: documentation/openapi-spec
+    - text: 使用 Swagger 生成文档
+      link: documentation/swagger
+    - text: 代码优先 vs 规范优先
+      link: documentation/code-first-vs-spec-first
+    - text: API 文档最佳实践
+      link: documentation/documentation-best-practices
+    - text: 交互式 API 文档：Swagger UI 与 Redoc
+      link: documentation/interactive-docs
+    - text: API 示例与 Mock 服务
+      link: documentation/api-mocking
+    - text: SDK 生成与客户端代码
+      link: documentation/sdk-generation
+    - text: GraphQL 文档与 Playground
+      link: documentation/graphql-docs
+- text: 第七部分：API 性能优化
+  collapsed: false
+  items:
+    - text: API 响应时间优化
+      link: performance/response-time
+    - text: HTTP 缓存策略
+      link: performance/http-caching
+    - text: 响应压缩与传输优化
+      link: performance/compression
+    - text: 数据库查询优化
+      link: performance/database-optimization
+    - text: N+1 查询问题解决
+      link: performance/n-plus-one
+    - text: API 负载测试
+      link: performance/load-testing
+    - text: 性能监控与 APM
+      link: performance/apm
+- text: 第八部分：API 网关与治理
+  collapsed: false
+  items:
+    - text: API 网关概念与选型
+      link: gateway/api-gateway-intro
+    - text: Kong 网关入门
+      link: gateway/kong
+    - text: Node.js 实现简易 API 网关
+      link: gateway/nodejs-gateway
+    - text: 限流设计与实现
+      link: gateway/rate-limiting
+    - text: 熔断与降级策略
+      link: gateway/circuit-breaker
+    - text: API 聚合与 BFF 模式
+      link: gateway/bff-pattern
+    - text: API 监控与分析
+      link: gateway/monitoring-analytics
+    - text: API 生命周期管理
+      link: gateway/lifecycle-management
+    - text: API 设计总结与最佳实践
+      link: gateway/summary

@@ -1,0 +1,244 @@
+- text: 序言
+  link: preface
+- text: 第一部分：项目准备与数学库 (Foundation)
+  collapsed: false
+  items:
+    - text: Three.js 整体架构与模块划分
+      link: architecture/overall-architecture
+    - text: 核心设计模式与最佳实践
+      link: architecture/design-patterns
+    - text: Three.js 数学库设计哲学
+      link: architecture/math-design
+    - text: 项目初始化与 TypeScript 配置
+      link: foundation/project-setup
+    - text: 构建系统与测试框架
+      link: foundation/build-and-test
+    - text: Vector2/3/4 源码解析与实现
+      link: math/vectors
+    - text: Matrix3/4 源码解析与实现
+      link: math/matrices
+    - text: Quaternion 源码解析与实现
+      link: math/quaternion
+    - text: Euler、Box3、Sphere 等实用类
+      link: math/utility-math
+    - text: Color 颜色系统实现
+      link: math/color
+- text: 第二部分：核心对象系统 (Core System)
+  collapsed: false
+  items:
+    - text: Object3D 继承体系设计
+      link: core-theory/object3d-hierarchy
+    - text: Scene Graph 场景图原理
+      link: core-theory/scene-graph
+    - text: BufferGeometry 设计思想
+      link: core-theory/buffer-geometry-design
+    - text: EventDispatcher 事件系统
+      link: core/event-dispatcher
+    - text: Object3D 基类实现
+      link: core/object3d
+    - text: Scene 场景管理
+      link: core/scene
+    - text: Group 与层级管理
+      link: core/group
+    - text: BufferAttribute 实现
+      link: core/buffer-attribute
+    - text: BufferGeometry 实现
+      link: core/buffer-geometry
+    - text: InterleavedBuffer 交错缓冲
+      link: core/interleaved-buffer
+    - text: Mesh 网格对象
+      link: core/mesh
+    - text: Layers 图层系统
+      link: core/layers
+- text: 第三部分：WebGL 渲染器 (Renderer)
+  collapsed: false
+  items:
+    - text: WebGLRenderer 渲染流程
+      link: renderer-theory/render-pipeline
+    - text: WebGL 状态管理策略
+      link: renderer-theory/state-management
+    - text: 资源管理与缓存机制
+      link: renderer-theory/resource-management
+    - text: WebGLRenderer 核心架构
+      link: renderer/webgl-renderer
+    - text: WebGLState 状态管理
+      link: renderer/webgl-state
+    - text: WebGLPrograms 程序管理
+      link: renderer/webgl-programs
+    - text: WebGLAttributes 属性管理
+      link: renderer/webgl-attributes
+    - text: WebGLGeometries 几何体管理
+      link: renderer/webgl-geometries
+    - text: WebGLTextures 纹理管理
+      link: renderer/webgl-textures
+    - text: WebGLObjects 对象缓存
+      link: renderer/webgl-objects
+    - text: WebGLRenderLists 渲染列表
+      link: renderer/webgl-render-lists
+    - text: 渲染循环与动画
+      link: renderer/render-loop
+- text: 第四部分：材质与着色器 (Materials)
+  collapsed: false
+  items:
+    - text: Material 系统架构
+      link: materials-theory/material-architecture
+    - text: ShaderLib 与 ShaderChunk 设计
+      link: materials-theory/shader-system
+    - text: PBR 材质原理与实现
+      link: materials-theory/pbr-theory
+    - text: Material 基类实现
+      link: materials/material-base
+    - text: MeshBasicMaterial 实现
+      link: materials/mesh-basic
+    - text: MeshLambertMaterial 实现
+      link: materials/mesh-lambert
+    - text: MeshPhongMaterial 实现
+      link: materials/mesh-phong
+    - text: MeshStandardMaterial PBR 实现
+      link: materials/mesh-standard
+    - text: ShaderMaterial 自定义材质
+      link: materials/shader-material
+    - text: 着色器编译与优化
+      link: materials/shader-compilation
+- text: 第五部分：光照系统 (Lighting)
+  collapsed: false
+  items:
+    - text: 光照系统设计
+      link: lighting-theory/lighting-system
+    - text: 阴影系统原理
+      link: lighting-theory/shadow-system
+    - text: Light 基类实现
+      link: lights/light-base
+    - text: AmbientLight 环境光
+      link: lights/ambient-light
+    - text: DirectionalLight 平行光
+      link: lights/directional-light
+    - text: PointLight 点光源
+      link: lights/point-light
+    - text: SpotLight 聚光灯
+      link: lights/spot-light
+    - text: 光照着色器集成
+      link: lights/lighting-shaders
+    - text: 阴影映射实现
+      link: lights/shadow-mapping
+- text: 第六部分：相机系统 (Camera)
+  collapsed: false
+  items:
+    - text: Camera 基类与投影矩阵
+      link: camera/camera-base
+    - text: PerspectiveCamera 透视相机
+      link: camera/perspective-camera
+    - text: OrthographicCamera 正交相机
+      link: camera/orthographic-camera
+    - text: OrbitControls 轨道控制器
+      link: camera/orbit-controls
+    - text: 视锥体剔除实现
+      link: camera/frustum-culling
+- text: 第七部分：几何体与纹理 (Geometry & Texture)
+  collapsed: false
+  items:
+    - text: 参数化几何体生成原理
+      link: geometry-theory/parametric-geometry
+    - text: BoxGeometry 立方体
+      link: geometry/box-geometry
+    - text: SphereGeometry 球体
+      link: geometry/sphere-geometry
+    - text: PlaneGeometry 平面
+      link: geometry/plane-geometry
+    - text: CylinderGeometry 圆柱
+      link: geometry/cylinder-geometry
+    - text: Texture 纹理系统
+      link: texture/texture
+    - text: TextureLoader 纹理加载
+      link: texture/texture-loader
+    - text: CubeTexture 立方体贴图
+      link: texture/cube-texture
+- text: 第八部分：加载器与文件格式 (Loaders)
+  collapsed: false
+  items:
+    - text: 3D 文件格式对比（OBJ/FBX/glTF）
+      link: loaders-theory/format-comparison
+    - text: glTF 2.0 规范深度解读
+      link: loaders-theory/gltf-specification
+    - text: GLTFLoader 架构设计
+      link: loaders/gltf-architecture
+    - text: JSON 解析与场景构建
+      link: loaders/gltf-json-parser
+    - text: 二进制数据处理（BufferView/Accessor）
+      link: loaders/gltf-binary
+    - text: 材质与纹理加载
+      link: loaders/gltf-materials
+    - text: 骨骼动画数据加载
+      link: loaders/gltf-animation
+    - text: 扩展支持与插件系统
+      link: loaders/gltf-extensions
+    - text: KHR_draco_mesh_compression 扩展
+      link: loaders/draco-extension
+- text: 第九部分：高级特性 (Advanced Features)
+  collapsed: false
+  items:
+    - text: Raycaster 射线投射
+      link: advanced/raycaster
+    - text: 动画系统深度解析
+      link: advanced/animation-deep-dive
+    - text: AnimationClip 与 KeyframeTrack
+      link: advanced/animation-clip
+    - text: AnimationMixer 动画混合器
+      link: advanced/animation-mixer
+    - text: 骨骼动画与蒙皮
+      link: advanced/skinned-mesh
+    - text: 后处理系统：EffectComposer
+      link: advanced/effect-composer
+    - text: Pass 系统与自定义后处理
+      link: advanced/custom-pass
+    - text: Fog 雾效实现
+      link: advanced/fog
+    - text: LOD 细节层次管理
+      link: advanced/lod
+    - text: 辅助工具：AxesHelper、GridHelper
+      link: advanced/helpers
+    - text: PMREMGenerator 与 IBL 预滤波
+      link: advanced/pmrem-generator
+    - text: WebGLCubeRenderTarget 动态环境映射
+      link: advanced/cube-render-target
+    - text: Three.js 物理引擎集成
+      link: advanced/physics-integration
+- text: 第十部分：优化与工程化 (Optimization)
+  collapsed: false
+  items:
+    - text: 性能分析与瓶颈定位
+      link: optimization-theory/performance-analysis
+    - text: 内存管理最佳实践
+      link: optimization-theory/memory-management
+    - text: 渲染性能优化
+      link: optimization/render-optimization
+    - text: 资源加载与管理
+      link: optimization/resource-loading
+    - text: WebGL 扩展与兼容性
+      link: optimization/webgl-extensions
+    - text: 调试工具与技巧
+      link: optimization/debugging-tools
+    - text: 项目打包与发布
+      link: optimization/build-and-deploy
+- text: 第十一部分：实战项目 (Projects)
+  collapsed: false
+  items:
+    - text: 项目一：3D 模型查看器
+      link: projects/model-viewer
+    - text: 项目二：太阳系模拟
+      link: projects/solar-system
+    - text: 项目三：PBR 材质展示
+      link: projects/pbr-showcase
+    - text: 项目四：粒子特效系统
+      link: projects/particle-system
+    - text: 项目五：3D 场景编辑器
+      link: projects/scene-editor
+- text: 附录 (Appendix)
+  collapsed: false
+  items:
+    - text: Three.js vs Babylon.js 对比
+      link: appendix/threejs-vs-babylonjs
+    - text: WebGPU 与未来展望
+      link: appendix/webgpu-future
+    - text: 学习资源与社区
+      link: appendix/resources

@@ -1,0 +1,189 @@
+title: "Node.js微服务与分布式系统: 架构设计与实践"
+description: 从单体到分布式，构建可扩展、高可用的 Node.js 微服务系统。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：微服务架构基础
+    items:
+      - text: 1. 微服务架构概述与演进
+        link: foundations/microservices-overview
+      - text: 2. 单体 vs 微服务：权衡与选择
+        link: foundations/monolith-vs-microservices
+      - text: 3. 服务拆分策略与原则
+        link: foundations/service-decomposition
+      - text: 4. 领域驱动设计(DDD)与限界上下文
+        link: foundations/ddd-bounded-context
+      - text: 5. 微服务设计模式概览
+        link: foundations/design-patterns-overview
+      - text: 6. Node.js 微服务技术栈选型
+        link: foundations/tech-stack
+  - text: 第二部分：服务通信
+    items:
+      - text: 7. 服务间通信模式概览
+        link: communication/communication-patterns
+      - text: 8. 同步通信：REST 与 HTTP
+        link: communication/rest-http
+      - text: 9. gRPC 基础与 Node.js 实现
+        link: communication/grpc-basics
+      - text: 10. gRPC 高级特性：流式与拦截器
+        link: communication/grpc-advanced
+      - text: 11. Protocol Buffers 详解
+        link: communication/protobuf
+      - text: 12. 异步通信：消息队列概述
+        link: communication/message-queues-intro
+      - text: 13. RabbitMQ 与 Node.js
+        link: communication/rabbitmq
+      - text: 14. Redis 发布订阅与 Streams
+        link: communication/redis-pubsub
+      - text: 15. Apache Kafka 基础
+        link: communication/kafka-basics
+      - text: 16. 消息模式：点对点、发布订阅、请求响应
+        link: communication/messaging-patterns
+      - text: 17. 事件驱动架构
+        link: communication/event-driven-architecture
+  - text: 第三部分：服务发现与负载均衡
+    items:
+      - text: 18. 服务发现原理与模式
+        link: discovery/service-discovery-intro
+      - text: 19. Consul 服务发现实战
+        link: discovery/consul
+      - text: 20. etcd 服务发现实战
+        link: discovery/etcd
+      - text: 21. Kubernetes 服务发现
+        link: discovery/kubernetes-discovery
+      - text: 22. 客户端负载均衡
+        link: discovery/client-side-lb
+      - text: 23. 服务端负载均衡
+        link: discovery/server-side-lb
+      - text: 24. 健康检查机制设计
+        link: discovery/health-checks
+  - text: 第四部分：弹性设计与容错
+    items:
+      - text: 25. 分布式系统的故障模式
+        link: resilience/failure-modes
+      - text: 26. 超时设计与实现
+        link: resilience/timeouts
+      - text: 27. 重试策略与退避算法
+        link: resilience/retry-backoff
+      - text: 28. 熔断器模式详解
+        link: resilience/circuit-breaker
+      - text: 29. 使用 opossum 实现熔断
+        link: resilience/opossum
+      - text: 30. 舱壁模式与隔离设计
+        link: resilience/bulkhead
+      - text: 31. 降级策略与优雅降级
+        link: resilience/graceful-degradation
+      - text: 32. 限流算法与实现
+        link: resilience/rate-limiting-algorithms
+      - text: 33. 混沌工程入门
+        link: resilience/chaos-engineering
+  - text: 第五部分：分布式数据管理
+    items:
+      - text: 34. 微服务数据管理挑战
+        link: data/data-management-challenges
+      - text: 35. 数据库每服务模式
+        link: data/database-per-service
+      - text: 36. 分布式事务问题
+        link: data/distributed-transactions
+      - text: 37. Saga 模式详解
+        link: data/saga-pattern
+      - text: 38. 编排式 Saga 实现
+        link: data/orchestration-saga
+      - text: 39. 协调式 Saga 实现
+        link: data/choreography-saga
+      - text: 40. 事件溯源基础
+        link: data/event-sourcing-basics
+      - text: 41. CQRS 命令查询职责分离
+        link: data/cqrs
+      - text: 42. 最终一致性处理
+        link: data/eventual-consistency
+      - text: 43. 跨服务数据查询
+        link: data/cross-service-queries
+  - text: 第六部分：可观测性
+    items:
+      - text: 44. 可观测性三大支柱
+        link: observability/three-pillars
+      - text: 45. 结构化日志设计
+        link: observability/structured-logging
+      - text: 46. 日志聚合：ELK Stack
+        link: observability/elk-stack
+      - text: 47. 分布式追踪原理
+        link: observability/distributed-tracing-intro
+      - text: 48. OpenTelemetry 入门
+        link: observability/opentelemetry
+      - text: 49. Jaeger 追踪实战
+        link: observability/jaeger
+      - text: 50. 指标收集：Prometheus
+        link: observability/prometheus
+      - text: 51. 可视化：Grafana 仪表盘
+        link: observability/grafana
+      - text: 52. 告警设计与实现
+        link: observability/alerting
+      - text: 53. SLI、SLO 与 SLA
+        link: observability/sli-slo-sla
+  - text: 第七部分：API 网关与 BFF
+    items:
+      - text: 54. API 网关在微服务中的角色
+        link: gateway/api-gateway-role
+      - text: 55. Kong 网关实战
+        link: gateway/kong-implementation
+      - text: 56. 自建 Node.js API 网关
+        link: gateway/nodejs-api-gateway
+      - text: 57. BFF 模式详解
+        link: gateway/bff-pattern
+      - text: 58. GraphQL 作为 BFF
+        link: gateway/graphql-bff
+      - text: 59. 网关限流与认证
+        link: gateway/gateway-rate-auth
+  - text: 第八部分：容器化与编排
+    items:
+      - text: 60. Docker 基础回顾
+        link: containers/docker-basics
+      - text: 61. Node.js Docker 最佳实践
+        link: containers/nodejs-docker-best-practices
+      - text: 62. 多阶段构建优化
+        link: containers/multi-stage-build
+      - text: 63. Docker Compose 本地开发
+        link: containers/docker-compose
+      - text: 64. Kubernetes 核心概念
+        link: containers/kubernetes-concepts
+      - text: 65. Kubernetes 部署 Node.js 服务
+        link: containers/kubernetes-nodejs
+      - text: 66. ConfigMap 与 Secret 管理
+        link: containers/configmap-secrets
+      - text: 67. Kubernetes 服务网格入门
+        link: containers/service-mesh-intro
+      - text: 68. Istio 基础实战
+        link: containers/istio
+  - text: 第九部分：CI/CD 与 DevOps
+    items:
+      - text: 69. 微服务 CI/CD 策略
+        link: devops/cicd-strategy
+      - text: 70. GitHub Actions 流水线
+        link: devops/github-actions
+      - text: 71. 容器镜像构建与推送
+        link: devops/container-build-push
+      - text: 72. GitOps 与 ArgoCD
+        link: devops/gitops-argocd
+      - text: 73. 蓝绿部署与金丝雀发布
+        link: devops/deployment-strategies
+      - text: 74. 功能开关与特性标记
+        link: devops/feature-flags
+  - text: 第十部分：综合实战
+    items:
+      - text: 75. 微服务项目架构设计
+        link: practice/project-architecture
+      - text: 76. 用户服务实现
+        link: practice/user-service
+      - text: 77. 订单服务实现
+        link: practice/order-service
+      - text: 78. 支付服务实现
+        link: practice/payment-service
+      - text: 79. 通知服务实现
+        link: practice/notification-service
+      - text: 80. 服务集成与端到端测试
+        link: practice/integration-testing
+      - text: 81. 生产环境部署
+        link: practice/production-deployment
+      - text: 82. 微服务架构总结与展望
+        link: practice/summary

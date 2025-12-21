@@ -1,0 +1,331 @@
+title: LeetCode 算法通关之路（一）：数据结构与编程基础
+description: 本书系统讲解算法面试必备的核心数据结构与编程基础，包括复杂度分析、数组、字符串（含 KMP 算法）、链表、栈、队列、哈希表、堆、二叉树与位运算。每个主题先讲解底层原理与操作方法，再通过精选 LeetCode 题目进行实战训练，帮助读者建立扎实的数据结构基础。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：算法与复杂度基础
+    items:
+      - text: 1. 什么是算法
+        link: foundations/what-is-algorithm
+      - text: 2. 时间复杂度分析
+        link: foundations/time-complexity
+      - text: 3. 空间复杂度分析
+        link: foundations/space-complexity
+      - text: 4. 常见复杂度对比与选择
+        link: foundations/complexity-comparison
+      - text: 5. 递归与迭代的复杂度分析
+        link: foundations/recursion-iteration-complexity
+  - text: 第二部分：数组基础
+    items:
+      - text: 6. 数组的内存模型与基本操作
+        link: array/array-memory-model
+      - text: 7. 数组遍历模式
+        link: array/array-traversal-patterns
+      - text: 8. 实战：两数之和
+        link: array/practice-two-sum
+      - text: 9. 实战：删除排序数组中的重复项
+        link: array/practice-remove-duplicates
+      - text: 10. 实战：移动零
+        link: array/practice-move-zeroes
+      - text: 11. 实战：合并两个有序数组
+        link: array/practice-merge-sorted-array
+      - text: 12. 实战：旋转数组
+        link: array/practice-rotate-array
+      - text: 13. 实战：加一
+        link: array/practice-plus-one
+      - text: 14. 实战：找到所有数组中消失的数字
+        link: array/practice-find-disappeared-numbers
+      - text: 15. 实战：第三大的数
+        link: array/practice-third-maximum
+      - text: 16. 实战：数组的度
+        link: array/practice-degree-of-array
+      - text: 17. 实战：最大连续 1 的个数
+        link: array/practice-max-consecutive-ones
+      - text: 18. 实战：种花问题
+        link: array/practice-can-place-flowers
+      - text: 19. 实战：数组拆分
+        link: array/practice-array-partition
+  - text: 第三部分：字符串基础
+    items:
+      - text: 20. 字符串的存储与基本操作
+        link: string/string-basics
+      - text: 21. 字符串遍历与匹配模式
+        link: string/string-patterns
+      - text: 22. 实战：判断字符串是否为回文
+        link: string/practice-is-palindrome
+      - text: 23. 实战：反转字符串
+        link: string/practice-reverse-string
+      - text: 24. 实战：反转字符串中的单词
+        link: string/practice-reverse-words
+      - text: 25. 实战：最长公共前缀
+        link: string/practice-longest-common-prefix
+      - text: 26. 实战：罗马数字转整数
+        link: string/practice-roman-to-integer
+      - text: 27. 实战：整数转罗马数字
+        link: string/practice-integer-to-roman
+      - text: 28. 实战：外观数列
+        link: string/practice-count-and-say
+      - text: 29. 实战：字符串相加
+        link: string/practice-add-strings
+      - text: 30. 实战：有效的字母异位词
+        link: string/practice-valid-anagram
+      - text: 31. 实战：同构字符串
+        link: string/practice-isomorphic-strings
+  - text: 第四部分：字符串匹配算法
+    items:
+      - text: 32. 朴素字符串匹配
+        link: string-matching/naive-matching
+      - text: 33. KMP 算法原理：失配函数与 next 数组
+        link: string-matching/kmp-theory
+      - text: 34. KMP 算法实现与优化
+        link: string-matching/kmp-implementation
+      - text: 35. 实战：实现 strStr()（KMP 解法）
+        link: string-matching/practice-strstr-kmp
+      - text: 36. 实战：重复的子字符串
+        link: string-matching/practice-repeated-substring
+      - text: 37. 字符串哈希基础
+        link: string-matching/string-hash-basics
+      - text: 38. Rabin-Karp 算法
+        link: string-matching/rabin-karp
+      - text: 39. 实战：找出字符串中第一个匹配项的下标
+        link: string-matching/practice-find-index
+      - text: 40. 字符串匹配进阶路线预告
+        link: string-matching/advanced-roadmap
+  - text: 第五部分：链表基础
+    items:
+      - text: 41. 链表的内存模型与类型
+        link: linked-list/linked-list-memory-model
+      - text: 42. 链表的基本操作
+        link: linked-list/linked-list-operations
+      - text: 43. 实战：反转链表
+        link: linked-list/practice-reverse-linked-list
+      - text: 44. 实战：反转链表 II
+        link: linked-list/practice-reverse-linked-list-ii
+      - text: 45. 实战：删除链表的倒数第 N 个节点
+        link: linked-list/practice-remove-nth-node
+      - text: 46. 实战：合并两个有序链表
+        link: linked-list/practice-merge-sorted-lists
+      - text: 47. 实战：环形链表
+        link: linked-list/practice-linked-list-cycle
+      - text: 48. 实战：环形链表 II
+        link: linked-list/practice-linked-list-cycle-ii
+      - text: 49. 实战：相交链表
+        link: linked-list/practice-intersection-of-lists
+      - text: 50. 实战：回文链表
+        link: linked-list/practice-palindrome-linked-list
+      - text: 51. 实战：移除链表元素
+        link: linked-list/practice-remove-elements
+      - text: 52. 实战：奇偶链表
+        link: linked-list/practice-odd-even-linked-list
+      - text: 53. 实战：两数相加
+        link: linked-list/practice-add-two-numbers
+      - text: 54. 实战：链表排序
+        link: linked-list/practice-sort-list
+      - text: 55. 实战：重排链表
+        link: linked-list/practice-reorder-list
+      - text: 56. 实战：合并 K 个升序链表
+        link: linked-list/practice-merge-k-lists
+  - text: 第六部分：栈与队列
+    items:
+      - text: 57. 栈的原理与实现
+        link: stack-queue/stack-basics
+      - text: 58. 队列的原理与实现
+        link: stack-queue/queue-basics
+      - text: 59. 实战：用栈实现队列
+        link: stack-queue/practice-implement-queue-using-stacks
+      - text: 60. 实战：用队列实现栈
+        link: stack-queue/practice-implement-stack-using-queues
+      - text: 61. 实战：有效的括号
+        link: stack-queue/practice-valid-parentheses
+      - text: 62. 实战：最小栈
+        link: stack-queue/practice-min-stack
+      - text: 63. 实战：字符串解码
+        link: stack-queue/practice-decode-string
+      - text: 64. 实战：每日温度
+        link: stack-queue/practice-daily-temperatures
+      - text: 65. 实战：下一个更大元素
+        link: stack-queue/practice-next-greater-element
+      - text: 66. 实战：逆波兰表达式求值
+        link: stack-queue/practice-evaluate-rpn
+      - text: 67. 实战：基本计算器
+        link: stack-queue/practice-basic-calculator
+      - text: 68. 实战：简化路径
+        link: stack-queue/practice-simplify-path
+  - text: 第七部分：单调栈与单调队列
+    items:
+      - text: 69. 单调栈原理与模板
+        link: monotonic-stack/monotonic-stack-theory
+      - text: 70. 单调队列原理与模板
+        link: monotonic-stack/monotonic-queue-theory
+      - text: 71. 实战：下一个更大元素 I
+        link: monotonic-stack/practice-next-greater-i
+      - text: 72. 实战：下一个更大元素 II
+        link: monotonic-stack/practice-next-greater-ii
+      - text: 73. 实战：每日温度（单调栈解法）
+        link: monotonic-stack/practice-daily-temp-stack
+      - text: 74. 实战：柱状图中最大的矩形
+        link: monotonic-stack/practice-largest-rectangle
+      - text: 75. 实战：最大矩形
+        link: monotonic-stack/practice-maximal-rectangle
+      - text: 76. 实战：接雨水
+        link: monotonic-stack/practice-trapping-rain-water
+      - text: 77. 实战：移掉 K 位数字
+        link: monotonic-stack/practice-remove-k-digits
+      - text: 78. 实战：去除重复字母
+        link: monotonic-stack/practice-remove-duplicate-letters
+      - text: 79. 实战：132 模式
+        link: monotonic-stack/practice-132-pattern
+      - text: 80. 实战：子数组的最小值之和
+        link: monotonic-stack/practice-sum-subarray-mins
+      - text: 81. 实战：滑动窗口最大值
+        link: monotonic-stack/practice-sliding-window-maximum
+  - text: 第八部分：哈希表
+    items:
+      - text: 82. 哈希表原理与实现
+        link: hash-table/hash-table-theory
+      - text: 83. 哈希碰撞与解决方案
+        link: hash-table/collision-resolution
+      - text: 84. 实战：两数之和（哈希解法）
+        link: hash-table/practice-two-sum-hash
+      - text: 85. 实战：字母异位词分组
+        link: hash-table/practice-group-anagrams
+      - text: 86. 实战：最长连续序列
+        link: hash-table/practice-longest-consecutive
+      - text: 87. 实战：无重复字符的最长子串
+        link: hash-table/practice-longest-substring
+      - text: 88. 实战：四数相加 II
+        link: hash-table/practice-four-sum-ii
+      - text: 89. 实战：两个数组的交集
+        link: hash-table/practice-intersection-of-arrays
+      - text: 90. 实战：快乐数
+        link: hash-table/practice-happy-number
+      - text: 91. 实战：存在重复元素
+        link: hash-table/practice-contains-duplicate
+      - text: 92. 实战：存在重复元素 II
+        link: hash-table/practice-contains-duplicate-ii
+      - text: 93. 实战：单词规律
+        link: hash-table/practice-word-pattern
+      - text: 94. 实战：有效的数独
+        link: hash-table/practice-valid-sudoku
+  - text: 第九部分：堆与优先队列
+    items:
+      - text: 95. 堆的原理与实现
+        link: heap/heap-theory
+      - text: 96. 堆的插入、删除与建堆
+        link: heap/heap-operations
+      - text: 97. 实战：数组中的第 K 个最大元素
+        link: heap/practice-kth-largest-element
+      - text: 98. 实战：前 K 个高频元素
+        link: heap/practice-top-k-frequent
+      - text: 99. 实战：合并 K 个升序链表（堆解法）
+        link: heap/practice-merge-k-sorted-lists
+      - text: 100. 实战：数据流的中位数
+        link: heap/practice-median-from-stream
+      - text: 101. 实战：丑数 II
+        link: heap/practice-ugly-number-ii
+      - text: 102. 实战：超级丑数
+        link: heap/practice-super-ugly-number
+      - text: 103. 实战：最小的 K 个数
+        link: heap/practice-smallest-k-numbers
+      - text: 104. 实战：查找和最小的 K 对数字
+        link: heap/practice-find-k-pairs
+      - text: 105. 实战：IPO 问题
+        link: heap/practice-ipo
+  - text: 第十部分：二叉树基础
+    items:
+      - text: 106. 二叉树的概念与存储
+        link: binary-tree/binary-tree-basics
+      - text: 107. 二叉树遍历：前序、中序、后序
+        link: binary-tree/traversal-methods
+      - text: 108. 二叉树遍历：层序遍历
+        link: binary-tree/level-order-traversal
+      - text: 109. 实战：前序遍历（递归与迭代）
+        link: binary-tree/practice-preorder-traversal
+      - text: 110. 实战：中序遍历（递归与迭代）
+        link: binary-tree/practice-inorder-traversal
+      - text: 111. 实战：后序遍历（递归与迭代）
+        link: binary-tree/practice-postorder-traversal
+      - text: 112. 实战：层序遍历
+        link: binary-tree/practice-level-order-traversal
+      - text: 113. 实战：二叉树的最大深度
+        link: binary-tree/practice-max-depth
+      - text: 114. 实战：二叉树的最小深度
+        link: binary-tree/practice-min-depth
+      - text: 115. 实战：对称二叉树
+        link: binary-tree/practice-symmetric-tree
+      - text: 116. 实战：翻转二叉树
+        link: binary-tree/practice-invert-tree
+      - text: 117. 实战：相同的树
+        link: binary-tree/practice-same-tree
+      - text: 118. 实战：路径总和
+        link: binary-tree/practice-path-sum
+      - text: 119. 实战：路径总和 II
+        link: binary-tree/practice-path-sum-ii
+      - text: 120. 实战：平衡二叉树
+        link: binary-tree/practice-balanced-tree
+      - text: 121. 实战：二叉树的右视图
+        link: binary-tree/practice-right-side-view
+      - text: 122. 实战：二叉树的最近公共祖先
+        link: binary-tree/practice-lca
+      - text: 123. 实战：从前序与中序遍历构造二叉树
+        link: binary-tree/practice-construct-from-preorder-inorder
+  - text: 第十一部分：二叉搜索树
+    items:
+      - text: 124. 二叉搜索树的性质与操作
+        link: bst/bst-theory
+      - text: 125. BST 的插入与删除
+        link: bst/bst-operations
+      - text: 126. 实战：验证二叉搜索树
+        link: bst/practice-validate-bst
+      - text: 127. 实战：二叉搜索树的最近公共祖先
+        link: bst/practice-bst-lca
+      - text: 128. 实战：二叉搜索树中第 K 小的元素
+        link: bst/practice-kth-smallest-bst
+      - text: 129. 实战：把二叉搜索树转换为累加树
+        link: bst/practice-bst-to-gst
+      - text: 130. 实战：二叉搜索树中的搜索
+        link: bst/practice-search-bst
+      - text: 131. 实战：二叉搜索树中的插入操作
+        link: bst/practice-insert-bst
+      - text: 132. 实战：删除二叉搜索树中的节点
+        link: bst/practice-delete-node-bst
+      - text: 133. 实战：二叉搜索树的最小绝对差
+        link: bst/practice-min-diff-bst
+      - text: 134. 实战：二叉搜索树中的众数
+        link: bst/practice-find-mode-bst
+      - text: 135. 实战：将有序数组转换为二叉搜索树
+        link: bst/practice-sorted-array-to-bst
+  - text: 第十二部分：位运算基础
+    items:
+      - text: 136. 位运算基础与常用技巧
+        link: bit-manipulation/bit-basics
+      - text: 137. 位运算的应用场景
+        link: bit-manipulation/bit-applications
+      - text: 138. 实战：位 1 的个数
+        link: bit-manipulation/practice-number-of-bits
+      - text: 139. 实战：只出现一次的数字
+        link: bit-manipulation/practice-single-number
+      - text: 140. 实战：只出现一次的数字 II
+        link: bit-manipulation/practice-single-number-ii
+      - text: 141. 实战：只出现一次的数字 III
+        link: bit-manipulation/practice-single-number-iii
+      - text: 142. 实战：比特位计数
+        link: bit-manipulation/practice-counting-bits
+      - text: 143. 实战：颠倒二进制位
+        link: bit-manipulation/practice-reverse-bits
+      - text: 144. 实战：2 的幂
+        link: bit-manipulation/practice-power-of-two
+      - text: 145. 实战：4 的幂
+        link: bit-manipulation/practice-power-of-four
+      - text: 146. 实战：两整数之和
+        link: bit-manipulation/practice-sum-of-two-integers
+      - text: 147. 实战：缺失数字
+        link: bit-manipulation/practice-missing-number
+      - text: 148. 实战：汉明距离
+        link: bit-manipulation/practice-hamming-distance
+  - text: 附录：学习路线图
+    items:
+      - text: 149. 本册知识结构总结
+        link: appendix/book-summary
+      - text: 150. 进阶路线：从基础到算法技巧
+        link: appendix/next-steps

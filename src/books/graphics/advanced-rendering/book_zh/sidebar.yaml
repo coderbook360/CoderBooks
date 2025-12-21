@@ -1,0 +1,169 @@
+- text: 序言
+  link: preface
+- text: 第一部分：场景图系统 (Scene Graph)
+  collapsed: false
+  items:
+    - text: 场景图概述与设计原理
+      link: scene-graph/scene-graph-overview
+    - text: 节点树结构实现
+      link: scene-graph/tree-structure
+    - text: 变换继承与传播
+      link: scene-graph/transform-inheritance
+    - text: 世界矩阵计算
+      link: scene-graph/world-matrix
+    - text: 渲染遍历算法
+      link: scene-graph/render-traversal
+    - text: 场景查询与过滤
+      link: scene-graph/scene-query
+- text: 第二部分：相机系统 (Camera System)
+  collapsed: false
+  items:
+    - text: 相机概述与分类
+      link: camera/camera-overview
+    - text: 透视相机实现
+      link: camera/perspective-camera
+    - text: 正交相机实现
+      link: camera/orthographic-camera
+    - text: 相机控制器：轨道控制
+      link: camera/orbit-controls
+    - text: 相机控制器：第一人称
+      link: camera/first-person-controls
+    - text: 视锥体剔除实现
+      link: camera/frustum-culling
+- text: 第三部分：材质系统 (Material System)
+  collapsed: false
+  items:
+    - text: 材质系统架构设计
+      link: materials/material-architecture
+    - text: 基础材质：MeshBasicMaterial
+      link: materials/mesh-basic-material
+    - text: Lambert 材质实现
+      link: materials/lambert-material
+    - text: Phong 材质实现
+      link: materials/phong-material
+    - text: PBR 材质理论基础
+      link: materials/pbr-theory
+    - text: PBR 材质实现：金属度与粗糙度
+      link: materials/pbr-implementation
+    - text: 材质参数系统
+      link: materials/material-parameters
+- text: 第四部分：光照与阴影 (Lighting and Shadows)
+  collapsed: false
+  items:
+    - text: 光源系统架构
+      link: lighting/light-system
+    - text: 环境光实现
+      link: lighting/ambient-light
+    - text: 平行光实现
+      link: lighting/directional-light
+    - text: 点光源实现
+      link: lighting/point-light
+    - text: 聚光灯实现
+      link: lighting/spot-light
+    - text: IBL 基于图像的光照
+      link: lighting/ibl
+    - text: HDR 与色调映射
+      link: lighting/hdr-tone-mapping
+    - text: 阴影映射原理
+      link: lighting/shadow-mapping
+    - text: PCF 软阴影
+      link: lighting/pcf-shadows
+    - text: CSM 级联阴影贴图
+      link: lighting/csm
+    - text: 球谐光照 (Spherical Harmonics)
+      link: lighting/spherical-harmonics
+    - text: VSM 方差阴影映射
+      link: lighting/vsm-shadows
+    - text: PCSS 百分比渐进软阴影
+      link: lighting/pcss-shadows
+- text: 第五部分：几何体系统 (Geometry System)
+  collapsed: false
+  items:
+    - text: 几何体架构设计
+      link: geometry/geometry-architecture
+    - text: BufferGeometry 实现
+      link: geometry/buffer-geometry
+    - text: 内置几何体：立方体
+      link: geometry/box-geometry
+    - text: 内置几何体：球体
+      link: geometry/sphere-geometry
+    - text: 内置几何体：平面与圆柱
+      link: geometry/plane-cylinder
+    - text: 自定义几何体
+      link: geometry/custom-geometry
+    - text: 网格简化算法 (QEM)
+      link: geometry/mesh-simplification
+- text: 第六部分：模型加载与后处理 (Loaders & Post-Processing)
+  collapsed: false
+  items:
+    - text: glTF 模型格式详解
+      link: loaders/gltf-format
+    - text: glTF 加载器实现
+      link: loaders/gltf-loader
+    - text: Draco 网格压缩
+      link: loaders/draco-compression
+    - text: 后处理概述与框架
+      link: post-processing/overview
+    - text: Bloom 辉光效果
+      link: post-processing/bloom
+    - text: SSAO 环境光遮蔽
+      link: post-processing/ssao
+    - text: HBAO+ 高级环境光遮蔽
+      link: post-processing/hbao-plus
+    - text: SSR 屏幕空间反射
+      link: post-processing/ssr
+    - text: SSGI 屏幕空间全局光照
+      link: post-processing/ssgi
+- text: 第七部分：动画系统 (Animation System)
+  collapsed: false
+  items:
+    - text: 骨骼动画原理
+      link: animation/skeletal-animation-theory
+    - text: 骨骼层级与绑定
+      link: animation/skeletal-hierarchy
+    - text: 蒙皮权重计算
+      link: animation/skinning-weights
+    - text: 动画关键帧插值
+      link: animation/keyframe-interpolation
+    - text: 动画混合与状态机
+      link: animation/animation-blending
+    - text: IK 反向动力学系统
+      link: animation/ik-system
+    - text: IK 求解器算法
+      link: animation/ik-solvers
+- text: 第八部分：性能优化 (Performance Optimization)
+  collapsed: false
+  items:
+    - text: 性能分析工具与方法
+      link: performance/profiling-tools
+    - text: Draw Call 优化
+      link: performance/draw-call-optimization
+    - text: 批量渲染实现
+      link: performance/batch-rendering
+    - text: 实例化渲染
+      link: performance/instanced-rendering
+    - text: LOD 系统实现
+      link: performance/lod-system
+    - text: 视锥体剔除优化
+      link: performance/frustum-culling
+    - text: 遮挡剔除技术
+      link: performance/occlusion-culling
+    - text: KD-Tree 空间分割
+      link: performance/kd-tree
+    - text: PVS 预计算可见性
+      link: performance/pvs
+    - text: 八叉树空间分割
+      link: performance/octree
+    - text: BVH 层次包围盒
+      link: performance/bvh
+    - text: 渲染队列优化
+      link: performance/render-queue
+- text: 第九部分：综合实战 (Final Project)
+  collapsed: false
+  items:
+    - text: 实战：3D 游戏场景渲染器
+      link: project/game-scene-renderer
+    - text: 性能监控与调试
+      link: project/performance-monitoring
+    - text: 从引擎到 Three.js 源码
+      link: project/to-threejs-source

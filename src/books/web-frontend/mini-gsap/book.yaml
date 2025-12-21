@@ -1,0 +1,14 @@
+id: mini-gsap
+title: 手写 Mini-GSAP
+subtitle: 从零实现动画引擎
+category: frontend-engineer
+categoryLabel: 🌐 前端工程师
+group: 🎯 Mini 系列 - DOM & 动画
+route: mini-gsap
+tags:
+  - animation
+  - gsap
+  - tween
+  - timeline
+  - easing
+  - web-animation

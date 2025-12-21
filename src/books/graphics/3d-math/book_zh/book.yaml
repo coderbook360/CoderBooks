@@ -1,0 +1,111 @@
+title: 3D 图形学数学基础
+description: 本书系统讲解 3D 图形学必备的数学知识，用可视化和代码实现帮助你深刻理解向量、矩阵、四元数等核心概念。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：向量运算 (Vector Operations)
+    items:
+      - text: 1. 向量的概念与表示
+        link: vectors/vector-basics
+      - text: 2. 向量的加减与数乘
+        link: vectors/vector-arithmetic
+      - text: 3. 向量的长度与归一化
+        link: vectors/vector-length
+      - text: 4. 点积与叉积
+        link: vectors/dot-cross-product
+      - text: 5. 向量在图形学中的应用
+        link: vectors/vector-applications
+  - text: 第二部分：矩阵运算 (Matrix Operations)
+    items:
+      - text: 6. 矩阵的概念与表示
+        link: matrices/matrix-basics
+      - text: 7. 矩阵的加减与数乘
+        link: matrices/matrix-arithmetic
+      - text: 8. 矩阵乘法详解
+        link: matrices/matrix-multiplication
+      - text: 9. 特殊矩阵：单位矩阵与逆矩阵
+        link: matrices/special-matrices
+      - text: 10. 转置矩阵与矩阵属性
+        link: matrices/matrix-transpose
+  - text: 第三部分：3D 变换 (3D Transformations)
+    items:
+      - text: 11. 齐次坐标系统
+        link: transforms/homogeneous-coordinates
+      - text: 12. 平移变换矩阵
+        link: transforms/translation-matrix
+      - text: 13. 旋转变换矩阵
+        link: transforms/rotation-matrix
+      - text: 14. 欧拉角与万向节死锁
+        link: transforms/euler-angles
+      - text: 15. 缩放与镜像变换
+        link: transforms/scale-mirror
+      - text: 16. 复合变换与变换顺序
+        link: transforms/composite-transforms
+      - text: 17. 法线变换与逆转置矩阵
+        link: transforms/normal-transform
+      - text: 18. Look-At 矩阵构建详解
+        link: transforms/lookat-matrix
+  - text: 第四部分：坐标系统 (Coordinate Systems)
+    items:
+      - text: 19. 模型空间与世界空间
+        link: coordinates/model-world-space
+      - text: 20. 观察空间与相机变换
+        link: coordinates/view-space
+      - text: 21. 裁剪空间与归一化设备坐标
+        link: coordinates/clip-ndc
+      - text: 22. 屏幕空间与视口变换
+        link: coordinates/screen-space
+      - text: 23. 切线空间与 TBN 矩阵
+        link: coordinates/tangent-space
+  - text: 第五部分：投影变换 (Projection Transforms)
+    items:
+      - text: 24. 投影变换概述
+        link: projection/projection-overview
+      - text: 25. 正交投影矩阵推导
+        link: projection/orthographic
+      - text: 26. 透视投影矩阵推导
+        link: projection/perspective
+      - text: 27. 视锥体与裁剪
+        link: projection/frustum-culling
+      - text: 28. 深度缓冲与深度精度
+        link: projection/depth-buffer
+  - text: 第六部分：四元数 (Quaternions)
+    items:
+      - text: 29. 为什么需要四元数
+        link: quaternions/why-quaternions
+      - text: 30. 四元数的定义与表示
+        link: quaternions/quaternion-basics
+      - text: 31. 四元数的运算
+        link: quaternions/quaternion-operations
+      - text: 32. 用四元数表示旋转
+        link: quaternions/rotation-quaternion
+      - text: 33. 四元数与欧拉角的转换
+        link: quaternions/euler-quaternion
+      - text: 34. 四元数插值：Slerp
+        link: quaternions/slerp
+  - text: 第七部分：几何运算与应用 (Geometry and Applications)
+    items:
+      - text: 35. 射线与平面的交点
+        link: geometry/ray-plane
+      - text: 36. 轴对齐包围盒 AABB
+        link: geometry/aabb
+      - text: 37. 球体包围盒与碰撞检测
+        link: geometry/bounding-sphere
+      - text: 38. OBB 有向包围盒
+        link: geometry/obb
+      - text: 39. 射线-三角形相交算法
+        link: geometry/ray-triangle
+      - text: 40. 点与三角形的关系
+        link: geometry/point-triangle
+  - text: 第八部分：综合实战 (Practical Implementation)
+    items:
+      - text: 41. 构建完整的 3D 数学库
+        link: practice/complete-math-library
+      - text: 42. 矩阵分解与重组
+        link: practice/matrix-decomposition
+      - text: 43. 性能优化：SIMD 与向量化
+        link: practice/performance-optimization
+      - text: 44. 与 Three.js 数学库对比分析
+        link: practice/threejs-comparison
+      - text: 45. 实战案例：相机控制器实现
+        link: practice/camera-controller

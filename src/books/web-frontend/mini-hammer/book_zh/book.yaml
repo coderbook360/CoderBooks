@@ -1,0 +1,51 @@
+title: mini-hammer.js 实战：从零构建自己的手势库
+description: 本书将带你从零开始，一步步构建一个属于自己的手势库。我们将深入 Hammer.js 的设计精髓，不仅实现核心功能，更将领悟其背后的架构思想与手势识别原理。
+toc:
+  - text: 序言
+    link: ./preface
+  - text: 第一部分：启程：从"用"到"懂"
+    items:
+      - text: 1. 手势库的世界
+        link: ./getting-started/introduction
+      - text: 2. 为何要亲手构建一个手势库？
+        link: ./getting-started/why-build-gesture-library
+      - text: 3. Hammer.js 快速上手
+        link: ./getting-started/hammerjs-quick-start
+  - text: 第二部分：奠基：构建核心引擎
+    items:
+      - text: 4. 准备工作：常量与工具函数
+        link: ./building-core-engine/constants-and-utils
+      - text: 5. 核心事件系统：EventEmitter
+        link: ./building-core-engine/event-emitter
+      - text: 6. 输入适配层：兼容鼠标与触摸
+        link: ./building-core-engine/input-adapter
+      - text: 7. 输入处理与 Touch Action
+        link: ./building-core-engine/input-processing-touch-action
+      - text: 8. 识别的灵魂：深入手势识别状态机
+        link: ./building-core-engine/gesture-state-machine
+      - text: 9. 手势管理器：Manager
+        link: ./building-core-engine/manager
+      - text: 10. 识别器基类：Recognizer
+        link: ./building-core-engine/recognizer-base-class
+  - text: 第三部分：生长：实现核心手势
+    items:
+      - text: 11. 实现 Tap（点击）
+        link: ./implementing-recognizers/tap
+      - text: 12. 实现 Pan（拖拽）
+        link: ./implementing-recognizers/pan
+      - text: 13. 实现 Swipe（滑动）
+        link: ./implementing-recognizers/swipe
+      - text: 14. 实现 Press（长按）
+        link: ./implementing-recognizers/press
+  - text: 第四部分：飞跃：高级手势与协同
+    items:
+      - text: 15. 实现 Pinch & Rotate：进入多点触控的世界
+        link: ./advanced-essence/pinch-rotate
+      - text: 16. 手势的协同艺术：recognizeWith 与 requireFailure
+        link: ./advanced-essence/recognizewith-requirefailure
+      - text: 17. 高级应用：解决手势冲突的艺术
+        link: ./advanced-essence/handling-gesture-conflicts
+  - text: 第五部分：封装：从"作品"到"产品"
+    items:
+      - text: 18. 最终组装与展望
+        link: ./final-assembly/next-steps
