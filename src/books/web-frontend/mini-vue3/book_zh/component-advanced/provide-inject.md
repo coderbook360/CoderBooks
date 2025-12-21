@@ -17,7 +17,7 @@ App
 
 如果用 Props 传递：
 
-```vue
+```vue-html
 <App :user="user">
   <Layout :user="user">
     <Sidebar :user="user">

@@ -223,7 +223,7 @@ export interface Router {
 
 ### 场景1：监听路由变化
 
-```vue
+```vue-html
 <script setup>
 import { watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
@@ -245,7 +245,7 @@ watch(() => route.params.id, (newId, oldId) => {
 
 ### 场景2：计算属性
 
-```vue
+```vue-html
 <script setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
@@ -263,7 +263,7 @@ const breadcrumbs = computed(() => {
 
 ### 场景3：条件渲染
 
-```vue
+```vue-html
 <template>
   <nav>
     <router-link to="/">首页</router-link>
@@ -280,7 +280,7 @@ const route = useRoute();
 
 ### 场景4：编程式导航
 
-```vue
+```vue-html
 <script setup>
 import { useRouter, useRoute } from 'vue-router';
 

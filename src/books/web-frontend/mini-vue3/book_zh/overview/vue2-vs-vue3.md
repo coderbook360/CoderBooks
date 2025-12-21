@@ -385,7 +385,7 @@ Vue 3：编译器识别结构稳定的区域，生成 Block。Block 追踪其内
 
 Vue 2 组件必须有单一根节点：
 
-```vue
+```vue-html
 <!-- Vue 2：必须包裹 -->
 <template>
   <div>
@@ -397,7 +397,7 @@ Vue 2 组件必须有单一根节点：
 
 Vue 3 支持多根节点：
 
-```vue
+```vue-html
 <!-- Vue 3：直接多根 -->
 <template>
   <header>...</header>
@@ -409,7 +409,7 @@ Vue 3 支持多根节点：
 
 将子节点渲染到 DOM 的其他位置：
 
-```vue
+```vue-html
 <template>
   <button @click="open = true">打开弹窗</button>
   <Teleport to="body">
@@ -426,7 +426,7 @@ Vue 3 支持多根节点：
 
 协调异步组件的加载状态：
 
-```vue
+```vue-html
 <template>
   <Suspense>
     <template #default>

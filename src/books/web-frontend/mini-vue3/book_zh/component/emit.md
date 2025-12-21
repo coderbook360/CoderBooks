@@ -8,7 +8,7 @@ Props 实现了父组件向子组件的数据传递，**那子组件如何向父
 
 先回顾 emit 的使用方式：
 
-```vue
+```vue-html
 <!-- 子组件 Child.vue -->
 <template>
   <button @click="handleClick">Click me</button>
@@ -222,7 +222,7 @@ setup(props, { emit }) {
 
 v-model 是 props + emit 的语法糖：
 
-```vue
+```vue-html
 <!-- 父组件 -->
 <Child v-model="value" />
 
@@ -249,7 +249,7 @@ const MyComponent = {
 
 **命名 v-model**：
 
-```vue
+```vue-html
 <!-- 父组件 -->
 <Child v-model:title="title" v-model:content="content" />
 
@@ -266,7 +266,7 @@ const MyComponent = {
 
 一些修饰符在编译时处理：
 
-```vue
+```vue-html
 <Child @update.once="onUpdate" />
 ```
 
@@ -310,7 +310,7 @@ function emit(instance, event, ...rawArgs) {
 
 区分原生 DOM 事件和组件自定义事件：
 
-```vue
+```vue-html
 <!-- 原生事件：直接绑定到 DOM -->
 <button @click="onClick">Click</button>
 

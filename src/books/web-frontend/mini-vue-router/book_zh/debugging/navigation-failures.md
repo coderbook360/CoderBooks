@@ -295,7 +295,7 @@ app.mount('#app');
 
 ### 场景2：组件中处理
 
-```vue
+```vue-html
 <script setup>
 import { useRouter } from 'vue-router';
 import { isNavigationFailure, ErrorTypes } from 'vue-router';

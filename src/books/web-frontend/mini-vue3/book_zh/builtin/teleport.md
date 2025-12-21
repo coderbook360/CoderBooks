@@ -6,7 +6,7 @@
 
 ## 问题场景
 
-```vue
+```vue-html
 <div style="overflow: hidden; height: 100px;">
   <Modal v-if="show">
     <!-- 模态框内容被裁剪！ -->
@@ -18,7 +18,7 @@
 
 使用 Teleport 解决：
 
-```vue
+```vue-html
 <div style="overflow: hidden; height: 100px;">
   <Teleport to="body">
     <Modal v-if="show">
@@ -30,7 +30,7 @@
 
 ## 基本用法
 
-```vue
+```vue-html
 <!-- 传送到 body -->
 <Teleport to="body">
   <div class="modal">内容</div>
@@ -240,7 +240,7 @@ function moveTeleport(vnode, container, parentAnchor, { o: { insert }, m: move }
 
 `disabled` 控制是否传送：
 
-```vue
+```vue-html
 <Teleport to="body" :disabled="isMobile">
   <Modal />
 </Teleport>
@@ -256,7 +256,7 @@ function moveTeleport(vnode, container, parentAnchor, { o: { insert }, m: move }
 
 ## 多个 Teleport 到同一目标
 
-```vue
+```vue-html
 <Teleport to="#container">
   <div>First</div>
 </Teleport>
@@ -274,7 +274,7 @@ function moveTeleport(vnode, container, parentAnchor, { o: { insert }, m: move }
 
 ### 与 Transition 配合
 
-```vue
+```vue-html
 <Teleport to="body">
   <Transition name="modal">
     <div v-if="show" class="modal">内容</div>
@@ -286,7 +286,7 @@ Transition 正常工作，因为它操作的是 Teleport 的子节点。
 
 ### 与 KeepAlive 配合
 
-```vue
+```vue-html
 <KeepAlive>
   <Teleport to="body">
     <component :is="currentModal" />
@@ -298,7 +298,7 @@ KeepAlive 缓存整个 Teleport，包括其子节点。
 
 ## defer 属性（Vue 3.5+）
 
-```vue
+```vue-html
 <Teleport to="#target" defer>
   <div>内容</div>
 </Teleport>

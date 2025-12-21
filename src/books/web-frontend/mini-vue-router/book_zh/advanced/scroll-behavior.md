@@ -63,6 +63,8 @@ type ScrollPositionResult =
 
 ### 版本 1：基础实现
 
+先从最简单的场景开始：用户配置一个 `scrollBehavior` 函数，每次导航完成后调用它来决定滚动位置。
+
 ```typescript
 // src/router.ts
 
@@ -73,7 +75,7 @@ export function createRouter(options: RouterOptions) {
     push(to) {
       // 导航逻辑...
       
-      // 导航完成后滚动
+      // 导航完成后处理滚动
       handleScroll(targetRoute, currentRoute, null);
     }
   };
@@ -86,27 +88,25 @@ function handleScroll(
   from: RouteLocationNormalized,
   savedPosition: ScrollPosition | null
 ) {
-  // 如果没有配置，使用默认行为
   if (!options.scrollBehavior) {
     return;
   }
   
-  // 调用用户配置的函数
   const result = options.scrollBehavior(to, from, savedPosition);
   
-  // 应用滚动
   if (result) {
     window.scrollTo(result);
   }
 }
 ```
 
-**基础使用**：
+`handleScroll` 接收三个参数：目标路由 `to`、来源路由 `from`、以及保存的滚动位置 `savedPosition`。第三个参数现在传的是 `null`，后面会解释它的用途。
+
+基础用法：
 
 ```typescript
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
-    // 总是滚动到顶部
     return { left: 0, top: 0 };
   }
 });
@@ -114,37 +114,77 @@ const router = createRouter({
 
 ### 版本 2：支持 savedPosition
 
+**目标**：在浏览器后退/前进时，恢复之前的滚动位置。
+
+**核心问题**：`savedPosition` 从哪里来？
+
+当用户点击浏览器的后退/前进按钮时，我们需要能够恢复到之前的滚动位置。这需要在离开页面前保存滚动位置。
+
+**实现原理**：
+
+1. **离开页面时**：将当前滚动位置保存到 `history.state` 中
+2. **后退/前进时**：从 `popstate` 事件的 `e.state` 中读取保存的位置
+
 ```typescript
-function handleScroll(
-  to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
-  savedPosition: ScrollPosition | null
-) {
-  if (!options.scrollBehavior) {
-    return;
-  }
+// 保存滚动位置（在离开页面前调用）
+function saveScrollPosition() {
+  const position = {
+    left: window.pageXOffset,  // 水平滚动距离
+    top: window.pageYOffset    // 垂直滚动距离
+  };
   
-  const result = options.scrollBehavior(to, from, savedPosition);
-  
-  if (!result) return;
-  
-  window.scrollTo(result);
+  // 使用 replaceState 将滚动位置保存到当前历史记录中
+  // 这样后退时可以通过 e.state.scroll 获取
+  history.replaceState(
+    { ...history.state, scroll: position },
+    ''
+  );
 }
+
+// 监听 popstate 事件（浏览器后退/前进触发）
+window.addEventListener('popstate', (e) => {
+  // 从 state 中获取保存的滚动位置
+  const savedPosition = e.state?.scroll || null;
+  
+  // 调用滚动处理函数
+  handleScroll(to, from, savedPosition);
+});
 ```
 
-**使用 savedPosition**：
+**使用 savedPosition 的完整示例**：
 
 ```typescript
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
-    // 浏览器后退/前进时恢复位置
+    // 浏览器后退/前进时，savedPosition 有值
     if (savedPosition) {
+      // 恢复到之前保存的位置
       return savedPosition;
     }
-    // 否则滚动到顶部
+    // 新导航时 savedPosition 为 null，滚动到顶部
     return { left: 0, top: 0 };
   }
 });
+```
+
+**执行流程图**：
+
+```
+用户在页面 A（滚动位置 top: 500）
+         ↓
+点击链接跳转到页面 B
+         ↓
+saveScrollPosition() → 保存 { top: 500 } 到 history.state
+         ↓
+用户在页面 B 浏览
+         ↓
+点击浏览器后退按钮
+         ↓
+popstate 事件触发 → e.state.scroll = { top: 500 }
+         ↓
+scrollBehavior(to, from, { top: 500 }) 被调用
+         ↓
+返回 savedPosition → 页面滚动到 top: 500
 ```
 
 **savedPosition 从哪来？**

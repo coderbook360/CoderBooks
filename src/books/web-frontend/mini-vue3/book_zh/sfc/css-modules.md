@@ -326,7 +326,7 @@ CSS 变量设置在组件根元素上，子元素通过继承获得：
 
 **1. `$style` 在模板中 undefined**
 
-```vue
+```vue-html
 <!-- ❌ 错误：忘记添加 module 属性 -->
 <template>
   <div :class="$style.container">...</div>
@@ -343,7 +343,7 @@ CSS 变量设置在组件根元素上，子元素通过继承获得：
 
 **2. CSS Modules 类名与外部库冲突**
 
-```vue
+```vue-html
 <style module>
 /* ❌ 类名被哈希，无法匹配外部库的 DOM 结构 */
 .el-input {
@@ -364,7 +364,7 @@ CSS 变量设置在组件根元素上，子元素通过继承获得：
 
 **3. v-bind() 在 SSR 首屏闪烁**
 
-```vue
+```vue-html
 <script setup>
 const theme = ref({ color: 'blue' })
 </script>
@@ -383,7 +383,7 @@ const theme = ref({ color: 'blue' })
 
 **4. v-bind() 深层对象属性的引号问题**
 
-```vue
+```vue-html
 <style>
 /* ❌ 错误：对象路径必须用引号包裹 */
 .text { color: v-bind(theme.colors.primary); }

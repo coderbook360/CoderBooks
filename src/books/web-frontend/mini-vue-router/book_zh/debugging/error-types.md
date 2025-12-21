@@ -311,7 +311,7 @@ router.onError((error) => {
 
 ### 场景2：组件中处理错误
 
-```vue
+```vue-html
 <script setup>
 import { useRouter } from 'vue-router';
 import { isNavigationFailure, ErrorTypes } from 'vue-router';

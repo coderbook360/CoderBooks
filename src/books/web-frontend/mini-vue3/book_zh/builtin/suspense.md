@@ -6,7 +6,7 @@
 
 ## 基本用法
 
-```vue
+```vue-html
 <Suspense>
   <template #default>
     <AsyncComponent />
@@ -46,7 +46,7 @@ export default {
 
 ### 顶层 await
 
-```vue
+```vue-html
 <script setup>
 const data = await fetchData()
 </script>
@@ -273,7 +273,7 @@ function fallback(suspense, fallbackVNode) {
 
 ## 超时处理
 
-```vue
+```vue-html
 <Suspense :timeout="3000">
   <AsyncComponent />
   
@@ -299,7 +299,7 @@ if (timeout > 0) {
 
 ## 嵌套 Suspense
 
-```vue
+```vue-html
 <Suspense>
   <template #default>
     <OuterAsync>
@@ -327,7 +327,7 @@ if (timeout > 0) {
 
 ## 事件
 
-```vue
+```vue-html
 <Suspense
   @resolve="onResolve"
   @pending="onPending"
@@ -341,7 +341,7 @@ if (timeout > 0) {
 
 ## 与 Transition 配合
 
-```vue
+```vue-html
 <Transition>
   <Suspense>
     <template #default>

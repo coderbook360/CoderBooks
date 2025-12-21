@@ -485,7 +485,7 @@ const routes = [
 
 **命名视图** 在同一级路由中渲染多个视图：
 
-```vue
+```vue-html
 <template>
   <router-view />              <!-- 默认视图 -->
   <router-view name="sidebar" />

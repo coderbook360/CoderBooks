@@ -199,7 +199,7 @@ function initProps(instance, rawProps) {
 
 **Attrs**：未在 props 中声明的属性，会"穿透"到组件根元素
 
-```vue
+```vue-html
 <!-- 父组件 -->
 <Child title="Hello" data-id="123" class="my-class" />
 
@@ -217,7 +217,7 @@ export default {
 
 可以通过 `inheritAttrs: false` 禁止自动继承，然后手动使用 `$attrs`：
 
-```vue
+```vue-html
 <script>
 export default {
   inheritAttrs: false
@@ -342,7 +342,7 @@ function resolveBooleanProp(value, opt) {
 
 这是为了支持 HTML 风格的布尔属性：
 
-```vue
+```vue-html
 <!-- 以下都等价于 disabled: true -->
 <Button disabled />
 <Button disabled="" />

@@ -41,44 +41,39 @@ const routes = [
 // 访问 /people → 渲染 Users → URL 保持 /people
 ```
 
-**特点**：
-- URL 不变
-- 多个路径指向同一组件
-- 用于 SEO、兼容旧 URL
+简单来说：重定向会改变 URL，别名不会。
 
 ## 重定向实现
 
 ### 版本 1：简单重定向
 
+先来实现最基础的重定向。思路很简单：导航时检查目标路由有没有配置 `redirect`，有的话就跳过去。
+
 ```typescript
-// 路由配置
 interface RouteRecordRaw {
   path: string;
   component?: Component;
-  redirect?: string | RouteLocationRaw;  // 新增
+  redirect?: string | RouteLocationRaw;
 }
 
-// 匹配器处理
 function normalizeRouteRecord(record: RouteRecordRaw): RouteRecordNormalized {
   return {
     path: record.path,
     components: record.component ? { default: record.component } : {},
-    redirect: record.redirect,  // 保存 redirect
+    redirect: record.redirect,
   };
 }
 
-// 导航时处理
 async function navigate(to: RouteLocation) {
   const matched = matcher.resolve(to);
-  
-  // 检查是否有重定向
   const lastMatch = matched.matched[matched.matched.length - 1];
+  
   if (lastMatch?.redirect) {
     const redirectTo = typeof lastMatch.redirect === 'string'
       ? lastMatch.redirect
       : lastMatch.redirect;
     
-    // 递归处理重定向
+    // 递归导航到重定向目标
     return navigate(router.resolve(redirectTo));
   }
   
@@ -86,25 +81,50 @@ async function navigate(to: RouteLocation) {
 }
 ```
 
+这里用了递归，所以多级重定向（A → B → C）也能正常工作。
+
+流程是这样的：
+
+```
+访问 /home → 匹配到 { path: '/home', redirect: '/' }
+    ↓
+检测到 redirect，递归调用 navigate('/')
+    ↓
+匹配到 { path: '/', component: Home }
+    ↓
+无重定向，渲染 Home，URL 变为 /
+       ↓
+matcher.resolve('/home') → 找到 { path: '/home', redirect: '/' }
+       ↓
+检测到 redirect: '/'
+       ↓
+递归调用 navigate('/')
+       ↓
+matcher.resolve('/') → 找到 { path: '/', component: Home }
+       ↓
+无重定向，渲染 Home，URL 变为 /
+```
+
 ### 版本 2：动态重定向
+
+有时候重定向目标不是固定的，需要根据当前路由动态决定。比如把路径参数转成查询参数：
 
 ```typescript
 interface RouteRecordRaw {
   path: string;
   component?: Component;
   redirect?: 
-    | string 
-    | RouteLocationRaw 
-    | ((to: RouteLocation) => string | RouteLocationRaw);  // 函数
+    | string
+    | RouteLocationRaw
+    | ((to: RouteLocation) => string | RouteLocationRaw);  // 支持函数
 }
 
-// 处理动态重定向
 function resolveRedirect(
   redirect: NonNullable<RouteRecordNormalized['redirect']>,
   to: RouteLocation
 ): RouteLocation {
   if (typeof redirect === 'function') {
-    return redirect(to);
+    return redirect(to);  // 函数形式，传入当前路由让它决定
   }
   return typeof redirect === 'string' 
     ? router.resolve(redirect)
@@ -112,19 +132,16 @@ function resolveRedirect(
 }
 ```
 
-**使用示例**：
+用法：
 
 ```typescript
 const routes = [
   {
     path: '/search/:text',
-    redirect: to => {
-      // 将路径参数转换为查询参数
-      return {
-        path: '/search',
-        query: { q: to.params.text }
-      };
-    }
+    redirect: to => ({
+      path: '/search',
+      query: { q: to.params.text }
+    })
   },
   {
     path: '/search',
@@ -132,24 +149,29 @@ const routes = [
   }
 ];
 
-// 访问 /search/vue → 重定向到 /search?q=vue
+// /search/vue → /search?q=vue
 ```
 
 ### 版本 3：防止无限循环
 
+递归有个风险：如果配置错了，可能会无限循环。
+
+```typescript
+// 错误配置，会无限循环
+const routes = [
+  { path: '/a', redirect: '/b' },
+  { path: '/b', redirect: '/a' }  // A → B → A → B → ...
+];
+```
+
+解决办法很简单，加个计数器，超过一定次数就报错：
+
 ```typescript
 const MAX_REDIRECT_COUNT = 10;
 
-async function navigate(
-  to: RouteLocation,
-  redirectCount = 0
-) {
-  // 新增：检查重定向次数
+async function navigate(to: RouteLocation, redirectCount = 0) {
   if (redirectCount > MAX_REDIRECT_COUNT) {
-    throw new Error(
-      `Maximum redirect count exceeded. ` +
-      `Possible infinite redirect loop detected.`
-    );
+    throw new Error('Redirect loop detected');
   }
   
   const matched = matcher.resolve(to);
@@ -157,40 +179,52 @@ async function navigate(
   
   if (lastMatch?.redirect) {
     const redirectTo = resolveRedirect(lastMatch.redirect, to);
-    // 递增重定向计数
     return navigate(redirectTo, redirectCount + 1);
   }
   
-  // ...
+  // 正常导航...
 }
 ```
 
+为什么是 10 次？正常应用的重定向链条不会超过 3-5 次，10 次足够检测问题了。
+
 ## 别名实现
 
+别名与重定向不同，它不会改变 URL，而是为同一个路由提供多个访问路径。
+
+我们将分两个版本实现别名功能：
+
+1. **版本 1**：基础别名 - 支持单个或多个别名
+2. **版本 2**：嵌套路由别名 - 正确处理父路径拼接
+
 ### 版本 1：基础别名
+
+**目标**：支持为一个路由配置一个或多个别名。
+
+**核心思路**：将别名展开为多个独立的路由记录，它们指向同一个组件。
 
 ```typescript
 interface RouteRecordRaw {
   path: string;
   component?: Component;
-  alias?: string | string[];  // 新增
+  alias?: string | string[];  // 新增：支持字符串或字符串数组
 }
 
-// 将别名展开为多个路由记录
+// 将一个路由记录展开为多个记录（主路由 + 别名路由）
 function normalizeRouteWithAlias(
   record: RouteRecordRaw,
   parent?: RouteRecordNormalized
 ): RouteRecordNormalized[] {
   const records: RouteRecordNormalized[] = [];
   
-  // 主路由
+  // 1. 首先创建主路由记录
   const mainRecord = normalizeRouteRecord(record, parent);
   records.push(mainRecord);
   
-  // 别名路由
+  // 2. 处理别名，统一转换为数组
   const aliases = Array.isArray(record.alias) 
-    ? record.alias 
-    : record.alias 
+    ? record.alias        // 已经是数组
+    : record.alias        // 单个字符串 
       ? [record.alias] 
       : [];
   
@@ -442,24 +476,4 @@ const aliasFullPath = joinPaths(parent.path, alias);
 - 参数格式转换
 - SEO 优化
 
-至此，高级特性（第34-37章）全部完成！下一部分实现错误处理（第38-39章）。
-  if (route.alias) {
-    const aliases = Array.isArray(route.alias) ? route.alias : [route.alias];
-    aliases.forEach(alias => {
-      records.push({
-        ...route,
-        path: alias,
-        alias: undefined
-      });
-    });
-  }
-  
-  return records;
-}
-```
-
-**重定向 vs 别名**：
-- 重定向：URL 改变
-- 别名：URL 不变
-
-至此，高级特性（第34-37章）完成。下一部分实现错误处理（第38-39章）。
+至此，高级特性全部完成！下一部分实现错误处理章节。

@@ -8,7 +8,7 @@ Composition API 是 Vue 3 的核心特性。本章实现完整的路由 Composit
 
 ### Options API 的局限
 
-```vue
+```vue-html
 <script>
 export default {
   data() {
@@ -37,7 +37,7 @@ export default {
 
 ### Composition API 的改进
 
-```vue
+```vue-html
 <script setup>
 import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
@@ -138,7 +138,7 @@ export function useRoute(): RouteLocationNormalizedLoaded {
 
 **响应式特性**：
 
-```vue
+```vue-html
 <script setup>
 const route = useRoute();
 
@@ -211,7 +211,7 @@ export function useLink(options: UseLinkOptions) {
 
 **使用 useLink 创建自定义导航**：
 
-```vue
+```vue-html
 <script setup>
 import { useLink } from 'vue-router';
 
@@ -236,7 +236,7 @@ const { href, isActive, navigate } = useLink({ to: props.to });
 
 ### 场景1：响应式路由参数
 
-```vue
+```vue-html
 <script setup>
 import { watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -260,7 +260,7 @@ async function loadUserData(id) {
 
 ### 场景2：编程式导航
 
-```vue
+```vue-html
 <script setup>
 import { useRouter } from 'vue-router';
 
@@ -308,7 +308,7 @@ export function useNavigation() {
 }
 ```
 
-```vue
+```vue-html
 <script setup>
 import { useNavigation } from '@/composables/useNavigation';
 

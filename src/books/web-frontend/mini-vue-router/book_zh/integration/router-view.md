@@ -84,7 +84,7 @@ export const RouterView = defineComponent({
 
 **深度计算原理**：
 
-```vue
+```vue-html
 <!-- App.vue - depth=0 -->
 <router-view />  <!-- 注入 depth=0, 提供 depth=1 -->
 
@@ -143,7 +143,7 @@ export const RouterView = defineComponent({
 
 **使用**：
 
-```vue
+```vue-html
 <router-view>
   <template #default>
     <div>404 - 页面不存在</div>
@@ -246,7 +246,7 @@ export const RouterView = defineComponent({
 
 **使用**：
 
-```vue
+```vue-html
 <router-view />              <!-- 默认视图 -->
 <router-view name="sidebar" /> <!-- 侧边栏视图 -->
 <router-view name="footer" />  <!-- 底部视图 -->
@@ -339,7 +339,7 @@ export const RouterView = defineComponent({
 
 **作用域插槽使用**：
 
-```vue
+```vue-html
 <router-view v-slot="{ Component, route }">
   <transition name="fade">
     <component :is="Component" :key="route.path" />
@@ -347,7 +347,7 @@ export const RouterView = defineComponent({
 </router-view>
 ```
 
-```vue
+```vue-html
 <router-view v-slot="{ Component }">
   <keep-alive>
     <component :is="Component" />
@@ -357,7 +357,7 @@ export const RouterView = defineComponent({
 
 ## KeepAlive 集成
 
-```vue
+```vue-html
 <template>
   <router-view v-slot="{ Component, route }">
     <keep-alive :include="cachedViews">
@@ -380,7 +380,7 @@ const cachedViews = computed(() => {
 
 ### 场景1：基础使用
 
-```vue
+```vue-html
 <!-- App.vue -->
 <template>
   <router-view />
@@ -389,7 +389,7 @@ const cachedViews = computed(() => {
 
 ### 场景2：带过渡动画
 
-```vue
+```vue-html
 <router-view v-slot="{ Component }">
   <transition name="fade" mode="out-in">
     <component :is="Component" />
@@ -431,7 +431,7 @@ const routes = [
 ];
 ```
 
-```vue
+```vue-html
 <!-- User.vue -->
 <template>
   <div class="user">
@@ -448,7 +448,7 @@ const routes = [
 
 ### 场景4：命名视图布局
 
-```vue
+```vue-html
 <template>
   <div class="layout">
     <router-view />                 <!-- 主内容 -->
@@ -459,7 +459,7 @@ const routes = [
 
 ### 场景5：条件缓存
 
-```vue
+```vue-html
 <router-view v-slot="{ Component, route }">
   <keep-alive v-if="route.meta.keepAlive">
     <component :is="Component" :key="route.fullPath" />
@@ -492,7 +492,7 @@ return () => h(component.value);
 
 ### 陷阱3：KeepAlive 与 key 冲突
 
-```vue
+```vue-html
 <!-- ❌ 错误：key 导致组件无法缓存 -->
 <keep-alive>
   <component :is="Component" :key="route.fullPath" />

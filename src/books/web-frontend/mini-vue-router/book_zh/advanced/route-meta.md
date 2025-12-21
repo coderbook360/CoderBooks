@@ -85,7 +85,16 @@ interface RouteMeta {
 
 ## 实现 meta 系统
 
+我们将分两个版本实现 meta 系统：
+
+1. **版本 1**：基础实现 - 在路由记录中保存 meta
+2. **版本 2**：嵌套路由 meta 合并 - 自动合并父子路由的 meta
+
 ### 版本 1：基础实现
+
+**目标**：在路由记录归一化时，保存用户配置的 `meta` 字段。
+
+**核心思路**：如果用户没有配置 `meta`，则使用空对象 `{}` 作为默认值，确保 `meta` 字段始终存在。
 
 ```typescript
 // src/matcher/index.ts
@@ -94,17 +103,65 @@ function normalizeRouteRecord(record: RouteRecordRaw): RouteRecordNormalized {
   return {
     path: record.path,
     components: { default: record.component },
-    meta: record.meta || {},  // 保存 meta
+    // 保存 meta，如果没有配置则使用空对象
+    // 这样后续代码可以安全地访问 route.meta 而不用担心 undefined
+    meta: record.meta || {},
     // ...其他字段
   };
 }
 ```
 
+**为什么用 `|| {}` 而不是 `?? {}`？**
+
+这里使用 `||` 是因为我们希望将 `undefined`、`null`、以及空对象都归一化为 `{}`。如果用户配置了 `meta: null`，我们也应该将其转换为 `{}`。
+
 ### 版本 2：嵌套路由 meta 合并
+
+**目标**：访问嵌套路由时，自动合并所有父级路由的 meta 信息。
+
+**为什么需要合并？**
+
+考虑这个场景：
+
+```typescript
+const routes = [
+  {
+    path: '/admin',
+    meta: { layout: 'admin' },  // 所有 admin 子页面都使用 admin 布局
+    children: [
+      {
+        path: 'users',
+        meta: { requiresAuth: true },  // 用户管理需要登录
+        children: [
+          {
+            path: ':id',
+            meta: { title: '用户详情' }  // 用户详情页的标题
+          }
+        ]
+      }
+    ]
+  }
+];
+```
+
+当用户访问 `/admin/users/123` 时，我们希望 `route.meta` 包含所有三层的信息：
+
+```typescript
+route.meta = {
+  layout: 'admin',        // 从第一层 /admin 继承
+  requiresAuth: true,     // 从第二层 /admin/users 继承
+  title: '用户详情'       // 从第三层 /admin/users/:id 获取
+};
+```
+
+**实现代码**：
 
 ```typescript
 // 计算合并后的 meta
+// matched 是匹配到的路由记录数组，从外到内排列
 function extractMeta(matched: RouteRecordNormalized[]): RouteMeta {
+  // 使用 reduce 从左到右遍历，依次合并每层的 meta
+  // 后面的会覆盖前面的同名属性（子路由优先）
   return matched.reduce((meta, record) => {
     return { ...meta, ...record.meta };
   }, {} as RouteMeta);
@@ -117,7 +174,24 @@ const route: RouteLocationNormalized = {
 };
 ```
 
-**为什么需要合并？**
+**合并过程示意图**：
+
+```
+matched 数组：
+[
+  { path: '/admin',       meta: { layout: 'admin' } },
+  { path: 'users',        meta: { requiresAuth: true } },
+  { path: ':id',          meta: { title: '用户详情' } }
+]
+
+reduce 执行过程：
+第1步: {} + { layout: 'admin' } = { layout: 'admin' }
+第2步: { layout: 'admin' } + { requiresAuth: true } = { layout: 'admin', requiresAuth: true }
+第3步: { layout: 'admin', requiresAuth: true } + { title: '用户详情' } 
+     = { layout: 'admin', requiresAuth: true, title: '用户详情' }
+```
+
+**嵌套路由示例**：
 
 ```typescript
 const routes = [
@@ -322,7 +396,7 @@ const routes = [
 ];
 ```
 
-```vue
+```vue-html
 <!-- App.vue -->
 <template>
   <component :is="layoutComponent">
@@ -362,7 +436,7 @@ const routes = [
 ];
 ```
 
-```vue
+```vue-html
 <template>
   <router-view v-slot="{ Component, route }">
     <keep-alive>
@@ -383,7 +457,7 @@ const routes = [
 
 ### 场景5：权限按钮显示
 
-```vue
+```vue-html
 <template>
   <button v-if="canEdit">编辑</button>
   <button v-if="canDelete">删除</button>

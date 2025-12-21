@@ -150,7 +150,7 @@ beforeRouteEnter 的 next 回调
 
 核心组件：
 
-```vue
+```vue-html
 <!-- RouterView：路由出口 -->
 <router-view />
 

@@ -12,7 +12,7 @@
 
 你很自然地写出了这样的代码：
 
-```vue
+```vue-html
 <template>
   <span :class="`bg-${statusColor}-100 text-${statusColor}-800 px-2 py-1 rounded`">
     {{ statusText }}
@@ -113,7 +113,7 @@ safelist: [
 
 第一种方案是使用完整类名。重构代码，避免动态拼接：
 
-```vue
+```vue-html
 <template>
   <span :class="[statusStyles[status], 'px-2 py-1 rounded']">
     {{ statusText }}
@@ -145,7 +145,7 @@ shortcuts: {
 
 然后在组件中使用：
 
-```vue
+```vue-html
 <span :class="`status-${status}`">{{ statusText }}</span>
 ```
 

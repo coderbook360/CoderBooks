@@ -6,7 +6,7 @@
 
 ## 基本用法
 
-```vue
+```vue-html
 <Transition name="fade">
   <div v-if="show">内容</div>
 </Transition>
@@ -320,7 +320,7 @@ requestAnimationFrame(() => {
 
 控制切换时的过渡顺序：
 
-```vue
+```vue-html
 <!-- 默认：同时进行 -->
 <Transition>
 
@@ -358,7 +358,7 @@ if (mode === 'in-out') {
 
 完全使用 JavaScript 控制动画：
 
-```vue
+```vue-html
 <Transition
   :css="false"
   @before-enter="onBeforeEnter"

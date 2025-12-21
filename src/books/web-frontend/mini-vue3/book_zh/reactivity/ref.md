@@ -252,7 +252,7 @@ console.log(arr[0].value)  // 需要 .value！
 
 在 Vue 模板中使用 ref 也不需要 `.value`：
 
-```vue
+```vue-html
 <template>
   <div>{{ count }}</div>  <!-- 直接用 count，不是 count.value -->
 </template>

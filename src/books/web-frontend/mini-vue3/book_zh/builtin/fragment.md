@@ -8,7 +8,7 @@ Vue 2 要求组件必须有单个根元素。**Vue 3 打破了这个限制，组
 
 Vue 2 中：
 
-```vue
+```vue-html
 <!-- ❌ Vue 2 报错 -->
 <template>
   <header>...</header>
@@ -30,7 +30,7 @@ Vue 2 中：
 
 Vue 3 中：
 
-```vue
+```vue-html
 <!-- ✅ Vue 3 支持多根节点 -->
 <template>
   <header>...</header>
@@ -237,7 +237,7 @@ function unmount(vnode, parentComponent, parentSuspense, doRemove) {
 
 v-for 编译为 Fragment：
 
-```vue
+```vue-html
 <template v-for="item in items" :key="item.id">
   <div>{{ item.name }}</div>
   <span>{{ item.value }}</span>
@@ -257,7 +257,7 @@ h(Fragment, { key: item.id }, [
 
 ## 多个相邻 Fragment
 
-```vue
+```vue-html
 <template v-if="showA">
   <header>A Header</header>
   <main>A Main</main>

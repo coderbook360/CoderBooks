@@ -34,7 +34,7 @@ Tab B → Tab A
 
 ## 基本用法
 
-```vue
+```vue-html
 <template>
   <KeepAlive>
     <component :is="currentTab" />
@@ -46,7 +46,7 @@ Tab B → Tab A
 
 控制哪些组件需要缓存：
 
-```vue
+```vue-html
 <!-- 字符串：逗号分隔的组件名 -->
 <KeepAlive include="ComponentA,ComponentB">
   <component :is="view" />
@@ -65,7 +65,7 @@ Tab B → Tab A
 
 ### max：限制缓存数量
 
-```vue
+```vue-html
 <KeepAlive :max="10">
   <router-view />
 </KeepAlive>

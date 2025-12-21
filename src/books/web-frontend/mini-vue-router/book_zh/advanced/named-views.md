@@ -8,7 +8,7 @@
 
 ### 单视图的局限
 
-```vue
+```vue-html
 <!-- 传统单视图 -->
 <template>
   <div class="layout">
@@ -24,7 +24,7 @@
 
 ### 命名视图的优势
 
-```vue
+```vue-html
 <!-- 命名视图 -->
 <template>
   <div class="layout">
@@ -74,7 +74,9 @@ const routes = [
 
 ## 渐进式实现
 
-### 版本 1：支持命名视图
+### 版本 1：RouterView 支持命名视图
+
+先看看需要做什么改动。原来的 `RouterView` 只能渲染 `matched[depth].component`，现在我们要让它能根据 `name` 属性从 `matched[depth].components` 对象中获取对应的组件。
 
 ```typescript
 // src/components/RouterView.ts
@@ -83,22 +85,30 @@ export const RouterView = defineComponent({
   name: 'RouterView',
   
   props: {
-    name: {  // 新增：视图名称
+    // 视图名称，默认为 'default'
+    name: {
       type: String,
       default: 'default'
     }
   },
   
   setup(props) {
-    const route = inject(routeKey)!;
-    const depth = inject(depthKey, 0);
+    const route = inject(routeKey);
     
+    if (!route) {
+      throw new Error('RouterView must be used inside a Router');
+    }
+    
+    // depth 用于处理嵌套路由，表示当前是第几层 RouterView
+    const depth = inject(depthKey, 0);
     provide(depthKey, depth + 1);
     
-    // 修改：根据 name 获取组件
     const component = computed(() => {
       const matched = route.value.matched[depth];
-      return matched?.components?.[props.name];  // 使用 props.name
+      if (!matched) return null;
+      
+      // 关键改动：从 components 对象中按 name 取组件
+      return matched.components?.[props.name] ?? null;
     });
     
     return () => {
@@ -109,17 +119,35 @@ export const RouterView = defineComponent({
 });
 ```
 
+这里有几个细节值得注意：
+
+- `depth` 通过 `inject/provide` 传递，每一层 RouterView 都会把深度 +1 传给子组件
+- `matched[depth]` 取出当前层级对应的路由记录
+- `components?.[props.name]` 根据视图名称获取组件，`?.` 防止 `components` 不存在时报错
+<router-view />              → props.name = 'default'  → components.default
+<router-view name="sidebar" /> → props.name = 'sidebar' → components.sidebar
+<router-view name="footer" />  → props.name = 'footer'  → components.footer
+```
+
 ### 版本 2：路由记录处理
+
+**目标**：统一 `component` 和 `components` 的存储格式，简化后续处理逻辑。
+
+**核心思路**：无论用户配置的是 `component` 还是 `components`，内部都统一存储为 `components` 对象。
 
 ```typescript
 // src/matcher/index.ts
 
 function normalizeRouteRecord(record: RouteRecordRaw): RouteRecordNormalized {
-  // 处理 component 和 components
+  // 处理 component 和 components 的兼容性
+  // 优先级：components > component > 空对象
   const components = record.components
+    // 如果用户配置了 components，直接使用
     ? record.components
+    // 如果配置了 component，转换为 { default: component }
     : record.component
       ? { default: record.component }
+      // 都没有配置，返回空对象
       : {};
   
   return {
@@ -130,21 +158,45 @@ function normalizeRouteRecord(record: RouteRecordRaw): RouteRecordNormalized {
 }
 ```
 
-**兼容性处理**：
+**为什么要做归一化处理？**
+
+这是一个重要的设计决策。通过归一化处理，我们可以：
+
+1. **简化 RouterView 的逻辑**：只需要处理 `components` 一种格式
+2. **保持向下兼容**：用户可以继续使用 `component` 配置单组件路由
+3. **统一数据结构**：内部存储格式一致，减少条件判断
+
+**转换示意图**：
+
+```
+用户配置                        内部存储
+─────────────────────────────────────────────
+{ component: Home }      →    { components: { default: Home } }
+
+{ components: {          →    { components: {
+    default: Home,                 default: Home,
+    sidebar: Sidebar               sidebar: Sidebar
+  }                              }
+}                              }
+```
+
+**兼容性处理示例**：
 
 ```typescript
-// 输入格式 1：单组件
+// 输入格式 1：单组件（旧写法，保持兼容）
 const route1 = { path: '/', component: Home };
-// 归一化为
+// 归一化后
 const normalized1 = { path: '/', components: { default: Home } };
 
-// 输入格式 2：多组件
+// 输入格式 2：多组件（命名视图写法）
 const route2 = { path: '/', components: { default: Home, sidebar: Sidebar } };
 // 保持不变
 const normalized2 = { path: '/', components: { default: Home, sidebar: Sidebar } };
 ```
 
 ## 完整实现
+
+下面是整合了版本1和版本2所有功能的完整 `RouterView` 组件实现：
 
 ```typescript
 // src/components/RouterView.ts
@@ -236,7 +288,7 @@ const routes = [
 ];
 ```
 
-```vue
+```vue-html
 <!-- App.vue -->
 <template>
   <div class="layout">
@@ -258,7 +310,7 @@ const routes = [
 
 ### 场景2：条件渲染视图
 
-```vue
+```vue-html
 <template>
   <div class="layout">
     <router-view />  <!-- 主内容总是存在 -->
@@ -301,7 +353,7 @@ const routes = [
 ];
 ```
 
-```vue
+```vue-html
 <!-- Settings.vue -->
 <template>
   <div class="settings">
@@ -338,7 +390,7 @@ const routes = [
 ];
 ```
 
-```vue
+```vue-html
 <!-- App.vue -->
 <template>
   <div :class="`layout-${route.meta.layout}`">
@@ -365,7 +417,7 @@ const hasSidebar = computed(() => {
 
 ### 场景5：响应式布局
 
-```vue
+```vue-html
 <template>
   <div class="responsive-layout">
     <!-- 桌面端：显示侧边栏 -->
@@ -451,7 +503,7 @@ const routes = [
 
 ### 陷阱3：嵌套路由深度混乱
 
-```vue
+```vue-html
 <!-- ❌ 错误：忘记传递深度 -->
 <template>
   <router-view name="sidebar" />  <!-- depth=0 -->
@@ -483,9 +535,3 @@ const routes = [
 - 响应式布局适配
 
 下一章实现重定向与别名功能。
-  <router-view name="sidebar" />
-  <router-view name="footer" />
-</template>
-```
-
-下一章实现重定向与别名。

@@ -424,7 +424,7 @@ app.mount('#app');
 
 创建 `examples/basic/App.vue`：
 
-```vue
+```vue-html
 <template>
   <div>
     <h1>Mini Vue Router</h1>

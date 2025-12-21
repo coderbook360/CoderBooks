@@ -303,7 +303,7 @@ export default defineConfig({
 
 你有这样的代码：
 
-```vue
+```vue-html
 <template>
   <div :class="`bg-${status}-500`">
     {{ message }}
@@ -337,7 +337,7 @@ export default defineConfig({
 
 **解决方案 B：使用对象语法避免动态拼接**
 
-```vue
+```vue-html
 <template>
   <div :class="statusClasses[status]">
     {{ message }}

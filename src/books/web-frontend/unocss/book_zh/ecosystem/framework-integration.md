@@ -116,7 +116,7 @@ module.exports = {
 
 ### 2.3 Vue 组件中使用
 
-```vue
+```vue-html
 <template>
   <div class="p-4 bg-blue-500 text-white rounded-lg">
     <h1 class="text-2xl font-bold">Hello UnoCSS</h1>
@@ -131,7 +131,7 @@ module.exports = {
 
 在 Vue 的 scoped 样式中使用 `@apply`：
 
-```vue
+```vue-html
 <style scoped>
 .custom-button {
   @apply px-4 py-2 bg-blue-500 text-white rounded;

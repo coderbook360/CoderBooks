@@ -40,7 +40,7 @@ isSameVNodeType(old2, next2)  // false
 
 很多开发者习惯使用数组索引作为 key：
 
-```vue
+```vue-html
 <template>
   <!-- ❌ 不推荐：使用 index 作为 key -->
   <li v-for="(item, index) in list" :key="index">
@@ -96,7 +96,7 @@ Diff 比较:
 
 正确的做法是使用**稳定的唯一标识**作为 key：
 
-```vue
+```vue-html
 <template>
   <!-- ✓ 正确：使用稳定的唯一 ID -->
   <li v-for="item in list" :key="item.id">
@@ -209,7 +209,7 @@ Diff 认为"相同索引"是"同一节点":
 
 如果完全不提供 key 会怎样？
 
-```vue
+```vue-html
 <template>
   <!-- 无 key -->
   <li v-for="item in list">{{ item.name }}</li>
@@ -260,7 +260,7 @@ function patchUnkeyedChildren(c1, c2, container) {
 
 **1. 使用稳定的唯一标识**
 
-```vue
+```vue-html
 <!-- ✓ 数据库 ID -->
 <li v-for="user in users" :key="user.id">
 
@@ -270,7 +270,7 @@ function patchUnkeyedChildren(c1, c2, container) {
 
 **2. 避免使用 index**
 
-```vue
+```vue-html
 <!-- ❌ 只在特定场景下使用 -->
 <li v-for="(item, index) in list" :key="index">
 ```
@@ -281,7 +281,7 @@ index 只在以下场景可接受：
 
 **3. 组合字段确保唯一性**
 
-```vue
+```vue-html
 <!-- 当没有唯一 ID 时 -->
 <div v-for="(row, rowIndex) in matrix" :key="`row-${rowIndex}`">
   <span v-for="cell in row" :key="`${rowIndex}-${cell.col}`">
@@ -292,7 +292,7 @@ index 只在以下场景可接受：
 
 **4. key 必须在兄弟节点中唯一**
 
-```vue
+```vue-html
 <!-- key 只需要在同一 v-for 中唯一，不同列表可以重复 -->
 <ul>
   <li v-for="item in listA" :key="item.id">...</li>
@@ -306,7 +306,7 @@ index 只在以下场景可接受：
 
 有时候我们希望**强制销毁并重建**组件，而不是复用。可以利用 key 的变化：
 
-```vue
+```vue-html
 <template>
   <!-- 当 userId 变化时，整个组件重新创建 -->
   <UserProfile :key="userId" :user-id="userId" />

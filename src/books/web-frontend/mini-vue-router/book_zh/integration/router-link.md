@@ -10,7 +10,7 @@ RouterLink 是 Vue Router 中最常用的组件。本章从零实现一个完整
 
 **方案1：普通 `<a>` 标签**
 
-```vue
+```vue-html
 <template>
   <a href="/user/123">用户详情</a>
 </template>
@@ -25,7 +25,7 @@ RouterLink 是 Vue Router 中最常用的组件。本章从零实现一个完整
 
 **方案2：手动导航**
 
-```vue
+```vue-html
 <template>
   <span @click="$router.push('/user/123')">用户详情</span>
 </template>
@@ -40,7 +40,7 @@ RouterLink 是 Vue Router 中最常用的组件。本章从零实现一个完整
 
 **方案3：RouterLink（✓ 最佳实践）**
 
-```vue
+```vue-html
 <template>
   <router-link to="/user/123">用户详情</router-link>
 </template>
@@ -507,7 +507,7 @@ export const RouterLink = defineComponent({
 
 **作用域插槽的使用**：
 
-```vue
+```vue-html
 <router-link to="/home" custom v-slot="{ href, navigate, isActive }">
   <button @click="navigate" :class="{ active: isActive }">
     <icon-home />
@@ -613,7 +613,7 @@ export const RouterLink = defineComponent({
 
 ### 场景1：导航菜单
 
-```vue
+```vue-html
 <template>
   <nav>
     <router-link to="/">首页</router-link>
@@ -632,7 +632,7 @@ export const RouterLink = defineComponent({
 
 ### 场景2：命名路由
 
-```vue
+```vue-html
 <router-link :to="{ name: 'User', params: { id: userId } }">
   用户详情
 </router-link>
@@ -640,7 +640,7 @@ export const RouterLink = defineComponent({
 
 ### 场景3：带查询参数
 
-```vue
+```vue-html
 <router-link :to="{ path: '/search', query: { keyword: 'vue' } }">
   搜索结果
 </router-link>
@@ -648,7 +648,7 @@ export const RouterLink = defineComponent({
 
 ### 场景4：自定义渲染（按钮）
 
-```vue
+```vue-html
 <router-link to="/login" custom v-slot="{ navigate, isActive }">
   <button @click="navigate" :class="{ 'btn-active': isActive }">
     登录
@@ -658,7 +658,7 @@ export const RouterLink = defineComponent({
 
 ### 场景5：禁用链接
 
-```vue
+```vue-html
 <router-link
   :to="canAccess ? '/admin' : ''"
   :custom="!canAccess"

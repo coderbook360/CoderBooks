@@ -157,7 +157,7 @@ createApp({
 
 ### 预编译（推荐）
 
-```vue
+```vue-html
 <template>
   <div>{{ msg }}</div>
 </template>

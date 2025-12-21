@@ -196,7 +196,7 @@ createApp(App).mount('#app')
 
 首先，在某个组件中写入类名：
 
-```vue
+```vue-html
 <!-- App.vue -->
 <template>
   <div class="p-4">
@@ -211,7 +211,7 @@ createApp(App).mount('#app')
 
 接下来，删除按钮，保留空容器：
 
-```vue
+```vue-html
 <template>
   <div class="p-4">
     <!-- 按钮已删除 -->
@@ -239,7 +239,7 @@ createApp(App).mount('#app')
 
 比如这样的代码：
 
-```vue
+```vue-html
 <div :class="`text-${size}`">
   ...
 </div>

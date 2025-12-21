@@ -42,7 +42,7 @@ function extractComponentGuards(
 
 ## 使用示例
 
-```vue
+```vue-html
 <script>
 export default {
   beforeRouteEnter(to, from) {

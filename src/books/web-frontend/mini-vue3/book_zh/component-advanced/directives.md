@@ -74,7 +74,7 @@ interface DirectiveBinding {
 
 示例：
 
-```vue
+```vue-html
 <div v-my-directive:arg.modifier1.modifier2="value">
 ```
 
@@ -118,7 +118,7 @@ export default {
 
 ### setup 中注册
 
-```vue
+```vue-html
 <script setup>
 const vFocus = {
   mounted: (el) => el.focus()
@@ -136,7 +136,7 @@ const vFocus = {
 
 编译阶段，指令被转换为 `withDirectives` 调用：
 
-```vue
+```vue-html
 <input v-focus v-model="text" />
 ```
 
@@ -324,7 +324,7 @@ const vClickOutside = {
 
 指令可以接收动态参数：
 
-```vue
+```vue-html
 <div v-my-directive:[arg]="value">
 ```
 
@@ -340,7 +340,7 @@ const vMyDirective = {
 
 修饰符提供额外的行为控制：
 
-```vue
+```vue-html
 <input v-my-directive.trim.lazy="value">
 ```
 
@@ -361,7 +361,7 @@ const vMyDirective = {
 
 指令应用于组件时，作用于组件的根元素：
 
-```vue
+```vue-html
 <MyComponent v-focus />
 ```
 

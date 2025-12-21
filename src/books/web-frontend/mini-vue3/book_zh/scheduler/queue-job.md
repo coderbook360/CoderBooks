@@ -106,7 +106,7 @@ function queueJob(job) {
 
 **为什么顺序很重要？思考这个场景**：
 
-```vue
+```vue-html
 <!-- 父组件 -->
 <Child :data="state.data" />
 

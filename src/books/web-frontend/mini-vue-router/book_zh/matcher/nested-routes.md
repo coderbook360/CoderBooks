@@ -115,7 +115,7 @@ matchRoutes('/user/123/profile', routes);
 
 ## 渲染嵌套视图
 
-```vue
+```vue-html
 <!-- User.vue -->
 <template>
   <div>

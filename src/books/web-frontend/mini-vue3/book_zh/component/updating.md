@@ -23,7 +23,7 @@ count.value++  // 触发自更新
 
 父组件重新渲染，导致传给子组件的 props/slots 变化：
 
-```vue
+```vue-html
 <!-- 父组件 -->
 <Child :msg="parentMsg" />
 <!-- parentMsg 变化时，Child 被动更新 -->

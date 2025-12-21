@@ -80,7 +80,7 @@ const state = {
 
 同样的计数器，用 Vue 实现：
 
-```vue
+```vue-html
 <template>
   <button @click="count++">{{ count }}</button>
 </template>

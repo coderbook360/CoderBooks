@@ -216,7 +216,7 @@ const AsyncComp = defineAsyncComponent({
 
 Suspense 提供了声明式的异步依赖处理：
 
-```vue
+```vue-html
 <Suspense>
   <template #default>
     <AsyncComponent />
@@ -317,7 +317,7 @@ function setupStatefulComponent(instance) {
 
 ## 嵌套 Suspense
 
-```vue
+```vue-html
 <Suspense>
   <template #default>
     <RouterView />
@@ -344,7 +344,7 @@ function setupStatefulComponent(instance) {
 
 ## Suspense 事件
 
-```vue
+```vue-html
 <Suspense
   @resolve="onResolve"
   @pending="onPending"
@@ -372,7 +372,7 @@ const routes = [
 ]
 ```
 
-```vue
+```vue-html
 <RouterView v-slot="{ Component }">
   <Suspense>
     <template #default>

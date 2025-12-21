@@ -1,0 +1,116 @@
+﻿# createRouter 鍑芥暟瀹炵幇
+
+鏁村悎鎵€鏈夋ā鍧楋紝瀹炵幇瀹屾暣鐨?`createRouter` 鍑芥暟銆?
+## 瀹屾暣瀹炵幇
+
+```typescript
+export function createRouter(options: RouterOptions): Router {
+  const { history, routes } = options;
+  
+  // 鍒涘缓 Matcher
+  const matcher = createRouterMatcher(routes);
+  
+  // 鍒涘缓瀹堝崼绠＄悊鍣?  const guardManager = new GuardManager();
+  
+  // 褰撳墠璺敱锛堝搷搴斿紡锛?  const currentRoute = ref<RouteLocationNormalized>(START_LOCATION);
+  
+  // Push 鏂规硶
+  async function push(to: RouteLocationRaw): Promise<void> {
+    return navigate(to, 'push');
+  }
+  
+  // Replace 鏂规硶
+  async function replace(to: RouteLocationRaw): Promise<void> {
+    return navigate(to, 'replace');
+  }
+  
+  // 鏍稿績瀵艰埅鏂规硶
+  async function navigate(
+    to: RouteLocationRaw,
+    type: 'push' | 'replace'
+  ): Promise<void> {
+    const from = currentRoute.value;
+    
+    // 1. 瑙ｆ瀽鐩爣璺敱
+    const targetLocation = matcher.resolve(normalizeLocation(to));
+    if (!targetLocation) {
+      throw new Error(`No match for ${JSON.stringify(to)}`);
+    }
+    
+    try {
+      // 2. 鎵ц瀹堝崼闃熷垪
+      await runGuards(targetLocation, from);
+      
+      // 3. 鏇存柊 History
+      if (type === 'push') {
+        history.push(targetLocation.path);
+      } else {
+        history.replace(targetLocation.path);
+      }
+      
+      // 4. 鏇存柊褰撳墠璺敱
+      currentRoute.value = targetLocation;
+      
+      // 5. 鎵ц鍚庣疆閽╁瓙
+      guardManager.runAfterEach(targetLocation, from);
+      
+    } catch (error) {
+      handleNavigationError(error);
+    }
+  }
+  
+  // 鐩戝惉 History 鍙樺寲
+  history.listen((to, from, info) => {
+    const targetLocation = matcher.resolve(to);
+    if (targetLocation) {
+      currentRoute.value = targetLocation;
+    }
+  });
+  
+  // 瀹夎鍒?Vue
+  function install(app: App) {
+    app.provide(routerKey, router);
+    app.provide(routeKey, currentRoute);
+    
+    app.component('RouterView', RouterView);
+    app.component('RouterLink', RouterLink);
+  }
+  
+  const router: Router = {
+    currentRoute,
+    options,
+    push,
+    replace,
+    go: (n) => history.go(n),
+    back: () => history.go(-1),
+    forward: () => history.go(1),
+    addRoute: matcher.addRoute,
+    removeRoute: matcher.removeRoute,
+    getRoutes: matcher.getRoutes,
+    beforeEach: guardManager.beforeEach,
+    beforeResolve: guardManager.beforeResolve,
+    afterEach: guardManager.afterEach,
+    install
+  };
+  
+  return router;
+}
+```
+
+## 浣跨敤绀轰緥
+
+```typescript
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', component: Home },
+    { path: '/user/:id', component: User }
+  ]
+});
+
+const app = createApp(App);
+app.use(router);
+app.mount('#app');
+```
+
+涓嬩竴绔犲疄鐜拌矾鐢辩姸鎬佺鐞嗐€?
