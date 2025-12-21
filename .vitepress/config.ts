@@ -182,6 +182,9 @@ function inlineScript(file: string): HeadConfig {
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
+  // GitHub Pages 子路径部署
+  base: '/CoderBooks/',
+
   sitemap: {
     hostname: 'https://coderbooks.dev'
   },
