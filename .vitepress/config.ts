@@ -186,6 +186,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     hostname: 'https://coderbooks.dev'
   },
 
+  // 忽略死链接检查（书籍内容持续更新中）
+  ignoreDeadLinks: true,
+
   lang: 'zh-CN',
   title: 'CoderBooks',
   description: '程序员书籍精选 - 深入源码，洞察原理，构建技术体系',

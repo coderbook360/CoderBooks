@@ -1,6 +1,10 @@
+---
+vPre: true
+---
+
 # 插值表达式与指令的解析
 
-`{{ msg }}` 和 `v-bind:class` 是 Vue 模板中最常见的动态内容。**它们的解析逻辑是什么？在 AST 中如何表示？**
+<code v-pre>{{ msg }}</code> 和 `v-bind:class` 是 Vue 模板中最常见的动态内容。**它们的解析逻辑是什么？在 AST 中如何表示？**
 
 **理解这一章，你就能明白模板中的动态内容是如何与 JavaScript 表达式关联的。** 本章将深入分析插值表达式和指令的解析细节。
 
@@ -8,11 +12,11 @@
 
 ### 基本格式
 
-```html
+```vue-html
 {{ expression }}
 ```
 
-默认分隔符是 `{{` 和 `}}`，可以通过配置修改：
+默认分隔符是 <code v-pre>{{</code> 和 <code v-pre>}}</code>，可以通过配置修改：
 
 ```javascript
 app.config.compilerOptions.delimiters = ['${', '}']
@@ -65,7 +69,7 @@ function parseInterpolation(context) {
 
 ### AST 结构
 
-```html
+```vue-html
 {{ user.name }}
 ```
 
@@ -353,7 +357,7 @@ v-slot 可以有解构参数：
 本章分析了插值和指令的解析：
 
 **插值表达式**：
-- 匹配分隔符 `{{` 和 `}}`
+- 匹配分隔符 <code v-pre>{{</code> 和 <code v-pre>}}</code>
 - 提取并 trim 内容
 - 生成 INTERPOLATION 节点
 

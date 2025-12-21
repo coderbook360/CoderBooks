@@ -1,3 +1,7 @@
+---
+vPre: true
+---
+
 # 语法分析
 
 词法分析产生了扁平的 Token 序列，但模板是有层次结构的——元素可以嵌套。**如何将 Token 序列转换为树形结构？**
@@ -94,7 +98,7 @@ function parseChildren(context, ancestors) {
     const s = context.source
     let node = undefined
     
-    if (s.startsWith('{{')) {
+    if (s.startsWith('\u007b\u007b')) {
       // 插值表达式
       node = parseInterpolation(context)
     } else if (s[0] === '<') {
@@ -133,7 +137,7 @@ function parseChildren(context, ancestors) {
 ```
 
 判断逻辑：
-1. `{{` → 插值表达式
+1. <code v-pre>{{</code> → 插值表达式
 2. `<!--` → 注释
 3. `</` → 结束标签（不产生节点）
 4. `<字母` → 元素

@@ -475,7 +475,7 @@ async function checkAuth(): Promise<boolean> {
 
 ### 在组件中使用
 
-```vue
+```vue-html
 <!-- views/User.vue -->
 <script setup lang="ts">
 import { useRouter, useRoute } from 'mini-vue-router';
