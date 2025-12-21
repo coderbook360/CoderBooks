@@ -267,8 +267,20 @@ export default defineConfigWithTheme<ThemeConfig>({
       }
     },
     build: {
-      minify: 'terser',
-      chunkSizeWarningLimit: Infinity
+      // minify: 'terser',
+      chunkSizeWarningLimit: Infinity,
+      // 减少内存使用
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          // 手动分割代码块，减少单个 chunk 的大小
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              return 'vendor'
+            }
+          }
+        }
+      }
     },
     plugins: [
       llmstxt({
