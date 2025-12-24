@@ -1,0 +1,243 @@
+{
+  "agent_name": "bo-creator",
+  "file_name": "advanced-ds-progress.json",
+  "version": "1.0.0",
+  "last_updated": "2025-12-24",
+  "book_project": "LeetCode 算法通关之路（五）：高级数据结构篇",
+  "book_status": "COMPLETED - 全书100章已全部完成",
+  "tasks": {
+    "tasks_todo": [],
+    "task_in_progress": "",
+    "tasks_completed": [
+      "tree-decomposition/heavy-light-decomposition.md - 轻重链剖分原理",
+      "tree-decomposition/hld-implementation.md - 树链剖分实现",
+      "tree-decomposition/tree-path-query.md - 树上路径查询",
+      "tree-decomposition/tree-path-update.md - 树上路径修改",
+      "tree-decomposition/lca-basics.md - LCA基础",
+      "tree-decomposition/lca-binary-lifting.md - 倍增法LCA",
+      "tree-decomposition/lca-tarjan.md - Tarjan离线LCA",
+      "tree-decomposition/tree-diff.md - 树上差分",
+      "tree-decomposition/dsu-on-tree.md - 树上启发式合并",
+      "tree-decomposition/virtual-tree.md - 虚树",
+      "advanced-applications/cdq-divide-conquer.md - CDQ分治",
+      "advanced-applications/parallel-binary-search.md - 整体二分",
+      "advanced-applications/kd-tree.md - K-D树",
+      "advanced-applications/rectangle-queries.md - 矩形区域查询",
+      "advanced-applications/offline-query-optimization.md - 离线查询优化",
+      "advanced-applications/online-query-optimization.md - 在线查询优化",
+      "advanced-applications/data-structure-selection.md - 数据结构选型指南",
+      "advanced-applications/competitive-ds-tricks.md - 竞赛中的数据结构技巧",
+      "advanced-applications/leetcode-hard-practice.md - LeetCode困难题实战",
+      "advanced-applications/advanced-ds-summary.md - 高级数据结构总结",
+      "persistent/persistent-overview.md - 可持久化概述",
+      "persistent/persistent-array.md - 可持久化数组",
+      "persistent/persistent-segment-tree.md - 可持久化线段树（主席树）",
+      "persistent/static-range-kth.md - 静态区间第K小",
+      "persistent/dynamic-range-kth.md - 动态区间第K小",
+      "persistent/persistent-union-find.md - 可持久化并查集",
+      "persistent/persistent-trie.md - 可持久化字典树",
+      "persistent/range-xor-kth.md - 区间异或第K大",
+      "persistent/version-query.md - 历史版本查询",
+      "persistent/persistent-balanced-tree.md - 可持久化平衡树",
+      "suffix-structures/suffix-array-basics.md - 后缀数组基础",
+      "suffix-structures/suffix-array-doubling.md - 后缀数组的构建（倍增法）",
+      "suffix-structures/suffix-array-dc3.md - 后缀数组的构建（DC3/SA-IS）",
+      "suffix-structures/lcp-array.md - LCP 数组与应用",
+      "suffix-structures/longest-duplicate-substring.md - 最长重复子串",
+      "suffix-structures/distinct-subsequences-ii.md - 不同的子序列 II",
+      "suffix-structures/suffix-automaton-basics.md - 后缀自动机原理",
+      "suffix-structures/suffix-automaton-construction.md - 后缀自动机构建",
+      "suffix-structures/count-distinct-substrings.md - 本质不同子串计数",
+      "suffix-structures/longest-common-substring.md - 最长公共子串",
+      "block-algorithm/block-basics.md - 分块思想与基础应用",
+      "block-algorithm/block-range-sum.md - 分块求区间和",
+      "block-algorithm/block-range-min-max.md - 分块求区间最值",
+      "block-algorithm/mo-algorithm-basics.md - 莫队算法原理",
+      "block-algorithm/basic-mo.md - 普通莫队",
+      "block-algorithm/mo-with-modification.md - 带修改莫队",
+      "block-algorithm/mo-on-tree.md - 树上莫队",
+      "block-algorithm/rollback-mo.md - 回滚莫队",
+      "block-algorithm/distinct-count-in-range.md - 区间不同数个数",
+      "block-algorithm/range-mode-query.md - 区间众数查询",
+      "balanced-tree/balanced-tree-overview.md - 平衡树概述",
+      "balanced-tree/ordered-set-applications.md - 有序集合的应用",
+      "balanced-tree/find-median-data-stream.md - 数据流的中位数",
+      "balanced-tree/sliding-window-median.md - 滑动窗口中位数",
+      "balanced-tree/contains-duplicate-iii.md - 存在重复元素 III",
+      "balanced-tree/max-frequency-stack.md - 最大频率栈",
+      "balanced-tree/avoid-flood-in-city.md - 避免洪水泛滥",
+      "balanced-tree/stock-price-fluctuation.md - 股票价格波动",
+      "balanced-tree/design-skiplist.md - 设计跳表",
+      "balanced-tree/k-closest-points.md - K个最近的点",
+      "bit/bit-basics.md - 树状数组原理与实现",
+      "bit/point-update-range-query.md - 单点修改区间查询",
+      "bit/range-update-point-query.md - 区间修改单点查询",
+      "bit/range-update-range-query.md - 区间修改区间查询",
+      "bit/2d-bit.md - 二维树状数组",
+      "bit/count-smaller-after-self.md - 计算右侧小于当前元素的个数",
+      "bit/reverse-pairs.md - 翻转对",
+      "bit/count-range-sum.md - 区间和的个数",
+      "bit/number-of-lis.md - 最长递增子序列的个数",
+      "bit/count-good-triplets.md - 统计作战单位数",
+      "segment-tree/segment-tree-basics.md - 线段树原理与实现",
+      "segment-tree/range-sum-query.md - 区间求和问题",
+      "segment-tree/range-min-max-query.md - 区间最值问题",
+      "segment-tree/lazy-propagation.md - 懒惰传播",
+      "segment-tree/range-sum-mutable.md - 区域和检索 - 数组可修改",
+      "segment-tree/my-calendar-i.md - 我的日程安排表 I",
+      "segment-tree/my-calendar-ii.md - 我的日程安排表 II",
+      "segment-tree/my-calendar-iii.md - 我的日程安排表 III",
+      "segment-tree/rectangle-area-ii.md - 矩形面积 II",
+      "segment-tree/falling-squares.md - 掉落的方块",
+      "index.md - 书籍首页",
+      "preface.md - 序言",
+      "trie/trie-basics.md - 字典树基础与实现",
+      "trie/implement-trie.md - 实现 Trie（前缀树）",
+      "trie/add-search-word.md - 添加与搜索单词",
+      "trie/word-search-ii.md - 单词搜索 II",
+      "trie/longest-word-in-dictionary.md - 词典中最长的单词",
+      "trie/prefix-suffix-search.md - 前缀和后缀搜索",
+      "trie/map-sum-pairs.md - 键值映射",
+      "trie/concatenated-words.md - 连接词",
+      "trie/palindrome-pairs.md - 回文对",
+      "trie/maximum-xor.md - 数组中两个数的最大异或值",
+      "segment-tree-advanced/dynamic-segment-tree.md - 动态开点线段树",
+      "segment-tree-advanced/segment-tree-merge.md - 线段树合并",
+      "segment-tree-advanced/sweep-line.md - 扫描线算法",
+      "segment-tree-advanced/skyline-problem.md - 天际线问题",
+      "segment-tree-advanced/range-add-range-sum.md - 区间加区间求和",
+      "segment-tree-advanced/range-multiply-range-sum.md - 区间乘区间求和",
+      "segment-tree-advanced/range-cover.md - 区间覆盖问题",
+      "segment-tree-advanced/max-subarray-query.md - 最大子段和查询",
+      "segment-tree-advanced/count-inversions.md - 逆序对计数",
+      "segment-tree-advanced/range-kth-largest.md - 区间第K大"
+    ]
+  },
+  "history": [
+    {
+      "date": "2025-12-23",
+      "action": "初始化进度文件",
+      "details": "创建进度跟踪系统，已完成字典树前4个章节"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第5章",
+      "details": "trie/longest-word-in-dictionary.md - 词典中最长的单词。讲解了两种方案：字典树+DFS 和 排序+哈希表，展示了不同场景下的最优选择"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第6章",
+      "details": "trie/prefix-suffix-search.md - 前缀和后缀搜索。核心创新：组合键编码（suffix + # + prefix），展示了字典树处理多维信息的能力"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第7章",
+      "details": "trie/map-sum-pairs.md - 键值映射。讲解了三种方案：DFS查询、增量更新、惰性计算，重点是增量更新技巧（delta处理）"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第8章",
+      "details": "trie/concatenated-words.md - 连接词。展示了字典树与DP的结合，比较了DP和DFS两种方案，强调排序技巧和记忆化优化"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第9章",
+      "details": "trie/palindrome-pairs.md - 回文对。极具挑战性的题目，展示了反向字典树+palindromeIndices的高级技巧，将O(n²×m)优化到O(n×m²)"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第10章",
+      "details": "trie/maximum-xor.md - 数组中两个数的最大异或值。01-Trie的经典应用，展示了二进制字典树在位运算中的强大能力"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "字典树部分全部完成",
+      "details": "完成第1-10章，字典树部分全部章节。涉及基础实现、通配符搜索、二维搜索、前缀验证、双端匹配、聚合查询、单词拆分、回文配对、01-Trie等核心技巧。总计 10 章，约 3 万字。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第11章",
+      "details": "segment-tree/segment-tree-basics.md - 线段树原理与实现。讲解线段树的设计思想（分治+预处理）、数据结构（完全二叉树数组存储）、三大核心操作（构建、查询、更新），对比朴素方案和前缀和的不足，展示如何在O(logN)时间内完成区间查询和单点修改。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第12章",
+      "details": "segment-tree/range-sum-query.md - 区间求和问题。对应LeetCode 307题，详细对比朴素遍历、前缀和、线段树三种方案，展示线段树如何在高频查询+高频修改场景下达到O(logN)性能，包含完整的执行流程可视化和常见陷阱。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第13章",
+      "details": "segment-tree/range-min-max-query.md - 区间最值问题。展示线段树的通用性，通过修改合并逻辑和单位元实现区间最大值/最小值查询，抽象出通用线段树类，对比稀疏表，展示线段树在各种满足结合律操作中的应用。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第14章",
+      "details": "segment-tree/lazy-propagation.md - 懒惰传播。线段树核心进阶技术，讲解如何将区间修改从 O(N logN) 优化到 O(logN)。详细阐述懒标记的设计思想、下推机制、执行流程可视化，包含区间加/赋值/乘等多种操作类型，并强调常见陷阱。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第15章",
+      "details": "segment-tree/range-sum-mutable.md - 区域和检索 - 数组可修改。LeetCode 307 题完整实战，详细对比线段树、树状数组、分块三种方案，分析适用场景和性能对比，提供决策树和实战技巧，包含 LeetCode 实测数据。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第16章",
+      "details": "segment-tree/my-calendar-i.md - 我的日程安排表 I。LeetCode 729 题，区间冲突检测问题。对比暴力遍历、有序列表、动态开点线段树三种方案，讲解区间冲突判断公式，提供扩展思考（多重预订、删除操作），包含 LeetCode 实测性能对比。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第17章",
+      "details": "segment-tree/my-calendar-ii.md - 我的日程安排表 II。LeetCode 731 题，允许双重预订。对比双列表、差分数组、线段树三种方案，展示如何追踪预订计数并限制最大重叠数。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第18章",
+      "details": "segment-tree/my-calendar-iii.md - 我的日程安排表 III。LeetCode 732 题，查询最大 K 重预订。展示差分数组在区间操作中的强大能力，对比 SortedDict 和线段树实现，提供三题统一框架。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第19章",
+      "details": "segment-tree/rectangle-area-ii.md - 矩形面积 II。LeetCode 850 题，扫描线算法的经典应用。讲解如何将二维问题转化为一维处理，对比线段树和区间合并两种方案。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "完成第20章",
+      "details": "segment-tree/falling-squares.md - 掉落的方块。LeetCode 699 题，线段树区间赋值操作的经典应用。对比动态开点和离散化两种优化方案，展示懒标记在赋值操作中的应用。"
+    },
+    {
+      "date": "2025-12-23",
+      "action": "线段树基础部分全部完成",
+      "details": "第二部分（第11-20章）全部完成，包括理论基础（4章）和实战应用（6章）。涉及区间求和/最值、懒惰传播、区间冲突检测、扫描线算法等核心技术。总计约 6 万字。"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "完成第26章",
+      "details": "segment-tree-advanced/range-multiply-range-sum.md - 区间乘区间求和。讲解统一变换模型 (mul, add)，复合变换公式，以及多种懒标记组合的处理方法。"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "完成第27章",
+      "details": "segment-tree-advanced/range-cover.md - 区间覆盖问题。对比区间赋值与区间加法，展示覆盖语义的懒标记设计，包含 LeetCode 699、715 实战。"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "完成第28章",
+      "details": "segment-tree-advanced/max-subarray-query.md - 最大子段和查询。展示复杂信息合并，维护 (sum, max_prefix, max_suffix, max_sub) 四元组。"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "完成第29章",
+      "details": "segment-tree-advanced/count-inversions.md - 逆序对计数。权值线段树的经典应用，包含 LeetCode 315、493、327 三道变体题目。"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "完成第30章",
+      "details": "segment-tree-advanced/range-kth-largest.md - 区间第K大。主席树（可持久化线段树）入门，讲解版本管理和结构共享。"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "线段树进阶部分全部完成",
+      "details": "第三部分（第21-30章）全部完成。涉及动态开点、线段树合并、扫描线、懒标记组合、权值线段树、主席树等高级技术。第21-25章为之前完成，第26-30章今日完成。"
+    }
+  ]
+}

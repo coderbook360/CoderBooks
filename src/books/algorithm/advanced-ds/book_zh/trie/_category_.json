@@ -1,0 +1,8 @@
+{
+  "label": "字典树（Trie）",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "字典树是一种高效的字符串检索数据结构，广泛应用于前缀匹配、自动补全等场景。"
+  }
+}
