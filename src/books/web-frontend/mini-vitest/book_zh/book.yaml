@@ -1,0 +1,549 @@
+title: "手写 mini-vitest: 从零实现现代化测试框架"
+description: 本书将带你深入理解测试框架的核心原理，从零开始实现一个功能完备的 mini-vitest，掌握测试运行器、断言库、Mock 系统、快照测试等核心模块的设计与实现。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：测试框架基础
+    items:
+      - text: 1. 测试框架发展历程
+        link: foundations/testing-history
+      - text: 2. Vitest 与 Jest 的对比分析
+        link: foundations/vitest-vs-jest
+      - text: 3. Vitest 核心架构概览
+        link: foundations/vitest-architecture
+      - text: 4. Vite 生态集成原理
+        link: foundations/vite-integration
+      - text: 5. 项目初始化与开发环境搭建
+        link: foundations/project-setup
+      - text: 6. ESM 优先设计理念
+        link: foundations/esm-first-design
+  - text: 第二部分：配置系统
+    items:
+      - text: 7. 配置文件加载机制
+        link: configuration/config-loading
+      - text: 8. 配置解析与合并策略
+        link: configuration/config-resolution
+      - text: 9. Vite 配置复用机制
+        link: configuration/vite-config-reuse
+      - text: 10. defineConfig 类型推导
+        link: configuration/define-config
+      - text: 11. 环境变量处理
+        link: configuration/environment-variables
+      - text: 12. Project 多项目配置
+        link: configuration/projects-support
+  - text: 第三部分：测试文件发现与过滤
+    items:
+      - text: 13. 测试文件匹配模式
+        link: file-discovery/file-patterns
+      - text: 14. Glob 模式解析实现
+        link: file-discovery/glob-parsing
+      - text: 15. include 与 exclude 规则
+        link: file-discovery/include-exclude
+      - text: 16. Test Filtering 实现
+        link: file-discovery/test-filtering
+      - text: 17. 文件变更检测机制
+        link: file-discovery/file-change-detection
+      - text: 18. 依赖关系追踪
+        link: file-discovery/dependency-tracking
+  - text: 第四部分：模块解析与转换
+    items:
+      - text: 19. ESM 模块加载器设计
+        link: module-resolution/esm-loader
+      - text: 20. TypeScript 转换集成
+        link: module-resolution/typescript-transform
+      - text: 21. JSX/TSX 处理机制
+        link: module-resolution/jsx-tsx-transform
+      - text: 22. 路径别名解析
+        link: module-resolution/path-aliases
+      - text: 23. 模块缓存策略
+        link: module-resolution/module-caching
+      - text: 24. 动态导入处理
+        link: module-resolution/dynamic-imports
+  - text: 第五部分：Test Runner 核心引擎
+    items:
+      - text: 25. Test Runner 架构设计
+        link: test-runner/architecture
+      - text: 26. 测试收集阶段
+        link: test-runner/test-collection
+      - text: 27. 测试执行调度
+        link: test-runner/execution-scheduler
+      - text: 28. Worker 进程管理
+        link: test-runner/worker-management
+      - text: 29. child_process vs worker_threads
+        link: test-runner/process-vs-threads
+      - text: 30. 测试隔离策略
+        link: test-runner/test-isolation
+      - text: 31. 执行结果聚合
+        link: test-runner/result-aggregation
+  - text: 第六部分：Test API 实现
+    items:
+      - text: 32. test/it 函数设计
+        link: test-api/test-function
+      - text: 33. describe 测试套件
+        link: test-api/describe-suite
+      - text: 34. test.skip 跳过测试
+        link: test-api/test-skip
+      - text: 35. test.only 独占执行
+        link: test-api/test-only
+      - text: 36. test.todo 待办测试
+        link: test-api/test-todo
+      - text: 37. test.fails 预期失败
+        link: test-api/test-fails
+      - text: 38. test.each 参数化测试
+        link: test-api/test-each
+      - text: 39. test.for 增强参数化
+        link: test-api/test-for
+      - text: 40. test.extend 扩展上下文
+        link: test-api/test-extend
+      - text: 41. test.skipIf/runIf 条件执行
+        link: test-api/conditional-execution
+  - text: 第七部分：并发执行
+    items:
+      - text: 42. test.concurrent 并发测试
+        link: concurrent/concurrent-tests
+      - text: 43. describe.concurrent 并发套件
+        link: concurrent/concurrent-suites
+      - text: 44. test.sequential 顺序执行
+        link: concurrent/sequential-tests
+      - text: 45. describe.shuffle 随机顺序
+        link: concurrent/shuffle-tests
+      - text: 46. 并发控制与资源竞争
+        link: concurrent/concurrency-control
+      - text: 47. maxConcurrency 配置
+        link: concurrent/max-concurrency
+      - text: 48. fileParallelism 文件并行
+        link: concurrent/file-parallelism
+  - text: 第八部分：生命周期钩子
+    items:
+      - text: 49. beforeAll 全局前置
+        link: hooks/before-all
+      - text: 50. afterAll 全局后置
+        link: hooks/after-all
+      - text: 51. beforeEach 单例前置
+        link: hooks/before-each
+      - text: 52. afterEach 单例后置
+        link: hooks/after-each
+      - text: 53. onTestFinished 测试完成回调
+        link: hooks/on-test-finished
+      - text: 54. onTestFailed 测试失败回调
+        link: hooks/on-test-failed
+      - text: 55. 钩子执行顺序与作用域
+        link: hooks/execution-order
+      - text: 56. 清理函数模式
+        link: hooks/cleanup-pattern
+  - text: 第九部分：Test Context
+    items:
+      - text: 57. Test Context 设计理念
+        link: test-context/context-design
+      - text: 58. context.expect 本地断言
+        link: test-context/local-expect
+      - text: 59. context.skip 动态跳过
+        link: test-context/dynamic-skip
+      - text: 60. Fixtures 机制
+        link: test-context/fixtures
+      - text: 61. 自定义 Context 扩展
+        link: test-context/custom-context
+      - text: 62. Context 在并发测试中的应用
+        link: test-context/context-in-concurrent
+  - text: 第十部分：Expect 断言系统
+    items:
+      - text: 63. Expect 架构设计
+        link: expect/architecture
+      - text: 64. Chai 集成与兼容
+        link: expect/chai-integration
+      - text: 65. toBe 严格相等
+        link: expect/to-be
+      - text: 66. toEqual 深度相等
+        link: expect/to-equal
+      - text: 67. toStrictEqual 严格深度相等
+        link: expect/to-strict-equal
+      - text: 68. toContain 包含检查
+        link: expect/to-contain
+      - text: 69. toMatch 正则匹配
+        link: expect/to-match
+      - text: 70. toThrowError 异常断言
+        link: expect/to-throw-error
+      - text: 71. toBeNull/Undefined/Defined
+        link: expect/null-undefined
+      - text: 72. toBeTruthy/Falsy 布尔转换
+        link: expect/truthy-falsy
+      - text: 73. toBeGreaterThan/LessThan 数值比较
+        link: expect/number-comparisons
+      - text: 74. toBeCloseTo 浮点数比较
+        link: expect/floating-point
+      - text: 75. toHaveProperty 属性检查
+        link: expect/to-have-property
+      - text: 76. toHaveLength 长度检查
+        link: expect/to-have-length
+      - text: 77. toMatchObject 对象匹配
+        link: expect/to-match-object
+      - text: 78. expect.not 取反断言
+        link: expect/not-modifier
+  - text: 第十一部分：异步断言
+    items:
+      - text: 79. resolves 成功解析
+        link: async-expect/resolves
+      - text: 80. rejects 拒绝断言
+        link: async-expect/rejects
+      - text: 81. expect.poll 轮询断言
+        link: async-expect/poll
+      - text: 82. expect.soft 软断言
+        link: async-expect/soft-assertions
+      - text: 83. expect.assertions 断言计数
+        link: async-expect/assertion-count
+      - text: 84. expect.hasAssertions 断言存在
+        link: async-expect/has-assertions
+  - text: 第十二部分：Mock 断言
+    items:
+      - text: 85. toHaveBeenCalled 调用检查
+        link: mock-assertions/to-have-been-called
+      - text: 86. toHaveBeenCalledTimes 调用次数
+        link: mock-assertions/called-times
+      - text: 87. toHaveBeenCalledWith 参数检查
+        link: mock-assertions/called-with
+      - text: 88. toHaveBeenLastCalledWith 最后调用
+        link: mock-assertions/last-called-with
+      - text: 89. toHaveBeenNthCalledWith 第 N 次调用
+        link: mock-assertions/nth-called-with
+      - text: 90. toHaveReturned 返回检查
+        link: mock-assertions/to-have-returned
+      - text: 91. toHaveReturnedWith 返回值检查
+        link: mock-assertions/returned-with
+      - text: 92. toHaveResolved Promise 解析检查
+        link: mock-assertions/to-have-resolved
+  - text: 第十三部分：非对称匹配器
+    items:
+      - text: 93. expect.anything 任意值
+        link: asymmetric/anything
+      - text: 94. expect.any 类型匹配
+        link: asymmetric/any
+      - text: 95. expect.arrayContaining 数组包含
+        link: asymmetric/array-containing
+      - text: 96. expect.objectContaining 对象包含
+        link: asymmetric/object-containing
+      - text: 97. expect.stringContaining 字符串包含
+        link: asymmetric/string-containing
+      - text: 98. expect.stringMatching 字符串匹配
+        link: asymmetric/string-matching
+      - text: 99. expect.closeTo 近似值
+        link: asymmetric/close-to
+      - text: 100. 自定义非对称匹配器
+        link: asymmetric/custom-matchers
+  - text: 第十四部分：Expect 扩展
+    items:
+      - text: 101. expect.extend 机制
+        link: expect-extend/extend-mechanism
+      - text: 102. 自定义匹配器实现
+        link: expect-extend/custom-matchers
+      - text: 103. TypeScript 类型扩展
+        link: expect-extend/typescript-types
+      - text: 104. expect.addEqualityTesters
+        link: expect-extend/equality-testers
+      - text: 105. this.utils 工具方法
+        link: expect-extend/utils
+      - text: 106. 匹配器错误信息格式化
+        link: expect-extend/error-formatting
+  - text: 第十五部分：Vi Mock 函数
+    items:
+      - text: 107. vi.fn 创建 Mock 函数
+        link: vi-mock/vi-fn
+      - text: 108. Mock 实例数据结构
+        link: vi-mock/mock-instance
+      - text: 109. mock.calls 调用记录
+        link: vi-mock/mock-calls
+      - text: 110. mock.results 返回记录
+        link: vi-mock/mock-results
+      - text: 111. mock.instances 实例记录
+        link: vi-mock/mock-instances
+      - text: 112. mockImplementation 实现替换
+        link: vi-mock/mock-implementation
+      - text: 113. mockImplementationOnce 单次实现
+        link: vi-mock/mock-implementation-once
+      - text: 114. mockReturnValue 返回值设置
+        link: vi-mock/mock-return-value
+      - text: 115. mockResolvedValue 异步返回值
+        link: vi-mock/mock-resolved-value
+      - text: 116. mockRejectedValue 异步拒绝值
+        link: vi-mock/mock-rejected-value
+      - text: 117. mockClear/Reset/Restore
+        link: vi-mock/mock-clear-reset-restore
+  - text: 第十六部分：Vi Spy 间谍函数
+    items:
+      - text: 118. vi.spyOn 方法间谍
+        link: vi-spy/spy-on
+      - text: 119. Getter/Setter 间谍
+        link: vi-spy/getter-setter-spy
+      - text: 120. 间谍与原始实现
+        link: vi-spy/spy-original
+      - text: 121. vi.isMockFunction 类型检查
+        link: vi-spy/is-mock-function
+      - text: 122. vi.mocked 类型辅助
+        link: vi-spy/mocked-helper
+      - text: 123. vi.clearAllMocks 批量清除
+        link: vi-spy/clear-all-mocks
+      - text: 124. vi.resetAllMocks 批量重置
+        link: vi-spy/reset-all-mocks
+      - text: 125. vi.restoreAllMocks 批量还原
+        link: vi-spy/restore-all-mocks
+  - text: 第十七部分：模块 Mock
+    items:
+      - text: 126. vi.mock 模块模拟
+        link: module-mock/vi-mock
+      - text: 127. vi.mock hoisting 机制
+        link: module-mock/hoisting
+      - text: 128. vi.hoisted 变量提升
+        link: module-mock/vi-hoisted
+      - text: 129. vi.doMock 非提升模拟
+        link: module-mock/vi-do-mock
+      - text: 130. vi.unmock 取消模拟
+        link: module-mock/vi-unmock
+      - text: 131. vi.importActual 导入原始模块
+        link: module-mock/import-actual
+      - text: 132. vi.importMock 导入模拟模块
+        link: module-mock/import-mock
+      - text: 133. __mocks__ 目录约定
+        link: module-mock/mocks-directory
+      - text: 134. 工厂函数模式
+        link: module-mock/factory-function
+      - text: 135. 自动 Mock 算法
+        link: module-mock/auto-mocking
+      - text: 136. vi.resetModules 模块缓存重置
+        link: module-mock/reset-modules
+  - text: 第十八部分：Fake Timers
+    items:
+      - text: 137. vi.useFakeTimers 启用假计时器
+        link: fake-timers/use-fake-timers
+      - text: 138. vi.useRealTimers 恢复真实计时器
+        link: fake-timers/use-real-timers
+      - text: 139. vi.setSystemTime 设置系统时间
+        link: fake-timers/set-system-time
+      - text: 140. vi.advanceTimersByTime 时间推进
+        link: fake-timers/advance-timers-by-time
+      - text: 141. vi.advanceTimersToNextTimer 下一个计时器
+        link: fake-timers/advance-to-next-timer
+      - text: 142. vi.runAllTimers 运行所有计时器
+        link: fake-timers/run-all-timers
+      - text: 143. vi.runOnlyPendingTimers 运行待处理计时器
+        link: fake-timers/run-pending-timers
+      - text: 144. vi.getTimerCount 计时器计数
+        link: fake-timers/get-timer-count
+      - text: 145. vi.advanceTimersToNextFrame 下一帧推进
+        link: fake-timers/advance-to-next-frame
+      - text: 146. @sinonjs/fake-timers 集成
+        link: fake-timers/sinon-fake-timers
+  - text: 第十九部分：环境与全局变量
+    items:
+      - text: 147. vi.stubGlobal 全局变量模拟
+        link: globals/stub-global
+      - text: 148. vi.unstubAllGlobals 全局变量还原
+        link: globals/unstub-all-globals
+      - text: 149. vi.stubEnv 环境变量模拟
+        link: globals/stub-env
+      - text: 150. vi.unstubAllEnvs 环境变量还原
+        link: globals/unstub-all-envs
+      - text: 151. test.environment 配置
+        link: globals/test-environment
+      - text: 152. happy-dom 集成
+        link: globals/happy-dom
+      - text: 153. jsdom 集成
+        link: globals/jsdom
+  - text: 第二十部分：快照测试
+    items:
+      - text: 154. 快照测试原理
+        link: snapshot/snapshot-principles
+      - text: 155. toMatchSnapshot 文件快照
+        link: snapshot/to-match-snapshot
+      - text: 156. toMatchInlineSnapshot 内联快照
+        link: snapshot/to-match-inline-snapshot
+      - text: 157. toMatchFileSnapshot 自定义文件快照
+        link: snapshot/to-match-file-snapshot
+      - text: 158. 快照文件格式设计
+        link: snapshot/snapshot-format
+      - text: 159. 快照更新机制
+        link: snapshot/snapshot-updating
+      - text: 160. pretty-format 序列化
+        link: snapshot/pretty-format
+      - text: 161. 自定义序列化器
+        link: snapshot/custom-serializers
+      - text: 162. toThrowErrorMatchingSnapshot
+        link: snapshot/error-snapshot
+  - text: 第二十一部分：代码覆盖率
+    items:
+      - text: 163. 覆盖率收集原理
+        link: coverage/coverage-principles
+      - text: 164. v8 Provider 实现
+        link: coverage/v8-provider
+      - text: 165. Istanbul Provider 实现
+        link: coverage/istanbul-provider
+      - text: 166. 覆盖率指标详解
+        link: coverage/coverage-metrics
+      - text: 167. include/exclude 配置
+        link: coverage/include-exclude
+      - text: 168. 覆盖率报告生成
+        link: coverage/report-generation
+      - text: 169. HTML 报告渲染
+        link: coverage/html-reporter
+      - text: 170. 覆盖率阈值检查
+        link: coverage/thresholds
+      - text: 171. 自定义覆盖率 Provider
+        link: coverage/custom-provider
+  - text: 第二十二部分：Reporter 报告系统
+    items:
+      - text: 172. Reporter 架构设计
+        link: reporters/architecture
+      - text: 173. 默认 Reporter 实现
+        link: reporters/default-reporter
+      - text: 174. Verbose Reporter
+        link: reporters/verbose-reporter
+      - text: 175. JSON Reporter
+        link: reporters/json-reporter
+      - text: 176. JUnit Reporter
+        link: reporters/junit-reporter
+      - text: 177. TAP Reporter
+        link: reporters/tap-reporter
+      - text: 178. 自定义 Reporter 开发
+        link: reporters/custom-reporter
+      - text: 179. Reporter 事件钩子
+        link: reporters/event-hooks
+      - text: 180. 测试结果输出格式化
+        link: reporters/output-formatting
+  - text: 第二十三部分：Watch Mode
+    items:
+      - text: 181. Watch Mode 架构
+        link: watch-mode/architecture
+      - text: 182. 文件监听机制
+        link: watch-mode/file-watching
+      - text: 183. HMR 式测试更新
+        link: watch-mode/hmr-updates
+      - text: 184. 智能测试重跑
+        link: watch-mode/smart-rerun
+      - text: 185. 交互式命令处理
+        link: watch-mode/interactive-commands
+      - text: 186. --standalone 模式
+        link: watch-mode/standalone-mode
+      - text: 187. 变更文件过滤
+        link: watch-mode/changed-file-filtering
+  - text: 第二十四部分：CLI 命令行
+    items:
+      - text: 188. CLI 解析器实现
+        link: cli/cli-parser
+      - text: 189. vitest run 命令
+        link: cli/run-command
+      - text: 190. vitest watch 命令
+        link: cli/watch-command
+      - text: 191. vitest bench 命令
+        link: cli/bench-command
+      - text: 192. --filter 测试过滤
+        link: cli/filter-option
+      - text: 193. --shard 分片执行
+        link: cli/shard-option
+      - text: 194. --merge-reports 报告合并
+        link: cli/merge-reports
+      - text: 195. 命令行参数与配置合并
+        link: cli/config-merge
+  - text: 第二十五部分：Benchmark 性能测试
+    items:
+      - text: 196. bench 函数实现
+        link: benchmark/bench-function
+      - text: 197. Tinybench 集成
+        link: benchmark/tinybench-integration
+      - text: 198. 性能指标计算
+        link: benchmark/performance-metrics
+      - text: 199. bench.skip/only/todo
+        link: benchmark/bench-modifiers
+      - text: 200. Benchmark 报告输出
+        link: benchmark/benchmark-report
+  - text: 第二十六部分：类型测试
+    items:
+      - text: 201. 类型测试原理
+        link: type-testing/principles
+      - text: 202. expectTypeOf 实现
+        link: type-testing/expect-type-of
+      - text: 203. assertType 实现
+        link: type-testing/assert-type
+      - text: 204. 类型推断检查
+        link: type-testing/type-inference
+      - text: 205. --typecheck 模式
+        link: type-testing/typecheck-mode
+  - text: 第二十七部分：浏览器模式
+    items:
+      - text: 206. Browser Mode 架构
+        link: browser-mode/architecture
+      - text: 207. Playwright 集成
+        link: browser-mode/playwright-integration
+      - text: 208. WebdriverIO 集成
+        link: browser-mode/webdriverio-integration
+      - text: 209. 组件测试支持
+        link: browser-mode/component-testing
+      - text: 210. Locator API 实现
+        link: browser-mode/locator-api
+      - text: 211. 可视化回归测试
+        link: browser-mode/visual-regression
+  - text: 第二十八部分：In-Source Testing
+    items:
+      - text: 212. In-Source Testing 原理
+        link: in-source/principles
+      - text: 213. import.meta.vitest 检测
+        link: in-source/vitest-detection
+      - text: 214. 测试代码剥离
+        link: in-source/test-stripping
+      - text: 215. tree-shaking 集成
+        link: in-source/tree-shaking
+  - text: 第二十九部分：Vitest UI
+    items:
+      - text: 216. Vitest UI 架构
+        link: vitest-ui/architecture
+      - text: 217. WebSocket 通信
+        link: vitest-ui/websocket-communication
+      - text: 218. 测试结果可视化
+        link: vitest-ui/result-visualization
+      - text: 219. 覆盖率可视化
+        link: vitest-ui/coverage-visualization
+      - text: 220. 交互式调试
+        link: vitest-ui/interactive-debugging
+  - text: 第三十部分：性能优化
+    items:
+      - text: 221. 启动时间优化
+        link: performance/startup-optimization
+      - text: 222. Worker 池管理
+        link: performance/worker-pool
+      - text: 223. 模块缓存优化
+        link: performance/module-caching
+      - text: 224. 测试分片策略
+        link: performance/sharding-strategy
+      - text: 225. OpenTelemetry 集成
+        link: performance/open-telemetry
+  - text: 第三十一部分：生态系统集成
+    items:
+      - text: 226. setupFiles 配置
+        link: ecosystem/setup-files
+      - text: 227. globalSetup 配置
+        link: ecosystem/global-setup
+      - text: 228. Extending Matchers 最佳实践
+        link: ecosystem/extending-matchers
+      - text: 229. IDE 集成机制
+        link: ecosystem/ide-integration
+      - text: 230. VS Code 扩展通信
+        link: ecosystem/vscode-extension
+  - text: 第三十二部分：从 Jest 迁移
+    items:
+      - text: 231. Jest 兼容性层
+        link: migration/jest-compatibility
+      - text: 232. API 差异对照
+        link: migration/api-differences
+      - text: 233. 配置迁移指南
+        link: migration/config-migration
+      - text: 234. 常见迁移问题
+        link: migration/common-issues
+  - text: 附录
+    items:
+      - text: 235. Vitest 核心 API 速查
+        link: appendix/api-reference
+      - text: 236. 配置选项完整列表
+        link: appendix/config-options
+      - text: 237. 错误排查指南
+        link: appendix/troubleshooting
+      - text: 238. 术语表
+        link: appendix/glossary
+      - text: 239. 参考资源
+        link: appendix/resources

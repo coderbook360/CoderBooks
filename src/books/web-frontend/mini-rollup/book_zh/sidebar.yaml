@@ -1,0 +1,366 @@
+- text: 序言
+  link: index
+- text: 第一部分：基础概念与架构设计 (Foundations)
+  collapsed: false
+  items:
+    - text: Rollup 概览与设计哲学
+      link: foundations/overview
+    - text: ES Module 标准深度解析
+      link: foundations/esm-spec
+    - text: Rollup vs Webpack：设计理念对比
+      link: foundations/rollup-vs-webpack
+    - text: Rollup 源码结构导读
+      link: foundations/source-structure
+    - text: 开发环境搭建与项目结构
+      link: foundations/dev-environment
+    - text: 构建流程整体架构
+      link: foundations/build-architecture
+- text: 第二部分：配置系统 (Configuration System)
+  collapsed: false
+  items:
+    - text: InputOptions 输入配置设计
+      link: config/input-options
+    - text: OutputOptions 输出配置设计
+      link: config/output-options
+    - text: external 外部模块配置
+      link: config/external
+    - text: makeAbsoluteExternalsRelative 相对外部模块
+      link: config/make-absolute-externals-relative
+    - text: output.format 输出格式详解
+      link: config/output-format
+    - text: output.globals 全局变量映射
+      link: config/output-globals
+    - text: output.name 导出名称配置
+      link: config/output-name
+    - text: 配置标准化与默认值处理
+      link: config/normalization
+- text: 第三部分：Graph 模块图构建 (Module Graph)
+  collapsed: false
+  items:
+    - text: Graph 类设计与职责
+      link: graph/design
+    - text: 入口解析与模块加载
+      link: graph/entry-resolution
+    - text: ModuleLoader 模块加载器
+      link: graph/module-loader
+    - text: 模块依赖图构建
+      link: graph/dependency-graph
+    - text: circular dependency 循环依赖检测
+      link: graph/circular-deps
+    - text: 模块元信息管理
+      link: graph/module-info
+    - text: 构建缓存机制
+      link: graph/cache
+- text: 第四部分：Plugin 插件系统 (Plugin System)
+  collapsed: false
+  items:
+    - text: Plugin 设计理念与架构
+      link: plugin/design
+    - text: PluginDriver 插件驱动器
+      link: plugin/plugin-driver
+    - text: 插件 Hook 类型分类
+      link: plugin/hook-types
+    - text: async/sync Hook 执行机制
+      link: plugin/async-sync
+    - text: first/sequential/parallel Hook 执行策略
+      link: plugin/execution-strategy
+    - text: PluginContext 插件上下文
+      link: plugin/context
+    - text: this.resolve 模块解析
+      link: plugin/this-resolve
+    - text: this.load 模块加载
+      link: plugin/this-load
+    - text: this.emitFile 资源发射
+      link: plugin/this-emit-file
+    - text: this.getModuleInfo 模块信息获取
+      link: plugin/this-get-module-info
+    - text: this.parse AST 解析
+      link: plugin/this-parse
+    - text: this.addWatchFile 监听文件
+      link: plugin/this-add-watch-file
+- text: 第五部分：Build Hooks 构建阶段钩子 (Build Hooks)
+  collapsed: false
+  items:
+    - text: Build Hooks 概述与流程图
+      link: build-hooks/overview
+    - text: options Hook：配置预处理
+      link: build-hooks/options
+    - text: buildStart Hook：构建开始
+      link: build-hooks/build-start
+    - text: resolveId Hook：模块路径解析
+      link: build-hooks/resolve-id
+    - text: load Hook：模块内容加载
+      link: build-hooks/load
+    - text: transform Hook：代码转换
+      link: build-hooks/transform
+    - text: moduleParsed Hook：模块解析完成
+      link: build-hooks/module-parsed
+    - text: resolveDynamicImport Hook：动态导入解析
+      link: build-hooks/resolve-dynamic-import
+    - text: buildEnd Hook：构建结束
+      link: build-hooks/build-end
+    - text: closeWatcher Hook：监听器关闭
+      link: build-hooks/close-watcher
+    - text: watchChange Hook：文件变更
+      link: build-hooks/watch-change
+    - text: shouldTransformCachedModule Hook：缓存模块判断
+      link: build-hooks/should-transform-cached
+- text: 第六部分：AST 解析与分析 (AST Analysis)
+  collapsed: false
+  items:
+    - text: AST 解析器选择与集成
+      link: ast/parser
+    - text: ESTree 标准与节点类型
+      link: ast/estree
+    - text: import 语句解析
+      link: ast/import-analysis
+    - text: export 语句解析
+      link: ast/export-analysis
+    - text: 动态 import() 解析
+      link: ast/dynamic-import
+    - text: import.meta 处理
+      link: ast/import-meta
+    - text: 作用域分析与变量追踪
+      link: ast/scope-analysis
+    - text: 副作用检测与标记
+      link: ast/side-effect-detection
+    - text: 代码路径分析
+      link: ast/code-path-analysis
+- text: 第七部分：Module 模块系统 (Module System)
+  collapsed: false
+  items:
+    - text: Module 类设计与职责
+      link: module/design
+    - text: 模块类型与标识
+      link: module/types
+    - text: ExternalModule 外部模块
+      link: module/external-module
+    - text: 模块元数据 meta
+      link: module/meta
+    - text: moduleSideEffects 副作用标记
+      link: module/side-effects
+    - text: syntheticNamedExports 合成命名导出
+      link: module/synthetic-exports
+    - text: 模块属性 attributes
+      link: module/attributes
+- text: 第八部分：Tree Shaking 实现 (Tree Shaking)
+  collapsed: false
+  items:
+    - text: Tree Shaking 原理概述
+      link: tree-shaking/overview
+    - text: 导出使用分析
+      link: tree-shaking/export-usage
+    - text: usedExports 追踪
+      link: tree-shaking/used-exports
+    - text: 副作用分析与处理
+      link: tree-shaking/side-effects
+    - text: treeshake.moduleSideEffects 配置
+      link: tree-shaking/module-side-effects
+    - text: treeshake.propertyReadSideEffects 配置
+      link: tree-shaking/property-read
+    - text: '@__PURE__ 注解处理'
+      link: tree-shaking/pure-annotation
+    - text: manualPureFunctions 手动标记
+      link: tree-shaking/manual-pure-functions
+    - text: 死代码消除实现
+      link: tree-shaking/dead-code-elimination
+    - text: treeshake.tryCatchDeoptimization 配置
+      link: tree-shaking/try-catch
+- text: 第九部分：Chunk 代码块生成 (Chunk Generation)
+  collapsed: false
+  items:
+    - text: Chunk 设计与职责
+      link: chunk/design
+    - text: 入口 Chunk 生成
+      link: chunk/entry-chunk
+    - text: 动态导入 Chunk 分离
+      link: chunk/dynamic-chunk
+    - text: manualChunks 手动分块
+      link: chunk/manual-chunks
+    - text: Chunk 命名策略
+      link: chunk/naming
+    - text: chunkFileNames 模板配置
+      link: chunk/file-names
+    - text: entryFileNames 入口命名
+      link: chunk/entry-file-names
+    - text: preserveModules 保留模块结构
+      link: chunk/preserve-modules
+    - text: inlineDynamicImports 内联动态导入
+      link: chunk/inline-dynamic-imports
+    - text: preserveEntrySignatures 入口签名保留
+      link: chunk/preserve-signatures
+- text: 第十部分：Output Generation Hooks 输出阶段钩子 (Output Hooks)
+  collapsed: false
+  items:
+    - text: Output Hooks 概述与流程图
+      link: output-hooks/overview
+    - text: outputOptions Hook：输出配置处理
+      link: output-hooks/output-options
+    - text: renderStart Hook：渲染开始
+      link: output-hooks/render-start
+    - text: renderDynamicImport Hook：动态导入渲染
+      link: output-hooks/render-dynamic-import
+    - text: resolveImportMeta Hook：import.meta 解析
+      link: output-hooks/resolve-import-meta
+    - text: resolveFileUrl Hook：文件 URL 解析
+      link: output-hooks/resolve-file-url
+    - text: banner/footer Hook：头尾注入
+      link: output-hooks/banner-footer
+    - text: intro/outro Hook：代码包裹
+      link: output-hooks/intro-outro
+    - text: renderChunk Hook：代码块渲染
+      link: output-hooks/render-chunk
+    - text: augmentChunkHash Hook：Hash 增强
+      link: output-hooks/augment-chunk-hash
+    - text: generateBundle Hook：产物生成
+      link: output-hooks/generate-bundle
+    - text: writeBundle Hook：产物写入
+      link: output-hooks/write-bundle
+    - text: renderError Hook：渲染错误处理
+      link: output-hooks/render-error
+    - text: closeBundle Hook：关闭资源
+      link: output-hooks/close-bundle
+- text: 第十一部分：代码生成 (Code Generation)
+  collapsed: false
+  items:
+    - text: 代码生成整体架构
+      link: codegen/overview
+    - text: ES Module 格式生成
+      link: codegen/format-es
+    - text: CommonJS 格式生成
+      link: codegen/format-cjs
+    - text: IIFE 格式生成
+      link: codegen/format-iife
+    - text: UMD 格式生成
+      link: codegen/format-umd
+    - text: AMD 格式生成
+      link: codegen/format-amd
+    - text: SystemJS 格式生成
+      link: codegen/format-system
+    - text: interop 互操作性处理
+      link: codegen/interop
+    - text: 命名空间对象生成
+      link: codegen/namespace-object
+    - text: 动态导入代码生成
+      link: codegen/dynamic-import-codegen
+    - text: externalLiveBindings 外部活绑定
+      link: codegen/external-live-bindings
+- text: 第十二部分：SourceMap 生成 (SourceMap Generation)
+  collapsed: false
+  items:
+    - text: SourceMap 原理与格式
+      link: sourcemap/overview
+    - text: MagicString 字符串操作库
+      link: sourcemap/magic-string
+    - text: 代码位置映射
+      link: sourcemap/position-mapping
+    - text: 多阶段 SourceMap 合并
+      link: sourcemap/combining
+    - text: sourcemap 配置选项
+      link: sourcemap/options
+    - text: sourcemapExcludeSources 排除源码
+      link: sourcemap/exclude-sources
+    - text: sourcemapPathTransform 路径转换
+      link: sourcemap/path-transform
+- text: 第十三部分：Hash 与缓存 (Hashing & Caching)
+  collapsed: false
+  items:
+    - text: 内容 Hash 计算原理
+      link: hash/content-hash
+    - text: Hash 占位符机制
+      link: hash/placeholders
+    - text: hashCharacters 字符集配置
+      link: hash/characters
+    - text: Rollup 缓存机制设计
+      link: hash/cache-design
+    - text: Watch 模式增量构建
+      link: hash/incremental-build
+- text: 第十四部分：资源处理 (Asset Handling)
+  collapsed: false
+  items:
+    - text: Asset 资源发射机制
+      link: assets/emit-asset
+    - text: assetFileNames 资源命名
+      link: assets/file-names
+    - text: import.meta.ROLLUP_FILE_URL 引用
+      link: assets/file-url
+    - text: needsCodeReference 条件发射
+      link: assets/needs-reference
+    - text: prebuilt-chunk 预构建块
+      link: assets/prebuilt-chunk
+- text: 第十五部分：Watch 模式 (Watch Mode)
+  collapsed: false
+  items:
+    - text: Watch 模式设计与实现
+      link: watch/design
+    - text: Watcher 类实现
+      link: watch/watcher
+    - text: chokidar 文件监听集成
+      link: watch/chokidar
+    - text: watch 配置选项
+      link: watch/options
+    - text: 增量重建优化
+      link: watch/incremental-rebuild
+- text: 第十六部分：实战插件开发 (Plugin Development Practice)
+  collapsed: false
+  items:
+    - text: 实战：Virtual Module Plugin
+      link: plugin-practice/virtual-module
+    - text: 实战：JSON Plugin
+      link: plugin-practice/json-plugin
+    - text: 实战：Node Resolve Plugin
+      link: plugin-practice/node-resolve
+    - text: 实战：CommonJS Plugin 原理
+      link: plugin-practice/commonjs
+    - text: 实战：Replace Plugin
+      link: plugin-practice/replace
+    - text: 实战：Terser Plugin 集成
+      link: plugin-practice/terser
+    - text: 实战：Alias Plugin
+      link: plugin-practice/alias
+- text: 第十七部分：完整实现与整合 (Complete Implementation)
+  collapsed: false
+  items:
+    - text: 完整版 Mini-Rollup 实现
+      link: complete/full-implementation
+    - text: JavaScript API 设计
+      link: complete/javascript-api
+    - text: CLI 命令行工具实现
+      link: complete/cli
+    - text: rollup.rollup() 构建流程
+      link: complete/rollup-rollup
+    - text: bundle.generate() 生成流程
+      link: complete/bundle-generate
+    - text: bundle.write() 写入流程
+      link: complete/bundle-write
+    - text: 与官方 Rollup 对比分析
+      link: complete/comparison
+    - text: 性能优化策略
+      link: complete/performance
+    - text: 总结与进阶方向
+      link: complete/conclusion
+- text: 附录 (Appendix)
+  collapsed: false
+  items:
+    - text: Rollup 配置项完整参考
+      link: appendix/configuration
+    - text: Plugin Hook 完整列表
+      link: appendix/hooks-reference
+    - text: PluginContext API 参考
+      link: appendix/context-api
+    - text: OutputChunk 与 OutputAsset 类型
+      link: appendix/output-types
+    - text: ESTree 节点类型参考
+      link: appendix/estree-nodes
+    - text: JSX 支持配置
+      link: appendix/jsx
+    - text: generatedCode 配置详解
+      link: appendix/generated-code
+    - text: treeshake 配置详解
+      link: appendix/treeshake-options
+    - text: perf 性能分析配置
+      link: appendix/perf
+    - text: strictDeprecations 严格废弃警告
+      link: appendix/strict-deprecations
+    - text: 常见问题与解决方案
+      link: appendix/faq

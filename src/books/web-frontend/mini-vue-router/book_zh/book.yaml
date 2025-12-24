@@ -1,0 +1,107 @@
+title: "Mini Vue Router: Vue Router 4 源码深度解析"
+description: 从零实现一个 Mini Vue Router，深入理解路由系统的核心原理与设计思想。
+toc:
+  - text: 序言
+    link: preface
+  - text: 第一部分：路由基础与架构概览
+    items:
+      - text: 1. 前端路由的前世今生
+        link: foundations/routing-history
+      - text: 2. Vue Router 4 架构设计解析
+        link: foundations/architecture-overview
+      - text: 3. 核心概念与术语定义
+        link: foundations/core-concepts
+      - text: 4. 搭建 Mini Vue Router 开发环境
+        link: foundations/dev-environment
+  - text: 第二部分：History 模式实现
+    items:
+      - text: 5. History API 深度剖析
+        link: history/history-api-deep-dive
+      - text: 6. createWebHistory 实现
+        link: history/create-web-history
+      - text: 7. createWebHashHistory 实现
+        link: history/create-web-hash-history
+      - text: 8. createMemoryHistory 实现
+        link: history/create-memory-history
+      - text: 9. History 抽象层设计
+        link: history/history-abstraction
+  - text: 第三部分：路由匹配器
+    items:
+      - text: 10. 路由匹配原理与算法
+        link: matcher/matching-algorithm
+      - text: 11. 路径解析与参数提取
+        link: matcher/path-parsing
+      - text: 12. 动态路由与正则匹配
+        link: matcher/dynamic-routes
+      - text: 13. 嵌套路由与路由树
+        link: matcher/nested-routes
+      - text: 14. 路由优先级与权重计算
+        link: matcher/route-ranking
+      - text: 15. createRouterMatcher 实现
+        link: matcher/create-router-matcher
+  - text: 第四部分：导航守卫系统
+    items:
+      - text: 16. 导航守卫设计思想
+        link: guards/guards-design
+      - text: 17. 全局守卫实现
+        link: guards/global-guards
+      - text: 18. 路由独享守卫实现
+        link: guards/route-guards
+      - text: 19. 组件内守卫实现
+        link: guards/component-guards
+      - text: 20. 守卫执行队列与流程控制
+        link: guards/guard-queue
+      - text: 21. 异步守卫与错误处理
+        link: guards/async-guards
+  - text: 第五部分：核心 Router 实例
+    items:
+      - text: 22. createRouter 函数实现
+        link: router/create-router
+      - text: 23. 路由状态管理
+        link: router/router-state
+      - text: 24. push 与 replace 导航
+        link: router/navigation-methods
+      - text: 25. go、back、forward 实现
+        link: router/history-navigation
+      - text: 26. 路由解析与 resolve 方法
+        link: router/resolve-method
+      - text: 27. addRoute 与 removeRoute 动态路由
+        link: router/dynamic-routes-api
+  - text: 第六部分：Vue 集成与组件
+    items:
+      - text: 28. Router 插件机制与 install
+        link: integration/router-plugin
+      - text: 29. 依赖注入与 provide/inject
+        link: integration/dependency-injection
+      - text: 30. RouterLink 组件实现
+        link: integration/router-link
+      - text: 31. RouterView 组件实现
+        link: integration/router-view
+      - text: 32. Composition API 集成
+        link: integration/composition-api
+      - text: 33. useRouter 与 useRoute 实现
+        link: integration/use-router-hooks
+  - text: 第七部分：高级特性
+    items:
+      - text: 34. 滚动行为控制
+        link: advanced/scroll-behavior
+      - text: 35. 路由元信息与权限控制
+        link: advanced/route-meta
+      - text: 36. 命名视图与多视图渲染
+        link: advanced/named-views
+      - text: 37. 重定向与别名
+        link: advanced/redirect-alias
+  - text: 第八部分：错误处理
+    items:
+      - text: 38. 错误类型与错误边界
+        link: debugging/error-types
+      - text: 39. 导航失败处理
+        link: debugging/navigation-failures
+  - text: 第九部分：完整实现与总结
+    items:
+      - text: 40. Mini Vue Router 完整实现
+        link: final/complete-implementation
+      - text: 41. 与官方实现对比
+        link: final/comparison
+      - text: 42. 总结与展望
+        link: final/conclusion

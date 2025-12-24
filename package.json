@@ -4,8 +4,9 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "vitepress",
-    "build": "vitepress build",
+    "generate:yaml": "node scripts/generate-book-yaml.cjs && node scripts/generate-sidebar-yaml.js",
+    "dev": "npm run generate:yaml && vitepress",
+    "build": "npm run generate:yaml && vitepress build",
     "preview": "vitepress preview",
     "preinstall": "npx only-allow pnpm",
     "type": "vue-tsc --noEmit"

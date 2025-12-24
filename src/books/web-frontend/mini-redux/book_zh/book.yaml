@@ -1,0 +1,257 @@
+title: Mini-Redux：从零实现状态管理核心原理
+description: 本书将带你从零开始，一步步实现一个功能完备的 Mini-Redux。通过源码级的深度剖析，你将彻底掌握 Store、Reducer、Action、Middleware 等状态管理核心原理。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：基础概念与设计理念 (Foundations)
+    items:
+      - text: 1. Redux 概览与设计哲学
+        link: foundations/overview
+      - text: 2. Flux 架构与单向数据流
+        link: foundations/flux-architecture
+      - text: 3. Redux 三大原则
+        link: foundations/three-principles
+      - text: 4. Redux 源码结构导读
+        link: foundations/source-structure
+      - text: 5. 开发环境搭建与项目结构
+        link: foundations/dev-environment
+  - text: 第二部分：核心概念实现 (Core Concepts)
+    items:
+      - text: 6. State 状态树设计
+        link: core/state-tree
+      - text: 7. Action 设计与规范
+        link: core/action
+      - text: 8. Action Creator 函数
+        link: core/action-creator
+      - text: 9. Reducer 纯函数设计
+        link: core/reducer
+      - text: 10. Reducer 组合模式
+        link: core/reducer-composition
+      - text: 11. 不可变性原则与实现
+        link: core/immutability
+  - text: 第三部分：createStore 实现 (createStore)
+    items:
+      - text: 12. createStore 函数设计
+        link: create-store/design
+      - text: 13. Store 数据结构
+        link: create-store/store-structure
+      - text: 14. getState 实现
+        link: create-store/get-state
+      - text: 15. dispatch 实现
+        link: create-store/dispatch
+      - text: 16. subscribe 订阅机制
+        link: create-store/subscribe
+      - text: 17. listeners 监听器管理
+        link: create-store/listeners
+      - text: 18. replaceReducer 实现
+        link: create-store/replace-reducer
+      - text: 19. observable 实现
+        link: create-store/observable
+  - text: 第四部分：combineReducers 实现 (combineReducers)
+    items:
+      - text: 20. combineReducers 设计理念
+        link: combine-reducers/design
+      - text: 21. Reducer 拆分策略
+        link: combine-reducers/splitting
+      - text: 22. 状态树结构映射
+        link: combine-reducers/state-mapping
+      - text: 23. combineReducers 核心实现
+        link: combine-reducers/implementation
+      - text: 24. 状态变更检测
+        link: combine-reducers/change-detection
+      - text: 25. 嵌套 combineReducers
+        link: combine-reducers/nested
+  - text: 第五部分：Middleware 中间件系统 (Middleware)
+    items:
+      - text: 26. Middleware 设计理念
+        link: middleware/design
+      - text: 27. Middleware 签名与结构
+        link: middleware/signature
+      - text: 28. Middleware 洋葱模型
+        link: middleware/onion-model
+      - text: 29. applyMiddleware 实现
+        link: middleware/apply-middleware
+      - text: 30. compose 函数组合
+        link: middleware/compose
+      - text: 31. Middleware 执行流程
+        link: middleware/execution-flow
+      - text: 32. enhancer 增强器机制
+        link: middleware/enhancer
+  - text: 第六部分：常用 Middleware 实现 (Middleware Implementations)
+    items:
+      - text: 33. redux-thunk 实现
+        link: middleware-impl/thunk
+      - text: 34. redux-promise 实现
+        link: middleware-impl/promise
+      - text: 35. redux-logger 实现
+        link: middleware-impl/logger
+      - text: 36. 错误处理中间件
+        link: middleware-impl/error-handler
+      - text: 37. 性能监控中间件
+        link: middleware-impl/performance
+  - text: 第七部分：bindActionCreators 实现 (bindActionCreators)
+    items:
+      - text: 38. bindActionCreators 设计理念
+        link: bind-action-creators/design
+      - text: 39. 单个 Action Creator 绑定
+        link: bind-action-creators/single
+      - text: 40. 多个 Action Creator 绑定
+        link: bind-action-creators/multiple
+      - text: 41. bindActionCreators 核心实现
+        link: bind-action-creators/implementation
+      - text: 42. 与组件 props 集成
+        link: bind-action-creators/props-integration
+  - text: 第八部分：Selector 选择器 (Selectors)
+    items:
+      - text: 43. Selector 设计理念
+        link: selectors/design
+      - text: 44. 基础 Selector 实现
+        link: selectors/basic
+      - text: 45. Selector 组合
+        link: selectors/composition
+      - text: 46. 记忆化 Selector
+        link: selectors/memoization
+      - text: 47. createSelector 实现 (reselect)
+        link: selectors/create-selector
+      - text: 48. 参数化 Selector
+        link: selectors/parameterized
+  - text: 第九部分：React-Redux 绑定 (React-Redux)
+    items:
+      - text: 49. React-Redux 设计理念
+        link: react-redux/design
+      - text: 50. Provider 组件实现
+        link: react-redux/provider
+      - text: 51. Context 传递 Store
+        link: react-redux/context
+      - text: 52. connect 函数设计
+        link: react-redux/connect-design
+      - text: 53. mapStateToProps 实现
+        link: react-redux/map-state-to-props
+      - text: 54. mapDispatchToProps 实现
+        link: react-redux/map-dispatch-to-props
+      - text: 55. connect 高阶组件实现
+        link: react-redux/connect-hoc
+      - text: 56. useSelector Hook 实现
+        link: react-redux/use-selector
+      - text: 57. useDispatch Hook 实现
+        link: react-redux/use-dispatch
+      - text: 58. useStore Hook 实现
+        link: react-redux/use-store
+      - text: 59. 性能优化策略
+        link: react-redux/performance
+  - text: 第十部分：Redux Toolkit 核心 (Redux Toolkit)
+    items:
+      - text: 60. Redux Toolkit 设计理念
+        link: rtk/design
+      - text: 61. configureStore 实现
+        link: rtk/configure-store
+      - text: 62. createSlice 设计与实现
+        link: rtk/create-slice
+      - text: 63. createReducer 与 Immer
+        link: rtk/create-reducer
+      - text: 64. createAction 实现
+        link: rtk/create-action
+      - text: 65. createAsyncThunk 实现
+        link: rtk/create-async-thunk
+      - text: 66. createEntityAdapter 实现
+        link: rtk/create-entity-adapter
+  - text: 第十一部分：异步状态管理 (Async State Management)
+    items:
+      - text: 67. 异步 Action 设计模式
+        link: async/action-patterns
+      - text: 68. loading/error 状态处理
+        link: async/loading-error
+      - text: 69. 请求生命周期管理
+        link: async/request-lifecycle
+      - text: 70. 取消请求处理
+        link: async/cancellation
+      - text: 71. 乐观更新策略
+        link: async/optimistic-update
+      - text: 72. 请求去重与缓存
+        link: async/deduplication
+  - text: 第十二部分：状态规范化 (State Normalization)
+    items:
+      - text: 73. 状态规范化设计理念
+        link: normalization/design
+      - text: 74. 实体与关系建模
+        link: normalization/entity-modeling
+      - text: 75. normalizr 原理解析
+        link: normalization/normalizr
+      - text: 76. 规范化状态结构
+        link: normalization/normalized-structure
+      - text: 77. 实体更新策略
+        link: normalization/entity-update
+      - text: 78. 关系数据查询
+        link: normalization/relationship-query
+  - text: 第十三部分：DevTools 集成 (DevTools)
+    items:
+      - text: 79. Redux DevTools 设计
+        link: devtools/design
+      - text: 80. Action 记录与回放
+        link: devtools/action-recording
+      - text: 81. 时间旅行调试
+        link: devtools/time-travel
+      - text: 82. 状态导入导出
+        link: devtools/state-import-export
+      - text: 83. DevTools 增强器实现
+        link: devtools/enhancer
+  - text: 第十四部分：持久化与序列化 (Persistence)
+    items:
+      - text: 84. 状态持久化设计
+        link: persistence/design
+      - text: 85. localStorage 存储
+        link: persistence/local-storage
+      - text: 86. 状态序列化与反序列化
+        link: persistence/serialization
+      - text: 87. 选择性持久化
+        link: persistence/selective
+      - text: 88. 状态迁移策略
+        link: persistence/migration
+  - text: 第十五部分：测试策略 (Testing)
+    items:
+      - text: 89. Redux 测试策略概述
+        link: testing/overview
+      - text: 90. Reducer 测试
+        link: testing/reducer
+      - text: 91. Action Creator 测试
+        link: testing/action-creator
+      - text: 92. Selector 测试
+        link: testing/selector
+      - text: 93. Middleware 测试
+        link: testing/middleware
+      - text: 94. 集成测试策略
+        link: testing/integration
+  - text: 第十六部分：完整实现与整合 (Complete Implementation)
+    items:
+      - text: 95. 完整版 Mini-Redux 实现
+        link: complete/full-implementation
+      - text: 96. createStore 完整版
+        link: complete/create-store-full
+      - text: 97. combineReducers 完整版
+        link: complete/combine-reducers-full
+      - text: 98. applyMiddleware 完整版
+        link: complete/apply-middleware-full
+      - text: 99. React-Redux 完整版
+        link: complete/react-redux-full
+      - text: 100. 与官方 Redux 对比分析
+        link: complete/comparison
+      - text: 101. 性能优化策略
+        link: complete/performance
+      - text: 102. 总结与进阶方向
+        link: complete/conclusion
+  - text: 附录 (Appendix)
+    items:
+      - text: 103. Redux API 完整参考
+        link: appendix/api-reference
+      - text: 104. Redux Toolkit API 参考
+        link: appendix/rtk-api
+      - text: 105. React-Redux API 参考
+        link: appendix/react-redux-api
+      - text: 106. Middleware 签名参考
+        link: appendix/middleware-signature
+      - text: 107. 常用 Action 命名规范
+        link: appendix/action-naming
+      - text: 108. 状态结构设计模式
+        link: appendix/state-patterns
+      - text: 109. 常见问题与解决方案
+        link: appendix/faq

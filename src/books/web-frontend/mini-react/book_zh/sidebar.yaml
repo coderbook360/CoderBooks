@@ -1,0 +1,368 @@
+- text: 序言
+  link: index
+- text: 第一部分：基础概念与架构设计 (Foundations)
+  collapsed: false
+  items:
+    - text: React 概览与设计哲学
+      link: foundations/overview
+    - text: 声明式 UI 与组件化思想
+      link: foundations/declarative-ui
+    - text: React 源码结构导读
+      link: foundations/source-structure
+    - text: 开发环境搭建与项目结构
+      link: foundations/dev-environment
+    - text: 构建流程整体架构
+      link: foundations/build-architecture
+- text: 第二部分：JSX 与 createElement (JSX & createElement)
+  collapsed: false
+  items:
+    - text: JSX 语法与编译原理
+      link: jsx/syntax
+    - text: Babel 转换 JSX 过程
+      link: jsx/babel-transform
+    - text: createElement 函数实现
+      link: jsx/create-element
+    - text: ReactElement 数据结构
+      link: jsx/react-element
+    - text: children 规范化处理
+      link: jsx/children-normalization
+    - text: Fragment 实现
+      link: jsx/fragment
+    - text: JSX Runtime 新模式
+      link: jsx/jsx-runtime
+- text: 第三部分：Virtual DOM 基础 (Virtual DOM)
+  collapsed: false
+  items:
+    - text: Virtual DOM 设计理念
+      link: vdom/design
+    - text: VNode 数据结构设计
+      link: vdom/vnode-structure
+    - text: VNode 类型分类
+      link: vdom/vnode-types
+    - text: VNode 创建流程
+      link: vdom/vnode-creation
+    - text: key 属性的作用与实现
+      link: vdom/key-prop
+    - text: ref 属性处理
+      link: vdom/ref-prop
+- text: 第四部分：Fiber 架构基础 (Fiber Architecture)
+  collapsed: false
+  items:
+    - text: Fiber 架构设计动机
+      link: fiber/motivation
+    - text: Fiber 节点数据结构
+      link: fiber/node-structure
+    - text: Fiber 树的构建
+      link: fiber/tree-construction
+    - text: 双缓冲机制 (Double Buffering)
+      link: fiber/double-buffering
+    - text: current 与 workInProgress
+      link: fiber/current-wip
+    - text: Fiber 链表结构
+      link: fiber/linked-list
+    - text: alternate 指针机制
+      link: fiber/alternate
+- text: 第五部分：渲染器基础 (Renderer Basics)
+  collapsed: false
+  items:
+    - text: 渲染器设计与职责
+      link: renderer/design
+    - text: createRoot API 实现
+      link: renderer/create-root
+    - text: FiberRoot 与 HostRoot
+      link: renderer/fiber-root
+    - text: container 容器处理
+      link: renderer/container
+    - text: 初次渲染流程
+      link: renderer/initial-render
+    - text: render 方法实现
+      link: renderer/render-method
+- text: 第六部分：Reconciler 协调器 (Reconciler)
+  collapsed: false
+  items:
+    - text: Reconciler 设计与职责
+      link: reconciler/design
+    - text: beginWork 阶段详解
+      link: reconciler/begin-work
+    - text: completeWork 阶段详解
+      link: reconciler/complete-work
+    - text: workLoop 工作循环
+      link: reconciler/work-loop
+    - text: performUnitOfWork 实现
+      link: reconciler/perform-unit-of-work
+    - text: Fiber 遍历算法
+      link: reconciler/traversal
+    - text: effectTag 标记系统
+      link: reconciler/effect-tag
+- text: 第七部分：Diff 算法实现 (Diff Algorithm)
+  collapsed: false
+  items:
+    - text: Diff 算法设计原则
+      link: diff/design
+    - text: 单节点 Diff
+      link: diff/single-node
+    - text: 多节点 Diff 算法
+      link: diff/multi-node
+    - text: key 优化策略
+      link: diff/key-optimization
+    - text: 移动节点检测
+      link: diff/move-detection
+    - text: 列表 Diff 优化
+      link: diff/list-optimization
+    - text: 文本节点处理
+      link: diff/text-node
+- text: 第八部分：Commit 阶段 (Commit Phase)
+  collapsed: false
+  items:
+    - text: Commit 阶段概述
+      link: commit/overview
+    - text: beforeMutation 阶段
+      link: commit/before-mutation
+    - text: mutation 阶段
+      link: commit/mutation
+    - text: layout 阶段
+      link: commit/layout
+    - text: DOM 操作封装
+      link: commit/dom-operations
+    - text: Placement 插入操作
+      link: commit/placement
+    - text: Update 更新操作
+      link: commit/update
+    - text: Deletion 删除操作
+      link: commit/deletion
+- text: 第九部分：函数组件 (Function Components)
+  collapsed: false
+  items:
+    - text: 函数组件设计理念
+      link: function-component/design
+    - text: 函数组件 Fiber 处理
+      link: function-component/fiber-handling
+    - text: renderWithHooks 流程
+      link: function-component/render-with-hooks
+    - text: 组件 props 处理
+      link: function-component/props
+    - text: children 处理模式
+      link: function-component/children
+    - text: 组件重渲染机制
+      link: function-component/rerender
+- text: 第十部分：Hooks 基础架构 (Hooks Infrastructure)
+  collapsed: false
+  items:
+    - text: Hooks 设计理念
+      link: hooks/design
+    - text: Hooks 链表结构
+      link: hooks/linked-list
+    - text: currentlyRenderingFiber
+      link: hooks/currently-rendering
+    - text: dispatcher 调度器
+      link: hooks/dispatcher
+    - text: mountHooks 与 updateHooks
+      link: hooks/mount-update
+    - text: Hooks 规则与实现原理
+      link: hooks/rules
+- text: 第十一部分：useState 实现 (useState)
+  collapsed: false
+  items:
+    - text: useState 设计与用法
+      link: use-state/design
+    - text: mountState 实现
+      link: use-state/mount-state
+    - text: updateState 实现
+      link: use-state/update-state
+    - text: dispatchAction 触发更新
+      link: use-state/dispatch-action
+    - text: Update 队列结构
+      link: use-state/update-queue
+    - text: 状态批量更新
+      link: use-state/batching
+    - text: 函数式更新
+      link: use-state/functional-update
+- text: 第十二部分：useReducer 实现 (useReducer)
+  collapsed: false
+  items:
+    - text: useReducer 设计与用法
+      link: use-reducer/design
+    - text: mountReducer 实现
+      link: use-reducer/mount-reducer
+    - text: updateReducer 实现
+      link: use-reducer/update-reducer
+    - text: reducer 执行流程
+      link: use-reducer/execution
+    - text: 与 useState 的关系
+      link: use-reducer/vs-use-state
+- text: 第十三部分：useEffect 实现 (useEffect)
+  collapsed: false
+  items:
+    - text: useEffect 设计与用法
+      link: use-effect/design
+    - text: Effect 数据结构
+      link: use-effect/effect-structure
+    - text: mountEffect 实现
+      link: use-effect/mount-effect
+    - text: updateEffect 实现
+      link: use-effect/update-effect
+    - text: 依赖比较算法
+      link: use-effect/deps-comparison
+    - text: Effect 调度与执行
+      link: use-effect/scheduling
+    - text: cleanup 清理函数
+      link: use-effect/cleanup
+    - text: useLayoutEffect 实现
+      link: use-effect/use-layout-effect
+- text: 第十四部分：useRef 与性能优化 Hooks (useRef & Performance Hooks)
+  collapsed: false
+  items:
+    - text: useRef 设计与实现
+      link: use-ref/design
+    - text: mountRef 与 updateRef
+      link: use-ref/mount-update
+    - text: ref 对象持久性
+      link: use-ref/persistence
+    - text: forwardRef 实现
+      link: use-ref/forward-ref
+    - text: useImperativeHandle 实现
+      link: use-ref/use-imperative-handle
+    - text: useMemo 设计与实现
+      link: use-memo/design
+    - text: useCallback 实现
+      link: use-memo/use-callback
+    - text: 记忆化原理
+      link: use-memo/memoization
+    - text: memo 高阶组件实现
+      link: use-memo/memo-hoc
+- text: 第十五部分：useContext 实现 (useContext)
+  collapsed: false
+  items:
+    - text: Context 设计理念
+      link: context/design
+    - text: createContext 实现
+      link: context/create-context
+    - text: Provider 组件实现
+      link: context/provider
+    - text: useContext Hook 实现
+      link: context/use-context
+    - text: Context 值传递机制
+      link: context/value-propagation
+    - text: Context 变更检测
+      link: context/change-detection
+- text: 第十六部分：其他核心 Hooks (Other Hooks)
+  collapsed: false
+  items:
+    - text: useId 实现
+      link: other-hooks/use-id
+    - text: useDebugValue 实现
+      link: other-hooks/use-debug-value
+    - text: useSyncExternalStore 实现
+      link: other-hooks/use-sync-external-store
+    - text: useInsertionEffect 实现
+      link: other-hooks/use-insertion-effect
+    - text: 自定义 Hook 设计模式
+      link: other-hooks/custom-hooks
+- text: 第十七部分：事件系统 (Event System)
+  collapsed: false
+  items:
+    - text: React 事件系统设计
+      link: events/design
+    - text: 事件委托机制
+      link: events/delegation
+    - text: SyntheticEvent 合成事件
+      link: events/synthetic-event
+    - text: 事件注册与监听
+      link: events/registration
+    - text: 事件触发与分发
+      link: events/dispatch
+    - text: 事件池机制
+      link: events/pooling
+    - text: 事件优先级
+      link: events/priority
+- text: 第十八部分：调度系统 (Scheduler)
+  collapsed: false
+  items:
+    - text: Scheduler 设计理念
+      link: scheduler/design
+    - text: 优先级系统设计
+      link: scheduler/priority-system
+    - text: Lane 模型基础
+      link: scheduler/lane-model
+    - text: 任务队列管理
+      link: scheduler/task-queue
+    - text: 时间切片 (Time Slicing)
+      link: scheduler/time-slicing
+    - text: shouldYield 中断检测
+      link: scheduler/should-yield
+    - text: MessageChannel 调度
+      link: scheduler/message-channel
+    - text: requestIdleCallback 模拟
+      link: scheduler/idle-callback
+- text: 第十九部分：并发特性 (Concurrent Features)
+  collapsed: false
+  items:
+    - text: 并发模式概述
+      link: concurrent/overview
+    - text: useTransition 实现
+      link: concurrent/use-transition
+    - text: useDeferredValue 实现
+      link: concurrent/use-deferred-value
+    - text: startTransition API
+      link: concurrent/start-transition
+    - text: Suspense 基础实现
+      link: concurrent/suspense
+    - text: lazy 懒加载实现
+      link: concurrent/lazy
+    - text: use Hook 实现
+      link: concurrent/use-hook
+    - text: Offscreen 组件
+      link: concurrent/offscreen
+- text: 第二十部分：类组件兼容 (Class Components)
+  collapsed: false
+  items:
+    - text: Component 基类实现
+      link: class-component/component
+    - text: PureComponent 实现
+      link: class-component/pure-component
+    - text: setState 实现
+      link: class-component/set-state
+    - text: 生命周期方法
+      link: class-component/lifecycle
+    - text: shouldComponentUpdate
+      link: class-component/should-update
+    - text: 错误边界 (Error Boundaries)
+      link: class-component/error-boundaries
+- text: 第二十一部分：完整实现与整合 (Complete Implementation)
+  collapsed: false
+  items:
+    - text: 完整版 Mini-React 实现
+      link: complete/full-implementation
+    - text: React.createElement API
+      link: complete/create-element-api
+    - text: ReactDOM.createRoot API
+      link: complete/create-root-api
+    - text: render 与 unmount
+      link: complete/render-unmount
+    - text: 与官方 React 对比分析
+      link: complete/comparison
+    - text: 性能优化策略
+      link: complete/performance
+    - text: 总结与进阶方向
+      link: complete/conclusion
+- text: 附录 (Appendix)
+  collapsed: false
+  items:
+    - text: React Hooks 完整列表
+      link: appendix/hooks-reference
+    - text: Fiber 节点类型参考
+      link: appendix/fiber-types
+    - text: effectTag 标记参考
+      link: appendix/effect-tags
+    - text: Lane 优先级参考
+      link: appendix/lane-reference
+    - text: React 内部常量
+      link: appendix/internal-constants
+    - text: StrictMode 实现原理
+      link: appendix/strict-mode
+    - text: Profiler 性能分析
+      link: appendix/profiler
+    - text: 调试技巧与工具
+      link: appendix/debugging
+    - text: 常见问题与解决方案
+      link: appendix/faq

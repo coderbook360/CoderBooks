@@ -1,0 +1,351 @@
+title: Mini-Rollup：从零实现现代 ES 模块打包器
+description: 本书将带你从零开始，一步步实现一个功能完备的 Rollup 模块打包器。通过源码级的深度剖析，你将彻底掌握 ES 模块打包、Tree Shaking、代码分割等核心原理。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：基础概念与架构设计 (Foundations)
+    items:
+      - text: 1. Rollup 概览与设计哲学
+        link: foundations/overview
+      - text: 2. ES Module 标准深度解析
+        link: foundations/esm-spec
+      - text: 3. Rollup vs Webpack：设计理念对比
+        link: foundations/rollup-vs-webpack
+      - text: 4. Rollup 源码结构导读
+        link: foundations/source-structure
+      - text: 5. 开发环境搭建与项目结构
+        link: foundations/dev-environment
+      - text: 6. 构建流程整体架构
+        link: foundations/build-architecture
+  - text: 第二部分：配置系统 (Configuration System)
+    items:
+      - text: 7. InputOptions 输入配置设计
+        link: config/input-options
+      - text: 8. OutputOptions 输出配置设计
+        link: config/output-options
+      - text: 9. external 外部模块配置
+        link: config/external
+      - text: 10. makeAbsoluteExternalsRelative 相对外部模块
+        link: config/make-absolute-externals-relative
+      - text: 11. output.format 输出格式详解
+        link: config/output-format
+      - text: 12. output.globals 全局变量映射
+        link: config/output-globals
+      - text: 13. output.name 导出名称配置
+        link: config/output-name
+      - text: 14. 配置标准化与默认值处理
+        link: config/normalization
+  - text: 第三部分：Graph 模块图构建 (Module Graph)
+    items:
+      - text: 15. Graph 类设计与职责
+        link: graph/design
+      - text: 16. 入口解析与模块加载
+        link: graph/entry-resolution
+      - text: 17. ModuleLoader 模块加载器
+        link: graph/module-loader
+      - text: 18. 模块依赖图构建
+        link: graph/dependency-graph
+      - text: 19. circular dependency 循环依赖检测
+        link: graph/circular-deps
+      - text: 20. 模块元信息管理
+        link: graph/module-info
+      - text: 21. 构建缓存机制
+        link: graph/cache
+  - text: 第四部分：Plugin 插件系统 (Plugin System)
+    items:
+      - text: 22. Plugin 设计理念与架构
+        link: plugin/design
+      - text: 23. PluginDriver 插件驱动器
+        link: plugin/plugin-driver
+      - text: 24. 插件 Hook 类型分类
+        link: plugin/hook-types
+      - text: 25. async/sync Hook 执行机制
+        link: plugin/async-sync
+      - text: 26. first/sequential/parallel Hook 执行策略
+        link: plugin/execution-strategy
+      - text: 27. PluginContext 插件上下文
+        link: plugin/context
+      - text: 28. this.resolve 模块解析
+        link: plugin/this-resolve
+      - text: 29. this.load 模块加载
+        link: plugin/this-load
+      - text: 30. this.emitFile 资源发射
+        link: plugin/this-emit-file
+      - text: 31. this.getModuleInfo 模块信息获取
+        link: plugin/this-get-module-info
+      - text: 32. this.parse AST 解析
+        link: plugin/this-parse
+      - text: 33. this.addWatchFile 监听文件
+        link: plugin/this-add-watch-file
+  - text: 第五部分：Build Hooks 构建阶段钩子 (Build Hooks)
+    items:
+      - text: 34. Build Hooks 概述与流程图
+        link: build-hooks/overview
+      - text: 35. options Hook：配置预处理
+        link: build-hooks/options
+      - text: 36. buildStart Hook：构建开始
+        link: build-hooks/build-start
+      - text: 37. resolveId Hook：模块路径解析
+        link: build-hooks/resolve-id
+      - text: 38. load Hook：模块内容加载
+        link: build-hooks/load
+      - text: 39. transform Hook：代码转换
+        link: build-hooks/transform
+      - text: 40. moduleParsed Hook：模块解析完成
+        link: build-hooks/module-parsed
+      - text: 41. resolveDynamicImport Hook：动态导入解析
+        link: build-hooks/resolve-dynamic-import
+      - text: 42. buildEnd Hook：构建结束
+        link: build-hooks/build-end
+      - text: 43. closeWatcher Hook：监听器关闭
+        link: build-hooks/close-watcher
+      - text: 44. watchChange Hook：文件变更
+        link: build-hooks/watch-change
+      - text: 45. shouldTransformCachedModule Hook：缓存模块判断
+        link: build-hooks/should-transform-cached
+  - text: 第六部分：AST 解析与分析 (AST Analysis)
+    items:
+      - text: 46. AST 解析器选择与集成
+        link: ast/parser
+      - text: 47. ESTree 标准与节点类型
+        link: ast/estree
+      - text: 48. import 语句解析
+        link: ast/import-analysis
+      - text: 49. export 语句解析
+        link: ast/export-analysis
+      - text: 50. 动态 import() 解析
+        link: ast/dynamic-import
+      - text: 51. import.meta 处理
+        link: ast/import-meta
+      - text: 52. 作用域分析与变量追踪
+        link: ast/scope-analysis
+      - text: 53. 副作用检测与标记
+        link: ast/side-effect-detection
+      - text: 54. 代码路径分析
+        link: ast/code-path-analysis
+  - text: 第七部分：Module 模块系统 (Module System)
+    items:
+      - text: 55. Module 类设计与职责
+        link: module/design
+      - text: 56. 模块类型与标识
+        link: module/types
+      - text: 57. ExternalModule 外部模块
+        link: module/external-module
+      - text: 58. 模块元数据 meta
+        link: module/meta
+      - text: 59. moduleSideEffects 副作用标记
+        link: module/side-effects
+      - text: 60. syntheticNamedExports 合成命名导出
+        link: module/synthetic-exports
+      - text: 61. 模块属性 attributes
+        link: module/attributes
+  - text: 第八部分：Tree Shaking 实现 (Tree Shaking)
+    items:
+      - text: 62. Tree Shaking 原理概述
+        link: tree-shaking/overview
+      - text: 63. 导出使用分析
+        link: tree-shaking/export-usage
+      - text: 64. usedExports 追踪
+        link: tree-shaking/used-exports
+      - text: 65. 副作用分析与处理
+        link: tree-shaking/side-effects
+      - text: 66. treeshake.moduleSideEffects 配置
+        link: tree-shaking/module-side-effects
+      - text: 67. treeshake.propertyReadSideEffects 配置
+        link: tree-shaking/property-read
+      - text: 68. @__PURE__ 注解处理
+        link: tree-shaking/pure-annotation
+      - text: 69. manualPureFunctions 手动标记
+        link: tree-shaking/manual-pure-functions
+      - text: 70. 死代码消除实现
+        link: tree-shaking/dead-code-elimination
+      - text: 71. treeshake.tryCatchDeoptimization 配置
+        link: tree-shaking/try-catch
+  - text: 第九部分：Chunk 代码块生成 (Chunk Generation)
+    items:
+      - text: 72. Chunk 设计与职责
+        link: chunk/design
+      - text: 73. 入口 Chunk 生成
+        link: chunk/entry-chunk
+      - text: 74. 动态导入 Chunk 分离
+        link: chunk/dynamic-chunk
+      - text: 75. manualChunks 手动分块
+        link: chunk/manual-chunks
+      - text: 76. Chunk 命名策略
+        link: chunk/naming
+      - text: 77. chunkFileNames 模板配置
+        link: chunk/file-names
+      - text: 78. entryFileNames 入口命名
+        link: chunk/entry-file-names
+      - text: 79. preserveModules 保留模块结构
+        link: chunk/preserve-modules
+      - text: 80. inlineDynamicImports 内联动态导入
+        link: chunk/inline-dynamic-imports
+      - text: 81. preserveEntrySignatures 入口签名保留
+        link: chunk/preserve-signatures
+  - text: 第十部分：Output Generation Hooks 输出阶段钩子 (Output Hooks)
+    items:
+      - text: 82. Output Hooks 概述与流程图
+        link: output-hooks/overview
+      - text: 83. outputOptions Hook：输出配置处理
+        link: output-hooks/output-options
+      - text: 84. renderStart Hook：渲染开始
+        link: output-hooks/render-start
+      - text: 85. renderDynamicImport Hook：动态导入渲染
+        link: output-hooks/render-dynamic-import
+      - text: 86. resolveImportMeta Hook：import.meta 解析
+        link: output-hooks/resolve-import-meta
+      - text: 87. resolveFileUrl Hook：文件 URL 解析
+        link: output-hooks/resolve-file-url
+      - text: 88. banner/footer Hook：头尾注入
+        link: output-hooks/banner-footer
+      - text: 89. intro/outro Hook：代码包裹
+        link: output-hooks/intro-outro
+      - text: 90. renderChunk Hook：代码块渲染
+        link: output-hooks/render-chunk
+      - text: 91. augmentChunkHash Hook：Hash 增强
+        link: output-hooks/augment-chunk-hash
+      - text: 92. generateBundle Hook：产物生成
+        link: output-hooks/generate-bundle
+      - text: 93. writeBundle Hook：产物写入
+        link: output-hooks/write-bundle
+      - text: 94. renderError Hook：渲染错误处理
+        link: output-hooks/render-error
+      - text: 95. closeBundle Hook：关闭资源
+        link: output-hooks/close-bundle
+  - text: 第十一部分：代码生成 (Code Generation)
+    items:
+      - text: 96. 代码生成整体架构
+        link: codegen/overview
+      - text: 97. ES Module 格式生成
+        link: codegen/format-es
+      - text: 98. CommonJS 格式生成
+        link: codegen/format-cjs
+      - text: 99. IIFE 格式生成
+        link: codegen/format-iife
+      - text: 100. UMD 格式生成
+        link: codegen/format-umd
+      - text: 101. AMD 格式生成
+        link: codegen/format-amd
+      - text: 102. SystemJS 格式生成
+        link: codegen/format-system
+      - text: 103. interop 互操作性处理
+        link: codegen/interop
+      - text: 104. 命名空间对象生成
+        link: codegen/namespace-object
+      - text: 105. 动态导入代码生成
+        link: codegen/dynamic-import-codegen
+      - text: 106. externalLiveBindings 外部活绑定
+        link: codegen/external-live-bindings
+  - text: 第十二部分：SourceMap 生成 (SourceMap Generation)
+    items:
+      - text: 107. SourceMap 原理与格式
+        link: sourcemap/overview
+      - text: 108. MagicString 字符串操作库
+        link: sourcemap/magic-string
+      - text: 109. 代码位置映射
+        link: sourcemap/position-mapping
+      - text: 110. 多阶段 SourceMap 合并
+        link: sourcemap/combining
+      - text: 111. sourcemap 配置选项
+        link: sourcemap/options
+      - text: 112. sourcemapExcludeSources 排除源码
+        link: sourcemap/exclude-sources
+      - text: 113. sourcemapPathTransform 路径转换
+        link: sourcemap/path-transform
+  - text: 第十三部分：Hash 与缓存 (Hashing & Caching)
+    items:
+      - text: 114. 内容 Hash 计算原理
+        link: hash/content-hash
+      - text: 115. Hash 占位符机制
+        link: hash/placeholders
+      - text: 116. hashCharacters 字符集配置
+        link: hash/characters
+      - text: 117. Rollup 缓存机制设计
+        link: hash/cache-design
+      - text: 118. Watch 模式增量构建
+        link: hash/incremental-build
+  - text: 第十四部分：资源处理 (Asset Handling)
+    items:
+      - text: 119. Asset 资源发射机制
+        link: assets/emit-asset
+      - text: 120. assetFileNames 资源命名
+        link: assets/file-names
+      - text: 121. import.meta.ROLLUP_FILE_URL 引用
+        link: assets/file-url
+      - text: 122. needsCodeReference 条件发射
+        link: assets/needs-reference
+      - text: 123. prebuilt-chunk 预构建块
+        link: assets/prebuilt-chunk
+  - text: 第十五部分：Watch 模式 (Watch Mode)
+    items:
+      - text: 124. Watch 模式设计与实现
+        link: watch/design
+      - text: 125. Watcher 类实现
+        link: watch/watcher
+      - text: 126. chokidar 文件监听集成
+        link: watch/chokidar
+      - text: 127. watch 配置选项
+        link: watch/options
+      - text: 128. 增量重建优化
+        link: watch/incremental-rebuild
+  - text: 第十六部分：实战插件开发 (Plugin Development Practice)
+    items:
+      - text: 129. 实战：Virtual Module Plugin
+        link: plugin-practice/virtual-module
+      - text: 130. 实战：JSON Plugin
+        link: plugin-practice/json-plugin
+      - text: 131. 实战：Node Resolve Plugin
+        link: plugin-practice/node-resolve
+      - text: 132. 实战：CommonJS Plugin 原理
+        link: plugin-practice/commonjs
+      - text: 133. 实战：Replace Plugin
+        link: plugin-practice/replace
+      - text: 134. 实战：Terser Plugin 集成
+        link: plugin-practice/terser
+      - text: 135. 实战：Alias Plugin
+        link: plugin-practice/alias
+  - text: 第十七部分：完整实现与整合 (Complete Implementation)
+    items:
+      - text: 136. 完整版 Mini-Rollup 实现
+        link: complete/full-implementation
+      - text: 137. JavaScript API 设计
+        link: complete/javascript-api
+      - text: 138. CLI 命令行工具实现
+        link: complete/cli
+      - text: 139. rollup.rollup() 构建流程
+        link: complete/rollup-rollup
+      - text: 140. bundle.generate() 生成流程
+        link: complete/bundle-generate
+      - text: 141. bundle.write() 写入流程
+        link: complete/bundle-write
+      - text: 142. 与官方 Rollup 对比分析
+        link: complete/comparison
+      - text: 143. 性能优化策略
+        link: complete/performance
+      - text: 144. 总结与进阶方向
+        link: complete/conclusion
+  - text: 附录 (Appendix)
+    items:
+      - text: 145. Rollup 配置项完整参考
+        link: appendix/configuration
+      - text: 146. Plugin Hook 完整列表
+        link: appendix/hooks-reference
+      - text: 147. PluginContext API 参考
+        link: appendix/context-api
+      - text: 148. OutputChunk 与 OutputAsset 类型
+        link: appendix/output-types
+      - text: 149. ESTree 节点类型参考
+        link: appendix/estree-nodes
+      - text: 150. JSX 支持配置
+        link: appendix/jsx
+      - text: 151. generatedCode 配置详解
+        link: appendix/generated-code
+      - text: 152. treeshake 配置详解
+        link: appendix/treeshake-options
+      - text: 153. perf 性能分析配置
+        link: appendix/perf
+      - text: 154. strictDeprecations 严格废弃警告
+        link: appendix/strict-deprecations
+      - text: 155. 常见问题与解决方案
+        link: appendix/faq

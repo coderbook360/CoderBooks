@@ -1,0 +1,271 @@
+- text: 序言
+  link: index
+- text: 第一部分：基础概念与设计理念 (Foundations)
+  collapsed: false
+  items:
+    - text: Redux 概览与设计哲学
+      link: foundations/overview
+    - text: Flux 架构与单向数据流
+      link: foundations/flux-architecture
+    - text: Redux 三大原则
+      link: foundations/three-principles
+    - text: Redux 源码结构导读
+      link: foundations/source-structure
+    - text: 开发环境搭建与项目结构
+      link: foundations/dev-environment
+- text: 第二部分：核心概念实现 (Core Concepts)
+  collapsed: false
+  items:
+    - text: State 状态树设计
+      link: core/state-tree
+    - text: Action 设计与规范
+      link: core/action
+    - text: Action Creator 函数
+      link: core/action-creator
+    - text: Reducer 纯函数设计
+      link: core/reducer
+    - text: Reducer 组合模式
+      link: core/reducer-composition
+    - text: 不可变性原则与实现
+      link: core/immutability
+- text: 第三部分：createStore 实现 (createStore)
+  collapsed: false
+  items:
+    - text: createStore 函数设计
+      link: create-store/design
+    - text: Store 数据结构
+      link: create-store/store-structure
+    - text: getState 实现
+      link: create-store/get-state
+    - text: dispatch 实现
+      link: create-store/dispatch
+    - text: subscribe 订阅机制
+      link: create-store/subscribe
+    - text: listeners 监听器管理
+      link: create-store/listeners
+    - text: replaceReducer 实现
+      link: create-store/replace-reducer
+    - text: observable 实现
+      link: create-store/observable
+- text: 第四部分：combineReducers 实现 (combineReducers)
+  collapsed: false
+  items:
+    - text: combineReducers 设计理念
+      link: combine-reducers/design
+    - text: Reducer 拆分策略
+      link: combine-reducers/splitting
+    - text: 状态树结构映射
+      link: combine-reducers/state-mapping
+    - text: combineReducers 核心实现
+      link: combine-reducers/implementation
+    - text: 状态变更检测
+      link: combine-reducers/change-detection
+    - text: 嵌套 combineReducers
+      link: combine-reducers/nested
+- text: 第五部分：Middleware 中间件系统 (Middleware)
+  collapsed: false
+  items:
+    - text: Middleware 设计理念
+      link: middleware/design
+    - text: Middleware 签名与结构
+      link: middleware/signature
+    - text: Middleware 洋葱模型
+      link: middleware/onion-model
+    - text: applyMiddleware 实现
+      link: middleware/apply-middleware
+    - text: compose 函数组合
+      link: middleware/compose
+    - text: Middleware 执行流程
+      link: middleware/execution-flow
+    - text: enhancer 增强器机制
+      link: middleware/enhancer
+- text: 第六部分：常用 Middleware 实现 (Middleware Implementations)
+  collapsed: false
+  items:
+    - text: redux-thunk 实现
+      link: middleware-impl/thunk
+    - text: redux-promise 实现
+      link: middleware-impl/promise
+    - text: redux-logger 实现
+      link: middleware-impl/logger
+    - text: 错误处理中间件
+      link: middleware-impl/error-handler
+    - text: 性能监控中间件
+      link: middleware-impl/performance
+- text: 第七部分：bindActionCreators 实现 (bindActionCreators)
+  collapsed: false
+  items:
+    - text: bindActionCreators 设计理念
+      link: bind-action-creators/design
+    - text: 单个 Action Creator 绑定
+      link: bind-action-creators/single
+    - text: 多个 Action Creator 绑定
+      link: bind-action-creators/multiple
+    - text: bindActionCreators 核心实现
+      link: bind-action-creators/implementation
+    - text: 与组件 props 集成
+      link: bind-action-creators/props-integration
+- text: 第八部分：Selector 选择器 (Selectors)
+  collapsed: false
+  items:
+    - text: Selector 设计理念
+      link: selectors/design
+    - text: 基础 Selector 实现
+      link: selectors/basic
+    - text: Selector 组合
+      link: selectors/composition
+    - text: 记忆化 Selector
+      link: selectors/memoization
+    - text: createSelector 实现 (reselect)
+      link: selectors/create-selector
+    - text: 参数化 Selector
+      link: selectors/parameterized
+- text: 第九部分：React-Redux 绑定 (React-Redux)
+  collapsed: false
+  items:
+    - text: React-Redux 设计理念
+      link: react-redux/design
+    - text: Provider 组件实现
+      link: react-redux/provider
+    - text: Context 传递 Store
+      link: react-redux/context
+    - text: connect 函数设计
+      link: react-redux/connect-design
+    - text: mapStateToProps 实现
+      link: react-redux/map-state-to-props
+    - text: mapDispatchToProps 实现
+      link: react-redux/map-dispatch-to-props
+    - text: connect 高阶组件实现
+      link: react-redux/connect-hoc
+    - text: useSelector Hook 实现
+      link: react-redux/use-selector
+    - text: useDispatch Hook 实现
+      link: react-redux/use-dispatch
+    - text: useStore Hook 实现
+      link: react-redux/use-store
+    - text: 性能优化策略
+      link: react-redux/performance
+- text: 第十部分：Redux Toolkit 核心 (Redux Toolkit)
+  collapsed: false
+  items:
+    - text: Redux Toolkit 设计理念
+      link: rtk/design
+    - text: configureStore 实现
+      link: rtk/configure-store
+    - text: createSlice 设计与实现
+      link: rtk/create-slice
+    - text: createReducer 与 Immer
+      link: rtk/create-reducer
+    - text: createAction 实现
+      link: rtk/create-action
+    - text: createAsyncThunk 实现
+      link: rtk/create-async-thunk
+    - text: createEntityAdapter 实现
+      link: rtk/create-entity-adapter
+- text: 第十一部分：异步状态管理 (Async State Management)
+  collapsed: false
+  items:
+    - text: 异步 Action 设计模式
+      link: async/action-patterns
+    - text: loading/error 状态处理
+      link: async/loading-error
+    - text: 请求生命周期管理
+      link: async/request-lifecycle
+    - text: 取消请求处理
+      link: async/cancellation
+    - text: 乐观更新策略
+      link: async/optimistic-update
+    - text: 请求去重与缓存
+      link: async/deduplication
+- text: 第十二部分：状态规范化 (State Normalization)
+  collapsed: false
+  items:
+    - text: 状态规范化设计理念
+      link: normalization/design
+    - text: 实体与关系建模
+      link: normalization/entity-modeling
+    - text: normalizr 原理解析
+      link: normalization/normalizr
+    - text: 规范化状态结构
+      link: normalization/normalized-structure
+    - text: 实体更新策略
+      link: normalization/entity-update
+    - text: 关系数据查询
+      link: normalization/relationship-query
+- text: 第十三部分：DevTools 集成 (DevTools)
+  collapsed: false
+  items:
+    - text: Redux DevTools 设计
+      link: devtools/design
+    - text: Action 记录与回放
+      link: devtools/action-recording
+    - text: 时间旅行调试
+      link: devtools/time-travel
+    - text: 状态导入导出
+      link: devtools/state-import-export
+    - text: DevTools 增强器实现
+      link: devtools/enhancer
+- text: 第十四部分：持久化与序列化 (Persistence)
+  collapsed: false
+  items:
+    - text: 状态持久化设计
+      link: persistence/design
+    - text: localStorage 存储
+      link: persistence/local-storage
+    - text: 状态序列化与反序列化
+      link: persistence/serialization
+    - text: 选择性持久化
+      link: persistence/selective
+    - text: 状态迁移策略
+      link: persistence/migration
+- text: 第十五部分：测试策略 (Testing)
+  collapsed: false
+  items:
+    - text: Redux 测试策略概述
+      link: testing/overview
+    - text: Reducer 测试
+      link: testing/reducer
+    - text: Action Creator 测试
+      link: testing/action-creator
+    - text: Selector 测试
+      link: testing/selector
+    - text: Middleware 测试
+      link: testing/middleware
+    - text: 集成测试策略
+      link: testing/integration
+- text: 第十六部分：完整实现与整合 (Complete Implementation)
+  collapsed: false
+  items:
+    - text: 完整版 Mini-Redux 实现
+      link: complete/full-implementation
+    - text: createStore 完整版
+      link: complete/create-store-full
+    - text: combineReducers 完整版
+      link: complete/combine-reducers-full
+    - text: applyMiddleware 完整版
+      link: complete/apply-middleware-full
+    - text: React-Redux 完整版
+      link: complete/react-redux-full
+    - text: 与官方 Redux 对比分析
+      link: complete/comparison
+    - text: 性能优化策略
+      link: complete/performance
+    - text: 总结与进阶方向
+      link: complete/conclusion
+- text: 附录 (Appendix)
+  collapsed: false
+  items:
+    - text: Redux API 完整参考
+      link: appendix/api-reference
+    - text: Redux Toolkit API 参考
+      link: appendix/rtk-api
+    - text: React-Redux API 参考
+      link: appendix/react-redux-api
+    - text: Middleware 签名参考
+      link: appendix/middleware-signature
+    - text: 常用 Action 命名规范
+      link: appendix/action-naming
+    - text: 状态结构设计模式
+      link: appendix/state-patterns
+    - text: 常见问题与解决方案
+      link: appendix/faq

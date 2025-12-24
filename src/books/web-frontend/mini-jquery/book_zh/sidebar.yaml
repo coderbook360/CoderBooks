@@ -1,0 +1,200 @@
+- text: 序言
+  link: index
+- text: 第一部分：起步——理解我们要做什么
+  collapsed: false
+  items:
+    - text: 为什么要手写 jQuery
+      link: getting-started/why-build-jquery
+    - text: jQuery 核心设计理念剖析
+      link: getting-started/design-philosophy
+    - text: 项目架构与开发环境搭建
+      link: getting-started/project-setup
+- text: 第二部分：核心骨架——让 $() 运行起来
+  collapsed: false
+  items:
+    - text: 从一个函数开始：实现 $ 入口
+      link: core/dollar-function
+    - text: 构造器模式：无 new 调用的秘密
+      link: core/constructor-pattern
+    - text: jQuery 对象的本质：类数组结构
+      link: core/array-like-object
+    - text: 原型链设计：让实例共享方法
+      link: core/prototype-design
+    - text: 链式调用：返回 this 的艺术
+      link: core/chaining
+    - text: extend 方法：灵活的对象合并
+      link: core/extend
+- text: 第三部分：选择器引擎——找到你想要的元素
+  collapsed: false
+  items:
+    - text: 选择器策略：从简单到复杂
+      link: selector/selector-strategy
+    - text: 基础选择器实现：ID、类名、标签
+      link: selector/basic-selectors
+    - text: querySelectorAll 的优雅封装
+      link: selector/query-selector
+    - text: 上下文选择：在指定范围内查找
+      link: selector/context-selector
+    - text: 选择器结果的缓存优化
+      link: selector/selector-cache
+- text: 第四部分：DOM 遍历——在树中穿行
+  collapsed: false
+  items:
+    - text: 遍历方法设计思路
+      link: traversal/traversal-design
+    - text: parent 与 parents：向上遍历
+      link: traversal/parents
+    - text: children 与 find：向下遍历
+      link: traversal/children-find
+    - text: siblings、prev、next：同级遍历
+      link: traversal/siblings
+    - text: closest：最近祖先匹配
+      link: traversal/closest
+    - text: filter、not、is：结果集过滤
+      link: traversal/filtering
+    - text: eq、first、last：索引定位
+      link: traversal/indexing
+    - text: each 与 map：遍历与映射
+      link: traversal/each-map
+- text: 第五部分：DOM 操作——增删改查
+  collapsed: false
+  items:
+    - text: DOM 操作的核心抽象
+      link: manipulation/core-abstraction
+    - text: append 与 prepend：内部插入
+      link: manipulation/append-prepend
+    - text: before 与 after：外部插入
+      link: manipulation/before-after
+    - text: 文档片段优化：批量操作
+      link: manipulation/document-fragment
+    - text: remove 与 empty：删除元素
+      link: manipulation/remove-empty
+    - text: clone：元素克隆
+      link: manipulation/clone
+    - text: wrap 与 unwrap：包裹操作
+      link: manipulation/wrap-unwrap
+    - text: html 与 text：内容读写
+      link: manipulation/html-text
+- text: 第六部分：属性与样式——外观控制
+  collapsed: false
+  items:
+    - text: attr 与 prop：属性的两面
+      link: attributes/attr-prop
+    - text: data 方法：自定义数据存储
+      link: attributes/data-method
+    - text: 数据缓存系统实现
+      link: attributes/data-cache
+    - text: addClass、removeClass、toggleClass
+      link: attributes/class-manipulation
+    - text: hasClass：类名检测
+      link: attributes/has-class
+    - text: css 方法：样式读写
+      link: styles/css-method
+    - text: 样式计算：getComputedStyle
+      link: styles/computed-style
+    - text: width 与 height：尺寸计算
+      link: styles/dimensions
+    - text: offset 与 position：位置计算
+      link: styles/positioning
+    - text: scrollTop 与 scrollLeft：滚动控制
+      link: styles/scroll
+- text: 第七部分：事件系统——让页面活起来
+  collapsed: false
+  items:
+    - text: 事件系统架构设计
+      link: events/architecture
+    - text: 事件对象封装与增强
+      link: events/event-object
+    - text: on 方法：统一的事件绑定
+      link: events/bindingon
+    - text: off 方法：事件解绑
+      link: events/unbinding
+    - text: one 方法：一次性事件
+      link: events/one-method
+    - text: 事件委托实现
+      link: events/delegation
+    - text: 事件命名空间
+      link: events/namespaces
+    - text: trigger：手动触发事件
+      link: events/trigger
+    - text: ready 事件：DOM 就绪
+      link: events/ready
+    - text: 常用事件的快捷方法
+      link: events/shortcuts
+- text: 第八部分：动画系统——让元素动起来
+  collapsed: false
+  items:
+    - text: 动画的本质：随时间变化的属性
+      link: animation/animation-basics
+    - text: show 与 hide：显示隐藏
+      link: animation/show-hide
+    - text: fadeIn 与 fadeOut：淡入淡出
+      link: animation/fade
+    - text: slideUp 与 slideDown：滑动效果
+      link: animation/slide
+    - text: animate 方法：自定义动画
+      link: animation/animate
+    - text: 缓动函数：让动画更自然
+      link: animation/easing
+    - text: 动画队列管理
+      link: animation/queue
+    - text: stop 与 finish：动画控制
+      link: animation/stop-finish
+    - text: requestAnimationFrame 优化
+      link: animation/raf-optimization
+- text: 第九部分：Ajax——与服务器对话
+  collapsed: false
+  items:
+    - text: Ajax 模块设计
+      link: ajax/ajax-design
+    - text: XMLHttpRequest 封装
+      link: ajax/xhr-wrapper
+    - text: Promise 化改造
+      link: ajax/promise-wrapper
+    - text: $.ajax 核心实现
+      link: ajax/core-ajax
+    - text: $.get 与 $.post 快捷方法
+      link: ajax/shortcuts
+    - text: $.getJSON：JSON 数据获取
+      link: ajax/get-json
+    - text: 请求拦截与响应处理
+      link: ajax/interceptors
+    - text: 错误处理与超时控制
+      link: ajax/error-handling
+- text: 第十部分：工具函数——实用的瑞士军刀
+  collapsed: false
+  items:
+    - text: 类型检测工具
+      link: utilities/type-checking
+    - text: 数组工具：each、map、grep
+      link: utilities/array-utilities
+    - text: 对象工具：extend、merge
+      link: utilities/object-utilities
+    - text: 字符串工具：trim、camelCase
+      link: utilities/string-utilities
+    - text: noConflict：多库共存
+      link: utilities/no-conflict
+- text: 第十一部分：高级特性——锦上添花
+  collapsed: false
+  items:
+    - text: Deferred 延迟对象
+      link: advanced/deferred
+    - text: Callbacks 回调队列
+      link: advanced/callbacks
+    - text: 插件机制：$.fn.extend
+      link: advanced/plugin-mechanism
+    - text: 钩子系统设计
+      link: advanced/hooks
+- text: 第十二部分：打磨与发布
+  collapsed: false
+  items:
+    - text: 单元测试覆盖
+      link: publishing/unit-testing
+    - text: 性能优化策略
+      link: publishing/performance
+    - text: 代码压缩与打包
+      link: publishing/bundling
+    - text: 发布到 npm
+      link: publishing/npm-publish
+    - text: 项目总结与展望
+      link: publishing/summary

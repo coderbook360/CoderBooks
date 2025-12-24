@@ -1,0 +1,173 @@
+title: Mini-Pinia：从零实现 Vue 状态管理库
+description: 本书将带你从零开始，一步步实现一个完整的 Pinia 状态管理库。通过源码级的深度剖析，你将彻底掌握 Vue 官方状态管理方案的核心原理与设计哲学。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：基础准备 (Foundations)
+    items:
+      - text: 1. Pinia 概览与核心概念
+        link: foundations/overview
+      - text: 2. Vue 3 响应式系统回顾
+        link: foundations/reactivity-recap
+      - text: 3. effectScope 原理与应用
+        link: foundations/effect-scope
+      - text: 4. Pinia 插件架构概述
+        link: foundations/plugin-system
+      - text: 5. 开发环境搭建与项目结构
+        link: foundations/dev-environment
+      - text: 6. Pinia 源码结构导读
+        link: foundations/source-structure
+  - text: 第二部分：createPinia 实现 (Create Pinia)
+    items:
+      - text: 7. createPinia 函数设计
+        link: create-pinia/create-pinia
+      - text: 8. Pinia 实例数据结构
+        link: create-pinia/pinia-instance
+      - text: 9. 全局状态树管理
+        link: create-pinia/state-tree
+      - text: 10. install 方法与 Vue 集成
+        link: create-pinia/install-method
+      - text: 11. activePinia 与上下文注入
+        link: create-pinia/active-pinia
+      - text: 12. setActivePinia 与 getActivePinia
+        link: create-pinia/active-pinia-helpers
+  - text: 第三部分：defineStore 核心 (Define Store Core)
+    items:
+      - text: 13. defineStore 函数签名解析
+        link: define-store/function-signature
+      - text: 14. Store ID 与唯一标识机制
+        link: define-store/store-id
+      - text: 15. Store 注册表设计
+        link: define-store/store-registry
+      - text: 16. useStore 函数实现
+        link: define-store/use-store
+      - text: 17. Store 缓存与复用机制
+        link: define-store/store-cache
+      - text: 18. 热更新支持
+        link: define-store/hot-update
+  - text: 第四部分：Options Store 实现 (Options Store)
+    items:
+      - text: 19. Options Store 设计理念
+        link: options-store/design-philosophy
+      - text: 20. createOptionsStore 函数实现
+        link: options-store/create-options-store
+      - text: 21. State 初始化与响应式处理
+        link: options-store/state-initialization
+      - text: 22. Getters 实现：计算属性封装
+        link: options-store/getters-implementation
+      - text: 23. Getters 相互访问与依赖
+        link: options-store/getters-dependencies
+      - text: 24. Actions 实现：方法绑定与上下文
+        link: options-store/actions-implementation
+      - text: 25. Actions 异步处理与错误捕获
+        link: options-store/actions-async
+      - text: 26. Options Store 配置选项
+        link: options-store/configuration
+  - text: 第五部分：Setup Store 实现 (Setup Store)
+    items:
+      - text: 27. Setup Store 设计理念
+        link: setup-store/design-philosophy
+      - text: 28. createSetupStore 函数实现
+        link: setup-store/create-setup-store
+      - text: 29. Setup 函数执行与返回值处理
+        link: setup-store/setup-execution
+      - text: 30. effectScope 在 Store 中的应用
+        link: setup-store/effect-scope-usage
+      - text: 31. State 自动识别与提取
+        link: setup-store/state-identification
+      - text: 32. ref vs reactive 状态识别
+        link: setup-store/ref-vs-reactive
+      - text: 33. computed 与 Getters 对应关系
+        link: setup-store/computed-getters
+  - text: 第六部分：Store API 实现 (Store API)
+    items:
+      - text: 34. $id 属性与 Store 标识
+        link: store-api/id-property
+      - text: 35. $state 属性实现
+        link: store-api/state-property
+      - text: 36. $reset 方法实现
+        link: store-api/reset-method
+      - text: 37. $dispose 方法实现
+        link: store-api/dispose-method
+      - text: 38. Store 内部属性设计
+        link: store-api/internal-properties
+      - text: 39. _customProperties 与调试支持
+        link: store-api/custom-properties
+  - text: 第七部分：状态变更与订阅 (State Mutations & Subscriptions)
+    items:
+      - text: 40. 订阅系统架构设计
+        link: subscriptions/architecture
+      - text: 41. $patch 实现：对象模式
+        link: subscriptions/patch-object
+      - text: 42. $patch 实现：函数模式
+        link: subscriptions/patch-function
+      - text: 43. MutationType 类型定义
+        link: subscriptions/mutation-types
+      - text: 44. $subscribe 实现：状态变更监听
+        link: subscriptions/subscribe-implementation
+      - text: 45. 订阅选项：flush 与 detached
+        link: subscriptions/subscribe-options
+      - text: 46. $onAction 实现：Action 生命周期
+        link: subscriptions/on-action-implementation
+      - text: 47. after 与 onError 回调处理
+        link: subscriptions/action-callbacks
+      - text: 48. mergeReactiveObjects 工具函数
+        link: subscriptions/merge-reactive-objects
+      - text: 49. 订阅函数管理与清理
+        link: subscriptions/subscription-functions
+  - text: 第八部分：辅助函数 (Helper Functions)
+    items:
+      - text: 50. storeToRefs 实现：响应式解构
+        link: helpers/store-to-refs
+      - text: 51. mapStores 实现：Store 映射
+        link: helpers/map-stores
+      - text: 52. mapState 实现：状态映射
+        link: helpers/map-state
+      - text: 53. mapWritableState 实现：可写状态映射
+        link: helpers/map-writable-state
+      - text: 54. mapActions 实现：Action 映射
+        link: helpers/map-actions
+      - text: 55. mapGetters 别名处理
+        link: helpers/map-getters
+      - text: 56. 工具函数集
+        link: helpers/utility-functions
+  - text: 第九部分：跨 Store 协作 (Cross-Store Collaboration)
+    items:
+      - text: 57. Store 间的依赖关系
+        link: cross-store/dependencies
+      - text: 58. 在 Actions 中访问其他 Store
+        link: cross-store/access-in-actions
+      - text: 59. 在 Getters 中访问其他 Store
+        link: cross-store/access-in-getters
+      - text: 60. 循环依赖问题与解决方案
+        link: cross-store/circular-dependencies
+      - text: 61. 组合 Store 模式
+        link: cross-store/composing-stores
+  - text: 第十部分：插件系统 (Plugin System)
+    items:
+      - text: 62. 插件系统设计理念
+        link: plugins/design-philosophy
+      - text: 63. PiniaPluginContext 上下文对象
+        link: plugins/plugin-context
+      - text: 64. pinia.use() 实现
+        link: plugins/use-implementation
+      - text: 65. 插件扩展 Store 机制
+        link: plugins/extend-store
+      - text: 66. 插件添加新 State
+        link: plugins/add-state
+      - text: 67. 插件添加新 Options
+        link: plugins/add-options
+      - text: 68. 实战：持久化存储插件
+        link: plugins/persistence-plugin
+      - text: 69. 实战：日志记录插件
+        link: plugins/logging-plugin
+  - text: 第十一部分：完整实现与整合 (Complete Implementation)
+    items:
+      - text: 70. 完整版 Mini-Pinia 实现
+        link: complete/full-implementation
+      - text: 71. 与官方 Pinia 对比分析
+        link: complete/comparison
+      - text: 72. 性能考量与优化策略
+        link: complete/performance
+      - text: 73. 总结与进阶方向
+        link: complete/conclusion

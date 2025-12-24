@@ -1,0 +1,367 @@
+title: Mini-Webpack 5：从零实现现代模块打包器
+description: 本书将带你从零开始，一步步实现一个功能完备的 Webpack 5 模块打包器。通过源码级的深度剖析，你将彻底掌握现代前端构建工具的核心原理与设计哲学。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：基础概念与环境准备 (Foundations)
+    items:
+      - text: 1. Webpack 概览与核心概念
+        link: foundations/overview
+      - text: 2. 模块化发展历程：从 IIFE 到 ESM
+        link: foundations/module-history
+      - text: 3. Webpack 5 新特性概览
+        link: foundations/webpack5-features
+      - text: 4. Tapable 事件系统入门
+        link: foundations/tapable-intro
+      - text: 5. 开发环境搭建与项目结构
+        link: foundations/dev-environment
+      - text: 6. Webpack 源码结构导读
+        link: foundations/source-structure
+  - text: 第二部分：Tapable 事件系统 (Tapable Event System)
+    items:
+      - text: 7. Tapable 设计理念与架构
+        link: tapable/design-philosophy
+      - text: 8. SyncHook 实现：同步钩子
+        link: tapable/sync-hook
+      - text: 9. SyncBailHook 实现：熔断钩子
+        link: tapable/sync-bail-hook
+      - text: 10. SyncWaterfallHook 实现：瀑布流钩子
+        link: tapable/sync-waterfall-hook
+      - text: 11. SyncLoopHook 实现：循环钩子
+        link: tapable/sync-loop-hook
+      - text: 12. AsyncParallelHook 实现：异步并行钩子
+        link: tapable/async-parallel-hook
+      - text: 13. AsyncSeriesHook 实现：异步串行钩子
+        link: tapable/async-series-hook
+      - text: 14. AsyncSeriesBailHook 实现
+        link: tapable/async-series-bail-hook
+      - text: 15. AsyncSeriesWaterfallHook 实现
+        link: tapable/async-series-waterfall-hook
+      - text: 16. HookMap 与 MultiHook 实现
+        link: tapable/hook-map-multi-hook
+      - text: 17. Interception 拦截器机制
+        link: tapable/interception
+  - text: 第三部分：Compiler 核心 (Compiler Core)
+    items:
+      - text: 18. Compiler 类设计与职责
+        link: compiler/design
+      - text: 19. 配置解析与标准化
+        link: compiler/configuration
+      - text: 20. Compiler Hooks 体系
+        link: compiler/hooks
+      - text: 21. run 方法实现：启动编译流程
+        link: compiler/run
+      - text: 22. watch 方法实现：监听模式
+        link: compiler/watch
+      - text: 23. createCompilation 方法实现
+        link: compiler/create-compilation
+      - text: 24. compile 方法实现：编译入口
+        link: compiler/compile
+      - text: 25. ContextModuleFactory 上下文模块工厂
+        link: compiler/context-module-factory
+  - text: 第四部分：Compilation 核心 (Compilation Core)
+    items:
+      - text: 26. Compilation 类设计与职责
+        link: compilation/design
+      - text: 27. Compilation Hooks 体系
+        link: compilation/hooks
+      - text: 28. ModuleGraph 模块依赖图
+        link: compilation/module-graph
+      - text: 29. ChunkGraph 代码块依赖图
+        link: compilation/chunk-graph
+      - text: 30. addEntry 方法：入口添加
+        link: compilation/add-entry
+      - text: 31. factorizeModule 方法：模块工厂化
+        link: compilation/factorize-module
+      - text: 32. buildModule 方法：模块构建
+        link: compilation/build-module
+      - text: 33. processModuleDependencies 方法：依赖处理
+        link: compilation/process-dependencies
+  - text: 第五部分：模块系统 (Module System)
+    items:
+      - text: 34. Module 基类设计
+        link: module/base-class
+      - text: 35. NormalModule 实现：普通模块
+        link: module/normal-module
+      - text: 36. 模块类型与 ModuleType
+        link: module/module-type
+      - text: 37. 模块标识符与 Identifier
+        link: module/identifier
+      - text: 38. 模块构建流程详解
+        link: module/build-process
+      - text: 39. Source 与 SourceMap 处理
+        link: module/source-map
+      - text: 40. 模块缓存机制
+        link: module/cache
+      - text: 41. ContextModule 实现
+        link: module/context-module
+      - text: 42. ExternalModule 外部模块
+        link: module/external-module
+  - text: 第六部分：模块工厂 (Module Factory)
+    items:
+      - text: 43. NormalModuleFactory 设计
+        link: factory/normal-module-factory
+      - text: 44. ModuleFactory Hooks 体系
+        link: factory/hooks
+      - text: 45. create 方法实现
+        link: factory/create
+      - text: 46. resolve 方法与模块解析
+        link: factory/resolve
+      - text: 47. Loader 匹配与应用
+        link: factory/loader-matching
+      - text: 48. Parser 选择与创建
+        link: factory/parser-selection
+      - text: 49. Generator 选择与创建
+        link: factory/generator-selection
+  - text: 第七部分：Resolver 模块解析器 (Resolver)
+    items:
+      - text: 50. Resolver 设计理念
+        link: resolver/design
+      - text: 51. enhanced-resolve 核心原理
+        link: resolver/enhanced-resolve
+      - text: 52. ResolverFactory 实现
+        link: resolver/resolver-factory
+      - text: 53. 解析算法与查找策略
+        link: resolver/algorithm
+      - text: 54. 别名 (alias) 解析
+        link: resolver/alias
+      - text: 55. extensions 与 mainFields 处理
+        link: resolver/extensions-mainfields
+      - text: 56. resolve 配置项完整解析
+        link: resolver/configuration
+      - text: 57. exports 与 imports 字段支持
+        link: resolver/exports-imports
+      - text: 58. conditionNames 条件名称匹配
+        link: resolver/condition-names
+      - text: 59. fallback 回退与 Node.js Polyfill
+        link: resolver/fallback
+      - text: 60. resolveLoader Loader 解析配置
+        link: resolver/resolve-loader
+  - text: 第八部分：Loader 系统 (Loader System)
+    items:
+      - text: 61. Loader 设计理念与架构
+        link: loader/design
+      - text: 62. loader-runner 核心实现
+        link: loader/loader-runner
+      - text: 63. Loader 执行顺序与管道
+        link: loader/execution-order
+      - text: 64. Normal Loader 实现
+        link: loader/normal-loader
+      - text: 65. Pitching Loader 实现
+        link: loader/pitching-loader
+      - text: 66. Loader Context 上下文对象
+        link: loader/loader-context
+      - text: 67. Raw Loader 与 Buffer 处理
+        link: loader/raw-loader
+      - text: 68. Loader 缓存与性能优化
+        link: loader/cache
+      - text: 69. Inline Loader 语法解析
+        link: loader/inline-loader
+  - text: 第九部分：Parser 语法解析器 (Parser)
+    items:
+      - text: 70. JavascriptParser 设计
+        link: parser/design
+      - text: 71. AST 解析与 Acorn 集成
+        link: parser/acorn
+      - text: 72. Parser Hooks 体系
+        link: parser/hooks
+      - text: 73. import/export 语句解析
+        link: parser/import-export
+      - text: 74. require 语句解析
+        link: parser/require
+      - text: 75. 动态 import() 解析
+        link: parser/dynamic-import
+      - text: 76. Dependency 依赖对象创建
+        link: parser/dependency
+      - text: 77. 作用域分析与变量追踪
+        link: parser/scope-analysis
+      - text: 78. Magic Comments 解析
+        link: parser/magic-comments
+      - text: 79. Top-Level Await 顶层 await 支持
+        link: parser/top-level-await
+      - text: 80. new Worker() 语法解析
+        link: parser/worker-syntax
+  - text: 第十部分：Dependency 依赖系统 (Dependency System)
+    items:
+      - text: 81. Dependency 基类设计
+        link: dependency/base-class
+      - text: 82. ModuleDependency 模块依赖
+        link: dependency/module-dependency
+      - text: 83. HarmonyImportDependency ESM 导入依赖
+        link: dependency/harmony-import
+      - text: 84. HarmonyExportDependency ESM 导出依赖
+        link: dependency/harmony-export
+      - text: 85. CommonJsRequireDependency CJS 依赖
+        link: dependency/commonjs-require
+      - text: 86. DependencyTemplate 模板系统
+        link: dependency/template
+      - text: 87. DependencyReference 引用追踪
+        link: dependency/reference
+  - text: 第十一部分：Externals 外部化系统 (Externals System)
+    items:
+      - text: 88. Externals 设计理念与使用场景
+        link: externals/design
+      - text: 89. ExternalsPlugin 实现
+        link: externals/externals-plugin
+      - text: 90. 外部化类型：var/commonjs/amd/umd
+        link: externals/types
+      - text: 91. 函数形式的 externals 配置
+        link: externals/function-externals
+      - text: 92. 正则表达式匹配外部模块
+        link: externals/regex-externals
+  - text: 第十二部分：Chunk 代码块系统 (Chunk System)
+    items:
+      - text: 93. Chunk 设计与职责
+        link: chunk/design
+      - text: 94. ChunkGroup 代码块组
+        link: chunk/chunk-group
+      - text: 95. Entrypoint 入口点
+        link: chunk/entrypoint
+      - text: 96. seal 方法：封装阶段
+        link: chunk/seal
+      - text: 97. Chunk 创建与分配
+        link: chunk/creation
+      - text: 98. 模块到 Chunk 的映射
+        link: chunk/module-mapping
+      - text: 99. Chunk 之间的连接关系
+        link: chunk/connections
+  - text: 第十三部分：代码分割 (Code Splitting)
+    items:
+      - text: 100. 代码分割原理概述
+        link: code-splitting/overview
+      - text: 101. SplitChunksPlugin 设计
+        link: code-splitting/split-chunks-plugin
+      - text: 102. Chunk 分割算法
+        link: code-splitting/algorithm
+      - text: 103. cacheGroups 配置解析
+        link: code-splitting/cache-groups
+      - text: 104. 动态导入与按需加载
+        link: code-splitting/dynamic-import
+      - text: 105. Runtime Chunk 运行时分离
+        link: code-splitting/runtime-chunk
+      - text: 106. minSize/maxSize 限制策略
+        link: code-splitting/size-limits
+  - text: 第十四部分：优化阶段 (Optimization Phase)
+    items:
+      - text: 107. 优化阶段概述
+        link: optimization/overview
+      - text: 108. optimizeModules 模块优化
+        link: optimization/optimize-modules
+      - text: 109. optimizeChunks 代码块优化
+        link: optimization/optimize-chunks
+      - text: 110. Tree Shaking 原理与实现
+        link: optimization/tree-shaking
+      - text: 111. usedExports 分析
+        link: optimization/used-exports
+      - text: 112. sideEffects 副作用处理
+        link: optimization/side-effects
+      - text: 113. Scope Hoisting 作用域提升
+        link: optimization/scope-hoisting
+      - text: 114. Module Concatenation 模块合并
+        link: optimization/module-concatenation
+      - text: 115. TerserPlugin 与代码压缩集成
+        link: optimization/terser-plugin
+  - text: 第十五部分：代码生成 (Code Generation)
+    items:
+      - text: 116. 代码生成阶段概述
+        link: code-gen/overview
+      - text: 117. Generator 基类设计
+        link: code-gen/generator
+      - text: 118. JavascriptGenerator 实现
+        link: code-gen/javascript-generator
+      - text: 119. Template 模板系统
+        link: code-gen/template
+      - text: 120. RuntimeModule 运行时模块
+        link: code-gen/runtime-module
+      - text: 121. __webpack_require__ 实现
+        link: code-gen/webpack-require
+      - text: 122. __webpack_modules__ 模块注册表
+        link: code-gen/webpack-modules
+      - text: 123. __webpack_chunk_load__ 懒加载
+        link: code-gen/chunk-load
+      - text: 124. Hash 计算与内容哈希
+        link: code-gen/hash
+  - text: 第十六部分：资源输出 (Asset Output)
+    items:
+      - text: 125. 资源输出阶段概述
+        link: output/overview
+      - text: 126. createAssets 资源创建
+        link: output/create-assets
+      - text: 127. emitAssets 资源写入
+        link: output/emit-assets
+      - text: 128. webpack-sources 库解析
+        link: output/webpack-sources
+      - text: 129. Source 合并与优化
+        link: output/source-concat
+      - text: 130. SourceMap 生成策略
+        link: output/sourcemap
+      - text: 131. 文件名模板与占位符
+        link: output/filename-template
+      - text: 132. output.library 库模式配置
+        link: output/library-output
+      - text: 133. libraryTarget 与 UMD 输出
+        link: output/library-target
+  - text: 第十七部分：Plugin 系统 (Plugin System)
+    items:
+      - text: 134. Plugin 设计理念与架构
+        link: plugin/design
+      - text: 135. Plugin 接口规范
+        link: plugin/interface
+      - text: 136. apply 方法与钩子注册
+        link: plugin/apply
+      - text: 137. Compiler 生命周期钩子
+        link: plugin/compiler-lifecycle
+      - text: 138. Compilation 生命周期钩子
+        link: plugin/compilation-lifecycle
+      - text: 139. 实战：BannerPlugin 实现
+        link: plugin/banner-plugin
+      - text: 140. 实战：HtmlWebpackPlugin 原理
+        link: plugin/html-webpack-plugin
+      - text: 141. 实战：DefinePlugin 实现
+        link: plugin/define-plugin
+      - text: 142. 实战：ProgressPlugin 实现
+        link: plugin/progress-plugin
+      - text: 143. 实战：ProvidePlugin 自动注入模块
+        link: plugin/provide-plugin
+      - text: 144. 实战：IgnorePlugin 忽略模块
+        link: plugin/ignore-plugin
+      - text: 145. 实战：ContextReplacementPlugin
+        link: plugin/context-replacement-plugin
+  - text: 第十八部分：完整实现与整合 (Complete Implementation)
+    items:
+      - text: 146. 完整版 Mini-Webpack 实现
+        link: complete/full-implementation
+      - text: 147. 构建流程完整串联
+        link: complete/build-process
+      - text: 148. 与官方 Webpack 5 对比分析
+        link: complete/comparison
+      - text: 149. 性能考量与优化策略
+        link: complete/performance
+      - text: 150. 总结与进阶方向
+        link: complete/conclusion
+  - text: 附录 (Appendix)
+    items:
+      - text: 151. Webpack 5 配置项完整参考
+        link: appendix/configuration
+      - text: 152. Stats 统计信息详解
+        link: appendix/stats
+      - text: 153. Watch Mode 与增量编译
+        link: appendix/watch-mode
+      - text: 154. Module Federation 模块联邦概述
+        link: appendix/module-federation
+      - text: 155. Persistent Caching 持久化缓存
+        link: appendix/persistent-cache
+      - text: 156. Asset Modules 资源模块
+        link: appendix/asset-modules
+      - text: 157. WebAssembly 支持
+        link: appendix/webassembly
+      - text: 158. Node.js 目标环境支持
+        link: appendix/node-target
+      - text: 159. Hot Module Replacement 原理
+        link: appendix/hmr
+      - text: 160. DevServer 开发服务器概述
+        link: appendix/dev-server
+      - text: 161. TypeScript 类型定义
+        link: appendix/typescript
+      - text: 162. 常见问题与解决方案
+        link: appendix/faq

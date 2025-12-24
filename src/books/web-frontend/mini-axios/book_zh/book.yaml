@@ -1,0 +1,111 @@
+title: 手写 Mini-Axios：从零实现 HTTP 客户端库
+description: 通过亲手实现一个功能完备的 HTTP 客户端，深入理解 Axios 的核心设计。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：起步——环境搭建与核心骨架
+    items:
+      - text: 1. 项目初始化与环境搭建
+        link: setup
+      - text: 2. 从一个简单的请求开始
+        link: core/first-request
+      - text: 3. 实现 Axios 类与实例化
+        link: core/axios-class
+      - text: 4. 请求方法别名：get、post、put、delete
+        link: core/method-aliases
+      - text: 5. axios 函数与实例的双重身份
+        link: core/dual-identity
+  - text: 第二部分：请求配置系统
+    items:
+      - text: 6. 定义配置类型与默认值
+        link: config/types-and-defaults
+      - text: 7. 实现配置合并策略
+        link: config/merge-config
+      - text: 8. 配置优先级与覆盖规则
+        link: config/priority
+      - text: 9. 超时处理与 timeout 配置
+        link: config/timeout
+      - text: 10. 凭据与跨域：withCredentials
+        link: config/credentials
+  - text: 第三部分：URL 处理
+    items:
+      - text: 11. URL 拼接与 baseURL 处理
+        link: url/build-url
+      - text: 12. 查询参数序列化
+        link: url/params-serializer
+      - text: 13. 处理特殊字符与编码
+        link: url/encoding
+  - text: 第四部分：请求头与数据处理
+    items:
+      - text: 14. 请求头处理与 Content-Type 推断
+        link: headers/process-headers
+      - text: 15. 响应头解析
+        link: headers/parse-headers
+      - text: 16. 默认请求头配置
+        link: headers/default-headers
+      - text: 17. 请求数据序列化 transformRequest
+        link: data/transform-request
+      - text: 18. 响应数据解析 transformResponse
+        link: data/transform-response
+      - text: 19. FormData 与文件上传支持
+        link: data/formdata-upload
+      - text: 20. URL-Encoding 请求体处理
+        link: data/urlencoded
+  - text: 第五部分：适配器层——多环境支持
+    items:
+      - text: 21. 理解适配器模式
+        link: adapters/adapter-pattern
+      - text: 22. 实现 XHR 适配器
+        link: adapters/xhr-adapter
+      - text: 23. 实现 Node.js 端 HTTP 适配器
+        link: adapters/http-adapter
+      - text: 24. 实现 Fetch 适配器
+        link: adapters/fetch-adapter
+  - text: 第六部分：拦截器与请求控制
+    items:
+      - text: 25. 实现 InterceptorManager
+        link: interceptors/interceptor-manager
+      - text: 26. 构建拦截器链
+        link: interceptors/chain-execution
+      - text: 27. 基于拦截器的请求重试
+        link: interceptors/retry
+      - text: 28. 实现 CancelToken
+        link: cancel/cancel-token
+      - text: 29. AbortController 集成
+        link: cancel/abort-controller
+  - text: 第七部分：错误处理与安全
+    items:
+      - text: 30. 实现 AxiosError 类
+        link: errors/axios-error
+      - text: 31. 统一错误处理策略
+        link: errors/error-handling
+      - text: 32. XSRF/CSRF 防护实现
+        link: security/xsrf-protection
+  - text: 第八部分：高级特性
+    items:
+      - text: 33. 创建独立实例
+        link: advanced/create-instance
+      - text: 34. 并发请求控制
+        link: advanced/concurrency
+      - text: 35. 上传下载进度监控
+        link: advanced/progress
+      - text: 36. 请求与响应的自动重试
+        link: advanced/auto-retry
+  - text: 第九部分：TypeScript 支持与工程化
+    items:
+      - text: 37. 完整类型定义
+        link: typescript/type-definitions
+      - text: 38. 泛型响应类型
+        link: typescript/generic-response
+      - text: 39. 单元测试
+        link: testing/unit-testing
+      - text: 40. 集成测试
+        link: testing/integration-testing
+      - text: 41. npm 发布流程
+        link: testing/npm-publish
+  - text: 附录
+    items:
+      - text: 42. Mini-Axios 与 Axios 源码对照
+        link: appendix/source-comparison
+      - text: 43. 常见使用场景与最佳实践
+        link: appendix/best-practices

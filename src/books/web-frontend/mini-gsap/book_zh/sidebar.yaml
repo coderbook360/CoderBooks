@@ -1,0 +1,186 @@
+- text: 序言
+  link: preface
+- text: 第一部分：起步——环境搭建与动画基础
+  collapsed: false
+  items:
+    - text: 项目初始化与环境搭建
+      link: setup
+    - text: 浏览器渲染与动画时机
+      link: foundations/browser-rendering
+    - text: requestAnimationFrame 深度剖析
+      link: foundations/raf-deep-dive
+    - text: 时间与帧率：动画的时间模型
+      link: foundations/time-model
+    - text: 属性插值：从起点到终点
+      link: foundations/interpolation
+- text: 第二部分：核心引擎骨架
+  collapsed: false
+  items:
+    - text: 从一个简单的动画开始
+      link: core/first-animation
+    - text: 全局 Ticker：心跳系统设计
+      link: core/ticker
+    - text: 实现 gsap.to() 基础版
+      link: core/gsap-to-basic
+    - text: gsap.from() 与 gsap.fromTo()
+      link: core/gsap-from-fromto
+    - text: gsap.set()：即时属性设置
+      link: core/gsap-set
+    - text: Tween 实例与配置系统
+      link: core/tween-config
+- text: 第三部分：Tween 引擎实现
+  collapsed: false
+  items:
+    - text: Tween 类架构设计
+      link: tween/tween-class
+    - text: 属性解析：从字符串到数值
+      link: tween/property-parsing
+    - text: 属性存储与变化追踪
+      link: tween/property-storage
+    - text: 渲染引擎：属性应用策略
+      link: tween/render-engine
+    - text: Tween 生命周期管理
+      link: tween/lifecycle
+    - text: 动画覆盖策略：overwrite 模式
+      link: tween/overwrite
+- text: 第四部分：属性系统深度解析
+  collapsed: false
+  items:
+    - text: CSS 属性：transform 与普通属性
+      link: properties/css-properties
+    - text: Transform 属性独立控制
+      link: properties/transform-properties
+    - text: 相对值与运算符
+      link: properties/relative-values
+    - text: 颜色值动画
+      link: properties/color-animation
+    - text: 复杂值与单位处理
+      link: properties/complex-values
+    - text: 随机值与函数式值
+      link: properties/random-function-values
+- text: 第五部分：缓动函数系统
+  collapsed: false
+  items:
+    - text: 缓动函数原理与数学基础
+      link: easing/easing-fundamentals
+    - text: 内置缓动：Quad、Cubic、Quart
+      link: easing/polynomial-easing
+    - text: 弹性缓动：Elastic 与 Bounce
+      link: easing/elastic-bounce
+    - text: Back 与 Expo 缓动
+      link: easing/back-expo
+    - text: 自定义缓动与贝塞尔曲线
+      link: easing/custom-bezier
+- text: 第六部分：Timeline 时间轴
+  collapsed: false
+  items:
+    - text: Timeline 核心设计思想
+      link: timeline/timeline-concept
+    - text: Timeline 类实现
+      link: timeline/timeline-class
+    - text: 时间轴位置参数系统
+      link: timeline/position-parameter
+    - text: 标签系统：addLabel 与 seek
+      link: timeline/labels
+    - text: 嵌套时间轴
+      link: timeline/nested-timeline
+    - text: 时间轴的时间缩放
+      link: timeline/timescale
+    - text: Timeline defaults 继承机制
+      link: timeline/defaults
+- text: 第七部分：动画控制系统
+  collapsed: false
+  items:
+    - text: 播放控制：play、pause、resume
+      link: controls/playback
+    - text: 跳转控制：seek 与 progress
+      link: controls/seeking
+    - text: 方向控制：reverse 与 yoyo
+      link: controls/direction
+    - text: 重复与循环：repeat 与 repeatDelay
+      link: controls/repeat
+    - text: 延迟控制：delay 与 stagger
+      link: controls/delay-stagger
+    - text: 动画销毁：kill 与 killTweensOf
+      link: controls/kill
+- text: 第八部分：事件与回调系统
+  collapsed: false
+  items:
+    - text: 回调函数设计：onStart、onUpdate、onComplete
+      link: callbacks/basic-callbacks
+    - text: 重复回调：onRepeat 与 onReverseComplete
+      link: callbacks/repeat-callbacks
+    - text: 中断回调：onInterrupt
+      link: callbacks/interrupt-callback
+    - text: 回调参数与 this 绑定
+      link: callbacks/callback-context
+    - text: 事件发射器模式
+      link: callbacks/event-emitter
+- text: 第九部分：高级特性
+  collapsed: false
+  items:
+    - text: Keyframes 关键帧动画
+      link: advanced/keyframes
+    - text: quickTo 与 quickSetter 高性能优化
+      link: advanced/quick-methods
+    - text: getProperty 属性获取
+      link: advanced/get-property
+    - text: 工具函数：gsap.utils
+      link: advanced/utils
+- text: 第十部分：插件系统架构
+  collapsed: false
+  items:
+    - text: 插件系统设计理念
+      link: plugins/plugin-architecture
+    - text: gsap.registerPlugin() 实现
+      link: plugins/register-plugin
+    - text: 属性插件开发
+      link: plugins/property-plugin
+    - text: 行为插件开发
+      link: plugins/behavior-plugin
+- text: 第十一部分：CSS 与 DOM 插件
+  collapsed: false
+  items:
+    - text: CSSPlugin 架构设计
+      link: css-plugin/css-plugin-architecture
+    - text: 获取与设置 CSS 属性
+      link: css-plugin/get-set-css
+    - text: Transform 矩阵处理
+      link: css-plugin/transform-matrix
+    - text: CSS 变量动画
+      link: css-plugin/css-variables
+    - text: SVG 属性动画
+      link: css-plugin/svg-animation
+- text: 第十二部分：ScrollTrigger 基础实现
+  collapsed: false
+  items:
+    - text: 滚动监听与性能优化
+      link: scroll/scroll-listener
+    - text: 触发器核心逻辑
+      link: scroll/trigger-logic
+    - text: 滚动进度与动画绑定
+      link: scroll/scroll-progress
+    - text: Pin 固定元素实现
+      link: scroll/pin-element
+- text: 第十三部分：工程化与发布
+  collapsed: false
+  items:
+    - text: 完整 TypeScript 类型定义
+      link: engineering/type-definitions
+    - text: 单元测试策略
+      link: engineering/unit-testing
+    - text: 集成测试与视觉回归
+      link: engineering/integration-testing
+    - text: 性能基准测试
+      link: engineering/performance-testing
+    - text: npm 发布与文档
+      link: engineering/npm-publish
+- text: 附录
+  collapsed: false
+  items:
+    - text: Mini-GSAP 与 GSAP 源码对照
+      link: appendix/source-comparison
+    - text: 动画性能优化指南
+      link: appendix/performance-guide
+    - text: 缓动函数速查表
+      link: appendix/easing-cheatsheet

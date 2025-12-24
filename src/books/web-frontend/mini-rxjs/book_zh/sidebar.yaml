@@ -1,0 +1,272 @@
+- text: 序言
+  link: index
+- text: 第一部分：起步——响应式编程基础
+  collapsed: false
+  items:
+    - text: 项目初始化与环境搭建
+      link: setup
+    - text: 响应式编程思想入门
+      link: foundations/reactive-programming
+    - text: Push 与 Pull 系统：理解数据流模型
+      link: foundations/push-pull-model
+    - text: 观察者模式与迭代器模式
+      link: foundations/observer-iterator-pattern
+    - text: 函数式编程基础：纯函数与组合
+      link: foundations/functional-programming
+- text: 第二部分：Observable 核心实现
+  collapsed: false
+  items:
+    - text: Observable 是什么：惰性推送集合
+      link: observable/what-is-observable
+    - text: 实现 Observable 类
+      link: observable/observable-class
+    - text: subscribe 函数：连接生产者与消费者
+      link: observable/subscribe
+    - text: Observable 契约：next、error、complete
+      link: observable/observable-contract
+    - text: 同步与异步 Observable
+      link: observable/sync-async
+- text: 第三部分：Observer 与 Subscriber
+  collapsed: false
+  items:
+    - text: Observer 接口设计
+      link: observer/observer-interface
+    - text: 实现 Subscriber 类
+      link: observer/subscriber-class
+    - text: SafeSubscriber：安全的观察者包装
+      link: observer/safe-subscriber
+    - text: Observer 的错误处理机制
+      link: observer/error-handling
+- text: 第四部分：Subscription 订阅管理
+  collapsed: false
+  items:
+    - text: Subscription 核心概念
+      link: subscription/subscription-concept
+    - text: 实现 Subscription 类
+      link: subscription/subscription-class
+    - text: unsubscribe：资源清理与取消
+      link: subscription/unsubscribe
+    - text: 组合订阅：add 与 remove
+      link: subscription/composite-subscription
+    - text: 内存泄漏防护与最佳实践
+      link: subscription/memory-leak-prevention
+- text: 第五部分：操作符架构设计
+  collapsed: false
+  items:
+    - text: 操作符是什么：Observable 到 Observable 的转换
+      link: operators/what-are-operators
+    - text: Pipeable 操作符 vs 创建操作符
+      link: operators/pipeable-vs-creation
+    - text: 实现 pipe 方法
+      link: operators/pipe-implementation
+    - text: 操作符工厂函数设计模式
+      link: operators/operator-factory
+    - text: 自定义操作符开发指南
+      link: operators/custom-operators
+- text: 第六部分：创建操作符
+  collapsed: false
+  items:
+    - text: of：同步值发射
+      link: creation/of
+    - text: from：从可迭代对象创建
+      link: creation/from
+    - text: fromEvent：DOM 事件转 Observable
+      link: creation/from-event
+    - text: fromPromise：Promise 转 Observable
+      link: creation/from-promise
+    - text: interval 与 timer：定时器操作符
+      link: creation/interval-timer
+    - text: defer：延迟创建 Observable
+      link: creation/defer
+    - text: range：数值范围发射
+      link: creation/range
+    - text: throwError 与 EMPTY
+      link: creation/throw-error-empty
+- text: 第七部分：转换操作符
+  collapsed: false
+  items:
+    - text: map：值映射
+      link: transformation/map
+    - text: mapTo：映射为常量
+      link: transformation/map-to
+    - text: pluck：属性提取
+      link: transformation/pluck
+    - text: scan：累积器操作符
+      link: transformation/scan
+    - text: reduce：归约操作符
+      link: transformation/reduce
+    - text: buffer 与 bufferCount：值缓冲
+      link: transformation/buffer
+    - text: toArray：收集为数组
+      link: transformation/to-array
+    - text: pairwise：成对发射
+      link: transformation/pairwise
+- text: 第八部分：过滤操作符
+  collapsed: false
+  items:
+    - text: filter：条件过滤
+      link: filtering/filter
+    - text: take 与 takeLast：取值限制
+      link: filtering/take
+    - text: takeUntil 与 takeWhile：条件取值
+      link: filtering/take-until-while
+    - text: skip 与 skipUntil：跳过值
+      link: filtering/skip
+    - text: first 与 last：首尾取值
+      link: filtering/first-last
+    - text: distinct 与 distinctUntilChanged：去重
+      link: filtering/distinct
+    - text: debounceTime：防抖
+      link: filtering/debounce-time
+    - text: throttleTime：节流
+      link: filtering/throttle-time
+    - text: auditTime 与 sampleTime
+      link: filtering/audit-sample-time
+    - text: elementAt 与 single
+      link: filtering/element-at-single
+- text: 第九部分：组合操作符
+  collapsed: false
+  items:
+    - text: merge：合并多个 Observable
+      link: combination/merge
+    - text: concat：顺序连接
+      link: combination/concat
+    - text: combineLatest：组合最新值
+      link: combination/combine-latest
+    - text: zip：配对组合
+      link: combination/zip
+    - text: forkJoin：并行执行等待完成
+      link: combination/fork-join
+    - text: race：竞速
+      link: combination/race
+    - text: startWith 与 endWith
+      link: combination/start-end-with
+    - text: withLatestFrom：获取最新值
+      link: combination/with-latest-from
+- text: 第十部分：高阶 Observable 与扁平化
+  collapsed: false
+  items:
+    - text: 理解高阶 Observable
+      link: higher-order/understanding-higher-order
+    - text: mergeAll：并行订阅
+      link: higher-order/merge-all
+    - text: concatAll：顺序订阅
+      link: higher-order/concat-all
+    - text: switchAll：切换订阅
+      link: higher-order/switch-all
+    - text: exhaustAll：忽略新订阅
+      link: higher-order/exhaust-all
+    - text: mergeMap：映射并合并
+      link: higher-order/merge-map
+    - text: concatMap：映射并连接
+      link: higher-order/concat-map
+    - text: switchMap：映射并切换
+      link: higher-order/switch-map
+    - text: exhaustMap：映射并忽略
+      link: higher-order/exhaust-map
+- text: 第十一部分：错误处理操作符
+  collapsed: false
+  items:
+    - text: catchError：捕获错误
+      link: error-handling/catch-error
+    - text: retry 与 retryWhen：重试机制
+      link: error-handling/retry
+    - text: finalize：最终清理
+      link: error-handling/finalize
+    - text: throwIfEmpty：空值错误
+      link: error-handling/throw-if-empty
+- text: 第十二部分：工具操作符
+  collapsed: false
+  items:
+    - text: tap：副作用操作
+      link: utility/tap
+    - text: delay 与 delayWhen：延迟发射
+      link: utility/delay
+    - text: timeout 与 timeoutWith：超时处理
+      link: utility/timeout
+    - text: observeOn 与 subscribeOn：调度控制
+      link: utility/observe-subscribe-on
+    - text: materialize 与 dematerialize：通知对象化
+      link: utility/materialize
+    - text: toArray：收集所有值
+      link: utility/to-array
+- text: 第十三部分：Subject 家族
+  collapsed: false
+  items:
+    - text: Subject：多播的核心
+      link: subjects/subject
+    - text: BehaviorSubject：带初始值的 Subject
+      link: subjects/behavior-subject
+    - text: ReplaySubject：重放历史值
+      link: subjects/replay-subject
+    - text: AsyncSubject：只发射最后值
+      link: subjects/async-subject
+    - text: Subject 与 Observable 的区别
+      link: subjects/subject-vs-observable
+    - text: 多播操作符：share 与 shareReplay
+      link: subjects/multicast-operators
+- text: 第十四部分：Scheduler 调度器
+  collapsed: false
+  items:
+    - text: Scheduler 核心概念
+      link: schedulers/scheduler-concept
+    - text: 实现 Scheduler 基类
+      link: schedulers/scheduler-class
+    - text: asyncScheduler：异步调度
+      link: schedulers/async-scheduler
+    - text: queueScheduler：队列调度
+      link: schedulers/queue-scheduler
+    - text: asapScheduler：微任务调度
+      link: schedulers/asap-scheduler
+    - text: animationFrameScheduler：动画帧调度
+      link: schedulers/animation-frame-scheduler
+    - text: Scheduler 在操作符中的应用
+      link: schedulers/scheduler-in-operators
+- text: 第十五部分：测试与调试
+  collapsed: false
+  items:
+    - text: Marble 图解：可视化 Observable
+      link: testing/marble-diagrams
+    - text: TestScheduler：时间控制测试
+      link: testing/test-scheduler
+    - text: Marble 测试语法与实践
+      link: testing/marble-testing
+    - text: 调试技巧与常见问题排查
+      link: testing/debugging
+- text: 第十六部分：实战应用
+  collapsed: false
+  items:
+    - text: 实现 HTTP 请求封装
+      link: practice/http-client
+    - text: 实现表单验证与自动保存
+      link: practice/form-validation
+    - text: 实现搜索自动补全
+      link: practice/autocomplete
+    - text: 实现无限滚动加载
+      link: practice/infinite-scroll
+    - text: 状态管理：简易 Redux 风格实现
+      link: practice/state-management
+- text: 第十七部分：工程化与发布
+  collapsed: false
+  items:
+    - text: 完整 TypeScript 类型定义
+      link: engineering/type-definitions
+    - text: 泛型在 RxJS 中的应用
+      link: engineering/generics
+    - text: 单元测试策略
+      link: engineering/unit-testing
+    - text: Tree-shaking 与模块设计
+      link: engineering/tree-shaking
+    - text: npm 发布与文档
+      link: engineering/npm-publish
+- text: 附录
+  collapsed: false
+  items:
+    - text: Mini-RxJS 与 RxJS 源码对照
+      link: appendix/source-comparison
+    - text: 操作符分类速查表
+      link: appendix/operator-cheatsheet
+    - text: Marble 图语法参考
+      link: appendix/marble-syntax
+    - text: 常见使用模式与最佳实践
+      link: appendix/best-practices
