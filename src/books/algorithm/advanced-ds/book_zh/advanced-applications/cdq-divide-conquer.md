@@ -140,12 +140,9 @@ class CDQ3D:
             # 查询 c_j <= c 的数量
             self.result[idx] += self._query(c)
         
-        # 清空树状数组
+        # 清空树状数组（只清空修改过的位置）
         for c_val in modified:
-            self._update(c_val, -self._query(c_val) if self._query(c_val) > 0 else 0)
-        # 更高效的清空
-        for (a, b, c, idx, cnt) in left[:j]:
-            pos = c
+            pos = c_val
             while pos <= self.c_size:
                 self.bit[pos] = 0
                 pos += self._lowbit(pos)
@@ -189,16 +186,44 @@ class CDQ3D:
 
 ```python
 class DynamicInversions:
-    """动态逆序对（CDQ 分治 + 离线）"""
+    """
+    动态逆序对（CDQ 分治 + 离线）
+    
+    核心思想：
+    1. 将所有操作（修改和查询）离线收集
+    2. 每个修改拆分为：删除旧值 + 插入新值
+    3. 转化为三元组 (时间, 位置, 值) 的偏序问题
+    4. 使用 CDQ 分治处理
+    
+    注意：这是一个复杂问题的框架示例，
+    完整实现需要根据具体查询类型调整
+    """
     
     def __init__(self, arr: List[int], operations: List[tuple]):
-        """
-        arr: 初始数组
-        operations: [('update', i, val), ('query', l, r), ...]
-        """
-        # 将所有操作转化为三元组 (time, position, value)
-        # 然后用 CDQ 分治处理
-        pass
+        self.arr = arr[:]
+        self.events = []  # (time, pos, val, type, query_id)
+        self.query_results = {}
+        
+        # 将初始数组转为插入事件
+        for i, v in enumerate(arr):
+            self.events.append((0, i, v, 'insert', -1))
+        
+        # 处理操作序列
+        time = 1
+        query_id = 0
+        for op in operations:
+            if op[0] == 'update':
+                _, pos, new_val = op
+                old_val = self.arr[pos]
+                self.events.append((time, pos, old_val, 'delete', -1))
+                self.events.append((time, pos, new_val, 'insert', -1))
+                self.arr[pos] = new_val
+                time += 1
+            elif op[0] == 'query':
+                _, l, r = op
+                self.events.append((time, l, r, 'query', query_id))
+                query_id += 1
+                time += 1
 ```
 
 ### 问题 2：三维偏序计数
