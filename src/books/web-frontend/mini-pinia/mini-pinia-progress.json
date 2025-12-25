@@ -1,0 +1,40 @@
+{
+  "agent_name": "mini-pinia-writer",
+  "file_name": "mini-pinia-progress.json",
+  "version": "1.0.0",
+  "last_updated": "2025-12-24",
+  "book_project": "mini-pinia",
+  "tasks": {
+    "tasks_todo": [
+      "编写第三部分：defineStore 核心（第13-18章）",
+      "编写第四部分：Options Store 实现（第19-26章）",
+      "编写第五部分：Setup Store 实现（第27-33章）",
+      "编写第六部分：Store API 实现（第34-39章）",
+      "编写第七部分：状态变更与订阅（第40-49章）",
+      "编写第八部分：辅助函数（第50-56章）",
+      "编写第九部分：跨 Store 协作（第57-61章）",
+      "编写第十部分：插件系统（第62-69章）",
+      "编写第十一部分：完整实现与整合（第70-73章）"
+    ],
+    "task_in_progress": "",
+    "tasks_completed": [
+      "创建进度管理文件",
+      "编写书籍首页 index.md",
+      "创建基础目录结构",
+      "编写第一部分：基础准备（第1-6章）",
+      "编写第二部分：createPinia 实现（第7-12章）"
+    ]
+  },
+  "history": [
+    {
+      "date": "2025-12-24",
+      "action": "初始化项目",
+      "details": "创建进度文件，开始 mini-pinia 书籍编写"
+    },
+    {
+      "date": "2025-12-24",
+      "action": "完成第一、二部分",
+      "details": "完成基础准备（6章）和 createPinia 实现（6章），共12章内容"
+    }
+  ]
+}

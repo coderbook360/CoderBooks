@@ -1,0 +1,43 @@
+{
+  "agent_name": "mini-rxjs-writer",
+  "file_name": "mini-rxjs-progress.json",
+  "version": "1.0.0",
+  "last_updated": "2025-12-24T00:00:00.000Z",
+  "book_project": {
+    "name": "手写 Mini-RxJS：从零实现响应式编程库",
+    "path": "src/books/web-frontend/mini-rxjs/book_zh",
+    "total_chapters": 105
+  },
+  "tasks": {
+    "tasks_todo": [
+      "编写第11章：Observer 接口设计 (observer/observer-interface.md)",
+      "编写第12章：实现 Subscriber 类 (observer/subscriber-class.md)",
+      "编写第13章：SafeSubscriber：安全的观察者包装 (observer/safe-subscriber.md)",
+      "编写第14章：Observer 的错误处理机制 (observer/error-handling.md)",
+      "编写第15章：Subscription 核心概念 (subscription/subscription-concept.md)"
+    ],
+    "task_in_progress": "编写第11章：Observer 接口设计 (observer/observer-interface.md)",
+    "tasks_completed": [
+      "序言 (index.md) - 已完成",
+      "第一部分完成 - 起步——响应式编程基础",
+      "编写第1章：项目初始化与环境搭建 (setup.md) - 已完成",
+      "编写第2章：响应式编程思想入门 (foundations/reactive-programming.md) - 已完成",
+      "编写第3章：Push 与 Pull 系统：理解数据流模型 (foundations/push-pull-model.md) - 已完成",
+      "编写第4章：观察者模式与迭代器模式 (foundations/observer-iterator-pattern.md) - 已完成",
+      "编写第5章：函数式编程基础：纯函数与组合 (foundations/functional-programming.md) - 已完成",
+      "第二部分完成 - Observable 核心实现",
+      "编写第6章：Observable 是什么：惰性推送集合 (observable/what-is-observable.md) - 已完成",
+      "编写第7章：实现 Observable 类 (observable/observable-class.md) - 已完成",
+      "编写第8章：subscribe 函数：连接生产者与消费者 (observable/subscribe.md) - 已完成",
+      "编写第9章：Observable 契约：next、error、complete (observable/observable-contract.md) - 已完成",
+      "编写第10章：同步与异步 Observable (observable/sync-async.md) - 已完成"
+    ]
+  },
+  "history": [
+    {
+      "date": "2025-12-24",
+      "action": "初始化进度文件",
+      "details": "创建进度跟踪文件，规划前10章任务"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "agent_name": "bo-creator",
+  "file_name": "bo-creator-progress.json",
+  "version": "1.0.0",
+  "last_updated": "2025-12-24T02:00:00Z",
+  "book_project": {
+    "id": "mini-webpack5",
+    "title": "Mini-Webpack 5：从零实现现代模块打包器",
+    "language": "zh",
+    "total_chapters": 162,
+    "completed_chapters": 17
+  },
+  "tasks": {
+    "tasks_todo": [
+      "第三部分：Compiler 核心（第18-25章）",
+      "第四部分：模块解析（第26-32章）",
+      "第五部分：依赖分析（第33-39章）",
+      "第六部分：Loader 系统（第40-50章）",
+      "第七部分：Compilation（第51-58章）",
+      "第八部分：Module 系统（第59-67章）",
+      "第九部分：代码生成（第68-75章）",
+      "第十部分：Chunk 优化（第76-83章）",
+      "第十一部分：Tree Shaking（第84-91章）",
+      "第十二部分：资源处理（第92-99章）",
+      "第十三部分：输出生成（第100-107章）",
+      "第十四部分：Source Map（第108-115章）",
+      "第十五部分：缓存系统（第116-123章）",
+      "第十六部分：HMR（第124-131章）",
+      "第十七部分：Plugin 架构（第132-145章）",
+      "第十八部分：完整构建（第146-155章）",
+      "附录（第156-162章）"
+    ],
+    "task_in_progress": "",
+    "tasks_completed": [
+      "第1章：Webpack 概览与核心概念",
+      "第2章：模块化发展历程：从 IIFE 到 ESM",
+      "第3章：Webpack 5 新特性概览",
+      "第4章：Tapable 事件系统入门",
+      "第5章：开发环境搭建与项目结构",
+      "第6章：Webpack 源码结构导读",
+      "第7章：Tapable 设计理念与架构",
+      "第8章：SyncHook 实现",
+      "第9章：SyncBailHook 实现",
+      "第10章：SyncWaterfallHook 实现",
+      "第11章：SyncLoopHook 实现",
+      "第12章：AsyncParallelHook 实现",
+      "第13章：AsyncSeriesHook 实现",
+      "第14章：AsyncSeriesBailHook 实现",
+      "第15章：AsyncSeriesWaterfallHook 实现",
+      "第16章：HookMap 与 MultiHook 实现",
+      "第17章：Interception 拦截器机制"
+    ]
+  },
+  "history": [
+    {
+      "timestamp": "2025-12-24T00:00:00Z",
+      "action": "初始化项目",
+      "description": "检查项目结构，确认 toc.md 和 index.md 已存在"
+    },
+    {
+      "timestamp": "2025-12-24T01:00:00Z",
+      "action": "完成第一部分",
+      "description": "完成第1-6章：基础概念与环境准备"
+    },
+    {
+      "timestamp": "2025-12-24T02:00:00Z",
+      "action": "完成第二部分",
+      "description": "完成第7-17章：Tapable 事件系统全部11章"
+    }
+  ]
+}
