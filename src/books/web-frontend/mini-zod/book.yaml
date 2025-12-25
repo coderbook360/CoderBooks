@@ -5,4 +5,72 @@ category: frontend-engineer
 categoryLabel: 🌐 前端工程师
 group: 🎯 Mini 系列 - 工具库
 route: mini-zod
-tags: []
+tags:
+  - TypeScript
+  - Validation
+  - Schema
+  - Zod
+
+toc:
+  - title: 简介
+    path: index.md
+
+  - title: 基础篇
+    children:
+      - title: 项目初始化
+        path: foundations/setup.md
+      - title: 核心架构设计
+        path: foundations/architecture.md
+      - title: Schema 基类实现
+        path: foundations/schema-base.md
+
+  - title: 原始类型
+    children:
+      - title: 字符串验证
+        path: primitives/string.md
+      - title: 数字验证
+        path: primitives/number.md
+      - title: 布尔与字面量
+        path: primitives/boolean-literal.md
+      - title: 枚举与联合类型
+        path: primitives/enum-union.md
+
+  - title: 复合类型
+    children:
+      - title: 对象 Schema
+        path: composite/object.md
+      - title: 数组与元组
+        path: composite/array-tuple.md
+      - title: 可选与可空
+        path: composite/optional-nullable.md
+      - title: 交叉与联合
+        path: composite/intersection-union.md
+
+  - title: 高级特性
+    children:
+      - title: 自定义验证
+        path: advanced/custom-validation.md
+      - title: 数据转换
+        path: advanced/transform.md
+      - title: 错误处理
+        path: advanced/error-handling.md
+      - title: 类型推断
+        path: advanced/type-inference.md
+
+  - title: 实战应用
+    children:
+      - title: 表单验证
+        path: applications/form-validation.md
+      - title: API 请求验证
+        path: applications/api-validation.md
+      - title: 环境变量验证
+        path: applications/env-validation.md
+
+  - title: 总结
+    children:
+      - title: 完整实现
+        path: final/complete-implementation.md
+      - title: 与 Zod 对比
+        path: final/comparison.md
+      - title: 总结与展望
+        path: final/conclusion.md

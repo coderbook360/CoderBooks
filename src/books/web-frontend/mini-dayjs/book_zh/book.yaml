@@ -1,0 +1,85 @@
+title: 手写 Mini-Dayjs：轻量级日期处理库实现
+description: 从零实现一个轻量级日期处理库，深入理解 Day.js 的设计思想与核心原理。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：基础架构
+    items:
+      - text: 1. 项目初始化与开发环境
+        link: foundations/setup
+      - text: 2. Day.js 架构概览与设计理念
+        link: foundations/architecture
+      - text: 3. Dayjs 类的核心设计
+        link: foundations/dayjs-class
+  - text: 第二部分：日期解析
+    items:
+      - text: 4. 多格式日期解析入口
+        link: parsing/parse-entry
+      - text: 5. ISO 8601 与时间戳解析
+        link: parsing/iso-timestamp
+      - text: 6. 字符串格式解析
+        link: parsing/string-parsing
+      - text: 7. 时区与 UTC 处理
+        link: parsing/timezone-utc
+  - text: 第三部分：日期取值与设值
+    items:
+      - text: 8. Getter/Setter 统一设计
+        link: accessors/getter-setter
+      - text: 9. 年月日时分秒毫秒操作
+        link: accessors/datetime-units
+      - text: 10. 星期与季度处理
+        link: accessors/week-quarter
+  - text: 第四部分：日期运算
+    items:
+      - text: 11. add 与 subtract 实现
+        link: manipulation/add-subtract
+      - text: 12. startOf 与 endOf 实现
+        link: manipulation/start-end-of
+      - text: 13. 日期比较方法
+        link: manipulation/comparison
+      - text: 14. diff 日期差值计算
+        link: manipulation/diff
+  - text: 第五部分：日期格式化
+    items:
+      - text: 15. format 格式化核心实现
+        link: display/format
+      - text: 16. 格式化 Token 解析
+        link: display/format-tokens
+      - text: 17. 本地化格式支持
+        link: display/localized-format
+  - text: 第六部分：日期查询
+    items:
+      - text: 18. isBefore/isAfter/isSame 实现
+        link: query/comparisons
+      - text: 19. isBetween 范围判断
+        link: query/is-between
+      - text: 20. isValid 有效性验证
+        link: query/is-valid
+  - text: 第七部分：插件系统
+    items:
+      - text: 21. 插件机制设计与实现
+        link: plugins/plugin-system
+      - text: 22. RelativeTime 相对时间插件
+        link: plugins/relative-time
+      - text: 23. Duration 时长插件
+        link: plugins/duration
+      - text: 24. Timezone 时区插件
+        link: plugins/timezone
+      - text: 25. CustomParseFormat 自定义解析插件
+        link: plugins/custom-parse-format
+  - text: 第八部分：本地化
+    items:
+      - text: 26. Locale 本地化系统设计
+        link: locale/locale-system
+      - text: 27. 实现中文本地化
+        link: locale/zh-cn
+      - text: 28. 动态加载与切换语言
+        link: locale/dynamic-loading
+  - text: 第九部分：完整实现与总结
+    items:
+      - text: 29. Mini-Dayjs 完整实现
+        link: final/complete-implementation
+      - text: 30. 与官方 Day.js 对比
+        link: final/comparison
+      - text: 31. 总结与展望
+        link: final/conclusion

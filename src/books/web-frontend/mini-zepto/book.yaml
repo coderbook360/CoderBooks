@@ -5,4 +5,81 @@ category: frontend-engineer
 categoryLabel: 🌐 前端工程师
 group: 🎯 Mini 系列 - DOM & 动画
 route: mini-zeptojs
-tags: []
+tags:
+  - zepto
+  - dom
+  - jquery-alternative
+
+toc:
+  - title: 基础篇
+    items:
+      - title: 项目初始化
+        path: foundations/setup
+      - title: 架构设计
+        path: foundations/architecture
+      - title: 核心结构
+        path: foundations/core-structure
+  - title: 选择器与集合
+    items:
+      - title: Zepto 工厂函数
+        path: selector/factory
+      - title: CSS 选择器
+        path: selector/css-selector
+      - title: DOM 集合封装
+        path: selector/collection
+      - title: 遍历方法
+        path: selector/traversing
+  - title: DOM 操作
+    items:
+      - title: 属性操作
+        path: dom/attributes
+      - title: 类名操作
+        path: dom/classname
+      - title: 样式操作
+        path: dom/css
+      - title: 内容操作
+        path: dom/content
+      - title: 节点操作
+        path: dom/manipulation
+  - title: 事件系统
+    items:
+      - title: 事件绑定
+        path: events/bindingdesign
+      - title: 事件委托
+        path: events/delegation
+      - title: 自定义事件
+        path: events/custom-events
+      - title: 触摸事件
+        path: events/touch-events
+  - title: 动画效果
+    items:
+      - title: show/hide 动画
+        path: animation/show-hide
+      - title: CSS3 动画
+        path: animation/css3-animation
+      - title: animate 方法
+        path: animation/animate
+  - title: AJAX 模块
+    items:
+      - title: 核心实现
+        path: ajax/core
+      - title: 请求配置
+        path: ajax/config
+      - title: 便捷方法
+        path: ajax/shortcuts
+  - title: 工具方法
+    items:
+      - title: 类型判断
+        path: utils/type-checking
+      - title: 数组方法
+        path: utils/array-methods
+      - title: 对象方法
+        path: utils/object-methods
+  - title: 总结
+    items:
+      - title: 完整实现
+        path: final/complete-implementation
+      - title: 与 jQuery 对比
+        path: final/comparison
+      - title: 总结与展望
+        path: final/conclusion
