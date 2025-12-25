@@ -1,0 +1,31 @@
+{
+  "agent_name": "bo-creator",
+  "file_name": "graph-progress.json",
+  "version": "1.0.0",
+  "last_updated": "2025-12-25",
+  "book_project": "LeetCode 图论与搜索篇：连通世界的算法",
+  "book_status": "IN_PROGRESS",
+  "tasks": {
+    "tasks_todo": [
+      "Part 1: graph-basics/ (4章) - 图的基础知识",
+      "Part 2: dfs/ (13章) - 深度优先搜索",
+      "Part 3: bfs/ (13章) - 广度优先搜索",
+      "Part 4: graph-traversal/ (8章) - 图的遍历综合",
+      "Part 5: topological-sort/ (11章) - 拓扑排序",
+      "Part 6: union-find/ (13章) - 并查集",
+      "Part 7: shortest-path/ (11章) - 最短路径算法",
+      "Part 8: mst/ (7章) - 最小生成树",
+      "Part 9: search-advanced/ (9章) - 高级搜索技巧",
+      "Part 10: bipartite/ (5章) - 二分图与匹配"
+    ],
+    "task_in_progress": "Part 1: graph-basics/",
+    "tasks_completed": []
+  },
+  "history": [
+    {
+      "date": "2025-12-25",
+      "action": "初始化进度文件",
+      "details": "开始编写图论与搜索算法书籍，共 94 个章节，10 个部分"
+    }
+  ]
+}

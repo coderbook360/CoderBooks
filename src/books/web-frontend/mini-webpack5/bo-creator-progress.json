@@ -2,33 +2,31 @@
   "agent_name": "bo-creator",
   "file_name": "bo-creator-progress.json",
   "version": "1.0.0",
-  "last_updated": "2025-12-24T02:00:00Z",
+  "last_updated": "2025-01-21T10:00:00Z",
   "book_project": {
     "id": "mini-webpack5",
     "title": "Mini-Webpack 5：从零实现现代模块打包器",
     "language": "zh",
     "total_chapters": 162,
-    "completed_chapters": 17
+    "completed_chapters": 33
   },
   "tasks": {
     "tasks_todo": [
-      "第三部分：Compiler 核心（第18-25章）",
-      "第四部分：模块解析（第26-32章）",
-      "第五部分：依赖分析（第33-39章）",
-      "第六部分：Loader 系统（第40-50章）",
-      "第七部分：Compilation（第51-58章）",
-      "第八部分：Module 系统（第59-67章）",
-      "第九部分：代码生成（第68-75章）",
-      "第十部分：Chunk 优化（第76-83章）",
-      "第十一部分：Tree Shaking（第84-91章）",
-      "第十二部分：资源处理（第92-99章）",
-      "第十三部分：输出生成（第100-107章）",
-      "第十四部分：Source Map（第108-115章）",
-      "第十五部分：缓存系统（第116-123章）",
-      "第十六部分：HMR（第124-131章）",
-      "第十七部分：Plugin 架构（第132-145章）",
-      "第十八部分：完整构建（第146-155章）",
-      "附录（第156-162章）"
+      "第五部分：模块系统（第34-42章）",
+      "第六部分：模块工厂（第43-49章）",
+      "第七部分：Resolver 模块解析器（第50-60章）",
+      "第八部分：Loader 系统（第61-69章）",
+      "第九部分：Parser 语法解析器（第70-80章）",
+      "第十部分：Dependency 依赖系统（第81-87章）",
+      "第十一部分：Externals 外部化系统（第88-92章）",
+      "第十二部分：Chunk 代码块系统（第93-99章）",
+      "第十三部分：代码分割（第100-106章）",
+      "第十四部分：优化阶段（第107-115章）",
+      "第十五部分：代码生成（第116-124章）",
+      "第十六部分：资源输出（第125-133章）",
+      "第十七部分：Plugin 系统（第134-145章）",
+      "第十八部分：完整实现与整合（第146-150章）",
+      "附录（第151-162章）"
     ],
     "task_in_progress": "",
     "tasks_completed": [
@@ -48,7 +46,23 @@
       "第14章：AsyncSeriesBailHook 实现",
       "第15章：AsyncSeriesWaterfallHook 实现",
       "第16章：HookMap 与 MultiHook 实现",
-      "第17章：Interception 拦截器机制"
+      "第17章：Interception 拦截器机制",
+      "第18章：Compiler 类设计与职责",
+      "第19章：配置解析与标准化",
+      "第20章：Compiler Hooks 体系",
+      "第21章：run 方法实现：启动编译流程",
+      "第22章：watch 方法实现：监听模式",
+      "第23章：createCompilation 方法实现",
+      "第24章：compile 方法实现：编译入口",
+      "第25章：ContextModuleFactory 上下文模块工厂",
+      "第26章：Compilation 类设计与职责",
+      "第27章：Compilation Hooks 体系",
+      "第28章：ModuleGraph 模块依赖图",
+      "第29章：ChunkGraph 代码块依赖图",
+      "第30章：addEntry 方法：入口添加",
+      "第31章：factorizeModule 方法：模块工厂化",
+      "第32章：buildModule 方法：模块构建",
+      "第33章：processModuleDependencies 方法：依赖处理"
     ]
   },
   "history": [
@@ -66,6 +80,16 @@
       "timestamp": "2025-12-24T02:00:00Z",
       "action": "完成第二部分",
       "description": "完成第7-17章：Tapable 事件系统全部11章"
+    },
+    {
+      "timestamp": "2025-01-21T10:00:00Z",
+      "action": "完成第三部分",
+      "description": "完成第18-25章：Compiler 核心全部8章"
+    },
+    {
+      "timestamp": "2025-01-21T11:00:00Z",
+      "action": "完成第四部分",
+      "description": "完成第26-33章：Compilation 核心全部8章"
     }
   ]
 }

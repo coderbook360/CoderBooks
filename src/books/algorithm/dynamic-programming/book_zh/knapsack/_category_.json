@@ -1,0 +1,8 @@
+{
+  "label": "背包问题",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "背包问题是动态规划的经典问题，涵盖 0-1 背包、完全背包、多重背包等多种变体。"
+  }
+}

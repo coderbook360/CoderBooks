@@ -1,0 +1,8 @@
+{
+  "label": "线性 DP",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "线性 DP 是最常见的一类动态规划问题，通过扫描数组一次即可完成。"
+  }
+}
