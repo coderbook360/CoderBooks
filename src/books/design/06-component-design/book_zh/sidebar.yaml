@@ -1,0 +1,212 @@
+- text: 序言
+  link: index
+- text: 第一部分：组件化基础
+  collapsed: false
+  items:
+    - text: 组件化思想的演进
+      link: foundations/componentization-evolution
+    - text: 组件的本质：封装、复用与组合
+      link: foundations/component-essence
+    - text: 原子设计方法论
+      link: foundations/atomic-design
+    - text: 组件分类体系：基础、业务、布局
+      link: foundations/component-taxonomy
+    - text: 展示组件与容器组件
+      link: foundations/presentational-container
+    - text: 组件设计的 SOLID 原则
+      link: foundations/solid-for-components
+    - text: 组合优于继承
+      link: foundations/composition-over-inheritance
+- text: 第二部分：Props 设计
+  collapsed: false
+  items:
+    - text: Props 设计原则概述
+      link: props/props-principles
+    - text: Props 命名规范
+      link: props/naming-conventions
+    - text: Props 类型设计
+      link: props/type-design
+    - text: 必选与可选的选择
+      link: props/required-optional
+    - text: 默认值策略
+      link: props/default-values
+    - text: Props 验证与运行时检查
+      link: props/validation
+    - text: 布尔型 Props 设计
+      link: props/boolean-props
+    - text: 回调函数 Props 设计
+      link: props/callback-props
+    - text: 样式相关 Props 设计
+      link: props/style-props
+- text: 第三部分：事件与通信
+  collapsed: false
+  items:
+    - text: 组件事件设计原则
+      link: events/event-principles
+    - text: 事件命名规范
+      link: events/naming-conventions
+    - text: 事件参数设计
+      link: events/event-parameters
+    - text: 事件冒泡与委托
+      link: events/bubbling-delegation
+    - text: 跨组件通信模式
+      link: events/cross-component-communication
+    - text: Context/Provide-Inject 机制
+      link: events/context-provide-inject
+    - text: 事件总线模式
+      link: events/event-bus
+- text: 第四部分：内容分发
+  collapsed: false
+  items:
+    - text: 插槽设计概述
+      link: slots/slots-overview
+    - text: 默认插槽设计
+      link: slots/default-slots
+    - text: 具名插槽设计
+      link: slots/named-slots
+    - text: 作用域插槽设计
+      link: slots/scoped-slots
+    - text: Render Props 模式
+      link: slots/render-props
+    - text: Children 与 Slots 对比
+      link: slots/children-vs-slots
+    - text: 插槽 vs Props：选择策略
+      link: slots/slots-vs-props
+- text: 第五部分：高级组件模式
+  collapsed: false
+  items:
+    - text: 复合组件模式
+      link: advanced-patterns/compound-components
+    - text: 复合组件实现技巧
+      link: advanced-patterns/compound-implementation
+    - text: Headless 组件设计
+      link: advanced-patterns/headless-components
+    - text: Headless UI 库解析：Radix UI
+      link: advanced-patterns/radix-ui-analysis
+    - text: Headless UI 库解析：Headless UI
+      link: advanced-patterns/headlessui-analysis
+    - text: 多态组件：as 属性设计
+      link: advanced-patterns/polymorphic-components
+    - text: 泛型组件设计
+      link: advanced-patterns/generic-components
+    - text: Ref 转发与命令式 API
+      link: advanced-patterns/ref-forwarding
+    - text: 高阶组件 (HOC)
+      link: advanced-patterns/higher-order-components
+- text: 第六部分：组件状态设计
+  collapsed: false
+  items:
+    - text: 组件状态设计原则
+      link: state/state-principles
+    - text: 局部状态 vs 提升状态
+      link: state/local-vs-lifted
+    - text: 受控组件设计
+      link: state/controlled-components
+    - text: 非受控组件设计
+      link: state/uncontrolled-components
+    - text: 半受控组件：灵活的控制权
+      link: state/semi-controlled
+    - text: 状态机驱动的组件
+      link: state/state-machine-driven
+    - text: XState 在组件中的应用
+      link: state/xstate-components
+    - text: 异步状态处理
+      link: state/async-state
+- text: 第七部分：Hooks 设计模式
+  collapsed: false
+  items:
+    - text: 自定义 Hooks 设计原则
+      link: hooks/hooks-principles
+    - text: 状态逻辑抽取
+      link: hooks/state-logic-extraction
+    - text: 副作用管理
+      link: hooks/effect-management
+    - text: Hooks 组合模式
+      link: hooks/hooks-composition
+    - text: Hooks 与依赖注入
+      link: hooks/hooks-di
+    - text: 常见 Hooks 模式库解析
+      link: hooks/hooks-library-analysis
+    - text: Hooks 测试策略
+      link: hooks/hooks-testing
+- text: 第八部分：表单组件设计
+  collapsed: false
+  items:
+    - text: 表单架构设计概述
+      link: forms/form-architecture
+    - text: 表单数据流设计
+      link: forms/form-data-flow
+    - text: 表单验证架构
+      link: forms/validation-architecture
+    - text: Input 组件设计
+      link: forms/input-component
+    - text: Select 组件设计
+      link: forms/select-component
+    - text: Checkbox/Radio 设计
+      link: forms/checkbox-radio
+    - text: DatePicker 设计
+      link: forms/datepicker
+    - text: Upload 组件设计
+      link: forms/upload-component
+    - text: FormItem 布局组件
+      link: forms/form-item
+    - text: 动态表单设计
+      link: forms/dynamic-forms
+- text: 第九部分：复杂组件设计
+  collapsed: false
+  items:
+    - text: 虚拟滚动组件设计
+      link: complex/virtual-scroll
+    - text: Table 组件架构
+      link: complex/table-architecture
+    - text: Table 高级功能设计
+      link: complex/table-advanced
+    - text: Tree 组件设计
+      link: complex/tree-component
+    - text: Modal/Drawer 弹层组件
+      link: complex/modal-drawer
+    - text: Popover/Tooltip 悬浮组件
+      link: complex/popover-tooltip
+    - text: Menu 菜单组件设计
+      link: complex/menu-component
+    - text: Tabs 标签组件设计
+      link: complex/tabs-component
+    - text: Toast/Notification 通知组件
+      link: complex/notification
+    - text: 拖拽组件设计
+      link: complex/drag-drop
+- text: 第十部分：组件质量
+  collapsed: false
+  items:
+    - text: 组件错误边界设计
+      link: quality/error-boundaries
+    - text: 组件可访问性基础
+      link: quality/accessibility-basics
+    - text: 组件性能优化
+      link: quality/performance-optimization
+    - text: 组件单元测试
+      link: quality/unit-testing
+    - text: 组件集成测试
+      link: quality/integration-testing
+- text: 第十一部分：API 演进
+  collapsed: false
+  items:
+    - text: API 版本管理策略
+      link: evolution/versioning-strategy
+    - text: 废弃 API 处理
+      link: evolution/deprecation-handling
+    - text: Breaking Change 管理
+      link: evolution/breaking-changes
+    - text: API 文档设计
+      link: evolution/api-documentation
+- text: 第十二部分：实战与总结
+  collapsed: false
+  items:
+    - text: 实战：设计一个 Button 组件
+      link: practice/button-design
+    - text: 实战：设计一个 Form 组件
+      link: practice/form-design
+    - text: 实战：设计一个 Table 组件
+      link: practice/table-design
+    - text: 总结：组件设计能力体系
+      link: practice/component-design-skills

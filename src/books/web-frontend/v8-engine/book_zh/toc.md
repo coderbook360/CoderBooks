@@ -68,57 +68,61 @@
 ### 第六部分：内存管理与垃圾回收
 
 35. [V8 的堆结构：新生代与老生代](memory/heap-structure.md)
-36. [垃圾回收算法：Scavenge 与 Mark-Sweep-Compact](memory/gc-algorithms.md)
-37. [增量标记与并发回收：Orinoco GC](memory/incremental-gc.md)
-38. [内存对齐与填充：对象布局优化](memory/memory-alignment.md)
-39. [内存泄漏的常见场景与分析方法](memory/memory-leaks.md)
-40. [内存快照分析：Heap Snapshot 的使用](memory/heap-snapshot.md)
-41. [FinalizationRegistry：弱引用与清理回调](memory/finalization-registry.md)
+36. [垃圾回收概览：V8 的分代回收策略](memory/gc-overview.md)
+37. [Scavenge 算法：新生代的快速回收](memory/gc-scavenge.md)
+38. [Mark-Sweep-Compact：老生代的垃圾回收](memory/gc-mark-sweep-compact.md)
+39. [增量标记与并发回收：Orinoco GC](memory/incremental-gc.md)
+40. [内存对齐与填充：对象布局优化](memory/memory-alignment.md)
+41. [内存泄漏的常见场景与分析方法](memory/memory-leaks.md)
+42. [内存快照分析：Heap Snapshot 的使用](memory/heap-snapshot.md)
+43. [FinalizationRegistry：弱引用与清理回调](memory/finalization-registry.md)
 
 ---
 
 ### 第七部分：性能优化与内联缓存
 
-42. [内联缓存（IC）：属性访问的加速器](optimization/inline-cache.md)
-43. [单态、多态与超态：对象形状的影响](optimization/ic-states.md)
-44. [TurboFan 编译器：激进的优化策略](optimization/turbofan-compiler.md)
-45. [去优化（Deoptimization）：当优化失效时](optimization/deoptimization.md)
-46. [内联函数：调用栈的优化](optimization/function-inlining.md)
-47. [尾调用优化：递归性能提升策略](optimization/tail-call-optimization.md)
-48. [编写对 V8 友好的代码：性能优化实践](optimization/v8-friendly-code.md)
+44. [内联缓存（IC）：属性访问的加速器](optimization/inline-cache.md)
+45. [单态、多态与超态：对象形状的影响](optimization/ic-states.md)
+46. [TurboFan 编译器：激进的优化策略](optimization/turbofan-compiler.md)
+47. [去优化（Deoptimization）：当优化失效时](optimization/deoptimization.md)
+48. [内联函数：调用栈的优化](optimization/function-inlining.md)
+49. [尾调用优化：递归性能提升策略](optimization/tail-call-optimization.md)
+50. [V8友好代码：基础优化原则](optimization/v8-friendly-code-basics.md)
+51. [V8友好代码：高级优化技巧](optimization/v8-friendly-code-advanced.md)
+52. [V8友好代码：优化检查清单与工具](optimization/v8-friendly-code-checklist.md)
 
 ---
 
 ### 第八部分：异步机制与事件循环
 
-49. [事件循环的底层实现：宏任务与微任务](async/event-loop.md)
-50. [Promise 的内部机制：PromiseJobs 与微任务队列](async/promise-internals.md)
-51. [async/await 的底层转换：生成器与状态机](async/async-await.md)
-52. [定时器的实现：setTimeout 与 setInterval](async/timers.md)
-53. [异步迭代器：for await...of 的实现](async/async-iterator.md)
-54. [Node.js 中的事件循环：libuv 与 V8 的协作](async/nodejs-event-loop.md)
+53. [事件循环的底层实现：宏任务与微任务](async/event-loop.md)
+54. [Promise 的内部机制：PromiseJobs 与微任务队列](async/promise-internals.md)
+55. [async/await 的底层转换：生成器与状态机](async/async-await.md)
+56. [定时器的实现：setTimeout 与 setInterval](async/timers.md)
+57. [异步迭代器：for await...of 的实现](async/async-iterator.md)
+58. [Node.js 中的事件循环：libuv 与 V8 的协作](async/nodejs-event-loop.md)
 
 ---
 
 ### 第九部分：错误处理与调试机制
 
-55. [Error 对象与堆栈跟踪：错误信息的生成](debugging/error-stack-trace.md)
-56. [try...catch 的性能影响：异常处理的代价](debugging/try-catch-performance.md)
-57. [Source Map：源码映射的原理](debugging/source-map.md)
-58. [调试协议：Chrome DevTools 与 V8 的通信](debugging/debug-protocol.md)
+59. [Error 对象与堆栈跟踪：错误信息的生成](debugging/error-stack-trace.md)
+60. [try...catch 的性能影响：异常处理的代价](debugging/try-catch-performance.md)
+61. [Source Map：源码映射的原理](debugging/source-map.md)
+62. [调试协议：Chrome DevTools 与 V8 的通信](debugging/debug-protocol.md)
 
 ---
 
 ### 第十部分：高级主题与实战应用
 
-59. [原型链的底层实现：__proto__ 与 prototype](advanced/prototype-chain.md)
-60. [Proxy 与 Reflect：元编程的底层支持](advanced/proxy-reflect.md)
-61. [Symbol 的内部实现：唯一标识符与内置 Symbol](advanced/symbol.md)
-62. [正则表达式引擎：Irregexp 的实现原理](advanced/regexp-engine.md)
-63. [WebAssembly 集成：JS 与 WASM 的互操作](advanced/wasm-integration.md)
-64. [SharedArrayBuffer 与 Atomics：共享内存与原子操作](advanced/shared-arraybuffer.md)
-65. [Realm 与多全局对象：iframe 中的隔离机制](advanced/realm-isolation.md)
-66. [性能分析工具：Chrome DevTools 性能面板深度使用](advanced/devtools-performance.md)
-67. [V8 命令行工具：d8 与性能调试](advanced/v8-d8-tool.md)
-68. [实战案例：定位并解决性能瓶颈](advanced/case-performance-bottleneck.md)
-69. [实战案例：内存泄漏的排查与修复](advanced/case-memory-leak.md)
+63. [原型链的底层实现：__proto__ 与 prototype](advanced/prototype-chain.md)
+64. [Proxy 与 Reflect：元编程的底层支持](advanced/proxy-reflect.md)
+65. [Symbol 的内部实现：唯一标识符与内置 Symbol](advanced/symbol.md)
+66. [正则表达式引擎：Irregexp 的实现原理](advanced/regexp-engine.md)
+67. [WebAssembly 集成：JS 与 WASM 的互操作](advanced/wasm-integration.md)
+68. [SharedArrayBuffer 与 Atomics：共享内存与原子操作](advanced/shared-arraybuffer.md)
+69. [Realm 与多全局对象：iframe 中的隔离机制](advanced/realm-isolation.md)
+70. [性能分析工具：Chrome DevTools 性能面板深度使用](advanced/devtools-performance.md)
+71. [V8 命令行工具：d8 与性能调试](advanced/v8-d8-tool.md)
+72. [实战案例：定位并解决性能瓶颈](advanced/case-performance-bottleneck.md)
+73. [实战案例：内存泄漏的排查与修复](advanced/case-memory-leak.md)

@@ -1,0 +1,130 @@
+- text: 序言
+  link: index
+- text: 第一部分：设计模式基础
+  collapsed: false
+  items:
+    - text: 设计模式概述：模式的价值与分类
+      link: foundations/patterns-overview
+    - text: 设计模式与设计原则的关系
+      link: foundations/patterns-principles
+    - text: 如何学习和选择设计模式
+      link: foundations/learning-patterns
+    - text: 前端开发中的常见模式场景
+      link: foundations/frontend-patterns-scenarios
+- text: 第二部分：创建型设计模式
+  collapsed: false
+  items:
+    - text: 简单工厂：对象创建的集中管理
+      link: creational/simple-factory
+    - text: 工厂方法：可扩展的对象创建
+      link: creational/factory-method
+    - text: 抽象工厂：产品族的创建策略
+      link: creational/abstract-factory
+    - text: 工厂模式实战：组件工厂与动态加载
+      link: creational/factory-practice
+    - text: 单例模式：全局唯一实例的管理
+      link: creational/singleton-pattern
+    - text: 单例模式的问题与替代方案
+      link: creational/singleton-alternatives
+    - text: 建造者模式：复杂对象的分步构建
+      link: creational/builder-pattern
+    - text: 建造者模式实战：配置构建与查询构建
+      link: creational/builder-practice
+    - text: 原型模式：对象克隆与配置复用
+      link: creational/prototype-pattern
+    - text: 对象池模式：资源的复用与管理
+      link: creational/object-pool
+- text: 第三部分：结构型设计模式
+  collapsed: false
+  items:
+    - text: 适配器模式：接口转换与兼容
+      link: structural/adapter-pattern
+    - text: 适配器实战：API 适配与数据转换
+      link: structural/adapter-practice
+    - text: 装饰器模式：动态功能增强
+      link: structural/decorator-pattern
+    - text: TypeScript 装饰器语法详解
+      link: structural/ts-decorator-syntax
+    - text: 装饰器实战：日志、缓存与权限
+      link: structural/decorator-practice
+    - text: 代理模式：访问控制与间接访问
+      link: structural/proxy-pattern
+    - text: ES6 Proxy 与 Reflect 详解
+      link: structural/es6-proxy-reflect
+    - text: 代理实战：懒加载、缓存与验证
+      link: structural/proxy-practice
+    - text: 外观模式：复杂子系统的简化
+      link: structural/facade-pattern
+    - text: 外观实战：SDK 封装与模块简化
+      link: structural/facade-practice
+    - text: 组合模式：树形结构的统一处理
+      link: structural/composite-pattern
+    - text: 组合实战：菜单树与组件树
+      link: structural/composite-practice
+    - text: 桥接模式：抽象与实现分离
+      link: structural/bridge-pattern
+    - text: 享元模式：大量对象的内存优化
+      link: structural/flyweight-pattern
+- text: 第四部分：行为型设计模式（上）
+  collapsed: false
+  items:
+    - text: 观察者模式：事件驱动的核心
+      link: behavioral/observer-pattern
+    - text: 观察者模式与 RxJS
+      link: behavioral/observer-rxjs
+    - text: 发布订阅模式：解耦的消息总线
+      link: behavioral/pubsub-pattern
+    - text: EventEmitter 实现与最佳实践
+      link: behavioral/event-emitter
+    - text: 策略模式：算法的封装与切换
+      link: behavioral/strategy-pattern
+    - text: 策略实战：验证策略与计算策略
+      link: behavioral/strategy-practice
+    - text: 命令模式：操作的封装与队列
+      link: behavioral/command-pattern
+    - text: 命令实战：撤销重做与宏命令
+      link: behavioral/command-practice
+    - text: 状态模式：状态驱动的行为变化
+      link: behavioral/state-pattern
+    - text: 状态机详解：XState 深度使用
+      link: behavioral/xstate-deep-dive
+    - text: 状态实战：UI 状态与流程状态
+      link: behavioral/state-practice
+- text: 第五部分：行为型设计模式（下）
+  collapsed: false
+  items:
+    - text: 责任链模式：请求的链式处理
+      link: behavioral/chain-of-responsibility
+    - text: 责任链实战：中间件与拦截器
+      link: behavioral/chain-practice
+    - text: 迭代器模式：集合的统一遍历
+      link: behavioral/iterator-pattern
+    - text: Generator 与异步迭代器
+      link: behavioral/generator-async-iterator
+    - text: 中介者模式：组件通信的集中管理
+      link: behavioral/mediator-pattern
+    - text: 模板方法模式：算法骨架与钩子
+      link: behavioral/template-method
+    - text: 访问者模式：操作与数据结构分离
+      link: behavioral/visitor-pattern
+    - text: 备忘录模式：状态快照与历史
+      link: behavioral/memento-pattern
+    - text: 解释器模式：DSL 的设计与实现
+      link: behavioral/interpreter-pattern
+- text: 第六部分：模式组合与实战
+  collapsed: false
+  items:
+    - text: 模式的组合使用策略
+      link: practice/pattern-combinations
+    - text: 实战：可扩展的表单验证系统
+      link: practice/form-validation-system
+    - text: 实战：插件化架构设计
+      link: practice/plugin-architecture
+    - text: 实战：富文本编辑器核心架构
+      link: practice/rich-text-editor
+    - text: 实战：规则引擎设计
+      link: practice/rule-engine
+    - text: 反模式：设计模式的误用
+      link: practice/anti-patterns
+    - text: 总结：构建你的模式工具箱
+      link: practice/building-pattern-toolkit

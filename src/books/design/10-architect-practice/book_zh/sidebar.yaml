@@ -1,0 +1,163 @@
+- text: 序言
+  link: index
+- text: 第一部分：架构决策方法论
+  collapsed: false
+  items:
+    - text: 架构决策框架
+      link: decision-methodology/decision-framework
+    - text: 需求分析与问题定义
+      link: decision-methodology/requirements-analysis
+    - text: 约束条件识别
+      link: decision-methodology/constraints-identification
+    - text: 方案设计与评估
+      link: decision-methodology/solution-evaluation
+    - text: 架构决策记录 (ADR)
+      link: decision-methodology/adr
+    - text: 架构评审方法
+      link: decision-methodology/architecture-review
+- text: 第二部分：架构演进模式
+  collapsed: false
+  items:
+    - text: 架构演进概述
+      link: architecture-evolution/overview
+    - text: 渐进式架构重构
+      link: architecture-evolution/incremental-refactoring
+    - text: 绞杀者模式
+      link: architecture-evolution/strangler-pattern
+    - text: 分支抽象模式
+      link: architecture-evolution/branch-by-abstraction
+    - text: 并行运行模式
+      link: architecture-evolution/parallel-run
+    - text: 特性开关与架构演进
+      link: architecture-evolution/feature-toggles
+- text: 第三部分：案例 - 电商平台架构
+  collapsed: false
+  items:
+    - text: 电商平台需求分析
+      link: case-ecommerce/requirements
+    - text: 电商前端架构设计
+      link: case-ecommerce/architecture-design
+    - text: 商品系统架构
+      link: case-ecommerce/product-system
+    - text: 购物车与订单架构
+      link: case-ecommerce/cart-order-system
+    - text: 支付与结算架构
+      link: case-ecommerce/payment-system
+    - text: 电商性能优化实践
+      link: case-ecommerce/performance
+    - text: 大促活动架构
+      link: case-ecommerce/promotion-architecture
+- text: 第四部分：案例 - SaaS 产品架构
+  collapsed: false
+  items:
+    - text: SaaS 产品需求分析
+      link: case-saas/requirements
+    - text: 多租户架构设计
+      link: case-saas/multi-tenancy
+    - text: SaaS 前端架构
+      link: case-saas/frontend-architecture
+    - text: 权限系统设计
+      link: case-saas/permission-system
+    - text: SaaS 可配置性设计
+      link: case-saas/configurability
+    - text: SaaS 白标方案
+      link: case-saas/white-labeling
+- text: 第五部分：案例 - 中后台系统架构
+  collapsed: false
+  items:
+    - text: 中后台系统需求分析
+      link: case-admin/requirements
+    - text: 中后台架构设计
+      link: case-admin/architecture-design
+    - text: 动态表单架构
+      link: case-admin/dynamic-form
+    - text: 动态表格架构
+      link: case-admin/dynamic-table
+    - text: 低代码搭建平台
+      link: case-admin/low-code-platform
+    - text: 工作流引擎设计
+      link: case-admin/workflow-engine
+- text: 第六部分：案例 - 移动端架构
+  collapsed: false
+  items:
+    - text: 移动端需求分析
+      link: case-mobile/requirements
+    - text: 响应式 vs 自适应
+      link: case-mobile/responsive-adaptive
+    - text: Hybrid 架构设计
+      link: case-mobile/hybrid-architecture
+    - text: JSBridge 设计
+      link: case-mobile/jsbridge-design
+    - text: 小程序架构设计
+      link: case-mobile/mini-program
+    - text: 跨端框架选型
+      link: case-mobile/cross-platform
+- text: 第七部分：案例 - 实时协作系统
+  collapsed: false
+  items:
+    - text: 实时协作需求分析
+      link: case-realtime/requirements
+    - text: 实时通信架构
+      link: case-realtime/realtime-communication
+    - text: 协作编辑架构：OT vs CRDT
+      link: case-realtime/ot-crdt
+    - text: 状态同步策略
+      link: case-realtime/state-sync
+    - text: 离线支持设计
+      link: case-realtime/offline-support
+    - text: 冲突解决策略
+      link: case-realtime/conflict-resolution
+- text: 第八部分：架构文档化
+  collapsed: false
+  items:
+    - text: 架构文档的价值
+      link: documentation/value
+    - text: C4 模型详解
+      link: documentation/c4-model
+    - text: 架构图绘制技巧
+      link: documentation/diagram-skills
+    - text: 技术规范文档
+      link: documentation/technical-spec
+    - text: 架构知识库建设
+      link: documentation/knowledge-base
+- text: 第九部分：架构师职业发展
+  collapsed: false
+  items:
+    - text: 架构师能力模型
+      link: career/capability-model
+    - text: 高级工程师 vs 架构师
+      link: career/senior-vs-architect
+    - text: 架构师成长路径
+      link: career/growth-path
+    - text: 架构师面试准备
+      link: career/interview-preparation
+    - text: 架构师日常工作
+      link: career/daily-work
+    - text: 架构师的困惑与突破
+      link: career/challenges-breakthroughs
+- text: 第十部分：持续学习与成长
+  collapsed: false
+  items:
+    - text: 技术趋势跟踪方法
+      link: continuous-learning/trend-tracking
+    - text: 高效学习方法
+      link: continuous-learning/learning-methods
+    - text: 技术阅读清单
+      link: continuous-learning/reading-list
+    - text: 开源项目学习
+      link: continuous-learning/open-source-learning
+    - text: 参与技术社区
+      link: continuous-learning/community-participation
+    - text: 打造个人技术品牌
+      link: continuous-learning/personal-branding
+- text: 第十一部分：系列总结
+  collapsed: false
+  items:
+    - text: 前端架构知识体系总览
+      link: conclusion/knowledge-overview
+    - text: 架构师核心能力总结
+      link: conclusion/core-capabilities
+    - text: 从优秀到卓越
+      link: conclusion/excellence
+    - text: 致谢与展望
+      link: conclusion/acknowledgments

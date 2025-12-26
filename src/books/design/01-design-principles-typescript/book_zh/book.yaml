@@ -1,0 +1,137 @@
+title: 设计原则与 TypeScript 类型系统
+description: 掌握软件设计的核心原则，精通 TypeScript 高级类型技巧，为架构设计打下坚实基础。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：架构思维基础
+    items:
+      - text: 1. 什么是代码架构：前端视角的理解
+        link: foundations/what-is-code-architecture
+      - text: 2. 好代码的标准：可读性、可维护性与可扩展性
+        link: foundations/good-code-standards
+      - text: 3. 软件复杂度的本质与应对策略
+        link: foundations/software-complexity
+      - text: 4. 代码质量的度量与评估
+        link: foundations/code-quality-metrics
+  - text: 第二部分：SOLID 原则深度解析
+    items:
+      - text: 5. SOLID 原则概述：为什么需要设计原则
+        link: solid/solid-overview
+      - text: 6. 单一职责原则 (SRP)：职责的定义与边界
+        link: solid/srp-principle
+      - text: 7. SRP 实战：组件、Hooks 与服务的职责划分
+        link: solid/srp-practice
+      - text: 8. 开闭原则 (OCP)：面向扩展开放的设计
+        link: solid/ocp-principle
+      - text: 9. OCP 实战：插件化与策略模式的应用
+        link: solid/ocp-practice
+      - text: 10. 里氏替换原则 (LSP)：继承的正确使用
+        link: solid/lsp-principle
+      - text: 11. LSP 实战：组件继承与接口设计
+        link: solid/lsp-practice
+      - text: 12. 接口隔离原则 (ISP)：API 设计的精细化
+        link: solid/isp-principle
+      - text: 13. ISP 实战：Props 设计与接口拆分
+        link: solid/isp-practice
+      - text: 14. 依赖倒置原则 (DIP)：解耦的核心思想
+        link: solid/dip-principle
+      - text: 15. DIP 实战：依赖注入在前端的实现
+        link: solid/dip-practice
+  - text: 第三部分：实用主义设计原则
+    items:
+      - text: 16. DRY 原则：重复的识别与消除策略
+        link: pragmatic/dry-principle
+      - text: 17. DRY 的边界：何时重复是合理的
+        link: pragmatic/dry-boundaries
+      - text: 18. KISS 原则：简单性的价值与实践
+        link: pragmatic/kiss-principle
+      - text: 19. YAGNI 原则：克制过度设计的冲动
+        link: pragmatic/yagni-principle
+      - text: 20. 关注点分离：代码职责的边界划分
+        link: pragmatic/separation-of-concerns
+      - text: 21. 高内聚低耦合：模块设计的核心准则
+        link: pragmatic/cohesion-coupling
+      - text: 22. 最小知识原则：减少模块间的依赖
+        link: pragmatic/law-of-demeter
+      - text: 23. 组合优于继承：灵活性的选择
+        link: pragmatic/composition-over-inheritance
+  - text: 第四部分：TypeScript 类型系统基础
+    items:
+      - text: 24. TypeScript 类型系统概览
+        link: typescript/type-system-overview
+      - text: 25. 基础类型与类型注解
+        link: typescript/basic-types
+      - text: 26. 接口与类型别名的选择
+        link: typescript/interface-vs-type
+      - text: 27. 联合类型与交叉类型
+        link: typescript/union-intersection
+      - text: 28. 字面量类型与类型收窄
+        link: typescript/literal-narrowing
+      - text: 29. 类型守卫：运行时类型检查
+        link: typescript/type-guards
+      - text: 30. never 类型与穷尽性检查
+        link: typescript/never-exhaustive
+  - text: 第五部分：TypeScript 泛型编程
+    items:
+      - text: 31. 泛型基础：类型的参数化
+        link: generics/generics-basics
+      - text: 32. 泛型约束：限制类型参数的范围
+        link: generics/generic-constraints
+      - text: 33. 泛型默认值与可选泛型
+        link: generics/generic-defaults
+      - text: 34. 泛型函数与泛型类
+        link: generics/generic-functions-classes
+      - text: 35. 泛型工具类型：Partial、Required、Pick
+        link: generics/utility-types-1
+      - text: 36. 泛型工具类型：Omit、Record、Exclude
+        link: generics/utility-types-2
+      - text: 37. 自定义工具类型设计
+        link: generics/custom-utility-types
+  - text: 第六部分：TypeScript 高级类型
+    items:
+      - text: 38. 条件类型基础：类型的 if-else
+        link: advanced/conditional-basics
+      - text: 39. 条件类型与 infer 关键字
+        link: advanced/conditional-infer
+      - text: 40. 分布式条件类型
+        link: advanced/distributive-conditional
+      - text: 41. 映射类型：批量转换类型
+        link: advanced/mapped-types
+      - text: 42. 映射类型修饰符：readonly 与可选
+        link: advanced/mapped-modifiers
+      - text: 43. 模板字面量类型
+        link: advanced/template-literal-types
+      - text: 44. 递归类型与类型递归限制
+        link: advanced/recursive-types
+      - text: 45. 类型体操实战：深度 Readonly
+        link: advanced/deep-readonly
+      - text: 46. 类型体操实战：路径类型提取
+        link: advanced/path-types
+  - text: 第七部分：类型安全的架构设计
+    items:
+      - text: 47. 类型驱动开发 (TDD with Types)
+        link: type-safe/type-driven-development
+      - text: 48. 类型安全的 API 设计
+        link: type-safe/type-safe-api
+      - text: 49. 类型安全的事件系统
+        link: type-safe/type-safe-events
+      - text: 50. 类型安全的状态管理
+        link: type-safe/type-safe-state
+      - text: 51. 类型安全的路由设计
+        link: type-safe/type-safe-routing
+      - text: 52. 运行时类型检查：Zod 与 io-ts
+        link: type-safe/runtime-validation
+      - text: 53. 类型与 Schema 的统一
+        link: type-safe/type-schema-sync
+  - text: 第八部分：实战与总结
+    items:
+      - text: 54. 实战：类型安全的 HTTP 客户端
+        link: practice/type-safe-http-client
+      - text: 55. 实战：类型安全的表单系统
+        link: practice/type-safe-forms
+      - text: 56. 实战：类型安全的配置系统
+        link: practice/type-safe-config
+      - text: 57. TypeScript 编译配置最佳实践
+        link: practice/tsconfig-best-practices
+      - text: 58. 总结：设计原则与类型系统的融合
+        link: practice/principles-types-integration

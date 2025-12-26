@@ -1,59 +1,113 @@
 # 事件循环的底层实现：宏任务与微任务
 
-JavaScript是单线程语言，但它能处理异步操作。这种能力来自事件循环（Event Loop）机制。事件循环协调同步代码、异步回调、Promise和定时器的执行顺序，是JavaScript运行时的核心调度器。
-
-理解事件循环，你就能预测代码的执行顺序，解释那些看似"违反直觉"的异步行为，写出更高效的异步代码。
-
-## 为什么需要事件循环
-
-JavaScript的单线程设计需要一种机制来处理异步：
+当你写下这段代码时，你能准确预测输出顺序吗？
 
 ```javascript
-// 事件循环的必要性
-class WhyEventLoop {
-  static demonstrateProblem() {
-    console.log('=== 单线程的挑战 ===\n');
-    
-    console.log('JavaScript是单线程的：');
-    console.log('  • 同一时间只能执行一段代码');
-    console.log('  • 长时间操作会阻塞后续代码');
-    console.log('  • 用户界面会失去响应\n');
-    
-    console.log('如果没有异步机制：');
-    console.log(`
-    // 这段代码会阻塞5秒
-    const data = fetchSync('/api/data');  // 等待网络响应
-    console.log(data);  // 5秒后才执行
-    // 期间页面完全无响应
-    `);
-  }
+console.log('start');
+
+setTimeout(() => {
+  console.log('timeout');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('promise');
+});
+
+console.log('end');
+```
+
+如果你认为输出是 `start → end → timeout → promise`，那你需要理解事件循环。实际输出是 `start → end → promise → timeout`。Promise 的回调竟然比 `setTimeout(..., 0)` 先执行！
+
+这种看似"违反直觉"的行为背后，是 JavaScript 事件循环的精妙设计。本章将带你深入 V8 引擎，理解事件循环如何协调同步代码、异步回调、Promise 和定时器的执行顺序。
+
+## 问题的起点：单线程的困境
+
+让我们从一个真实的痛点开始。假设你要处理一个包含 100 万个元素的数组：
+
+```javascript
+// 这段代码会让浏览器失去响应
+function processBigArray() {
+  const bigArray = new Array(1000000).fill(0);
+  const startTime = Date.now();
   
-  static demonstrateSolution() {
-    console.log('=== 异步解决方案 ===\n');
-    
-    console.log('事件循环的作用：');
-    console.log('  • 允许发起异步操作后继续执行');
-    console.log('  • 在适当时机执行回调');
-    console.log('  • 保持主线程响应\n');
-    
-    console.log('异步代码示例：');
-    console.log(`
-    // 发起请求后立即继续
-    fetch('/api/data')
-      .then(data => console.log(data));  // 稍后执行
-    
-    console.log('继续执行');  // 立即执行
-    `);
-  }
+  console.log('开始处理...');
   
-  static runAll() {
-    this.demonstrateProblem();
-    this.demonstrateSolution();
-  }
+  bigArray.forEach((_, index) => {
+    // 模拟耗时操作
+    Math.sqrt(index);
+  });
+  
+  console.log(`处理完成，耗时 ${Date.now() - startTime}ms`);
 }
 
-WhyEventLoop.runAll();
+processBigArray();
+console.log('这行代码要等很久才能执行');
 ```
+
+运行这段代码，你会发现：
+1. "开始处理..."立即打印
+2. 浏览器**完全卡住**，鼠标点击无响应
+3. 几秒后"处理完成"打印
+4. 最后才打印"这行代码要等很久才能执行"
+
+这就是 JavaScript 单线程的特性：**同一时刻只能执行一段代码**。当 `forEach` 循环霸占 CPU 时，其他一切都要等待。
+
+### 为什么 JavaScript 是单线程的？
+
+这不是设计缺陷，而是刻意为之。想象如果 JavaScript 是多线程的：
+
+```javascript
+// 假设有两个线程同时运行
+// 线程 A
+document.getElementById('box').remove();
+
+// 线程 B（同时执行）
+document.getElementById('box').style.color = 'red';
+```
+
+线程 A 删除了 DOM，线程 B 却要修改它的样式。谁应该获胜？如何保证 DOM 操作的一致性？这会引入复杂的锁机制和竞态条件问题。
+
+JavaScript 选择了单线程，避免了这些复杂性。但如何在单线程中处理异步操作（如网络请求、定时器）？这就是事件循环要解决的问题。
+
+## 事件循环的核心思想
+
+事件循环的核心思想很简单：**当主线程空闲时，去任务队列中取任务来执行**。
+
+让我们用一个简化的模型来理解：
+
+```javascript
+// 事件循环的伪代码
+while (true) {
+  // 1. 执行调用栈中的代码，直到栈为空
+  while (callStack.length > 0) {
+    const task = callStack.pop();
+    execute(task);
+  }
+  
+  // 2. 调用栈为空，检查微任务队列
+  while (microtaskQueue.length > 0) {
+    const microtask = microtaskQueue.shift();
+    execute(microtask);
+  }
+  
+  // 3. 微任务也清空了，取一个宏任务
+  if (macrotaskQueue.length > 0) {
+    const macrotask = macrotaskQueue.shift();
+    execute(macrotask);
+    // 回到步骤 2，检查是否有新的微任务
+  }
+  
+  // 4. 如果所有队列都空了，等待新任务
+  waitForTasks();
+}
+```
+
+这个循环永不停止，不断检查并执行任务。关键在于三个队列：
+- **调用栈（Call Stack）**：当前正在执行的同步代码
+- **微任务队列（Microtask Queue）**：Promise.then、queueMicrotask
+- **宏任务队列（Macrotask Queue）**：setTimeout、setInterval、I/O
+
+现在让我们用真实代码来验证这个模型。
 
 ## 事件循环的基本模型
 
@@ -201,273 +255,452 @@ class MacroAndMicrotasks {
 MacroAndMicrotasks.runAll();
 ```
 
-## 微任务优先级
+## 事件循环的完整执行流程
 
-微任务总是优先于下一个宏任务：
+现在我们已经通过实验理解了基本规则，让我们整理出完整的执行流程：
+
+```
+每轮事件循环（Event Loop Iteration）：
+
+1. 执行一个宏任务（Script整体代码、setTimeout回调、I/O等）
+   ↓
+2. 执行所有微任务（Promise.then、queueMicrotask）
+   - 微任务中新产生的微任务也要执行完
+   - 直到微任务队列完全清空
+   ↓
+3. (浏览器) 判断是否需要渲染
+   - 通常每秒60次（16.67ms一次）
+   - 如果需要，执行 requestAnimationFrame 回调
+   - 进行页面渲染
+   ↓
+4. 返回步骤1，取下一个宏任务
+```
+
+让我们用一个复杂的例子来验证这个流程：
 
 ```javascript
-// 微任务优先级
-class MicrotaskPriority {
-  static demonstrateNested() {
-    console.log('=== 嵌套微任务 ===\n');
-    
-    console.log('代码：');
-    console.log(`
-    setTimeout(() => console.log('timeout 1'), 0);
-    
-    Promise.resolve().then(() => {
-      console.log('promise 1');
-      Promise.resolve().then(() => {
-        console.log('promise 2');
-      });
-    });
-    
-    setTimeout(() => console.log('timeout 2'), 0);
-    `);
-    
-    console.log('执行分析：');
-    console.log('  1. timeout 1 进入宏任务队列');
-    console.log('  2. promise 1 的回调进入微任务队列');
-    console.log('  3. timeout 2 进入宏任务队列');
-    console.log('  4. 执行微任务 promise 1');
-    console.log('  5. promise 2 进入微任务队列');
-    console.log('  6. 继续执行微任务 promise 2');
-    console.log('  7. 微任务清空，执行宏任务 timeout 1');
-    console.log('  8. 执行宏任务 timeout 2');
-    console.log('');
-    console.log('  输出：promise 1 → promise 2 → timeout 1 → timeout 2\n');
+console.log('脚本开始');
+
+setTimeout(() => {
+  console.log('宏任务 1');
+  Promise.resolve().then(() => {
+    console.log('宏任务1中的微任务');
+  });
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('微任务 1');
+}).then(() => {
+  console.log('微任务 2');
+});
+
+setTimeout(() => {
+  console.log('宏任务 2');
+}, 0);
+
+console.log('脚本结束');
+```
+
+**逐步推导输出顺序**：
+
+**第一轮循环（执行整个脚本）**：
+1. 同步代码：输出 `脚本开始`
+2. 宏任务1（`setTimeout 1`）进入宏任务队列
+3. 微任务1（`Promise 1`）进入微任务队列
+4. 宏任务2（`setTimeout 2`）进入宏任务队列
+5. 同步代码：输出 `脚本结束`
+6. **清空微任务队列**：
+   - 执行微任务1，输出 `微任务 1`
+   - `then` 链中的下一个 then 进入微任务队列
+   - 执行微任务2，输出 `微任务 2`
+   - 微任务队列清空
+
+此时状态：
+- 宏任务队列：`[宏任务1, 宏任务2]`
+- 微任务队列：`[]`
+- 已输出：`脚本开始 → 脚本结束 → 微任务 1 → 微任务 2`
+
+**第二轮循环（执行宏任务1）**：
+7. 取出宏任务1执行，输出 `宏任务 1`
+8. 在宏任务1中添加了新的微任务，进入微任务队列
+9. **清空微任务队列**：
+   - 执行，输出 `宏任务1中的微任务`
+
+此时状态：
+- 宏任务队列：`[宏任务2]`
+- 微任务队列：`[]`
+- 已输出：`... → 宏任务 1 → 宏任务1中的微任务`
+
+**第三轮循环（执行宏任务2）**：
+10. 取出宏任务2执行，输出 `宏任务 2`
+
+**最终输出顺序**：
+```
+脚本开始
+脚本结束
+微任务 1
+微任务 2
+宏任务 1
+宏任务1中的微任务
+宏任务 2
+```
+
+**关键观察**：
+- 每个宏任务执行后，都会立即清空微任务队列
+- 微任务不会跨越宏任务边界
+- 宏任务之间是完全独立的
+
+## V8 中的微任务队列实现
+
+现在让我们深入 V8 引擎，看看微任务队列是如何实现的。
+
+### 微任务队列的数据结构
+
+V8 为每个 JavaScript 执行上下文（Context）维护一个微任务队列：
+
+```cpp
+// V8 简化源码（C++）
+class MicrotaskQueue {
+ private:
+  // 微任务存储（环形缓冲区）
+  std::vector<Microtask> pending_microtasks_;
+  
+  // 当前是否正在执行微任务
+  bool is_running_microtasks_ = false;
+  
+  // 嵌套深度（防止无限递归）
+  int microtask_nesting_level_ = 0;
+  
+ public:
+  // 添加微任务
+  void EnqueueMicrotask(Microtask task) {
+    pending_microtasks_.push_back(task);
   }
   
-  static demonstrateMicrotaskFlood() {
-    console.log('=== 微任务洪泛问题 ===\n');
+  // 执行所有微任务
+  void PerformMicrotaskCheckpoint() {
+    // 防止重入
+    if (is_running_microtasks_) return;
     
-    console.log('危险代码：');
-    console.log(`
-    function recursiveMicrotask() {
-      Promise.resolve().then(() => {
-        console.log('microtask');
-        recursiveMicrotask();  // 无限添加微任务
-      });
+    is_running_microtasks_ = true;
+    microtask_nesting_level_++;
+    
+    // 循环执行，直到队列为空
+    while (!pending_microtasks_.empty()) {
+      Microtask task = pending_microtasks_.front();
+      pending_microtasks_.erase(pending_microtasks_.begin());
+      
+      // 执行微任务（可能会添加新的微任务）
+      task.Run();
     }
     
-    recursiveMicrotask();
-    setTimeout(() => console.log('timeout'), 0);
-    // timeout永远不会执行！
-    `);
-    
-    console.log('问题：');
-    console.log('  • 微任务不断产生新微任务');
-    console.log('  • 微任务队列永远清空不了');
-    console.log('  • 宏任务永远得不到执行');
-    console.log('  • 页面失去响应\n');
-    
-    console.log('解决方案：');
-    console.log('  • 使用setTimeout分散任务');
-    console.log('  • 使用requestAnimationFrame');
-    console.log('  • 限制微任务递归深度\n');
+    microtask_nesting_level_--;
+    is_running_microtasks_ = false;
   }
+};
+```
+
+**关键设计**：
+
+1. **FIFO 队列**：微任务按先进先出顺序执行
+2. **重入保护**：通过 `is_running_microtasks_` 标志防止嵌套调用
+3. **循环清空**：`while` 循环确保新产生的微任务也会执行
+4. **嵌套深度**：记录递归深度，用于调试和性能分析
+
+### 微任务检查点（Microtask Checkpoint）
+
+V8 在以下时机触发微任务检查点：
+
+```cpp
+// 伪代码：何时检查微任务
+void RunScript(Script script) {
+  script.Execute();
   
-  static runAll() {
-    this.demonstrateNested();
-    this.demonstrateMicrotaskFlood();
+  // 脚本执行完毕，检查微任务
+  microtask_queue->PerformMicrotaskCheckpoint();
+}
+
+void RunCallback(Callback callback) {
+  callback.Execute();
+  
+  // 回调执行完毕，检查微任务
+  microtask_queue->PerformMicrotaskCheckpoint();
+}
+
+void PerformMacrotask(Macrotask task) {
+  task.Execute();
+  
+  // 宏任务执行完毕，检查微任务
+  microtask_queue->PerformMicrotaskCheckpoint();
+}
+```
+
+**检查点触发时机**：
+- 脚本（`<script>` 标签）执行完成
+- 每个宏任务（如 `setTimeout` 回调）执行完成
+- 函数调用堆栈清空时
+- 某些宿主环境操作后（如事件处理）
+
+### Promise 如何入队微任务
+
+当你调用 `Promise.then()` 时，V8 做了什么？
+
+```cpp
+// 简化的 Promise.then 实现（C++）
+void Promise::Then(Callback onFulfilled) {
+  if (this->state == PromiseState::kFulfilled) {
+    // Promise 已经 resolved
+    // 将回调作为微任务入队
+    Microtask microtask = CreateMicrotask(onFulfilled, this->value);
+    GetMicrotaskQueue()->EnqueueMicrotask(microtask);
+  } else {
+    // Promise 未 resolved
+    // 将回调存储到 Promise 对象中，等待 resolve
+    this->callbacks.push_back(onFulfilled);
   }
 }
 
-MicrotaskPriority.runAll();
+void Promise::Resolve(Value value) {
+  this->state = PromiseState::kFulfilled;
+  this->value = value;
+  
+  // 将所有 then 回调转换为微任务
+  for (Callback callback : this->callbacks) {
+    Microtask microtask = CreateMicrotask(callback, value);
+    GetMicrotaskQueue()->EnqueueMicrotask(microtask);
+  }
+  
+  this->callbacks.clear();
+}
 ```
 
-## V8中的微任务实现
-
-V8如何管理微任务：
+对应的 JavaScript 行为：
 
 ```javascript
-// V8微任务实现
-class V8MicrotaskImplementation {
-  static demonstrate() {
-    console.log('=== V8微任务队列 ===\n');
-    
-    console.log('V8的微任务队列结构：');
-    console.log(`
-    class MicrotaskQueue {
-      // 微任务存储
-      pending_microtasks: Microtask[];
-      
-      // 当前正在运行微任务
-      is_running_microtasks: boolean;
-      
-      // 添加微任务
-      EnqueueMicrotask(microtask);
-      
-      // 运行所有微任务
-      PerformMicrotaskCheckpoint();
-    }
-    `);
-    
-    console.log('关键点：');
-    console.log('  • 每个Context有自己的微任务队列');
-    console.log('  • 微任务按FIFO顺序执行');
-    console.log('  • 检查点时清空整个队列\n');
-  }
-  
-  static demonstrateCheckpoint() {
-    console.log('=== 微任务检查点 ===\n');
-    
-    console.log('检查点触发时机：');
-    console.log('  • 脚本执行完成');
-    console.log('  • 回调执行完成');
-    console.log('  • 某些宿主操作后\n');
-    
-    console.log('检查点执行逻辑（伪代码）：');
-    console.log(`
-    function PerformMicrotaskCheckpoint() {
-      if (is_running_microtasks) return;
-      
-      is_running_microtasks = true;
-      
-      while (pending_microtasks.length > 0) {
-        const microtask = pending_microtasks.shift();
-        RunMicrotask(microtask);
-        // 新产生的微任务会添加到pending_microtasks
-      }
-      
-      is_running_microtasks = false;
-    }
-    `);
-  }
-  
-  static runAll() {
-    this.demonstrate();
-    this.demonstrateCheckpoint();
-  }
-}
+const promise = new Promise(resolve => {
+  console.log('1: Promise 构造函数同步执行');
+  resolve('数据');
+});
 
-V8MicrotaskImplementation.runAll();
+promise.then(data => {
+  console.log('2: then 回调（微任务）');
+});
+
+console.log('3: 同步代码');
+
+// 输出：
+// 1: Promise 构造函数同步执行
+// 3: 同步代码
+// 2: then 回调（微任务）
 ```
+
+**为什么 Promise 构造函数是同步的？**
+
+这是 ECMAScript 规范的设计。Promise 构造函数会立即执行传入的 executor 函数，只有 `then`、`catch`、`finally` 的回调才会延迟到微任务执行。
 
 ## 经典面试题解析
 
-常见的事件循环面试题：
+掌握了事件循环的核心规则后，让我们挑战几道经典面试题。
+
+### 面试题1：async/await 与 Promise
+
+这是最常见的面试题之一，涉及 `async/await` 的执行顺序：
 
 ```javascript
-// 经典面试题
-class ClassicInterviewQuestions {
-  static question1() {
-    console.log('=== 面试题1 ===\n');
-    
-    console.log('代码：');
-    console.log(`
-    async function async1() {
-      console.log('async1 start');
-      await async2();
-      console.log('async1 end');
-    }
-    
-    async function async2() {
-      console.log('async2');
-    }
-    
-    console.log('script start');
-    
-    setTimeout(function() {
-      console.log('setTimeout');
-    }, 0);
-    
-    async1();
-    
-    new Promise(function(resolve) {
-      console.log('promise1');
-      resolve();
-    }).then(function() {
-      console.log('promise2');
-    });
-    
-    console.log('script end');
-    `);
-    
-    console.log('\n执行分析：');
-    console.log('  1. script start（同步）');
-    console.log('  2. setTimeout回调入宏任务队列');
-    console.log('  3. 调用async1');
-    console.log('  4. async1 start（同步）');
-    console.log('  5. 调用async2');
-    console.log('  6. async2（同步）');
-    console.log('  7. await后面的代码入微任务队列');
-    console.log('  8. promise1（Promise构造函数同步执行）');
-    console.log('  9. then回调入微任务队列');
-    console.log('  10. script end（同步）');
-    console.log('  11. 执行微任务：async1 end');
-    console.log('  12. 执行微任务：promise2');
-    console.log('  13. 执行宏任务：setTimeout\n');
-    
-    console.log('输出顺序：');
-    console.log('  script start');
-    console.log('  async1 start');
-    console.log('  async2');
-    console.log('  promise1');
-    console.log('  script end');
-    console.log('  async1 end');
-    console.log('  promise2');
-    console.log('  setTimeout\n');
-  }
-  
-  static question2() {
-    console.log('=== 面试题2 ===\n');
-    
-    console.log('代码：');
-    console.log(`
-    console.log('start');
-    
-    setTimeout(() => {
-      console.log('timer1');
-      Promise.resolve().then(() => {
-        console.log('promise1');
-      });
-    }, 0);
-    
-    setTimeout(() => {
-      console.log('timer2');
-      Promise.resolve().then(() => {
-        console.log('promise2');
-      });
-    }, 0);
-    
-    Promise.resolve().then(() => {
-      console.log('promise3');
-    });
-    
-    console.log('end');
-    `);
-    
-    console.log('\n执行分析：');
-    console.log('  1. start（同步）');
-    console.log('  2. timer1回调入宏任务队列');
-    console.log('  3. timer2回调入宏任务队列');
-    console.log('  4. promise3回调入微任务队列');
-    console.log('  5. end（同步）');
-    console.log('  6. 执行微任务：promise3');
-    console.log('  7. 执行宏任务timer1');
-    console.log('  8. timer1（同步）');
-    console.log('  9. promise1入微任务队列');
-    console.log('  10. 执行微任务：promise1');
-    console.log('  11. 执行宏任务timer2');
-    console.log('  12. timer2（同步）');
-    console.log('  13. promise2入微任务队列');
-    console.log('  14. 执行微任务：promise2\n');
-    
-    console.log('输出顺序：');
-    console.log('  start → end → promise3 →');
-    console.log('  timer1 → promise1 →');
-    console.log('  timer2 → promise2\n');
-  }
-  
-  static runAll() {
-    this.question1();
-    this.question2();
-  }
+async function async1() {
+  console.log('async1 start');
+  await async2();
+  console.log('async1 end');
 }
 
-ClassicInterviewQuestions.runAll();
+async function async2() {
+  console.log('async2');
+}
+
+console.log('script start');
+
+setTimeout(function() {
+  console.log('setTimeout');
+}, 0);
+
+async1();
+
+new Promise(function(resolve) {
+  console.log('promise1');
+  resolve();
+}).then(function() {
+  console.log('promise2');
+});
+
+console.log('script end');
 ```
+
+**先自己推导，然后看答案**。
+
+<details>
+<summary>点击查看详细解析</summary>
+
+**输出顺序**：
+```
+script start
+async1 start
+async2
+promise1
+script end
+async1 end
+promise2
+setTimeout
+```
+
+**逐步推导**：
+
+1. 同步代码：`console.log('script start')` → 输出 `script start`
+2. `setTimeout` 回调进入**宏任务队列**
+3. 调用 `async1()`：
+   - 同步执行：输出 `async1 start`
+   - 调用 `async2()`
+   - 同步执行：输出 `async2`
+   - **关键**：`await` 之后的代码相当于 `Promise.then()`，进入**微任务队列**
+4. Promise 构造函数同步执行：输出 `promise1`
+5. `Promise.then()` 回调进入**微任务队列**
+6. 同步代码：输出 `script end`
+7. 同步代码执行完毕，**清空微任务队列**：
+   - 执行 `await` 之后的代码：输出 `async1 end`
+   - 执行 `Promise.then()`：输出 `promise2`
+8. 微任务清空，执行**宏任务**：
+   - 执行 `setTimeout`：输出 `setTimeout`
+
+**核心知识点**：
+- `await` 之后的代码等价于 `Promise.then()` 回调
+- `async` 函数内部的同步代码会立即执行
+- `await` 会暂停 `async` 函数的执行，将后续代码加入微任务队列
+
+</details>
+
+### 面试题2：setTimeout 中的 Promise
+
+这道题考察宏任务和微任务的交替执行：
+
+```javascript
+console.log('start');
+
+setTimeout(() => {
+  console.log('timer1');
+  Promise.resolve().then(() => {
+    console.log('promise1');
+  });
+}, 0);
+
+setTimeout(() => {
+  console.log('timer2');
+  Promise.resolve().then(() => {
+    console.log('promise2');
+  });
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('promise3');
+});
+
+console.log('end');
+```
+
+<details>
+<summary>点击查看详细解析</summary>
+
+**输出顺序**：
+```
+start
+end
+promise3
+timer1
+promise1
+timer2
+promise2
+```
+
+**逐步推导**：
+
+**第一轮（执行脚本）**：
+1. 同步代码：输出 `start`
+2. `timer1` 进入宏任务队列：`[timer1]`
+3. `timer2` 进入宏任务队列：`[timer1, timer2]`
+4. `promise3` 进入微任务队列：`[promise3]`
+5. 同步代码：输出 `end`
+6. 清空微任务队列：输出 `promise3`
+
+**第二轮（执行 timer1）**：
+7. 取出 `timer1` 执行：输出 `timer1`
+8. `promise1` 进入微任务队列：`[promise1]`
+9. 清空微任务队列：输出 `promise1`
+
+**第三轮（执行 timer2）**：
+10. 取出 `timer2` 执行：输出 `timer2`
+11. `promise2` 进入微任务队列：`[promise2]`
+12. 清空微任务队列：输出 `promise2`
+
+**关键观察**：
+- 每个 `setTimeout` 回调是独立的宏任务
+- 每个宏任务执行后，都会立即清空微任务队列
+- 微任务不会跨越宏任务边界
+
+</details>
+
+### 面试题3：多层嵌套
+
+这道题考察对执行顺序的综合理解：
+
+```javascript
+Promise.resolve().then(() => {
+  console.log('Promise 1');
+  setTimeout(() => {
+    console.log('setTimeout 2');
+  }, 0);
+});
+
+setTimeout(() => {
+  console.log('setTimeout 1');
+  Promise.resolve().then(() => {
+    console.log('Promise 2');
+  });
+}, 0);
+```
+
+<details>
+<summary>点击查看详细解析</summary>
+
+**输出顺序**：
+```
+Promise 1
+setTimeout 1
+Promise 2
+setTimeout 2
+```
+
+**逐步推导**：
+
+**第一轮（执行脚本）**：
+1. 第一个 `Promise.then` 进入微任务队列
+2. 第一个 `setTimeout` 进入宏任务队列
+3. 清空微任务队列：
+   - 执行：输出 `Promise 1`
+   - 第二个 `setTimeout` 进入宏任务队列
+
+此时宏任务队列：`[setTimeout1, setTimeout2]`
+
+**第二轮（执行 setTimeout1）**：
+4. 取出 `setTimeout1` 执行：输出 `setTimeout 1`
+5. `Promise 2` 进入微任务队列
+6. 清空微任务队列：输出 `Promise 2`
+
+**第三轮（执行 setTimeout2）**：
+7. 取出 `setTimeout2` 执行：输出 `setTimeout 2`
+
+**关键点**：
+- 微任务中添加的宏任务会排在现有宏任务之后
+- 宏任务是严格按加入队列的顺序执行的
+
+</details>
 
 ## 模拟事件循环
 

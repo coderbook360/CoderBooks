@@ -1,0 +1,145 @@
+title: 技术领导力与团队建设
+description: 提升架构师必备的软技能：沟通、协作、影响力与领导力。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：技术沟通基础
+    items:
+      - text: 1. 技术沟通的重要性
+        link: communication-basics/importance
+      - text: 2. 不同受众的沟通策略
+        link: communication-basics/audience-strategy
+      - text: 3. 技术概念的通俗表达
+        link: communication-basics/simplifying-concepts
+      - text: 4. 书面沟通技巧
+        link: communication-basics/written-communication
+      - text: 5. 口头沟通技巧
+        link: communication-basics/verbal-communication
+  - text: 第二部分：技术方案沟通
+    items:
+      - text: 6. 技术方案文档撰写
+        link: technical-communication/design-docs
+      - text: 7. RFC 流程设计与实践
+        link: technical-communication/rfc-process
+      - text: 8. 技术方案演示技巧
+        link: technical-communication/presentation-skills
+      - text: 9. 设计评审主持
+        link: technical-communication/design-review
+      - text: 10. 技术决策沟通
+        link: technical-communication/decision-communication
+      - text: 11. 异议处理与共识达成
+        link: technical-communication/handling-disagreements
+  - text: 第三部分：跨部门协作
+    items:
+      - text: 12. 与产品经理协作
+        link: cross-functional/pm-collaboration
+      - text: 13. 与 UX 设计师协作
+        link: cross-functional/ux-collaboration
+      - text: 14. 与后端工程师协作
+        link: cross-functional/backend-collaboration
+      - text: 15. 与测试工程师协作
+        link: cross-functional/qa-collaboration
+      - text: 16. 跨部门项目推进
+        link: cross-functional/cross-team-projects
+      - text: 17. 处理跨部门冲突
+        link: cross-functional/conflict-resolution
+  - text: 第四部分：团队建设基础
+    items:
+      - text: 18. 前端团队组织模式
+        link: team-building/team-organization
+      - text: 19. 招聘策略与流程
+        link: team-building/hiring-strategy
+      - text: 20. 面试方法与技巧
+        link: team-building/interviewing
+      - text: 21. 技术面试题设计
+        link: team-building/interview-questions
+      - text: 22. 新人入职引导
+        link: team-building/onboarding
+      - text: 23. 团队文化建设
+        link: team-building/team-culture
+  - text: 第五部分：人才培养
+    items:
+      - text: 24. 个人发展计划 (IDP)
+        link: talent-development/individual-development-plan
+      - text: 25. 导师制度设计
+        link: talent-development/mentorship
+      - text: 26. 技术分享机制
+        link: talent-development/tech-sharing
+      - text: 27. 代码评审文化
+        link: talent-development/code-review-culture
+      - text: 28. 绩效评估与反馈
+        link: talent-development/performance-feedback
+      - text: 29. 职业路径规划
+        link: talent-development/career-path
+  - text: 第六部分：影响力建设
+    items:
+      - text: 30. 技术影响力概述
+        link: influence/overview
+      - text: 31. 技术博客写作
+        link: influence/tech-blogging
+      - text: 32. 技术演讲入门
+        link: influence/public-speaking
+      - text: 33. 技术会议演讲
+        link: influence/conference-speaking
+      - text: 34. 开源项目参与
+        link: influence/open-source-participation
+      - text: 35. 开源项目维护
+        link: influence/open-source-maintenance
+      - text: 36. 技术社区运营
+        link: influence/community-building
+  - text: 第七部分：项目管理
+    items:
+      - text: 37. 项目估算方法
+        link: project-management/estimation
+      - text: 38. 技术排期策略
+        link: project-management/scheduling
+      - text: 39. 风险识别与管理
+        link: project-management/risk-management
+      - text: 40. 项目进度跟踪
+        link: project-management/progress-tracking
+      - text: 41. 项目复盘方法
+        link: project-management/retrospective
+  - text: 第八部分：技术决策
+    items:
+      - text: 42. 技术决策框架
+        link: technical-decisions/decision-framework
+      - text: 43. 技术调研方法
+        link: technical-decisions/research-methods
+      - text: 44. 技术选型决策
+        link: technical-decisions/technology-selection
+      - text: 45. 架构权衡分析
+        link: technical-decisions/trade-off-analysis
+      - text: 46. 技术债务管理
+        link: technical-decisions/technical-debt
+      - text: 47. 遗留系统改造
+        link: technical-decisions/legacy-migration
+  - text: 第九部分：组织影响力
+    items:
+      - text: 48. 向上管理技巧
+        link: organizational-influence/managing-up
+      - text: 49. 跨团队影响力
+        link: organizational-influence/cross-team-influence
+      - text: 50. 技术变革推动
+        link: organizational-influence/driving-change
+      - text: 51. 获取资源支持
+        link: organizational-influence/securing-resources
+      - text: 52. 建立技术品牌
+        link: organizational-influence/technical-branding
+  - text: 第十部分：领导力实战
+    items:
+      - text: 53. 从 IC 到 Tech Lead
+        link: leadership-practice/ic-to-tech-lead
+      - text: 54. Tech Lead 的职责
+        link: leadership-practice/tech-lead-responsibilities
+      - text: 55. 架构师的定位
+        link: leadership-practice/architect-positioning
+      - text: 56. 危机处理与应急响应
+        link: leadership-practice/crisis-management
+      - text: 57. 团队士气管理
+        link: leadership-practice/team-morale
+      - text: 58. 实战：推动大型技术重构
+        link: leadership-practice/large-refactoring
+      - text: 59. 实战：新团队快速建设
+        link: leadership-practice/building-new-team
+      - text: 60. 总结：技术领导力成长路径
+        link: leadership-practice/growth-path

@@ -1,0 +1,201 @@
+title: 构建工具原理与实践
+description: 深入理解前端构建工具的核心原理，掌握 Webpack、Vite 等工具的内部机制与插件开发。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：模块化体系
+    items:
+      - text: 1. JavaScript 模块化演进史
+        link: module-system/evolution-history
+      - text: 2. CommonJS 规范详解
+        link: module-system/commonjs-spec
+      - text: 3. CommonJS 在 Node.js 中的实现
+        link: module-system/commonjs-node
+      - text: 4. ES Modules 规范详解
+        link: module-system/esm-spec
+      - text: 5. ES Modules 在浏览器中的实现
+        link: module-system/esm-browser
+      - text: 6. ES Modules 在 Node.js 中的实现
+        link: module-system/esm-node
+      - text: 7. CommonJS 与 ES Modules 互操作
+        link: module-system/cjs-esm-interop
+      - text: 8. 模块解析算法详解
+        link: module-system/module-resolution
+      - text: 9. 动态导入与代码分割
+        link: module-system/dynamic-import
+  - text: 第二部分：包管理深度解析
+    items:
+      - text: 10. npm 架构与核心概念
+        link: package-management/npm-architecture
+      - text: 11. npm 依赖解析算法
+        link: package-management/npm-resolution
+      - text: 12. npm 安装机制详解
+        link: package-management/npm-install
+      - text: 13. yarn 设计理念与架构
+        link: package-management/yarn-design
+      - text: 14. yarn PnP 模式详解
+        link: package-management/yarn-pnp
+      - text: 15. pnpm 原理：硬链接与内容寻址
+        link: package-management/pnpm-internals
+      - text: 16. 包管理器性能对比
+        link: package-management/manager-benchmark
+      - text: 17. 依赖版本策略与锁文件
+        link: package-management/versioning-lock
+      - text: 18. 依赖安全与漏洞扫描
+        link: package-management/security-audit
+      - text: 19. 私有 npm 仓库搭建
+        link: package-management/private-registry
+  - text: 第三部分：Webpack 核心原理
+    items:
+      - text: 20. Webpack 架构设计概览
+        link: webpack/architecture-overview
+      - text: 21. Webpack 编译流程详解
+        link: webpack/compilation-flow
+      - text: 22. Webpack 模块解析机制
+        link: webpack/module-resolution
+      - text: 23. Webpack 依赖图构建
+        link: webpack/dependency-graph
+      - text: 24. Webpack 代码生成原理
+        link: webpack/code-generation
+      - text: 25. Webpack Runtime 详解
+        link: webpack/runtime-analysis
+      - text: 26. Webpack Loader 机制
+        link: webpack/loader-mechanism
+      - text: 27. Loader 开发实战
+        link: webpack/loader-development
+      - text: 28. Webpack Plugin 与 Tapable
+        link: webpack/plugin-tapable
+      - text: 29. Plugin 开发实战
+        link: webpack/plugin-development
+      - text: 30. Webpack HMR 原理
+        link: webpack/hmr-internals
+      - text: 31. Webpack 5 新特性详解
+        link: webpack/webpack5-features
+      - text: 32. Module Federation 原理
+        link: webpack/module-federation
+  - text: 第四部分：Vite 核心原理
+    items:
+      - text: 33. Vite 设计理念与架构
+        link: vite/design-philosophy
+      - text: 34. Vite 开发服务器原理
+        link: vite/dev-server-internals
+      - text: 35. 依赖预构建机制
+        link: vite/pre-bundling
+      - text: 36. Vite 模块热更新原理
+        link: vite/hmr-internals
+      - text: 37. Vite 插件机制详解
+        link: vite/plugin-mechanism
+      - text: 38. Vite 插件开发实战
+        link: vite/plugin-development
+      - text: 39. Vite 生产构建流程
+        link: vite/production-build
+      - text: 40. Vite 与 Rollup 的关系
+        link: vite/vite-rollup
+      - text: 41. Vite 性能优化策略
+        link: vite/performance-optimization
+  - text: 第五部分：Rollup 与库构建
+    items:
+      - text: 42. Rollup 设计理念
+        link: rollup/design-philosophy
+      - text: 43. Rollup 打包原理
+        link: rollup/bundling-internals
+      - text: 44. Rollup 插件机制
+        link: rollup/plugin-mechanism
+      - text: 45. Rollup 插件开发
+        link: rollup/plugin-development
+      - text: 46. 库构建最佳实践
+        link: rollup/library-bundling
+      - text: 47. 多格式输出策略
+        link: rollup/multi-format-output
+      - text: 48. Tree Shaking 原理详解
+        link: rollup/tree-shaking
+  - text: 第六部分：新一代编译工具
+    items:
+      - text: 49. esbuild 架构设计
+        link: new-tools/esbuild-architecture
+      - text: 50. esbuild 为何如此快
+        link: new-tools/esbuild-performance
+      - text: 51. esbuild 插件开发
+        link: new-tools/esbuild-plugins
+      - text: 52. SWC 架构设计
+        link: new-tools/swc-architecture
+      - text: 53. SWC 插件开发
+        link: new-tools/swc-plugins
+      - text: 54. Turbopack 设计理念
+        link: new-tools/turbopack-design
+      - text: 55. Rspack 架构分析
+        link: new-tools/rspack-architecture
+      - text: 56. 构建工具选型决策
+        link: new-tools/tool-selection
+  - text: 第七部分：编译与转译
+    items:
+      - text: 57. Babel 架构设计
+        link: compilation/babel-architecture
+      - text: 58. Babel 解析器原理
+        link: compilation/babel-parser
+      - text: 59. AST 详解与操作
+        link: compilation/ast-deep-dive
+      - text: 60. Babel 插件开发基础
+        link: compilation/babel-plugin-basics
+      - text: 61. Babel 插件开发进阶
+        link: compilation/babel-plugin-advanced
+      - text: 62. Babel 预设配置策略
+        link: compilation/babel-presets
+      - text: 63. Polyfill 策略详解
+        link: compilation/polyfill-strategies
+      - text: 64. TypeScript 编译器原理
+        link: compilation/typescript-compiler
+      - text: 65. PostCSS 架构与插件
+        link: compilation/postcss-architecture
+      - text: 66. Tailwind CSS 编译原理
+        link: compilation/tailwind-internals
+  - text: 第八部分：开发体验工程
+    items:
+      - text: 67. 开发服务器架构设计
+        link: dev-experience/dev-server-design
+      - text: 68. 热模块替换完整原理
+        link: dev-experience/hmr-complete
+      - text: 69. Source Map 规范与原理
+        link: dev-experience/source-map-spec
+      - text: 70. Source Map 调试技巧
+        link: dev-experience/source-map-debugging
+      - text: 71. 代理配置与跨域处理
+        link: dev-experience/proxy-cors
+      - text: 72. Mock 服务架构设计
+        link: dev-experience/mock-architecture
+      - text: 73. 多环境配置管理
+        link: dev-experience/multi-environment
+  - text: 第九部分：构建优化
+    items:
+      - text: 74. Bundle 分析方法论
+        link: optimization/bundle-analysis
+      - text: 75. 代码分割策略详解
+        link: optimization/code-splitting
+      - text: 76. 懒加载与预加载
+        link: optimization/lazy-preload
+      - text: 77. Tree Shaking 优化技巧
+        link: optimization/tree-shaking-tips
+      - text: 78. Scope Hoisting 原理
+        link: optimization/scope-hoisting
+      - text: 79. 资源压缩与优化
+        link: optimization/asset-optimization
+      - text: 80. 缓存策略设计
+        link: optimization/caching-strategies
+      - text: 81. 构建速度优化
+        link: optimization/build-speed
+      - text: 82. 构建缓存机制
+        link: optimization/build-cache
+      - text: 83. 增量构建实现
+        link: optimization/incremental-build
+  - text: 第十部分：实战与总结
+    items:
+      - text: 84. 实战：从零实现一个打包器
+        link: practice/mini-bundler
+      - text: 85. 实战：自定义 Webpack Loader
+        link: practice/custom-loader
+      - text: 86. 实战：自定义 Vite 插件
+        link: practice/custom-vite-plugin
+      - text: 87. 实战：构建配置抽象
+        link: practice/config-abstraction
+      - text: 88. 总结：构建工具的未来趋势
+        link: practice/future-trends

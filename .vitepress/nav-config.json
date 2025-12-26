@@ -8,14 +8,12 @@
           "label": "🚀 进阶实战",
           "books": [
             { "title": "浏览器工作原理", "dirName": "browser-principles" },
-            { "title": "设计模式与架构", "dirName": "design-patterns" },
             { "title": "前端性能优化", "dirName": "performance" }
           ]
         },
         {
           "label": "📦 源码解读",
           "books": [
-            { "title": "jQuery 源码", "dirName": "jquery" },
             { "title": "V8 引擎", "dirName": "v8-engine" }
           ]
         },
@@ -34,7 +32,8 @@
             { "title": "Mini-Acorn.js", "dirName": "mini-acornjs" },
             { "title": "Mini-Rollup", "dirName": "mini-rollup" },
             { "title": "Mini-Vite", "dirName": "mini-vite" },
-            { "title": "Mini-Webpack", "dirName": "mini-webpack" }
+            { "title": "Mini-Webpack5", "dirName": "mini-webpack5" },
+            { "title": "Mini-Vitest", "dirName": "mini-vitest" }
           ]
         },
         {
@@ -45,8 +44,7 @@
             { "title": "Mini-Lodash", "dirName": "mini-lodash" },
             { "title": "Mini-Path-to-RegExp", "dirName": "mini-path-to-regexp" },
             { "title": "Mini-Ramda.js", "dirName": "mini-ramda" },
-            { "title": "Mini-RxJS", "dirName": "mini-rxjs" },
-            { "title": "Mini-Zod", "dirName": "mini-zod" }
+            { "title": "Mini-RxJS", "dirName": "mini-rxjs" }
           ]
         },
         {
@@ -54,7 +52,7 @@
           "books": [
             { "title": "Mini-GSAP", "dirName": "mini-gsap" },
             { "title": "Mini-Hammer.js", "dirName": "mini-hammer" },
-            { "title": "Mini-Zepto.js", "dirName": "mini-zepto" }
+            { "title": "Mini-jQuery", "dirName": "mini-jquery" }
           ]
         },
         {
@@ -70,6 +68,42 @@
           "books": [
             { "title": "Mini-React", "dirName": "mini-react" },
             { "title": "Mini-Redux", "dirName": "mini-redux" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "label": "架构与设计",
+      "groups": [
+        {
+          "label": "📖 设计基础",
+          "books": [
+            { "title": "设计原则与 TypeScript", "dirName": "01-design-principles-typescript" },
+            { "title": "前端设计模式详解", "dirName": "02-design-patterns" },
+            { "title": "函数式编程与架构", "dirName": "03-functional-architecture-patterns" }
+          ]
+        },
+        {
+          "label": "🔧 工程化进阶",
+          "books": [
+            { "title": "构建工具原理与实践", "dirName": "04-build-tools" },
+            { "title": "代码质量与测试工程", "dirName": "05-quality-testing" }
+          ]
+        },
+        {
+          "label": "🎨 组件与系统设计",
+          "books": [
+            { "title": "组件设计原理与实践", "dirName": "06-component-design" },
+            { "title": "设计系统完整构建", "dirName": "07-design-system" }
+          ]
+        },
+        {
+          "label": "🏗️ 架构师进阶",
+          "books": [
+            { "title": "大规模前端系统架构", "dirName": "08-large-scale-systems" },
+            { "title": "技术领导力与团队", "dirName": "09-technical-leadership" },
+            { "title": "架构师实战与案例", "dirName": "10-architect-practice" }
           ]
         }
       ]
@@ -119,8 +153,7 @@
           "label": "🎯 Mini 系列",
           "books": [
             { "title": "Mini-NPM", "dirName": "mini-npm" },
-            { "title": "Mini-Sentry", "dirName": "mini-sentry" },
-            { "title": "Mini-Vitest", "dirName": "mini-vitest" }
+            { "title": "Mini-Sentry", "dirName": "mini-sentry" }
           ]
         }
       ]

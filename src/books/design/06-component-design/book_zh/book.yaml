@@ -1,0 +1,203 @@
+title: 组件设计原理与实践
+description: 掌握组件设计的核心原则，设计高质量、可复用的前端组件。
+toc:
+  - text: 序言
+    link: index
+  - text: 第一部分：组件化基础
+    items:
+      - text: 1. 组件化思想的演进
+        link: foundations/componentization-evolution
+      - text: 2. 组件的本质：封装、复用与组合
+        link: foundations/component-essence
+      - text: 3. 原子设计方法论
+        link: foundations/atomic-design
+      - text: 4. 组件分类体系：基础、业务、布局
+        link: foundations/component-taxonomy
+      - text: 5. 展示组件与容器组件
+        link: foundations/presentational-container
+      - text: 6. 组件设计的 SOLID 原则
+        link: foundations/solid-for-components
+      - text: 7. 组合优于继承
+        link: foundations/composition-over-inheritance
+  - text: 第二部分：Props 设计
+    items:
+      - text: 8. Props 设计原则概述
+        link: props/props-principles
+      - text: 9. Props 命名规范
+        link: props/naming-conventions
+      - text: 10. Props 类型设计
+        link: props/type-design
+      - text: 11. 必选与可选的选择
+        link: props/required-optional
+      - text: 12. 默认值策略
+        link: props/default-values
+      - text: 13. Props 验证与运行时检查
+        link: props/validation
+      - text: 14. 布尔型 Props 设计
+        link: props/boolean-props
+      - text: 15. 回调函数 Props 设计
+        link: props/callback-props
+      - text: 16. 样式相关 Props 设计
+        link: props/style-props
+  - text: 第三部分：事件与通信
+    items:
+      - text: 17. 组件事件设计原则
+        link: events/event-principles
+      - text: 18. 事件命名规范
+        link: events/naming-conventions
+      - text: 19. 事件参数设计
+        link: events/event-parameters
+      - text: 20. 事件冒泡与委托
+        link: events/bubbling-delegation
+      - text: 21. 跨组件通信模式
+        link: events/cross-component-communication
+      - text: 22. Context/Provide-Inject 机制
+        link: events/context-provide-inject
+      - text: 23. 事件总线模式
+        link: events/event-bus
+  - text: 第四部分：内容分发
+    items:
+      - text: 24. 插槽设计概述
+        link: slots/slots-overview
+      - text: 25. 默认插槽设计
+        link: slots/default-slots
+      - text: 26. 具名插槽设计
+        link: slots/named-slots
+      - text: 27. 作用域插槽设计
+        link: slots/scoped-slots
+      - text: 28. Render Props 模式
+        link: slots/render-props
+      - text: 29. Children 与 Slots 对比
+        link: slots/children-vs-slots
+      - text: 30. 插槽 vs Props：选择策略
+        link: slots/slots-vs-props
+  - text: 第五部分：高级组件模式
+    items:
+      - text: 31. 复合组件模式
+        link: advanced-patterns/compound-components
+      - text: 32. 复合组件实现技巧
+        link: advanced-patterns/compound-implementation
+      - text: 33. Headless 组件设计
+        link: advanced-patterns/headless-components
+      - text: 34. Headless UI 库解析：Radix UI
+        link: advanced-patterns/radix-ui-analysis
+      - text: 35. Headless UI 库解析：Headless UI
+        link: advanced-patterns/headlessui-analysis
+      - text: 36. 多态组件：as 属性设计
+        link: advanced-patterns/polymorphic-components
+      - text: 37. 泛型组件设计
+        link: advanced-patterns/generic-components
+      - text: 38. Ref 转发与命令式 API
+        link: advanced-patterns/ref-forwarding
+      - text: 39. 高阶组件 (HOC)
+        link: advanced-patterns/higher-order-components
+  - text: 第六部分：组件状态设计
+    items:
+      - text: 40. 组件状态设计原则
+        link: state/state-principles
+      - text: 41. 局部状态 vs 提升状态
+        link: state/local-vs-lifted
+      - text: 42. 受控组件设计
+        link: state/controlled-components
+      - text: 43. 非受控组件设计
+        link: state/uncontrolled-components
+      - text: 44. 半受控组件：灵活的控制权
+        link: state/semi-controlled
+      - text: 45. 状态机驱动的组件
+        link: state/state-machine-driven
+      - text: 46. XState 在组件中的应用
+        link: state/xstate-components
+      - text: 47. 异步状态处理
+        link: state/async-state
+  - text: 第七部分：Hooks 设计模式
+    items:
+      - text: 48. 自定义 Hooks 设计原则
+        link: hooks/hooks-principles
+      - text: 49. 状态逻辑抽取
+        link: hooks/state-logic-extraction
+      - text: 50. 副作用管理
+        link: hooks/effect-management
+      - text: 51. Hooks 组合模式
+        link: hooks/hooks-composition
+      - text: 52. Hooks 与依赖注入
+        link: hooks/hooks-di
+      - text: 53. 常见 Hooks 模式库解析
+        link: hooks/hooks-library-analysis
+      - text: 54. Hooks 测试策略
+        link: hooks/hooks-testing
+  - text: 第八部分：表单组件设计
+    items:
+      - text: 55. 表单架构设计概述
+        link: forms/form-architecture
+      - text: 56. 表单数据流设计
+        link: forms/form-data-flow
+      - text: 57. 表单验证架构
+        link: forms/validation-architecture
+      - text: 58. Input 组件设计
+        link: forms/input-component
+      - text: 59. Select 组件设计
+        link: forms/select-component
+      - text: 60. Checkbox/Radio 设计
+        link: forms/checkbox-radio
+      - text: 61. DatePicker 设计
+        link: forms/datepicker
+      - text: 62. Upload 组件设计
+        link: forms/upload-component
+      - text: 63. FormItem 布局组件
+        link: forms/form-item
+      - text: 64. 动态表单设计
+        link: forms/dynamic-forms
+  - text: 第九部分：复杂组件设计
+    items:
+      - text: 65. 虚拟滚动组件设计
+        link: complex/virtual-scroll
+      - text: 66. Table 组件架构
+        link: complex/table-architecture
+      - text: 67. Table 高级功能设计
+        link: complex/table-advanced
+      - text: 68. Tree 组件设计
+        link: complex/tree-component
+      - text: 69. Modal/Drawer 弹层组件
+        link: complex/modal-drawer
+      - text: 70. Popover/Tooltip 悬浮组件
+        link: complex/popover-tooltip
+      - text: 71. Menu 菜单组件设计
+        link: complex/menu-component
+      - text: 72. Tabs 标签组件设计
+        link: complex/tabs-component
+      - text: 73. Toast/Notification 通知组件
+        link: complex/notification
+      - text: 74. 拖拽组件设计
+        link: complex/drag-drop
+  - text: 第十部分：组件质量
+    items:
+      - text: 75. 组件错误边界设计
+        link: quality/error-boundaries
+      - text: 76. 组件可访问性基础
+        link: quality/accessibility-basics
+      - text: 77. 组件性能优化
+        link: quality/performance-optimization
+      - text: 78. 组件单元测试
+        link: quality/unit-testing
+      - text: 79. 组件集成测试
+        link: quality/integration-testing
+  - text: 第十一部分：API 演进
+    items:
+      - text: 80. API 版本管理策略
+        link: evolution/versioning-strategy
+      - text: 81. 废弃 API 处理
+        link: evolution/deprecation-handling
+      - text: 82. Breaking Change 管理
+        link: evolution/breaking-changes
+      - text: 83. API 文档设计
+        link: evolution/api-documentation
+  - text: 第十二部分：实战与总结
+    items:
+      - text: 84. 实战：设计一个 Button 组件
+        link: practice/button-design
+      - text: 85. 实战：设计一个 Form 组件
+        link: practice/form-design
+      - text: 86. 实战：设计一个 Table 组件
+        link: practice/table-design
+      - text: 87. 总结：组件设计能力体系
+        link: practice/component-design-skills

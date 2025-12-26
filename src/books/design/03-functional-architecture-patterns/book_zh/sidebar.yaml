@@ -1,0 +1,172 @@
+- text: 序言
+  link: index
+- text: 第一部分：函数式编程基础
+  collapsed: false
+  items:
+    - text: 函数式编程概述：范式与思维方式
+      link: fp-basics/fp-overview
+    - text: 纯函数：无副作用的计算
+      link: fp-basics/pure-functions
+    - text: 不可变性：数据的安全保障
+      link: fp-basics/immutability
+    - text: Immutable.js 与 Immer 对比
+      link: fp-basics/immutable-libraries
+    - text: 一等函数：函数作为值
+      link: fp-basics/first-class-functions
+    - text: 高阶函数：函数的抽象与复用
+      link: fp-basics/higher-order-functions
+    - text: 闭包与作用域链
+      link: fp-basics/closures-scope
+- text: 第二部分：函数式高级技术
+  collapsed: false
+  items:
+    - text: 柯里化：参数的分步传递
+      link: fp-advanced/currying
+    - text: 偏应用：固定部分参数
+      link: fp-advanced/partial-application
+    - text: 函数组合：compose 与 pipe
+      link: fp-advanced/function-composition
+    - text: Point-Free 风格
+      link: fp-advanced/point-free
+    - text: 惰性求值与惰性序列
+      link: fp-advanced/lazy-evaluation
+    - text: 递归与尾调用优化
+      link: fp-advanced/recursion-tail-call
+    - text: Transducer：高效的数据转换
+      link: fp-advanced/transducers
+- text: 第三部分：函数式抽象
+  collapsed: false
+  items:
+    - text: Functor：可映射的容器
+      link: fp-abstractions/functor
+    - text: Applicative Functor
+      link: fp-abstractions/applicative
+    - text: Monad：可链式操作的容器
+      link: fp-abstractions/monad
+    - text: Maybe Monad：空值的优雅处理
+      link: fp-abstractions/maybe-monad
+    - text: Either Monad：错误处理的函数式方案
+      link: fp-abstractions/either-monad
+    - text: IO Monad：副作用的隔离
+      link: fp-abstractions/io-monad
+    - text: Task/Future：异步的函数式处理
+      link: fp-abstractions/task-future
+    - text: Lens：不可变数据的优雅操作
+      link: fp-abstractions/lens-optics
+    - text: fp-ts 库实战
+      link: fp-abstractions/fp-ts-practice
+- text: 第四部分：架构模式演进
+  collapsed: false
+  items:
+    - text: 前端架构的演进历程
+      link: architecture-evolution/evolution-history
+    - text: MVC 模式：经典的三层分离
+      link: architecture-evolution/mvc-pattern
+    - text: MVP 模式：视图与逻辑的解耦
+      link: architecture-evolution/mvp-pattern
+    - text: MVVM 模式：数据绑定的理念
+      link: architecture-evolution/mvvm-pattern
+    - text: MVC vs MVP vs MVVM 对比分析
+      link: architecture-evolution/mvc-mvp-mvvm-comparison
+- text: 第五部分：单向数据流架构
+  collapsed: false
+  items:
+    - text: Flux 架构：单向数据流的起源
+      link: unidirectional/flux-architecture
+    - text: Redux 核心概念详解
+      link: unidirectional/redux-concepts
+    - text: Redux 源码解析
+      link: unidirectional/redux-source-code
+    - text: Redux 中间件原理
+      link: unidirectional/redux-middleware
+    - text: Redux Toolkit 最佳实践
+      link: unidirectional/redux-toolkit
+    - text: Redux 异步方案对比：Thunk vs Saga vs Observable
+      link: unidirectional/redux-async-comparison
+- text: 第六部分：响应式架构
+  collapsed: false
+  items:
+    - text: 响应式编程概述
+      link: reactive/reactive-overview
+    - text: MobX 核心原理
+      link: reactive/mobx-principles
+    - text: MobX 源码解析：响应式系统
+      link: reactive/mobx-source-code
+    - text: RxJS 基础：Observable 与 Operator
+      link: reactive/rxjs-basics
+    - text: RxJS 操作符分类详解
+      link: reactive/rxjs-operators
+    - text: RxJS 实战：复杂异步场景
+      link: reactive/rxjs-practice
+    - text: 响应式状态管理对比
+      link: reactive/reactive-state-comparison
+- text: 第七部分：现代状态管理
+  collapsed: false
+  items:
+    - text: Zustand 设计理念与实现
+      link: modern-state/zustand-design
+    - text: Jotai 原子化状态管理
+      link: modern-state/jotai-atomic
+    - text: Recoil 数据流图模型
+      link: modern-state/recoil-data-flow
+    - text: Valtio 代理状态管理
+      link: modern-state/valtio-proxy
+    - text: 状态管理方案选型决策
+      link: modern-state/selection-guide
+- text: 第八部分：高级架构模式
+  collapsed: false
+  items:
+    - text: Clean Architecture 概述
+      link: advanced-patterns/clean-architecture-overview
+    - text: Clean Architecture 在前端的实践
+      link: advanced-patterns/clean-architecture-frontend
+    - text: 领域驱动设计 (DDD) 核心概念
+      link: advanced-patterns/ddd-concepts
+    - text: DDD 战略设计：限界上下文
+      link: advanced-patterns/ddd-bounded-context
+    - text: DDD 战术设计：实体、值对象、聚合
+      link: advanced-patterns/ddd-tactical
+    - text: DDD 在前端的落地实践
+      link: advanced-patterns/ddd-frontend-practice
+    - text: CQRS 模式：读写分离
+      link: advanced-patterns/cqrs-pattern
+    - text: Event Sourcing：事件溯源
+      link: advanced-patterns/event-sourcing
+- text: 第九部分：代码组织与模块化
+  collapsed: false
+  items:
+    - text: 目录结构设计原则
+      link: code-organization/directory-principles
+    - text: 按功能组织 vs 按层次组织
+      link: code-organization/feature-vs-layer
+    - text: 领域驱动的目录结构
+      link: code-organization/domain-driven-structure
+    - text: 模块的内聚性与耦合性
+      link: code-organization/module-cohesion-coupling
+    - text: 模块边界与接口设计
+      link: code-organization/module-boundaries
+    - text: 依赖注入原理
+      link: code-organization/di-principles
+    - text: 依赖注入容器实现
+      link: code-organization/di-container
+    - text: InversifyJS 实战
+      link: code-organization/inversify-practice
+    - text: 分层架构设计
+      link: code-organization/layered-architecture
+    - text: 六边形架构在前端的应用
+      link: code-organization/hexagonal-architecture
+- text: 第十部分：架构演进与实战
+  collapsed: false
+  items:
+    - text: 架构演进的时机与策略
+      link: evolution/architecture-evolution-timing
+    - text: 渐进式架构迁移
+      link: evolution/progressive-migration
+    - text: Strangler Fig 模式
+      link: evolution/strangler-pattern
+    - text: 实战：从 MVC 到 Clean Architecture
+      link: practice/mvc-to-clean
+    - text: 实战：企业级应用架构设计
+      link: practice/enterprise-architecture
+    - text: 总结：选择适合的架构模式
+      link: practice/choosing-architecture

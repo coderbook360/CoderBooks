@@ -1,0 +1,253 @@
+- text: 序言
+  link: index
+- text: 第一部分：性能工程基础
+  collapsed: false
+  items:
+    - text: 性能指标体系：Core Web Vitals
+      link: performance-fundamentals/core-web-vitals
+    - text: 性能度量：LCP、FID、CLS 详解
+      link: performance-fundamentals/lcp-fid-cls
+    - text: 性能预算制定
+      link: performance-fundamentals/performance-budget
+    - text: 性能分析工具链
+      link: performance-fundamentals/profiling-tools
+    - text: Chrome DevTools 性能分析
+      link: performance-fundamentals/devtools-performance
+    - text: Lighthouse 深度使用
+      link: performance-fundamentals/lighthouse
+- text: 第二部分：加载性能优化
+  collapsed: false
+  items:
+    - text: 资源加载优化概述
+      link: loading-performance/overview
+    - text: 代码分割策略
+      link: loading-performance/code-splitting
+    - text: 动态导入与懒加载
+      link: loading-performance/dynamic-import
+    - text: 预加载与预获取
+      link: loading-performance/preload-prefetch
+    - text: 资源优先级控制
+      link: loading-performance/resource-priority
+    - text: Critical CSS 提取
+      link: loading-performance/critical-css
+    - text: 字体加载优化
+      link: loading-performance/font-loading
+    - text: 图片加载优化
+      link: loading-performance/image-optimization
+    - text: 现代图片格式：WebP、AVIF
+      link: loading-performance/modern-image-formats
+    - text: 脚本加载策略：async vs defer
+      link: loading-performance/script-loading
+- text: 第三部分：运行时性能优化
+  collapsed: false
+  items:
+    - text: JavaScript 执行性能
+      link: runtime-performance/js-execution
+    - text: 渲染性能优化
+      link: runtime-performance/rendering
+    - text: 布局抖动与重排优化
+      link: runtime-performance/layout-thrashing
+    - text: 虚拟滚动实现
+      link: runtime-performance/virtual-scrolling
+    - text: 长列表优化策略
+      link: runtime-performance/long-list-optimization
+    - text: Web Worker 多线程
+      link: runtime-performance/web-workers
+    - text: requestIdleCallback 应用
+      link: runtime-performance/idle-callback
+    - text: 时间分片技术
+      link: runtime-performance/time-slicing
+- text: 第四部分：内存与网络优化
+  collapsed: false
+  items:
+    - text: 内存管理基础
+      link: memory-network/memory-basics
+    - text: 内存泄漏检测与修复
+      link: memory-network/memory-leak-detection
+    - text: 垃圾回收与性能
+      link: memory-network/garbage-collection
+    - text: HTTP 缓存策略
+      link: memory-network/http-caching
+    - text: Service Worker 缓存
+      link: memory-network/service-worker-caching
+    - text: CDN 优化策略
+      link: memory-network/cdn-optimization
+    - text: HTTP/2 与 HTTP/3 优化
+      link: memory-network/http2-http3
+    - text: 资源压缩策略
+      link: memory-network/compression
+- text: 第五部分：框架层性能优化
+  collapsed: false
+  items:
+    - text: React 性能优化原理
+      link: framework-performance/react-optimization-principles
+    - text: React 组件优化策略
+      link: framework-performance/react-component-optimization
+    - text: React 状态管理性能
+      link: framework-performance/react-state-performance
+    - text: React Concurrent 特性
+      link: framework-performance/react-concurrent
+    - text: Vue 响应式性能优化
+      link: framework-performance/vue-reactivity-performance
+    - text: Vue 编译优化机制
+      link: framework-performance/vue-compiler-optimization
+- text: 第六部分：微前端基础
+  collapsed: false
+  items:
+    - text: 微前端架构概述
+      link: micro-frontends/overview
+    - text: 微前端解决的问题
+      link: micro-frontends/problems-solved
+    - text: 微前端技术方案对比
+      link: micro-frontends/solution-comparison
+    - text: 微前端拆分策略
+      link: micro-frontends/splitting-strategy
+    - text: 应用隔离机制
+      link: micro-frontends/isolation
+- text: 第七部分：微前端框架实战
+  collapsed: false
+  items:
+    - text: qiankun 架构解析
+      link: micro-frontends-frameworks/qiankun-architecture
+    - text: qiankun 实战配置
+      link: micro-frontends-frameworks/qiankun-practice
+    - text: Module Federation 原理
+      link: micro-frontends-frameworks/module-federation-principle
+    - text: Module Federation 实战
+      link: micro-frontends-frameworks/module-federation-practice
+    - text: single-spa 核心机制
+      link: micro-frontends-frameworks/single-spa
+    - text: Garfish 架构详解
+      link: micro-frontends-frameworks/garfish
+    - text: 无界 (Wujie) 沙箱原理
+      link: micro-frontends-frameworks/wujie
+    - text: 微前端框架选型
+      link: micro-frontends-frameworks/framework-selection
+- text: 第八部分：微前端高级话题
+  collapsed: false
+  items:
+    - text: JS 沙箱实现原理
+      link: micro-frontends-advanced/js-sandbox
+    - text: CSS 沙箱实现方案
+      link: micro-frontends-advanced/css-sandbox
+    - text: 子应用通信机制
+      link: micro-frontends-advanced/communication
+    - text: 共享依赖管理
+      link: micro-frontends-advanced/shared-dependencies
+    - text: 路由同步方案
+      link: micro-frontends-advanced/routing-sync
+    - text: 微前端部署策略
+      link: micro-frontends-advanced/deployment
+    - text: 微前端性能优化
+      link: micro-frontends-advanced/performance
+- text: 第九部分：前端监控基础
+  collapsed: false
+  items:
+    - text: 前端监控体系概述
+      link: monitoring/overview
+    - text: 监控数据采集架构
+      link: monitoring/data-collection
+    - text: 性能监控实现
+      link: monitoring/performance-monitoring
+    - text: 错误监控实现
+      link: monitoring/error-monitoring
+    - text: 用户行为监控
+      link: monitoring/behavior-monitoring
+    - text: 监控数据上报策略
+      link: monitoring/data-reporting
+- text: 第十部分：可观测性建设
+  collapsed: false
+  items:
+    - text: 可观测性三支柱
+      link: observability/three-pillars
+    - text: 日志系统设计
+      link: observability/logging
+    - text: 全链路追踪实现
+      link: observability/tracing
+    - text: Metrics 指标体系
+      link: observability/metrics
+    - text: 告警系统设计
+      link: observability/alerting
+    - text: Sentry 深度实战
+      link: observability/sentry
+    - text: 监控大盘设计
+      link: observability/dashboard
+- text: 第十一部分：前端安全基础
+  collapsed: false
+  items:
+    - text: 前端安全概述
+      link: security/overview
+    - text: XSS 攻击原理与防护
+      link: security/xss
+    - text: CSRF 攻击原理与防护
+      link: security/csrf
+    - text: 点击劫持防护
+      link: security/clickjacking
+    - text: CSP 策略配置
+      link: security/csp
+    - text: 安全 HTTP 响应头
+      link: security/security-headers
+- text: 第十二部分：前端安全进阶
+  collapsed: false
+  items:
+    - text: 敏感数据保护
+      link: security-advanced/sensitive-data
+    - text: 接口安全设计
+      link: security-advanced/api-security
+    - text: 依赖安全审计
+      link: security-advanced/dependency-audit
+    - text: 供应链安全
+      link: security-advanced/supply-chain
+    - text: 前端加密实践
+      link: security-advanced/encryption
+    - text: 安全编码规范
+      link: security-advanced/secure-coding
+- text: 第十三部分：服务端渲染基础
+  collapsed: false
+  items:
+    - text: SSR 架构原理
+      link: ssr/architecture
+    - text: SSR vs CSR vs SSG
+      link: ssr/ssr-csr-ssg
+    - text: Hydration 机制详解
+      link: ssr/hydration
+    - text: React SSR 实现
+      link: ssr/react-ssr
+    - text: Vue SSR 实现
+      link: ssr/vue-ssr
+- text: 第十四部分：服务端渲染进阶
+  collapsed: false
+  items:
+    - text: Next.js 架构解析
+      link: ssr-advanced/nextjs-architecture
+    - text: Next.js App Router
+      link: ssr-advanced/nextjs-app-router
+    - text: Nuxt.js 架构解析
+      link: ssr-advanced/nuxtjs-architecture
+    - text: 流式渲染实现
+      link: ssr-advanced/streaming-rendering
+    - text: Selective Hydration
+      link: ssr-advanced/selective-hydration
+    - text: Islands Architecture
+      link: ssr-advanced/islands-architecture
+    - text: SSR 性能优化
+      link: ssr-advanced/ssr-performance
+    - text: SSR 缓存策略
+      link: ssr-advanced/ssr-caching
+- text: 第十五部分：大规模系统实战
+  collapsed: false
+  items:
+    - text: 实战：千万级 PV 系统架构
+      link: practice/high-pv-architecture
+    - text: 实战：性能优化完整案例
+      link: practice/performance-case-study
+    - text: 实战：微前端落地经验
+      link: practice/micro-frontend-landing
+    - text: 实战：监控体系建设
+      link: practice/monitoring-implementation
+    - text: 容灾降级方案设计
+      link: practice/disaster-recovery
+    - text: 灰度发布策略
+      link: practice/gray-release
+    - text: 总结：大规模系统架构原则
+      link: practice/architecture-principles

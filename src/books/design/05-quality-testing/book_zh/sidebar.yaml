@@ -1,0 +1,240 @@
+- text: 序言
+  link: index
+- text: 第一部分：代码质量体系
+  collapsed: false
+  items:
+    - text: 代码质量的定义与度量
+      link: quality-system/quality-definition
+    - text: 代码质量指标体系设计
+      link: quality-system/quality-metrics
+    - text: 技术债务的识别与量化
+      link: quality-system/technical-debt
+    - text: 代码质量改进策略
+      link: quality-system/improvement-strategy
+- text: 第二部分：ESLint 深度解析
+  collapsed: false
+  items:
+    - text: ESLint 架构设计
+      link: eslint/architecture
+    - text: ESLint 规则引擎原理
+      link: eslint/rule-engine
+    - text: ESLint 解析器详解
+      link: eslint/parsers
+    - text: ESLint 规则开发基础
+      link: eslint/rule-development-basics
+    - text: ESLint 规则开发进阶
+      link: eslint/rule-development-advanced
+    - text: ESLint 共享配置设计
+      link: eslint/shared-config
+    - text: ESLint 插件开发实战
+      link: eslint/plugin-development
+    - text: ESLint Flat Config 详解
+      link: eslint/flat-config
+- text: 第三部分：TypeScript 工程化
+  collapsed: false
+  items:
+    - text: TypeScript 编译配置详解
+      link: typescript/tsconfig-deep-dive
+    - text: TypeScript 严格模式策略
+      link: typescript/strict-mode
+    - text: TypeScript 类型检查优化
+      link: typescript/type-checking-optimization
+    - text: TypeScript 增量编译
+      link: typescript/incremental-compilation
+    - text: TypeScript 项目引用
+      link: typescript/project-references
+    - text: TypeScript 与 ESLint 集成
+      link: typescript/eslint-integration
+- text: 第四部分：代码风格与规范
+  collapsed: false
+  items:
+    - text: Prettier 原理与配置
+      link: formatting/prettier-internals
+    - text: Prettier 与 ESLint 协作
+      link: formatting/prettier-eslint
+    - text: Stylelint 配置与实践
+      link: formatting/stylelint
+    - text: EditorConfig 统一编辑器配置
+      link: formatting/editorconfig
+    - text: 代码风格规范设计
+      link: formatting/style-guide-design
+    - text: 代码复杂度分析
+      link: formatting/complexity-analysis
+    - text: 代码重复检测
+      link: formatting/duplication-detection
+- text: 第五部分：Git 工作流与自动化
+  collapsed: false
+  items:
+    - text: Git Hooks 机制详解
+      link: git-workflow/git-hooks
+    - text: Husky 配置与使用
+      link: git-workflow/husky
+    - text: lint-staged 增量检查
+      link: git-workflow/lint-staged
+    - text: Commitlint 提交规范
+      link: git-workflow/commitlint
+    - text: Conventional Commits 规范
+      link: git-workflow/conventional-commits
+    - text: Changelog 自动生成
+      link: git-workflow/changelog-generation
+    - text: 语义化版本控制
+      link: git-workflow/semantic-versioning
+- text: 第六部分：测试策略与基础
+  collapsed: false
+  items:
+    - text: 前端测试策略概述
+      link: testing-fundamentals/testing-strategy
+    - text: 测试金字塔与测试钻石
+      link: testing-fundamentals/test-pyramid
+    - text: 测试类型与适用场景
+      link: testing-fundamentals/test-types
+    - text: 测试驱动开发 (TDD)
+      link: testing-fundamentals/tdd
+    - text: 行为驱动开发 (BDD)
+      link: testing-fundamentals/bdd
+    - text: 测试覆盖率详解
+      link: testing-fundamentals/coverage
+- text: 第七部分：Jest 深度解析
+  collapsed: false
+  items:
+    - text: Jest 架构设计
+      link: jest/architecture
+    - text: Jest 配置详解
+      link: jest/configuration
+    - text: Jest 匹配器系统
+      link: jest/matchers
+    - text: Jest Mock 机制
+      link: jest/mocking
+    - text: Jest 异步测试
+      link: jest/async-testing
+    - text: Jest 快照测试
+      link: jest/snapshot-testing
+    - text: Jest 并行与隔离
+      link: jest/parallelization
+    - text: Jest 自定义匹配器
+      link: jest/custom-matchers
+    - text: Jest 性能优化
+      link: jest/performance
+- text: 第八部分：Vitest 与现代测试
+  collapsed: false
+  items:
+    - text: Vitest 设计理念
+      link: vitest/design-philosophy
+    - text: Vitest 配置与迁移
+      link: vitest/configuration-migration
+    - text: Vitest 与 Vite 集成
+      link: vitest/vite-integration
+    - text: Vitest 浏览器模式
+      link: vitest/browser-mode
+    - text: Vitest 组件测试
+      link: vitest/component-testing
+- text: 第九部分：组件测试
+  collapsed: false
+  items:
+    - text: 组件测试原则
+      link: component-testing/testing-principles
+    - text: Testing Library 核心理念
+      link: component-testing/testing-library-philosophy
+    - text: React Testing Library 实战
+      link: component-testing/react-testing-library
+    - text: Vue Testing Library 实战
+      link: component-testing/vue-testing-library
+    - text: 用户事件模拟
+      link: component-testing/user-events
+    - text: 异步组件测试
+      link: component-testing/async-components
+    - text: Hooks 测试策略
+      link: component-testing/hooks-testing
+    - text: 组件 Mock 策略
+      link: component-testing/component-mocking
+- text: 第十部分：E2E 测试
+  collapsed: false
+  items:
+    - text: E2E 测试策略
+      link: e2e/e2e-strategy
+    - text: Playwright 架构设计
+      link: e2e/playwright-architecture
+    - text: Playwright 定位器详解
+      link: e2e/playwright-locators
+    - text: Playwright 交互操作
+      link: e2e/playwright-interactions
+    - text: Playwright 断言与等待
+      link: e2e/playwright-assertions
+    - text: Playwright 网络拦截
+      link: e2e/playwright-network
+    - text: Playwright 视觉测试
+      link: e2e/playwright-visual
+    - text: Playwright 最佳实践
+      link: e2e/playwright-best-practices
+    - text: Cypress 核心概念
+      link: e2e/cypress-core
+    - text: Cypress vs Playwright 对比
+      link: e2e/cypress-playwright-comparison
+- text: 第十一部分：视觉回归测试
+  collapsed: false
+  items:
+    - text: 视觉回归测试概述
+      link: visual-testing/overview
+    - text: Chromatic 实战
+      link: visual-testing/chromatic
+    - text: Percy 实战
+      link: visual-testing/percy
+    - text: 本地视觉回归方案
+      link: visual-testing/local-visual-testing
+    - text: 视觉测试最佳实践
+      link: visual-testing/best-practices
+- text: 第十二部分：CI/CD 工程
+  collapsed: false
+  items:
+    - text: CI/CD 架构设计原则
+      link: cicd/architecture-principles
+    - text: GitHub Actions 深度实践
+      link: cicd/github-actions
+    - text: GitHub Actions 自定义 Action
+      link: cicd/custom-actions
+    - text: GitLab CI 深度实践
+      link: cicd/gitlab-ci
+    - text: 构建流水线设计
+      link: cicd/pipeline-design
+    - text: 自动化代码审查集成
+      link: cicd/automated-review
+    - text: 测试并行化策略
+      link: cicd/test-parallelization
+    - text: 制品管理与发布
+      link: cicd/artifact-release
+- text: 第十三部分：Monorepo 工程化
+  collapsed: false
+  items:
+    - text: Monorepo 架构设计
+      link: monorepo/architecture
+    - text: Monorepo 工具对比
+      link: monorepo/tools-comparison
+    - text: Nx 核心概念
+      link: monorepo/nx-concepts
+    - text: Nx 任务编排与缓存
+      link: monorepo/nx-task-caching
+    - text: Nx 远程缓存
+      link: monorepo/nx-remote-cache
+    - text: Turborepo 核心概念
+      link: monorepo/turborepo-concepts
+    - text: Turborepo 管道配置
+      link: monorepo/turborepo-pipeline
+    - text: pnpm Workspace 详解
+      link: monorepo/pnpm-workspace
+    - text: Monorepo 依赖管理策略
+      link: monorepo/dependency-strategy
+    - text: Monorepo CI/CD 最佳实践
+      link: monorepo/cicd-practices
+    - text: Monorepo 迁移指南
+      link: monorepo/migration-guide
+- text: 第十四部分：实战与总结
+  collapsed: false
+  items:
+    - text: 实战：构建团队级质量体系
+      link: practice/team-quality-system
+    - text: 实战：测试基础设施建设
+      link: practice/test-infrastructure
+    - text: 实战：遗留项目测试改造
+      link: practice/legacy-testing
+    - text: 总结：质量工程师的能力矩阵
+      link: practice/quality-engineer-skills
