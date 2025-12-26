@@ -2,22 +2,16 @@
   "agent_name": "bo-creator",
   "file_name": "bo-creator-progress.json",
   "version": "1.0.0",
-  "last_updated": "2025-01-21T10:00:00Z",
+  "last_updated": "2025-01-21T18:00:00Z",
   "book_project": {
     "id": "mini-webpack5",
     "title": "Mini-Webpack 5：从零实现现代模块打包器",
     "language": "zh",
     "total_chapters": 162,
-    "completed_chapters": 33
+    "completed_chapters": 87
   },
   "tasks": {
     "tasks_todo": [
-      "第五部分：模块系统（第34-42章）",
-      "第六部分：模块工厂（第43-49章）",
-      "第七部分：Resolver 模块解析器（第50-60章）",
-      "第八部分：Loader 系统（第61-69章）",
-      "第九部分：Parser 语法解析器（第70-80章）",
-      "第十部分：Dependency 依赖系统（第81-87章）",
       "第十一部分：Externals 外部化系统（第88-92章）",
       "第十二部分：Chunk 代码块系统（第93-99章）",
       "第十三部分：代码分割（第100-106章）",
@@ -28,7 +22,7 @@
       "第十八部分：完整实现与整合（第146-150章）",
       "附录（第151-162章）"
     ],
-    "task_in_progress": "",
+    "task_in_progress": "第十一部分：Externals 外部化系统（第88-92章）",
     "tasks_completed": [
       "第1章：Webpack 概览与核心概念",
       "第2章：模块化发展历程：从 IIFE 到 ESM",
@@ -62,7 +56,54 @@
       "第30章：addEntry 方法：入口添加",
       "第31章：factorizeModule 方法：模块工厂化",
       "第32章：buildModule 方法：模块构建",
-      "第33章：processModuleDependencies 方法：依赖处理"
+      "第33章：processModuleDependencies 方法：依赖处理",
+      "第34章：Module 基类设计",
+      "第35章：NormalModule 实现：普通模块",
+      "第36章：模块类型与 ModuleType",
+      "第37章：模块标识符与 Identifier",
+      "第38章：模块构建流程详解",
+      "第39章：Source 与 SourceMap 处理",
+      "第40章：模块缓存机制",
+      "第41章：ContextModule 实现",
+      "第42章：ExternalModule 外部模块",
+      "第43章：NormalModuleFactory 设计",
+      "第44章：ModuleFactory Hooks 体系",
+      "第45章：create 方法实现",
+      "第46章：resolve 方法与模块解析",
+      "第47章：Loader 匹配与应用",
+      "第48章：Parser 选择与创建",
+      "第49章：Generator 选择与创建",
+      "第50章：Resolver 设计理念",
+      "第51章：enhanced-resolve 核心原理",
+      "第52章：ResolverFactory 实现",
+      "第53章：解析算法与查找策略",
+      "第54章：别名 (alias) 解析",
+      "第55章：extensions 与 mainFields 处理",
+      "第56章：resolve 配置项完整解析",
+      "第57章：exports 与 imports 字段支持",
+      "第58章：conditionNames 条件名称匹配",
+      "第59章：fallback 回退与 Node.js Polyfill",
+      "第60章：resolveLoader Loader 解析配置",
+      "第61章：Loader 设计理念与架构",
+      "第62章：loader-runner 核心实现",
+      "第63章：Loader 执行顺序与管道",
+      "第64章：Normal Loader 实现",
+      "第65章：Pitching Loader 实现",
+      "第66章：Loader Context 上下文对象",
+      "第67章：Raw Loader 与 Buffer 处理",
+      "第68章：Loader 缓存与性能优化",
+      "第69章：Inline Loader 语法解析",
+      "第70章：JavascriptParser 设计",
+      "第71章：AST 解析与 Acorn 集成",
+      "第72章：Parser Hooks 体系",
+      "第73章：import/export 语句解析",
+      "第74章：require 语句解析",
+      "第75章：动态 import() 解析",
+      "第76章：Dependency 依赖对象创建",
+      "第77章：作用域分析与变量追踪",
+      "第78章：Magic Comments 解析",
+      "第79章：Top-Level Await 顶层 await 支持",
+      "第80章：new Worker() 语法解析"
     ]
   },
   "history": [
@@ -90,6 +131,16 @@
       "timestamp": "2025-01-21T11:00:00Z",
       "action": "完成第四部分",
       "description": "完成第26-33章：Compilation 核心全部8章"
+    },
+    {
+      "timestamp": "2025-01-21T14:00:00Z",
+      "action": "完成第五部分",
+      "description": "完成第34-42章：模块系统全部9章"
+    },
+    {
+      "timestamp": "2025-01-21T15:00:00Z",
+      "action": "完成第六部分",
+      "description": "完成第43-49章：模块工厂全部7章"
     }
   ]
 }

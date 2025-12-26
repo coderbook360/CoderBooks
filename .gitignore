@@ -120,3 +120,5 @@ draft.md
 .book_guide/
 .book_task/
 .book_check/
+book-cache/
+.github/
