@@ -99,36 +99,81 @@ class OBB {
 
 ## OBB与OBB碰撞：分离轴定理（SAT）
 
+OBB 碰撞检测的核心是**分离轴定理（Separating Axis Theorem，SAT）**。这是凸多面体碰撞检测的理论基础，理解它非常重要。
+
+### 分离轴定理的直观理解
+
 核心思想：**如果两个凸多面体不相交，必然存在一个轴，使得它们在该轴上的投影不重叠。**
 
-对于两个OBB，需要测试**15个潜在分离轴**：
-- A的3个轴
-- B的3个轴
-- A和B轴的9个叉积（边与边）
+想象用手电筒从某个角度照射两个物体，墙上会出现两个影子。如果能找到一个角度，使两个影子完全分开（不重叠），那这两个物体肯定不相交。
+
+反过来，如果无论从哪个角度照射，两个影子都有重叠部分，那这两个物体一定相交。
+
+### 为什么是 15 个轴？
+
+对于两个 OBB，需要测试**15 个潜在分离轴**。你可能会问：为什么偏偏是 15 个？这不是随意规定的，而是数学推导的结果。
+
+**情况 1：面分离（6 个轴）**
+
+如果两个 OBB 被某个面分开，那分离轴就是这个面的法向量。每个 OBB 有 3 个面（每对平行面共享法向量），所以：
+- A 的 3 个面法向量（即 A 的 3 个轴）
+- B 的 3 个面法向量（即 B 的 3 个轴）
+- **共 6 个轴**
+
+**情况 2：边分离（9 个轴）**
+
+两个 OBB 也可能通过"边与边接近但不接触"的方式分离。这种情况下，分离轴垂直于两条接近的边。
+
+数学上，垂直于两条边的向量是这两条边的**叉积**。每个 OBB 有 3 条边方向，两两叉积：
+- 3 × 3 = **9 个叉积轴**
+
+**总计：6 + 9 = 15 个轴**
+
+如果在这 15 个轴上都存在投影重叠，那两个 OBB **必定相交**。这是数学定理，不会遗漏任何情况。
+
+### 代码实现
+
+### 代码实现
+
+现在把理论转化为代码。关键在于两个函数：
+1. `obbIntersectsOBB`：主函数，遍历 15 个轴
+2. `isSeparatingAxis`：辅助函数，判断某轴是否为分离轴
 
 ```javascript
+/**
+ * 检测两个 OBB 是否相交
+ * @param {OBB} a - 第一个 OBB
+ * @param {OBB} b - 第二个 OBB
+ * @returns {boolean} 是否相交
+ */
 function obbIntersectsOBB(a, b) {
-  // 测试A的3个轴
+  // 第一部分：测试 A 的 3 个面法向量（A 的局部坐标轴）
+  // 如果在这些轴上投影分离，说明 B 在 A 的某个面外侧
   for (let i = 0; i < 3; i++) {
     if (isSeparatingAxis(a.axes[i], a, b)) {
-      return false;
+      return false;  // 找到分离轴，不相交
     }
   }
   
-  // 测试B的3个轴
+  // 第二部分：测试 B 的 3 个面法向量（B 的局部坐标轴）
+  // 如果在这些轴上投影分离，说明 A 在 B 的某个面外侧
   for (let i = 0; i < 3; i++) {
     if (isSeparatingAxis(b.axes[i], a, b)) {
       return false;
     }
   }
   
-  // 测试9个叉积轴
+  // 第三部分：测试 9 个叉积轴（边与边可能的分离方向）
+  // 这是最容易被遗漏的部分，但对于某些边界情况至关重要
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
+      // 计算 A 的第 i 条边与 B 的第 j 条边的叉积
       const axis = cross(a.axes[i], b.axes[j]);
       const len = magnitude(axis);
       
-      if (len > 0.0001) {  // 避免平行轴
+      // 如果叉积长度接近 0，说明两边平行，跳过
+      // 平行边不会产生有效的分离轴
+      if (len > 0.0001) {
         const normalizedAxis = scale(axis, 1 / len);
         if (isSeparatingAxis(normalizedAxis, a, b)) {
           return false;
@@ -137,26 +182,38 @@ function obbIntersectsOBB(a, b) {
     }
   }
   
-  return true;  // 所有轴都重叠，确认相交
+  // 所有 15 个轴都存在投影重叠，确认相交
+  return true;
 }
 
+/**
+ * 判断给定轴是否为分离轴
+ * 原理：计算两个 OBB 在该轴上的投影，检查是否重叠
+ * @param {Vector3} axis - 待测试的轴（单位向量）
+ * @param {OBB} a - 第一个 OBB
+ * @param {OBB} b - 第二个 OBB
+ * @returns {boolean} 是否为分离轴（投影不重叠）
+ */
 function isSeparatingAxis(axis, a, b) {
-  // 计算A在axis上的投影半径
+  // 计算 A 在 axis 上的投影半径
+  // 将 OBB 的三个半尺寸分别投影到 axis 上，取绝对值后相加
+  // 这给出了 OBB 在该轴方向上的"最大延伸"
   const aRadius = 
     Math.abs(dot(axis, scale(a.axes[0], a.halfSize.x))) +
     Math.abs(dot(axis, scale(a.axes[1], a.halfSize.y))) +
     Math.abs(dot(axis, scale(a.axes[2], a.halfSize.z)));
   
-  // 计算B在axis上的投影半径
+  // 计算 B 在 axis 上的投影半径
   const bRadius = 
     Math.abs(dot(axis, scale(b.axes[0], b.halfSize.x))) +
     Math.abs(dot(axis, scale(b.axes[1], b.halfSize.y))) +
     Math.abs(dot(axis, scale(b.axes[2], b.halfSize.z)));
   
-  // 中心距离在axis上的投影
+  // 计算两个 OBB 中心在 axis 上的距离
   const distance = Math.abs(dot(axis, subtract(b.center, a.center)));
   
-  // 如果距离大于半径之和，是分离轴
+  // 关键判断：如果中心距离大于两个投影半径之和
+  // 说明投影不重叠，找到了分离轴
   return distance > aRadius + bRadius;
 }
 ```

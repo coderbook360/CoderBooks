@@ -35,52 +35,92 @@
 ## 代码实现
 
 ```typescript
+/**
+ * 最小覆盖子串 - 滑动窗口经典难题
+ * 
+ * 【问题抽象】
+ * 在 s 中找一个最短的子串，使它包含 t 中所有字符（含重复）
+ * 
+ * 【滑动窗口策略】
+ * 1. 右边界扩展：不断加入字符，直到窗口满足条件
+ * 2. 左边界收缩：满足条件后，尝试缩小窗口找更短的解
+ * 3. 循环直到遍历完成
+ * 
+ * 【为什么这个策略是最优的？】
+ * - 右边界只往右走，左边界只往右走
+ * - 每个字符最多被访问两次（一次入窗口，一次出窗口）
+ * - 所以时间复杂度是 O(n) 而不是 O(n²)
+ * 
+ * 时间复杂度：O(|s| + |t|)
+ * 空间复杂度：O(|t|) - 存储字符计数的哈希表
+ */
 function minWindow(s: string, t: string): string {
-  // 统计 t 中每个字符的需求量
+  // ========================================
+  // 第一步：统计 t 中每个字符的需求量
+  // ========================================
+  // need[c] 表示字符 c 还需要多少个
+  // 例如 t = "ABC" → need = {'A': 1, 'B': 1, 'C': 1}
+  // 例如 t = "AAB" → need = {'A': 2, 'B': 1}
   const need = new Map<string, number>();
   for (const c of t) {
     need.set(c, (need.get(c) || 0) + 1);
   }
   
-  // 窗口内各字符的数量
+  // ========================================
+  // 第二步：初始化滑动窗口变量
+  // ========================================
+  // window[c] 表示窗口内字符 c 的数量
   const window = new Map<string, number>();
   
-  let left = 0;
-  let valid = 0;  // 满足需求的字符种类数
-  let start = 0, minLen = Infinity;
+  let left = 0;           // 窗口左边界
+  let valid = 0;          // 已满足需求的字符种类数（核心优化！）
+  let start = 0;          // 最小覆盖子串的起始位置
+  let minLen = Infinity;  // 最小覆盖子串的长度
   
+  // ========================================
+  // 第三步：滑动窗口主循环
+  // ========================================
   for (let right = 0; right < s.length; right++) {
-    const c = s[right];
+    const c = s[right];  // 即将进入窗口的字符
     
-    // 扩展窗口
+    // -------- 扩展窗口：加入右边的字符 --------
     if (need.has(c)) {
+      // 只关心 t 中需要的字符
       window.set(c, (window.get(c) || 0) + 1);
-      // 该字符刚好满足需求
+      
+      // ★★★ 关键判断：该字符是否刚好满足需求 ★★★
+      // 只有当 window[c] 等于 need[c] 时才增加 valid
+      // 不是 >= 是因为只需统计"刚好满足"这一次
       if (window.get(c) === need.get(c)) {
         valid++;
       }
     }
     
-    // 当所有字符都满足时，尝试收缩
+    // -------- 收缩窗口：当所有字符都满足时 --------
+    // valid === need.size 意味着所有需要的字符种类都已满足
     while (valid === need.size) {
       // 更新最小覆盖子串
+      // 当前窗口满足条件，看看是否比之前找到的更短
       if (right - left + 1 < minLen) {
         start = left;
         minLen = right - left + 1;
       }
       
-      // 收缩左边界
+      // 准备收缩：移除左边界的字符
       const d = s[left];
       if (need.has(d)) {
+        // ★★★ 关键判断：移除后该字符是否不再满足 ★★★
+        // 如果 window[d] 等于 need[d]，移除后就不满足了
         if (window.get(d) === need.get(d)) {
-          valid--;  // 收缩后该字符不再满足
+          valid--;  // 标记该字符不再满足需求
         }
         window.set(d, window.get(d)! - 1);
       }
-      left++;
+      left++;  // 左边界右移，缩小窗口
     }
   }
   
+  // 返回结果
   return minLen === Infinity ? "" : s.substring(start, start + minLen);
 }
 ```

@@ -49,18 +49,38 @@ class PrefixSum {
   
   constructor(nums: number[]) {
     const n = nums.length;
+    // 前缀和数组长度为 n+1，prefix[0] = 0 表示空前缀
     this.prefix = new Array(n + 1).fill(0);
     
+    // 递推计算前缀和
+    // prefix[i+1] = prefix[i] + nums[i]
+    // 即：前 i+1 个元素的和 = 前 i 个元素的和 + 第 i 个元素
     for (let i = 0; i < n; i++) {
       this.prefix[i + 1] = this.prefix[i] + nums[i];
     }
   }
   
-  // 查询区间 [left, right] 的和
+  // 查询区间 [left, right] 的和（左闭右闭）
+  // 利用公式：sum(left, right) = prefix[right+1] - prefix[left]
   query(left: number, right: number): number {
     return this.prefix[right + 1] - this.prefix[left];
   }
 }
+```
+
+**图示理解**：
+
+```
+nums:   [  1,   2,   3,   4,   5  ]
+         索引0  1    2    3    4
+
+prefix: [ 0,   1,   3,   6,  10,  15 ]
+         索引0  1    2    3    4    5
+              ↑
+        prefix[1] = nums[0] = 1
+              
+查询 sum(1, 3) = nums[1] + nums[2] + nums[3] = 2 + 3 + 4 = 9
+              = prefix[4] - prefix[1] = 10 - 1 = 9 ✓
 ```
 
 ---

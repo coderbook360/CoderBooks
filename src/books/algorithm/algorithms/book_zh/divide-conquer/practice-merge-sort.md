@@ -49,33 +49,81 @@
 ## 代码实现：简洁版
 
 ```typescript
+/**
+ * 归并排序 - 分治算法的经典实现
+ * 
+ * 分治三步骤：
+ * 1. 分解：将数组一分为二
+ * 2. 解决：递归地对左右两半进行排序
+ * 3. 合并：将两个有序数组合并成一个有序数组
+ * 
+ * 时间复杂度：O(n log n) - 无论最好、最坏、平均都是
+ * 空间复杂度：O(n) - 需要临时数组存储合并结果
+ * 稳定性：稳定（相等元素的相对顺序不变）
+ */
 function mergeSort(arr: number[]): number[] {
-  // 递归终止条件：数组长度为 0 或 1，已经有序
+  // 递归终止条件（基础情况）：
+  // 长度为 0 或 1 的数组天然有序，无需排序
+  // 这也是递归"触底"的情况，从这里开始向上回溯合并
   if (arr.length <= 1) return arr;
   
-  // 分解：找中点，分成两半
+  // ========================================
+  // 第一步：分解（Divide）
+  // ========================================
+  // 找到中间位置，将数组一分为二
+  // 使用 Math.floor 确保对奇数长度数组也能正确分割
   const mid = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, mid));   // 递归排序左半
-  const right = mergeSort(arr.slice(mid));     // 递归排序右半
   
-  // 合并：将两个有序数组合并
+  // ========================================
+  // 第二步：解决（Conquer）
+  // ========================================
+  // 递归地对左右两半进行排序
+  // 注意：这里体现了"递归信仰跳跃"——
+  // 我们相信递归调用会返回排好序的数组，不需要追踪细节
+  const left = mergeSort(arr.slice(0, mid));   // 递归排序 [0, mid)
+  const right = mergeSort(arr.slice(mid));     // 递归排序 [mid, arr.length)
+  
+  // ========================================
+  // 第三步：合并（Combine）
+  // ========================================
+  // 将两个有序数组合并成一个有序数组
+  // 这一步是归并排序的核心操作
   return merge(left, right);
 }
 
+/**
+ * 合并两个有序数组
+ * 
+ * 使用双指针技术，时间复杂度 O(n)
+ * 
+ * 工作原理：
+ * - 两个指针分别指向两个数组的开头
+ * - 每次比较两个指针指向的元素，取较小的放入结果数组
+ * - 移动被取元素的指针
+ * - 直到一个数组用完，再把另一个数组的剩余部分追加
+ */
 function merge(left: number[], right: number[]): number[] {
-  const result: number[] = [];
-  let i = 0, j = 0;
+  const result: number[] = [];  // 合并后的有序数组
+  let i = 0;  // 指向 left 数组的指针
+  let j = 0;  // 指向 right 数组的指针
   
-  // 双指针合并
+  // 双指针合并：每次取较小的元素
+  // 条件：两个数组都还有元素没处理
   while (i < left.length && j < right.length) {
+    // 比较两个指针指向的元素
+    // 注意：使用 <= 而不是 <，保证排序稳定性
+    // 当元素相等时，优先取左边的，保持相等元素的原始顺序
     if (left[i] <= right[j]) {
-      result.push(left[i++]);
+      result.push(left[i++]);  // 取左边元素，左指针前进
     } else {
-      result.push(right[j++]);
+      result.push(right[j++]); // 取右边元素，右指针前进
     }
   }
   
-  // 处理剩余元素
+  // 处理剩余元素：
+  // 退出循环时，至少有一个数组已经全部处理完
+  // 另一个数组的剩余部分已经是有序的，直接追加即可
+  // 注意：left.slice(i) 和 right.slice(j) 至少有一个是空数组
   return result.concat(left.slice(i), right.slice(j));
 }
 ```
@@ -108,42 +156,91 @@ function merge(left: number[], right: number[]): number[] {
 简洁版每次递归都创建新数组，空间开销大。原地版本使用一个临时数组，避免频繁分配。
 
 ```typescript
+/**
+ * 归并排序 - 原地排序版本（空间优化）
+ * 
+ * 与简洁版的区别：
+ * - 只在开始时分配一次临时数组，而不是每次递归都创建新数组
+ * - 直接在原数组上排序，不返回新数组
+ * - 使用索引范围 [left, right] 代替数组切片
+ * 
+ * 空间复杂度：O(n)（一个临时数组），比简洁版更优（避免重复分配）
+ */
 function mergeSortInPlace(arr: number[]): void {
-  const temp = new Array(arr.length);  // 只分配一次
+  // 预分配临时数组，整个排序过程共用这一个数组
+  // 避免了简洁版中每次 merge 都创建新数组的开销
+  const temp = new Array(arr.length);
   
+  /**
+   * 对 arr[left..right] 区间进行排序
+   * 
+   * @param left - 排序区间的左边界（包含）
+   * @param right - 排序区间的右边界（包含）
+   */
   function sort(left: number, right: number): void {
-    if (left >= right) return;  // 只有一个元素或为空
+    // 基础情况：区间只有一个元素或为空，已经有序
+    if (left >= right) return;
     
+    // 找中点，将区间一分为二
+    // 注意：使用 (left + right) / 2 而不是 left + (right - left) / 2
+    // 因为 TypeScript 的 number 类型不会溢出，两种写法等价
     const mid = Math.floor((left + right) / 2);
-    sort(left, mid);      // 排序左半部分
-    sort(mid + 1, right); // 排序右半部分
+    
+    sort(left, mid);      // 递归排序左半部分 [left, mid]
+    sort(mid + 1, right); // 递归排序右半部分 [mid+1, right]
+    
+    // 合并两个有序区间
     merge(left, mid, right);
   }
   
+  /**
+   * 合并两个相邻的有序区间
+   * 
+   * @param left - 第一个区间的起点
+   * @param mid - 第一个区间的终点（第二个区间从 mid+1 开始）
+   * @param right - 第二个区间的终点
+   * 
+   * 合并前：arr[left..mid] 和 arr[mid+1..right] 分别有序
+   * 合并后：arr[left..right] 整体有序
+   */
   function merge(left: number, mid: number, right: number): void {
-    // 1. 将待合并区域复制到临时数组
+    // ========================================
+    // 第一步：将待合并区域复制到临时数组
+    // ========================================
+    // 为什么需要复制？
+    // 因为合并过程中会覆盖原数组的值，需要先保存一份副本
     for (let i = left; i <= right; i++) {
       temp[i] = arr[i];
     }
     
-    // 2. 双指针合并回原数组
-    let i = left;     // 左半部分起点
-    let j = mid + 1;  // 右半部分起点
-    let k = left;     // 原数组写入位置
+    // ========================================
+    // 第二步：双指针合并回原数组
+    // ========================================
+    let i = left;     // i 指向左半部分的起点 temp[left..mid]
+    let j = mid + 1;  // j 指向右半部分的起点 temp[mid+1..right]
+    let k = left;     // k 指向原数组的写入位置
     
+    // 双指针合并：每次取较小的元素写入原数组
     while (i <= mid && j <= right) {
+      // 使用 <= 保证稳定性（相等时优先取左边）
       if (temp[i] <= temp[j]) {
-        arr[k++] = temp[i++];
+        arr[k++] = temp[i++];  // 从左半部分取
       } else {
-        arr[k++] = temp[j++];
+        arr[k++] = temp[j++];  // 从右半部分取
       }
     }
     
-    // 3. 处理剩余元素（只需处理左半部分，右半部分本就在原位）
+    // ========================================
+    // 第三步：处理剩余元素
+    // ========================================
+    // 左半部分可能还有剩余（j 已经走完了）
     while (i <= mid) arr[k++] = temp[i++];
+    // 右半部分可能还有剩余（i 已经走完了）
     while (j <= right) arr[k++] = temp[j++];
+    // 注意：这两个 while 循环最多只有一个会执行
   }
   
+  // 启动排序：对整个数组 [0, arr.length-1] 进行排序
   sort(0, arr.length - 1);
 }
 ```

@@ -78,31 +78,57 @@ class DifferenceArray {
   
   constructor(nums: number[]) {
     const n = nums.length;
+    // 初始化差分数组
     this.diff = new Array(n).fill(0);
-    this.diff[0] = nums[0];
+    this.diff[0] = nums[0];  // 第一个元素就是原值
+    
+    // diff[i] = nums[i] - nums[i-1]
+    // 表示相邻元素的差值
     for (let i = 1; i < n; i++) {
       this.diff[i] = nums[i] - nums[i - 1];
     }
   }
   
-  // 区间 [left, right] 加上 val
+  // 区间 [left, right] 的所有元素都加上 val
+  // 时间复杂度：O(1)，这是差分数组的核心优势！
   update(left: number, right: number, val: number): void {
+    // 从 left 开始，所有元素都增加 val
     this.diff[left] += val;
+    
+    // 从 right+1 开始，抵消之前的增加
+    // 如果 right+1 超出范围，不需要处理（不影响结果）
     if (right + 1 < this.diff.length) {
       this.diff[right + 1] -= val;
     }
   }
   
-  // 还原数组
+  // 将差分数组还原为原数组
+  // 时间复杂度：O(n)
   restore(): number[] {
     const nums = new Array(this.diff.length);
-    nums[0] = this.diff[0];
+    nums[0] = this.diff[0];  // 第一个元素直接取
+    
+    // 前缀和还原：nums[i] = nums[i-1] + diff[i]
     for (let i = 1; i < this.diff.length; i++) {
       nums[i] = nums[i - 1] + this.diff[i];
     }
     return nums;
   }
 }
+```
+
+**图示理解**：
+
+```
+原数组 nums:    [1,  3,  6, 10, 15]
+差分数组 diff:  [1,  2,  3,  4,  5]
+
+区间 [1, 3] 加 10:
+diff[1] += 10  →  [1, 12,  3,  4,  5]
+diff[4] -= 10  →  [1, 12,  3,  4, -5]
+
+还原后 nums:    [1, 13, 16, 20, 15]
+验证：原 [3,6,10] → 新 [13,16,20]，确实各加了 10 ✓
 ```
 
 ---

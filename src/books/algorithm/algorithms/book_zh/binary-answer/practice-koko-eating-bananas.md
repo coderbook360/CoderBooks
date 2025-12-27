@@ -49,31 +49,75 @@
 ### 基础版本
 
 ```typescript
+/**
+ * 爱吃香蕉的珂珂 - 二分答案经典题
+ * 
+ * 【问题抽象】
+ * - 给定 n 堆香蕉和时间限制 h
+ * - 求满足条件的最小吃香蕉速度 k
+ * 
+ * 【二分答案思路】
+ * - 答案空间：k ∈ [1, max(piles)]
+ *   - 最慢：1 根/小时
+ *   - 最快：每堆1小时吃完，速度 = 最大堆的数量
+ * - 单调性：速度越快，耗时越少
+ *   - 存在临界点：低于它不行，高于它都行
+ * - 我们要找的是第一个能完成的速度（最小可行解）
+ * 
+ * 时间复杂度：O(n log m)，n=piles长度，m=max(piles)
+ * 空间复杂度：O(1)
+ */
 function minEatingSpeed(piles: number[], h: number): number {
-  let left = 1;
-  let right = Math.max(...piles);
+  // 答案空间的边界
+  let left = 1;                    // 最小速度：1根/小时
+  let right = Math.max(...piles);  // 最大速度：最大堆的数量
   
+  // 二分查找第一个使 canFinish 为 true 的速度
+  // 不变量：答案在 [left, right] 区间内
   while (left < right) {
+    // 取中间速度
     const mid = left + Math.floor((right - left) / 2);
     
     if (canFinish(piles, mid, h)) {
-      right = mid;  // mid 可行，尝试更小的速度
+      // 速度 mid 可以在 h 小时内吃完
+      // mid 可能就是答案，但也许更慢的速度也行
+      // 所以在 [left, mid] 中继续寻找更小的可行速度
+      right = mid;
     } else {
-      left = mid + 1;  // mid 不可行，需要更快
+      // 速度 mid 不够快，吃不完
+      // 需要更快的速度，在 [mid+1, right] 中寻找
+      left = mid + 1;
     }
   }
   
+  // 循环结束时 left == right，即为最小可行速度
   return left;
 }
 
+/**
+ * 检查函数：以速度 speed 能否在 h 小时内吃完所有香蕉
+ * 
+ * @param piles - 各堆香蕉数量
+ * @param speed - 尝试的吃香蕉速度（根/小时）
+ * @param h - 时间限制（小时）
+ * @returns 是否能在 h 小时内吃完
+ * 
+ * 【计算逻辑】
+ * 对于每堆香蕉 pile：
+ * - 需要 ceil(pile / speed) 小时吃完
+ * - 因为每小时只能吃一堆，且一堆没吃完不能换下一堆
+ */
 function canFinish(piles: number[], speed: number, h: number): boolean {
-  let hours = 0;
+  let hours = 0;  // 总耗时
   
   for (const pile of piles) {
-    // 每堆需要 ceil(pile / speed) 小时
+    // 吃完这一堆需要多少小时？
+    // pile=7, speed=3 → 需要 3 小时（第1小时吃3根，第2小时吃3根，第3小时吃1根）
+    // 数学上就是 ceil(7/3) = 3
     hours += Math.ceil(pile / speed);
   }
   
+  // 总耗时不超过 h 小时则可行
   return hours <= h;
 }
 ```

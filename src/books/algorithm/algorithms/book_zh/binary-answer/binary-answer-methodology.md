@@ -49,28 +49,74 @@
 ## 二分答案的框架
 
 ```typescript
+/**
+ * 二分答案通用模板 - 求满足条件的最小值
+ * 
+ * 适用场景：
+ * - 存在一个分界点 x*，使得 x < x* 时 check(x) = false，x >= x* 时 check(x) = true
+ * - 我们要找的就是这个分界点 x*（第一个使 check 为 true 的值）
+ * 
+ * 【核心思想】
+ * 不是在数组中找元素，而是在"答案空间"中找满足条件的边界
+ * 每次二分，我们缩小答案的可能范围
+ * 
+ * 【为什么选择 left < right 而不是 left <= right？】
+ * - 因为我们找的是"边界"，不是具体元素
+ * - 循环结束时 left == right，这就是答案
+ * - 如果用 left <= right，需要额外处理返回值
+ * 
+ * 时间复杂度：O(log(范围) × check函数复杂度)
+ */
 function binaryAnswerTemplate(): number {
-  let left = minPossible;  // 答案的最小可能值
-  let right = maxPossible; // 答案的最大可能值
+  let left = minPossible;  // 答案的最小可能值（下界）
+  let right = maxPossible; // 答案的最大可能值（上界）
   
+  // 不变量：答案一定在 [left, right] 区间内
   while (left < right) {
+    // 取中点（向下取整，避免 left + 1 = right 时死循环）
     const mid = left + Math.floor((right - left) / 2);
     
     if (check(mid)) {
       // mid 满足条件
-      // 如果求最小值：right = mid（尝试更小）
-      // 如果求最大值：left = mid + 1（尝试更大）
+      // 
+      // 【如果求最小值】
+      // mid 可能就是答案，但也可能存在更小的满足条件的值
+      // 所以令 right = mid，继续在 [left, mid] 中寻找
+      // 
+      // 【如果求最大值】
+      // mid 满足条件，但我们要找更大的
+      // 所以令 left = mid + 1，继续在 [mid+1, right] 中寻找
+      // 注意：求最大值时需要调整模板（见下方变体）
       right = mid;
     } else {
+      // mid 不满足条件
+      // mid 以及更小的值都不行，在 [mid+1, right] 中继续找
       left = mid + 1;
     }
   }
   
+  // 循环结束时 left == right，即为答案
+  // 注意：可能需要再次 check(left) 确认答案有效
   return left;
 }
 
+/**
+ * 检查函数 - 判断给定的答案是否满足条件
+ * 
+ * 这是二分答案的核心！设计好 check 函数是解题的关键
+ * 
+ * @param x - 当前尝试的答案值
+ * @returns 如果 x 满足题目条件返回 true，否则返回 false
+ * 
+ * 【设计 check 函数的要点】
+ * 1. 明确"满足条件"的定义
+ * 2. 确保 check 具有单调性（x 增大时 check 从 false 变 true，或反之）
+ * 3. 复杂度尽量低（因为会被调用 O(log n) 次）
+ */
 function check(x: number): boolean {
-  // 判断 x 是否满足条件
+  // 根据具体问题实现判断逻辑
+  // 例如：能否在约束 x 下完成任务？
+  return false; // 占位
 }
 ```
 

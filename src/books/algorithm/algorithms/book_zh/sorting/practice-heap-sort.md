@@ -37,57 +37,128 @@
 ### 完整实现
 
 ```typescript
+/**
+ * 堆排序主函数 - 原地排序算法
+ * 
+ * 核心思想：
+ * 1. 建堆阶段：将无序数组构建成最大堆，堆顶是最大元素
+ * 2. 排序阶段：不断将堆顶（最大值）与末尾交换，缩小堆范围，重建堆
+ * 
+ * 为什么使用最大堆而不是最小堆？
+ * - 最大堆可以快速找到最大值（堆顶）
+ * - 将最大值放到数组末尾，然后缩小堆的范围
+ * - 这样排序后数组是升序的，且是原地操作
+ * 
+ * 时间复杂度：O(n log n) - 建堆O(n) + n次下沉操作O(n log n)
+ * 空间复杂度：O(1) - 原地排序，不需要额外空间
+ */
 function heapSort(arr: number[]): void {
   const n = arr.length;
   
-  // 阶段1：建堆（从最后一个非叶子节点开始）
+  // ========================================
+  // 阶段1：建堆（Build Max Heap）
+  // ========================================
+  // 从最后一个非叶子节点开始，自底向上建堆
+  // 
+  // 为什么从 n/2 - 1 开始？
+  // - 完全二叉树中，叶子节点占一半（索引 n/2 到 n-1）
+  // - 叶子节点天然满足堆性质（没有子节点）
+  // - 所以只需要从最后一个非叶子节点开始调整
+  // - 最后一个非叶子节点 = 最后一个叶子节点的父节点 = (n-1-1)/2 = n/2 - 1
   for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
     heapify(arr, n, i);
   }
+  // 建堆完成后，arr[0] 是最大值
   
-  // 阶段2：排序
+  // ========================================
+  // 阶段2：排序（Sort by extracting max）
+  // ========================================
+  // 核心操作：每次将堆顶（最大值）与当前未排序部分的最后一个元素交换
+  // 然后缩小堆的范围，对新的堆顶进行下沉调整
   for (let i = n - 1; i > 0; i--) {
-    // 将堆顶（最大值）与末尾交换
+    // 步骤A：交换堆顶和末尾
+    // arr[0] 是当前堆中的最大值
+    // 将它放到位置 i（当前未排序部分的末尾）
+    // 这样最大值就"沉底"了，占据了它的最终位置
     [arr[0], arr[i]] = [arr[i], arr[0]];
-    // 对剩余元素重建堆
+    
+    // 步骤B：重建堆
+    // 交换后 arr[0] 可能不满足堆性质
+    // 对 arr[0..i-1] 这个缩小后的堆执行下沉调整
+    // 注意：i 既是交换位置，也是新堆的大小
     heapify(arr, i, 0);
   }
+  // 排序完成，数组升序排列
 }
 
-// 下沉调整：确保以i为根的子树满足堆性质
+/**
+ * 下沉调整（Heapify Down / Sift Down）
+ * 确保以索引 i 为根的子树满足最大堆性质
+ * 
+ * @param arr - 待调整的数组
+ * @param n - 堆的有效大小（只考虑 arr[0..n-1]）
+ * @param i - 需要下沉调整的节点索引
+ * 
+ * 工作原理：
+ * 1. 比较当前节点与其左右子节点
+ * 2. 如果某个子节点更大，与最大的子节点交换
+ * 3. 递归调整被交换的子树
+ * 4. 直到当前节点比所有子节点都大，或到达叶子节点
+ */
 function heapify(arr: number[], n: number, i: number): void {
-  let largest = i;       // 假设当前节点最大
-  const left = 2 * i + 1;
-  const right = 2 * i + 2;
+  let largest = i;       // 假设当前节点最大，稍后会验证
+  const left = 2 * i + 1;   // 左子节点索引（完全二叉树性质）
+  const right = 2 * i + 2;  // 右子节点索引
   
-  // 左子节点更大
+  // 比较左子节点：
+  // left < n 确保左子节点存在（在堆的有效范围内）
+  // arr[left] > arr[largest] 检查左子节点是否更大
   if (left < n && arr[left] > arr[largest]) {
-    largest = left;
+    largest = left;  // 更新最大值索引为左子节点
   }
   
-  // 右子节点更大
+  // 比较右子节点：
+  // right < n 确保右子节点存在
+  // arr[right] > arr[largest] 检查右子节点是否比当前最大值更大
   if (right < n && arr[right] > arr[largest]) {
-    largest = right;
+    largest = right;  // 更新最大值索引为右子节点
   }
   
-  // 如果最大值不是当前节点
+  // 如果最大值不是当前节点，需要交换并继续下沉
   if (largest !== i) {
+    // 交换当前节点与最大子节点
     [arr[i], arr[largest]] = [arr[largest], arr[i]];
+    
     // 递归调整被影响的子树
+    // 因为我们把较小的值换到了 largest 位置
+    // 这个位置可能不再满足堆性质，需要继续下沉
     heapify(arr, n, largest);
   }
+  // 如果 largest === i，说明当前节点已经比所有子节点大，无需调整
 }
 ```
 
 ### 迭代版本的heapify
 
 ```typescript
+/**
+ * 下沉调整的迭代实现
+ * 
+ * 与递归版本等价，但避免了函数调用开销
+ * 对于大数据量或栈空间受限的场景更适用
+ * 
+ * 工作原理：
+ * 用 while 循环代替递归，不断将当前节点与更大的子节点交换
+ * 直到当前节点比所有子节点都大，或到达叶子节点
+ */
 function heapifyIterative(arr: number[], n: number, i: number): void {
+  // 不断下沉，直到满足堆性质
   while (true) {
-    let largest = i;
-    const left = 2 * i + 1;
-    const right = 2 * i + 2;
+    let largest = i;  // 当前考察的节点
+    const left = 2 * i + 1;   // 左子节点
+    const right = 2 * i + 2;  // 右子节点
     
+    // 找出当前节点、左子节点、右子节点中的最大值
     if (left < n && arr[left] > arr[largest]) {
       largest = left;
     }
@@ -95,9 +166,14 @@ function heapifyIterative(arr: number[], n: number, i: number): void {
       largest = right;
     }
     
+    // 如果当前节点已经是最大的，堆性质满足，退出循环
     if (largest === i) break;
     
+    // 否则，交换当前节点与最大子节点
     [arr[i], arr[largest]] = [arr[largest], arr[i]];
+    
+    // 更新 i 为被交换的子节点位置，继续检查
+    // 这相当于递归调用 heapify(arr, n, largest)
     i = largest;
   }
 }

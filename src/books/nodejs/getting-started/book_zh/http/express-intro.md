@@ -1,6 +1,19 @@
 # Express 快速入门
 
-Express 是 Node.js 最流行的 Web 框架，基于我们之前学习的中间件模式构建。
+> 在前几章，我们手动实现了路由、中间件、静态文件服务。现在你可能在想：每个项目都要从头写这些吗？
+
+答案当然是**不**。Express 就是把这些常见功能封装好的框架——它是 Node.js 生态中最流行的 Web 框架，每周下载量超过 3000 万次。
+
+## 为什么选择 Express？
+
+| 手动实现 | Express |
+|---------|---------|
+| 自己写 Router 类 | 内置路由，语法优雅 |
+| 自己实现中间件链 | 标准化中间件机制 |
+| 手动解析 JSON | 一行代码搞定 |
+| 到处写 `res.end(JSON.stringify(...))` | `res.json(data)` |
+
+Express 让你专注业务逻辑，而不是底层实现。
 
 ## 安装
 
@@ -10,30 +23,40 @@ npm install express
 
 ## 第一个应用
 
-```javascript
-const express = require('express');
-const app = express();
+对比一下原生 HTTP 和 Express：
 
+```javascript
+// Express 版本
+const express = require('express');
+const app = express();  // 创建应用实例
+
+// 定义路由：GET 请求 /
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Hello World');  // send 自动设置 Content-Type
 });
 
+// 启动服务器
 app.listen(3000, () => {
   console.log('Server running at http://localhost:3000');
 });
 ```
 
+> **注意**：Express 的 `res.send()` 比原生的 `res.end()` 更智能——它会根据数据类型自动设置 Content-Type。
+
 ## 路由
+
+Express 路由语法简洁直观，这也是它流行的主要原因。
 
 ### 基本路由
 
 ```javascript
+// RESTful API 示例
 app.get('/users', (req, res) => {
-  res.json([{ id: 1, name: 'John' }]);
+  res.json([{ id: 1, name: 'John' }]);  // 自动设置 application/json
 });
 
 app.post('/users', (req, res) => {
-  res.status(201).json({ message: 'Created' });
+  res.status(201).json({ message: 'Created' });  // 链式调用设置状态码
 });
 
 app.put('/users/:id', (req, res) => {
@@ -47,74 +70,101 @@ app.delete('/users/:id', (req, res) => {
 
 ### 路由参数
 
+Express 自动解析 `:param` 语法：
+
 ```javascript
+// 单个参数
 app.get('/users/:id', (req, res) => {
-  const userId = req.params.id;
+  const userId = req.params.id;  // 从 URL 中提取
   res.json({ id: userId });
 });
 
 // 多个参数
 app.get('/users/:userId/posts/:postId', (req, res) => {
-  const { userId, postId } = req.params;
+  const { userId, postId } = req.params;  // 解构获取
   res.json({ userId, postId });
 });
 ```
 
 ### 查询参数
 
+Express 自动解析查询字符串：
+
 ```javascript
 app.get('/search', (req, res) => {
-  const { q, page = 1, limit = 10 } = req.query;
+  // GET /search?q=nodejs&page=2
+  const { q, page = 1, limit = 10 } = req.query;  // 支持默认值
   res.json({ query: q, page, limit });
 });
-// GET /search?q=nodejs&page=2
 ```
 
 ## 中间件
 
+中间件是 Express 的核心概念。如果你理解了前面章节手写的中间件模式，这里会非常熟悉。
+
 ### 应用级中间件
 
+所有请求都会经过：
+
 ```javascript
-// 所有请求都经过
+// 日志中间件——记录每个请求
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
-  next();
+  next();  // 调用 next() 传递到下一个中间件，忘记调用会导致请求挂起！
 });
 ```
 
 ### 路径中间件
 
+只对特定路径生效：
+
 ```javascript
-// 只对 /api 路径生效
+// 只对 /api 开头的路径生效
 app.use('/api', (req, res, next) => {
   console.log('API 请求');
+  // 可以在这里做 API 认证等
   next();
 });
 ```
 
 ### 内置中间件
 
+Express 4.16+ 内置了最常用的中间件：
+
 ```javascript
-// 解析 JSON
+// 解析 JSON 请求体（POST/PUT 请求）
+// 没有这个，req.body 将是 undefined
 app.use(express.json());
 
-// 解析 URL 编码表单
+// 解析 URL 编码表单（传统 HTML 表单提交）
 app.use(express.urlencoded({ extended: true }));
 
-// 静态文件
+// 静态文件服务——一行搞定！
+// 访问 http://localhost:3000/style.css 会返回 public/style.css
 app.use(express.static('public'));
 ```
 
 ## 请求对象
 
+Express 扩展了原生 `req` 对象，添加了许多便捷属性：
+
 ```javascript
 app.post('/users', (req, res) => {
-  console.log(req.body);        // 请求体（需要中间件）
-  console.log(req.params);      // 路由参数
-  console.log(req.query);       // 查询参数
-  console.log(req.headers);     // 请求头
-  console.log(req.method);      // 请求方法
-  console.log(req.path);        // 路径
+  // 请求体（需要 express.json() 中间件）
+  console.log(req.body);        // { name: 'John', email: '...' }
+  
+  // 路由参数（:id 等）
+  console.log(req.params);      // { id: '123' }
+  
+  // 查询参数（?key=value）
+  console.log(req.query);       // { page: '1', limit: '10' }
+  
+  // 请求头
+  console.log(req.headers);     // { 'content-type': 'application/json', ... }
+  
+  // 其他常用属性
+  console.log(req.method);      // 'POST'
+  console.log(req.path);        // '/users'（不含查询字符串）
   console.log(req.ip);          // 客户端 IP
   
   res.json({ received: true });
@@ -123,28 +173,34 @@ app.post('/users', (req, res) => {
 
 ## 响应对象
 
+Express 的 `res` 对象方法支持**链式调用**，代码更简洁：
+
 ```javascript
 app.get('/demo', (req, res) => {
-  // 发送 JSON
+  // 发送 JSON（最常用）
   res.json({ data: 'value' });
   
-  // 发送文本
-  res.send('Hello');
+  // 发送文本/HTML
+  res.send('Hello');  // 自动检测 Content-Type
   
-  // 设置状态码
+  // 设置状态码 + 发送（链式调用）
   res.status(404).send('Not Found');
   
   // 重定向
   res.redirect('/new-url');
+  res.redirect(301, 'https://new-domain.com');  // 永久重定向
   
   // 发送文件
-  res.sendFile('/path/to/file.pdf');
+  res.sendFile('/absolute/path/to/file.pdf');
   
   // 设置头部
-  res.set('X-Custom', 'value');
+  res.set('X-Custom-Header', 'value');
   
   // 设置 Cookie
-  res.cookie('name', 'value', { httpOnly: true });
+  res.cookie('token', 'abc123', {
+    httpOnly: true,   // 防止 XSS
+    maxAge: 86400000  // 1天（毫秒）
+  });
 });
 ```
 

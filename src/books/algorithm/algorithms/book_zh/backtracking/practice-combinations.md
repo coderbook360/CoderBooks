@@ -54,24 +54,65 @@
 ## 解法一：基础回溯
 
 ```typescript
+/**
+ * 组合问题 - 回溯算法基础模板
+ * 
+ * 【问题抽象】
+ * 从 [1, n] 中选择 k 个数的所有组合
+ * 组合不关心顺序：[1,2] 和 [2,1] 是同一个组合
+ * 
+ * 【组合 vs 排列的关键区别】
+ * - 排列：每个位置可以选任意未使用的元素 → 用 used 数组
+ * - 组合：只能往后选，不能回头 → 用 start 参数
+ * 
+ * 【为什么用 start 就能避免重复？】
+ * 假设 n=4, k=2：
+ * - 选了 1 之后，只能从 [2,3,4] 中选
+ * - 选了 2 之后，只能从 [3,4] 中选
+ * - 这样 [1,2] 和 [2,1] 只会以 [1,2] 的形式出现一次
+ * 
+ * 时间复杂度：O(C(n,k) × k) - 生成 C(n,k) 个组合，每个组合需要 O(k) 复制
+ * 空间复杂度：O(k) - 递归深度和 path 的长度
+ */
 function combine(n: number, k: number): number[][] {
   const result: number[][] = [];
   
+  /**
+   * 回溯函数
+   * @param start - 当前可选范围的起点（只能选 start 到 n）
+   * @param path - 当前已选择的元素路径
+   */
   function backtrack(start: number, path: number[]) {
-    // 终止条件：收集到k个数
+    // ========================================
+    // 终止条件：收集到 k 个数
+    // ========================================
     if (path.length === k) {
+      // 注意：必须用 [...path] 创建副本
+      // 否则 result 中所有元素会指向同一个数组
       result.push([...path]);
       return;
     }
     
-    // 从start开始选择，避免重复
+    // ========================================
+    // 选择阶段：从 start 到 n 依次尝试
+    // ========================================
+    // 为什么从 start 开始？确保只往后选，避免重复组合
     for (let i = start; i <= n; i++) {
-      path.push(i);        // 做选择
-      backtrack(i + 1, path); // 递归（下一个从i+1开始）
-      path.pop();          // 撤销选择
+      // 做选择：把 i 加入当前路径
+      path.push(i);
+      
+      // 递归：继续选择下一个数
+      // 注意：传入 i + 1，确保下一个数比当前大
+      // 这是组合问题避免重复的核心！
+      backtrack(i + 1, path);
+      
+      // 撤销选择（回溯）：把 i 从路径中移除
+      // 这样才能尝试其他选择
+      path.pop();
     }
   }
   
+  // 从 1 开始，初始路径为空
   backtrack(1, []);
   return result;
 }
@@ -94,22 +135,40 @@ function combine(n: number, k: number): number[][] {
 **优化思路**：如果剩余元素不够k个，提前终止。
 
 ```typescript
+/**
+ * 组合问题 - 剪枝优化版本
+ * 
+ * 【剪枝的核心思想】
+ * 如果剩余可选的元素数量 < 还需要选择的数量，就没必要继续了
+ * 
+ * 【为什么这个剪枝有效？】
+ * 例如 n=4, k=3，当 path=[3] 时：
+ * - 还需要选 2 个数
+ * - 剩余可选：[4]，只有 1 个
+ * - 1 < 2，不可能凑够 3 个，直接返回
+ * 
+ * 【剪枝效果】
+ * - n=10, k=5 时，剪枝可以减少约 50% 的搜索
+ * - n 越大、k 越接近 n/2，剪枝效果越明显
+ */
 function combine(n: number, k: number): number[][] {
   const result: number[][] = [];
   
   function backtrack(start: number, path: number[]) {
+    // 终止条件
     if (path.length === k) {
       result.push([...path]);
       return;
     }
     
-    // 剪枝：剩余元素不够时提前终止
+    // ★★★ 剪枝优化 ★★★
     // need: 还需要选择的个数
-    // remain: 剩余可选的个数
+    // remain: 从 start 到 n，剩余可选的个数
     const need = k - path.length;
     const remain = n - start + 1;
     
-    if (remain < need) return;  // 剪枝
+    // 如果剩余不够，提前终止这个分支
+    if (remain < need) return;
     
     for (let i = start; i <= n; i++) {
       path.push(i);
@@ -132,6 +191,17 @@ function combine(n: number, k: number): number[][] {
 **优化写法**（更简洁）：
 
 ```typescript
+/**
+ * 将剪枝条件融入循环边界
+ * 
+ * 循环上界 = n - (k - path.length) + 1
+ * 
+ * 推导过程：
+ * - 还需要选 k - path.length 个数
+ * - 从位置 i 开始选，可选范围是 [i, n]，共 n - i + 1 个
+ * - 需要 n - i + 1 >= k - path.length
+ * - 即 i <= n - (k - path.length) + 1
+ */
 for (let i = start; i <= n - (k - path.length) + 1; i++) {
   path.push(i);
   backtrack(i + 1, path);

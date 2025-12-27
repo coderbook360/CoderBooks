@@ -127,21 +127,48 @@ height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
 这个问题乍看不像"有序"问题，但我们可以用对撞指针：
 
 ```typescript
+/**
+ * 盛最多水的容器 - 对撞指针
+ * 
+ * 【为什么对撞指针有效？】
+ * 
+ * 暴力法：枚举所有 (i, j) 组合，O(n²)
+ * 
+ * 对撞指针的核心洞察：
+ * 每次移动指针时，我们排除了一些"不可能更优"的情况
+ * 
+ * 假设 height[left] < height[right]：
+ * - 当前面积 = height[left] × width
+ * - 如果保持 left 不动，只移动 right 向左：
+ *   - width 变小了
+ *   - 高度最多还是 height[left]（因为短板在左边）
+ *   - 所以面积一定变小！
+ * - 因此，保持 left 不动的所有组合都可以排除
+ * - 结论：必须移动 left（较短的那边）
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 function maxArea(height: number[]): number {
-  let left = 0;
-  let right = height.length - 1;
-  let maxWater = 0;
+  let left = 0;                    // 左边界
+  let right = height.length - 1;   // 右边界
+  let maxWater = 0;                // 记录最大面积
   
   while (left < right) {
-    const width = right - left;
-    const h = Math.min(height[left], height[right]);
-    maxWater = Math.max(maxWater, width * h);
+    // 计算当前容器的面积
+    const width = right - left;                          // 宽度
+    const h = Math.min(height[left], height[right]);    // 高度 = 较短的那根
+    maxWater = Math.max(maxWater, width * h);           // 更新最大面积
     
-    // 移动较短的那根柱子
+    // ★★★ 核心：移动较短的那根柱子 ★★★
+    // 
+    // 为什么？因为面积由短板决定
+    // 移动短板，有机会找到更高的柱子，面积可能增大
+    // 移动长板，高度不变或变小，宽度变小，面积一定变小
     if (height[left] < height[right]) {
-      left++;
+      left++;   // 左边更短，移动左边
     } else {
-      right--;
+      right--;  // 右边更短（或相等），移动右边
     }
   }
   

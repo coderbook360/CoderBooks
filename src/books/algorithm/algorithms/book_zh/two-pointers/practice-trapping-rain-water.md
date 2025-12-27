@@ -41,25 +41,63 @@ _____________
 ## 代码实现
 
 ```typescript
+/**
+ * 接雨水 - 对撞双指针解法
+ * 
+ * 核心公式：每个位置的储水量 = min(左边最高柱子, 右边最高柱子) - 当前高度
+ * 
+ * 【双指针的关键洞察】
+ * 我们不需要知道右边"确切"的最高值，只需要知道"至少"有多高
+ * 
+ * 如果 leftMax < rightMax：
+ *   → 右边至少有一个柱子高度 >= rightMax > leftMax
+ *   → 所以位置 left 的水量只取决于 leftMax（短板原理）
+ *   → 水量 = leftMax - height[left]
+ * 
+ * 如果 rightMax <= leftMax：
+ *   → 左边至少有一个柱子高度 >= leftMax >= rightMax
+ *   → 所以位置 right 的水量只取决于 rightMax
+ *   → 水量 = rightMax - height[right]
+ * 
+ * 时间复杂度：O(n) - 每个位置只访问一次
+ * 空间复杂度：O(1) - 只用了 4 个变量
+ */
 function trap(height: number[]): number {
-  let left = 0;
-  let right = height.length - 1;
-  let leftMax = 0;
-  let rightMax = 0;
-  let water = 0;
+  // 双指针从两端向中间移动
+  let left = 0;                    // 左指针，从数组开头出发
+  let right = height.length - 1;   // 右指针，从数组末尾出发
+  
+  // 记录左边和右边遇到的最高柱子
+  let leftMax = 0;   // left 指针左侧（包含 left）的最高柱子
+  let rightMax = 0;  // right 指针右侧（包含 right）的最高柱子
+  
+  let water = 0;     // 累计储水量
   
   while (left < right) {
+    // 更新左边最高值：左指针扫过的所有柱子中的最高值
     leftMax = Math.max(leftMax, height[left]);
+    // 更新右边最高值：右指针扫过的所有柱子中的最高值
     rightMax = Math.max(rightMax, height[right]);
     
+    // 核心判断：哪边更低，就计算哪边的水量
     if (leftMax < rightMax) {
-      // left 位置的水量由 leftMax 决定
+      // 左边是短板，计算 left 位置的水量
+      // 
+      // 为什么正确？
+      // - left 位置左边最高 = leftMax（已确定）
+      // - left 位置右边最高 >= rightMax > leftMax（因为 rightMax 是右边扫过的，右边可能还有更高的）
+      // - 水量 = min(左高, 右高) - 当前 = leftMax - height[left]
       water += leftMax - height[left];
-      left++;
+      left++;  // 左指针右移，继续处理下一个位置
     } else {
-      // right 位置的水量由 rightMax 决定
+      // 右边是短板（或两边相等），计算 right 位置的水量
+      // 
+      // 为什么正确？
+      // - right 位置右边最高 = rightMax（已确定）
+      // - right 位置左边最高 >= leftMax >= rightMax
+      // - 水量 = min(左高, 右高) - 当前 = rightMax - height[right]
       water += rightMax - height[right];
-      right--;
+      right--;  // 右指针左移，继续处理下一个位置
     }
   }
   

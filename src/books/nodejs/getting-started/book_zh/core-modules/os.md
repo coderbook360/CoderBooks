@@ -1,57 +1,93 @@
 # os 模块：系统信息获取
 
-`os` 模块提供了获取操作系统信息的方法，用于编写系统感知的应用程序。
+> 你是否遇到过这些场景？
+> - 需要根据用户的操作系统显示不同的安装说明
+> - 想根据服务器的 CPU 核心数来配置 Worker 数量
+> - 需要检测内存使用率来决定是否启用缓存
+> - 编写跨平台脚本时要处理不同的换行符
+
+这些都需要获取系统信息。`os` 模块正是为此而生——它让你的程序能"感知"运行环境，做出智能决策。
+
+## 为什么需要系统信息？
+
+前端开发中，我们通常不关心运行环境（浏览器会抹平差异）。但在 Node.js 中，你的代码可能运行在：
+- Windows 开发机
+- macOS 笔记本
+- Linux 服务器
+- Docker 容器（资源受限）
+
+理解运行环境才能写出**自适应**的代码。
 
 ## 基础系统信息
 
 ### 操作系统类型
 
+最常见的需求是检测操作系统：
+
 ```javascript
 const os = require('os');
 
-console.log(os.platform());  // 'win32', 'darwin', 'linux'
-console.log(os.type());      // 'Windows_NT', 'Darwin', 'Linux'
-console.log(os.release());   // '10.0.19041'（版本号）
-console.log(os.arch());      // 'x64', 'arm64'
+// 获取操作系统相关信息
+console.log(os.platform());  // 操作系统平台: 'win32', 'darwin', 'linux'
+console.log(os.type());      // 系统类型: 'Windows_NT', 'Darwin', 'Linux'  
+console.log(os.release());   // 系统版本号: '10.0.19041'
+console.log(os.arch());      // CPU 架构: 'x64', 'arm64'
 ```
 
-跨平台处理：
+> **platform vs type**：`platform()` 返回 Node.js 编译时的平台（更常用），`type()` 返回 `uname` 命令的结果。
+
+**实际应用——跨平台命令选择**：
 
 ```javascript
+// 根据平台选择正确的"打开文件"命令
 const isWindows = os.platform() === 'win32';
 const isMac = os.platform() === 'darwin';
 const isLinux = os.platform() === 'linux';
 
-// 根据平台选择命令
+// Windows 用 start，macOS 用 open，Linux 用 xdg-open
 const openCommand = isWindows ? 'start' : isMac ? 'open' : 'xdg-open';
 ```
 
 ### 主机信息
 
+了解运行主机的基本信息：
+
 ```javascript
+// 主机名——常用于日志和分布式系统标识
 console.log(os.hostname());   // 'my-computer'
+
+// 用户信息——获取当前登录用户的详细信息
 console.log(os.userInfo());   // { username, uid, gid, shell, homedir }
+
+// 家目录——存放用户配置文件的最佳位置
 console.log(os.homedir());    // '/Users/username' 或 'C:\\Users\\username'
-console.log(os.tmpdir());     // 临时目录路径
+
+// 临时目录——存放临时文件的系统目录
+console.log(os.tmpdir());     // '/tmp' 或 'C:\\Users\\...\\Temp'
 ```
 
 ## CPU 信息
 
+CPU 信息对于性能调优和资源分配至关重要。你可以据此决定 Worker 数量、线程池大小等：
+
 ```javascript
 const cpus = os.cpus();
 
-console.log(`CPU 核心数: ${cpus.length}`);
-console.log(`CPU 型号: ${cpus[0].model}`);
-console.log(`CPU 速度: ${cpus[0].speed} MHz`);
+// 基本信息
+console.log(`CPU 核心数: ${cpus.length}`);      // 常用于配置 cluster 模块
+console.log(`CPU 型号: ${cpus[0].model}`);       // 处理器型号
+console.log(`CPU 速度: ${cpus[0].speed} MHz`);   // 主频
 
-// 每个核心的详细信息
+// 每个核心的时间分配统计
 cpus.forEach((cpu, index) => {
   console.log(`核心 ${index}:`, cpu.times);
-  // { user, nice, sys, idle, irq }
+  // { user: 用户进程, nice: 低优先级, sys: 系统, idle: 空闲, irq: 中断 }
 });
 ```
 
 ### 计算 CPU 使用率
+
+`os.cpus()` 返回的是累计时间，要计算**实时使用率**需要取两个时间点的差值：
 
 ```javascript
 function getCpuUsage() {

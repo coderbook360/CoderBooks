@@ -2,31 +2,81 @@
 
 3D 数学运算是图形应用的性能瓶颈之一。本章探讨如何通过 SIMD 和其他技术优化数学库。
 
+## 为什么需要关注性能？
+
+在深入优化技术之前，让我们理解为什么 3D 数学性能如此重要。
+
+一个典型的 3D 游戏场景可能需要：
+- **每帧变换数万个顶点**：每个顶点都要经过 MVP 矩阵变换
+- **大量碰撞检测**：上百个物体两两之间的碰撞测试
+- **物理模拟**：力、速度、加速度的向量运算
+- **动画骨骼计算**：每个骨骼的矩阵运算
+
+所有这些运算都在**每一帧**（通常 16ms 内）完成。如果数学运算慢 2 倍，帧率可能从 60fps 降到 40fps。
+
 ## 什么是 SIMD？
 
-**SIMD**（Single Instruction, Multiple Data）允许一条指令同时处理多个数据：
+**SIMD**（Single Instruction, Multiple Data）是现代 CPU 的一种并行计算能力。理解它的原理，才能有效利用它。
+
+### 传统方式 vs SIMD
+
+假设我们要计算 4 个向量加法：
 
 ```
-传统方式：
-  a1 + b1 = c1
-  a2 + b2 = c2
-  a3 + b3 = c3
-  a4 + b4 = c4
-  （4条指令）
+传统方式（标量运算）：
+  a1 + b1 = c1    ← 第1条指令
+  a2 + b2 = c2    ← 第2条指令
+  a3 + b3 = c3    ← 第3条指令
+  a4 + b4 = c4    ← 第4条指令
+  （共4条指令，4个时钟周期）
 
-SIMD 方式：
+SIMD 方式（向量运算）：
   [a1, a2, a3, a4] + [b1, b2, b3, b4] = [c1, c2, c3, c4]
-  （1条指令）
+  （1条指令，1个时钟周期）
 ```
 
-## JavaScript 中的 SIMD
+### 为什么 SIMD 能加速？
 
-### TypedArray
+关键在于 CPU 的硬件设计：
 
-使用 TypedArray 可以获得更好的内存布局和性能：
+1. **宽寄存器**：现代 CPU 有 128 位（SSE）或 256 位（AVX）的寄存器，可以同时存放 4 个或 8 个 32 位浮点数
+2. **并行执行单元**：CPU 有多个浮点运算单元可以同时工作
+3. **单指令控制**：用一条指令同时操作多个数据，减少了指令解码的开销
+
+3D 数学特别适合 SIMD，因为：
+- 向量有 3-4 个分量，刚好填满 128 位寄存器
+- 矩阵运算本质是大量独立的乘加操作
+- 批量处理顶点时，相同操作应用于大量数据
+
+### JavaScript 中的 SIMD 现状
+
+遗憾的是，JavaScript 曾经有 `SIMD.js` API，但后来被废弃了。不过我们仍可以通过以下方式获得部分 SIMD 优势：
+
+1. **TypedArray**：让 JIT 编译器更容易生成向量化代码
+2. **WebAssembly SIMD**：在 WASM 中使用真正的 SIMD 指令
+3. **良好的内存布局**：让自动向量化更有效
+
+## JavaScript 中的优化策略
+
+## JavaScript 中的优化策略
+
+### TypedArray：不只是类型标注
+
+使用 TypedArray 可以获得更好的内存布局和性能。但为什么？
+
+普通 JavaScript 数组的问题：
+- **动态类型**：每个元素可以是任意类型，需要额外的类型信息
+- **非连续存储**：数组元素可能分散在内存各处
+- **装箱开销**：数字被包装成对象
+
+TypedArray 的优势：
+- **类型确定**：所有元素都是同一类型，无需类型检查
+- **连续内存**：数据紧密排列，缓存友好
+- **无装箱**：直接操作原始数值
 
 ```javascript
 // 不推荐：对象数组
+// 每个对象都有额外的内存开销，且分散存储
 const vectors = [
   { x: 1, y: 2, z: 3 },
   { x: 4, y: 5, z: 6 },
@@ -34,6 +84,7 @@ const vectors = [
 ];
 
 // 推荐：TypedArray
+// 数据紧密排列在连续内存中
 const vectorData = new Float32Array([
   1, 2, 3,  // 向量1
   4, 5, 6,  // 向量2
@@ -41,37 +92,55 @@ const vectorData = new Float32Array([
 ]);
 ```
 
-### Structure of Arrays (SoA)
+### Structure of Arrays (SoA)：为批处理而生
 
-更进一步，使用 SoA 布局：
+SoA 是一种更激进的优化策略，特别适合批量处理。
+
+传统布局是 AoS（Array of Structures）：
 
 ```javascript
 // Array of Structures (AoS) - 常规方式
+// 内存布局：[x1, y1, z1, x2, y2, z2, x3, y3, z3, ...]
 const positions = new Float32Array([
   x1, y1, z1,  // 顶点1
   x2, y2, z2,  // 顶点2
   x3, y3, z3,  // 顶点3
 ]);
+```
 
+而 SoA 将同一分量的数据放在一起：
+
+```javascript
 // Structure of Arrays (SoA) - SIMD 友好
+// 每个分量单独存储
 const positionsX = new Float32Array([x1, x2, x3, x4]);
 const positionsY = new Float32Array([y1, y2, y3, y4]);
 const positionsZ = new Float32Array([z1, z2, z3, z4]);
 ```
 
-SoA 布局允许批量处理同一分量，更容易被 JIT 编译器向量化。
+**为什么 SoA 更快？**
+
+1. **缓存效率**：处理所有 X 分量时，数据连续排列，减少缓存未命中
+2. **SIMD 友好**：可以同时加载 4 个 X 值到 SIMD 寄存器
+3. **向量化**：JIT 编译器更容易识别并优化循环
 
 ## 向量运算优化
 
-### 避免对象分配
+接下来看具体的向量运算优化技巧。每个技巧都有其背后的原理。
+
+### 避免对象分配：GC 是性能杀手
+
+JavaScript 的垃圾回收（GC）会暂停程序执行，造成帧率波动。减少对象分配可以减轻 GC 压力。
 
 ```javascript
 // 慢：每次创建新对象
+// 问题：每帧调用 1000 次，就创建 1000 个对象等待 GC 回收
 function addVectors(a, b) {
   return new Vec3(a.x + b.x, a.y + b.y, a.z + b.z);
 }
 
 // 快：原地修改或使用输出参数
+// 优点：零内存分配，GC 完全不参与
 function addVectorsTo(a, b, out) {
   out.x = a.x + b.x;
   out.y = a.y + b.y;
@@ -79,20 +148,24 @@ function addVectorsTo(a, b, out) {
   return out;
 }
 
-// 使用对象池
+// 更灵活：使用对象池
+// 原理：预先创建对象，反复使用
 const tempVec = new Vec3();
 function addVectorsPooled(a, b) {
   tempVec.x = a.x + b.x;
   tempVec.y = a.y + b.y;
   tempVec.z = a.z + b.z;
-  return tempVec;
+  return tempVec;  // 注意：返回的是共享对象，调用者要小心
 }
 ```
 
-### 循环展开
+### 循环展开：减少循环开销
+
+循环本身有开销：递增计数器、比较条件、分支跳转。对于小循环，这些开销占比很大。
 
 ```javascript
 // 原始循环
+// 问题：每次迭代都有 i++, i<3, 分支判断
 function dotProduct(a, b) {
   let sum = 0;
   for (let i = 0; i < 3; i++) {
@@ -102,31 +175,39 @@ function dotProduct(a, b) {
 }
 
 // 展开后
+// 优点：没有循环开销，JIT 可以进一步优化
 function dotProductUnrolled(a, b) {
   return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 }
 ```
 
-### 批量处理
+### 批量处理：摊薄函数调用开销
+
+函数调用有开销（压栈、跳转、返回）。批量处理可以摊薄这些开销。
 
 ```javascript
 // 逐个变换（慢）
+// 问题：每个点都有一次函数调用开销
 function transformPoints(matrix, points) {
   return points.map(p => matrix.transformPoint(p));
 }
 
 // 批量变换（快）
+// 优点：一次函数调用处理所有点，内联后 JIT 可高度优化
 function transformPointsBatch(matrix, pointsFlat) {
   const result = new Float32Array(pointsFlat.length);
   const m = matrix.elements;
   
+  // 每次循环处理一个顶点（3个浮点数）
   for (let i = 0; i < pointsFlat.length; i += 3) {
     const x = pointsFlat[i];
     const y = pointsFlat[i + 1];
     const z = pointsFlat[i + 2];
     
-    result[i]     = m[0] * x + m[4] * y + m[8] * z + m[12];
-    result[i + 1] = m[1] * x + m[5] * y + m[9] * z + m[13];
+    // 矩阵变换：M * v
+    // 这里假设列主序矩阵（OpenGL 风格）
+    result[i]     = m[0] * x + m[4] * y + m[8]  * z + m[12];
+    result[i + 1] = m[1] * x + m[5] * y + m[9]  * z + m[13];
     result[i + 2] = m[2] * x + m[6] * y + m[10] * z + m[14];
   }
   

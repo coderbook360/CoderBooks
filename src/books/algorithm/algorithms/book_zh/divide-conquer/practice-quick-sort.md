@@ -62,27 +62,42 @@ function quickSort(arr: number[]): number[] {
 ```typescript
 function quickSortInPlace(arr: number[]): void {
   function sort(left: number, right: number): void {
+    // 递归终止条件：区间长度 <= 1
     if (left >= right) return;
     
+    // 分区：将 pivot 放到正确位置，返回 pivot 的索引
     const pivotIndex = partition(left, right);
-    sort(left, pivotIndex - 1);
-    sort(pivotIndex + 1, right);
+    
+    // 递归排序左右两部分（不包含 pivot，因为它已经在正确位置）
+    sort(left, pivotIndex - 1);   // 排序 pivot 左边
+    sort(pivotIndex + 1, right);  // 排序 pivot 右边
   }
   
-  // Lomuto 分区方案
+  // Lomuto 分区方案：简单但不如 Hoare 高效
   function partition(left: number, right: number): number {
-    const pivot = arr[right];  // 选择最后一个元素作为 pivot
-    let i = left;  // i 指向"小于 pivot 区域"的下一个位置
+    // 选择最右边元素作为 pivot
+    const pivot = arr[right];
     
+    // i 是"小于 pivot 区域"的边界（指向下一个可放入的位置）
+    // [left, i) 是小于 pivot 的区域
+    // [i, j) 是大于等于 pivot 的区域
+    let i = left;
+    
+    // j 扫描整个区间（不包括 pivot 本身）
     for (let j = left; j < right; j++) {
       if (arr[j] < pivot) {
+        // 当前元素小于 pivot，放入"小区域"
         [arr[i], arr[j]] = [arr[j], arr[i]];
-        i++;
+        i++;  // 扩大"小区域"
       }
+      // 如果 arr[j] >= pivot，不做任何操作，j 继续前进
     }
     
-    // 将 pivot 放到正确位置
+    // 循环结束后，i 是第一个 >= pivot 的位置
+    // 将 pivot 放到 i 位置（与 arr[i] 交换）
     [arr[i], arr[right]] = [arr[right], arr[i]];
+    
+    // 返回 pivot 的最终位置
     return i;
   }
   

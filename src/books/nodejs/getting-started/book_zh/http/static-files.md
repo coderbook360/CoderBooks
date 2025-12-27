@@ -1,8 +1,12 @@
 # 静态文件服务实现
 
-Web 应用需要提供 HTML、CSS、JavaScript、图片等静态文件。
+> 网站除了动态 API，还需要提供 HTML、CSS、JavaScript、图片等**静态资源**。这些文件不需要服务器处理，只需读取并发送给客户端。
 
-## 基础实现
+静态文件服务看似简单，但要做好并不容易——需要考虑 MIME 类型、安全性、性能缓存、大文件处理等。本章我们从零实现一个生产可用的静态文件中间件。
+
+## 最简单的实现（有问题）
+
+先看一个能工作但有缺陷的版本：
 
 ```javascript
 const http = require('http');
@@ -17,7 +21,7 @@ const server = http.createServer((req, res) => {
     return;
   }
   
-  // 构建文件路径
+  // 构建文件路径：将 URL 映射到 public 目录
   const filePath = path.join(__dirname, 'public', req.url);
   
   // 读取并发送文件
@@ -35,29 +39,50 @@ const server = http.createServer((req, res) => {
 server.listen(3000);
 ```
 
-问题：没有正确的 Content-Type，安全隐患，不支持目录。
+**这个版本的问题**：
+1. ❌ 没有设置 Content-Type，浏览器可能无法正确解析
+2. ❌ 安全漏洞：`/../../../etc/passwd` 可以访问系统文件！
+3. ❌ 大文件会占满内存（readFile 会把整个文件读入内存）
+4. ❌ 访问目录时没有默认文档
+5. ❌ 没有缓存，每次都重新读取文件
+
+让我们逐一解决这些问题。
 
 ## MIME 类型
 
+浏览器需要知道文件类型才能正确渲染：
+
 ```javascript
+// 常见文件扩展名到 MIME 类型的映射
 const MIME_TYPES = {
+  // 文本类型
   '.html': 'text/html',
   '.css': 'text/css',
   '.js': 'text/javascript',
   '.json': 'application/json',
+  '.txt': 'text/plain',
+  
+  // 图片类型
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
+  
+  // 字体类型
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
-  '.pdf': 'application/pdf',
-  '.txt': 'text/plain'
+  
+  // 其他
+  '.pdf': 'application/pdf'
 };
 
+/**
+ * 根据文件路径获取 MIME 类型
+ * 未知类型返回 application/octet-stream（二进制流）
+ */
 function getMimeType(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   return MIME_TYPES[ext] || 'application/octet-stream';
@@ -66,45 +91,58 @@ function getMimeType(filePath) {
 
 ## 安全处理
 
-防止目录遍历攻击：
+**目录遍历攻击**是静态文件服务最常见的安全漏洞：
 
 ```javascript
+/**
+ * 安全地解析文件路径，防止目录遍历攻击
+ * @param {string} root - 静态文件根目录的绝对路径
+ * @param {string} requestPath - 请求的相对路径
+ * @returns {string|null} 安全的完整路径，或 null（如果尝试越界）
+ */
 function safePath(root, requestPath) {
-  // 解码 URL
+  // 1. 解码 URL（处理 %20 等编码）
   const decoded = decodeURIComponent(requestPath);
   
-  // 规范化路径
+  // 2. 规范化路径（处理 /../ 等）
   const normalized = path.normalize(decoded);
   
-  // 构建完整路径
+  // 3. 构建完整路径
   const fullPath = path.join(root, normalized);
   
-  // 确保在根目录内
+  // 4. 安全检查：确保最终路径在根目录内
+  // 这是防御目录遍历的关键！
   if (!fullPath.startsWith(root)) {
-    return null;  // 目录遍历攻击
+    return null;  // 尝试访问根目录外的文件
   }
   
   return fullPath;
 }
+
+// 示例
+// safePath('/app/public', '/images/logo.png') -> '/app/public/images/logo.png'
+// safePath('/app/public', '/../config.json') -> null（越界！）
 ```
 
-## 使用流发送文件
+## 使用流发送大文件
 
-大文件不应加载到内存：
+`fs.readFile` 会把整个文件读入内存，对于大文件（如视频）会导致内存溢出。解决方案是使用**流**：
 
 ```javascript
 const server = http.createServer((req, res) => {
   const root = path.join(__dirname, 'public');
   const filePath = safePath(root, req.url);
   
+  // 安全检查
   if (!filePath) {
     res.statusCode = 400;
     res.end('Bad Request');
     return;
   }
   
-  // 检查文件是否存在
+  // 获取文件信息
   fs.stat(filePath, (err, stats) => {
+    // 文件不存在或不是文件
     if (err || !stats.isFile()) {
       res.statusCode = 404;
       res.end('Not Found');
@@ -113,12 +151,14 @@ const server = http.createServer((req, res) => {
     
     // 设置响应头
     res.setHeader('Content-Type', getMimeType(filePath));
-    res.setHeader('Content-Length', stats.size);
+    res.setHeader('Content-Length', stats.size);  // 告知客户端文件大小
     
-    // 流式发送
+    // 创建读取流并 pipe 到响应
+    // pipe 会自动处理背压和结束
     const stream = fs.createReadStream(filePath);
     stream.pipe(res);
     
+    // 处理读取错误
     stream.on('error', () => {
       res.statusCode = 500;
       res.end('Server Error');
@@ -126,6 +166,8 @@ const server = http.createServer((req, res) => {
   });
 });
 ```
+
+> **为什么用流？** 流是"边读边发"，内存占用恒定（通常 64KB），10MB 和 10GB 的文件内存占用相同。
 
 ## 默认文档
 

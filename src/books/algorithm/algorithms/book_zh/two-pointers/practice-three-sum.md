@@ -40,37 +40,68 @@
 ## 代码实现
 
 ```typescript
+/**
+ * 三数之和 - 排序 + 对撞指针
+ * 
+ * 算法思路：
+ * 1. 排序数组，使对撞指针有效
+ * 2. 固定第一个数 nums[i]，问题转化为求 nums[left] + nums[right] = -nums[i]
+ * 3. 用对撞指针在 [i+1, n-1] 范围内寻找符合条件的两数
+ * 4. 在三个位置进行去重处理
+ * 
+ * 时间复杂度：O(n²) - 外层循环 O(n)，内层对撞指针 O(n)
+ * 空间复杂度：O(1) - 不计输出数组，只用了几个指针变量
+ */
 function threeSum(nums: number[]): number[][] {
   const result: number[][] = [];
-  nums.sort((a, b) => a - b);  // 排序
   
+  // 排序是对撞指针的前提条件
+  // 排序后可以利用有序性移动指针，且方便去重
+  nums.sort((a, b) => a - b);
+  
+  // 遍历第一个数
+  // 只需遍历到倒数第三个，因为还需要留两个位置给 left 和 right
   for (let i = 0; i < nums.length - 2; i++) {
-    // 剪枝：最小的数都 > 0，不可能凑出和为 0
+    // 剪枝优化：如果最小的数已经 > 0，后面不可能凑出和为 0
+    // 因为数组已排序，nums[i] 是剩余元素中最小的
+    // nums[i] + nums[left] + nums[right] 必定 > 0
     if (nums[i] > 0) break;
     
-    // 去重1：跳过重复的第一个数
+    // ★★★ 去重1：跳过重复的第一个数 ★★★
+    // 关键：必须是 nums[i] === nums[i-1] 向后看
+    // 如果用 nums[i] === nums[i+1] 向前看，会漏解！
+    // 例如 [-1, -1, 2]，如果向前看会跳过第一个 -1，导致 [-1, -1, 2] 这个解被漏掉
     if (i > 0 && nums[i] === nums[i - 1]) continue;
     
-    let left = i + 1;
-    let right = nums.length - 1;
-    const target = -nums[i];
+    // 对撞指针：在 [i+1, n-1] 范围内寻找另外两个数
+    let left = i + 1;              // 左指针从 i+1 开始
+    let right = nums.length - 1;   // 右指针从末尾开始
+    const target = -nums[i];        // 目标值：两数之和需要等于 -nums[i]
     
     while (left < right) {
       const sum = nums[left] + nums[right];
       
       if (sum === target) {
+        // 找到一个有效三元组
         result.push([nums[i], nums[left], nums[right]]);
         
-        // 去重2：跳过重复的第二个数
+        // ★★★ 去重2：跳过重复的第二个数 ★★★
+        // 找到解后，跳过所有与当前 left 相同的值
+        // 因为相同的 left 值会产生重复解
         while (left < right && nums[left] === nums[left + 1]) left++;
-        // 去重3：跳过重复的第三个数
+        
+        // ★★★ 去重3：跳过重复的第三个数 ★★★
+        // 同理，跳过所有与当前 right 相同的值
         while (left < right && nums[right] === nums[right - 1]) right--;
         
+        // 移动两个指针，继续寻找其他解
         left++;
         right--;
       } else if (sum < target) {
+        // 和太小，需要增大，左指针右移
         left++;
       } else {
+        // 和太大，需要减小，右指针左移
         right--;
       }
     }

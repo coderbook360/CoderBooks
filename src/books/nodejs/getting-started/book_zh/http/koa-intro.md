@@ -1,6 +1,19 @@
 # Koa 快速入门
 
-Koa 由 Express 原班人马打造，使用 async/await 重新设计了中间件机制。
+> Express 固然好用，但它的回调式中间件在处理复杂异步逻辑时显得力不从心。有没有更现代的方案？
+
+Koa 就是答案。它由 Express 原班人马打造，使用 async/await 重新设计了中间件机制，更轻量、更优雅、更适合现代 JavaScript 开发。
+
+## Express vs Koa
+
+| 对比项 | Express | Koa |
+|--------|---------|-----|
+| 中间件 | 回调式 `(req, res, next)` | async 函数 `async (ctx, next)` |
+| 错误处理 | 需要传 err 给 next | 标准 try/catch |
+| 内置功能 | 路由、模板引擎等 | 极简，核心只有中间件机制 |
+| 包大小 | ~500KB | ~50KB |
+
+> **何时选 Koa？** 如果你喜欢 async/await、追求轻量、愿意自己组合中间件，Koa 是更现代的选择。
 
 ## 安装
 
@@ -14,8 +27,10 @@ npm install koa
 const Koa = require('koa');
 const app = new Koa();
 
+// Koa 中间件是 async 函数
+// ctx 封装了 request 和 response
 app.use(async (ctx) => {
-  ctx.body = 'Hello World';
+  ctx.body = 'Hello World';  // 直接赋值，无需调用方法
 });
 
 app.listen(3000, () => {
@@ -25,23 +40,23 @@ app.listen(3000, () => {
 
 ## Context 对象
 
-Koa 将 request 和 response 封装在 `ctx` 中：
+Koa 将请求和响应封装在一个 `ctx`（Context）对象中，访问更便捷：
 
 ```javascript
 app.use(async (ctx) => {
-  // 请求信息
-  console.log(ctx.method);      // 请求方法
-  console.log(ctx.url);         // 完整 URL
-  console.log(ctx.path);        // 路径
-  console.log(ctx.query);       // 查询参数对象
+  // ===== 请求信息 =====
+  console.log(ctx.method);      // 'GET', 'POST' 等
+  console.log(ctx.url);         // 完整 URL，如 '/users?page=1'
+  console.log(ctx.path);        // 路径部分，如 '/users'
+  console.log(ctx.query);       // 查询参数对象 { page: '1' }
   console.log(ctx.headers);     // 请求头
   console.log(ctx.ip);          // 客户端 IP
   
-  // 原始对象
-  console.log(ctx.request);     // Koa Request
-  console.log(ctx.response);    // Koa Response
-  console.log(ctx.req);         // Node.js request
-  console.log(ctx.res);         // Node.js response
+  // ===== 原始对象（需要时才用）=====
+  console.log(ctx.request);     // Koa 封装的 Request
+  console.log(ctx.response);    // Koa 封装的 Response
+  console.log(ctx.req);         // 原生 Node.js request
+  console.log(ctx.res);         // 原生 Node.js response
   
   ctx.body = 'OK';
 });
@@ -75,60 +90,69 @@ app.use(async (ctx) => {
 
 ## 中间件
 
-Koa 中间件是 async 函数，通过 `await next()` 调用下一个：
+Koa 中间件是 async 函数，通过 `await next()` 调用下一个中间件。这就是著名的**洋葱模型**：
 
 ```javascript
+// 第一层中间件
 app.use(async (ctx, next) => {
-  console.log('1. 进入');
-  await next();
-  console.log('5. 离开');
+  console.log('1. 进入第一层');  // 请求进入时执行
+  await next();                   // 等待内层中间件完成
+  console.log('5. 离开第一层');  // 响应返回时执行
 });
 
+// 第二层中间件
 app.use(async (ctx, next) => {
-  console.log('2. 进入');
+  console.log('2. 进入第二层');
   await next();
-  console.log('4. 离开');
+  console.log('4. 离开第二层');
 });
 
+// 最内层——核心业务逻辑
 app.use(async (ctx) => {
-  console.log('3. 处理');
+  console.log('3. 处理请求');
   ctx.body = 'Done';
 });
 
 // 输出顺序：1, 2, 3, 4, 5
 ```
 
-这就是著名的**洋葱模型**。
+> **洋葱模型的好处**：中间件可以在 `next()` 前后分别执行逻辑。比如日志中间件可以在请求进入时记录开始时间，在响应返回时计算耗时。
 
-## 常用中间件
+## 常用中间件模式
 
-### 日志
+### 计时日志
 
 ```javascript
+// 利用洋葱模型计算请求耗时
 app.use(async (ctx, next) => {
-  const start = Date.now();
-  await next();
-  const ms = Date.now() - start;
+  const start = Date.now();  // 请求进入时记录
+  await next();              // 等待处理完成
+  const ms = Date.now() - start;  // 响应时计算差值
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 ```
 
-### 错误处理
+### 统一错误处理
 
 ```javascript
+// 放在最外层，捕获所有内层错误
 app.use(async (ctx, next) => {
   try {
     await next();
   } catch (err) {
+    // 统一错误响应格式
     ctx.status = err.status || 500;
     ctx.body = { error: err.message };
+    
+    // 触发应用级错误事件（用于日志等）
     ctx.app.emit('error', err, ctx);
   }
 });
 
-// 监听错误
+// 监听错误事件
 app.on('error', (err, ctx) => {
   console.error('Error:', err.message);
+  // 这里可以发送到错误监控系统
 });
 ```
 

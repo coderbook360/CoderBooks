@@ -36,22 +36,40 @@
 ### 方法一：Set + 收缩
 
 ```typescript
+/**
+ * 无重复字符的最长子串 - Set 版本
+ * 
+ * 【核心思想】
+ * 用 Set 记录窗口内的字符
+ * 右边界扩展时，如果遇到重复字符，就收缩左边界直到没有重复
+ * 
+ * 【滑动窗口的不变式】
+ * 窗口 [left, right] 内没有重复字符
+ * 
+ * 时间复杂度：O(n) - 每个字符最多入 Set 一次、出 Set 一次
+ * 空间复杂度：O(min(n, m))，m 是字符集大小
+ */
 function lengthOfLongestSubstring(s: string): number {
-  const set = new Set<string>();
-  let left = 0;
-  let maxLen = 0;
+  const set = new Set<string>();  // 窗口内的字符集合
+  let left = 0;     // 窗口左边界
+  let maxLen = 0;   // 记录最大长度
   
+  // 右边界从 0 遍历到 n-1
   for (let right = 0; right < s.length; right++) {
-    // 如果当前字符已在窗口中，收缩左边界
+    // -------- 收缩阶段：移除重复字符 --------
+    // 如果 s[right] 已经在窗口中，说明有重复
+    // 需要收缩左边界，直到 s[right] 不在窗口中
     while (set.has(s[right])) {
-      set.delete(s[left]);
-      left++;
+      set.delete(s[left]);  // 移除左边界字符
+      left++;               // 左边界右移
     }
+    // 循环结束后，s[right] 不在窗口中，可以安全加入
     
-    // 将当前字符加入窗口
+    // -------- 扩展阶段：加入新字符 --------
     set.add(s[right]);
     
-    // 更新最大长度
+    // -------- 更新答案 --------
+    // 当前窗口长度是 right - left + 1
     maxLen = Math.max(maxLen, right - left + 1);
   }
   
@@ -62,20 +80,47 @@ function lengthOfLongestSubstring(s: string): number {
 ### 方法二：HashMap 记录位置（优化）
 
 ```typescript
+/**
+ * 无重复字符的最长子串 - Map 优化版本
+ * 
+ * 【优化思路】
+ * Set 版本遇到重复时，需要逐个移除左边界字符
+ * Map 版本记录每个字符最后出现的位置，可以直接"跳"到正确位置
+ * 
+ * 【关键条件 map.get(c)! >= left】
+ * 为什么需要这个条件？
+ * 因为 Map 中可能存储着窗口外的旧数据
+ * 例如 "abba"：
+ * - 处理第二个 'b' 时，left 跳到 2
+ * - 处理第二个 'a' 时，map 中 'a' 的位置是 0
+ * - 但 0 < left(2)，说明那个 'a' 已经在窗口外了，不算重复
+ * 
+ * 时间复杂度：O(n) - 每个字符只访问一次
+ * 空间复杂度：O(min(n, m))
+ */
 function lengthOfLongestSubstring(s: string): number {
-  const map = new Map<string, number>(); // 字符 -> 最近出现的索引
-  let left = 0;
-  let maxLen = 0;
+  // 记录每个字符最后出现的索引位置
+  const map = new Map<string, number>();
+  let left = 0;     // 窗口左边界
+  let maxLen = 0;   // 最大长度
   
   for (let right = 0; right < s.length; right++) {
     const c = s[right];
     
-    // 如果字符已存在且在窗口内，直接跳过重复的部分
+    // ★★★ 核心判断 ★★★
+    // 条件1：字符 c 之前出现过（map.has(c)）
+    // 条件2：之前出现的位置在窗口内（map.get(c)! >= left）
+    // 两个条件都满足，才需要移动 left
     if (map.has(c) && map.get(c)! >= left) {
+      // 直接跳过所有重复部分
+      // left 跳到上次出现位置的下一个位置
       left = map.get(c)! + 1;
     }
     
+    // 更新字符 c 的最新位置
     map.set(c, right);
+    
+    // 更新最大长度
     maxLen = Math.max(maxLen, right - left + 1);
   }
   

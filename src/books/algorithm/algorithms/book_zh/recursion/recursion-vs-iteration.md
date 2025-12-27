@@ -166,30 +166,52 @@ function factorialStack(n: number): number {
 ### 示例：二叉树前序遍历
 
 ```typescript
-// 递归版本
+/**
+ * 递归版本 - 简洁但有栈溢出风险
+ * 
+ * 前序遍历顺序：根 → 左 → 右
+ * 递归天然符合这个顺序
+ */
 function preorderRecursive(root: TreeNode | null): number[] {
   if (root === null) return [];
   return [
-    root.val,
-    ...preorderRecursive(root.left),
-    ...preorderRecursive(root.right)
+    root.val,                           // 1. 访问根
+    ...preorderRecursive(root.left),    // 2. 遍历左子树
+    ...preorderRecursive(root.right)    // 3. 遍历右子树
   ];
 }
 
-// 用栈模拟
+/**
+ * 用栈模拟递归 - 避免栈溢出
+ * 
+ * 【核心思想】
+ * 递归本质上是利用系统调用栈
+ * 我们可以用自己的栈来模拟这个过程
+ * 
+ * 【为什么先压右子树，再压左子树？】
+ * 因为栈是"后进先出"（LIFO）
+ * 我们想让左子树先被访问，所以左子树要后入栈
+ * 这样左子树会先被弹出处理
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(h)，h 为树的高度
+ */
 function preorderStack(root: TreeNode | null): number[] {
   if (root === null) return [];
   
   const result: number[] = [];
-  const stack: TreeNode[] = [root];
+  const stack: TreeNode[] = [root];  // 初始化栈，放入根节点
   
   while (stack.length > 0) {
+    // 弹出栈顶节点并访问
     const node = stack.pop()!;
     result.push(node.val);
     
-    // 先压右子树，再压左子树（栈是后进先出）
-    if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.left);
+    // ★★★ 关键：先压右，再压左 ★★★
+    // 这样弹出时顺序是：左先，右后
+    // 符合前序遍历的 "根→左→右" 顺序
+    if (node.right) stack.push(node.right);  // 右子树先入栈，后出
+    if (node.left) stack.push(node.left);    // 左子树后入栈，先出
   }
   
   return result;

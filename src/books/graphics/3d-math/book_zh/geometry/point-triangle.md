@@ -6,11 +6,15 @@
 - **光栅化**：判断像素中心是否在三角形内
 - **拾取**：判断点击位置是否在某个三角形上
 
+本章介绍三种主流方法，每种都有其适用场景。
+
 ## 重心坐标法
 
-最优雅的方法是使用**重心坐标**。
+最优雅的方法是使用**重心坐标**。这种方法不仅能判断点是否在三角形内，还能直接用于插值——这是光栅化的核心需求。
 
-### 原理
+### 为什么重心坐标如此强大？
+
+重心坐标的核心思想是：**用顶点的加权组合来表示任意点**。
 
 三角形内任意点可以表示为三个顶点的加权平均：
 
@@ -20,35 +24,53 @@ $$
 
 其中 $\alpha + \beta + \gamma = 1$。
 
+这三个权重有直观的几何意义：
+- $\alpha$ 表示点 P "靠近" $V_0$ 的程度
+- 当 P 恰好在 $V_0$ 时，$\alpha = 1, \beta = 0, \gamma = 0$
+- 当 P 在 $V_0$ 的对边（$V_1 V_2$ 连线）上时，$\alpha = 0$
+
 **判断规则**：
 - 如果 $\alpha, \beta, \gamma \in [0, 1]$，点在三角形**内部**
 - 如果某个坐标为 0，点在**边**上
 - 如果某个坐标为负，点在三角形**外部**
 
-### 计算重心坐标
+### 从概念到代码
+
+理解了原理，让我们看如何高效计算重心坐标。
+
+关键是解一个线性方程组。我们可以把问题转化为：给定点 P，求参数 $\beta$ 和 $\gamma$（$\alpha = 1 - \beta - \gamma$）。
+
+通过向量投影和 Cramer 法则，可以得到以下高效实现：
 
 ```javascript
+/**
+ * 计算点 P 相对于三角形 V0V1V2 的重心坐标
+ * @returns {Object|null} 包含 alpha, beta, gamma 的对象，或 null（退化三角形）
+ */
 function computeBarycentricCoords(p, v0, v1, v2) {
-  // 向量
-  const v0v1 = subtract(v1, v0);
-  const v0v2 = subtract(v2, v0);
-  const v0p = subtract(p, v0);
+  // 构造三角形的两条边向量
+  const v0v1 = subtract(v1, v0);  // 从 V0 指向 V1
+  const v0v2 = subtract(v2, v0);  // 从 V0 指向 V2
+  const v0p = subtract(p, v0);    // 从 V0 指向点 P
   
-  // 点积
-  const d00 = dot(v0v1, v0v1);
-  const d01 = dot(v0v1, v0v2);
-  const d02 = dot(v0v1, v0p);
-  const d11 = dot(v0v2, v0v2);
-  const d12 = dot(v0v2, v0p);
+  // 计算 Gram 矩阵元素（用于求解线性方程组）
+  const d00 = dot(v0v1, v0v1);  // |V0V1|²
+  const d01 = dot(v0v1, v0v2);  // V0V1 · V0V2
+  const d02 = dot(v0v1, v0p);   // V0V1 · V0P
+  const d11 = dot(v0v2, v0v2);  // |V0V2|²
+  const d12 = dot(v0v2, v0p);   // V0V2 · V0P
   
-  // Cramer 法则
+  // 计算行列式（Cramer 法则的分母）
   const denom = d00 * d11 - d01 * d01;
   
+  // 行列式为 0 说明三角形退化（三点共线）
   if (Math.abs(denom) < 1e-10) {
-    return null;  // 退化三角形
+    return null;
   }
   
   const invDenom = 1.0 / denom;
+  
+  // 解出 beta 和 gamma
   const beta = (d11 * d02 - d01 * d12) * invDenom;
   const gamma = (d00 * d12 - d01 * d02) * invDenom;
   const alpha = 1 - beta - gamma;
@@ -56,18 +78,22 @@ function computeBarycentricCoords(p, v0, v1, v2) {
   return { alpha, beta, gamma };
 }
 
+/**
+ * 判断点是否在三角形内部
+ */
 function isPointInTriangle(p, v0, v1, v2) {
   const coords = computeBarycentricCoords(p, v0, v1, v2);
   
-  if (!coords) return false;
+  if (!coords) return false;  // 退化三角形
   
+  // 三个坐标都非负，说明点在三角形内或边上
   return coords.alpha >= 0 && coords.beta >= 0 && coords.gamma >= 0;
 }
 ```
 
 ## 叉积法（同侧测试）
 
-另一种直观的方法是检查点是否在所有边的同一侧。
+如果不需要重心坐标，叉积法是另一种直观的选择。它的核心思想更容易理解：**检查点是否在所有边的同一侧**。
 
 ### 原理
 

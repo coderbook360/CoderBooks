@@ -53,24 +53,55 @@
 ## 代码实现
 
 ```typescript
+/**
+ * 跳跃游戏 - 贪心算法
+ * 
+ * 【问题抽象】
+ * 从位置 0 出发，每个位置 i 可以跳 1 到 nums[i] 步
+ * 问：能否到达最后一个位置？
+ * 
+ * 【贪心思想：维护最远可达位置】
+ * 关键洞察：我们不关心具体怎么跳，只关心"能跳多远"
+ * 
+ * 如果位置 i 可达，那么 i+1, i+2, ..., i+nums[i] 也都可达
+ * 我们维护一个 maxReach，表示从起点能到达的最远位置
+ * 
+ * 【为什么这个贪心策略是对的？】
+ * - 如果存在一条到达终点的路径，那条路径上的每个位置都是可达的
+ * - 每个可达位置都会更新 maxReach
+ * - 所以 maxReach 最终一定能覆盖终点
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 function canJump(nums: number[]): boolean {
-  let maxReach = 0;  // 当前能到达的最远位置
+  let maxReach = 0;  // 当前能到达的最远位置（核心变量！）
   
+  // 遍历每个位置
   for (let i = 0; i < nums.length; i++) {
-    // 关键判断：当前位置是否可达
+    // ★★★ 关键判断：当前位置是否可达 ★★★
+    // 
+    // 如果 i > maxReach，说明：
+    // - 从位置 0 到 i-1 的所有位置，都跳不到位置 i
+    // - 位置 i 是一个"无法到达的孤岛"
+    // - 游戏失败，返回 false
     if (i > maxReach) {
-      return false;  // 无法到达位置 i，游戏失败
+      return false;
     }
     
     // 更新最远可达位置
+    // 从位置 i 最远可以跳到 i + nums[i]
+    // 取 maxReach 和 i + nums[i] 的较大值
     maxReach = Math.max(maxReach, i + nums[i]);
     
-    // 优化：已经能到达终点，提前返回
+    // 优化：如果已经能到达终点，提前返回
+    // 不需要继续遍历后面的位置
     if (maxReach >= nums.length - 1) {
       return true;
     }
   }
   
+  // 遍历结束，说明每个位置都可达，自然也包括终点
   return true;
 }
 ```
