@@ -17,22 +17,50 @@
 在有序数组中查找目标值：
 
 ```typescript
+/**
+ * 基础二分查找 - 在有序数组中查找目标值
+ * 
+ * 【二分查找的本质】
+ * 通过每次排除一半的搜索空间，将 O(n) 优化到 O(log n)
+ * 
+ * 【前提条件】
+ * 数组必须有序（或具有某种单调性）
+ * 
+ * 【区间定义】
+ * 本实现使用闭区间 [left, right]
+ * - 初始化：left = 0, right = n - 1
+ * - 终止条件：left > right（区间为空）
+ * - 边界更新：left = mid + 1 或 right = mid - 1（排除已检查的 mid）
+ * 
+ * 时间复杂度：O(log n)
+ * 空间复杂度：O(1)
+ */
 function binarySearch(nums: number[], target: number): number {
   let left = 0;
   let right = nums.length - 1;
   
+  // 闭区间 [left, right] 还有元素时继续搜索
+  // 为什么是 <=？因为当 left == right 时，区间还有一个元素需要检查
   while (left <= right) {
+    // 计算中点（避免整数溢出的写法）
+    // 普通写法 (left + right) / 2 在 left 和 right 很大时可能溢出
     const mid = left + Math.floor((right - left) / 2);
     
     if (nums[mid] === target) {
+      // 找到目标，返回索引
       return mid;
     } else if (nums[mid] < target) {
+      // 目标在右半边
+      // mid 已经检查过了，下次从 mid + 1 开始
       left = mid + 1;
     } else {
+      // 目标在左半边
+      // mid 已经检查过了，下次到 mid - 1 结束
       right = mid - 1;
     }
   }
   
+  // 搜索结束，未找到目标
   return -1;
 }
 ```
@@ -65,11 +93,14 @@ function binarySearch(nums: number[], target: number): number {
 ### 1. 查找精确值
 
 ```typescript
-// 找到返回索引，找不到返回 -1
+/**
+ * 查找精确值 - 最基本的二分查找
+ * 找到返回索引，找不到返回 -1
+ */
 while (left <= right) {
-  if (nums[mid] === target) return mid;
-  else if (nums[mid] < target) left = mid + 1;
-  else right = mid - 1;
+  if (nums[mid] === target) return mid;  // 命中目标
+  else if (nums[mid] < target) left = mid + 1;  // 目标在右边
+  else right = mid - 1;  // 目标在左边
 }
 return -1;
 ```
@@ -77,23 +108,47 @@ return -1;
 ### 2. 查找第一个 >= target 的位置
 
 ```typescript
-// 返回插入位置（左边界）
+/**
+ * 查找左边界（Lower Bound）
+ * 返回第一个 >= target 的位置，也就是 target 应该插入的位置
+ * 
+ * 【应用场景】
+ * - 搜索插入位置
+ * - 查找 target 第一次出现的位置
+ * 
+ * 【为什么 nums[mid] >= target 时 right = mid - 1？】
+ * nums[mid] >= target 说明 mid 可能是答案，但左边可能还有更小的满足条件的位置
+ * 我们要找"第一个"，所以继续往左搜索
+ * 最终 left 会停在第一个 >= target 的位置
+ */
 while (left <= right) {
-  if (nums[mid] >= target) right = mid - 1;
-  else left = mid + 1;
+  if (nums[mid] >= target) right = mid - 1;  // 往左找更小的
+  else left = mid + 1;  // 当前太小，往右
 }
-return left;
+return left;  // left 就是第一个 >= target 的位置
 ```
 
 ### 3. 查找最后一个 <= target 的位置
 
 ```typescript
-// 返回右边界
+/**
+ * 查找右边界（Upper Bound - 1）
+ * 返回最后一个 <= target 的位置
+ * 
+ * 【应用场景】
+ * - 查找 target 最后一次出现的位置
+ * - 统计 <= target 的元素个数
+ * 
+ * 【为什么 nums[mid] <= target 时 left = mid + 1？】
+ * nums[mid] <= target 说明 mid 可能是答案，但右边可能还有更大的满足条件的位置
+ * 我们要找"最后一个"，所以继续往右搜索
+ * 最终 right 会停在最后一个 <= target 的位置
+ */
 while (left <= right) {
-  if (nums[mid] <= target) left = mid + 1;
-  else right = mid - 1;
+  if (nums[mid] <= target) left = mid + 1;  // 往右找更大的
+  else right = mid - 1;  // 当前太大，往左
 }
-return right;
+return right;  // right 就是最后一个 <= target 的位置
 ```
 
 ---

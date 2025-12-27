@@ -43,30 +43,67 @@ count: [0, 1, 3, 5, 6, 6, 6, 6, 7]
 ### 基础版本
 
 ```typescript
+/**
+ * 计数排序 - 稳定的非比较排序算法
+ * 
+ * 【核心思想】
+ * 不通过比较来排序，而是：
+ * 1. 统计每个值出现的次数
+ * 2. 通过次数累加确定每个值的最终位置
+ * 3. 将元素放到正确位置
+ * 
+ * 【适用条件】
+ * - 数据范围 k 不能太大（否则空间浪费）
+ * - 数据是整数或可以映射为整数
+ * 
+ * 【为什么能突破 O(n log n)？】
+ * 比较排序的下界是 O(n log n)，但那是基于"只能通过比较"的假设
+ * 计数排序利用了"数据范围有限"这个额外信息，所以能达到 O(n + k)
+ * 
+ * 时间复杂度：O(n + k)，k = 数据范围
+ * 空间复杂度：O(k)
+ * 稳定性：稳定（从后向前遍历时）
+ */
 function countingSort(arr: number[]): number[] {
   if (arr.length === 0) return [];
   
+  // 找出数据范围
   const min = Math.min(...arr);
   const max = Math.max(...arr);
-  const range = max - min + 1;
+  const range = max - min + 1;  // 计数数组的大小
   
-  // 1. 统计每个值的出现次数
+  // ========================================
+  // 第一步：统计每个值的出现次数
+  // ========================================
+  // count[i] 表示值 (i + min) 出现了多少次
+  // 使用 (num - min) 作为索引，处理负数和非零起点
   const count = new Array(range).fill(0);
   for (const num of arr) {
     count[num - min]++;
   }
   
-  // 2. 累加次数（确定每个值的最终位置）
+  // ========================================
+  // 第二步：累加次数（确定每个值的最终位置）
+  // ========================================
+  // 累加后 count[i] 表示：值 <= (i + min) 的元素共有多少个
+  // 也就是说，值 (i + min) 应该放在输出数组的 count[i] - 1 位置
   for (let i = 1; i < range; i++) {
     count[i] += count[i - 1];
   }
   
-  // 3. 从后向前遍历原数组，放置到正确位置
+  // ========================================
+  // 第三步：从后向前遍历原数组，放置到正确位置
+  // ========================================
+  // ★★★ 为什么从后向前？保证稳定性！★★★
+  // 相同值的元素，后出现的放在后面，保持原有顺序
   const output = new Array(arr.length);
   for (let i = arr.length - 1; i >= 0; i--) {
     const num = arr[i];
+    // count[num - min] 表示 num 应该放在的位置（1-indexed）
+    // 减 1 得到 0-indexed
     const index = count[num - min] - 1;
     output[index] = num;
+    // 放置后，该值的下一个应该放在前一个位置
     count[num - min]--;
   }
   
@@ -77,19 +114,31 @@ function countingSort(arr: number[]): number[] {
 ### 简化版本（只需要排序结果）
 
 ```typescript
+/**
+ * 计数排序 - 简化版
+ * 
+ * 【简化思路】
+ * 如果不需要稳定性，可以直接展开计数数组
+ * 不需要累加和从后向前遍历
+ * 
+ * 【使用场景】
+ * - 排序的是基本类型，不关心稳定性
+ * - 代码更简洁，适合快速实现
+ */
 function countingSortSimple(arr: number[]): number[] {
   if (arr.length === 0) return [];
   
   const min = Math.min(...arr);
   const max = Math.max(...arr);
   
-  // 统计次数
+  // 统计每个值的次数
   const count = new Array(max - min + 1).fill(0);
   for (const num of arr) {
     count[num - min]++;
   }
   
-  // 直接展开
+  // 直接按顺序展开
+  // count[i] = 3 意味着值 (i + min) 要输出 3 次
   const result: number[] = [];
   for (let i = 0; i < count.length; i++) {
     for (let j = 0; j < count[i]; j++) {

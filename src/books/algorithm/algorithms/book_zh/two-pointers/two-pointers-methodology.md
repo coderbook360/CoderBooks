@@ -34,27 +34,46 @@ function twoSumBruteForce(nums: number[], target: number): number[] {
 基于这个观察，我们可以用两个指针，一个从最左边开始，一个从最右边开始：
 
 ```typescript
+/**
+ * 有序数组两数之和 - 对撞指针
+ * 
+ * 【关键洞察】
+ * 数组有序意味着：
+ * - 左指针指向最小值，右指针指向最大值
+ * - 如果和太小，只能增大左指针（让和变大）
+ * - 如果和太大，只能减小右指针（让和变小）
+ * 
+ * 【为什么这样不会漏解？】
+ * 每次移动都排除了一整行/列的可能性
+ * 例如 sum < target 时，left 与任何 right 的组合都不行
+ * 所以可以放心地 left++
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 function twoSumTwoPointers(nums: number[], target: number): number[] {
-  let left = 0;
-  let right = nums.length - 1;
+  let left = 0;                    // 左指针从开头开始
+  let right = nums.length - 1;     // 右指针从末尾开始
   
   while (left < right) {
     const sum = nums[left] + nums[right];
     
     if (sum === target) {
-      return [left, right];
+      return [left, right];  // 找到答案
     }
     
     if (sum < target) {
-      // 和太小，需要更大的数，左指针右移
+      // 和太小，需要更大的数
+      // 左指针右移，选择一个更大的数
       left++;
     } else {
-      // 和太大，需要更小的数，右指针左移
+      // 和太大，需要更小的数
+      // 右指针左移，选择一个更小的数
       right--;
     }
   }
   
-  return [];
+  return [];  // 未找到
 }
 ```
 

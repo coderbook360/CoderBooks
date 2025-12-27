@@ -51,22 +51,59 @@ prefix[i] = prefix[j+1] - k
 ## 代码实现
 
 ```typescript
+/**
+ * 和为 K 的子数组 - 前缀和 + 哈希表
+ * 
+ * 【核心思想】
+ * 子数组 [i, j] 的和 = prefix[j+1] - prefix[i]
+ * 如果和等于 k，则 prefix[i] = prefix[j+1] - k
+ * 
+ * 所以问题转化为：
+ * 对于每个前缀和 prefix[j+1]，找之前有多少个前缀和等于 prefix[j+1] - k
+ * 
+ * 【为什么用哈希表？】
+ * 用哈希表记录每个前缀和出现的次数
+ * 这样查找 prefix[j+1] - k 是 O(1) 的
+ * 
+ * 【为什么不能用滑动窗口？】
+ * 滑动窗口要求：窗口扩大时，目标函数单调变化
+ * 本题数组可能有负数，所以和不是单调的
+ * 例如 [1, -1, 2]，窗口扩大时和可能先减后增
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(n)
+ */
 function subarraySum(nums: number[], k: number): number {
+  // 哈希表：记录每个前缀和出现的次数
+  // key = 前缀和的值，value = 出现次数
   const map = new Map<number, number>();
-  map.set(0, 1);  // 前缀和为 0 出现 1 次（空前缀）
   
-  let prefixSum = 0;
-  let count = 0;
+  // ★★★ 关键初始化：前缀和为 0 出现 1 次 ★★★
+  // 这代表"空前缀"——一个元素都不取时，和为 0
+  // 
+  // 为什么需要？处理"从索引 0 开始的子数组"！
+  // 例如 nums=[3], k=3：
+  //   prefixSum = 3
+  //   查找 3 - 3 = 0
+  //   如果没有 map.set(0, 1)，就会漏掉 [3] 这个解！
+  map.set(0, 1);
+  
+  let prefixSum = 0;  // 当前前缀和
+  let count = 0;       // 符合条件的子数组个数
   
   for (const num of nums) {
+    // 更新前缀和
     prefixSum += num;
     
+    // ★★★ 核心查询 ★★★
     // 查找之前是否有前缀和等于 prefixSum - k
+    // 如果 prefix[i] = prefixSum - k，那么 sum(i, j) = prefixSum - prefix[i] = k
     if (map.has(prefixSum - k)) {
+      // 有多少个这样的 prefix[i]，就有多少个和为 k 的子数组
       count += map.get(prefixSum - k)!;
     }
     
-    // 记录当前前缀和
+    // 记录当前前缀和（注意：先查询，再记录，避免 k=0 时自己匹配自己）
     map.set(prefixSum, (map.get(prefixSum) || 0) + 1);
   }
   
