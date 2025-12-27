@@ -56,21 +56,56 @@
 ## 解法一：回溯（推荐）
 
 ```typescript
+/**
+ * 子集问题 - 回溯算法
+ * 
+ * 【子集与组合的核心区别】
+ * - 组合：选定 k 个元素，只在 path.length === k 时收集结果
+ * - 子集：选 0 到 n 个元素，每个节点都是有效结果
+ * 
+ * 【为什么每个节点都收集？】
+ * 子集包括空集、所有单元素集、所有双元素集...直到全集
+ * 在决策树中，这些正好对应每一层的所有节点
+ * 
+ * 【为什么没有终止条件？】
+ * 当 start === nums.length 时，for 循环自然不会执行
+ * 相当于隐式的终止条件
+ * 
+ * 时间复杂度：O(n × 2^n) - 共 2^n 个子集，每个复制需要 O(n)
+ * 空间复杂度：O(n) - 递归深度
+ */
 function subsets(nums: number[]): number[][] {
   const result: number[][] = [];
   
+  /**
+   * 回溯函数
+   * @param start - 当前可选范围的起点
+   * @param path - 当前已选择的元素
+   */
   function backtrack(start: number, path: number[]) {
-    // 每个节点都是答案，不需要终止条件判断
+    // ★★★ 核心区别：每个节点都是答案 ★★★
+    // 不需要判断 path.length === k，直接收集
+    // 空集、单元素、双元素...都是有效子集
     result.push([...path]);
     
-    // 从start开始选择，避免重复
+    // 从 start 开始选择，确保只往后选（避免重复）
+    // 例如 [1,2] 和 [2,1] 是同一个子集，我们只生成 [1,2]
     for (let i = start; i < nums.length; i++) {
-      path.push(nums[i]);      // 做选择
-      backtrack(i + 1, path);  // 递归（从i+1开始）
-      path.pop();              // 撤销选择
+      // 做选择：把 nums[i] 加入当前子集
+      path.push(nums[i]);
+      
+      // 递归：继续向后选择
+      // 传入 i + 1，确保下一个元素比当前大
+      backtrack(i + 1, path);
+      
+      // 撤销选择：尝试其他可能
+      path.pop();
     }
+    // 当 start === nums.length 时，for 循环不执行
+    // 函数自然返回，这是隐式的终止条件
   }
   
+  // 从索引 0 开始，初始子集为空
   backtrack(0, []);
   return result;
 }
@@ -107,16 +142,39 @@ function subsets(nums: number[]) {
 **核心思想**：每个元素有两种状态：选或不选。n个元素共有2^n种组合，用0到2^n-1的二进制数表示。
 
 ```typescript
+/**
+ * 子集问题 - 位运算解法
+ * 
+ * 【核心思想】
+ * n 个元素，每个元素有"选"或"不选"两种状态
+ * 可以用 n 位二进制数表示一个子集
+ * - 第 i 位是 1：选择 nums[i]
+ * - 第 i 位是 0：不选 nums[i]
+ * 
+ * 共有 2^n 种可能，对应 0 到 2^n-1 的所有整数
+ * 
+ * 【优势】
+ * - 代码简洁
+ * - 不需要递归
+ * - 对于 n <= 30 的情况很实用
+ * 
+ * 时间复杂度：O(n × 2^n)
+ * 空间复杂度：O(n)（不计输出）
+ */
 function subsets(nums: number[]): number[][] {
   const result: number[][] = [];
   const n = nums.length;
-  const total = 1 << n;  // 2^n
+  const total = 1 << n;  // 2^n，用位运算更高效
   
+  // 枚举所有可能的二进制数 0 到 2^n-1
   for (let mask = 0; mask < total; mask++) {
     const subset: number[] = [];
     
+    // 检查 mask 的每一位
     for (let i = 0; i < n; i++) {
-      // 检查第i位是否为1
+      // 判断第 i 位是否为 1
+      // 1 << i 是只有第 i 位为 1 的数
+      // mask & (1 << i) 非零说明 mask 的第 i 位是 1
       if (mask & (1 << i)) {
         subset.push(nums[i]);
       }

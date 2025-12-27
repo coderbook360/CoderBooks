@@ -28,10 +28,33 @@
 用快慢指针，一遍就够了：
 
 ```typescript
+/**
+ * 快慢指针找链表中点
+ * 
+ * 【核心思想】
+ * 快指针每次走 2 步，慢指针每次走 1 步
+ * 当快指针到达终点时，慢指针正好走了一半
+ * 
+ * 【为什么有效？】
+ * 假设链表长度为 n：
+ * - 快指针走 n 步到达终点
+ * - 慢指针走 n/2 步，正好在中点
+ * 
+ * 【边界情况】
+ * - 奇数长度：慢指针指向正中间的节点
+ * - 偶数长度：慢指针指向中间偏右的节点
+ *   如果需要偏左，改条件为 fast.next !== null && fast.next.next !== null
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 function findMiddle(head: ListNode | null): ListNode | null {
-  let slow = head;
-  let fast = head;
+  let slow = head;  // 慢指针
+  let fast = head;  // 快指针
   
+  // 快指针能继续走两步时，继续循环
+  // fast !== null：快指针还没走完
+  // fast.next !== null：快指针还能走一步（确保能走两步）
   while (fast !== null && fast.next !== null) {
     slow = slow!.next;        // 慢指针走一步
     fast = fast.next.next;    // 快指针走两步
@@ -76,6 +99,26 @@ slow 指向 3，正好是中点
 **Floyd 环检测算法**（龟兔算法）：
 
 ```typescript
+/**
+ * 链表环检测 - Floyd 龟兔算法
+ * 
+ * 【核心思想】
+ * 快慢指针同时出发，如果有环，快指针一定会追上慢指针
+ * 
+ * 【为什么快指针能追上慢指针？】
+ * 想象一个环形跑道：
+ * - 没有环：快指针先到达终点
+ * - 有环：两人都在环中跑，快的一定能追上慢的
+ * 
+ * 数学证明：
+ * - 假设慢指针进入环时，快指针在环中某处
+ * - 两者相距 d 步
+ * - 每一轮：慢指针走 1 步，快指针走 2 步，距离减少 1
+ * - d 轮后，距离变为 0，即相遇
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 function hasCycle(head: ListNode | null): boolean {
   let slow = head;
   let fast = head;
@@ -84,12 +127,16 @@ function hasCycle(head: ListNode | null): boolean {
     slow = slow!.next;        // 慢指针走一步
     fast = fast.next.next;    // 快指针走两步
     
+    // 如果快慢指针相遇，说明有环
+    // 注意：这个判断要放在移动之后
+    // 因为初始时 slow === fast === head，不能在开始就判断
     if (slow === fast) {
-      return true;  // 相遇了，说明有环
+      return true;
     }
   }
   
-  return false;  // 快指针到达终点，无环
+  // 快指针到达终点（null），说明无环
+  return false;
 }
 ```
 
@@ -124,27 +171,59 @@ function hasCycle(head: ListNode | null): boolean {
 这需要 Floyd 算法的第二阶段：
 
 ```typescript
+/**
+ * 寻找链表环的入口节点 - Floyd 算法完整版
+ * 
+ * 【算法分两个阶段】
+ * 阶段1：检测环并找到相遇点
+ * 阶段2：从头节点和相遇点同时出发，相遇处即为环入口
+ * 
+ * 【阶段2的数学证明】
+ * 设：
+ * - a = 头节点到环入口的距离
+ * - b = 环入口到相遇点的距离
+ * - c = 环的长度
+ * 
+ * 相遇时：
+ * - 慢指针走了 a + b 步
+ * - 快指针走了 a + b + k*c 步（k 是快指针多绕的圈数）
+ * - 快指针速度是慢指针的 2 倍：2(a + b) = a + b + k*c
+ * - 化简：a + b = k*c，即 a = k*c - b = (k-1)*c + (c-b)
+ * 
+ * 这意味着：
+ * 从头节点走 a 步 = 从相遇点走 (k-1) 圈 + (c-b) 步
+ * 两者会在环入口相遇！
+ * 
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(1)
+ */
 function detectCycle(head: ListNode | null): ListNode | null {
   let slow = head;
   let fast = head;
   
+  // ========================================
   // 第一阶段：检测环并找到相遇点
+  // ========================================
   while (fast !== null && fast.next !== null) {
     slow = slow!.next;
     fast = fast.next.next;
     
     if (slow === fast) {
+      // 找到相遇点，进入第二阶段
+      // ========================================
       // 第二阶段：从头节点和相遇点同时出发
+      // ========================================
       let ptr = head;
       while (ptr !== slow) {
-        ptr = ptr!.next;
-        slow = slow!.next;
+        ptr = ptr!.next;   // 从头节点出发
+        slow = slow!.next; // 从相遇点出发
       }
-      return ptr;  // 相遇点就是环的入口
+      // 两指针相遇的地方就是环的入口
+      return ptr;
     }
   }
   
-  return null;
+  return null;  // 无环
 }
 ```
 
