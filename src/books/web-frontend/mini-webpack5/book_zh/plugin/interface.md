@@ -1,0 +1,1 @@
+# Plugin 接口规范\n\nPlugin 必须实现 apply 方法。\n\n## 总结\n\napply 方法是入口。

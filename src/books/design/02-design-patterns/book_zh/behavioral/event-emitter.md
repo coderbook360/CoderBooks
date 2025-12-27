@@ -1,0 +1,1 @@
+# EventEmitter 实现与最佳实践\n\n实现事件发射器。\n\n## 总结\n\nEventEmitter实战。

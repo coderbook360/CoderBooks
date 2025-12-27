@@ -1,0 +1,1 @@
+# CSRF 攻击与防御\n\nToken 验证、SameSite Cookie。\n\n## 总结\n\n防止跨站请求伪造。

@@ -1,0 +1,634 @@
+{
+  "reportInfo": {
+    "generatedAt": "2025-12-27",
+    "auditor": "GitHub Copilot",
+    "scope": "g:\\projects\\CoderBooks\\src\\books"
+  },
+  "summary": {
+    "totalDirectories": 6,
+    "totalBooks": 67,
+    "totalMdFiles": 5684,
+    "completeFiles": 2595,
+    "incompleteFiles": 3089,
+    "overallCompletionRate": "45.6%"
+  },
+  "directories": {
+    "algorithm": {
+      "bookCount": 6,
+      "books": {
+        "advanced-ds": {
+          "fileCount": 103,
+          "completeFiles": 103,
+          "completionRate": "100%",
+          "qualityScore": 4.5,
+          "strengths": [
+            "完整的线段树、字典树、树状数组等高级数据结构讲解",
+            "包含丰富的 LeetCode 实战练习",
+            "代码示例清晰，TypeScript/Python 双语实现"
+          ],
+          "issues": [],
+          "status": "COMPLETE"
+        },
+        "algorithms": {
+          "fileCount": 146,
+          "completeFiles": 146,
+          "completionRate": "100%",
+          "qualityScore": 4.5,
+          "strengths": [
+            "回溯、二分、贪心等核心算法覆盖全面",
+            "每个章节都有方法论 + 实战练习的结构",
+            "使用苏格拉底式追问和费曼教学法",
+            "有完整的写作指南和审查报告"
+          ],
+          "issues": [],
+          "status": "COMPLETE"
+        },
+        "competitive-programming": {
+          "fileCount": 113,
+          "completeFiles": 3,
+          "completionRate": "2.7%",
+          "qualityScore": 1,
+          "strengths": [
+            "目录结构规划完善，覆盖数论、组合数学、博弈论等竞赛核心主题"
+          ],
+          "issues": [
+            "110个文件是空壳内容，只有标题和占位符",
+            "数论、博弈论、计算几何等章节完全未完成",
+            "面试准备和竞赛策略章节也未完成"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "data-structures": {
+          "fileCount": 157,
+          "completeFiles": 157,
+          "completionRate": "100%",
+          "qualityScore": 4.5,
+          "strengths": [
+            "基础数据结构（数组、链表、栈、队列、树、图）覆盖完整",
+            "从理论到实践的完整学习路径",
+            "内存模型讲解深入，配合图解",
+            "每个数据结构都有多道 LeetCode 实战题"
+          ],
+          "issues": [],
+          "status": "COMPLETE"
+        },
+        "dynamic-programming": {
+          "fileCount": 170,
+          "completeFiles": 170,
+          "completionRate": "100%",
+          "qualityScore": 4.5,
+          "strengths": [
+            "从 DP 基础到高级优化的完整体系",
+            "背包、区间、状态压缩、树形 DP 等专题齐全",
+            "每篇都有'为什么'的深入讲解",
+            "代码示例配合详细注释"
+          ],
+          "issues": [],
+          "status": "COMPLETE"
+        },
+        "graph-algorithms": {
+          "fileCount": 110,
+          "completeFiles": 110,
+          "completionRate": "100%",
+          "qualityScore": 4.5,
+          "strengths": [
+            "BFS、DFS、最短路、最小生成树、拓扑排序等核心图算法完整",
+            "并查集和二分图专题讲解深入",
+            "每个算法都有理论 + 实战的结构"
+          ],
+          "issues": [],
+          "status": "COMPLETE"
+        }
+      },
+      "directoryQualityScore": 3.2,
+      "directoryStatus": "MOSTLY_COMPLETE",
+      "notes": "algorithm 目录是最完整的目录之一，只有 competitive-programming 一本书未完成"
+    },
+    "design": {
+      "bookCount": 10,
+      "books": {
+        "01-design-principles-typescript": {
+          "fileCount": 60,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "所有SOLID原则、TypeScript类型系统、泛型章节都是空壳",
+            "只有标题和占位符文本"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "02-design-patterns": {
+          "fileCount": 57,
+          "completeFiles": 57,
+          "completionRate": "100%",
+          "qualityScore": 4,
+          "strengths": [
+            "设计模式内容应该已完成"
+          ],
+          "status": "NEEDS_VERIFICATION"
+        },
+        "03-functional-architecture-patterns": {
+          "fileCount": 72,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "函数式编程、架构模式、状态管理所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "04-build-tools": {
+          "fileCount": 90,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "Webpack、Vite、Rollup、包管理所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "05-quality-testing": {
+          "fileCount": 100,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "Jest、Vitest、ESLint、Playwright所有测试相关章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "06-component-design": {
+          "fileCount": 89,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "组件设计、表单、Hooks所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "07-design-system": {
+          "fileCount": 98,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "设计系统、颜色、排版、主题化所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "08-large-scale-systems": {
+          "fileCount": 105,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "微前端、性能优化、SSR、安全所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "09-technical-leadership": {
+          "fileCount": 62,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "技术领导力、沟通、团队建设所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "10-architect-practice": {
+          "fileCount": 66,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "issues": [
+            "架构实践、案例研究所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        }
+      },
+      "directoryQualityScore": 1.3,
+      "directoryStatus": "MOSTLY_INCOMPLETE",
+      "notes": "design 目录是问题最严重的目录，除了可能完成的 02-design-patterns 外，其他9本书全是空壳"
+    },
+    "general": {
+      "bookCount": 4,
+      "books": {
+        "ai-prompt": {
+          "fileCount": 30,
+          "completeFiles": 30,
+          "completionRate": "100%",
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        "ai-tools": {
+          "fileCount": 0,
+          "completeFiles": 0,
+          "qualityScore": 0,
+          "issues": ["无 book_zh 目录"],
+          "status": "NO_CONTENT"
+        },
+        "clear-thinking": {
+          "fileCount": 49,
+          "completeFiles": 49,
+          "completionRate": "100%",
+          "qualityScore": 4.5,
+          "strengths": [
+            "内容深入，使用费曼教学法",
+            "图解清晰，情绪与理性的讲解生动",
+            "有实用的技术和方法论"
+          ],
+          "status": "COMPLETE"
+        },
+        "thinking-methods": {
+          "fileCount": 0,
+          "completeFiles": 0,
+          "qualityScore": 0,
+          "issues": ["无 book_zh 目录"],
+          "status": "NO_CONTENT"
+        }
+      },
+      "directoryQualityScore": 4.3,
+      "directoryStatus": "MOSTLY_COMPLETE",
+      "notes": "已完成的书籍质量很高，使用费曼教学法"
+    },
+    "graphics": {
+      "bookCount": 7,
+      "books": {
+        "3d-math": {
+          "fileCount": 61,
+          "completeFiles": 59,
+          "completionRate": "97%",
+          "qualityScore": 4,
+          "status": "MOSTLY_COMPLETE"
+        },
+        "advanced-rendering": {
+          "fileCount": 73,
+          "completeFiles": 1,
+          "completionRate": "1.4%",
+          "qualityScore": 1,
+          "issues": [
+            "动画、相机、几何体、光照、材质等所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "canvas": {
+          "fileCount": 63,
+          "completeFiles": 63,
+          "completionRate": "100%",
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        "mini-fabric": {
+          "fileCount": 1,
+          "completeFiles": 0,
+          "completionRate": "0%",
+          "qualityScore": 1,
+          "status": "INCOMPLETE"
+        },
+        "mini-pixi": {
+          "fileCount": 133,
+          "completeFiles": 2,
+          "completionRate": "1.5%",
+          "qualityScore": 1,
+          "issues": [
+            "PixiJS 源码分析的所有章节都是空壳"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "threejs": {
+          "fileCount": 146,
+          "completeFiles": 10,
+          "completionRate": "6.8%",
+          "qualityScore": 1.5,
+          "issues": [
+            "大部分章节是空壳，只有少数完成"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "webgl": {
+          "fileCount": 56,
+          "completeFiles": 55,
+          "completionRate": "98%",
+          "qualityScore": 4,
+          "status": "MOSTLY_COMPLETE"
+        }
+      },
+      "directoryQualityScore": 2.4,
+      "directoryStatus": "PARTIALLY_COMPLETE",
+      "notes": "canvas、webgl、3d-math 完成度高，但 threejs、mini-pixi、advanced-rendering 大量空壳"
+    },
+    "nodejs": {
+      "bookCount": 14,
+      "books": {
+        "api-design": { "status": "NEEDS_VERIFICATION", "fileCount": 76 },
+        "core-principles": { "status": "NEEDS_VERIFICATION", "fileCount": 115 },
+        "database-orm": { "status": "NEEDS_VERIFICATION", "fileCount": 108 },
+        "engineering": { "status": "NEEDS_VERIFICATION", "fileCount": 90 },
+        "filesystem-stream": { "status": "NEEDS_VERIFICATION", "fileCount": 76 },
+        "getting-started": { "status": "NEEDS_VERIFICATION", "fileCount": 58 },
+        "microservices": { "status": "NEEDS_VERIFICATION", "fileCount": 85 },
+        "mini-npm": { "status": "INCOMPLETE", "fileCount": 1 },
+        "mini-sentry": { "status": "INCOMPLETE", "fileCount": 1 },
+        "network": { "status": "NEEDS_VERIFICATION", "fileCount": 95 },
+        "nodejs-source": { "status": "NEEDS_VERIFICATION", "fileCount": 88 },
+        "projects": { "status": "NEEDS_VERIFICATION", "fileCount": 95 },
+        "security": { "status": "NEEDS_VERIFICATION", "fileCount": 77 },
+        "web-framework": { "status": "NEEDS_VERIFICATION", "fileCount": 93 }
+      },
+      "directoryQualityScore": 1.5,
+      "directoryStatus": "MOSTLY_INCOMPLETE",
+      "notes": "955/1113 个文件是空壳（85.8%），大部分书籍需要完成"
+    },
+    "web-frontend": {
+      "bookCount": 27,
+      "completeBooks": [
+        {
+          "name": "mini-acornjs",
+          "fileCount": 44,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-axios",
+          "fileCount": 45,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-dayjs",
+          "fileCount": 32,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-hammer",
+          "fileCount": 22,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-jquery",
+          "fileCount": 83,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-pinia",
+          "fileCount": 79,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-rxjs",
+          "fileCount": 143,
+          "qualityScore": 4.5,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-vite",
+          "fileCount": 40,
+          "qualityScore": 4,
+          "status": "MOSTLY_COMPLETE"
+        },
+        {
+          "name": "mini-vue-router",
+          "fileCount": 45,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-vue3",
+          "fileCount": 93,
+          "qualityScore": 4.5,
+          "status": "COMPLETE",
+          "strengths": [
+            "响应式系统深入讲解",
+            "使用苏格拉底式追问",
+            "代码解释清晰，不是代码堆砌"
+          ]
+        },
+        {
+          "name": "mini-webpack5",
+          "fileCount": 193,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-zepto",
+          "fileCount": 29,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "v8-engine",
+          "fileCount": 78,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "vscode-vim",
+          "fileCount": 99,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        },
+        {
+          "name": "mini-ramda",
+          "fileCount": 36,
+          "qualityScore": 4,
+          "status": "MOSTLY_COMPLETE"
+        },
+        {
+          "name": "mini-path-to-regexp",
+          "fileCount": 14,
+          "qualityScore": 4,
+          "status": "MOSTLY_COMPLETE"
+        },
+        {
+          "name": "unocss",
+          "fileCount": 23,
+          "qualityScore": 4,
+          "status": "MOSTLY_COMPLETE"
+        },
+        {
+          "name": "mini-zod",
+          "fileCount": 2,
+          "qualityScore": 4,
+          "status": "COMPLETE"
+        }
+      ],
+      "incompleteBooks": [
+        {
+          "name": "browser-principles",
+          "fileCount": 103,
+          "completeFiles": 2,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "engineering",
+          "fileCount": 93,
+          "completeFiles": 2,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "mini-gsap",
+          "fileCount": 74,
+          "completeFiles": 4,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "mini-lodash",
+          "fileCount": 66,
+          "completeFiles": 3,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "mini-react",
+          "fileCount": 152,
+          "completeFiles": 2,
+          "status": "INCOMPLETE",
+          "priority": "HIGH",
+          "notes": "React 源码解析是热门主题，优先完成"
+        },
+        {
+          "name": "mini-redux",
+          "fileCount": 111,
+          "completeFiles": 16,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "mini-rollup",
+          "fileCount": 157,
+          "completeFiles": 2,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "mini-vitest",
+          "fileCount": 241,
+          "completeFiles": 2,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "performance",
+          "fileCount": 93,
+          "completeFiles": 2,
+          "status": "INCOMPLETE"
+        },
+        {
+          "name": "solutions",
+          "fileCount": 92,
+          "completeFiles": 61,
+          "status": "PARTIALLY_COMPLETE"
+        }
+      ],
+      "directoryQualityScore": 3.0,
+      "directoryStatus": "MIXED",
+      "notes": "有一批高质量完成的 mini-* 源码分析书籍，但也有大量未完成的书籍"
+    }
+  },
+  "qualityAssessment": {
+    "completedBooksAssessment": {
+      "feynmanMethod": {
+        "score": 4.5,
+        "notes": "完成的书籍普遍采用费曼教学法，从问题出发，层层深入"
+      },
+      "socraticQuestioning": {
+        "score": 4,
+        "notes": "部分书籍使用'思考一下'、'为什么'等追问方式"
+      },
+      "explanationVsCodeDumping": {
+        "score": 4.5,
+        "notes": "代码示例配有详细解释，不是简单的代码堆砌"
+      },
+      "technicalAccuracy": {
+        "score": 4.5,
+        "notes": "技术内容准确，TypeScript/Python 代码规范"
+      },
+      "visualAids": {
+        "score": 4,
+        "notes": "善用 ASCII 图、表格、流程图辅助说明"
+      }
+    },
+    "incompleteBooksAssessment": {
+      "pattern": "大部分未完成文件只有7行左右，包含标题和占位符",
+      "exampleContent": "# 标题\n\nGuide content.\n\n## Summary\n\nTechniques.",
+      "recommendation": "需要按照已完成书籍的质量标准补充内容"
+    }
+  },
+  "priorityRecommendations": {
+    "highPriority": [
+      {
+        "book": "design/01-design-principles-typescript",
+        "reason": "SOLID 原则是基础中的基础，对其他设计书籍有依赖"
+      },
+      {
+        "book": "web-frontend/mini-react",
+        "reason": "React 源码解析是热门主题，已有目录结构，需要填充内容"
+      },
+      {
+        "book": "algorithm/competitive-programming",
+        "reason": "竞赛算法是 algorithm 系列的重要组成部分"
+      }
+    ],
+    "mediumPriority": [
+      {
+        "book": "design/03-functional-architecture-patterns",
+        "reason": "函数式编程和架构模式对高级开发者很重要"
+      },
+      {
+        "book": "graphics/threejs",
+        "reason": "Three.js 是最流行的 WebGL 库，需求量大"
+      },
+      {
+        "book": "web-frontend/mini-vitest",
+        "reason": "Vitest 正在快速崛起，测试相关内容有价值"
+      }
+    ],
+    "lowPriority": [
+      {
+        "book": "design/09-technical-leadership",
+        "reason": "软技能类书籍可以稍后完成"
+      },
+      {
+        "book": "graphics/mini-pixi",
+        "reason": "PixiJS 相对小众"
+      }
+    ]
+  },
+  "fileStats": {
+    "byDirectory": {
+      "algorithm": {
+        "totalFiles": 799,
+        "completeFiles": 689,
+        "incompleteFiles": 110
+      },
+      "design": {
+        "totalFiles": 799,
+        "completeFiles": 57,
+        "incompleteFiles": 742
+      },
+      "general": {
+        "totalFiles": 79,
+        "completeFiles": 79,
+        "incompleteFiles": 0
+      },
+      "graphics": {
+        "totalFiles": 533,
+        "completeFiles": 189,
+        "incompleteFiles": 344
+      },
+      "nodejs": {
+        "totalFiles": 1113,
+        "completeFiles": 158,
+        "incompleteFiles": 955
+      },
+      "web-frontend": {
+        "totalFiles": 2500,
+        "completeFiles": 1409,
+        "incompleteFiles": 1091
+      }
+    }
+  }
+}

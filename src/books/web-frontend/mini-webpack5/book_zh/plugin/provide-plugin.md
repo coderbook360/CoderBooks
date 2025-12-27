@@ -1,0 +1,1 @@
+# ProvidePlugin\n\n自动加载模块。\n\n## 总结\n\n自动引入模块。

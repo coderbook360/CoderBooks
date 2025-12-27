@@ -1,0 +1,1 @@
+# E2E 测试\n\nCypress、Playwright 端到端测试。\n\n## 总结\n\n验证完整流程。

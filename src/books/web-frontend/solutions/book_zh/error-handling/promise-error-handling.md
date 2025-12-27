@@ -1,0 +1,1 @@
+# Promise 异常处理\n\nPromise 错误处理最佳实践。\n\n## 总结\n\n避免未捕获的 rejection。

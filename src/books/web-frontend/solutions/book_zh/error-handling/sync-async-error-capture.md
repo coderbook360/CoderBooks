@@ -1,0 +1,1 @@
+# 同步与异步错误捕获\n\ntry-catch 与 Promise 错误处理。\n\n## 总结\n\n全面捕获错误。

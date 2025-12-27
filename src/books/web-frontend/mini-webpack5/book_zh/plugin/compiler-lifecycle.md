@@ -1,0 +1,1 @@
+# Compiler 生命周期钩子\n\nCompiler 提供构建级钩子。\n\n## 总结\n\nCompiler 钩子覆盖构建生命周期。

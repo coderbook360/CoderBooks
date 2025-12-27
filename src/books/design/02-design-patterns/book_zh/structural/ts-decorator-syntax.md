@@ -1,0 +1,1 @@
+# TypeScript 装饰器语法详解\n\nTypeScript装饰器详细讲解。\n\n## 总结\n\n掌握装饰器语法。

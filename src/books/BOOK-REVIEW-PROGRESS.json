@@ -1,0 +1,516 @@
+{
+  "report_name": "CoderBooks 书籍审查优化进度报告",
+  "version": "1.0.0",
+  "created_at": "2025-12-27",
+  "last_updated": "2025-12-27",
+  "summary": {
+    "total_files": 6023,
+    "placeholder_files": 479,
+    "quality_files": 5544,
+    "placeholder_percentage": "7.95%",
+    "overall_assessment": "大部分书籍内容质量高，但存在多本书籍有大量占位符内容需要完善"
+  },
+  "categories": {
+    "algorithm": {
+      "status": "良好",
+      "books": [
+        {
+          "name": "dynamic-programming",
+          "path": "algorithm/dynamic-programming",
+          "assessment": "高质量",
+          "score": 5,
+          "issues": [],
+          "sample_review": "what-is-dp.md 采用了费曼教学法，有清晰的问题驱动叙事，代码示例完整"
+        },
+        {
+          "name": "data-structures",
+          "path": "algorithm/data-structures",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "graph-algorithms",
+          "path": "algorithm/graph-algorithms",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "advanced-ds",
+          "path": "algorithm/advanced-ds",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "algorithms",
+          "path": "algorithm/algorithms",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "competitive-programming",
+          "path": "algorithm/competitive-programming",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        }
+      ]
+    },
+    "graphics": {
+      "status": "良好",
+      "books": [
+        {
+          "name": "canvas",
+          "path": "graphics/canvas",
+          "assessment": "高质量",
+          "score": 5,
+          "issues": [],
+          "sample_review": "canvas-overview.md 使用了苏格拉底式追问，有清晰的权衡讨论，代码示例生产级质量"
+        },
+        {
+          "name": "webgl",
+          "path": "graphics/webgl",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "3d-math",
+          "path": "graphics/3d-math",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "threejs",
+          "path": "graphics/threejs",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "advanced-rendering",
+          "path": "graphics/advanced-rendering",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "mini-fabric",
+          "path": "graphics/mini-fabric",
+          "assessment": "未开始",
+          "score": 0,
+          "issues": ["index.md 只有 Coming soon 占位符"]
+        },
+        {
+          "name": "mini-pixi",
+          "path": "graphics/mini-pixi",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        }
+      ]
+    },
+    "web-frontend": {
+      "status": "需要大量完善",
+      "books": [
+        {
+          "name": "mini-vue3",
+          "path": "web-frontend/mini-vue3",
+          "assessment": "高质量",
+          "score": 5,
+          "issues": [],
+          "sample_review": "reactive.md 采用渐进式讲解，有版本演进，有权衡讨论"
+        },
+        {
+          "name": "mini-axios",
+          "path": "web-frontend/mini-axios",
+          "assessment": "高质量",
+          "score": 5,
+          "issues": [],
+          "sample_review": "axios-class.md 有清晰的目标设定，类型设计解析到位"
+        },
+        {
+          "name": "mini-react",
+          "path": "web-frontend/mini-react",
+          "assessment": "严重问题",
+          "score": 1,
+          "issues": [
+            "约150个文件只有占位符内容 'React implementation guide.'",
+            "fiber/, scheduler/, hooks/, reconciler/, vdom/ 等核心目录全部是占位符",
+            "需要完全重写"
+          ],
+          "placeholder_count": 150
+        },
+        {
+          "name": "mini-vitest",
+          "path": "web-frontend/mini-vitest",
+          "assessment": "严重问题",
+          "score": 1,
+          "issues": [
+            "约239个文件只有占位符内容 'Vitest testing framework implementation.'",
+            "几乎所有章节都是占位符",
+            "需要完全重写"
+          ],
+          "placeholder_count": 239
+        },
+        {
+          "name": "performance",
+          "path": "web-frontend/performance",
+          "assessment": "严重问题",
+          "score": 1,
+          "issues": [
+            "约90个文件只有占位符内容 'Performance optimization guide.'",
+            "所有章节都是占位符",
+            "需要完全重写"
+          ],
+          "placeholder_count": 90
+        },
+        {
+          "name": "mini-redux",
+          "path": "web-frontend/mini-redux",
+          "assessment": "部分问题",
+          "score": 3,
+          "issues": [
+            "foundations/ 目录内容完整",
+            "但 middleware/, react-redux/, selectors/, rtk/ 等目录有大量占位符"
+          ],
+          "placeholder_count": 78
+        },
+        {
+          "name": "engineering",
+          "path": "web-frontend/engineering",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "vscode-vim",
+          "path": "web-frontend/vscode-vim",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "mini-webpack5",
+          "path": "web-frontend/mini-webpack5",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "mini-vue-router",
+          "path": "web-frontend/mini-vue-router",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "mini-rxjs",
+          "path": "web-frontend/mini-rxjs",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "v8-engine",
+          "path": "web-frontend/v8-engine",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "solutions",
+          "path": "web-frontend/solutions",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        }
+      ]
+    },
+    "nodejs": {
+      "status": "待审查",
+      "books": [
+        {
+          "name": "api-design",
+          "path": "nodejs/api-design",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "core-principles",
+          "path": "nodejs/core-principles",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "web-framework",
+          "path": "nodejs/web-framework",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "mini-npm",
+          "path": "nodejs/mini-npm",
+          "assessment": "未开始",
+          "score": 0,
+          "issues": ["index.md 只有 Coming soon 占位符"]
+        },
+        {
+          "name": "mini-sentry",
+          "path": "nodejs/mini-sentry",
+          "assessment": "未开始",
+          "score": 0,
+          "issues": ["index.md 只有 Coming soon 占位符"]
+        }
+      ]
+    },
+    "design": {
+      "status": "待审查",
+      "books": [
+        {
+          "name": "design-principles-typescript",
+          "path": "design/01-design-principles-typescript",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "design-patterns",
+          "path": "design/02-design-patterns",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        }
+      ]
+    },
+    "general": {
+      "status": "待审查",
+      "books": [
+        {
+          "name": "ai-prompt",
+          "path": "general/ai-prompt",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        },
+        {
+          "name": "clear-thinking",
+          "path": "general/clear-thinking",
+          "assessment": "待审查",
+          "score": null,
+          "issues": []
+        }
+      ]
+    }
+  },
+  "critical_issues": [
+    {
+      "severity": "critical",
+      "book": "mini-react",
+      "path": "web-frontend/mini-react",
+      "description": "约150个章节只有占位符内容，包括 fiber, scheduler, hooks, reconciler, vdom 等核心模块",
+      "action_required": "需要完全重写所有占位符章节"
+    },
+    {
+      "severity": "critical",
+      "book": "mini-vitest",
+      "path": "web-frontend/mini-vitest",
+      "description": "约239个章节只有占位符内容，整本书几乎没有实质内容",
+      "action_required": "需要完全重写所有章节"
+    },
+    {
+      "severity": "critical",
+      "book": "performance",
+      "path": "web-frontend/performance",
+      "description": "约90个章节只有占位符内容，整本书没有实质内容",
+      "action_required": "需要完全重写所有章节"
+    },
+    {
+      "severity": "high",
+      "book": "mini-redux",
+      "path": "web-frontend/mini-redux",
+      "description": "约78个章节有占位符内容，主要在 middleware, react-redux, selectors 等模块",
+      "action_required": "需要完善这些占位符章节"
+    },
+    {
+      "severity": "medium",
+      "book": "mini-fabric",
+      "path": "graphics/mini-fabric",
+      "description": "书籍未开始编写",
+      "action_required": "按计划开始编写"
+    },
+    {
+      "severity": "medium",
+      "book": "mini-npm",
+      "path": "nodejs/mini-npm",
+      "description": "书籍未开始编写",
+      "action_required": "按计划开始编写"
+    },
+    {
+      "severity": "medium",
+      "book": "mini-sentry",
+      "path": "nodejs/mini-sentry",
+      "description": "书籍未开始编写",
+      "action_required": "按计划开始编写"
+    }
+  ],
+  "quality_examples": {
+    "excellent": [
+      {
+        "book": "canvas",
+        "file": "foundations/canvas-overview.md",
+        "highlights": [
+          "采用苏格拉底式追问开篇",
+          "有清晰的学习目标",
+          "代码示例完整且有解释",
+          "有 Canvas vs SVG 的权衡讨论",
+          "使用了恰当的类比"
+        ]
+      },
+      {
+        "book": "mini-vue3",
+        "file": "reactivity/reactive.md",
+        "highlights": [
+          "渐进式代码演化（版本一、版本二、版本三）",
+          "每个版本都有问题分析和解决方案",
+          "有 WeakMap 设计原理的解释",
+          "有清晰的思考过程外显"
+        ]
+      },
+      {
+        "book": "dynamic-programming",
+        "file": "dp-basics/what-is-dp.md",
+        "highlights": [
+          "从实际问题引入",
+          "有递归树的可视化",
+          "对比了暴力解法和 DP 解法",
+          "解释了 DP 命名的历史由来"
+        ]
+      }
+    ]
+  },
+  "optimization_tasks": {
+    "priority_1_critical": [
+      {
+        "task": "重写 mini-react 所有占位符章节",
+        "estimated_files": 150,
+        "status": "not-started"
+      },
+      {
+        "task": "重写 mini-vitest 所有占位符章节",
+        "estimated_files": 239,
+        "status": "not-started"
+      },
+      {
+        "task": "重写 performance 所有占位符章节",
+        "estimated_files": 90,
+        "status": "not-started"
+      }
+    ],
+    "priority_2_high": [
+      {
+        "task": "完善 mini-redux 占位符章节",
+        "estimated_files": 78,
+        "status": "not-started"
+      }
+    ],
+    "priority_3_medium": [
+      {
+        "task": "开始编写 mini-fabric 书籍",
+        "status": "not-started"
+      },
+      {
+        "task": "开始编写 mini-npm 书籍",
+        "status": "not-started"
+      },
+      {
+        "task": "开始编写 mini-sentry 书籍",
+        "status": "not-started"
+      }
+    ],
+    "priority_4_review": [
+      {
+        "task": "审查 algorithm 目录剩余书籍",
+        "status": "not-started"
+      },
+      {
+        "task": "审查 graphics 目录剩余书籍",
+        "status": "not-started"
+      },
+      {
+        "task": "审查 nodejs 目录剩余书籍",
+        "status": "not-started"
+      },
+      {
+        "task": "审查 design 目录所有书籍",
+        "status": "not-started"
+      },
+      {
+        "task": "审查 general 目录所有书籍",
+        "status": "not-started"
+      }
+    ]
+  },
+  "placeholder_patterns_detected": [
+    {
+      "pattern": "React implementation guide.",
+      "count": 150,
+      "affected_book": "mini-react"
+    },
+    {
+      "pattern": "Vitest testing framework implementation.",
+      "count": 239,
+      "affected_book": "mini-vitest"
+    },
+    {
+      "pattern": "Performance optimization guide.",
+      "count": 90,
+      "affected_book": "performance"
+    },
+    {
+      "pattern": "Redux implementation guide.",
+      "count": 78,
+      "affected_book": "mini-redux"
+    },
+    {
+      "pattern": "Coming soon...",
+      "count": 3,
+      "affected_books": ["mini-fabric", "mini-npm", "mini-sentry"]
+    }
+  ],
+  "review_checklist": {
+    "content_quality": [
+      "是否采用费曼教学法",
+      "是否有苏格拉底式追问",
+      "是否解释了'为什么'而不只是'怎么做'",
+      "代码示例是否完整且有注释",
+      "是否有足够的解释性文字",
+      "是否有权衡讨论"
+    ],
+    "structure": [
+      "标题是否与 toc.md 一致",
+      "是否有清晰的学习目标",
+      "是否有代码演化过程",
+      "是否有总结回顾"
+    ],
+    "code_quality": [
+      "代码是否生产级质量",
+      "是否有完整的错误处理",
+      "是否有类型标注",
+      "是否有适当的注释"
+    ]
+  },
+  "next_steps": [
+    "1. 优先修复 critical 级别问题（mini-react, mini-vitest, performance）",
+    "2. 完善 high 级别问题（mini-redux）",
+    "3. 继续审查其他未审查的书籍",
+    "4. 建立持续审查机制确保新内容质量"
+  ]
+}

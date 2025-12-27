@@ -1,0 +1,1 @@
+# Performance API\n\n使用 Performance API 采集性能数据。\n\n## 总结\n\n获取精确的性能指标。

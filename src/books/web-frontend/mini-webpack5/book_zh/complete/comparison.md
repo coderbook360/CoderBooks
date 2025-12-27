@@ -1,0 +1,1 @@
+# 与官方 Webpack 5 对比分析\n\nMini-Webpack 与官方版本对比。\n\n## 总结\n\n理解简化与完整版差异。

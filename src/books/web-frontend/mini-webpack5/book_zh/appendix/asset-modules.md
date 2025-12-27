@@ -1,0 +1,1 @@
+# Asset Modules 资源模块\n\n内置资源模块支持。\n\n## 总结\n\n无需 Loader 处理资源。

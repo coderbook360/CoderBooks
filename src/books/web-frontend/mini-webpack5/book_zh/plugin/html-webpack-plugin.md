@@ -1,0 +1,1 @@
+# HtmlWebpackPlugin 原理\n\n生成 HTML 并注入资源。\n\n## 总结\n\n自动生成 HTML 文件。

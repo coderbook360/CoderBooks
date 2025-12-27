@@ -1,0 +1,1 @@
+# BannerPlugin 实现\n\nBannerPlugin 添加注释头。\n\n## 总结\n\n演示如何修改输出资源。

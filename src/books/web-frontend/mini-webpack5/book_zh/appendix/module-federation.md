@@ -1,0 +1,1 @@
+# Module Federation 模块联邦\n\n模块联邦概述。\n\n## 总结\n\n微前端解决方案。

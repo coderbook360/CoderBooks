@@ -1,0 +1,1 @@
+# Plugin 设计理念与架构\n\nPlugin 基于 Tapable 事件系统实现扩展机制。\n\n## 总结\n\nPlugin 提供强大的定制能力。

@@ -1,0 +1,1 @@
+# Persistent Caching 持久化缓存\n\n持久化缓存机制。\n\n## 总结\n\n提升构建性能。
