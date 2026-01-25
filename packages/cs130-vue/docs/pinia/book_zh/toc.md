@@ -1,12 +1,10 @@
-# Pinia 设计与实现
-
-深入解析 Pinia 状态管理库的设计思想、源码实现与手写实践。
+# 状态管理: Pinia 设计与实现
 
 - [序言](index.md)
 
 ---
 
-### 第一部分：设计思想
+### 第1部分：设计思想 (Design Philosophy)
 
 1. [状态管理发展历程](design/state-management-history.md)
 2. [Flux 架构与 Redux](design/flux-and-redux.md)
@@ -26,9 +24,9 @@
 
 ---
 
-### 第二部分：源码解析
+### 第2部分：源码解析 (Source Code Analysis)
 
-#### 2.1 Pinia 核心创建
+#### Pinia 核心创建
 
 16. [源码结构与阅读指南](source/source-structure-guide.md)
 17. [createPinia 入口分析](source/create-pinia-entry.md)
@@ -36,7 +34,7 @@
 19. [setActivePinia 设置活跃实例](source/set-active-pinia.md)
 20. [getActivePinia 获取活跃实例](source/get-active-pinia.md)
 
-#### 2.2 Store 定义与创建
+#### Store 定义与创建
 
 21. [defineStore 入口分析](source/define-store-entry.md)
 22. [useStore 获取实例](source/use-store.md)
@@ -45,7 +43,7 @@
 25. [buildStoreToUse 构建 Store](source/build-store-to-use.md)
 26. [Store 代理与包装](source/store-proxy-wrapper.md)
 
-#### 2.3 State 响应式
+#### State 响应式
 
 27. [State 响应式处理](source/state-reactive-handling.md)
 28. [State 初始化流程](source/state-initialization.md)
@@ -54,21 +52,21 @@
 31. [$patch 函数补丁](source/patch-function-implementation.md)
 32. [$reset 状态重置](source/reset-implementation.md)
 
-#### 2.4 Getters 计算属性
+#### Getters 计算属性
 
 33. [Getters 计算属性实现](source/getters-implementation.md)
 34. [Getters 缓存机制](source/getters-caching.md)
 35. [Getters 参数化设计](source/getters-with-arguments.md)
 36. [访问其他 Store 的 Getters](source/cross-store-getters.md)
 
-#### 2.5 Actions 方法处理
+#### Actions 方法处理
 
 37. [Actions 方法处理](source/actions-implementation.md)
 38. [Actions 异步处理](source/actions-async-handling.md)
 39. [Actions 上下文绑定](source/actions-context-binding.md)
 40. [访问其他 Store 的 Actions](source/cross-store-actions.md)
 
-#### 2.6 订阅机制
+#### 订阅机制
 
 41. [$subscribe 状态订阅](source/subscribe-implementation.md)
 42. [订阅选项与配置](source/subscription-options.md)
@@ -77,7 +75,7 @@
 45. [$dispose 销毁处理](source/dispose-implementation.md)
 46. [订阅清理机制](source/subscription-cleanup.md)
 
-#### 2.7 辅助函数
+#### 辅助函数
 
 47. [storeToRefs 实现](source/store-to-refs.md)
 48. [mapStores 辅助函数](source/map-stores.md)
@@ -86,7 +84,7 @@
 51. [mapActions 辅助函数](source/map-actions.md)
 52. [mapWritableState 辅助函数](source/map-writable-state.md)
 
-#### 2.8 插件与扩展
+#### 插件与扩展
 
 53. [插件机制实现](source/plugin-mechanism.md)
 54. [插件上下文对象](source/plugin-context.md)
@@ -95,7 +93,7 @@
 57. [DevTools 集成实现](source/devtools-implementation.md)
 58. [热更新支持](source/hot-module-replacement.md)
 
-#### 2.9 SSR 支持
+#### SSR 支持
 
 59. [SSR 支持总览](source/ssr-support.md)
 60. [SSR 状态序列化](source/ssr-state-serialization.md)

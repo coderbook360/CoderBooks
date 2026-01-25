@@ -1,12 +1,10 @@
-# Vue Router 设计与实现
-
-深入解析 Vue Router 的设计思想、源码实现与手写实践。
+# 路由: Vue Router 设计与实现
 
 - [序言](index.md)
 
 ---
 
-### 第一部分：设计思想
+### 第1部分：设计思想 (Design Philosophy)
 
 1. [前端路由发展历程](design/routing-history.md)
 2. [SPA 与路由的关系](design/spa-and-routing.md)
@@ -29,9 +27,7 @@
 
 ---
 
-### 第二部分：源码解析
-
-#### 2.1 Router 创建与 History
+### 第2部分：源码解析 (Source Code Analysis)
 
 19. [源码结构与阅读指南](source/source-structure-guide.md)
 20. [createRouter 入口分析](source/create-router-entry.md)
@@ -41,9 +37,6 @@
 24. [createMemoryHistory 实现](source/create-memory-history.md)
 25. [useHistoryListeners 监听器](source/use-history-listeners.md)
 26. [useHistoryStateNavigation 导航](source/use-history-state-navigation.md)
-
-#### 2.2 路由匹配
-
 27. [createRouterMatcher 匹配器创建](source/create-router-matcher.md)
 28. [addRoute 添加路由](source/add-route.md)
 29. [removeRoute 移除路由](source/remove-route.md)
@@ -52,18 +45,12 @@
 32. [路由正则生成](source/route-regex-generation.md)
 33. [路径参数提取](source/path-params-extraction.md)
 34. [resolve 路由解析](source/resolve-implementation.md)
-
-#### 2.3 导航系统
-
 35. [router.push 导航实现](source/router-push.md)
 36. [router.replace 实现](source/router-replace.md)
 37. [router.go/back/forward](source/router-go-back-forward.md)
 38. [navigate 核心导航](source/navigate-implementation.md)
 39. [导航状态与 pending](source/navigation-state.md)
 40. [导航失败与重定向](source/navigation-failure-redirect.md)
-
-#### 2.4 导航守卫
-
 41. [导航守卫执行流程](source/guards-execution-flow.md)
 42. [beforeEach 全局前置守卫](source/before-each-guard.md)
 43. [beforeResolve 全局解析守卫](source/before-resolve-guard.md)
@@ -72,9 +59,6 @@
 46. [beforeRouteUpdate 组件守卫](source/before-route-update.md)
 47. [beforeRouteLeave 组件守卫](source/before-route-leave.md)
 48. [守卫的 next 函数处理](source/guard-next-handling.md)
-
-#### 2.5 组件与组合式 API
-
 49. [RouterView 组件源码](source/router-view-source.md)
 50. [RouterView 渲染逻辑](source/router-view-render.md)
 51. [嵌套 RouterView 处理](source/nested-router-view.md)
@@ -85,9 +69,6 @@
 56. [useLink 实现](source/use-link.md)
 57. [onBeforeRouteLeave 钩子](source/on-before-route-leave.md)
 58. [onBeforeRouteUpdate 钩子](source/on-before-route-update.md)
-
-#### 2.6 高级功能
-
 59. [滚动行为实现](source/scroll-behavior-implementation.md)
 60. [路由懒加载实现](source/lazy-loading-implementation.md)
 61. [路由数据获取](source/route-data-fetching.md)
@@ -95,7 +76,7 @@
 
 ---
 
-### 第三部分：Mini 实现
+### 第3部分：Mini 实现 (Mini Implementation)
 
 63. [项目架构设计](mini/project-architecture.md)
 64. [接口定义与类型](mini/interface-definitions.md)

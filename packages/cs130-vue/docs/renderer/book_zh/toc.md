@@ -1,12 +1,10 @@
-# Vue Renderer 源码深度解析
-
-深入解析 Vue 渲染器的设计思想与源码实现。
+# 渲染器: Vue Renderer 源码深度解析
 
 - [序言](index.md)
 
 ---
 
-### 第一部分：设计思想
+### 第1部分：设计思想 (Design Philosophy)
 
 1. [Virtual DOM 的诞生](design/virtual-dom-origin.md)
 2. [为什么需要 Virtual DOM](design/why-virtual-dom.md)
@@ -31,9 +29,9 @@
 
 ---
 
-### 第二部分：源码解析
+### 第2部分：源码解析 (Source Code Analysis)
 
-#### 2.1 渲染器创建与配置
+#### 渲染器创建与配置
 
 21. [源码结构与阅读指南](source/source-structure-guide.md)
 22. [createRenderer 渲染器创建](source/create-renderer.md)
@@ -41,7 +39,7 @@
 24. [渲染器配置选项](source/renderer-options.md)
 25. [createHydrationRenderer 水合渲染器](source/create-hydration-renderer.md)
 
-#### 2.2 VNode 创建与处理
+#### VNode 创建与处理
 
 26. [h 函数实现](source/h-function.md)
 27. [createVNode 创建虚拟节点](source/create-vnode.md)
@@ -53,7 +51,7 @@
 33. [cloneVNode 节点克隆](source/clone-vnode.md)
 34. [mergeProps 属性合并](source/merge-props.md)
 
-#### 2.3 挂载流程
+#### 挂载流程
 
 35. [render 渲染入口](source/render-entry.md)
 36. [patch 核心流程](source/patch-core.md)
@@ -65,7 +63,7 @@
 42. [mountElement 元素挂载](source/mount-element.md)
 43. [mountChildren 子节点挂载](source/mount-children.md)
 
-#### 2.4 更新与 Diff 算法
+#### 更新与 Diff 算法
 
 44. [patchElement 元素更新](source/patch-element.md)
 45. [patchProps 属性更新](source/patch-props.md)
@@ -77,14 +75,14 @@
 51. [最长递增子序列实现](source/lis-implementation.md)
 52. [move 节点移动](source/move-operation.md)
 
-#### 2.5 卸载流程
+#### 卸载流程
 
 53. [unmount 卸载流程](source/unmount-flow.md)
 54. [unmountElement 元素卸载](source/unmount-element.md)
 55. [unmountChildren 子节点卸载](source/unmount-children.md)
 56. [unmountComponent 组件卸载](source/unmount-component.md)
 
-#### 2.6 内置组件
+#### 内置组件
 
 57. [Teleport 源码解析](source/teleport-implementation.md)
 58. [processTeleport 处理流程](source/process-teleport.md)
@@ -93,7 +91,7 @@
 61. [KeepAlive 源码解析](source/keep-alive-implementation.md)
 62. [activate 与 deactivate](source/activate-deactivate.md)
 
-#### 2.7 调度系统
+#### 调度系统
 
 63. [queueJob 任务入队](source/queue-job.md)
 64. [queuePreFlushCb 前置回调](source/queue-pre-flush-cb.md)

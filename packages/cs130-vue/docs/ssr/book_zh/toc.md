@@ -1,12 +1,10 @@
-# Vue SSR 设计与实现
-
-深入解析 Vue 服务端渲染的设计思想、源码实现与手写实践。
+# 服务端渲染: Vue SSR 设计与实现
 
 - [序言](index.md)
 
 ---
 
-### 第一部分：设计思想
+### 第1部分：设计思想 (Design Philosophy)
 
 1. [服务端渲染发展历程](design/ssr-history.md)
 2. [CSR vs SSR vs SSG](design/csr-ssr-ssg-comparison.md)
@@ -27,9 +25,9 @@
 
 ---
 
-### 第二部分：源码解析
+### 第2部分：源码解析 (Source Code Analysis)
 
-#### 2.1 字符串渲染
+#### 字符串渲染
 
 17. [源码结构与阅读指南](source/source-structure-guide.md)
 18. [renderToString 入口](source/render-to-string-entry.md)
@@ -41,7 +39,7 @@
 24. [renderVNode 虚拟节点渲染](source/render-vnode.md)
 25. [renderChildren 子节点渲染](source/render-children.md)
 
-#### 2.2 属性与样式渲染
+#### 属性与样式渲染
 
 26. [ssrRenderAttrs 属性渲染](source/ssr-render-attrs.md)
 27. [ssrRenderAttr 单属性渲染](source/ssr-render-attr.md)
@@ -50,7 +48,7 @@
 30. [ssrRenderDynamicAttr 动态属性](source/ssr-render-dynamic-attr.md)
 31. [特殊属性处理](source/special-attrs-handling.md)
 
-#### 2.3 内置组件渲染
+#### 内置组件渲染
 
 32. [ssrRenderSlot 插槽渲染](source/ssr-render-slot.md)
 33. [ssrRenderSlotInner 插槽内部](source/ssr-render-slot-inner.md)
@@ -58,7 +56,7 @@
 35. [ssrRenderSuspense 异步渲染](source/ssr-render-suspense.md)
 36. [ssrRenderSuspenseBoundary 边界](source/ssr-render-suspense-boundary.md)
 
-#### 2.4 流式渲染
+#### 流式渲染
 
 37. [renderToStream 入口](source/render-to-stream-entry.md)
 38. [renderToSimpleStream 简单流](source/render-to-simple-stream.md)
@@ -68,7 +66,7 @@
 42. [pipeToWebWritable Web 管道](source/pipe-to-web-writable.md)
 43. [流式渲染背压处理](source/streaming-backpressure.md)
 
-#### 2.5 客户端水合
+#### 客户端水合
 
 44. [客户端 Hydration 入口](source/client-hydration-entry.md)
 45. [createHydrationRenderer 创建](source/create-hydration-renderer.md)
@@ -80,13 +78,13 @@
 51. [hydrateText 文本水合](source/hydrate-text.md)
 52. [hydrateFragment Fragment 水合](source/hydrate-fragment.md)
 
-#### 2.6 水合错误处理
+#### 水合错误处理
 
 53. [Hydration 不匹配处理](source/hydration-mismatch-handling.md)
 54. [水合错误类型](source/hydration-error-types.md)
 55. [水合错误恢复](source/hydration-error-recovery.md)
 
-#### 2.7 异步与数据
+#### 异步与数据
 
 56. [异步组件 SSR 处理](source/async-component-ssr.md)
 57. [服务端数据预取](source/server-data-prefetch.md)
@@ -95,7 +93,7 @@
 
 ---
 
-### 第三部分：Mini 实现
+### 第3部分：Mini 实现 (Mini Implementation)
 
 60. [项目架构设计](mini/project-architecture.md)
 61. [接口定义与类型](mini/interface-definitions.md)

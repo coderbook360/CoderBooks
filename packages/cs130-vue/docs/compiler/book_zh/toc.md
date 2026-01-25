@@ -1,12 +1,10 @@
-# Vue Compiler 源码深度解析
-
-深入解析 Vue 编译器的设计思想与源码实现。
+# 编译器: Vue 编译器源码深度解析
 
 - [序言](index.md)
 
 ---
 
-### 第一部分：设计思想
+### 第1部分：设计基础 (Design Fundamentals)
 
 1. [编译原理基础概念](design/compiler-basics.md)
 2. [词法分析概述](design/lexical-analysis-overview.md)
@@ -15,25 +13,33 @@
 5. [Vue 编译器设计目标](design/vue-compiler-goals.md)
 6. [模板编译 vs JSX 编译](design/template-vs-jsx.md)
 7. [编译时 vs 运行时](design/compile-time-vs-runtime.md)
-8. [静态分析与优化](design/static-analysis-optimization.md)
-9. [静态提升设计](design/static-hoisting-design.md)
-10. [补丁标记设计](design/patch-flags-design.md)
-11. [Block Tree 设计](design/block-tree-design.md)
-12. [缓存事件处理器](design/cache-handlers-design.md)
-13. [Tree Shaking 支持](design/tree-shaking-support.md)
-14. [SFC 单文件组件编译](design/sfc-compilation.md)
-15. [script setup 设计](design/script-setup-design.md)
-16. [CSS 作用域与 Scoped](design/css-scoped-design.md)
-17. [CSS Modules 设计](design/css-modules-design.md)
-18. [自定义指令编译](design/custom-directives-compilation.md)
-19. [设计权衡与取舍](design/design-tradeoffs.md)
-20. [架构总览](design/architecture-overview.md)
+8. [架构总览](design/architecture-overview.md)
 
 ---
 
-### 第二部分：源码解析
+### 第2部分：优化设计 (Optimization Design)
 
-#### 2.1 编译入口与核心流程
+9. [静态分析与优化](design/static-analysis-optimization.md)
+10. [静态提升设计](design/static-hoisting-design.md)
+11. [补丁标记设计](design/patch-flags-design.md)
+12. [Block Tree 设计](design/block-tree-design.md)
+13. [缓存事件处理器](design/cache-handlers-design.md)
+14. [Tree Shaking 支持](design/tree-shaking-support.md)
+15. [设计权衡与取舍](design/design-tradeoffs.md)
+
+---
+
+### 第3部分：SFC编译设计 (SFC Compilation Design)
+
+16. [SFC 单文件组件编译](design/sfc-compilation.md)
+17. [script setup 设计](design/script-setup-design.md)
+18. [CSS 作用域与 Scoped](design/css-scoped-design.md)
+19. [CSS Modules 设计](design/css-modules-design.md)
+20. [自定义指令编译](design/custom-directives-compilation.md)
+
+---
+
+### 第四部分：核心流程篇 (Core Process)
 
 21. [源码结构与阅读指南](source/source-structure-guide.md)
 22. [compile 编译入口](source/compile-entry.md)
@@ -41,7 +47,9 @@
 24. [CompilerOptions 配置选项](source/compiler-options.md)
 25. [错误处理与错误码](source/error-handling-codes.md)
 
-#### 2.2 词法与语法解析
+---
+
+### 第五部分：解析器篇 (Parser)
 
 26. [baseParse 解析入口](source/base-parse-entry.md)
 27. [createParserContext 上下文创建](source/create-parser-context.md)
@@ -55,7 +63,9 @@
 35. [parseComment 注释解析](source/parse-comment.md)
 36. [parseBogusComment 伪注释解析](source/parse-bogus-comment.md)
 
-#### 2.3 AST 节点类型
+---
+
+### 第六部分：AST节点篇 (AST Nodes)
 
 37. [AST 节点类型定义](source/ast-node-types.md)
 38. [ElementNode 元素节点](source/element-node.md)
@@ -66,7 +76,9 @@
 43. [IfNode 与 ForNode](source/if-for-node.md)
 44. [SlotOutletNode 与 TemplateNode](source/slot-template-node.md)
 
-#### 2.4 AST 转换
+---
+
+### 第七部分：AST转换篇 (AST Transform)
 
 45. [transform 转换入口](source/transform-entry.md)
 46. [createTransformContext 上下文](source/create-transform-context.md)
@@ -85,7 +97,9 @@
 59. [transformVOnce 一次性渲染](source/transform-v-once.md)
 60. [transformVMemo 缓存节点](source/transform-v-memo.md)
 
-#### 2.5 代码生成
+---
+
+### 第八部分：代码生成篇 (Code Generation)
 
 61. [generate 代码生成入口](source/generate-entry.md)
 62. [createCodegenContext 上下文](source/create-codegen-context.md)
@@ -98,7 +112,9 @@
 69. [genForNode 循环节点生成](source/gen-for-node.md)
 70. [genSlotOutlet 插槽生成](source/gen-slot-outlet.md)
 
-#### 2.6 编译优化
+---
+
+### 第九部分：编译优化篇 (Compilation Optimization)
 
 71. [静态提升实现](source/static-hoisting-implementation.md)
 72. [补丁标记实现](source/patch-flags-implementation.md)
@@ -106,7 +122,9 @@
 74. [Block 与 dynamicChildren](source/block-dynamic-children.md)
 75. [编译时常量折叠](source/compile-time-constant-folding.md)
 
-#### 2.7 SFC 编译
+---
+
+### 第十部分：SFC编译篇 (SFC Compilation)
 
 76. [SFC 编译流程](source/sfc-compile-flow.md)
 77. [parse 解析 SFC](source/parse-sfc.md)
@@ -120,7 +138,9 @@
 85. [CSS Modules 实现](source/css-modules-implementation.md)
 86. [CSS v-bind 实现](source/css-v-bind-implementation.md)
 
-#### 2.8 Vue 3.3+/3.4+ 新增编译
+---
+
+### 第十一部分：新版本特性篇 (Latest Features)
 
 87. [defineModel 编译处理](source/define-model-compilation.md)
 88. [withDefaults 编译处理](source/with-defaults-compilation.md)
