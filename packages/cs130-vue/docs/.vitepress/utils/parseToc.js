@@ -59,10 +59,16 @@ export function parseTocToSidebar(tocPath, baseLink) {
       // 匹配列表项 1. [标题](链接)
       const itemMatch = line.match(/^\d+\.\s+\[(.+?)\]\((.+?)\)/)
       if (itemMatch) {
-        const [, text, link] = itemMatch
+        const [, text, linkPath] = itemMatch
+        // 处理链接：design/xxx.md -> /reactive/book_zh/design/xxx
+        let finalLink = linkPath.replace(/\.md$/, '')
+        if (!finalLink.startsWith('/')) {
+          finalLink = `${baseLink}book_zh/${finalLink}`
+        }
+        
         const item = {
           text: text,
-          link: baseLink + (link.startsWith('/') ? link.slice(1) : link.replace(/\.md$/, ''))
+          link: finalLink
         }
 
         if (currentSubSection) {
