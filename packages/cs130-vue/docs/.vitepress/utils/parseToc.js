@@ -102,13 +102,12 @@ export function parseAllTocs(modules) {
     if (fs.existsSync(tocPath)) {
       const sidebar = parseTocToSidebar(tocPath, module.path)
       
-      // 添加首页链接
+      // 添加书籍介绍链接，然后直接展示章节和文章
       sidebarConfig[module.path] = [
         {
           text: module.title || module.name,
           items: [
-            { text: '书籍介绍', link: module.path },
-            { text: '目录', link: `${module.path}book_zh/toc` }
+            { text: '📖 书籍介绍', link: module.path }
           ]
         },
         ...sidebar
