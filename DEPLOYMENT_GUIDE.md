@@ -12,6 +12,35 @@ https://coderbook360.github.io/CoderBooks/cs130-vue/    ← Vue3 生态系统系
 https://coderbook360.github.io/CoderBooks/book2/        ← 第二本书
 ```
 
+### ⚡ 增量构建策略
+
+**原理**：GitHub Actions 检测文件变化，仅构建修改过的书籍。
+
+#### 变化检测规则
+
+| 变化的文件/目录 | 构建行为 |
+|---------------|----------|
+| `packages/book2/**` | 仅构建 book2 |
+| `packages/cs130-vue/**` | 仅构建 cs130-vue |
+| `packages/portal/**` | Portal 总是构建（包含导航）|
+| `package.json` 或 `pnpm-workspace.yaml` | **全量构建**所有书籍 |
+| 首次部署（无历史） | **全量构建**所有书籍 |
+
+#### 缓存机制
+
+- **缓存内容**：上次构建的 `dist/` 目录
+- **工作流程**：
+  1. 恢复上次的 `dist/` 缓存（包含所有书籍）
+  2. 检测本次 commit 的文件变化
+  3. 仅重新构建有变化的书籍（覆盖对应目录）
+  4. 未变化的书籍使用缓存版本
+  5. 保存新的 `dist/` 缓存供下次使用
+  6. 部署完整的 `dist/` 到 GitHub Pages
+
+**性能提升**：
+- 单本书变化：~2-5 分钟（vs 全量 ~5-10 分钟）
+- 仅修改 Portal：~1 分钟
+
 ### 构建产物结构
 ```
 dist/

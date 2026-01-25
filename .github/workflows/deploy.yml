@@ -22,7 +22,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2  # 需要对比前一个 commit
+
+      - name: Restore cached builds
+        id: cache-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: dist
+          key: dist-cache-${{ github.sha }}
+          restore-keys: |
+            dist-cache-
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -41,18 +50,77 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build all books and portal
+      - name: Detect changed packages
+        id: changes
         run: |
-          # 构建各个书籍（输出到 dist/book2, dist/cs130-vue）
-          pnpm --filter @codebooks/book2 run docs:build
-          pnpm --filter @codebooks/cs130-vue run docs:build
+          # 检测哪些包发生了变化
+          if git diff --quiet HEAD^ HEAD -- packages/book2/; then
+            echo "book2=false" >> $GITHUB_OUTPUT
+          else
+            echo "book2=true" >> $GITHUB_OUTPUT
+          fi
           
-          # 构建 portal（输出到 dist/portal）
+          if git diff --quiet HEAD^ HEAD -- packages/cs130-vue/; then
+            echo "cs130-vue=false" >> $GITHUB_OUTPUT
+          else
+            echo "cs130-vue=true" >> $GITHUB_OUTPUT
+          fi
+          
+          if git diff --quiet HEAD^ HEAD -- packages/portal/; then
+            echo "portal=false" >> $GITHUB_OUTPUT
+          else
+            echo "portal=true" >> $GITHUB_OUTPUT
+          fi
+          
+          # 如果根配置文件变化，全量构建
+          if git diff --quiet HEAD^ HEAD -- package.json pnpm-workspace.yaml; then
+            echo "force-all=false" >> $GITHUB_OUTPUT
+          else
+            echo "force-all=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build changed books and portal
+        run: |
+          FORCE_ALL="${{ steps.changes.outputs.force-all }}"
+          BOOK2_CHANGED="${{ steps.changes.outputs.book2 }}"
+          CS130_CHANGED="${{ steps.changes.outputs.cs130-vue }}"
+          PORTAL_CHANGED="${{ steps.changes.outputs.portal }}"
+          
+          # 如果是首次部署（无 HEAD^）或根配置变化，全量构建
+          if [ "$FORCE_ALL" = "true" ] || ! git rev-parse HEAD^ &>/dev/null; then
+            echo "📦 Full build triggered"
+            pnpm --filter @codebooks/book2 run docs:build
+            pnpm --filter @codebooks/cs130-vue run docs:build
+          else
+            # 增量构建
+            if [ "$BOOK2_CHANGED" = "true" ]; then
+              echo "📦 Building book2..."
+              pnpm --filter @codebooks/book2 run docs:build
+            else
+              echo "⏭️ Skipping book2 (no changes)"
+            fi
+            
+            if [ "$CS130_CHANGED" = "true" ]; then
+              echo "📦 Building cs130-vue..."
+              pnpm --filter @codebooks/cs130-vue run docs:build
+            else
+              echo "⏭️ Skipping cs130-vue (no changes)"
+            fi
+          fi
+          
+          # Portal 总是构建（包含导航链接）
+          echo "📦 Building portal..."
           pnpm --filter @codebooks/portal run docs:build
           
           # 将 portal 内容复制到 dist 根目录（portal 作为主页）
           cp -r dist/portal/* dist/
           rm -rf dist/portal
+
+      - name: Save build cache
+        uses: actions/cache/save@v3
+        with:
+          path: dist
+          key: dist-cache-${{ github.sha }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
