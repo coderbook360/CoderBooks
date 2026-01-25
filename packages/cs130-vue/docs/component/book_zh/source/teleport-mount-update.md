@@ -322,7 +322,7 @@ hydrate(
 
 ## 多个 Teleport 同一目标
 
-```vue
+```html
 <template>
   <Teleport to="#modals">
     <div>Modal 1</div>
@@ -339,7 +339,7 @@ hydrate(
 
 ### 动态切换目标
 
-```vue
+```html
 <template>
   <Teleport :to="target">
     <div>Content</div>
@@ -357,7 +357,7 @@ const target = ref('#a')
 
 ### 动态切换 disabled
 
-```vue
+```html
 <template>
   <Teleport to="body" :disabled="isDisabled">
     <div>Modal</div>

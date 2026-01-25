@@ -156,7 +156,7 @@ renderToSimpleStream(app, {
 
 流式渲染与 Vue 的 Suspense 组件配合使用时特别强大。Suspense 可以定义异步边界，流式渲染器会在边界内的异步内容准备好之前先发送占位符。
 
-```vue
+```html
 <template>
   <div>
     <Header />  <!-- 立即渲染和发送 -->

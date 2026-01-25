@@ -116,7 +116,7 @@ function parseName(name: string): [string, EventListenerOptions | undefined] {
 
 Vue 支持在事件名中编码选项：
 
-```vue
+```html
 <!-- 普通事件 -->
 <div @click="handler">
 
@@ -198,7 +198,7 @@ if (skipTimestampCheck || timeStamp >= invoker.attached - 1) {
 
 考虑这个场景：
 
-```vue
+```html
 <div @click="toggle">
   <div v-if="show" @click="childHandler">Child</div>
 </div>
@@ -225,7 +225,7 @@ callWithAsyncErrorHandling(
 
 模板中的事件绑定会被编译为特定格式：
 
-```vue
+```html
 <button @click.stop.prevent="handler">
 ```
 

@@ -6,7 +6,7 @@
 
 一个典型的 SFC 文件包含三个部分：
 
-```vue
+```html
 <template>
   <div class="container">
     <h1>{{ title }}</h1>
@@ -167,7 +167,7 @@ compileTemplate({
 
 SFC 支持自定义块，用于扩展功能：
 
-```vue
+```html
 <custom-block>
   Custom content here
 </custom-block>

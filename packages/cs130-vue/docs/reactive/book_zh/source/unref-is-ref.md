@@ -140,7 +140,7 @@ const { distance: d2 } = useMouseDistance(3, 4)
 
 在 Vue 模板中，顶层 ref 会自动解包：
 
-```vue
+```html
 <template>
   <div>{{ count }}</div>  <!-- 自动解包，不需要 .value -->
 </template>

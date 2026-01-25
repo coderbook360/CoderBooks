@@ -284,7 +284,7 @@ function logError(
 
 利用 `errorCaptured` 实现错误边界：
 
-```vue
+```html
 <template>
   <div v-if="error" class="error">
     <p>出错了：{{ error.message }}</p>
@@ -311,7 +311,7 @@ function retry() {
 
 使用：
 
-```vue
+```html
 <ErrorBoundary>
   <SuspiciousComponent />
 </ErrorBoundary>

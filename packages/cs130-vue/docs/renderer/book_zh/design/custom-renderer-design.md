@@ -314,7 +314,7 @@ const pixiRenderer = createRenderer({
 
 使用：
 
-```vue
+```html
 <template>
   <container>
     <sprite :texture="heroTexture" :x="hero.x" :y="hero.y" />

@@ -6,7 +6,7 @@ Hoisted VNode 是 Vue 编译优化的核心策略之一。通过将不变的 VNo
 
 考虑这个模板：
 
-```vue
+```html
 <template>
   <div>
     <span class="static">Hello</span>
@@ -249,7 +249,7 @@ export default {
 
 v-once 强制组件/元素只渲染一次：
 
-```vue
+```html
 <template>
   <div v-once>
     <ComplexComponent :data="data" />

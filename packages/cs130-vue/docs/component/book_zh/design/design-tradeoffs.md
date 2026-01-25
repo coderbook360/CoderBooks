@@ -8,7 +8,7 @@
 
 **Props 是显式的**。父组件必须明确传递数据，子组件必须明确声明接收。这种显式性让数据流清晰可追踪：
 
-```vue
+```html
 <template>
   <UserCard :user="user" :showAvatar="true" />
 </template>
@@ -36,7 +36,7 @@ React 选择了严格的单向数据流——状态向下流动，事件向上�
 
 Vue 在单向数据流的基础上提供了 v-model 语法糖：
 
-```vue
+```html
 <!-- 看起来是双向绑定 -->
 <input v-model="text" />
 
@@ -64,7 +64,7 @@ Vue 选择了模板作为主要语法，同时支持 JSX 和渲染函数。
 
 Vue 的选择是：**模板优先，按需逃逸**。大多数场景用模板，需要更多控制时用渲染函数。
 
-```vue
+```html
 <script setup>
 // 大多数情况
 </script>

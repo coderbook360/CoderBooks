@@ -20,7 +20,7 @@ History 模式使用标准的 URL 路径（`/path`），看起来和传统多页
 
 Vue Router 同时支持两种导航方式：
 
-```vue
+```html
 <!-- 声明式 -->
 <RouterLink to="/about">关于</RouterLink>
 
@@ -34,14 +34,14 @@ Vue Router 同时支持两种导航方式：
 
 有一个常见错误是在 `RouterLink` 的 `@click` 中使用 `router.push`：
 
-```vue
+```html
 <!-- 错误：会导航两次或行为异常 -->
 <RouterLink to="/about" @click="router.push('/about')">关于</RouterLink>
 ```
 
 如果需要在点击时执行额外逻辑，正确的方式是：
 
-```vue
+```html
 <RouterLink to="/about" @click="handleClick">关于</RouterLink>
 
 <!-- 或者完全用编程式 -->

@@ -6,7 +6,7 @@
 
 默认情况下，Vue 组件在从 DOM 中移除时会被完全销毁。它的状态丢失，下次显示时需要重新初始化：
 
-```vue
+```html
 <template>
   <component :is="currentTab" />
 </template>
@@ -20,7 +20,7 @@
 
 KeepAlive 是一个内置组件，包裹动态组件来启用缓存：
 
-```vue
+```html
 <template>
   <KeepAlive>
     <component :is="currentTab" />
@@ -34,7 +34,7 @@ KeepAlive 是一个内置组件，包裹动态组件来启用缓存：
 
 你可能不希望缓存所有组件。KeepAlive 提供了 `include` 和 `exclude` 属性来精细控制：
 
-```vue
+```html
 <!-- 只缓存名为 TabA 和 TabB 的组件 -->
 <KeepAlive include="TabA,TabB">
   <component :is="currentTab" />
@@ -58,7 +58,7 @@ KeepAlive 是一个内置组件，包裹动态组件来启用缓存：
 
 匹配是基于组件的 `name` 选项进行的。使用 `<script setup>` 的组件会自动从文件名推断 name，也可以显式声明：
 
-```vue
+```html
 <script>
 export default {
   name: 'TabA'
@@ -74,7 +74,7 @@ export default {
 
 无限制的缓存会消耗大量内存。`max` 属性限制最大缓存数量：
 
-```vue
+```html
 <KeepAlive :max="10">
   <component :is="currentTab" />
 </KeepAlive>
@@ -86,7 +86,7 @@ export default {
 
 KeepAlive 的组件不会触发常规的 `mounted`/`unmounted` 钩子，而是触发 `activated`/`deactivated`：
 
-```vue
+```html
 <script setup>
 import { onActivated, onDeactivated, onMounted, onUnmounted } from 'vue'
 
@@ -110,7 +110,7 @@ onDeactivated(() => {
 
 `onActivated` 在组件被激活时触发，包括首次挂载和从缓存恢复。这是刷新数据、恢复定时器的好时机：
 
-```vue
+```html
 <script setup>
 import { onActivated, onDeactivated } from 'vue'
 
@@ -132,7 +132,7 @@ onDeactivated(() => {
 
 KeepAlive 常与 Vue Router 一起使用，缓存页面组件：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <KeepAlive>
@@ -235,7 +235,7 @@ KeepAlive 的缓存是有代价的——每个缓存的组件都占用内存，�
 - 在 `onDeactivated` 中清理不再需要的大型数据
 - 监控应用的内存使用
 
-```vue
+```html
 <script setup>
 import { onDeactivated, ref } from 'vue'
 
@@ -256,7 +256,7 @@ onDeactivated(() => {
 
 **滚动位置恢复**：KeepAlive 保持组件状态，但不自动保持滚动位置。需要手动处理：
 
-```vue
+```html
 <script setup>
 import { ref, onActivated, onDeactivated } from 'vue'
 
@@ -283,7 +283,7 @@ onActivated(() => {
 
 **动态组件的 key**：当动态组件的 `key` 变化时，即使被 KeepAlive 包裹也会被销毁重建：
 
-```vue
+```html
 <!-- key 变化会导致新建实例 -->
 <KeepAlive>
   <component :is="Tab" :key="uniqueKey" />

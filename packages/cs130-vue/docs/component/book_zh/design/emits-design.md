@@ -6,7 +6,7 @@
 
 在组件化的世界中，父子组件需要协作完成功能。父组件通过 props 将数据传递给子组件，子组件处理用户交互后需要将结果反馈给父组件。直接修改 props 会破坏单向数据流，那子组件如何通知父组件呢？答案是事件。
 
-```vue
+```html
 <!-- 子组件 -->
 <script setup>
 const emit = defineEmits(['submit', 'cancel'])
@@ -100,7 +100,7 @@ export default {
 
 在 TypeScript 项目中，`defineEmits` 提供了完整的类型支持。类型定义既是编译时检查，也是 IDE 智能提示的来源：
 
-```vue
+```html
 <script setup lang="ts">
 // 运行时声明风格
 const emit = defineEmits(['update', 'delete'])
@@ -122,7 +122,7 @@ emit('unknown', 1)       // 类型错误：未声明的事件
 
 Vue 3.3+ 还支持更简洁的对象语法：
 
-```vue
+```html
 <script setup lang="ts">
 const emit = defineEmits<{
   update: [value: number]
@@ -170,7 +170,7 @@ function emit(instance, event, ...args) {
 
 v-model 是基于 props 和 emits 的语法糖。当你在组件上使用 `v-model`：
 
-```vue
+```html
 <CustomInput v-model="text" />
 <!-- 等价于 -->
 <CustomInput :modelValue="text" @update:modelValue="text = $event" />
@@ -178,7 +178,7 @@ v-model 是基于 props 和 emits 的语法糖。当你在组件上使用 `v-mod
 
 组件需要接收 `modelValue` prop，并在值变化时触发 `update:modelValue` 事件。这是一个约定，遵循它就能支持 v-model：
 
-```vue
+```html
 <script setup>
 const props = defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
@@ -195,7 +195,7 @@ function updateValue(newValue) {
 
 Vue 3 支持多个 v-model 绑定，通过参数区分：
 
-```vue
+```html
 <UserForm 
   v-model:firstName="first" 
   v-model:lastName="last" 
@@ -216,7 +216,7 @@ defineEmits(['update:firstName', 'update:lastName'])
 
 Vue 3.4+ 引入的 `defineModel` 宏进一步简化了这个模式：
 
-```vue
+```html
 <script setup>
 // 自动处理 prop 和 emit
 const firstName = defineModel('firstName')
@@ -233,7 +233,7 @@ firstName.value = 'John'  // 自动触发 update:firstName
 
 Vue 模板支持事件修饰符，如 `.stop`、`.prevent`、`.once` 等。对于原生 DOM 事件，这些修饰符会转换为对应的 JavaScript 代码。对于组件事件，只有部分修饰符有效。
 
-```vue
+```html
 <!-- .once 修饰符对组件事件有效 -->
 <MyComponent @submit.once="handleSubmit" />
 
@@ -249,7 +249,7 @@ Vue 模板支持事件修饰符，如 `.stop`、`.prevent`、`.once` 等。对�
 
 事件名应该使用 camelCase 或 kebab-case。Vue 会自动处理两者的转换：
 
-```vue
+```html
 <!-- 以下写法等价 -->
 <MyComponent @my-event="handler" />
 <MyComponent @myEvent="handler" />
@@ -270,7 +270,7 @@ emit('update:selectedIds', ids)
 
 事件触发本身不涉及响应式——它只是一个函数调用。但事件触发后，父组件的处理器通常会修改响应式状态，从而触发重新渲染。
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 

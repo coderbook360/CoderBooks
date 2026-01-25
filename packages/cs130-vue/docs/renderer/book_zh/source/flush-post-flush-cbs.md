@@ -63,7 +63,7 @@ activePostFlushCbs.sort((a, b) => getId(a) - getId(b))
 
 这确保了父组件的钩子先于子组件执行，与组件树的层级关系一致。考虑这个场景：
 
-```vue
+```html
 <!-- Parent.vue -->
 <template>
   <Child />

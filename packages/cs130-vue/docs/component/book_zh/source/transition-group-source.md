@@ -218,7 +218,7 @@ resolvedProps.onLeave = (el, done) => {
 
 ### 基础列表动画
 
-```vue
+```html
 <template>
   <TransitionGroup name="list" tag="ul">
     <li v-for="item in items" :key="item.id">
@@ -250,7 +250,7 @@ resolvedProps.onLeave = (el, done) => {
 
 ### 拖拽排序
 
-```vue
+```html
 <template>
   <TransitionGroup name="flip" tag="div">
     <div
@@ -274,7 +274,7 @@ resolvedProps.onLeave = (el, done) => {
 
 ### 交错动画
 
-```vue
+```html
 <template>
   <TransitionGroup
     name="stagger"
@@ -307,7 +307,7 @@ const onEnter = (el, done) => {
 
 ## 关键 key
 
-```vue
+```html
 <!-- 必须有 key -->
 <TransitionGroup>
   <div v-for="item in items" :key="item.id">

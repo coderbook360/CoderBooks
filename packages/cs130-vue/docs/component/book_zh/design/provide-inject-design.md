@@ -6,7 +6,7 @@
 
 考虑一个常见的场景：应用的主题设置。主题信息在根组件中定义，但需要被任意深度的子组件使用：
 
-```vue
+```html
 <!-- 使用 props 逐层传递 -->
 <App>                         <!-- 定义 theme -->
   <Layout :theme="theme">
@@ -26,7 +26,7 @@ Layout、Sidebar、Content、Article 这些中间组件都需要接收并传递 
 
 provide/inject 解决了这个问题：
 
-```vue
+```html
 <!-- App.vue -->
 <script setup>
 import { provide, ref } from 'vue'
@@ -213,7 +213,7 @@ function inject(key, defaultValue) {
 
 provide/inject 在组件库开发中非常有用。很多复合组件（如 Form/FormItem、Tabs/TabPane）使用这种模式：
 
-```vue
+```html
 <!-- Form.vue -->
 <script setup>
 import { provide, reactive } from 'vue'

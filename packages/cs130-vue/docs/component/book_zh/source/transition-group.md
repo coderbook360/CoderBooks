@@ -4,7 +4,7 @@ TransitionGroup 用于处理列表的过渡动画。与 Transition 不同，它�
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <TransitionGroup name="list" tag="ul">
     <li v-for="item in items" :key="item.id">
@@ -278,7 +278,7 @@ setup(props, { slots }) {
 
 TransitionGroup 要求每个子元素必须有唯一 key：
 
-```vue
+```html
 <!-- 正确 -->
 <TransitionGroup>
   <div v-for="item in items" :key="item.id">{{ item.text }}</div>
@@ -294,7 +294,7 @@ key 用于追踪元素身份，错误的 key 会导致动画异常。
 
 ## 完整示例
 
-```vue
+```html
 <template>
   <TransitionGroup 
     name="flip-list" 

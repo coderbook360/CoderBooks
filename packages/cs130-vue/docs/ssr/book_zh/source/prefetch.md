@@ -379,7 +379,7 @@ const vPrefetch = {
 }
 ```
 
-```vue
+```html
 <template>
   <!-- 悬停预取 -->
   <a href="/posts/1" v-prefetch:hover>Post 1</a>

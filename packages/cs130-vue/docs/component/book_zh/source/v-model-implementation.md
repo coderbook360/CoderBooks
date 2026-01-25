@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <CustomInput v-model="searchText" />
 </template>
@@ -12,7 +12,7 @@
 
 等价于：
 
-```vue
+```html
 <template>
   <CustomInput
     :modelValue="searchText"
@@ -23,7 +23,7 @@
 
 ## 编译结果
 
-```vue
+```html
 <CustomInput v-model="searchText" />
 ```
 
@@ -38,7 +38,7 @@ _createVNode(CustomInput, {
 
 ## 子组件实现
 
-```vue
+```html
 <script setup>
 const model = defineModel()
 </script>
@@ -50,7 +50,7 @@ const model = defineModel()
 
 传统写法：
 
-```vue
+```html
 <script setup>
 const props = defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
@@ -66,7 +66,7 @@ const emit = defineEmits(['update:modelValue'])
 
 ## 多个 v-model
 
-```vue
+```html
 <UserForm
   v-model:name="userName"
   v-model:age="userAge"
@@ -88,7 +88,7 @@ _createVNode(UserForm, {
 
 v-model 支持修饰符：
 
-```vue
+```html
 <CustomInput v-model.trim.number="value" />
 ```
 
@@ -134,13 +134,13 @@ if (modelArg && modelArg in props) {
 
 组件可以处理自定义修饰符：
 
-```vue
+```html
 <MyInput v-model.capitalize="text" />
 ```
 
 子组件：
 
-```vue
+```html
 <script setup>
 const props = defineProps({
   modelValue: String,
@@ -166,7 +166,7 @@ function handleInput(e) {
 
 Vue 3.4+ 的简化写法：
 
-```vue
+```html
 <script setup>
 const model = defineModel()
 </script>
@@ -180,7 +180,7 @@ const model = defineModel()
 
 ## defineModel 编译结果
 
-```vue
+```html
 <script setup>
 const model = defineModel()
 </script>
@@ -260,13 +260,13 @@ export function useModel(
 
 ## 具名 v-model
 
-```vue
+```html
 <MyComponent v-model:title="pageTitle" />
 ```
 
 使用：
 
-```vue
+```html
 <script setup>
 const title = defineModel('title')
 </script>
@@ -280,7 +280,7 @@ const title = _useModel(__props, "title")
 
 ## 带选项的 defineModel
 
-```vue
+```html
 <script setup>
 const count = defineModel('count', {
   type: Number,
@@ -294,7 +294,7 @@ const count = defineModel('count', {
 
 原生表单元素有特殊处理：
 
-```vue
+```html
 <input v-model="text" />
 ```
 

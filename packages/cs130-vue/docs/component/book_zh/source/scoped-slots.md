@@ -6,7 +6,7 @@
 
 先看典型用法：
 
-```vue
+```html
 <!-- 子组件 List.vue -->
 <template>
   <ul>
@@ -158,7 +158,7 @@ function ensureValidVNode(vnodes: VNodeArrayChildren) {
 
 当没有提供插槽时使用默认内容：
 
-```vue
+```html
 <slot :item="item">
   <!-- 默认内容 -->
   <span>{{ item.name }}</span>
@@ -179,7 +179,7 @@ _renderSlot(_ctx.$slots, "default", { item: item }, () => [
 
 一个组件可以有多个作用域插槽：
 
-```vue
+```html
 <!-- Table 组件 -->
 <template>
   <table>
@@ -220,7 +220,7 @@ _renderSlot(_ctx.$slots, "default", { item: item }, () => [
 
 插槽名可以是动态的：
 
-```vue
+```html
 <template #[slotName]="slotProps">
   {{ slotProps.data }}
 </template>
@@ -272,7 +272,7 @@ h(List, { items }, {
 
 作用域插槽实现了"子组件数据 + 父组件结构"的解耦：
 
-```vue
+```html
 <!-- 数据迭代器组件 -->
 <script setup>
 const props = defineProps(['data'])
@@ -298,7 +298,7 @@ const props = defineProps(['data'])
 
 `v-bind` 可以展开对象作为作用域：
 
-```vue
+```html
 <slot v-bind="item"></slot>
 ```
 
@@ -383,7 +383,7 @@ _renderSlot(_ctx.$slots, "default", _temp0)
 
 **无渲染组件**（Renderless Component）：
 
-```vue
+```html
 <!-- MouseTracker.vue -->
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'

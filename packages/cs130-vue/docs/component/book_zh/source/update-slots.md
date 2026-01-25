@@ -187,7 +187,7 @@ const isInternalKey = (key: string): boolean => key[0] === '_' || key === '$stab
 
 ### 稳定插槽
 
-```vue
+```html
 <template>
   <Child>
     <template #header>
@@ -204,7 +204,7 @@ const isInternalKey = (key: string): boolean => key[0] === '_' || key === '$stab
 
 ### 动态插槽
 
-```vue
+```html
 <template>
   <Child>
     <template #header>
@@ -221,7 +221,7 @@ const isInternalKey = (key: string): boolean => key[0] === '_' || key === '$stab
 
 ### 动态插槽名
 
-```vue
+```html
 <template>
   <Child>
     <template v-for="item in items" #[item.slot]>

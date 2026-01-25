@@ -78,7 +78,7 @@ export function useLink(props: UseLinkOptions) {
 
 **自定义导航按钮**：
 
-```vue
+```html
 <script setup lang="ts">
 import { useLink } from 'vue-router'
 
@@ -103,7 +103,7 @@ const { href, navigate, isActive } = useLink(props)
 
 **导航卡片**：
 
-```vue
+```html
 <script setup lang="ts">
 import { useLink } from 'vue-router'
 
@@ -130,7 +130,7 @@ const { route, navigate, isExactActive } = useLink(props)
 
 **面包屑组件**：
 
-```vue
+```html
 <script setup lang="ts">
 import { useLink } from 'vue-router'
 

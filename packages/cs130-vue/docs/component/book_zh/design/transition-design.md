@@ -18,7 +18,7 @@ element.addEventListener('transitionend', () => {
 
 Vue 的 Transition 组件封装了这些复杂性，提供声明式的解决方案：
 
-```vue
+```html
 <template>
   <Transition name="fade">
     <div v-if="show">内容</div>
@@ -55,7 +55,7 @@ Transition 在元素进入/离开时会自动添加和移除特定的 CSS 类。
 
 使用 `name` 属性时，`v-` 前缀会被替换：
 
-```vue
+```html
 <Transition name="slide">
   <!-- slide-enter-from, slide-enter-active, 等等 -->
 </Transition>
@@ -65,7 +65,7 @@ Transition 在元素进入/离开时会自动添加和移除特定的 CSS 类。
 
 除了 CSS transition，Transition 组件也支持 CSS animation：
 
-```vue
+```html
 <template>
   <Transition name="bounce">
     <div v-if="show">弹跳效果</div>
@@ -100,7 +100,7 @@ animation 的好处是可以定义更复杂的关键帧动画，不限于两个�
 
 对于更复杂的动画需求，可以使用 JavaScript 钩子：
 
-```vue
+```html
 <template>
   <Transition
     @before-enter="onBeforeEnter"
@@ -138,7 +138,7 @@ function onLeave(el, done) {
 
 `done` 回调告诉 Vue 动画何时完成。如果使用 JavaScript 钩子但不使用 CSS 过渡，添加 `:css="false"` 可以跳过 CSS 检测，获得更好的性能：
 
-```vue
+```html
 <Transition :css="false" @enter="onEnter" @leave="onLeave">
   <!-- ... -->
 </Transition>
@@ -148,7 +148,7 @@ function onLeave(el, done) {
 
 当在两个元素之间切换时，默认情况下进入和离开动画同时发生。这可能不是期望的效果——有时希望旧元素先离开，新元素再进入。
 
-```vue
+```html
 <template>
   <Transition name="fade" mode="out-in">
     <component :is="currentView" />
@@ -166,7 +166,7 @@ function onLeave(el, done) {
 
 Transition 用于单个元素的进入/离开。对于列表（v-for 渲染的多个元素），使用 TransitionGroup：
 
-```vue
+```html
 <template>
   <TransitionGroup name="list" tag="ul">
     <li v-for="item in items" :key="item.id">
@@ -198,7 +198,7 @@ TransitionGroup 的特点：
 
 TransitionGroup 还支持元素位置变化的过渡。当列表排序变化时，元素会平滑地移动到新位置：
 
-```vue
+```html
 <template>
   <TransitionGroup name="flip" tag="ul">
     <li v-for="item in sortedItems" :key="item.id">
@@ -220,7 +220,7 @@ TransitionGroup 还支持元素位置变化的过渡。当列表排序变化时�
 
 过渡的效果可以是动态的，通过 props 控制：
 
-```vue
+```html
 <template>
   <Transition :name="transitionName" :duration="duration">
     <div v-if="show">内容</div>
@@ -238,7 +238,7 @@ const duration = computed(() => transitionType.value === 'fade' ? 300 : 500)
 
 `duration` 属性可以显式指定过渡时长，覆盖 CSS 中的定义：
 
-```vue
+```html
 <!-- 单一时长 -->
 <Transition :duration="500">
 

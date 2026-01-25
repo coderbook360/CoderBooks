@@ -4,7 +4,7 @@ Suspense 用于处理异步依赖的组件。它在异步内容加载时显示�
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>
@@ -404,7 +404,7 @@ if (suspense.timeout > 0) {
 
 ## 事件钩子
 
-```vue
+```html
 <Suspense
   @pending="onPending"
   @resolve="onResolve"
@@ -430,7 +430,7 @@ function triggerEvent(
 
 Suspense 可以嵌套：
 
-```vue
+```html
 <Suspense>
   <template #default>
     <Suspense>
@@ -448,7 +448,7 @@ Suspense 可以嵌套：
 
 配合 onErrorCaptured：
 
-```vue
+```html
 <script setup>
 import { onErrorCaptured } from 'vue'
 

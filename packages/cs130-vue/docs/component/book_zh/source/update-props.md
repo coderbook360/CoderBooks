@@ -317,7 +317,7 @@ for (const key in rawCurrentProps) {
 
 ### 动态属性更新
 
-```vue
+```html
 <template>
   <Child :title="title" :count="count" static-prop="never changes" />
 </template>
@@ -335,7 +335,7 @@ const count = ref(0)
 
 ### 属性删除
 
-```vue
+```html
 <template>
   <Child :title="showTitle ? title : undefined" />
 </template>

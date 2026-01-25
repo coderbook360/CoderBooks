@@ -12,7 +12,7 @@ Scoped CSS 是 Vue SFC 的重要特性，它让组件的样式只影响当前组
 
 在 style 标签上添加 scoped 属性：
 
-```vue
+```html
 <template>
   <div class="container">
     <button class="btn">Click</button>
@@ -72,7 +72,7 @@ const scopeId = 'data-v-' + hash(filename + content)
 
 有时需要从父组件样式穿透到子组件。Vue 提供深度选择器：
 
-```vue
+```html
 <style scoped>
 /* 使用 :deep() 穿透 */
 .container :deep(.child-class) {
@@ -97,7 +97,7 @@ const scopeId = 'data-v-' + hash(filename + content)
 
 插槽内容是由父组件提供的，属于父组件的作用域：
 
-```vue
+```html
 <!-- Parent.vue -->
 <template>
   <Child>
@@ -120,7 +120,7 @@ slot-content 元素带有父组件的 scope ID，因此父组件的 scoped 样�
 
 一个 SFC 可以有多个 style 块，可以混合 scoped 和非 scoped：
 
-```vue
+```html
 <style>
 /* 全局样式 */
 body { margin: 0; }
@@ -138,7 +138,7 @@ body { margin: 0; }
 
 动态绑定的类名同样会被 scope 限制：
 
-```vue
+```html
 <template>
   <div :class="dynamicClass">Content</div>
 </template>
@@ -155,7 +155,7 @@ body { margin: 0; }
 
 Vue 也支持 CSS Modules：
 
-```vue
+```html
 <template>
   <div :class="$style.container">Content</div>
 </template>

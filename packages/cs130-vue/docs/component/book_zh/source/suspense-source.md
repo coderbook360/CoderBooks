@@ -425,7 +425,7 @@ resolve(force = false) {
 
 ## 使用示例
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>

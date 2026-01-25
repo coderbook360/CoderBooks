@@ -122,7 +122,7 @@ if (m) {
 
 ## 父子组件顺序
 
-```vue
+```html
 <!-- Parent -->
 <template>
   <Child />
@@ -154,7 +154,7 @@ beforeMount 自上而下，mounted 自下而上。
 
 使用模板 ref：
 
-```vue
+```html
 <template>
   <div ref="divRef">Hello</div>
 </template>
@@ -297,7 +297,7 @@ onMounted(() => {
 
 组件可能不挂载：
 
-```vue
+```html
 <template>
   <Child v-if="show" />
 </template>

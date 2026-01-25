@@ -228,7 +228,7 @@ interface TeleportVNode extends VNode {
 
 ## 使用示例
 
-```vue
+```html
 <template>
   <div>
     <h1>Modal Demo</h1>

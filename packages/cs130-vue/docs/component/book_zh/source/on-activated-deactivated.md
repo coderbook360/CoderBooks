@@ -4,7 +4,7 @@
 
 ## KeepAlive 工作原理
 
-```vue
+```html
 <KeepAlive>
   <component :is="currentComponent" />
 </KeepAlive>
@@ -224,7 +224,7 @@ setup() {
 
 子组件也会收到这些钩子：
 
-```vue
+```html
 <!-- Parent（被 KeepAlive 缓存） -->
 <template>
   <Child />
@@ -279,7 +279,7 @@ setup() {
 
 只有匹配的组件才会被缓存：
 
-```vue
+```html
 <KeepAlive include="Home,About">
   <component :is="currentComponent" />
 </KeepAlive>
@@ -291,7 +291,7 @@ setup() {
 
 超出缓存数量时，最旧的组件被销毁：
 
-```vue
+```html
 <KeepAlive :max="5">
   <component :is="currentComponent" />
 </KeepAlive>

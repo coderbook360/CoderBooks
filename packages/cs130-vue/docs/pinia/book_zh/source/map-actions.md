@@ -16,7 +16,7 @@ export default {
 
 模板中直接调用：
 
-```vue
+```html
 <button @click="login(credentials)">登录</button>
 <button @click="logout">登出</button>
 ```

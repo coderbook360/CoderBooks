@@ -105,7 +105,7 @@ const proxiedResult = proxyRefs(setupResult)
 
 这就是为什么模板中可以直接用 `{{ count }}` 而不是 `{{ count.value }}`：
 
-```vue
+```html
 <template>
   <div>{{ count }}</div>  <!-- 自动解包 -->
 </template>

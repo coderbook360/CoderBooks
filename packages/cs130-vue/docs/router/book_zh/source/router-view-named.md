@@ -4,7 +4,7 @@
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <div class="layout">
     <RouterView name="header" />
@@ -117,7 +117,7 @@ const routes = [
 ]
 ```
 
-```vue
+```html
 <!-- App.vue (深度 0) -->
 <RouterView />           <!-- AdminLayout -->
 <RouterView name="sidebar" />  <!-- AdminSidebar -->
@@ -163,7 +163,7 @@ const componentProps = routeProps
 
 可以根据条件渲染不同命名视图：
 
-```vue
+```html
 <template>
   <RouterView :name="isMobile ? 'mobile' : 'desktop'" />
 </template>
@@ -181,7 +181,7 @@ const componentProps = routeProps
 
 ## 命名视图与过渡
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }" name="sidebar">
     <transition name="slide">
@@ -229,7 +229,7 @@ const componentProps = routeProps
 }
 ```
 
-```vue
+```html
 <RouterView :name="isAdmin ? 'adminSidebar' : 'userSidebar'" />
 ```
 

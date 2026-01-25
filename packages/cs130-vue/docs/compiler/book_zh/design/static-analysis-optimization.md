@@ -16,7 +16,7 @@ React 这类框架无法进行深度静态分析，因为 JSX 是嵌入在 JavaS
 
 考虑这个模板：
 
-```vue
+```html
 <template>
   <div class="container">
     <h1>Welcome</h1>
@@ -34,7 +34,7 @@ React 这类框架无法进行深度静态分析，因为 JSX 是嵌入在 JavaS
 
 对于动态内容，编译器分析其变化模式。
 
-```vue
+```html
 <div :class="cls" :style="style" :id="id">
   {{ text }}
 </div>
@@ -48,7 +48,7 @@ React 这类框架无法进行深度静态分析，因为 JSX 是嵌入在 JavaS
 
 编译器对表达式也进行分析：
 
-```vue
+```html
 <span>{{ 'Hello, ' + name }}</span>
 <span>{{ formatDate(date) }}</span>
 <span>{{ CONSTANT }}</span>
@@ -62,7 +62,7 @@ React 这类框架无法进行深度静态分析，因为 JSX 是嵌入在 JavaS
 
 组件是重要的优化边界。编译器识别自定义组件，知道它们的更新由组件自己负责。
 
-```vue
+```html
 <div>
   <MyComponent :prop="value" />
   <span>{{ text }}</span>
@@ -77,7 +77,7 @@ React 这类框架无法进行深度静态分析，因为 JSX 是嵌入在 JavaS
 
 v-if、v-for 等指令创建动态结构，编译器需要分析它们的行为：
 
-```vue
+```html
 <div v-if="show">
   <StaticContent />
 </div>
@@ -94,7 +94,7 @@ v-if、v-for 等指令创建动态结构，编译器需要分析它们的行为�
 
 事件处理器是性能敏感点。每次渲染创建新的处理器函数会导致不必要的重渲染。
 
-```vue
+```html
 <button @click="handleClick">Click</button>
 <button @click="() => console.log('clicked')">Click</button>
 ```
@@ -105,7 +105,7 @@ v-if、v-for 等指令创建动态结构，编译器需要分析它们的行为�
 
 插槽内容的静态/动态特性影响优化策略：
 
-```vue
+```html
 <MyComponent>
   <template #header>
     <h1>Static Header</h1>

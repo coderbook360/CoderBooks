@@ -14,33 +14,7 @@ export default defineConfig({
   srcExclude: [
     '**/.book_task/**',
     '**/.book_guide/**',
-    // 排除包含大量 Vue 模板语法示例的目录
-    '**/reactive/01-quick-start/**',
-    '**/reactive/02-advanced-usage/**',
-    '**/reactive/03-design-philosophy/**',
-    '**/reactive/04-0-source-overview/**',
-    '**/reactive/04-1-source-analysis/**',
-    '**/reactive/04-2-implementation/**',
-    '**/reactive/05-architecture-solution/**',
-    '**/compiler/**',
-    '**/component/01-component-quick-start/**',
-    '**/component/02-component-advanced/**',
-    '**/component/03-component-design/**',
-    '**/component/04-*/**',
-    '**/component/05-*/**',
-    // 排除包含 TypeScript 代码的 SSR 源码文件（大括号被误解析）
-    '**/ssr/book_zh/source/**'
   ],
-
-  // Vue 模板语法处理
-  vue: {
-    template: {
-      compilerOptions: {
-        // 将 {{ }} 作为普通文本处理
-        delimiters: ['${', '}$']
-      }
-    }
-  },
   
   themeConfig: {
     nav: [

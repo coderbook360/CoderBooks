@@ -6,7 +6,7 @@ KeepAlive 是 Vue 的内置组件，用于缓存动态组件，避免重复创�
 
 考虑一个标签页切换：
 
-```vue
+```html
 <template>
   <component :is="currentTab" />
 </template>
@@ -16,7 +16,7 @@ KeepAlive 是 Vue 的内置组件，用于缓存动态组件，避免重复创�
 
 用 KeepAlive 包裹：
 
-```vue
+```html
 <template>
   <KeepAlive>
     <component :is="currentTab" />
@@ -137,7 +137,7 @@ onDeactivated(() => {
 
 可以指定哪些组件需要缓存：
 
-```vue
+```html
 <KeepAlive :include="['TabA', 'TabB']">
   <component :is="currentTab" />
 </KeepAlive>
@@ -174,7 +174,7 @@ function matches(pattern, name) {
 
 限制缓存数量：
 
-```vue
+```html
 <KeepAlive :max="10">
   <component :is="currentTab" />
 </KeepAlive>
@@ -265,7 +265,7 @@ KeepAlive 只能有一个子组件，多个子组件会警告。
 
 **处理 v-if 变化**：
 
-```vue
+```html
 <KeepAlive>
   <TabA v-if="showA" />
   <TabB v-else />

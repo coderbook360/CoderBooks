@@ -22,7 +22,7 @@ CSS Modules 的核心理念是：类名应该是局部的，就像 JavaScript �
 
 使用 module 属性代替 scoped：
 
-```vue
+```html
 <template>
   <div :class="$style.container">
     <h1 :class="$style.title">Hello</h1>
@@ -102,7 +102,7 @@ compileStyle({
 
 CSS Modules 支持 composes 关键字，用于复用样式：
 
-```vue
+```html
 <style module>
 .base {
   padding: 10px;
@@ -131,7 +131,7 @@ $style = {
 
 在 CSS Modules 中声明全局样式使用 :global：
 
-```vue
+```html
 <style module>
 :global(.external-class) {
   color: red;
@@ -149,7 +149,7 @@ $style = {
 
 一个组件可以有多个 CSS Modules：
 
-```vue
+```html
 <template>
   <div :class="$style.container">
     <span :class="classes.highlight">Text</span>
@@ -171,7 +171,7 @@ $style = {
 
 CSS Modules 也可以在 JavaScript 中使用：
 
-```vue
+```html
 <script setup>
 import { useCssModule } from 'vue'
 
@@ -217,7 +217,7 @@ Volar 对 Vue SFC 中的 CSS Modules 也有特殊支持，$style.xxx 会有补�
 
 CSS Modules 与动态类名配合良好：
 
-```vue
+```html
 <template>
   <button 
     :class="[

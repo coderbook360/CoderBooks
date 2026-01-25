@@ -4,7 +4,7 @@
 
 ## 深度的概念
 
-```vue
+```html
 <!-- 深度 0 -->
 <RouterView />
 
@@ -119,7 +119,7 @@ const matchedRouteRef = computed(
 }
 ```
 
-```vue
+```html
 <!-- 两个 RouterView 深度相同 -->
 <RouterView />                  <!-- matched[0].components.default -->
 <RouterView name="sidebar" />   <!-- matched[0].components.sidebar -->
@@ -161,7 +161,7 @@ function onBeforeRouteLeave(guard: NavigationGuard) {
 
 ## 调试深度问题
 
-```vue
+```html
 <script setup>
 import { inject } from 'vue'
 import { viewDepthKey, matchedRouteKey } from 'vue-router'

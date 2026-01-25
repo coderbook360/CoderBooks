@@ -54,7 +54,7 @@ state.foo = 'bar'
 
 这种机制让条件渲染变得响应式：
 
-```vue
+```html
 <template>
   <div v-if="'loading' in state">加载中...</div>
 </template>

@@ -6,7 +6,7 @@ Vue 在组件级别实现了事件处理函数的缓存机制，避免在每次�
 
 考虑这个常见的模式：
 
-```vue
+```html
 <template>
   <button @click="() => doSomething(item)">Click</button>
 </template>
@@ -18,7 +18,7 @@ Vue 在组件级别实现了事件处理函数的缓存机制，避免在每次�
 
 编译器会为内联事件处理函数生成缓存：
 
-```vue
+```html
 <template>
   <button @click="handleClick">Static</button>
   <button @click="() => handleAction(item)">Dynamic</button>
@@ -68,7 +68,7 @@ function render(_ctx, _cache) {
 
 并非所有事件处理函数都需要缓存：
 
-```vue
+```html
 <!-- 不需要缓存：直接引用方法 -->
 <button @click="handleClick">
 
@@ -141,7 +141,7 @@ export function patchEvent(
 
 在 v-for 中缓存特别重要：
 
-```vue
+```html
 <template>
   <div v-for="item in items" :key="item.id">
     <button @click="() => select(item)">Select</button>
@@ -167,7 +167,7 @@ export function render(_ctx, _cache) {
 
 但如果处理函数不依赖循环变量：
 
-```vue
+```html
 <template>
   <div v-for="item in items" :key="item.id">
     <button @click="handleClick">Static</button>
@@ -199,7 +199,7 @@ React 使用合成事件系统实现真正的事件委托：
 
 Vue 选择了不同的权衡：
 
-```vue
+```html
 <!-- Vue：事件绑定在实际元素上，但使用 invoker 优化 -->
 <button @click="handleClick">Click</button>
 ```
@@ -210,7 +210,7 @@ Vue 的方式更接近原生行为，在某些场景（如 Shadow DOM）中兼�
 
 某些情况会导致缓存失效：
 
-```vue
+```html
 <template>
   <button @click="condition ? handlerA : handlerB">
     Conditional

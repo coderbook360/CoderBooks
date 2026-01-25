@@ -34,7 +34,7 @@ function patchProps(n1, n2, el) {
 
 Vue 3 编译器在编译时分析每个节点的动态绑定：
 
-```vue
+```html
 <template>
   <div :class="cls" data-id="static">
     {{ text }}
@@ -182,7 +182,7 @@ Block 让运行时跳过静态节点定位，patchFlag 让每个动态节点的�
 
 一个节点可能有多种动态性：
 
-```vue
+```html
 <div :class="cls" :style="style" :title="t">{{ text }}</div>
 ```
 

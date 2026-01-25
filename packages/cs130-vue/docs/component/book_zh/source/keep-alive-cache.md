@@ -26,7 +26,7 @@ const key = vnode.key == null ? comp : vnode.key
 
 示例：
 
-```vue
+```html
 <!-- 使用 key -->
 <KeepAlive>
   <component :is="view" :key="componentKey" />
@@ -217,7 +217,7 @@ if (max && keys.size > parseInt(max as string, 10)) {
 
 ### 理解缓存行为
 
-```vue
+```html
 <template>
   <KeepAlive :max="3">
     <component :is="views[current]" />
@@ -249,7 +249,7 @@ const cycle = () => {
 
 ### 动态 key
 
-```vue
+```html
 <template>
   <KeepAlive>
     <component :is="View" :key="route.path" />

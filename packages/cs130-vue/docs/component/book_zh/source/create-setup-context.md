@@ -258,7 +258,7 @@ setup(props, context) {
 
 区别：
 
-```vue
+```html
 <!-- Parent -->
 <Child :known="1" :unknown="2" class="foo" />
 
@@ -311,7 +311,7 @@ setup(props, { emit }) {
 
 **限制 ref 访问**：
 
-```vue
+```html
 <!-- Parent -->
 <template>
   <Child ref="childRef" />
@@ -326,7 +326,7 @@ onMounted(() => {
 </script>
 ```
 
-```vue
+```html
 <!-- Child -->
 <script setup>
 const privateMethod = () => {}

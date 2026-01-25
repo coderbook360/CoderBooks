@@ -147,7 +147,7 @@ const routes = [
 
 在根组件中：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition :name="route.meta.transition || 'fade'">
@@ -178,7 +178,7 @@ const routes = [
 ]
 ```
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <KeepAlive v-if="route.meta.keepAlive">
@@ -203,7 +203,7 @@ const routes = [
 ]
 ```
 
-```vue
+```html
 <!-- App.vue -->
 <template>
   <component :is="layoutComponent">
@@ -260,7 +260,7 @@ const routes = [
 
 面包屑组件可以遍历 `matched` 数组：
 
-```vue
+```html
 <template>
   <nav class="breadcrumb">
     <RouterLink 

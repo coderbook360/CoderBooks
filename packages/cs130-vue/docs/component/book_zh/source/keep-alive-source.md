@@ -312,7 +312,7 @@ export const enum ShapeFlags {
 
 ### 基础用法
 
-```vue
+```html
 <template>
   <KeepAlive>
     <component :is="currentComponent" />
@@ -322,7 +322,7 @@ export const enum ShapeFlags {
 
 ### include/exclude
 
-```vue
+```html
 <template>
   <!-- 字符串 -->
   <KeepAlive include="a,b">
@@ -343,7 +343,7 @@ export const enum ShapeFlags {
 
 ### max 限制
 
-```vue
+```html
 <template>
   <KeepAlive :max="10">
     <component :is="view" />

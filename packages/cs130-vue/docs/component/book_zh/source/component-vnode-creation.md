@@ -274,7 +274,7 @@ interface VNode {
 
 模板编译后会生成优化的 `createVNode` 调用：
 
-```vue
+```html
 <template>
   <MyComponent :title="title" @click="onClick">
     {{ message }}

@@ -351,7 +351,7 @@ export function getTransitionInfo(
 
 ### 基础用法
 
-```vue
+```html
 <template>
   <button @click="show = !show">Toggle</button>
   <Transition name="fade">
@@ -371,7 +371,7 @@ export function getTransitionInfo(
 
 ### JS 钩子
 
-```vue
+```html
 <template>
   <Transition
     @before-enter="onBeforeEnter"

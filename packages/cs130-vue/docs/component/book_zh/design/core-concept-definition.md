@@ -24,7 +24,7 @@ const MyComponent = {
 
 使用 `<script setup>` 时，组件定义看起来很不一样：
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 
@@ -210,7 +210,7 @@ export default {
 
 在 `<script setup>` 中，导入的组件会自动注册，无需显式声明：
 
-```vue
+```html
 <script setup>
 import ChildComponent from './ChildComponent.vue'
 // 自动注册，可以直接在模板中使用

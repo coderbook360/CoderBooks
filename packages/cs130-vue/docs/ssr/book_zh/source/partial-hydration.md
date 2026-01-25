@@ -76,7 +76,7 @@ function selectiveHydrate(
 
 使用指令标记需要水合的组件：
 
-```vue
+```html
 <template>
   <!-- 静态内容，不需要水合 -->
   <header>

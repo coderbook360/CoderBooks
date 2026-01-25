@@ -46,7 +46,7 @@ function useCounter(initial: number = 0) {
 
 `defineProps` 和 `defineEmits` 这些编译器宏，更是将类型安全提升到了新高度。你可以用 TypeScript 类型语法直接定义 props 和 emits，编译器会自动生成运行时验证代码：
 
-```vue
+```html
 <script setup lang="ts">
 // 类型定义即运行时定义
 const props = defineProps<{
@@ -117,7 +117,7 @@ Vue3 的一大创新是将更多工作放到编译时完成，让运行时更轻
 
 模板编译器会分析模板结构，标记静态节点和动态绑定。这些信息在运行时被用于优化更新性能：
 
-```vue
+```html
 <template>
   <div>
     <h1>Static Title</h1>           <!-- 静态，可以跳过 diff -->

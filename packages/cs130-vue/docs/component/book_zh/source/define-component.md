@@ -198,7 +198,7 @@ export default defineComponent({
 
 使用 `<script setup>` 时，通常不需要 `defineComponent`：
 
-```vue
+```html
 <script setup lang="ts">
 import { ref } from 'vue'
 

@@ -52,7 +52,7 @@ const AsyncComponent = defineAsyncComponent({
 
 异步组件的加载需要时间，在此期间需要给用户适当的反馈：
 
-```vue
+```html
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import LoadingSpinner from './LoadingSpinner.vue'
@@ -78,7 +78,7 @@ const AsyncDashboard = defineAsyncComponent({
 
 异步加载可能失败：网络错误、服务器错误、代码错误等。`errorComponent` 让你可以优雅地处理这些情况：
 
-```vue
+```html
 <!-- ErrorDisplay.vue -->
 <script setup>
 defineProps(['error', 'retry'])
@@ -109,7 +109,7 @@ app.config.errorHandler = (err, instance, info) => {
 
 Vue 3 引入的 Suspense 组件提供了另一种处理异步组件加载状态的方式：
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>
@@ -124,7 +124,7 @@ Vue 3 引入的 Suspense 组件提供了另一种处理异步组件加载状态�
 
 Suspense 的 `#fallback` 插槽在异步内容加载完成前显示。与 `defineAsyncComponent` 的 `loadingComponent` 不同，Suspense 可以协调多个异步组件的加载状态，提供更一致的用户体验。
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>
@@ -222,7 +222,7 @@ onMounted(() => {
 
 更智能的预加载可以基于用户行为：
 
-```vue
+```html
 <script setup>
 const loadSettings = () => import('./views/Settings.vue')
 

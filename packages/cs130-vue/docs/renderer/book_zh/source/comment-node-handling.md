@@ -63,7 +63,7 @@ const processCommentNode: ProcessTextOrCommentFn = (n1, n2, container, anchor) =
 
 v-if 为 false 时，编译器生成注释节点作为占位符：
 
-```vue
+```html
 <template>
   <div v-if="show">Content</div>
 </template>
@@ -127,7 +127,7 @@ hostInsert(
 
 整个条件链编译为单个表达式：
 
-```vue
+```html
 <template>
   <div v-if="a">A</div>
   <div v-else-if="b">B</div>
@@ -149,7 +149,7 @@ function render(_ctx) {
 
 这里没有注释节点——因为总有一个分支会渲染。只有当所有条件都可能为 false 时才需要注释占位符：
 
-```vue
+```html
 <template>
   <div v-if="a">A</div>
   <div v-else-if="b">B</div>

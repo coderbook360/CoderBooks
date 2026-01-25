@@ -64,7 +64,7 @@ if (transitionClasses) {
 
 这确保了用户设置的类名和 Transition 添加的类名能够共存。比如：
 
-```vue
+```html
 <Transition name="fade">
   <div class="card">...</div>
 </Transition>
@@ -104,7 +104,7 @@ function normalizeClass(value: unknown): string {
 
 Vue 支持多种 class 绑定语法：
 
-```vue
+```html
 <!-- 字符串 -->
 <div :class="'foo bar'">
 
@@ -124,7 +124,7 @@ normalizeClass 将所有形式统一为空格分隔的字符串。
 
 对于既有静态又有动态类名的元素，编译器会进行优化：
 
-```vue
+```html
 <div class="static" :class="dynamic">
 ```
 
@@ -191,7 +191,7 @@ el.classList.toggle('active')
 
 对于频繁的类名切换，Vue 的处理方式很高效：
 
-```vue
+```html
 <div :class="{ active: isActive }">
 ```
 

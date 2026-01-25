@@ -6,7 +6,7 @@
 
 没有自动解包，模板会很繁琐：
 
-```vue
+```html
 <!-- 如果没有自动解包 -->
 <template>
   {{ count.value }}
@@ -16,7 +16,7 @@
 
 有了自动解包：
 
-```vue
+```html
 <!-- 实际使用 -->
 <template>
   {{ count }}

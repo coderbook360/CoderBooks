@@ -203,7 +203,7 @@ export default {
 
 使用 `<script setup lang="ts">` 时，类型体验更好：
 
-```vue
+```html
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
@@ -242,7 +242,7 @@ Composition API 需要更多的前置知识。你需要理解 `ref` 和 `reactiv
 
 其次是 `<script setup>` 的编译优化。使用 `<script setup>` 时，编译器可以进行更多优化，因为它能静态分析出哪些变量被模板使用。变量不需要通过对象包装暴露给模板，减少了一层间接访问的开销。
 
-```vue
+```html
 <!-- script setup 编译后的代码更高效 -->
 <script setup>
 import { ref } from 'vue'

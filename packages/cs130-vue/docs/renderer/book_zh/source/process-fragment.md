@@ -199,7 +199,7 @@ show
 
 ### 组件多根
 
-```vue
+```html
 <template>
   <div>Root 1</div>
   <div>Root 2</div>

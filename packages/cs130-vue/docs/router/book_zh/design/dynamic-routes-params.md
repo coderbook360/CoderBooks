@@ -22,7 +22,7 @@ const routes = [
 
 参数会成为路由对象的一部分，可以通过多种方式访问：
 
-```vue
+```html
 <script setup>
 import { useRoute } from 'vue-router'
 
@@ -59,7 +59,7 @@ const routes = [
 
 现在组件可以这样写：
 
-```vue
+```html
 <script setup>
 defineProps({
   id: String
@@ -226,7 +226,7 @@ onBeforeRouteUpdate((to, from) => {
 
 使用 `key` 强制重建组件（牺牲性能换取简单性）：
 
-```vue
+```html
 <RouterView :key="$route.fullPath" />
 ```
 

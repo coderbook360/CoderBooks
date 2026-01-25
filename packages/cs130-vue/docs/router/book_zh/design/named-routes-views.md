@@ -65,7 +65,7 @@ name: 'UserDetail'
 
 `<RouterLink>` 同样支持命名导航：
 
-```vue
+```html
 <RouterLink :to="{ name: 'user-detail', params: { id: user.id } }">
   {{ user.name }}
 </RouterLink>
@@ -109,7 +109,7 @@ const routes = [
 
 模板中使用命名的 `<RouterView>`：
 
-```vue
+```html
 <template>
   <header>...</header>
   <div class="container">
@@ -154,7 +154,7 @@ const routes = [
 
 SettingsLayout 中：
 
-```vue
+```html
 <template>
   <div class="settings">
     <nav>...</nav>

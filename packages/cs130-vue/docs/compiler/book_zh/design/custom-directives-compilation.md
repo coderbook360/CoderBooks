@@ -6,7 +6,7 @@ Vue 的指令系统允许开发者扩展模板的行为。除了内置指令（v
 
 指令在模板中的形式：
 
-```vue
+```html
 <template>
   <div v-custom-directive:arg.modifier="value">Content</div>
 </template>
@@ -101,7 +101,7 @@ function buildDirectiveArgs(dir: DirectiveNode, context) {
 
 使用自定义指令的元素通过 withDirectives 包装：
 
-```vue
+```html
 <template>
   <input v-focus v-validate:email.required="rules" />
 </template>
@@ -144,7 +144,7 @@ const _directive_focus = resolveDirective('focus')
 
 指令名可以是动态的：
 
-```vue
+```html
 <div v-[directiveName]="value" />
 ```
 
@@ -163,7 +163,7 @@ withDirectives(
 
 参数作为字符串传递：
 
-```vue
+```html
 <div v-custom:foo="bar" />
 ```
 
@@ -175,7 +175,7 @@ withDirectives(
 
 修饰符打包成对象：
 
-```vue
+```html
 <div v-custom.a.b.c="value" />
 ```
 
@@ -189,7 +189,7 @@ withDirectives(
 
 指令可以用在组件上：
 
-```vue
+```html
 <MyComponent v-custom="value" />
 ```
 
@@ -208,7 +208,7 @@ withDirectives(
 
 v-slot 虽然语法类似指令，但实际上不是指令——它只在编译时有意义，不产生运行时指令调用：
 
-```vue
+```html
 <template v-slot:header>...</template>
 ```
 

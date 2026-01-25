@@ -328,7 +328,7 @@ export function onBeforeRouteUpdate(guard: NavigationGuard): void {
 
 基本使用：
 
-```vue
+```html
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
 
@@ -346,7 +346,7 @@ console.log(route.params.id)
 
 使用 useLink：
 
-```vue
+```html
 <script setup>
 import { useLink } from 'vue-router'
 
@@ -369,7 +369,7 @@ const { href, isActive, navigate } = useLink({ to: props.to })
 
 组件守卫：
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'

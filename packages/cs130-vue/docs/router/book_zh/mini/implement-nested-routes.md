@@ -352,7 +352,7 @@ const routes = [
 
 父组件模板：
 
-```vue
+```html
 <!-- AdminLayout.vue -->
 <template>
   <div class="admin-layout">
@@ -372,7 +372,7 @@ const routes = [
 
 二级嵌套：
 
-```vue
+```html
 <!-- AdminUsers.vue -->
 <template>
   <div class="users-page">

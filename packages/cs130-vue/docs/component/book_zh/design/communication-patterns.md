@@ -22,7 +22,7 @@
 
 Props 和 Emits 是 Vue 组件通信的基石。它们实现了清晰的单向数据流：
 
-```vue
+```html
 <!-- 父组件 -->
 <script setup>
 import { ref } from 'vue'
@@ -56,7 +56,7 @@ function increment() {
 
 一个经常被问到的问题是：什么时候用 props 传递数据，什么时候让子组件自己获取？原则是：如果数据是子组件行为的"输入"，用 props；如果数据是子组件内部的实现细节，让子组件自己处理。
 
-```vue
+```html
 <!-- 好：用户 ID 是输入，用户详情由子组件获取 -->
 <UserCard :userId="123" />
 
@@ -75,7 +75,7 @@ function increment() {
 
 当组件嵌套很深时，层层传递 props 变得痛苦。Provide/Inject 提供了一种"隧道"机制：
 
-```vue
+```html
 <!-- 祖先组件 -->
 <script setup>
 import { provide, ref } from 'vue'
@@ -108,7 +108,7 @@ Provide/Inject 特别适合以下场景：
 
 **组件库的内部通信**，如 Form 和 FormItem、Tabs 和 TabPane 之间的关系。
 
-```vue
+```html
 <!-- Form.vue -->
 <script setup>
 import { provide, reactive } from 'vue'
@@ -153,7 +153,7 @@ const theme = inject(ThemeSymbol, 'light') // 提供默认值
 
 有时候你需要直接访问子组件实例或 DOM 元素。Template refs 提供了这种能力：
 
-```vue
+```html
 <script setup>
 import { ref, onMounted } from 'vue'
 import ChildComponent from './ChildComponent.vue'
@@ -178,7 +178,7 @@ onMounted(() => {
 
 子组件默认会暴露其全部公开属性。使用 `<script setup>` 时，组件默认不暴露任何内容，需要使用 `defineExpose` 明确指定：
 
-```vue
+```html
 <!-- ChildComponent.vue -->
 <script setup>
 const count = ref(0)

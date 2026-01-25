@@ -180,7 +180,7 @@ export interface SetupContext<E = EmitsOptions, S extends SlotsType = {}> {
 
 ## 在模板中的使用
 
-```vue
+```html
 <script setup>
 import { useAttrs, useSlots } from 'vue'
 

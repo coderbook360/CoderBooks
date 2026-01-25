@@ -421,7 +421,7 @@ export const RouterLink = defineComponent({
 
 基本用法：
 
-```vue
+```html
 <template>
   <RouterLink to="/about">About</RouterLink>
 </template>
@@ -429,7 +429,7 @@ export const RouterLink = defineComponent({
 
 对象形式：
 
-```vue
+```html
 <template>
   <RouterLink :to="{ name: 'user', params: { id: userId } }">
     User Profile
@@ -439,7 +439,7 @@ export const RouterLink = defineComponent({
 
 自定义渲染：
 
-```vue
+```html
 <template>
   <RouterLink to="/about" custom v-slot="{ navigate, isActive }">
     <button @click="navigate" :class="{ active: isActive }">
@@ -451,7 +451,7 @@ export const RouterLink = defineComponent({
 
 替换模式：
 
-```vue
+```html
 <template>
   <RouterLink to="/login" replace>Login</RouterLink>
 </template>

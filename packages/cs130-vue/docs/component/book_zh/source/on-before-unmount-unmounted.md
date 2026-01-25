@@ -227,7 +227,7 @@ Parent unmounted
 
 v-if 切换触发卸载：
 
-```vue
+```html
 <template>
   <Child v-if="show" />
 </template>
@@ -239,7 +239,7 @@ v-if 切换触发卸载：
 
 KeepAlive 内的组件不触发卸载钩子：
 
-```vue
+```html
 <KeepAlive>
   <Component :is="currentComp" />
 </KeepAlive>

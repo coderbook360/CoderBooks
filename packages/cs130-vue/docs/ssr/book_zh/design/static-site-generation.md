@@ -148,7 +148,7 @@ async function fetchDataForRoute(route) {
 
 对于更新频繁的数据，可以考虑混合策略：静态生成页面骨架，客户端加载实时数据。
 
-```vue
+```html
 <template>
   <div>
     <!-- 静态内容 -->

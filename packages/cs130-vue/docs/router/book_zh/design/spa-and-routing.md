@@ -61,7 +61,7 @@ const routes = [
 
 在 Vue 应用中，路由决定了组件树的结构。RouterView 是一个占位组件，它在运行时被替换为当前路由匹配的组件：
 
-```vue
+```html
 <template>
   <header>
     <nav>

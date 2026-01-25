@@ -4,7 +4,7 @@ RouterLink 是声明式导航组件，渲染为 `<a>` 标签，支持自定义�
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <!-- 字符串路径 -->
   <RouterLink to="/about">About</RouterLink>
@@ -201,7 +201,7 @@ return () => {
 
 使用：
 
-```vue
+```html
 <RouterLink to="/about" v-slot="{ href, navigate, isActive, isExactActive, route }">
   <li :class="{ 'active': isActive, 'exact-active': isExactActive }">
     <a :href="href" @click="navigate">
@@ -215,7 +215,7 @@ return () => {
 
 `custom` 跳过默认的 `<a>` 渲染：
 
-```vue
+```html
 <!-- 默认：渲染为 a -->
 <RouterLink to="/about">About</RouterLink>
 <!-- <a href="/about">About</a> -->

@@ -6,7 +6,7 @@ Fragment 是 Vue 3 引入的虚拟节点类型，允许组件返回多个根节�
 
 Vue 2 要求组件必须有单个根节点，Vue 3 移除了这个限制：
 
-```vue
+```html
 <!-- Vue 3：多根节点 -->
 <template>
   <header>Header</header>
@@ -218,7 +218,7 @@ export const enum PatchFlags {
 
 v-if/v-for 外部的静态结构：
 
-```vue
+```html
 <template>
   <div>Static</div>
   <div>{{ dynamic }}</div>
@@ -242,7 +242,7 @@ export function render(_ctx) {
 
 v-for 带 key：
 
-```vue
+```html
 <template>
   <div v-for="item in list" :key="item.id">{{ item.text }}</div>
 </template>
@@ -267,7 +267,7 @@ export function render(_ctx) {
 
 v-for 无 key：
 
-```vue
+```html
 <template>
   <div v-for="item in list">{{ item.text }}</div>
 </template>
@@ -329,7 +329,7 @@ h(Fragment, [
 
 ## v-if 的 Fragment
 
-```vue
+```html
 <template>
   <template v-if="show">
     <div>A</div>
@@ -355,7 +355,7 @@ export function render(_ctx) {
 
 组件返回 Fragment：
 
-```vue
+```html
 <script setup>
 </script>
 

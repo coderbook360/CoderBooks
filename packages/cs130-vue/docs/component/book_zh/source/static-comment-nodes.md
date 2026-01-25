@@ -10,7 +10,7 @@
 
 编译器会提升静态内容：
 
-```vue
+```html
 <template>
   <div>
     <span>Static Text</span>
@@ -206,7 +206,7 @@ const processCommentNode = (
 
 ### v-if 的注释占位
 
-```vue
+```html
 <template>
   <div v-if="show">Content</div>
 </template>
@@ -230,7 +230,7 @@ export function render(_ctx) {
 
 ### v-show 与 v-if 的区别
 
-```vue
+```html
 <!-- v-if: 使用注释节点占位 -->
 <!--v-if-->
 

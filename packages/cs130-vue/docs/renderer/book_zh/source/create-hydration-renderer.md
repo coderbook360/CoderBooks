@@ -273,7 +273,7 @@ function hydrateTeleport(vnode, parentComponent) {
 
 Vue 3.5+ 支持延迟水合，对非关键内容延迟处理：
 
-```vue
+```html
 <Suspense>
   <template #fallback>加载中...</template>
   <LazyComponent />

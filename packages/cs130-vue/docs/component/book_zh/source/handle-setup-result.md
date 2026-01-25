@@ -128,7 +128,7 @@ const shallowUnwrapHandlers: ProxyHandler<any> = {
 
 这让模板可以直接使用：
 
-```vue
+```html
 <template>
   {{ count }}  <!-- 不需要 count.value -->
 </template>
@@ -288,7 +288,7 @@ export default {
 
 `<script setup>` 编译后：
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 const count = ref(0)

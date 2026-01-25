@@ -6,7 +6,7 @@
 
 考虑一个模态框组件：
 
-```vue
+```html
 <template>
   <div class="page">
     <header>...</header>
@@ -47,7 +47,7 @@
 
 Teleport 让组件的一部分内容"传送"到 DOM 树的其他位置，同时保持逻辑上的父子关系：
 
-```vue
+```html
 <template>
   <button @click="showModal = true">打开模态框</button>
   
@@ -79,7 +79,7 @@ Teleport 的内容会被渲染到 `<body>` 下面，而不是当前组件的位�
 
 Teleport 的 `to` 属性指定目标位置，可以是 CSS 选择器或 DOM 元素：
 
-```vue
+```html
 <!-- 传送到 body -->
 <Teleport to="body">
   <div class="modal">...</div>
@@ -107,7 +107,7 @@ Teleport 的 `to` 属性指定目标位置，可以是 CSS 选择器或 DOM 元�
 
 有时候你可能需要在某些条件下禁用传送，让内容在原地渲染。`disabled` 属性提供了这种能力：
 
-```vue
+```html
 <Teleport to="body" :disabled="isMobile">
   <div class="modal">...</div>
 </Teleport>
@@ -119,7 +119,7 @@ Teleport 的 `to` 属性指定目标位置，可以是 CSS 选择器或 DOM 元�
 
 多个 Teleport 可以指向同一个目标元素，它们的内容会按顺序追加：
 
-```vue
+```html
 <Teleport to="#modals">
   <div>第一个模态框</div>
 </Teleport>
@@ -141,7 +141,7 @@ Teleport 的 `to` 属性指定目标位置，可以是 CSS 选择器或 DOM 元�
 
 Teleport 可以与 Transition 组件配合，实现传送内容的动画效果：
 
-```vue
+```html
 <Teleport to="body">
   <Transition name="modal">
     <div v-if="showModal" class="modal-overlay">
@@ -208,7 +208,7 @@ function processTeleport(vnode, container) {
 
 **模态框和对话框**是最典型的场景。模态框需要覆盖整个视口，不受父组件样式的影响：
 
-```vue
+```html
 <Teleport to="body">
   <div class="modal-backdrop" v-if="visible">
     <div class="modal" role="dialog">
@@ -220,7 +220,7 @@ function processTeleport(vnode, container) {
 
 **通知和提示**通常需要固定在屏幕的某个位置：
 
-```vue
+```html
 <Teleport to="#notification-container">
   <TransitionGroup name="notification">
     <div 
@@ -236,7 +236,7 @@ function processTeleport(vnode, container) {
 
 **下拉菜单和弹出框**可能需要突破父组件的 `overflow: hidden`：
 
-```vue
+```html
 <Teleport to="body">
   <div 
     v-if="open"
@@ -250,7 +250,7 @@ function processTeleport(vnode, container) {
 
 **全屏覆盖层**如加载遮罩、图片预览等：
 
-```vue
+```html
 <Teleport to="body">
   <div v-if="loading" class="loading-overlay">
     <LoadingSpinner />
@@ -279,7 +279,7 @@ function processTeleport(vnode, container) {
 
 **无障碍考虑**。传送的内容在 DOM 中脱离了原来的上下文，需要确保屏幕阅读器仍能正确导航。使用适当的 ARIA 属性：
 
-```vue
+```html
 <Teleport to="body">
   <div 
     role="dialog" 

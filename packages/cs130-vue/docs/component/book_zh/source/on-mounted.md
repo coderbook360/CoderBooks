@@ -159,7 +159,7 @@ export default {
 
 ## 模板 ref
 
-```vue
+```html
 <template>
   <div ref="containerRef">Content</div>
 </template>

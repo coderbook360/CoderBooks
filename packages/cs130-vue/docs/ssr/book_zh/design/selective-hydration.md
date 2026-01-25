@@ -48,7 +48,7 @@ function App() {
 
 Vue 3 的 Suspense 也支持类似的模式，虽然实现细节有所不同。
 
-```vue
+```html
 <template>
   <div>
     <Navbar />
@@ -150,7 +150,7 @@ class SelectiveHydrationScheduler {
 
 第三是错误处理。如果某个边界的水合失败了，不应该影响其他边界。需要在边界层面添加错误边界，隔离故障。
 
-```vue
+```html
 <!-- 每个水合边界有独立的错误处理 -->
 <template>
   <div>

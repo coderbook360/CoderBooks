@@ -220,7 +220,7 @@ function parseStringStyle(cssText: string): Record<string, string> {
 
 支持的绑定形式：
 
-```vue
+```html
 <!-- 对象 -->
 <div :style="{ color: 'red', fontSize: '14px' }">
 
@@ -235,7 +235,7 @@ function parseStringStyle(cssText: string): Record<string, string> {
 
 样式值可以是数组，用于提供回退值：
 
-```vue
+```html
 <div :style="{ display: ['-webkit-flex', 'flex'] }">
 ```
 

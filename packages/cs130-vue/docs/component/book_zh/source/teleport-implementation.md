@@ -4,7 +4,7 @@ Teleport 允许将组件的内容渲染到 DOM 树的其他位置。这对于模
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <button @click="open = true">打开模态框</button>
   
@@ -251,7 +251,7 @@ insert(mainAnchor, container, anchor)
 
 ## disabled 属性
 
-```vue
+```html
 <Teleport to="body" :disabled="isMobile">
   <Modal />
 </Teleport>
@@ -344,7 +344,7 @@ function moveTeleport(
 
 ## 多个 Teleport 到同一目标
 
-```vue
+```html
 <Teleport to="#modals">
   <Modal1 />
 </Teleport>
@@ -359,7 +359,7 @@ function moveTeleport(
 
 Vue 3.5+ 支持延迟解析：
 
-```vue
+```html
 <Teleport to="#container" defer>
   <div>内容</div>
 </Teleport>
@@ -381,7 +381,7 @@ hydrate: hydrateTeleport
 
 ### 模态框
 
-```vue
+```html
 <Teleport to="body">
   <div class="modal-overlay" v-if="show">
     <div class="modal">
@@ -393,7 +393,7 @@ hydrate: hydrateTeleport
 
 ### 全屏通知
 
-```vue
+```html
 <Teleport to="#notifications">
   <Notification 
     v-for="n in notifications" 
@@ -405,7 +405,7 @@ hydrate: hydrateTeleport
 
 ### 下拉菜单
 
-```vue
+```html
 <Teleport to="body">
   <div 
     class="dropdown" 

@@ -6,7 +6,7 @@
 
 考虑这样的模板：
 
-```vue
+```html
 <template>
   <button @click="handleClick">Click</button>
 </template>
@@ -26,7 +26,7 @@ function render(_ctx) {
 
 更糟糕的是内联处理器：
 
-```vue
+```html
 <button @click="count++">Increment</button>
 ```
 
@@ -86,7 +86,7 @@ render 函数被调用时，renderCache 作为第二个参数传入。这样缓�
 
 带参数的处理器：
 
-```vue
+```html
 <button @click="handleClick(item)">Click</button>
 ```
 
@@ -104,7 +104,7 @@ Vue 的处理方式是确保 `_ctx` 始终指向最新的上下文。由于使�
 
 事件修饰符需要特殊处理：
 
-```vue
+```html
 <button @click.stop.prevent="handleClick">Click</button>
 ```
 
@@ -120,7 +120,7 @@ withModifiers 包装函数，添加 stopPropagation 和 preventDefault 调用。
 
 每个需要缓存的处理器分配一个唯一的索引：
 
-```vue
+```html
 <button @click="a">A</button>
 <button @click="b">B</button>
 <button @click="a">C</button>
@@ -140,7 +140,7 @@ h('button', { onClick: _cache[2] || (_cache[2] = () => _ctx.a) }, 'C')
 
 v-for 中的处理器需要特别注意：
 
-```vue
+```html
 <li v-for="item in items" @click="select(item)">{{ item.name }}</li>
 ```
 
@@ -160,7 +160,7 @@ items.map((item, index) =>
 
 某些情况下缓存会"失效"——不是缓存被清除，而是缓存的函数内部行为变化：
 
-```vue
+```html
 <button @click="flag ? a() : b()">Click</button>
 ```
 

@@ -248,7 +248,7 @@ MyComponent.displayName = 'MyComponent'
 
 ## 与 SFC 结合
 
-```vue
+```html
 <script lang="ts">
 import { h, FunctionalComponent } from 'vue'
 

@@ -114,7 +114,7 @@ Vue Router 本身不处理加载状态，需要配合其他方案：
 
 **使用 Suspense**：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Suspense>
@@ -213,7 +213,7 @@ const routes = [
 
 鼠标悬停时预加载：
 
-```vue
+```html
 <template>
   <RouterLink 
     to="/admin"

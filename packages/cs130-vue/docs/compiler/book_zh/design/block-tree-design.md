@@ -115,7 +115,7 @@ Block 需要在特定位置设置边界。并非整个组件是一个 Block，�
 
 v-if 创建 Block 边界：
 
-```vue
+```html
 <div>
   <p>Static</p>
   <div v-if="show">
@@ -131,7 +131,7 @@ v-if/v-else 的两个分支各自是 Block。因为它们的结构不同，dynam
 
 v-for 也创建 Block 边界：
 
-```vue
+```html
 <ul>
   <li v-for="item in items">{{ item.name }}</li>
 </ul>

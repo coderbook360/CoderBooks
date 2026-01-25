@@ -249,7 +249,7 @@ sharedContext.activate = (vnode, container, anchor, isSVG, optimized) => {
 
 ### 基础激活/停用
 
-```vue
+```html
 <template>
   <KeepAlive>
     <component :is="currentView" />
@@ -272,7 +272,7 @@ export default {
 
 ### Composition API
 
-```vue
+```html
 <script setup>
 import { onActivated, onDeactivated } from 'vue'
 
@@ -288,7 +288,7 @@ onDeactivated(() => {
 
 ### 配合 Transition
 
-```vue
+```html
 <template>
   <router-view v-slot="{ Component }">
     <Transition name="fade">

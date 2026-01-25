@@ -10,7 +10,7 @@
 - 所有属性都是字面量
 - 子节点也都是静态的
 
-```vue
+```html
 <template>
   <!-- 静态节点 -->
   <div class="header">

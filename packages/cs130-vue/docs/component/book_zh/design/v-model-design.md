@@ -6,7 +6,7 @@
 
 在原生表单元素上，v-model 是 value 绑定和 input 事件监听的语法糖：
 
-```vue
+```html
 <!-- 使用 v-model -->
 <input v-model="text" />
 
@@ -16,7 +16,7 @@
 
 这个转换看似简单，但处理了很多细节。对于不同类型的输入元素，v-model 会使用不同的属性和事件：
 
-```vue
+```html
 <!-- 文本输入 -->
 <input type="text" v-model="text" />
 <!-- → :value + @input -->
@@ -43,7 +43,7 @@
 
 在自定义组件上，v-model 的行为更加明确：
 
-```vue
+```html
 <!-- 使用 v-model -->
 <CustomInput v-model="text" />
 
@@ -53,7 +53,7 @@
 
 组件需要接收 `modelValue` prop，并在值变化时触发 `update:modelValue` 事件。这是 Vue 3 的约定，与 Vue 2 的 `value` + `input` 不同。
 
-```vue
+```html
 <!-- CustomInput.vue -->
 <script setup>
 defineProps(['modelValue'])
@@ -74,7 +74,7 @@ defineEmits(['update:modelValue'])
 
 Vue 3 的一大改进是支持在同一个组件上使用多个 v-model。这在 Vue 2 中需要通过 `.sync` 修饰符实现，现在统一使用 v-model：
 
-```vue
+```html
 <!-- 多个 v-model -->
 <UserForm 
   v-model:firstName="first"
@@ -92,7 +92,7 @@ Vue 3 的一大改进是支持在同一个组件上使用多个 v-model。这在
 
 组件实现：
 
-```vue
+```html
 <!-- UserForm.vue -->
 <script setup>
 defineProps(['firstName', 'lastName', 'email'])
@@ -121,7 +121,7 @@ defineEmits(['update:firstName', 'update:lastName', 'update:email'])
 
 Vue 3.4 引入的 `defineModel` 宏大大简化了 v-model 的实现：
 
-```vue
+```html
 <script setup>
 // 默认的 v-model
 const modelValue = defineModel()
@@ -164,7 +164,7 @@ const firstName = computed({
 
 v-model 支持修饰符来改变其行为。内置的修饰符有 `.lazy`、`.number`、`.trim`：
 
-```vue
+```html
 <!-- .lazy: 使用 change 事件而非 input -->
 <input v-model.lazy="text" />
 
@@ -180,7 +180,7 @@ v-model 支持修饰符来改变其行为。内置的修饰符有 `.lazy`、`.nu
 
 对于自定义组件，你可以定义自己的修饰符。修饰符通过 `modelModifiers` prop 传递给组件：
 
-```vue
+```html
 <!-- 父组件 -->
 <MyInput v-model.capitalize="text" />
 
@@ -209,7 +209,7 @@ function handleInput(e) {
 
 对于具名 v-model，修饰符通过 `<name>Modifiers` 传递：
 
-```vue
+```html
 <MyInput v-model:title.capitalize="title" />
 
 <!-- MyInput 接收 titleModifiers prop -->
@@ -217,7 +217,7 @@ function handleInput(e) {
 
 使用 `defineModel` 时，修饰符处理更加优雅：
 
-```vue
+```html
 <script setup>
 const [model, modifiers] = defineModel({
   set(value) {
@@ -248,7 +248,7 @@ v-model 的设计体现了 Vue 的几个核心理念。
 
 **使用 defineModel**。这是 Vue 3.4+ 的推荐方式，代码最简洁：
 
-```vue
+```html
 <script setup>
 const value = defineModel({ required: true })
 </script>
@@ -260,7 +260,7 @@ const value = defineModel({ required: true })
 
 **提供类型定义**。TypeScript 项目中，明确 v-model 值的类型：
 
-```vue
+```html
 <script setup lang="ts">
 const value = defineModel<string>({ required: true })
 const count = defineModel<number>('count', { default: 0 })
@@ -269,7 +269,7 @@ const count = defineModel<number>('count', { default: 0 })
 
 **考虑受控与非受控模式**。有时用户可能不想使用 v-model，而是完全控制组件的值。提供这种灵活性：
 
-```vue
+```html
 <script setup>
 const props = defineProps({
   modelValue: String,
@@ -299,7 +299,7 @@ const value = computed({
 
 **处理复杂类型**。当 v-model 绑定的是对象或数组时，确保不要直接修改传入的值：
 
-```vue
+```html
 <script setup>
 const props = defineProps({
   modelValue: Object

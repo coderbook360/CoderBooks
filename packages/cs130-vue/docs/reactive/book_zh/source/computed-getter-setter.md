@@ -164,7 +164,7 @@ fullName.value = 'Jane Smith'
 
 可写 computed 在 v-model 场景非常有用：
 
-```vue
+```html
 <template>
   <input v-model="formattedPrice" />
 </template>

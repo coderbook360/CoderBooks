@@ -138,7 +138,7 @@ router.push('/admin')  // 导航失败，路由不存在
 
 指向已移除路由的 RouterLink 会失效：
 
-```vue
+```html
 <router-link to="/admin">Admin</router-link>
 <!-- 点击后导航失败 -->
 ```

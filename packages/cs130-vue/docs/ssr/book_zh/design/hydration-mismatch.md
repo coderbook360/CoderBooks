@@ -137,7 +137,7 @@ export default {
 
 Nuxt 提供了 `<ClientOnly>` 组件，包裹在其中的内容只会在客户端渲染。
 
-```vue
+```html
 <template>
   <div>
     <p>这部分在两端都渲染</p>
@@ -153,7 +153,7 @@ Nuxt 提供了 `<ClientOnly>` 组件，包裹在其中的内容只会在客户�
 
 对于浏览器自动修正的 HTML 问题，解决方案是确保服务端输出符合 HTML 规范。在 `<table>` 中使用 `<tbody>`，避免在 `<p>` 中嵌套块级元素，等等。
 
-```vue
+```html
 <!-- 正确：显式包含 tbody -->
 <template>
   <table>
@@ -168,7 +168,7 @@ Nuxt 提供了 `<ClientOnly>` 组件，包裹在其中的内容只会在客户�
 
 对于条件渲染差异，需要确保条件在两端一致。一种方法是在服务端也能正确判断条件，比如通过 User-Agent 判断设备类型。另一种方法是使用 CSS 媒体查询代替 JavaScript 条件渲染。
 
-```vue
+```html
 <!-- 使用 CSS 代替条件渲染 -->
 <template>
   <div>
@@ -196,7 +196,7 @@ Nuxt 提供了 `<ClientOnly>` 组件，包裹在其中的内容只会在客户�
 
 Vue 3.4 引入了 `data-allow-mismatch` 属性，允许你明确标记预期会有不匹配的元素。
 
-```vue
+```html
 <template>
   <span data-allow-mismatch>{{ currentTime }}</span>
 </template>

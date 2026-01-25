@@ -6,7 +6,7 @@ Teleport 是 Vue 3 的内置组件，用于将子节点渲染到 DOM 树的其�
 
 考虑一个模态框组件：
 
-```vue
+```html
 <template>
   <div class="container">
     <button @click="showModal = true">打开</button>
@@ -25,7 +25,7 @@ Modal 在组件树中是 container 的子节点，但我们希望它渲染到 bo
 
 ## Teleport 用法
 
-```vue
+```html
 <template>
   <div class="container">
     <button @click="showModal = true">打开</button>
@@ -153,7 +153,7 @@ function patchTeleport(n1, n2, container, internals) {
 
 `disabled` 可以动态控制是否传送：
 
-```vue
+```html
 <Teleport to="body" :disabled="isMobile">
   <Modal />
 </Teleport>
@@ -170,7 +170,7 @@ function patchTeleport(n1, n2, container, internals) {
 3. **Provide/Inject**：正常工作
 4. **生命周期**：与父组件正常关联
 
-```vue
+```html
 <template>
   <Teleport to="body">
     <!-- 这里的 $emit 会冒泡到父组件 -->
@@ -183,7 +183,7 @@ function patchTeleport(n1, n2, container, internals) {
 
 多个 Teleport 可以指向同一个目标容器：
 
-```vue
+```html
 <Teleport to="#modals">
   <Modal1 />
 </Teleport>
@@ -224,7 +224,7 @@ function unmountTeleport(vnode) {
 
 Teleport 可以包含 Transition：
 
-```vue
+```html
 <Teleport to="body">
   <Transition name="fade">
     <Modal v-if="show" />
@@ -264,7 +264,7 @@ function resolveTarget(to) {
 
 **同一组件内多次切换**：
 
-```vue
+```html
 <Teleport :to="currentTarget">
   <Content />
 </Teleport>

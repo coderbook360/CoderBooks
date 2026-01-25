@@ -304,7 +304,7 @@ function shouldSetAsProp(
 
 Vue 支持通过修饰符强制设置方式：
 
-```vue
+```html
 <!-- 强制使用 property -->
 <input .value="text">
 

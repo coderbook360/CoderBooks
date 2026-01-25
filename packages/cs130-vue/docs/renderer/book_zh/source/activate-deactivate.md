@@ -291,7 +291,7 @@ export const onDeactivated = (hook: Function) => {
 
 KeepAlive 和 Transition 可以组合使用，实现带动画的组件缓存切换：
 
-```vue
+```html
 <Transition>
   <KeepAlive>
     <component :is="currentView" />

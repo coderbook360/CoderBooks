@@ -6,7 +6,7 @@ script setup 是 Vue 3.2 引入的语法糖，让 Composition API 的使用更�
 
 使用 Composition API 的传统方式需要大量样板代码：
 
-```vue
+```html
 <script>
 import { ref, computed } from 'vue'
 import MyComponent from './MyComponent.vue'
@@ -38,7 +38,7 @@ export default {
 
 同样的逻辑用 script setup：
 
-```vue
+```html
 <script setup>
 import { ref, computed } from 'vue'
 import MyComponent from './MyComponent.vue'
@@ -135,7 +135,7 @@ const bindings = {
 
 script setup 使用编译器宏定义 props 和 emits：
 
-```vue
+```html
 <script setup>
 const props = defineProps<{
   title: string
@@ -168,7 +168,7 @@ export default {
 
 script setup 支持顶层 await，编译器将其转换为 async setup：
 
-```vue
+```html
 <script setup>
 const data = await fetchData()
 </script>
@@ -197,7 +197,7 @@ script setup 的一大优势是更好的 TypeScript 支持。因为所有绑定�
 
 script setup 可以与普通 script 块共存：
 
-```vue
+```html
 <script>
 export default {
   inheritAttrs: false

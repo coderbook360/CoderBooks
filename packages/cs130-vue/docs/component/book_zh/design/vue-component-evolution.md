@@ -144,7 +144,7 @@ TypeScript 支持在 Vue 3 中得到了一等公民待遇。整个代码库用 T
 
 Vue 3.2 引入的 `<script setup>` 语法糖让 Composition API 的使用更加简洁：
 
-```vue
+```html
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 

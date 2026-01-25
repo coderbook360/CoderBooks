@@ -398,7 +398,7 @@ function useAsyncData<T>(
 
 ## 完整示例
 
-```vue
+```html
 <script setup>
 // 基础用法
 const { data: posts, pending, error, refresh } = useAsyncData(

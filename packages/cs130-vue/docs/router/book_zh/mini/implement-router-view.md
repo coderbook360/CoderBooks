@@ -193,7 +193,7 @@ export const RouterView = defineComponent({
 
 作用域插槽让 RouterView 可以与 Transition 和 KeepAlive 配合：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition :name="route.meta.transition || 'fade'">
@@ -364,7 +364,7 @@ export const RouterView = defineComponent({
 
 基本使用：
 
-```vue
+```html
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
@@ -376,7 +376,7 @@ export const RouterView = defineComponent({
 
 命名视图：
 
-```vue
+```html
 <template>
   <RouterView name="header" />
   <RouterView />
@@ -386,7 +386,7 @@ export const RouterView = defineComponent({
 
 过渡动画：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Transition name="slide">
@@ -398,7 +398,7 @@ export const RouterView = defineComponent({
 
 嵌套路由：
 
-```vue
+```html
 <!-- 父组件 -->
 <template>
   <div class="layout">

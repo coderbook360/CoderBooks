@@ -208,7 +208,7 @@ watch(source, callback, {
 
 ## 实际调试示例
 
-```vue
+```html
 <template>
   <div>
     <p>Count: {{ count }}</p>

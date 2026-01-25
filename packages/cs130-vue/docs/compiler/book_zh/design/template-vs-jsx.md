@@ -6,7 +6,7 @@ Vue 支持两种方式编写视图层：模板语法和 JSX。两者最终都编
 
 Vue 模板本质上是带扩展的 HTML。它看起来像标记语言，但被 Vue 编译器解析后会转换成 JavaScript 渲染函数。
 
-```vue
+```html
 <template>
   <div class="container">
     <span>{{ message }}</span>

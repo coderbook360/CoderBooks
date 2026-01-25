@@ -41,7 +41,7 @@ function render() {
 
 纯文本节点如果不包含插值表达式就是静态的。元素节点如果标签名静态、所有属性静态、所有子节点静态，整个节点就是静态的。
 
-```vue
+```html
 <template>
   <div class="wrapper">
     <h1>Welcome</h1>               <!-- 可提升 -->
@@ -79,7 +79,7 @@ const _hoisted_1 = h('div', { class: 'static' }, [
 
 即使节点整体不能提升，静态属性也可以单独提升：
 
-```vue
+```html
 <div :class="dynamicClass" data-testid="container">
   {{ content }}
 </div>

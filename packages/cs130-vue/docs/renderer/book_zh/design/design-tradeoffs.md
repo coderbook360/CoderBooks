@@ -166,7 +166,7 @@ Vue 鼓励组件化，但组件有开销：
 
 KeepAlive 用内存换取激活速度：
 
-```vue
+```html
 <KeepAlive :max="10">
   <router-view />
 </KeepAlive>

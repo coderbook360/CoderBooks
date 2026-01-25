@@ -239,7 +239,7 @@ const normalizeVNodeSlots = (
 
 编译器会生成规范化的插槽对象：
 
-```vue
+```html
 <template>
   <Comp>
     <template #header>Header</template>

@@ -6,7 +6,7 @@
 
 在没有 Suspense 之前，处理异步加载状态通常是这样的：
 
-```vue
+```html
 <script setup>
 import { ref, onMounted } from 'vue'
 
@@ -38,7 +38,7 @@ onMounted(async () => {
 
 Suspense 让你声明式地处理异步状态：
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>
@@ -67,7 +67,7 @@ const AsyncComponent = defineAsyncComponent(() =>
 
 **带有异步 setup 的组件**：
 
-```vue
+```html
 <script setup>
 // 顶层 await 让组件变成异步的
 const data = await fetchData()
@@ -80,7 +80,7 @@ const data = await fetchData()
 
 当 `<script setup>` 中使用了顶层 `await`，组件的 setup 变成异步的，Suspense 会等待它完成。
 
-```vue
+```html
 <!-- 父组件 -->
 <template>
   <Suspense>
@@ -105,7 +105,7 @@ const data = await response.json()
 
 Suspense 可以嵌套，内层的 Suspense 会独立处理其子树的异步状态：
 
-```vue
+```html
 <template>
   <Suspense>
     <!-- 外层 Suspense 处理整体布局 -->
@@ -139,7 +139,7 @@ Suspense 可以嵌套，内层的 Suspense 会独立处理其子树的异步状�
 
 Suspense 本身不处理错误，需要配合 `onErrorCaptured` 或 ErrorBoundary：
 
-```vue
+```html
 <script setup>
 import { onErrorCaptured, ref } from 'vue'
 
@@ -168,7 +168,7 @@ onErrorCaptured((e) => {
 
 也可以封装一个 ErrorBoundary 组件来统一处理：
 
-```vue
+```html
 <!-- ErrorBoundary.vue -->
 <script setup>
 import { onErrorCaptured, ref } from 'vue'
@@ -211,7 +211,7 @@ function reset() {
 
 Suspense 提供了几个事件来追踪状态变化：
 
-```vue
+```html
 <Suspense
   @pending="onPending"
   @resolve="onResolve"
@@ -238,7 +238,7 @@ function onResolve() {
 
 Suspense 可以与 Transition 配合，实现加载状态切换的动画：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Suspense>
@@ -303,7 +303,7 @@ function setupSuspense() {
 
 **数据获取**：页面或组件需要等待数据加载：
 
-```vue
+```html
 <Suspense>
   <UserProfile :userId="userId" />
   <template #fallback>
@@ -314,7 +314,7 @@ function setupSuspense() {
 
 **路由级别加载**：配合 Vue Router 处理页面级的异步加载：
 
-```vue
+```html
 <RouterView v-slot="{ Component }">
   <Suspense>
     <component :is="Component" />
@@ -327,7 +327,7 @@ function setupSuspense() {
 
 **多个异步组件协调**：确保多个异步组件同时显示：
 
-```vue
+```html
 <Suspense>
   <template #default>
     <AsyncHeader />

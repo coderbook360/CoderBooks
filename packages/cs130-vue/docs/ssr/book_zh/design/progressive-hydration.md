@@ -168,7 +168,7 @@ const PRIORITY = {
 
 一些框架已经内置了渐进式水合的支持。Nuxt 3 提供了 `<LazyHydrate>` 组件，可以声明式地控制水合时机。
 
-```vue
+```html
 <template>
   <!-- 立即水合 -->
   <Navbar />

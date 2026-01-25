@@ -361,7 +361,7 @@ const hydrateSuspense = (
 
 某些情况需要跳过 mismatch 检测，强制使用客户端内容：
 
-```vue
+```html
 <template>
   <div>
     <ClientOnly>

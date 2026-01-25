@@ -258,7 +258,7 @@ patch(prevTree, nextTree) 更新 DOM
 
 ### 理解批量更新
 
-```vue
+```html
 <script setup>
 import { ref, nextTick } from 'vue'
 

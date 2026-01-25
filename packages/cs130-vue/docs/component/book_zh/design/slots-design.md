@@ -6,7 +6,7 @@ Props 传递数据，Emits 传递事件，但有时候我们需要传递的不�
 
 假设你要设计一个卡片组件。最简单的方式是把所有内容都写死：
 
-```vue
+```html
 <template>
   <div class="card">
     <div class="card-header">标题</div>
@@ -18,7 +18,7 @@ Props 传递数据，Emits 传递事件，但有时候我们需要传递的不�
 
 这个组件毫无复用价值——每次使用都要修改源码。稍微进步一点，用 props 传递内容：
 
-```vue
+```html
 <script>
 export default {
   props: ['title', 'content', 'footer']
@@ -38,7 +38,7 @@ export default {
 
 Slots 解决了这个问题：
 
-```vue
+```html
 <!-- Card.vue -->
 <template>
   <div class="card">
@@ -78,7 +78,7 @@ Vue 的插槽分为默认插槽（default slot）和具名插槽（named slot）
 
 默认插槽没有名字，用于接收主要内容。子组件中的 `<slot>` 标签会被父组件传入的默认内容替换：
 
-```vue
+```html
 <!-- Button.vue -->
 <template>
   <button class="btn">
@@ -98,7 +98,7 @@ Vue 的插槽分为默认插槽（default slot）和具名插槽（named slot）
 
 具名插槽通过 `name` 属性区分多个插槽位置。父组件使用 `v-slot:name`（简写 `#name`）指定内容对应哪个插槽：
 
-```vue
+```html
 <!-- Layout.vue -->
 <template>
   <div class="layout">
@@ -136,7 +136,7 @@ Vue 的插槽分为默认插槽（default slot）和具名插槽（named slot）
 
 一个典型的场景是列表渲染。子组件负责获取和管理数据，但每一项的渲染方式由父组件决定：
 
-```vue
+```html
 <!-- DataList.vue -->
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -205,7 +205,7 @@ instance.slots = {
 
 模板编译器会将插槽内容编译成这种函数形式。当你写：
 
-```vue
+```html
 <MyComponent>
   <template #header="{ title }">
     <h1>{{ title }}</h1>
@@ -227,7 +227,7 @@ h(MyComponent, null, {
 
 Vue 支持动态插槽名，这在构建高度动态的组件时很有用：
 
-```vue
+```html
 <template>
   <MyComponent>
     <template #[dynamicSlotName]>
@@ -249,7 +249,7 @@ const dynamicSlotName = ref('header')
 
 子组件可以检测父组件是否传入了某个插槽，据此决定是否渲染某些结构：
 
-```vue
+```html
 <script setup>
 import { useSlots } from 'vue'
 const slots = useSlots()
@@ -279,7 +279,7 @@ const slots = useSlots()
 
 插槽是实现"无渲染组件"（Renderless Components）模式的基础。无渲染组件只提供逻辑和状态，不包含任何视觉表现，完全由父组件通过插槽来决定渲染什么：
 
-```vue
+```html
 <!-- MouseTracker.vue - 无渲染组件 -->
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
@@ -322,7 +322,7 @@ onUnmounted(() => window.removeEventListener('mousemove', updatePosition))
 
 Vue 的编译器会对插槽进行优化。如果插槽内容是静态的（不依赖于父组件的响应式状态），编译器会将其标记为稳定，避免不必要的重新渲染。
 
-```vue
+```html
 <!-- 静态插槽内容，可以被优化 -->
 <MyComponent>
   <template #header>

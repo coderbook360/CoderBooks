@@ -156,7 +156,7 @@ const router = createRouter({
 
 单独配置：
 
-```vue
+```html
 <RouterLink 
   to="/about" 
   activeClass="menu-item-active"
@@ -168,7 +168,7 @@ const router = createRouter({
 
 ## 作用域插槽中使用
 
-```vue
+```html
 <RouterLink to="/admin" v-slot="{ isActive, isExactActive }">
   <li :class="{
     'nav-item': true,
@@ -182,7 +182,7 @@ const router = createRouter({
 
 ## 嵌套菜单示例
 
-```vue
+```html
 <template>
   <nav>
     <RouterLink to="/admin" v-slot="{ isActive }">

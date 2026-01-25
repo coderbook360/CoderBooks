@@ -167,7 +167,7 @@ router.afterEach((to, from, failure) => {
 
 **组件不更新**：同一组件的参数变化不触发重新创建
 
-```vue
+```html
 <!-- 使用 key 强制重新创建 -->
 <RouterView :key="$route.fullPath" />
 ```

@@ -57,7 +57,7 @@ const routes = [
 
 父组件需要包含 `<RouterView>` 来渲染子路由的组件：
 
-```vue
+```html
 <!-- UsersLayout.vue -->
 <template>
   <div class="users-layout">
@@ -139,7 +139,7 @@ const routes = [
 
 注意是 `components`（复数），值是一个对象。模板中使用命名的 `<RouterView>`：
 
-```vue
+```html
 <template>
   <div class="dashboard">
     <RouterView name="sidebar" />  <!-- 渲染 DashboardSidebar -->
@@ -273,7 +273,7 @@ redirect: to => {
 
 嵌套路由天然支持过渡动画。在 `<RouterView>` 外包裹 `<Transition>`：
 
-```vue
+```html
 <template>
   <div class="content">
     <RouterView v-slot="{ Component }">

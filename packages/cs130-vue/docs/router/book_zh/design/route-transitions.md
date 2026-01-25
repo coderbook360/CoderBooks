@@ -6,7 +6,7 @@
 
 Vue Router 4 使用作用域插槽暴露当前组件和路由：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Transition name="fade">
@@ -36,7 +36,7 @@ Vue Router 4 使用作用域插槽暴露当前组件和路由：
 
 默认情况下，进入和离开的元素会同时进行动画，可能导致两个组件同时可见。使用 `mode` 属性可以控制顺序：
 
-```vue
+```html
 <Transition name="fade" mode="out-in">
   <component :is="Component" />
 </Transition>
@@ -46,7 +46,7 @@ Vue Router 4 使用作用域插槽暴露当前组件和路由：
 
 对于滑动效果，通常不使用 mode，让两个组件同时滑动：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Transition name="slide">
@@ -85,7 +85,7 @@ const routes = [
 ]
 ```
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition :name="route.meta.transition || 'fade'">
@@ -99,7 +99,7 @@ const routes = [
 
 更智能的方式是根据导航方向决定动画。前进时向左滑，后退时向右滑：
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -155,7 +155,7 @@ router.afterEach((to, from) => {
 
 有时希望缓存某些页面的状态，同时保留过渡效果：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition name="fade" mode="out-in">
@@ -187,7 +187,7 @@ const cachedViews = computed(() => {
 
 嵌套路由可以有独立的过渡效果：
 
-```vue
+```html
 <!-- 主布局 -->
 <template>
   <div class="layout">
@@ -221,7 +221,7 @@ const cachedViews = computed(() => {
 
 某些场景可能不需要过渡，比如初次加载或快速连续导航：
 
-```vue
+```html
 <script setup>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -254,7 +254,7 @@ const routes = [
 ]
 ```
 
-```vue
+```html
 <Transition :name="route.meta.noTransition ? '' : 'fade'" mode="out-in">
   <component :is="Component" />
 </Transition>
@@ -264,7 +264,7 @@ const routes = [
 
 除了 CSS 过渡，还可以使用 JavaScript 钩子实现更复杂的动画：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Transition

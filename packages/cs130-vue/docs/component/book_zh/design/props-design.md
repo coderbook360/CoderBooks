@@ -106,7 +106,7 @@ export default {
 
 在 TypeScript 环境中，`<script setup>` 提供了更优雅的类型声明方式：
 
-```vue
+```html
 <script setup lang="ts">
 interface Item {
   id: number
@@ -192,7 +192,7 @@ normalizedProps = {
 
 Vue 还会处理一些特殊情况，比如 prop 名称的转换。在 DOM 中，attribute 名称是大小写不敏感的，所以 Vue 会自动将 camelCase 的 prop 名转换为 kebab-case：
 
-```vue
+```html
 <!-- 模板中使用 kebab-case -->
 <MyComponent my-prop="value" />
 
@@ -262,7 +262,7 @@ export default {
 
 Boolean 类型的 props 有一些特殊的转换规则，这是为了让模板使用更加方便。
 
-```vue
+```html
 <!-- 不传值时，Boolean prop 为 true -->
 <MyComponent disabled />
 
@@ -293,7 +293,7 @@ props: {
 
 传给组件的 attributes 分为两类：被声明为 props 的和未被声明的。未被声明的称为"透传 attributes"（fallthrough attributes），可以通过 `$attrs` 访问。
 
-```vue
+```html
 <script>
 export default {
   props: ['title'],
@@ -307,7 +307,7 @@ export default {
 
 默认情况下，透传 attributes 会自动应用到组件的根元素上。这让封装组件变得简单——用户传的 class、style、事件监听器等可以自然地"穿透"到内部：
 
-```vue
+```html
 <!-- 父组件 -->
 <MyButton class="primary" @click="handleClick" />
 
@@ -323,7 +323,7 @@ export default {
 
 这种自动继承行为可以通过 `inheritAttrs: false` 禁用，然后手动控制 attrs 的应用位置：
 
-```vue
+```html
 <script>
 export default {
   inheritAttrs: false,

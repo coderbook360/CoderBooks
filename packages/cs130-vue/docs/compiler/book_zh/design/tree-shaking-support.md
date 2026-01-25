@@ -113,7 +113,7 @@ function generate(ast, options) {
 
 Vue 内置组件（Transition、KeepAlive、Teleport、Suspense）同样是按需引入：
 
-```vue
+```html
 <template>
   <Transition>
     <div v-if="show">Content</div>
@@ -139,7 +139,7 @@ function render(_ctx) {
 
 v-show、v-model 等内置指令也是可 Tree-Shake 的：
 
-```vue
+```html
 <input v-model="text" />
 ```
 

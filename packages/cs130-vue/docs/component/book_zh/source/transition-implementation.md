@@ -4,7 +4,7 @@ Transition 是 Vue 的过渡动画组件。它在元素进入和离开时自动�
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <button @click="show = !show">Toggle</button>
   <Transition name="fade">
@@ -495,7 +495,7 @@ export function whenTransitionEnds(
 
 ## 过渡模式
 
-```vue
+```html
 <!-- out-in：先离开，后进入 -->
 <Transition mode="out-in">
   <component :is="currentComp" />
@@ -509,7 +509,7 @@ export function whenTransitionEnds(
 
 ## JavaScript 钩子
 
-```vue
+```html
 <Transition
   @before-enter="onBeforeEnter"
   @enter="onEnter"

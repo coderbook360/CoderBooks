@@ -157,7 +157,7 @@ params.id = undefined  // 或不存在于 params 对象中
 
 在模板中使用时需要处理 undefined：
 
-```vue
+```html
 <template>
   <div>User: {{ route.params.id || 'None' }}</div>
 </template>

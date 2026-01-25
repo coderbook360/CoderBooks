@@ -293,7 +293,7 @@ async function handleClick() {
 
 异步组件加载后会触发父组件更新：
 
-```vue
+```html
 <template>
   <Suspense>
     <AsyncComponent />

@@ -185,7 +185,7 @@ onRenderTriggered((e) => {
 
 ## 实际调试示例
 
-```vue
+```html
 <template>
   <div>
     <p>{{ user.name }} - {{ user.age }}</p>

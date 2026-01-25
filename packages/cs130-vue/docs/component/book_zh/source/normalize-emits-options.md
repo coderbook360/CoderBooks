@@ -223,7 +223,7 @@ export function isEmitListener(
 
 声明的 emits 不会出现在 attrs 中：
 
-```vue
+```html
 <Child @update="..." class="foo" />
 ```
 
@@ -261,7 +261,7 @@ if (
 
 `<script setup>` 中的 `defineEmits` 编译为 emits 选项：
 
-```vue
+```html
 <script setup>
 const emit = defineEmits(['update', 'delete'])
 </script>

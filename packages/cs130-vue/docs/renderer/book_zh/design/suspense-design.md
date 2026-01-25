@@ -6,7 +6,7 @@ Suspense 是 Vue 3 引入的内置组件，用于协调异步组件和异步依�
 
 在 Suspense 之前，处理异步组件的加载状态需要手动管理：
 
-```vue
+```html
 <template>
   <div v-if="loading">加载中...</div>
   <div v-else-if="error">出错了</div>
@@ -34,7 +34,7 @@ export default {
 
 ## Suspense 基本用法
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>
@@ -68,7 +68,7 @@ export default {
 
 2. **顶层 await（script setup）**：
 
-```vue
+```html
 <script setup>
 const data = await fetchData()
 </script>
@@ -189,7 +189,7 @@ function resolveSuspense(suspense) {
 
 Suspense 支持 timeout，超时后显示 fallback（即使异步未完成）：
 
-```vue
+```html
 <Suspense :timeout="3000">
   <AsyncComponent />
   <template #fallback>
@@ -218,7 +218,7 @@ function mountSuspense(vnode, container) {
 
 Suspense 可以嵌套，每层独立管理状态：
 
-```vue
+```html
 <Suspense>
   <template #default>
     <div>
@@ -245,7 +245,7 @@ Suspense 可以嵌套，每层独立管理状态：
 
 Suspense 配合 onErrorCaptured 处理错误：
 
-```vue
+```html
 <script setup>
 import { onErrorCaptured, ref } from 'vue'
 
@@ -270,7 +270,7 @@ onErrorCaptured((e) => {
 
 Suspense 可以和 Transition 配合实现平滑切换：
 
-```vue
+```html
 <Suspense>
   <template #default>
     <Transition name="fade" mode="out-in">

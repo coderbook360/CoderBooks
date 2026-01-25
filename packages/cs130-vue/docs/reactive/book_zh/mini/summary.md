@@ -192,7 +192,7 @@ Signal.subtle.watch([state], () => {
 
 Vue 的编译器已经在做编译时优化：
 
-```vue
+```html
 <template>
   <div>{{ count }}</div>
 </template>

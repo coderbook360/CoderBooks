@@ -167,7 +167,7 @@ registerDep(instance, setupRenderEffect) {
 
 ## 多个异步组件
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>
@@ -454,7 +454,7 @@ instance
 
 ### async setup
 
-```vue
+```html
 <script setup>
 const data = await fetchData()  // async setup
 </script>
@@ -462,7 +462,7 @@ const data = await fetchData()  // async setup
 
 ### 配合 onErrorCaptured
 
-```vue
+```html
 <template>
   <Suspense @pending="onPending" @resolve="onResolve">
     <template #default>

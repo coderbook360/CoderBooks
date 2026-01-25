@@ -21,7 +21,7 @@ app.mount('#app')
 
 注册后，可以在任何组件的模板中使用：
 
-```vue
+```html
 <template>
   <MyButton>点击我</MyButton>
 </template>
@@ -195,7 +195,7 @@ app.component('Button', Button)
 
 **局部注册**：
 
-```vue
+```html
 <script setup>
 import Button from './Button.vue'
 </script>

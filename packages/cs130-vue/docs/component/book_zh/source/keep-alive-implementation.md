@@ -4,7 +4,7 @@ KeepAlive 是 Vue 的内置组件，用于缓存动态组件的实例。它通�
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <KeepAlive>
     <component :is="currentComponent" />

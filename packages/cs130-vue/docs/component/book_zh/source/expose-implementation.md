@@ -177,7 +177,7 @@ setup(props, { expose }) {
 
 ## defineExpose（script setup）
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 

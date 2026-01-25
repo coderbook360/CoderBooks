@@ -271,7 +271,7 @@ const AsyncComp = defineAsyncComponent({
 
 ### 配合 Suspense
 
-```vue
+```html
 <template>
   <Suspense>
     <template #default>

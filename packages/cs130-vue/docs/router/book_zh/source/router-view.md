@@ -4,7 +4,7 @@ RouterView 是 Vue Router 的核心渲染组件，它根据当前路由渲染匹
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <RouterView />
   
@@ -165,7 +165,7 @@ const ViewComponent = matchedRoute?.components?.[props.name]
 
 模板：
 
-```vue
+```html
 <RouterView />                  <!-- AdminMain -->
 <RouterView name="sidebar" />   <!-- AdminSidebar -->
 ```
@@ -225,7 +225,7 @@ beforeRouteEnter(to, from, next) {
 
 ## 作用域插槽
 
-```vue
+```html
 <RouterView v-slot="{ Component, route }">
   <keep-alive>
     <component :is="Component" :key="route.path" />
@@ -243,7 +243,7 @@ return slots.default
 
 ## 与 Transition 配合
 
-```vue
+```html
 <RouterView v-slot="{ Component, route }">
   <transition :name="route.meta.transition || 'fade'">
     <component :is="Component" :key="route.path" />
@@ -253,7 +253,7 @@ return slots.default
 
 ## 与 KeepAlive 配合
 
-```vue
+```html
 <RouterView v-slot="{ Component }">
   <keep-alive :include="['UserList', 'UserDetail']">
     <component :is="Component" />

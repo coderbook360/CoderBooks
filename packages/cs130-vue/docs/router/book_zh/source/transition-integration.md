@@ -4,7 +4,7 @@ Vue Router 与 Vue 的 Transition 组件配合，实现路由切换时的过渡�
 
 ## 基本用法
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Transition name="fade">
@@ -51,7 +51,7 @@ return () => {
 
 直接使用 Transition 包裹 RouterView 不起作用：
 
-```vue
+```html
 <!-- ❌ 不工作 -->
 <Transition name="fade">
   <RouterView />
@@ -71,7 +71,7 @@ return () => {
 
 根据路由配置不同的过渡效果：
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition :name="route.meta.transition || 'fade'">
@@ -102,7 +102,7 @@ const routes = [
 
 根据导航方向切换动画：
 
-```vue
+```html
 <script setup>
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -132,7 +132,7 @@ router.afterEach((to, from) => {
 
 ## 与 KeepAlive 配合
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component }">
     <Transition name="fade">
@@ -148,7 +148,7 @@ router.afterEach((to, from) => {
 
 ## 条件 KeepAlive
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition name="fade">
@@ -162,7 +162,7 @@ router.afterEach((to, from) => {
 
 ## key 的作用
 
-```vue
+```html
 <!-- 相同组件不同参数时强制重新渲染 -->
 <component :is="Component" :key="route.fullPath" />
 ```
@@ -177,7 +177,7 @@ router.afterEach((to, from) => {
 
 ## 过渡模式
 
-```vue
+```html
 <Transition name="fade" mode="out-in">
   <component :is="Component" />
 </Transition>
@@ -223,7 +223,7 @@ const routes = [
 ]
 ```
 
-```vue
+```html
 <template>
   <RouterView v-slot="{ Component, route }">
     <Transition 

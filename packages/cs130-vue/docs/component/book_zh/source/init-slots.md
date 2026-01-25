@@ -6,7 +6,7 @@
 
 父组件可以通过多种方式传递插槽内容：
 
-```vue
+```html
 <!-- 默认插槽 -->
 <MyComponent>
   <p>默认内容</p>
@@ -205,7 +205,7 @@ setup(props, { slots }) {
 
 作用域插槽允许子组件向插槽传递数据：
 
-```vue
+```html
 <!-- 子组件 -->
 <template>
   <slot :item="item" :index="index"></slot>
@@ -296,7 +296,7 @@ export const enum SlotFlags {
 
 插槽函数本身不是响应式的，但它们会在父组件更新时重新生成：
 
-```vue
+```html
 <!-- 父组件 -->
 <template>
   <Child>
@@ -328,7 +328,7 @@ type InternalSlots = {
 
 使用 `defineSlots` 可以获得更好的类型推导：
 
-```vue
+```html
 <script setup lang="ts">
 const slots = defineSlots<{
   default(props: { item: Item }): any

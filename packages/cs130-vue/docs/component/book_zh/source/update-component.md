@@ -195,7 +195,7 @@ export function updateHOCHostEl(
 
 ### 理解更新流程
 
-```vue
+```html
 <!-- Parent.vue -->
 <template>
   <Child :count="count" />
@@ -218,7 +218,7 @@ const count = ref(0)
 
 ### 避免不必要的更新
 
-```vue
+```html
 <template>
   <!-- 每次 Parent 更新都会创建新对象 -->
   <Child :config="{ a: 1 }" />

@@ -232,7 +232,7 @@ const updateComponent = (n1: VNode, n2: VNode, optimized: boolean) => {
 
 ### 理解更新优化
 
-```vue
+```html
 <!-- 静态 props，不会触发子组件更新 -->
 <Child title="Static" />
 
@@ -245,7 +245,7 @@ const updateComponent = (n1: VNode, n2: VNode, optimized: boolean) => {
 
 ### 避免不必要的更新
 
-```vue
+```html
 <template>
   <!-- 每次渲染都创建新对象，触发更新 -->
   <Child :style="{ color: 'red' }" />

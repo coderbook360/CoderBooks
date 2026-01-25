@@ -4,7 +4,7 @@
 
 ## 基本使用
 
-```vue
+```html
 <!-- 子组件 -->
 <script setup>
 const emit = defineEmits(['update', 'delete'])
@@ -170,7 +170,7 @@ if (!handler && isModelListener) {
 
 所以这些都等价：
 
-```vue
+```html
 <Child @item-click="..." />
 <Child @itemClick="..." />
 ```
@@ -194,7 +194,7 @@ if (modelArg && modelArg in props) {
 
 使用示例：
 
-```vue
+```html
 <Input v-model.trim.number="value" />
 ```
 
@@ -232,7 +232,7 @@ if (isFunction(validator)) {
 
 只触发一次的事件：
 
-```vue
+```html
 <Child @update.once="handleUpdate" />
 ```
 
@@ -270,7 +270,7 @@ callWithAsyncErrorHandling(
 
 ## 原生事件 vs 组件事件
 
-```vue
+```html
 <!-- 原生事件 -->
 <button @click="...">
 

@@ -262,7 +262,7 @@ const LazyHydrate = defineComponent({
 
 ## 使用示例
 
-```vue
+```html
 <template>
   <!-- 进入视口时水合 -->
   <LazyHydrate trigger="visible">
@@ -333,7 +333,7 @@ const LazyHydrateWithSkeleton = defineComponent({
 })
 ```
 
-```vue
+```html
 <template>
   <LazyHydrateWithSkeleton>
     <template #default>

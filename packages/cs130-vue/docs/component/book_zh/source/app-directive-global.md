@@ -201,7 +201,7 @@ app.directive('lazy', {
 
 使用示例：
 
-```vue
+```html
 <img v-lazy="imageUrl" />
 ```
 
@@ -225,7 +225,7 @@ app.directive('lazy', {
 
 指令支持动态参数：
 
-```vue
+```html
 <template>
   <div v-pin:[direction]="200">固定位置</div>
 </template>
@@ -254,7 +254,7 @@ app.directive('pin', {
 
 指令也可以用在组件上，会应用到组件的根元素：
 
-```vue
+```html
 <MyComponent v-focus />
 ```
 
@@ -296,7 +296,7 @@ declare module 'vue' {
 
 在 setup 中使用指令：
 
-```vue
+```html
 <script setup>
 // 局部注册
 const vFocus = {
