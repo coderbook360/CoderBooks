@@ -37,6 +37,9 @@ export default defineConfig({
   srcExclude: [
     '**/.book_task/**',
     '**/.book_guide/**',
+    // 排除 compiler 模块（包含大量模板语法示例）
+    '**/compiler/**',
+    '**/compiler-mini/**',
   ],
   
   themeConfig: {
