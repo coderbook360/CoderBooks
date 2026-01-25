@@ -1,8 +1,8 @@
-# Codebooks - VitePress Monorepo
+# CoderBooks - 技术知识库
 
-一个使用 pnpm workspace 管理的 VitePress 书籍项目 monorepo，所有书籍统一发布到 GitHub Pages。
+使用 pnpm workspace + VitePress 构建的技术书籍集合，统一部署到 GitHub Pages。
 
-🌐 **在线访问**: [https://yourusername.github.io/codebooks/](https://yourusername.github.io/codebooks/)
+🌐 **在线访问**: [https://coderbook360.github.io/CoderBooks/](https://coderbook360.github.io/CoderBooks/)
 
 ## 项目结构
 

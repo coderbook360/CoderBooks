@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '第二本书',
   description: '这是第二本书的描述',
-  base: '/codebooks/book2/',
+  base: '/CoderBooks/book2/',
   outDir: '../../../dist/book2',
   
   themeConfig: {

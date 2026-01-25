@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Codebooks',
   description: '书籍集合',
-  base: '/codebooks/',
-  outDir: '../../../dist/portal-temp',
+  base: '/CoderBooks/',
+  outDir: '../../../dist/portal',
   ignoreDeadLinks: true,
   
   themeConfig: {

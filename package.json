@@ -7,9 +7,10 @@
     "docs:dev": "pnpm --filter @codebooks/portal run docs:dev",
     "docs:dev:book2": "pnpm --filter @codebooks/book2 run docs:dev",
     "docs:dev:cs130-vue": "pnpm --filter @codebooks/cs130-vue run docs:dev",
-    "docs:build": "pnpm run build:books && pnpm run build:portal",
+    "docs:build": "pnpm run build:books && pnpm run build:portal && pnpm run postbuild",
     "build:books": "pnpm --filter @codebooks/book2 run docs:build && pnpm --filter @codebooks/cs130-vue run docs:build",
     "build:portal": "pnpm --filter @codebooks/portal run docs:build",
+    "postbuild": "node -e \"const fs=require('fs');const path='dist/portal';if(fs.existsSync(path)){const files=fs.readdirSync(path);files.forEach(f=>fs.renameSync(path+'/'+f,'dist/'+f));fs.rmdirSync(path)}\"",
     "docs:preview": "pnpm --filter @codebooks/portal run docs:preview"
   },
   "keywords": [

@@ -1,0 +1,27 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# VitePress
+docs/.vitepress/dist
+docs/.vitepress/cache
+.temp
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

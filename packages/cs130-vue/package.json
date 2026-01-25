@@ -1,0 +1,25 @@
+{
+  "name": "@codebooks/cs130-vue",
+  "version": "1.0.0",
+  "description": "Vue3 生态系统完整学习系列 - 从零到精通的系统化学习路径",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "vue3",
+    "响应式",
+    "组件",
+    "路由",
+    "编译器",
+    "源码解析",
+    "学习路径"
+  ],
+  "devDependencies": {
+    "vitepress": "next",
+    "vue": "^3.4.0"
+  }
+}
