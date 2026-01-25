@@ -17,11 +17,13 @@ export function parseTocToSidebar(tocPath, baseLink) {
     const sidebar = []
     let currentSection = null
     let currentSubSection = null
-
-    for (const line of lines) {
-      // 跳过空行、标题行、序言、分隔线
+    
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]
+      
+      // 跳过空行、一级/二级标题、序言、分隔线
       if (!line.trim() || 
-          line.startsWith('#') || 
+          (line.startsWith('#') && !line.startsWith('###')) ||  // 只跳过 # 和 ##，保留 ### 和 ####
           line.includes('序言') || 
           line.trim() === '---') {
         continue
@@ -100,11 +102,13 @@ export function parseTocToSidebar(tocPath, baseLink) {
  * @returns {Object} sidebar 配置对象
  */
 export function parseAllTocs(modules) {
+  // __dirname 是 .vitepress/utils/，所以 ../../ 是 docs/
   const docsDir = path.resolve(__dirname, '../../')
   const sidebarConfig = {}
 
   for (const module of modules) {
     const tocPath = path.join(docsDir, module.name, 'book_zh', 'toc.md')
+    
     if (fs.existsSync(tocPath)) {
       const sidebar = parseTocToSidebar(tocPath, module.path)
       
@@ -118,8 +122,6 @@ export function parseAllTocs(modules) {
         },
         ...sidebar
       ]
-    } else {
-      console.warn(`Warning: toc.md not found for ${module.name}`)
     }
   }
 
