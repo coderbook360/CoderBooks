@@ -86,9 +86,12 @@ jobs:
           CS130_CHANGED="${{ steps.changes.outputs.cs130-vue }}"
           PORTAL_CHANGED="${{ steps.changes.outputs.portal }}"
           
-          # 如果是首次部署（无 HEAD^）或根配置变化，全量构建
-          if [ "$FORCE_ALL" = "true" ] || ! git rev-parse HEAD^ &>/dev/null; then
-            echo "📦 Full build triggered"
+          # 检查是否有缓存恢复
+          CACHE_RESTORED="${{ steps.cache-restore.outputs.cache-hit }}"
+          
+          # 如果没有缓存或根配置变化，全量构建
+          if [ "$CACHE_RESTORED" != "true" ] || [ "$FORCE_ALL" = "true" ]; then
+            echo "📦 Full build triggered (no cache or config changed)"
             pnpm --filter @codebooks/book2 run docs:build
             pnpm --filter @codebooks/cs130-vue run docs:build
           else
