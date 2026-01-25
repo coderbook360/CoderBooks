@@ -1,0 +1,31 @@
+{
+  "hash": "a201454c",
+  "configHash": "1456ccd9",
+  "lockfileHash": "8b2b1ab2",
+  "browserHash": "ac99529a",
+  "optimized": {
+    "vue": {
+      "src": "../../../../../../node_modules/.pnpm/vue@3.5.27/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "523f7d3d",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../../../node_modules/.pnpm/@vue+devtools-api@8.0.5/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "94bc3f77",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../../../node_modules/.pnpm/@vueuse+core@14.1.0_vue@3.5.27/node_modules/@vueuse/core/dist/index.js",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "728e698f",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-6B2APKDD": {
+      "file": "chunk-6B2APKDD.js"
+    }
+  }
+}

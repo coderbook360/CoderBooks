@@ -1,0 +1,26 @@
+{
+  "name": "codebooks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A monorepo for multiple books built with VitePress",
+  "scripts": {
+    "docs:dev": "pnpm --filter @codebooks/portal run docs:dev",
+    "docs:dev:book2": "pnpm --filter @codebooks/book2 run docs:dev",
+    "docs:dev:cs130-vue": "pnpm --filter @codebooks/cs130-vue run docs:dev",
+    "docs:build": "pnpm run build:books && pnpm run build:portal",
+    "build:books": "pnpm --filter @codebooks/book2 run docs:build && pnpm --filter @codebooks/cs130-vue run docs:build",
+    "build:portal": "pnpm --filter @codebooks/portal run docs:build",
+    "docs:preview": "pnpm --filter @codebooks/portal run docs:preview"
+  },
+  "keywords": [
+    "monorepo",
+    "vitepress",
+    "books",
+    "documentation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "next"
+  }
+}
