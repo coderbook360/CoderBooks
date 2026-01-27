@@ -1,27 +1,37 @@
 import { defineConfig } from 'vitepress'
 import { parseAllTocs } from './utils/parseToc.js'
 
-// 定义所有书籍模块
+// 定义所有书籍模块（L4 系列：1 总 + 2N 分架构）
 const books = [
-  { name: 'reactive', path: '/reactive/', title: 'Vue3 响应式系统', group: '源码解析' },
-  { name: 'component', path: '/component/', title: 'Vue3 组件系统', group: '源码解析' },
-  { name: 'renderer', path: '/renderer/', title: 'Vue 渲染器系统', group: '源码解析' },
-  { name: 'compiler', path: '/compiler/', title: 'Vue 编译器系统', group: '源码解析' },
-  { name: 'router', path: '/router/', title: 'Vue Router 路由', group: '源码解析' },
-  { name: 'pinia', path: '/pinia/', title: 'Pinia 状态管理', group: '源码解析' },
-  { name: 'ssr', path: '/ssr/', title: 'Vue SSR 服务端渲染', group: '源码解析' },
-  { name: 'reactive-mini', path: '/reactive-mini/', title: 'Mini 响应式系统', group: 'Mini 实现' },
-  { name: 'component-mini', path: '/component-mini/', title: 'Mini 组件系统', group: 'Mini 实现' },
-  { name: 'renderer-mini', path: '/renderer-mini/', title: 'Mini 渲染器', group: 'Mini 实现' },
-  { name: 'compiler-mini', path: '/compiler-mini/', title: 'Mini 编译器', group: 'Mini 实现' },
+  // L4-0: 系列总览（必读基础）
+  { name: '00-design-overview', path: '/00-design-overview/', title: 'Vue3 核心设计总览 (L4-0)', group: '系列总览', order: 0 },
+  
+  // L4-1~8: 四大核心模块（源码解析 + Mini 实现）
+  { name: '01-reactive', path: '/01-reactive/', title: 'Vue3 响应式系统源码深度解析 (L4-1)', group: '核心模块', order: 1 },
+  { name: '02-reactive-mini', path: '/02-reactive-mini/', title: '从零实现 Mini Vue Reactivity (L4-2)', group: '核心模块', order: 2 },
+  { name: '03-component', path: '/03-component/', title: 'Vue3 组件系统源码深度解析 (L4-3)', group: '核心模块', order: 3 },
+  { name: '04-component-mini', path: '/04-component-mini/', title: '从零实现 Mini Vue Component (L4-4)', group: '核心模块', order: 4 },
+  { name: '05-renderer', path: '/05-renderer/', title: 'Vue Renderer 源码深度解析 (L4-5)', group: '核心模块', order: 5 },
+  { name: '06-renderer-mini', path: '/06-renderer-mini/', title: '从零实现 Mini Vue Renderer (L4-6)', group: '核心模块', order: 6 },
+  { name: '07-compiler', path: '/07-compiler/', title: 'Vue Compiler 源码深度解析 (L4-7)', group: '核心模块', order: 7 },
+  { name: '08-compiler-mini', path: '/08-compiler-mini/', title: '从零实现 Mini Vue Compiler (L4-8)', group: '核心模块', order: 8 },
+  
+  // L4-9~14: 生态系统模块（源码解析 + Mini 实现）
+  { name: '09-router-source', path: '/09-router-source/', title: 'Vue Router 源码深度解析 (L4-9)', group: '生态模块', order: 9 },
+  { name: '10-router-mini', path: '/10-router-mini/', title: '从零实现 Mini Vue Router (L4-10)', group: '生态模块', order: 10 },
+  { name: '11-pinia-source', path: '/11-pinia-source/', title: 'Pinia 源码深度解析 (L4-11)', group: '生态模块', order: 11 },
+  { name: '12-pinia-mini', path: '/12-pinia-mini/', title: '从零实现 Mini Pinia (L4-12)', group: '生态模块', order: 12 },
+  { name: '13-ssr-source', path: '/13-ssr-source/', title: 'Vue SSR 源码深度解析 (L4-13)', group: '生态模块', order: 13 },
+  { name: '14-ssr-mini', path: '/14-ssr-mini/', title: '从零实现 Mini Vue SSR (L4-14)', group: '生态模块', order: 14 },
 ]
 
 // 自动生成 sidebar
 const sidebarConfig = parseAllTocs(books)
 
 // 按分组生成导航菜单
-const sourceBooks = books.filter(b => b.group === '源码解析')
-const miniBooks = books.filter(b => b.group === 'Mini 实现')
+const overviewBooks = books.filter(b => b.group === '系列总览')
+const coreBooks = books.filter(b => b.group === '核心模块')
+const ecoBooks = books.filter(b => b.group === '生态模块')
 
 export default defineConfig({
   title: 'Vue3 生态系统学习系列',
@@ -38,23 +48,30 @@ export default defineConfig({
     '**/.book_task/**',
     '**/.book_guide/**',
     // 排除 compiler 模块（包含大量模板语法示例）
-    '**/compiler/**',
-    '**/compiler-mini/**',
+    '**/07-compiler/**',
+    '**/08-compiler-mini/**',
   ],
   
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
       { 
-        text: '源码解析书籍',
-        items: sourceBooks.map(book => ({
+        text: 'L4-0 系列总览',
+        items: overviewBooks.map(book => ({
+          text: book.title,
+          link: book.path
+        }))
+      },
+      { 
+        text: 'L4-1~8 核心模块',
+        items: coreBooks.map(book => ({
           text: book.title,
           link: book.path
         }))
       },
       {
-        text: 'Mini 实现书籍',
-        items: miniBooks.map(book => ({
+        text: 'L4-9~14 生态模块',
+        items: ecoBooks.map(book => ({
           text: book.title,
           link: book.path
         }))
